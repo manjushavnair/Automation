@@ -1,0 +1,24 @@
+// Group test suite reference
+http://howtodoinjava.com/testng/how-to-execute-testng-tests-with-maven-build/
+http://websystique.com/java/testing/testng-mockito-example-stubbing-void-methods/
+http://www.vogella.com/tutorials/Mockito/article.html
+xpaht details
+https://www.softwaretestingmaterial.com/dynamic-xpath-in-selenium/
+https://www.guru99.com/xpath-selenium.html
+
+Code to check
+https://github.com/iamalittletester/learning-project/tree/master/src/test/java
+https://github.com/Wikia/selenium-tests
+
+
+To run Test suite
+cd c:\automation
+set classpath=%classpath%;.;c:\automation\testng-6.8.7.jar;c:\automation\selenium-server-standalone-2.53.1.jar;C:\Users\ADMIN\UIAutomation\UIAutomation\target\UIAutomation-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+javap 
+java -cp "C:\Software\selenium\realReport_1.0.jar;C:\Projects\UIAutomation\UIAutomation\target\UIAutomation-0.0.1-SNAPSHOT-jar-with-dependencies.jar;C:\Software\selenium\testng-6.9.10.jar;C:\Software\selenium\selenium-server-standalone-2.53.1.jar" org.testng.TestNG testing.xml
+
+select date picker dropdown-http://stackoverflow.com/questions/21447152/select-values-in-the-month-drop-down-selenium-webdriver?rq=1
+
+when you are using realreport.jar for reporting
+
+make sure you have the testing.xml and html_src folder in same path and run the jav command above from same folder

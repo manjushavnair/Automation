@@ -1,0 +1,29 @@
+package com.automation.ui.connected.pageobjectsfactory.pageobject.messagewall;
+
+import com.automation.ui.base.common.logging.Log;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.SiteBasePageObject;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class MessageWallCloseRemoveThreadPageObject extends SiteBasePageObject {
+
+    @FindBy(css = ".wall-action-reason")
+    private WebElement removeReasonField;
+    @FindBy(css = "#WikiaConfirmOk")
+    private WebElement removeConfirmButton;
+
+    public MessageWallCloseRemoveThreadPageObject(WebDriver driver) {
+        super();
+    }
+
+    public MessageWall closeRemoveThread(String reason) {
+        removeReasonField.sendKeys(reason);
+        removeConfirmButton.click();
+        wait.forElementNotPresent(By.cssSelector(modalWrapper));
+        Log.log("closeRemoveThread", "thread removed with reason " + reason, true);
+
+        return new MessageWall();
+    }
+}

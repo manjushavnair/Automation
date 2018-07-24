@@ -1,0 +1,79 @@
+package com.uiautomation.connected.pageobjectsfactory.pageobject.forumpageobject;
+
+import com.uiautomation.base.common.logging.Log;
+import com.uiautomation.connected.pageobjectsfactory.base.SiteBasePageObject;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
+
+public class ForumPage extends SiteBasePageObject {
+
+    @FindBy(css = ".policies-link")
+    private WebElement faqButton;
+    @FindBy(css = "#ForumPoliciesModal")
+    private WebElement faqLightBox;
+    @FindBy(css = "#ForumPoliciesModal .secondary")
+    private WebElement closeFaqLightBoxButton;
+    @FindBy(css = ".button.admin-link")
+    private WebElement manageBoardsButton;
+    @FindBy(css = "div.wikiaThrobber")
+    private WebElement faqModalLoadingState;
+
+    private By forumBoardsList = By.cssSelector("ul.boards h4 a");
+
+    private void openFaqLightBox() {
+        //NEEDTOCHECK
+        wait.forElementVisibleW(faqButton);
+        scrollAndClick(faqButton);
+        Log.log("openFaqLightBox", "faq lightbox opened", true);
+    }
+
+    private void closeFaqLightBox() {
+        waitForElementNotVisibleByElement(faqModalLoadingState);
+        //NEEDTOCHECK
+        wait.forElementVisibleW(closeFaqLightBoxButton);
+        closeFaqLightBoxButton.click();
+        Log.log("closeFaqLightBox", "faq lightbox closed", true);
+    }
+
+    private void checkFaqLightBoxOpened() {
+        //NEEDTOCHECK
+        wait.forElementVisibleW(faqLightBox);
+        Log.log("checkFaqLightBoxOpened", "faq lightbox verified", true);
+    }
+
+    public void verifyFaqLightBox() {
+        openFaqLightBox();
+        checkFaqLightBoxOpened();
+        closeFaqLightBox();
+    }
+
+    public ForumManageBoardsPageObject clickManageBoardsButton() {
+        scrollAndClick(manageBoardsButton);
+        Log.log("clickManageBoardsButton", "manage boards button clicked", true);
+        return new ForumManageBoardsPageObject();
+    }
+
+    /*
+     * this method choose first link on the board which doesn't contain chinese signs
+     */
+    public ForumBoardPage openForumBoard() {
+        WebElement forumBoardLink = getForumElementsList().stream()
+                .filter(webElement -> !webElement.toString().contains("%"))
+                .findFirst()
+                .orElse(null);
+        //NEEDTOCHECK
+
+        wait.forElementVisibleW(forumBoardLink);
+        wait.forElementClickable(forumBoardLink);
+        scrollAndClick(forumBoardLink);
+        Log.log("openForumBoard", "click on the forum Board", true, driver);
+        return new ForumBoardPage();
+    }
+
+    private List<WebElement> getForumElementsList() {
+        return driver.findElements(forumBoardsList);
+    }
+}
