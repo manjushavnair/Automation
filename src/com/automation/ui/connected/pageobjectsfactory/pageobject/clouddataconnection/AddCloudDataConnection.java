@@ -21,17 +21,12 @@ public class AddCloudDataConnection extends SiteBasePageObject {
         getUrl(  );
       //  waitForPageLoad();
 
-        try {
-            Thread.sleep(2000);
-        } catch (Exception e) {
 
-        }
 
         //driver.navigate().refresh();
 
         return new AddCloudDataConnection();
     }
-
     public AddCloudDataConnection addConnection( ) {
         try {
             logger.info("Entering  addConnection: ");

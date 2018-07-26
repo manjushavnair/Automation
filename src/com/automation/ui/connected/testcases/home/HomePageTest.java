@@ -107,7 +107,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
         logger.info("Exiting launchHomePage and going to  homepage"+urlBuilder.getUrl());
         //Thread.sleep(120000);
-        home_page.waitForPageReload();
+       home_page.waitForPageReload();
         logger.info("Entering addConnection");
         Reporter.log("Entering addConnection");
          AddCloudDataConnection add_conn_page = new AddCloudDataConnection();

@@ -31,10 +31,10 @@ public class LoginPage extends BasePageObject {
 
 
 
-    @FindBy(xpath = LoginCONSTANTS.SAVELOGINANDSUBMIT)
+    @FindBy(xpath = LoginCONSTANTS.SAVELOGINCHECK)
     private WebElement savepasswordbutton;
 
-    @FindBy(xpath =  LoginCONSTANTS.SAVELOGINCHECK)
+    @FindBy(xpath =  LoginCONSTANTS.SAVELOGINANDSUBMIT)
     private WebElement choosetosave;
 
     public LoginPage() {
