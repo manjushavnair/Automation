@@ -17,21 +17,30 @@ public class ErrorCodeReader extends Properties {
 
     public static ErrorCodeReader readProperty() {
 
+
         if (errorCodereader == null) {
-            errorCodereader = new ErrorCodeReader();
+            synchronized (ErrorCodeReader.class) {
+                if (errorCodereader == null) {
+
+                    errorCodereader = new ErrorCodeReader();
+                    try {
+                        InputStream inStream = new FileInputStream(new File(
+                                TestCONSTANTS.EXCEPTIONPATH));
+                        errorCodereader.load(inStream);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+
+                    }
+                }
+            }
         }
 
-        try {
-            InputStream inStream = new FileInputStream(new File(
-                    TestCONSTANTS.EXCEPTIONPATH));
-            errorCodereader.load(inStream);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
 
-        } catch (Exception e) {
-            e.printStackTrace();
 
-        }
+
 
         return errorCodereader;
     }

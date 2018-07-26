@@ -1,6 +1,7 @@
 package com.automation.ui.connected.common.prpreader;
 
 import com.automation.ui.connected.common.constants.RESTAPICONSTANTS;
+import com.automation.ui.connected.common.constants.TestCONSTANTS;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,19 +19,23 @@ public class RestAPIReader extends Properties {
     public static RestAPIReader readProperty() {
 
         if (prpreader == null) {
-            prpreader = new RestAPIReader();
-        }
+            synchronized (RestAPIReader.class) {
+                if (prpreader == null) {
 
-        try {
-            InputStream inStream = new FileInputStream(new File(
-                    RESTAPICONSTANTS.RESTPATH));
-            prpreader.load(inStream);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+                    prpreader = new RestAPIReader();
+                    try {
+                        InputStream inStream = new FileInputStream(new File(
+                                RESTAPICONSTANTS.RESTPATH));
+                        prpreader.load(inStream);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
 
+                    }
+                }
+            }
         }
 
         return prpreader;

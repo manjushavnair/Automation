@@ -16,18 +16,27 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.Reporter;
 import com.automation.ui.connected.common.prpreader.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
 public class LoginPage extends BasePageObject {
 
 
     private static Logger logger = Logger.getLogger(LoginPage.class);
 
     @FindBy(xpath = LoginCONSTANTS.USERID)
+    @CacheLookup
     private WebElement username;
 
     @FindBy(xpath = LoginCONSTANTS.PASSWORD)
+    @CacheLookup
     private WebElement password;
 
     @FindBy(xpath = LoginCONSTANTS.SUBMIT)
+    @CacheLookup
     private WebElement login_button;
 
 

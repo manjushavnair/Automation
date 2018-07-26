@@ -278,6 +278,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+        Log.ok("Percentage ", " Success");
     }
 
     @Override
@@ -297,12 +298,12 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
     @Override
     public void beforeNavigateForward(WebDriver driver) {
-        Log.ok("Navigate Froward", "attempting to navigate forward");
+        Log.ok("Navigate Forward", "attempting to navigate forward");
     }
 
     @Override
     public void afterNavigateForward(WebDriver driver) {
-        Log.log("Navigate Froward", "forward page loaded", true);
+        Log.log("Navigate Forward", "forward page loaded", true);
     }
 
     @Override

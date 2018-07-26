@@ -21,8 +21,13 @@ public class AssertDataReader {
     public static AssertDataReader readProperty() {
 
         if (assertreader == null) {
-            assertreader = new AssertDataReader();
-         }
+            synchronized (AssertDataReader.class) {
+                if (assertreader == null) {
+                    assertreader = new AssertDataReader();
+                }
+            }
+        }
+
         return assertreader;
     }
 

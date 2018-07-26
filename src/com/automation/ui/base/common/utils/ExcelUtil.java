@@ -3,12 +3,21 @@ package com.automation.ui.base.common.utils;
 import com.automation.ui.connected.common.constants.ExcelCONSTANTS;
 import org.apache.log4j.Logger;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.*;
+
+
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-import java.io.File;
+import java.io.*;
+import java.util.*;
 import java.io.FileInputStream;
 
 public class ExcelUtil {
@@ -120,22 +129,42 @@ public class ExcelUtil {
 
     }
 
-    public String getCellData(int rowNum, int colNum) throws Exception {
+    public List<String> getNumberOfSheetsinSuite(String filePath) {
+        List<String> listOfSheets = new ArrayList<String>();
 
         try {
+            Workbook workbook = WorkbookFactory
+                    .create(new File(  filePath ));
+            for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
 
-            String cellData = "";
+            }
+
+        } catch (InvalidFormatException | IOException e) {
+
+          logger.info(e.getMessage());
+        }
+        return listOfSheets;
+
+    }
+
+
+
+    public String getCellData(int rowNum, int colNum) throws Exception {
+
+        String cellData = "";
+        try {
+
+
             if (null != this.datatypeSheet.getRow(rowNum).getCell(colNum))
                 cellData = this.datatypeSheet.getRow(rowNum).getCell(colNum).getStringCellValue();
 
             return cellData;
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch ( Exception e) {
 
-            return "";
-
+            logger.info("InvalidFormatException");
         }
+        return cellData;
 
     }
 

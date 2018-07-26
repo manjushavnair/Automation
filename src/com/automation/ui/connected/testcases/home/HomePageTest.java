@@ -16,9 +16,11 @@ import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-//import com.uiautomation.ui.listener.LoginListener;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
-//@Listeners(com.uiautomation.ui.listener.LoginListener.class)
+
 
 public class HomePageTest extends ConnectedBaseTest {
 
@@ -38,7 +40,7 @@ public class HomePageTest extends ConnectedBaseTest {
         logger.info("Entering launchHomePage");
         Reporter.log("Entering launchHomePage");
         LoginPage login_page = new LoginPage();
-        HomePage  home_page = new HomePage();
+
         login_page.open();
         // Call the method
 
@@ -57,9 +59,9 @@ public class HomePageTest extends ConnectedBaseTest {
             Assert.fail("Unable to login");
             e.printStackTrace();
         }
-       login_page.enterUser(userName);
+        login_page.enterUser(userName);
         login_page.enterPassword(password);
-        login_page.login();
+        HomePage  home_page= login_page.login();
 
         logger.info("Exiting launchHomePage and going to  homepage"+urlBuilder.getUrl());
 
@@ -97,20 +99,17 @@ public class HomePageTest extends ConnectedBaseTest {
         }
         login_page.enterUser(userName);
         login_page.enterPassword(password);
-        login_page.login();
+        HomePage  home_page =login_page.login();
 
-        HomePage  home_page = new HomePage();
 
         logger.info("Exiting launchHomePage and going to  homepage"+urlBuilder.getUrl());
         home_page.waitForPageReload();
         logger.info("Entering addConnection");
         Reporter.log("Entering addConnection");
-         AddCloudDataConnection add_conn_page = new AddCloudDataConnection();
+        AddCloudDataConnection add_conn_page = new AddCloudDataConnection();
 
         add_conn_page.open();
-
         add_conn_page.addConnection();
-
         logger.info("Exiting addConnection and going to  add"+add_conn_page.getUrl());
          add_conn_page.waitForPageReload();
 

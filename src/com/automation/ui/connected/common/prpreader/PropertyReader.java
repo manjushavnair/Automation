@@ -17,20 +17,25 @@ public class PropertyReader extends Properties {
 
     public static PropertyReader readProperty() {
 
+
         if (prpreader == null) {
-            prpreader = new PropertyReader();
-        }
+            synchronized (PropertyReader.class) {
+                if (prpreader == null) {
 
-        try {
-            InputStream inStream = new FileInputStream(new File(
-                    TestCONSTANTS.CONFIGPATH));
-            prpreader.load(inStream);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+                    prpreader = new PropertyReader();
+                    try {
+                        InputStream inStream = new FileInputStream(new File(
+                                TestCONSTANTS.EXCEPTIONPATH));
+                        prpreader.load(inStream);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
 
+                    }
+                }
+            }
         }
 
         return prpreader;
