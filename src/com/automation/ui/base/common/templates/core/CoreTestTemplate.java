@@ -34,7 +34,7 @@ public abstract class CoreTestTemplate {
 
     protected UIWebDriver driver;
     protected NetworkTrafficInterceptor networkTrafficInterceptor;
-    protected ResourceBundle assertData;
+    protected AssertDataReader assertData;
 
     protected UrlBuilder urlBuilder;
      protected String siteURL;

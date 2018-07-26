@@ -10,9 +10,9 @@ import java.util.Collection;
 /*
  * Browser extensions helper
  */
-public class ExtHelper {
+public class BrowserExtentionHelper {
 
-    private ExtHelper() {
+    private BrowserExtentionHelper() {
     }
 
     public static File findExtension(String name, String suffix) {

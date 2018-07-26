@@ -8,17 +8,18 @@ import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import com.automation.ui.connected.pageobjectsfactory.HomePage;
+import com.automation.ui.connected.common.prpreader.*;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.Reporter;
-
+import com.automation.ui.connected.common.prpreader.*;
 public class LoginPage extends BasePageObject {
 
 
     private static Logger logger = Logger.getLogger(LoginPage.class);
-    // Instead of above commented method we can call @FindBy
 
     @FindBy(xpath = LoginCONSTANTS.USERID)
     private WebElement username;
@@ -46,16 +47,77 @@ public class LoginPage extends BasePageObject {
     public LoginPage open() {
         if (Configuration.getEnvType().equals(EnvType.DEV)) {
             logger.info(getCurrentUrl());
-            // getUrl("http://www.clayhut.co.in");
-            //  getUrl(getCurrentUrl() + "?action=history");
+            // getUrl("http://www.site.com");
+            // getUrl(getCurrentUrl() + "?action=history");
             getUrl(getCurrentUrl());
         } else {
             logger.info(getCurrentUrl());
-            //  getUrl(getCurrentUrl() + "?action=history");
+            //  getUrl(getCurrentUrl() + "?action=something");
             getUrl(getCurrentUrl());
         }
-
         return this;
+    }
+
+
+    public LoginPage enterUser(String userName) {
+        try {
+            logger.info("Entering  login: ");
+            Reporter.log("Entering  login:");
+            fillInputAfterClear(username,userName);
+            login_button.click();
+            logger.info("Exiting  login");
+            Reporter.log("Exiting  login");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail( AssertDataReader.readProperty().getValue("OPCUA_LOGIN_LOGINMSG"));
+            Reporter.log("Login failed");
+
+        }
+        return this;
+
+    }
+
+    public LoginPage enterPassword(String upassword) {
+        try {
+            logger.info("Entering  password: ");
+            Reporter.log("Entering  password:");
+
+            fillInputAfterClear(password,upassword);
+            logger.info("Exiting  password");
+            Reporter.log("Exiting  password");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail( AssertDataReader.readProperty().getValue("OPCUA_PASSWORD"));
+            Reporter.log("password failed");
+
+        }
+        return this;
+
+    }
+
+
+    public HomePage login() {
+        try {
+            logger.info("Entering  login: ");
+            Reporter.log("Entering  login:");
+            // login_button.click();
+            waitAndClick(login_button);
+            logger.info("Exiting  login");
+            Reporter.log("Exiting  login");
+            // wait.forElementVisibleW(savepasswordbutton);
+            // savepasswordbutton.click();
+            waitAndClick(savepasswordbutton);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail( AssertDataReader.readProperty().getValue("OPCUA_LOGIN_LOGINMSG"));
+            Reporter.log("Login failed");
+
+        }
+        return new HomePage();
+
     }
 
     public WebElement getPassword() {
@@ -74,8 +136,6 @@ public class LoginPage extends BasePageObject {
         this.login_button = login_button;
     }
 
-
-
     public WebElement getUsername() {
         return username;
     }
@@ -85,91 +145,6 @@ public class LoginPage extends BasePageObject {
 
     }
 
-    public LoginPage enterUser(String userName) {
-        try {
-            logger.info("Entering  login: ");
-            Reporter.log("Entering  login:");
-            logger.info("click  ");
 
-
-            username.click();
-
-            username.clear();
-
-            username.sendKeys(userName);
-
-
-
-             login_button.click();
-
-            logger.info("Exiting  login");
-            Reporter.log("Exiting  login");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            Assert.fail("Login failed");
-            Reporter.log("Login failed");
-
-        }
-        return this;
-
-    }
-
-    public LoginPage enterPassword(String upassword) {
-        try {
-            logger.info("Entering  password: ");
-            Reporter.log("Entering  password:");
-
-            wait.forElementVisibleW(password);
-
-            logger.info("wait  password: ");
-            password.click();
-            password.clear();
-
-
-
-            password.sendKeys(upassword);
-
-            logger.info("Exiting  password");
-            Reporter.log("Exiting  password");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            Assert.fail("password failed");
-            Reporter.log("password failed");
-
-        }
-        return this;
-
-    }
-
-
-    public HomePage login() {
-        try {
-            logger.info("Entering  login: ");
-            Reporter.log("Entering  login:");
-
-
-
-            login_button.click();
-            logger.info("Exiting  login");
-            Reporter.log("Exiting  login");
-
-
-           wait.forElementVisibleW(savepasswordbutton);
-
-
-           savepasswordbutton.click();
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            Assert.fail("Login failed");
-            Reporter.log("Login failed");
-
-        }
-        return new HomePage();
-
-    }
 
 }

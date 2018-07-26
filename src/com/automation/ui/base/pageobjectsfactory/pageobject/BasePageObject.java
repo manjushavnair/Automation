@@ -1,5 +1,8 @@
 package com.automation.ui.base.pageobjectsfactory.pageobject;
 
+import com.automation.ui.base.common.utils.*;
+
+
 import com.automation.ui.base.common.contentpatterns.URLsContent;
 import com.automation.ui.base.common.contentpatterns.XSSContent;
 import com.automation.ui.base.common.core.Assertion;
@@ -57,12 +60,6 @@ public class BasePageObject {
         this.jsActions = new JavascriptActions(driver);
 
         PageFactory.initElements(driver, this);
-    }
-
-    public static String getTimeStamp() {
-        Date time = new Date();
-        long timeCurrent = time.getTime();
-        return String.valueOf(timeCurrent);
     }
 
     private static String getEmailChangeConfirmationLink(String email, String password) {
@@ -464,7 +461,7 @@ public class BasePageObject {
     }
 
     public String getRandomDigits(int length) {
-        String timeStamp = getTimeStamp();
+        String timeStamp = TimeZoneUtil.getTimeStamp();
         int timeStampLenght = timeStamp.length();
         int timeStampCut = timeStampLenght - length;
         return timeStamp.substring(timeStampCut);
@@ -479,9 +476,16 @@ public class BasePageObject {
         return UrlBuilder.createUrlBuilder().getUrl();
     }
 
-    public void fillInput(WebElement input, String value) {
-        //NEEDTOCHECK
+
+	public void  fillInputAfterClear(WebElement input, String value) {
+	    input.click();
+        input.clear();
         wait.forElementVisibleW(input).sendKeys(value);
+	}
+
+
+    public void fillInput(WebElement input, String value) {
+         wait.forElementVisibleW(input).sendKeys(value);
     }
 
     /**

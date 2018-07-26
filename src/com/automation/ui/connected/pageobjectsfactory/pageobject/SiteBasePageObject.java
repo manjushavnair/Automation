@@ -411,7 +411,7 @@ public class SiteBasePageObject extends BasePageObject {
         return new DeletePageObject(driver);
     }
     public String getNameForArticle() {
-        return PageContent.ARTICLE_NAME_PREFIX + getTimeStamp();
+        return PageContent.ARTICLE_NAME_PREFIX + TimeZoneUtil.getTimeStamp();
     }
 
     protected String getPseudoElementValue(WebElement element, String pseudoElement, String cssValue) {
