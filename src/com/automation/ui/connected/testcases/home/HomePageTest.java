@@ -62,12 +62,8 @@ public class HomePageTest extends ConnectedBaseTest {
         login_page.login();
 
         logger.info("Exiting launchHomePage and going to  homepage"+urlBuilder.getUrl());
-        //Thread.sleep(120000);
+
          home_page.waitForPageReload();
-
-
-
-        //driver.navigate().forward();
 
 
 
@@ -106,8 +102,7 @@ public class HomePageTest extends ConnectedBaseTest {
         HomePage  home_page = new HomePage();
 
         logger.info("Exiting launchHomePage and going to  homepage"+urlBuilder.getUrl());
-        //Thread.sleep(120000);
-       home_page.waitForPageReload();
+        home_page.waitForPageReload();
         logger.info("Entering addConnection");
         Reporter.log("Entering addConnection");
          AddCloudDataConnection add_conn_page = new AddCloudDataConnection();
@@ -117,27 +112,9 @@ public class HomePageTest extends ConnectedBaseTest {
         add_conn_page.addConnection();
 
         logger.info("Exiting addConnection and going to  add"+add_conn_page.getUrl());
-        //Thread.sleep(120000);
-        add_conn_page.waitForPageReload();
+         add_conn_page.waitForPageReload();
 
     }
-
-
-
-/*
-    @AfterClass
-    protected void tearDownAfterTestClass() {
-        // close connections, close browser as needed
-        logger.info("Keeping browser open tearDownAfterTestClass  ::Saaslogin");
-
-    }
-
-    @AfterSuite
-    protected void tearDownAfterTestSuite() {
-        logger.info("Keeping browser open   tearDownAfterTestSuite ::Saaslogin ");
-
-    }
-    */
 
 
 }
