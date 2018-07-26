@@ -11,7 +11,7 @@ public class AssertDataReader {
     public static ResourceBundle readProperty() {
 
         if (assertreader == null) {
-            assertreader = ResourceBundle.getBundle("assertdata", Locale.US);
+            assertreader = ResourceBundle.getBundle("i18n.assertdata", Locale.US);
 
         }
 

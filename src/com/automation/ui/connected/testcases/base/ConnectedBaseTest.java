@@ -13,6 +13,7 @@ import com.automation.ui.base.common.core.url.UrlBuilder;
 import com.automation.ui.base.common.utils.ExcelUtil;
 import com.automation.ui.connected.common.constants.ExcelCONSTANTS;
 import com.automation.ui.connected.common.core.url.FandomUrlBuilder;
+import com.automation.ui.connected.common.prpreader.AssertDataReader;
 import com.automation.ui.connected.common.templates.NewTestTemplate;
 import org.apache.log4j.Logger;
 import org.testng.Reporter;
@@ -20,7 +21,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-
+import java.util.Locale;
+import java.util.ResourceBundle;
 public class ConnectedBaseTest extends NewTestTemplate  {
 
     private static Logger logger = Logger.getLogger(ConnectedBaseTest.class);
@@ -28,7 +30,7 @@ public class ConnectedBaseTest extends NewTestTemplate  {
 
     public ConnectedBaseTest() {
         super();
-
+        AssertDataReader.readProperty();
     }
 
     protected ExcelUtil getExcelUtil() {
@@ -51,10 +53,6 @@ public class ConnectedBaseTest extends NewTestTemplate  {
     }
 
     protected void prepareURLs() {
-        logger.info("prepareURLs 1");
-        logger.info("System.getProperty(\"user.dir\")"+System.getProperty("user.dir"));
-        logger.info("System.getProperty(\"os.name\")"+System.getProperty("os.name"));
-
 
 
         urlBuilder = UrlBuilder.createUrlBuilder();
