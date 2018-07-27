@@ -70,15 +70,16 @@ public class LoginPage extends BasePageObject {
 
     public LoginPage enterUser(String userName) {
         try {
-            logger.info("Entering  login: ");
-            Reporter.log("Entering  login:");
+            logger.info("Entering enterUser  login: ");
+            Reporter.log("Entering  enterUser login:");
             fillInputAfterClear(username,userName);
-           // login_button.click();
-            logger.info("Exiting  login");
-            Reporter.log("Exiting  login");
+            login_button.click();
+            logger.info("Exiting enterUser login");
+            Reporter.log("Exiting  enterUser login");
 
         } catch (Exception e) {
             e.printStackTrace();
+            logger.info("Exiting enterUser login"+AssertDataReader.readProperty().getValue("OPCUA_LOGIN_LOGINMSG")) ;
             Assert.fail( AssertDataReader.readProperty().getValue("OPCUA_LOGIN_LOGINMSG"));
             Reporter.log("Login failed");
 
@@ -89,12 +90,12 @@ public class LoginPage extends BasePageObject {
 
     public LoginPage enterPassword(String upassword) {
         try {
-            logger.info("Entering  password: ");
-            Reporter.log("Entering  password:");
+            logger.info("Entering  enterPassword: ");
+            Reporter.log("Entering  enterPassword:");
 
             fillInputAfterClear(password,upassword);
-            logger.info("Exiting  password");
-            Reporter.log("Exiting  password");
+            logger.info("Exiting  enterPassword");
+            Reporter.log("Exiting  enterPassword");
 
         } catch (Exception e) {
             e.printStackTrace();
