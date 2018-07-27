@@ -482,7 +482,7 @@ public class BasePageObject {
         input.clear();
 
         wait.forElementVisibleW(input).sendKeys(value);
-        input.click();
+
 	}
 
 
