@@ -4,9 +4,8 @@ import com.automation.ui.base.common.contentpatterns.URLsContent;
 import com.automation.ui.base.common.core.Assertion;
 import com.automation.ui.base.common.core.interactions.Typing;
 import com.automation.ui.base.common.logging.Log;
-import com.automation.ui.connected.pageobjectsfactory.componentobject.minieditor.MiniEditorComponentObject;
-import com.automation.ui.connected.pageobjectsfactory.componentobject.minieditor.MiniEditorPreviewComponentObject;
-import com.automation.ui.connected.pageobjectsfactory.componentobject.photo.PhotoAddComponentObject;
+
+
 import com.automation.ui.connected.pageobjectsfactory.pageobject.SiteBasePageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -99,36 +98,7 @@ public class MessageWall extends SiteBasePageObject {
         return new MessageWall();
     }
 
-    public MiniEditorComponentObject triggerMessageArea() {
-        return triggerMessageArea(false);
-    }
 
-    public MiniEditorComponentObject triggerMessageArea(Boolean sourceMode) {
-        WebElement messageBody = messageMainBody;
-        //Override messageBody if triggering in source mode
-        if (sourceMode) {
-            messageBody = messageMainBodySourceMode;
-        }
-        wait.forElementClickable(messageBody).click();
-        new Actions(driver).moveToElement(newWallMessageContainer).perform();
-
-        while (!postButton.isDisplayed()) {
-            jsActions.focus(messageBody);
-        }
-        wait.forAttributeToContain(newWallMessageContainer, HTML.Attribute.CLASS.toString(), "focused");
-        Log.log("triggerMessageArea", "message area triggered", true);
-
-        return new MiniEditorComponentObject(driver);
-    }
-
-    public MiniEditorComponentObject triggerReplyMessageArea() {
-        while (!driver.findElement(firstMessageWrapperBy).findElement(replyButtonBy).isDisplayed()) {
-            //NEEDTOCHECK
-            jsActions.focus(driver.findElement(firstMessageWrapperBy).findElement(replyBodyBy));
-        }
-        Log.log("triggerReplyMessageArea", "reply message area triggered", true);
-        return new MiniEditorComponentObject(driver);
-    }
 
     public void triggerEditMessageArea() {
         setDisplayStyle(FIRST_MESSAGE_MENU, "block");
@@ -163,12 +133,7 @@ public class MessageWall extends SiteBasePageObject {
         Log.log("submitQuote", "message quote submitted", true);
     }
 
-    public MiniEditorPreviewComponentObject preview() {
-        driver.switchTo().defaultContent();
-        scrollAndClick(previewButton);
-        Log.log("preview", "MiniEditor preview opened", true);
-        return new MiniEditorPreviewComponentObject(driver);
-    }
+
 
     public void setTitle(String title) {
         driver.switchTo().defaultContent();
@@ -207,13 +172,7 @@ public class MessageWall extends SiteBasePageObject {
         return new MessageWallCloseRemoveThreadPageObject(driver);
     }
 
-    public MiniEditorComponentObject clickQuoteButton() {
-        setDisplayStyle(FIRST_MESSAGE_MENU, "block");
-        scrollAndClick(driver.findElement(firstMessageWrapperBy).findElement(quoteButtonBy));
-        setDisplayStyle(FIRST_MESSAGE_MENU, "none");
-        Log.log("clickQuoteButton", "quote button clicked", true);
-        return new MiniEditorComponentObject(driver);
-    }
+
 
     public void clickReopenThread() {
         setDisplayStyle(FIRST_MESSAGE_MENU, "block");
@@ -265,13 +224,7 @@ public class MessageWall extends SiteBasePageObject {
         return new MessageWallAddLinkComponentObject(driver);
     }
 
-    public PhotoAddComponentObject clickImageButton() {
-        //NEEDTOCHECK
-        wait.forElementVisibleW(imageButton);
-        scrollAndClick(imageButton);
-        Log.log("clickImageButton", "image button clicked", true);
-        return new PhotoAddComponentObject(driver);
-    }
+
 
     public void verifyThreadRemoved() {
         //NEEDTOCHECK

@@ -5,7 +5,6 @@ import com.automation.ui.base.common.core.helpers.User;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import com.automation.ui.base.pageobjectsfactory.pageobject.auth.register.RegisterPage;
 import com.automation.ui.base.pageobjectsfactory.pageobject.auth.signin.SignInPage;
-import com.automation.ui.connected.pageobjectsfactory.componentobject.modalwindows.FacebookSignupModalComponentObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.auth.AuthPageContext;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.auth.FormError;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.auth.forgotpassword.AttachedForgotPasswordPage;
@@ -96,9 +95,7 @@ public class AttachedSignInPage extends BasePageObject implements SignInPage {
         return authContext.isHeaderDisplayed();
     }
 
-    FacebookSignupModalComponentObject clickFacebookSignUp() {
-        return authContext.clickFacebookSignUp();
-    }
+
 
     public boolean isConnectWithFacebookButtonVisible() {
         return authContext.isConnectWithFacebookButtonVisible();

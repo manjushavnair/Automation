@@ -3,8 +3,6 @@ package com.automation.ui.connected.elements.common;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import com.automation.ui.connected.elements.oasis.components.globalshortcuts.ActionExplorerModal;
-import com.automation.ui.connected.pageobjectsfactory.componentobject.modalwindows.AddMediaModalComponentObject;
-import com.automation.ui.connected.pageobjectsfactory.componentobject.modalwindows.CreateArticleModalComponentObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.UserProfilePage;
 
 import org.openqa.selenium.WebElement;
@@ -80,13 +78,6 @@ public class CommunityHeader extends BasePageObject {
     }
 
 
-    public CreateArticleModalComponentObject clickAddNewPage() {
-        wait.forElementClickable(addNewPageButton).click();
-
-        Log.info("clicked Add New Page button");
-
-        return new CreateArticleModalComponentObject(this.driver);
-    }
 
 
     public UserProfilePage clickUserAvatar(int index) {
@@ -161,13 +152,7 @@ public class CommunityHeader extends BasePageObject {
         Log.info("more -> Add image link clicked");
     }
 
-    public AddMediaModalComponentObject clickMoreAddVideoLink() {
-        wait.forElementClickable(moreToolsAddVideoLink).click();
 
-        Log.info("more -> Add video link clicked");
-
-        return new AddMediaModalComponentObject();
-    }
 
     public void clickMoreRecentChanges() {
         wait.forElementClickable(moreToolsRecentChanges).click();

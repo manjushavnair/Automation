@@ -6,7 +6,6 @@ import com.automation.ui.base.pageobjectsfactory.pageobject.auth.FormPage;
 import com.automation.ui.base.pageobjectsfactory.pageobject.auth.forgotpassword.ForgotPasswordPage;
 import com.automation.ui.base.pageobjectsfactory.pageobject.auth.register.RegisterPage;
 import com.automation.ui.base.pageobjectsfactory.pageobject.auth.signin.SignInPage;
-import com.automation.ui.connected.pageobjectsfactory.componentobject.modalwindows.FacebookSignupModalComponentObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.auth.forgotpassword.AttachedForgotPasswordPage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.auth.forgotpassword.DetachedForgotPasswordPage;
 
@@ -103,10 +102,7 @@ public class DetachedSignInPage extends DetachedWindow implements SignInPage {
         return signInPage.submitButtonNotClickable();
     }
 
-    public FacebookSignupModalComponentObject clickFacebookSignUp() {
-        gainFocus();
-        return signInPage.clickFacebookSignUp();
-    }
+
 
     public boolean isConnectWithFacebookButtonVisible() {
         gainFocus();

@@ -3,7 +3,6 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject;
 import com.automation.ui.base.common.core.Assertion;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
-import com.automation.ui.connected.pageobjectsfactory.componentobject.modalwindows.CreateArticleModalComponentObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.category.CategoryPageObject;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
@@ -187,12 +186,7 @@ public class PortableInfobox extends BasePageObject {
         return clickLink(internalLinks.get(index));
     }
 
-    public CreateArticleModalComponentObject clickRedLinkWithIndex(int index) {
-        WebElement selectedRedLink = redLinks.get(index);
-        clickLink(selectedRedLink);
 
-        return new CreateArticleModalComponentObject(driver);
-    }
 
     public PortableInfobox clickImage() {
         //NEEDTOCHECK

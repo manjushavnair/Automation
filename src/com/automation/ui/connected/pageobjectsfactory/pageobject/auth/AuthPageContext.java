@@ -1,7 +1,6 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.auth;
 
 import com.automation.ui.base.pageobjectsfactory.pageobject.auth.register.RegisterPage;
-import com.automation.ui.connected.pageobjectsfactory.componentobject.modalwindows.FacebookSignupModalComponentObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.SiteBasePageObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.auth.register.AttachedRegisterPage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.auth.signin.AttachedSignInPage;
@@ -25,9 +24,7 @@ public class AuthPageContext extends SiteBasePageObject {
         fbAuthContext = new FacebookAuthContext();
     }
 
-    public FacebookSignupModalComponentObject clickFacebookSignUp() {
-        return fbAuthContext.clickFacebookSignUp();
-    }
+
 
     public boolean isConnectWithFacebookButtonVisible() {
         return fbAuthContext.isConnectWithFacebookButtonVisible();

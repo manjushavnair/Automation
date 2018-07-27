@@ -1,7 +1,7 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.messagewall;
 
 import com.automation.ui.base.common.core.Assertion;
-import com.automation.ui.connected.pageobjectsfactory.componentobject.minieditor.MiniEditorComponentObject;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -18,12 +18,7 @@ public class MessageWallThreadPageObject extends MessageWall {
     @FindBy(className = "msg-body")
     private WebElement messageBody;
 
-    public MiniEditorComponentObject triggerMessageArea() {
-        while (!driver.findElement(firstMessageWrapperBy).findElement(replyButtonBy).isDisplayed()) {
-            jsActions.focus(replyBody);
-        }
-        return new MiniEditorComponentObject(driver);
-    }
+
 
     public void verifyLastReply(String userName, String message) {
         //NEEDTOCHECK

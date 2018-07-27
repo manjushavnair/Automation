@@ -1,4 +1,4 @@
-package com.automation.ui.connected.pageobjectsfactory.componentobject.ad;
+package com.automation.ui.base.common.iframe;
 
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.element.Wait;

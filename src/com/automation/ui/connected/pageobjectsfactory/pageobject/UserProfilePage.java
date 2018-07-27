@@ -3,7 +3,6 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject;
 import com.automation.ui.base.common.contentpatterns.URLsContent;
 import com.automation.ui.base.common.core.AlertHandler;
 import com.automation.ui.base.common.logging.Log;
-import com.automation.ui.connected.pageobjectsfactory.componentobject.editprofile.AvatarComponentObject;
 
 import lombok.Getter;
 import org.openqa.selenium.By;
@@ -90,13 +89,6 @@ public class UserProfilePage extends SiteBasePageObject {
         setDisplayStyle(".avatar-controls", "none");
     }
 
-    public AvatarComponentObject clickEditAvatar() {
-        showAvatarControls();
-        avatarEditButton.click();
-        hideAvatarControls();
-        Log.log("clickEditAvatar", "avatar edit button clicked", true);
-        return new AvatarComponentObject();
-    }
 
     public void clickRemoveAvatar() {
         showAvatarControls();

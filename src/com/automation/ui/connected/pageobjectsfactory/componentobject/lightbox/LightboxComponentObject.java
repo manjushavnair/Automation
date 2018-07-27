@@ -1,7 +1,7 @@
 package com.automation.ui.connected.pageobjectsfactory.componentobject.lightbox;
 
 import com.automation.ui.base.common.logging.Log;
-import com.automation.ui.connected.pageobjectsfactory.componentobject.media.VideoComponentObject;
+
 import com.automation.ui.connected.pageobjectsfactory.pageobject.SiteBasePageObject;
 
 import org.openqa.selenium.WebDriver;
@@ -190,13 +190,5 @@ public class LightboxComponentObject extends SiteBasePageObject {
         Log.log("verifyCarouselLeftDisabled", "carousel left button is disabled", true);
     }
 
-    public void verifyVideoAutoplay(String providerName) {
-        VideoComponentObject video = new VideoComponentObject(driver, videoContainer);
-        video.verifyVideoAutoplay(providerName, true);
-    }
-
-    public VideoComponentObject getVideoPlayer() {
-        return new VideoComponentObject(driver, videoContainer, VIDEO_WIDTH_LIGHTBOX);
-    }
 
 }

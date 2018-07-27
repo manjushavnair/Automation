@@ -3,7 +3,6 @@ package com.automation.ui.base.pageobjectsfactory.pageobject.auth.register;
 import com.automation.ui.base.common.constants.SiteConstants;
 import com.automation.ui.base.common.core.helpers.SignUpUser;
 import com.automation.ui.base.pageobjectsfactory.pageobject.auth.DetachedWindow;
-import com.automation.ui.connected.pageobjectsfactory.componentobject.modalwindows.FacebookSignupModalComponentObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.auth.register.AttachedRegisterPage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.auth.signin.DetachedSignInPage;
 
@@ -111,10 +110,6 @@ public class DetachedRegisterPage extends DetachedWindow implements RegisterPage
         return registerPage.fillForm(user);
     }
 
-    public FacebookSignupModalComponentObject clickFacebookSignUp() {
-        gainFocus();
-        return registerPage.clickFacebookSignUp();
-    }
 
     public boolean isConnectWithFacebookButtonVisible() {
         gainFocus();

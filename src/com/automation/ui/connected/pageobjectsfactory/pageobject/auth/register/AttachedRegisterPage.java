@@ -4,7 +4,6 @@ import com.automation.ui.base.common.contentpatterns.URLsContent;
 import com.automation.ui.base.common.core.helpers.SignUpUser;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import com.automation.ui.base.pageobjectsfactory.pageobject.auth.register.RegisterPage;
-import com.automation.ui.connected.pageobjectsfactory.componentobject.modalwindows.FacebookSignupModalComponentObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.auth.AuthPageContext;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.auth.FormError;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.auth.signin.AttachedSignInPage;
@@ -140,9 +139,7 @@ public class AttachedRegisterPage extends BasePageObject implements RegisterPage
         return new FormError().getError();
     }
 
-    public FacebookSignupModalComponentObject clickFacebookSignUp() {
-        return authContext.clickFacebookSignUp();
-    }
+
 
     public boolean isConnectWithFacebookButtonVisible() {
         return authContext.isConnectWithFacebookButtonVisible();
