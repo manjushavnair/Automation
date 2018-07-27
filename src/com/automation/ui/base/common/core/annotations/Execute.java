@@ -13,7 +13,7 @@ public @interface Execute {
 
     User asUser() default User.ANONYMOUS;
 
-    String onWikia() default "";
+    String onSite() default "";
 
     String disableFlash() default "";
 

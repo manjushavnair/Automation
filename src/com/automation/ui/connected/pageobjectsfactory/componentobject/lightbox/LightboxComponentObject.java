@@ -21,11 +21,7 @@ public class LightboxComponentObject extends SiteBasePageObject {
     private WebElement lightBoxModal;
     @FindBy(css = "span.pin")
     private WebElement pinButton;
-    @FindBy(css = ".WikiaLightbox .share")
-    private WebElement shareScreen;
-    @FindBy(css = ".WikiaLightbox a.share-button.secondary")
-    private WebElement shareButton;
-    @FindBy(css = "div.hero-inner img")
+      @FindBy(css = "div.hero-inner img")
     private WebElement moreInfoThumbnail;
     @FindBy(css = "a.facebook")
     private WebElement facebookShareLink;
@@ -105,14 +101,14 @@ public class LightboxComponentObject extends SiteBasePageObject {
         Log.log("clickPinButton", "pin button was clicked", true);
     }
 
-    public void clickShareButton() {
+   /* public void clickShareButton() {
         //NEEDTOCHECK
         wait.forElementVisibleW(shareButton);
         shareButton.click();
         //NEEDTOCHECK
         wait.forElementVisibleW(moreInfoThumbnail);
         Log.log("clickShareButton", "share button is clicked", true);
-    }
+    }*/
 
     public void clickCloseShareScreenButton() {
         //NEEDTOCHECK
@@ -122,10 +118,10 @@ public class LightboxComponentObject extends SiteBasePageObject {
                 .log("clickCloseShareScreenButton", "close share screen button was clicked", true);
     }
 
-    public void verifyShareScreenClosed() {
+  /*  public void verifyShareScreenClosed() {
         waitForElementNotVisibleByElement(shareScreen);
         Log.log("verifyShareScreenClosed", "share screen is closed", true);
-    }
+    }*/
 
     public void verifyLightboxClosed() {
         waitForElementNotVisibleByElement(lightBoxModal);

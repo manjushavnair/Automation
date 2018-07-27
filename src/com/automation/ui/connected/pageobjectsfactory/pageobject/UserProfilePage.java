@@ -17,9 +17,7 @@ public class UserProfilePage extends SiteBasePageObject {
     private WebElement blogTab;
     @FindBy(css = "a[data-id='createblogpost']")
     private WebElement createBlogPostButton;
-    @FindBy(css = ".WikiaBlogListingPost h2>a")
-    private List<WebElement> blogPostList;
-    @FindBy(css = ".masthead-avatar")
+     @FindBy(css = ".masthead-avatar")
     private WebElement avatarWrapper;
     @FindBy(css = "#userAvatarEdit")
     private WebElement avatarEditButton;
@@ -56,28 +54,6 @@ public class UserProfilePage extends SiteBasePageObject {
         Log.log("clickOnBlogTab", "Click on blog tab", true);
     }
 
- /* public BlogPage openBlogPage(int blogNumber) {
-    String blogURL = blogPostList.get(blogNumber).getAttribute("href");
-    getUrl(blogURL);
-    Log.log("openBlogPage", "blog post " + blogURL + " opened", true);
-    return new BlogPage();
-  }
-
-  public BlogPage openFirstPost() {
-    for (int i = 0; i < blogPostList.size(); i++) {
-      BlogPage blogPage = openBlogPage(i);
-      String pageContent = blogPage.getAtricleTextRaw().toLowerCase();
-      if (!(pageContent.contains("deleted") || pageContent.contains("redirected"))) {
-        Log.log("openFirstPost", "valid post found on " + i + " position", true);
-        break;
-      }
-      Log.log("openFirstPost",
-          "deleted post found on " + i + " position, trying next one", true);
-      driver.navigate().back();
-    }
-    return new BlogPage();
-  }
-  */
 
 
 

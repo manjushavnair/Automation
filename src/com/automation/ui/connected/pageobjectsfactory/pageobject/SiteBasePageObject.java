@@ -87,16 +87,12 @@ public class SiteBasePageObject extends BasePageObject {
     protected WebElement navigationBar;
     @FindBy(css = "#globalNavigation")
     protected WebElement newGlobalNavigation;
-    protected By editButtonBy = By.cssSelector("#WikiaMainContent a[data-id='edit']");
-    protected By parentBy = By.xpath("./..");
-    protected String modalWrapper = "#WikiaConfirm";
-    @FindBy(css = ".banner-notifications-placeholder,.smart-banner")
+     protected By parentBy = By.xpath("./..");
+     @FindBy(css = ".banner-notifications-placeholder,.smart-banner")
     private WebElement bannerNotificationContainer;
     @FindBys(@FindBy(css = ".wds-banner-notification"))
     private List<WebElement> notificationElements;
-    @FindBy(css = "#WikiaArticle a[href*='Special:UserLogin']")
-    private WebElement specialUserLoginLink;
-    @FindBy(css = ".wds-dropdown__toggle .wds-avatar")
+      @FindBy(css = ".wds-dropdown__toggle .wds-avatar")
     private WebElement globalNavigationAvatar;
     @FindBy(className = WDS_FOOTER_HEADER_CLASS)
     private WebElement footer;
@@ -362,12 +358,6 @@ public class SiteBasePageObject extends BasePageObject {
         return getNotifications(type).stream().anyMatch(n -> n.getMessage().contains(message));
     }
 
-    public void clickLoginOnSpecialPage() {
-        //NEEDTOCHECK
-        wait.forElementVisibleW(specialUserLoginLink);
-        Log.log("Element found", "Link to login special page present", true);
-        scrollAndClick(specialUserLoginLink);
-    }
 
 
 
@@ -428,28 +418,6 @@ public class SiteBasePageObject extends BasePageObject {
         return new SiteHistoryPageObject();
     }
 
-    public String getArticleName() {
-        return (String) jsActions.execute(WikiaGlobalVariables.WG_PAGE_NAME);
-    }
-
-    public void verifyArticleNameInWgPageName(String targetText) {
-        Assertion.assertStringContains(targetText, getArticleName());
-        Log.log("verifyArticleNameInWgPageName",
-                "The wgPageName variable contains article name" + targetText, true);
-    }
-
-    public void verifyNumberOfTop1kWikisInRange(Range expectedRange) {
-        //NEEDTOCHECK
-        wait.forElementVisibleW(headerWhereIsMyExtensionPage);
-        Log.log("verifyNumberOfTop1kWikisInRange", "Verification of top 1k wikis", true, driver);
-        Pattern p = Pattern.compile("\\d+");
-        Matcher m = p.matcher(headerWhereIsMyExtensionPage.getText());
-        m.find();
-        Assertion.assertTrue(
-                expectedRange.contains(Integer.parseInt(m.group())),
-                String.format("Number of Top 1k Wikis between %s and %s", expectedRange.getMinimum(), expectedRange.getMaximum())
-        );
-    }
 
 
     public void verifyRevisionMarkedAsMinor() {

@@ -7,7 +7,6 @@ public class URLsContent {
     // Common url component
     //CONTEXT
     public static final String SITE_DIR = "/";
-//  public static final String WIKI_DIR = "Wikia";
 
     // Special Urls - links to special pages
     public static final String USER_LOGIN = "/signin";
@@ -54,8 +53,7 @@ public class URLsContent {
     public static final String SPECIAL_INFOBOX_BUILDER = "Special:InfoboxBuilder";
     public static final String SPECIAL_WIKI_FEATURES = "Special:WikiFeatures/";
     public static final String COMMUNITY_CENTRAL = "Community_Central";
-    public static final String FANDOM_UNIVERSITY = "Fandom_University";
-    public static final String NOT_A_VALID_COMMUNITY = "Community_Central:Not_a_valid_community";
+     public static final String NOT_A_VALID_COMMUNITY = "Community_Central:Not_a_valid_community";
     public static final String SPECIAL_ANONYMIZATION = "Special:RequestToBeForgottenInternal";
 
 

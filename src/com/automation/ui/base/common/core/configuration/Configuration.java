@@ -134,6 +134,11 @@ public class Configuration {
         return getProp("mobileSiteVersion");
     }
 
+
+   public static String getJiraURL() {
+        return getProp("jiraURL");
+    }
+
     public static String getCredentialsFilePath() {
         return Paths.get(getProp("seleniumConfigPath"), SELENIUM_CONFIG_REPO_CONFIG_FILE_NAME)
                 .toString();

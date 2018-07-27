@@ -14,8 +14,8 @@ public class DropDownComponentObject extends SiteBasePageObject {
 
     private static final String LOGIN_DROPDOWN_TRIGGER_CSS = "#AccountNavigation";
 
-    @FindBy(id = "exploreWikiaDropdown")
-    private WebElement exploreWikiaDropdown;
+    @FindBy(id = "exploreSiteDropdown")
+    private WebElement exploreSiteDropdown;
 
     public DropDownComponentObject(WebDriver driver) {
         super();
@@ -61,7 +61,7 @@ public class DropDownComponentObject extends SiteBasePageObject {
         return this;
     }
 
-    public List<WebElement> getAllLinksInExploreWikiaDropdown() {
-        return exploreWikiaDropdown.findElements(By.cssSelector("a"));
+    public List<WebElement> getAllLinksInExploreSiteDropdown() {
+        return exploreSiteDropdown.findElements(By.cssSelector("a"));
     }
 }

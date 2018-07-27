@@ -134,7 +134,7 @@ public abstract class CoreTestTemplate {
 
     private void setPropertiesFromAnnotationsOnDeclaringClass(Class<?> declaringClass) {
         if (declaringClass.isAnnotationPresent(Execute.class)) {
-            setTestProperty("siteName", declaringClass.getAnnotation(Execute.class).onWikia());
+            setTestProperty("siteName", declaringClass.getAnnotation(Execute.class).onSite());
             setTestProperty("language", declaringClass.getAnnotation(Execute.class).language());
             setTestProperty("disableFlash", declaringClass.getAnnotation(Execute.class).disableFlash());
             setTestProperty("mockAds", declaringClass.getAnnotation(Execute.class).mockAds());
@@ -150,7 +150,7 @@ public abstract class CoreTestTemplate {
 
     private void setPropertiesFromAnnotationsOnMethod(Method method) {
         if (method.isAnnotationPresent(Execute.class)) {
-            setTestProperty("siteName", method.getAnnotation(Execute.class).onWikia());
+            setTestProperty("siteName", method.getAnnotation(Execute.class).onSite());
             setTestProperty("language", method.getAnnotation(Execute.class).language());
             setTestProperty("disableFlash", method.getAnnotation(Execute.class).disableFlash());
             setTestProperty("mockAds", method.getAnnotation(Execute.class).mockAds());

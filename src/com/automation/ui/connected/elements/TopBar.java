@@ -17,7 +17,7 @@ public class TopBar extends BasePageObject {
     private WebElement navBar;
 
     @FindBy(css = ".wds-global-navigation__logo-image")
-    private WebElement logoFandom;
+    private WebElement logoSite;
 
     @FindBy(css = ".wds-global-navigation__modal-control-search")
     private WebElement searchIcon;
@@ -60,9 +60,9 @@ public class TopBar extends BasePageObject {
 
 
 
-    public void clickFandomLogo() {
-        Log.info("Click Wikia logoFandom");
-        wait.forElementClickable(logoFandom).click();
+    public void clickSiteLogo() {
+        Log.info("Click Site logoSite");
+        wait.forElementClickable(logoSite).click();
     }
 
 
@@ -77,7 +77,7 @@ public class TopBar extends BasePageObject {
 
     public boolean isLogoVisible() {
         try {
-            return logoFandom.isDisplayed();
+            return logoSite.isDisplayed();
         } catch (NoSuchElementException e) {
             Log.info(e.getMessage());
             return false;

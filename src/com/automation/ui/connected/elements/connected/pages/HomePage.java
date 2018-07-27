@@ -1,8 +1,8 @@
 package com.automation.ui.connected.elements.connected.pages;
 
-import com.automation.ui.connected.elements.connected.FandomPage;
+import com.automation.ui.connected.elements.connected.SitePage;
 
-public class HomePage extends FandomPage<HomePage> {
+public class HomePage extends SitePage<HomePage> {
 
 
 

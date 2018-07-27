@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 
 public class ImageHelper {
 
-    private static final String START_TOKEN = "Wikia-Visualization-Main%2C";
+    private static final String START_TOKEN = "Site-Visualization-Main%2C";
     private static final String STOP_TOKEN = ".";
 
     private ImageHelper() {

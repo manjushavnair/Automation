@@ -12,7 +12,7 @@ import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.url.UrlBuilder;
 import com.automation.ui.base.common.utils.ExcelUtil;
 import com.automation.ui.connected.common.constants.ExcelCONSTANTS;
-import com.automation.ui.connected.common.core.url.FandomUrlBuilder;
+import com.automation.ui.connected.common.core.url.SiteUrlBuilder;
 import com.automation.ui.connected.common.prpreader.AssertDataReader;
 import com.automation.ui.connected.common.templates.NewTestTemplate;
 import org.apache.log4j.Logger;
@@ -21,8 +21,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import java.util.Locale;
-import java.util.ResourceBundle;
+
 public class ConnectedBaseTest extends NewTestTemplate  {
 
     private static Logger logger = Logger.getLogger(ConnectedBaseTest.class);
@@ -35,7 +34,7 @@ public class ConnectedBaseTest extends NewTestTemplate  {
     }
 
     protected ExcelUtil getExcelUtil() {
-        ExcelUtil eu = null;
+   	     ExcelUtil eu = null;
         try {
             eu = new ExcelUtil();
 
@@ -57,7 +56,7 @@ public class ConnectedBaseTest extends NewTestTemplate  {
 
 
         urlBuilder = UrlBuilder.createUrlBuilder();
-        fandomUrlBuilder = new FandomUrlBuilder();
+        siteUrlBuilder = new SiteUrlBuilder();
         siteURL = urlBuilder.getUrl();
         siteCorporateURL = urlBuilder.getSiteGlobalURL();
         logger.info("prepareURLs siteCorporateURL : " + siteCorporateURL);

@@ -243,7 +243,7 @@ public class Log {
         String description;
         if (testMethod.isAnnotationPresent(RelatedIssue.class)) {
             String issueID = testMethod.getAnnotation(RelatedIssue.class).issueID();
-            String jiraPath = "https://wikia-inc.atlassian.net/browse/";
+            String jiraPath = Configuration.getJiraURL();
             String jiraUrl = jiraPath + issueID;
             String jiraLink = VelocityWrapper.fillLink(jiraUrl, issueID);
             command = "Known failure";
@@ -344,20 +344,7 @@ public class Log {
                             );
                 }
             }
-     /* Pattern pt = Pattern.compile("\\d{2,}");
 
-      String mercuryAdsJsValue = mercuryScriptVersion.getAttribute("src");
-
-      Matcher matcher = pt.matcher(mercuryAdsJsValue);
-      if (matcher.find()) {
-        mercuryAdsJsValue = matcher.group(0);
-      } else {
-        throw new WebDriverException("Missing mercury param in query string");
-      }
-      Log
-          .info("Mercury Ads Version: " + mercuryAdsJsValue
-          );
-          */
         }
 
         if (Configuration.getMobileSiteVersion() != null) {

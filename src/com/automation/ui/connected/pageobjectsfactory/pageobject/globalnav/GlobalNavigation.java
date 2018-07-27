@@ -22,7 +22,7 @@ public class GlobalNavigation extends BasePageObject {
     private WebElement searchSubmitButton;
 
     @FindBy(css = ".wds-global-navigation__logo")
-    private WebElement fandomLogo;
+    private WebElement siteLogo;
 
     @FindBy(css = ".wds-global-navigation__user-menu.wds-global-navigation__user-logged-in")
     private WebElement userAvatar;
@@ -84,9 +84,9 @@ public class GlobalNavigation extends BasePageObject {
     @Getter
     private NotificationsDropdown notificationsDropdown = new NotificationsDropdown();
 
-    public HomePage clickFandomLogo() {
-        wait.forElementClickable(fandomLogo).click();
-        Log.log("clickFandomLogo", "clicked on connected logo in global nav bar", true);
+    public HomePage clickSiteLogo() {
+        wait.forElementClickable(siteLogo).click();
+        Log.log("clickSiteLogo", "clicked on connected logo in global nav bar", true);
 
         return new HomePage();
     }
@@ -155,8 +155,8 @@ public class GlobalNavigation extends BasePageObject {
         viewProfile.click();
     }
 
-    public boolean isFandomLogoVisible() {
-        return isElementDisplayed(fandomLogo, 3);
+    public boolean isSiteLogoVisible() {
+        return isElementDisplayed(siteLogo, 3);
     }
 
     public boolean isUserLoggedOut() {
