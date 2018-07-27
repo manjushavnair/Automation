@@ -1,4 +1,4 @@
-package com.automation.ui.connected.common.utils;
+package com.automation.ui.connected.testcases.home;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

@@ -1,7 +1,6 @@
 package com.automation.ui.connected.common.dataprovider.mobile;
 
 import com.automation.ui.base.common.core.url.Page;
-import com.automation.ui.connected.common.contentpatterns.AdsContent;
 import com.google.common.collect.ImmutableMap;
 import org.openqa.selenium.Dimension;
 import org.testng.annotations.DataProvider;
@@ -361,37 +360,9 @@ public class MobileAdsDataProvider {
         };
     }
 
-    @DataProvider
-    public static Object[][] providersChainMercury() {
-        return new Object[][]{
-                {
-                        "project43",
-                        "SyntheticTests/ProvidersChain",
-                        AdsContent.MOBILE_TOP_LB,
-                        "DirectGptMobile"
-                }
-        };
-    }
 
-    @DataProvider
-    public static Object[][] disableGptMercury() {
-        return new Object[][]{
-                {
-                        "project43",
-                        "SyntheticTests/ProvidersChain",
-                        "InstantGlobals.wgAdDriverEvolve2Countries=[]",
-                        AdsContent.MOBILE_TOP_LB,
-                        ""
-                },
-                {
-                        "project43",
-                        "SyntheticTests/ProvidersChain",
-                        "InstantGlobals.wgAdDriverEvolve2Countries=[XX]",
-                        AdsContent.MOBILE_TOP_LB,
-                        "Evolve2"
-                },
-        };
-    }
+
+
 
     @DataProvider
     public static Object[][] testAdsHopPostMessage() {
@@ -402,100 +373,5 @@ public class MobileAdsDataProvider {
         };
     }
 
-    @DataProvider
-    public static Object[][] adsSlotSizeMercury() {
-        return new Object[][]{
-                {
-                        new Page("project43", "SyntheticTests/MobileLeaderboard"),
-                        "",
-                        ImmutableMap.<String, Object>builder()
-                                .put("slotName", AdsContent.MOBILE_TOP_LB)
-                                .put("slotSize", new Dimension(320, 100))
-                                .put("lineItemId", 272132532)
-                                .build()
-                },
-                {
-                        new Page("project43", "SyntheticTests/Slots/Size/320x50"),
-                        "",
-                        ImmutableMap.<String, Object>builder()
-                                .put("slotName", AdsContent.MOBILE_TOP_LB)
-                                .put("slotSize", new Dimension(320, 50))
-                                .put("lineItemId", 257602332)
-                                .build()
-                },
-                {
-                        new Page("project43", "SyntheticTests/Slots/Size/320x50"),
-                        "",
-                        ImmutableMap.<String, Object>builder()
-                                .put("slotName", AdsContent.MOBILE_AD_IN_CONTENT)
-                                .put("slotSize", new Dimension(320, 50))
-                                .put("lineItemId", 257602332)
-                                .build()
-                },
-                {
-                        new Page("project43", "SyntheticTests/Slots/Size/320x50"),
-                        "",
-                        ImmutableMap.<String, Object>builder()
-                                .put("slotName", AdsContent.MOBILE_BOTTOM_LB)
-                                .put("slotSize", new Dimension(320, 50))
-                                .put("lineItemId", 257602332)
-                                .build()
-                },
-                {
-                        new Page("project43", "SyntheticTests/Slots/Size/300x50"),
-                        "",
-                        ImmutableMap.<String, Object>builder()
-                                .put("slotName", AdsContent.MOBILE_TOP_LB)
-                                .put("slotSize", new Dimension(300, 50))
-                                .put("lineItemId", 257597172)
-                                .build()
-                },
-                {
-                        new Page("project43", "SyntheticTests/Slots/Size/300x50"),
-                        "",
-                        ImmutableMap.<String, Object>builder()
-                                .put("slotName", AdsContent.MOBILE_AD_IN_CONTENT)
-                                .put("slotSize", new Dimension(300, 50))
-                                .put("lineItemId", 257597172)
-                                .build()
-                },
-                {
-                        new Page("project43", "SyntheticTests/Slots/Size/300x50"),
-                        "",
-                        ImmutableMap.<String, Object>builder()
-                                .put("slotName", AdsContent.MOBILE_BOTTOM_LB)
-                                .put("slotSize", new Dimension(300, 50))
-                                .put("lineItemId", 257597172)
-                                .build()
-                }
-        };
-    }
 
-    @DataProvider
-    public static Object[][] adsVuapClickToPlayMobile() {
-        return new Object[][]{
-                {
-                        new Page(WIKI_SPECIAL, "SyntheticTests/VUAP/ClickToPlay/BlueAd" + PORVATA_OVERRIDE_VAST_QUERY_STRING),
-                        AdsContent.MOBILE_TOP_LB
-                },
-                {
-                        new Page(WIKI_SPECIAL, "SyntheticTests/VUAP/ClickToPlay/BlueAd" + PORVATA_OVERRIDE_VAST_QUERY_STRING),
-                        AdsContent.MOBILE_BOTTOM_LB
-                }
-        };
-    }
-
-    @DataProvider
-    public static Object[][] adsVuapMobile() {
-        return new Object[][]{
-                {
-                        new Page(WIKI_SPECIAL, "SyntheticTests/VUAP/ResolvedState/BlueAd" + PORVATA_OVERRIDE_VAST_QUERY_STRING),
-                        AdsContent.MOBILE_TOP_LB
-                },
-                {
-                        new Page(WIKI_SPECIAL, "SyntheticTests/VUAP/ResolvedState/BlueAd" + PORVATA_OVERRIDE_VAST_QUERY_STRING),
-                        AdsContent.MOBILE_BOTTOM_LB
-                }
-        };
-    }
 }
