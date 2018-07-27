@@ -4,7 +4,7 @@ import com.automation.ui.base.common.contentpatterns.URLsContent;
 import com.automation.ui.base.common.core.AlertHandler;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.connected.pageobjectsfactory.componentobject.editprofile.AvatarComponentObject;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.special.SpecialCreatePage;
+
 import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -80,15 +80,7 @@ public class UserProfilePage extends SiteBasePageObject {
   }
   */
 
-    public SpecialCreatePage clickOnCreateBlogPost() {
-        //NEEDTOCHECK
-        wait.forElementVisibleW(createBlogPostButton);
-        wait.forElementClickable(createBlogPostButton);
-        scrollAndClick(createBlogPostButton);
-        Log.log("clickOnCreateBlogPost", "Click on create blog post button", true,
-                driver);
-        return new SpecialCreatePage();
-    }
+
 
     private void showAvatarControls() {
         setDisplayStyle(".avatar-controls", "block");

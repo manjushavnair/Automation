@@ -1,6 +1,6 @@
 package com.automation.ui.connected.pageobjectsfactory.componentobject.rte;
 
-import com.automation.ui.connected.elements.mercury.pages.InfoboxBuilderPage;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -46,16 +46,5 @@ public class InfoboxChoiceModal {
         return new TemplateConfigurationModal(webDriver);
     }
 
-    /**
-     * Create a new infobox using the infobox builder flow.
-     *
-     * @return wrapper object for infobox builder modal
-     */
-    public InfoboxBuilderPage clickCreateNewInfoboxButton() {
-        // to make Selenium do thy bidding, you need to ask it twice
-        actions.click(createNewInfoboxButton).perform();
-        actions.click(createNewInfoboxButton).perform();
 
-        return new InfoboxBuilderPage();
-    }
 }

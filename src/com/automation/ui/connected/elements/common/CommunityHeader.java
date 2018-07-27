@@ -6,8 +6,7 @@ import com.automation.ui.connected.elements.oasis.components.globalshortcuts.Act
 import com.automation.ui.connected.pageobjectsfactory.componentobject.modalwindows.AddMediaModalComponentObject;
 import com.automation.ui.connected.pageobjectsfactory.componentobject.modalwindows.CreateArticleModalComponentObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.UserProfilePage;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.special.SpecialAdminDashboardPageObject;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.special.SpecialSiteActivityPageObject;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -89,21 +88,6 @@ public class CommunityHeader extends BasePageObject {
         return new CreateArticleModalComponentObject(this.driver);
     }
 
-    public SpecialSiteActivityPageObject clickWikiActivity() {
-        wait.forElementClickable(wikiActivityButton).click();
-
-        Log.info("clicked Wiki Activity Button");
-
-        return new SpecialSiteActivityPageObject();
-    }
-
-    public SpecialAdminDashboardPageObject clickAdminDashboard() {
-        wait.forElementClickable(adminDashboardButton).click();
-
-        Log.info("clicked admin dashboard Button");
-
-        return new SpecialAdminDashboardPageObject();
-    }
 
     public UserProfilePage clickUserAvatar(int index) {
         wait.forElementClickable(avatars.get(index)).click();
@@ -125,14 +109,7 @@ public class CommunityHeader extends BasePageObject {
         return this;
     }
 
-    public SpecialSiteActivityPageObject clickExploreWikiActivityLink() {
-        wait.forElementClickable(exploreWikiActivityLink);
-        scrollAndClick(exploreWikiActivityLink);
 
-        Log.info("explore -> wikiActivity link clicked");
-
-        return new SpecialSiteActivityPageObject();
-    }
 
 
     public void clickExploreCommunityLink() {

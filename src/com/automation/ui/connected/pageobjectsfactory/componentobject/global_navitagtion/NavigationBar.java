@@ -6,8 +6,7 @@ import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.SiteBasePageObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.auth.register.AttachedRegisterPage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.auth.signin.AttachedSignInPage;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.search.intrawikisearch.IntraSiteSearchPageObject;
-import org.openqa.selenium.By;
+ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -68,18 +67,7 @@ public class NavigationBar extends SiteBasePageObject {
         Log.log("typeQuery", "typed query: " + query, true);
     }
 
-    public IntraSiteSearchPageObject searchFor(String query) {
-        Log.log("searchFor", "searching for query: " + query, true, driver);
-        typeQuery(query);
-        return clickSearchButton();
-    }
 
-    public IntraSiteSearchPageObject clickSearchButton() {
-        wait.forElementClickable(searchSubmit);
-        searchSubmit.click();
-        Log.log("clickSearchButton", "clicked on search button", true);
-        return new IntraSiteSearchPageObject(driver);
-    }
 
 
     public AttachedSignInPage clickOnSignIn() {

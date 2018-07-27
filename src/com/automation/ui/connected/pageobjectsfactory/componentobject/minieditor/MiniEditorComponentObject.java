@@ -89,7 +89,7 @@ public class MiniEditorComponentObject extends SiteBasePageObject {
         VetOptionsComponentObject
                 vetOptions =
                 vetAddingVideo.addVideoByUrl(VideoContent.YOUTUBE_VIDEO_URL);
-        vetOptions.submit();
+
         verifyVideoMiniEditor();
     }
 

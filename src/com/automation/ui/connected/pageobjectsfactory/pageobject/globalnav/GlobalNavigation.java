@@ -3,7 +3,7 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.globalnav;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.HomePage;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.SearchPageObject;
+
 import com.automation.ui.connected.pageobjectsfactory.pageobject.notifications.NotificationsDropdown;
 import lombok.Getter;
 import org.openqa.selenium.By;
@@ -133,15 +133,6 @@ public class GlobalNavigation extends BasePageObject {
         return new HomePage();
     }
 
-    public SearchPageObject search(String query) {
-        wait.forElementClickable(searchButton);
-        searchButton.click();
-        searchInput.sendKeys(query);
-        searchSubmitButton.submit();
-
-        Log.info("search query typed and submitted");
-        return new SearchPageObject(driver);
-    }
 
     public GlobalNavigation clickUserAvatar() {
         wait.forElementClickable(userAvatar).click();

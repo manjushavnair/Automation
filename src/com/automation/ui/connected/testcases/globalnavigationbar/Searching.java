@@ -7,7 +7,7 @@ import com.automation.ui.base.common.core.helpers.User;
 import com.automation.ui.base.common.core.url.UrlBuilder;
 import com.automation.ui.connected.common.templates.NewTestTemplate;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.HomePage;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.SearchPageObject;
+
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -23,36 +23,7 @@ public class Searching extends NewTestTemplate {
         };
     }
 
-    @Test(groups = {"serachGlobalNavigationBarAsAnon"},
-            dataProvider = "getDataForGlobalSearch"
-    )
-    public void searchGlobalNavigationBarAsAnon(
-            String wikiName, String wikiLanguage, String query, String expectedSpecialPage
-    ) {
-        HomePage homePage = new HomePage();
-        homePage.getUrl(UrlBuilder.createUrlBuilderForSiteAndLang(wikiName, wikiLanguage).getUrl());
-        SearchPageObject search = homePage.getGlobalNavigation()
-                .search(query);
 
-        Assertion.assertStringContains(driver.getCurrentUrl(), expectedSpecialPage);
-        Assertion.assertTrue(search.isResultPresent());
-    }
 
-    @Test(
-            groups = {"serachGlobalNavigationBarAsLoggedIn"},
-            dataProvider = "getDataForGlobalSearch"
-    )
-    @Execute(asUser = User.USER)
-    public void searchGlobalNavigationBarAsLoggedIn(
-            String wikiName, String wikiLanguage, String query, String expectedSpecialPage
-    ) {
-        HomePage homePage = new HomePage();
-        homePage.getUrl(UrlBuilder.createUrlBuilderForSiteAndLang(wikiName, wikiLanguage).getUrl());
-        SearchPageObject search = homePage.getGlobalNavigation()
-                .search(query);
-
-        Assertion.assertStringContains(driver.getCurrentUrl(), expectedSpecialPage);
-        Assertion.assertTrue(search.isResultPresent());
-    }
 
 }

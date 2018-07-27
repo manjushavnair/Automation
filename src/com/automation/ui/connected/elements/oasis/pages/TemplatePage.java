@@ -5,7 +5,7 @@ import com.automation.ui.connected.elements.oasis.components.templateclassificia
 import com.automation.ui.connected.elements.oasis.components.templatecontent.TemplateContent;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.PortableInfobox;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.SiteBasePageObject;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.article.editmode.SourceEditModePageObject;
+
 import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -51,10 +51,7 @@ public class TemplatePage extends SiteBasePageObject {
         return body.getText();
     }
 
-    public SourceEditModePageObject editArticleInSrcUsingDropdown() {
-        editUsingClassicEditor.click();
-        return new SourceEditModePageObject();
-    }
+
 
     public TemplatePage openArticleByName(String wikiURL, String articleName) {
         getUrl(wikiURL + URLsContent.SITE_DIR + articleName);

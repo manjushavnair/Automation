@@ -1,7 +1,7 @@
 package com.automation.ui.connected.elements.oasis.components.notifications;
 
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.special.SpecialRestorePageObject;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,11 +34,7 @@ public class Notification extends BasePageObject {
         return classArray[classArray.length - 1];
     }
 
-    public SpecialRestorePageObject undelete() {
-        WebElement undeleteLink = wait.forElementVisible(undeleteLinkBy);
-        undeleteLink.click();
-        return new SpecialRestorePageObject(driver);
-    }
+
 
     public boolean isVisible() {
         return parentElement.isDisplayed();

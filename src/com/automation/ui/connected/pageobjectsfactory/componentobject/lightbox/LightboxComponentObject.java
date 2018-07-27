@@ -3,7 +3,7 @@ package com.automation.ui.connected.pageobjectsfactory.componentobject.lightbox;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.connected.pageobjectsfactory.componentobject.media.VideoComponentObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.SiteBasePageObject;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.special.filepage.FilePage;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -168,14 +168,7 @@ public class LightboxComponentObject extends SiteBasePageObject {
         Log.log("clickPlusOneShareButton", "plus one share button is clicked", true);
     }
 
-    public FilePage clickTitle() {
-        new Actions(driver).moveToElement(titleLink).perform();
-        //NEEDTOCHECK
-        wait.forElementVisibleW(titleLink);
-        titleLink.click();
-        Log.log("clickTitleUrl", "Title url is clicked", true);
-        return new FilePage();
-    }
+
 
     public void clickCarouselRight() {
         //NEEDTOCHECK

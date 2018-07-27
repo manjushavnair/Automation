@@ -4,8 +4,7 @@ import com.automation.ui.base.common.core.Assertion;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import com.automation.ui.connected.elements.mercury.pages.SearchResultsPage;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.skin.Skin;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.skin.SkinHelper;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -76,18 +75,6 @@ public class Search extends BasePageObject {
         return this;
     }
 
-    public SearchResultsPage clickEnterAndNavigateToSearchResults(Skin fromSkin) {
-        new Actions(driver).sendKeys(Keys.ENTER).perform();
-
-        // Mobile wiki opens the SRP using AJAX, Mercury reloads the page and opens Mobile Wiki
-        if (fromSkin == Skin.MOBILE_WIKI) {
-            waitForPageReload();
-        } else {
-            Assertion.assertTrue(new SkinHelper(driver).isSkin(Skin.MOBILE_WIKI));
-        }
-
-        return new SearchResultsPage();
-    }
 
     public boolean isInputFieldSearchIconVisible() {
         return isElementVisible(inputFieldSearchIcon);

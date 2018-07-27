@@ -3,7 +3,7 @@ package com.automation.ui.connected.pageobjectsfactory.componentobject.vet;
 import com.automation.ui.base.common.core.Assertion;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.connected.pageobjectsfactory.componentobject.modalwindows.AddMediaModalComponentObject;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.wikipage.editmode.SiteArticleEditMode;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -90,14 +90,7 @@ public class VetOptionsComponentObject extends AddMediaModalComponentObject {
         waitForElementNotVisibleByElement(addVideoModal);
     }
 
-    public SiteArticleEditMode submit() {
-        verifyVideoThumbnail();
-        clickAddaVideo();
-        clickRetunToEditing();
-        verifyVideoModalNotVisible();
 
-        return new SiteArticleEditMode();
-    }
 
     public void update() {
         clickAddaVideo();

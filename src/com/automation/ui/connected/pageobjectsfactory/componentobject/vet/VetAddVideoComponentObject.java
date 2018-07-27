@@ -2,7 +2,7 @@ package com.automation.ui.connected.pageobjectsfactory.componentobject.vet;
 
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.SiteBasePageObject;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.wikipage.editmode.SiteArticleEditMode;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -155,12 +155,5 @@ public class VetAddVideoComponentObject extends SiteBasePageObject {
         }
     }
 
-    public SiteArticleEditMode clickCloseButton() {
-        //NEEDTOCHECK
-        wait.forElementVisibleW(closeButton);
-        scrollAndClick(closeButton);
-        Log.log("clickCloseButton", "close button clicked", true);
 
-        return new SiteArticleEditMode();
-    }
 }

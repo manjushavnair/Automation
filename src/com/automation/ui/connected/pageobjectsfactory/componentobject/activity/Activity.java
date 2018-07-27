@@ -2,7 +2,7 @@ package com.automation.ui.connected.pageobjectsfactory.componentobject.activity;
 
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.UserProfilePage;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.diffpage.DiffPagePageObject;
+//import com.automation.ui.connected.pageobjectsfactory.pageobject.diffpage.DiffPagePageObject;
 import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -56,10 +56,11 @@ public class Activity extends BasePageObject {
         return entry.findElement(diffLink);
     }
 
-    public DiffPagePageObject clickOnDiffLink() {
+  /*  public DiffPagePageObject clickOnDiffLink() {
         getDiffLink().click();
         return new DiffPagePageObject();
     }
+    */
 
     public WebElement getWallOwner() {
         return entry.findElement(wallOwner);
