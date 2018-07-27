@@ -112,13 +112,15 @@ public class LoginPage extends BasePageObject {
         try {
             logger.info("Entering  login: ");
             Reporter.log("Entering  login:");
+
+            // savepasswordbutton.click();
+            waitAndClick(savepasswordbutton);
+
             // login_button.click();
             waitAndClick(login_button);
             logger.info("Exiting  login");
             Reporter.log("Exiting  login");
             // wait.forElementVisibleW(savepasswordbutton);
-            // savepasswordbutton.click();
-            waitAndClick(savepasswordbutton);
 
         } catch (Exception e) {
             e.printStackTrace();
