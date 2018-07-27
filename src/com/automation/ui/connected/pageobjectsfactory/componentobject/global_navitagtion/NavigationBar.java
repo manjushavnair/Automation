@@ -4,9 +4,8 @@ import com.automation.ui.base.common.core.Assertion;
 import com.automation.ui.base.common.core.interactions.Typing;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.SiteBasePageObject;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.auth.register.AttachedRegisterPage;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.auth.signin.AttachedSignInPage;
- import org.openqa.selenium.By;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -69,16 +68,4 @@ public class NavigationBar extends SiteBasePageObject {
 
 
 
-
-    public AttachedSignInPage clickOnSignIn() {
-        anonAvatar.click();
-        signInLink.click();
-        return new AttachedSignInPage();
-    }
-
-    public AttachedRegisterPage clickOnRegister() {
-        anonAvatar.click();
-        registerLink.click();
-        return new AttachedRegisterPage();
-    }
 }

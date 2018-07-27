@@ -4,7 +4,6 @@ import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.HomePage;
 
-import com.automation.ui.connected.pageobjectsfactory.pageobject.notifications.NotificationsDropdown;
 import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -81,8 +80,6 @@ public class GlobalNavigation extends BasePageObject {
     @FindBy(css = ".wds-global-navigation__partner-slot-link")
     private WebElement partnerSlotLink;
 
-    @Getter
-    private NotificationsDropdown notificationsDropdown = new NotificationsDropdown();
 
     public HomePage clickSiteLogo() {
         wait.forElementClickable(siteLogo).click();

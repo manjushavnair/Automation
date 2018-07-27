@@ -8,9 +8,9 @@ import com.automation.ui.base.common.core.helpers.User;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import com.automation.ui.connected.elements.*;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.globalnav.*;
 
-import com.automation.ui.connected.pageobjectsfactory.pageobject.globalnav.GlobalNavigation;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.notifications.NotificationsDropdown;
+
 import lombok.Getter;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -39,11 +39,7 @@ public class SiteBasePageObject extends BasePageObject {
     private static final By BANNER_NOTIFICATION = By.cssSelector(".banner-notifications-placeholder div div");
     private static final By RECIRCULATION_PREFOOTER = By.cssSelector(".recirculation-prefooter");
     private static final By RECIRCULATION_PREFOOTER_FULFILLED = By.cssSelector(".recirculation-prefooter.has-items");
-    @Getter(lazy = true)
-    private final GlobalNavigation globalNavigation = new GlobalNavigation();
 
-    @Getter(lazy = true)
-    private final NotificationsDropdown notificationsDropdown = new NotificationsDropdown();
 
     @Getter(lazy = true)
     private final TopBar topBar = new TopBar();
@@ -132,7 +128,7 @@ public class SiteBasePageObject extends BasePageObject {
      */
     public void logOut() {
         try {
-            getGlobalNavigation().clickSignOut();
+           // getGlobalNavigation().clickSignOut();
         } catch (TimeoutException e) {
             Log.log("logOut", "page loads for more than 30 seconds", true);
         }
@@ -150,10 +146,6 @@ public class SiteBasePageObject extends BasePageObject {
         return Integer.parseInt(navigationBar.getAttribute("offsetTop")) + navigationBar.getSize().height;
     }
 
-    public UserProfilePage openProfilePage(String userName, String wikiURL) {
-        getUrl(wikiURL + URLsContent.SITE_DIR + URLsContent.USER_PROFILE.replace("%userName%", userName));
-        return new UserProfilePage();
-    }
 
     public String loginAs(User user) {
         return loginAs(user.getUserName(), user.getPassword(), urlBuilder.getUrl());
