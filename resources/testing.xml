@@ -57,6 +57,9 @@
 
             <methods>
                 <include name="launchHomePage"/>
+                <include name="addConnection"/>
+
+
             </methods>
         </class>
         </classes>
