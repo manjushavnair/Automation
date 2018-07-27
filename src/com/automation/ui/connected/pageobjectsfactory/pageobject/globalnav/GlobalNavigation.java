@@ -86,7 +86,7 @@ public class GlobalNavigation extends BasePageObject {
 
     public HomePage clickFandomLogo() {
         wait.forElementClickable(fandomLogo).click();
-        Log.log("clickFandomLogo", "clicked on fandom logo in global nav bar", true);
+        Log.log("clickFandomLogo", "clicked on connected logo in global nav bar", true);
 
         return new HomePage();
     }

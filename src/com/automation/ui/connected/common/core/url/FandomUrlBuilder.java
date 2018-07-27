@@ -6,7 +6,7 @@ import com.automation.ui.base.common.core.url.BaseUrlBuilder;
 
 public class FandomUrlBuilder extends BaseUrlBuilder {
 
-    private static final String FANDOM_HOSTNAME = "fandom.wikia.com";
+    private static final String FANDOM_HOSTNAME = "connected.wikia.com";
     private static final String ARTICLE_PATH = "articles";
     private static final String TOPICS_PATH = "topics";
 

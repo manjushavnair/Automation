@@ -1,7 +1,7 @@
-package com.uiautomation.ui.test;
+package com.automation.ui.test;
 
-import com.uiautomation.ui.driver.DriverType;
-import com.uiautomation.base.common.utils.TestDataPro;
+import com.automation.ui.driver.DriverType;
+import com.automation.base.common.utils.TestDataPro;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;

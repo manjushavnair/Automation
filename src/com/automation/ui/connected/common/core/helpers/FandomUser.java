@@ -4,7 +4,7 @@ import com.automation.ui.base.common.core.XMLReader;
 import lombok.Getter;
 
 public enum FandomUser {
-    EDITOR("fandom.users.admin.username", "fandom.users.admin.password");
+    EDITOR("connected.users.admin.username", "connected.users.admin.password");
 
     @Getter
     private String username;

@@ -5,7 +5,7 @@
 browser: CHROME # acceptable values: FF, CHROME, GHOST, ANDROID, CHROMEMOBILEMERCURY, HTMLUNIT
 dpr: 1 # Your device's pixel ratio, do not commit your changes
 siteName: clayhut # default testing site
-env: dev-manju # acceptable values: test, prod, preview, sandbox-number dev-name, adeng (for adeng.fandom.site.com)
+env: dev-manju # acceptable values: test, prod, preview, sandbox-number dev-name, adeng (for adeng.connected.site.com)
 seleniumConfigPath: /selenium-config
 qs: null
 disableFlash: true
