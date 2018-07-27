@@ -71,7 +71,7 @@
                 <configuration>
                     <!-- Suite testng xml file to consider for test execution -->
                     <suiteXmlFiles>
-                        <suiteXmlFile>testing.xml</suiteXmlFile>
+                        <suiteXmlFile>resources/testing.xml</suiteXmlFile>
 
                     </suiteXmlFiles>
                 </configuration>
