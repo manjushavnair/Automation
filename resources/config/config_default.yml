@@ -41,4 +41,4 @@ appiumIp: 127.0.0.1:4723 # Appium IP address with port ex. 127.0.0.1:4723 Window
 deviceName: ANDROID # capability for Appium server. For Android it can be any value.
 
 #config jira url
-jiraURL=http://jira.x.com
+jiraURL: http://jira.x.com
