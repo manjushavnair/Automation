@@ -18,19 +18,23 @@ public class PropertyReader extends Properties {
     public static PropertyReader readProperty() {
 
         if (corereader == null) {
-            corereader = new PropertyReader();
-        }
+            synchronized (com.automation.ui.connected.common.prpreader.PropertyReader.class) {
+                if (corereader == null) {
 
-        try {
-            InputStream inStream = new FileInputStream(new File(
-                    TestCONSTANTS.CONFIGPATH));
-            corereader.load(inStream);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+                    corereader = new  PropertyReader();
+                    try {
+                        InputStream inStream = new FileInputStream(new File(
+                                TestCONSTANTS.EXCEPTIONPATH));
+                        corereader.load(inStream);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
 
+                    }
+                }
+            }
         }
 
         return corereader;
