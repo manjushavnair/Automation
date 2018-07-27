@@ -8,7 +8,6 @@ import com.automation.ui.base.common.core.helpers.User;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import com.automation.ui.connected.elements.*;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.globalnav.*;
 
 
 import lombok.Getter;
@@ -30,15 +29,11 @@ public class SiteBasePageObject extends BasePageObject {
     private static final String LOGGED_IN_USER_SELECTOR_OASIS =
             ".wds-global-navigation__user-menu.wds-global-navigation__user-logged-in img, "
                     + ".wds-global-navigation__user-menu.wds-global-navigation__user-logged-in svg";
-    private static final String WDS_FOOTER_HEADER_CLASS = "wds-global-footer__header";
+
     private static final By MERCURY_SKIN = By.cssSelector("#ember-container");
     private static final By MERCURY_NAV_ICON = By.cssSelector(".site-head .site-head-icon-nav");
     private static final String LOGGED_IN_USER_SELECTOR_MERCURY =
             ".wikia-nav__avatar img[alt*=%userName%]";
-    private static final By BANNER_NOTIFICATION_CONTAINER = By.cssSelector(".banner-notifications-placeholder,.smart-banner");
-    private static final By BANNER_NOTIFICATION = By.cssSelector(".banner-notifications-placeholder div div");
-    private static final By RECIRCULATION_PREFOOTER = By.cssSelector(".recirculation-prefooter");
-    private static final By RECIRCULATION_PREFOOTER_FULFILLED = By.cssSelector(".recirculation-prefooter.has-items");
 
 
     @Getter(lazy = true)
@@ -90,8 +85,6 @@ public class SiteBasePageObject extends BasePageObject {
     private List<WebElement> notificationElements;
       @FindBy(css = ".wds-dropdown__toggle .wds-avatar")
     private WebElement globalNavigationAvatar;
-    @FindBy(className = WDS_FOOTER_HEADER_CLASS)
-    private WebElement footer;
     @FindBy(css = ".wds-global-navigation")
     private WebElement globalNavigationBar;
     @FindBy(id = "recirculation-rail")
@@ -134,9 +127,6 @@ public class SiteBasePageObject extends BasePageObject {
         }
     }
 
-    public boolean isBannerNotificationContainerPresent() {
-        return isElementOnPage(BANNER_NOTIFICATION_CONTAINER);
-    }
 
     public int getBannerNotificationsHeight() {
         return bannerNotificationContainer.getSize().getHeight();
@@ -252,14 +242,7 @@ public class SiteBasePageObject extends BasePageObject {
         Log.log("verifyAvatarVisible", "desired avatar is visible on navbar", true);
     }
 
-    public void scrollToFooter() {
-        //NEEDTOCHECK
-        wait.forElementVisibleW(footer);
-        //NEEDTOCHECK
-        jsActions.scrollIntoView(footer);
 
-        Log.log("scrollToFooter", "Scroll to the footer of the page", true);
-    }
 
     protected Boolean isNewGlobalNavPresent() {
         return isElementOnPage(newGlobalNavigation);

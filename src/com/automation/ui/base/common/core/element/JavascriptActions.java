@@ -137,16 +137,7 @@ public class JavascriptActions {
     private int getOffset() {
         SiteBasePageObject sitePage = new SiteBasePageObject();
         int offset = sitePage.getNavigationBarOffsetFromTop();
-        if (sitePage.isBannerNotificationContainerPresent()) {
-            offset += sitePage.getBannerNotificationsHeight();
-        }
 
-  /*  NEEDTOCHECK
-  Search searchComponent = new SearchResultsPage().getSearch();
-    if (searchComponent.isPresent()) {
-      offset += searchComponent.getHeight();
-    }
-    */
 
         return offset;
     }
