@@ -7,10 +7,8 @@ import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.helpers.User;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
-import com.automation.ui.connected.elements.mercury.components.TopBar;
-import com.automation.ui.connected.elements.oasis.components.globalshortcuts.ActionExplorerModal;
-import com.automation.ui.connected.elements.oasis.components.globalshortcuts.KeyboardShortcutsModal;
-import com.automation.ui.connected.elements.oasis.components.wikiabar.WikiaBar;
+import com.automation.ui.connected.elements.*;
+
 import com.automation.ui.connected.pageobjectsfactory.pageobject.globalnav.GlobalNavigation;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.notifications.NotificationsDropdown;
 import lombok.Getter;
@@ -43,14 +41,10 @@ public class SiteBasePageObject extends BasePageObject {
     private static final By RECIRCULATION_PREFOOTER_FULFILLED = By.cssSelector(".recirculation-prefooter.has-items");
     @Getter(lazy = true)
     private final GlobalNavigation globalNavigation = new GlobalNavigation();
-    @Getter(lazy = true)
-    private final WikiaBar wikiaBar = new WikiaBar();
+
     @Getter(lazy = true)
     private final NotificationsDropdown notificationsDropdown = new NotificationsDropdown();
-    @Getter(lazy = true)
-    private final KeyboardShortcutsModal keyboardShortcuts = new KeyboardShortcutsModal();
-    @Getter(lazy = true)
-    private final ActionExplorerModal actionExplorer = new ActionExplorerModal();
+
     @Getter(lazy = true)
     private final TopBar topBar = new TopBar();
     @FindBy(css = "body")
@@ -128,13 +122,7 @@ public class SiteBasePageObject extends BasePageObject {
         return currentURL.substring(0, currentURL.lastIndexOf("/wiki/"));
     }
 
-    public boolean userLoggedInMobile(final String username) {
-        return getTopBar().openNavigation().isUserAvatarVisible(username);
-    }
 
-    public boolean isUserLoggedOutMobile() {
-        return !getTopBar().openNavigation().isUserProfileLinkVisible();
-    }
 
     private void logMercuryUserId() {
         Object scriptOut = driver.executeScript("return window.M && window.M.prop('userId')");

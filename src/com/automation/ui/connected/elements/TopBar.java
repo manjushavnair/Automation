@@ -1,7 +1,8 @@
-package com.automation.ui.connected.elements.mercury.components;
+package com.automation.ui.connected.elements;
 
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
@@ -39,13 +40,7 @@ public class TopBar extends BasePageObject {
     private By navigationComponent = By.cssSelector(".wds-search-modal");
     private By parentBy = By.xpath("./..");
 
-    public Navigation openNavigation() {
-        Log.info("Open navigation");
-        //NEEDTOCHECK
-        wait.forElementVisibleW(navMenu).click();
-        Log.info("Navigation is opened");
-        return new Navigation();
-    }
+
 
     public String typeInDesktopSearchAndSelectSuggestion(String query, int suggestionIndex) {
         //NEEDTOCHECK
@@ -61,25 +56,9 @@ public class TopBar extends BasePageObject {
         return selectedSearchSuggestionText;
     }
 
-    public Search openSearch() {
-        Log.info("Open search");
-        wait.forElementClickable(searchIcon);
-        searchIcon.click();
 
-        Log.info("Search is opened");
-        wait.forElementVisible(navigationComponent);
 
-        return new Search();
-    }
 
-    public Navigation clickCloseButton() {
-        // Clicking on the inner element doesn't always work so we click the parent (<svg>) instead
-
-        wait.forElementClickable(closeButton);
-        closeButton.click();
-
-        return new Navigation();
-    }
 
     public void clickFandomLogo() {
         Log.info("Click Wikia logoFandom");
