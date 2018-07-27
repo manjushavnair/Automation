@@ -36,8 +36,7 @@ public class SiteBasePageObject extends BasePageObject {
             ".wikia-nav__avatar img[alt*=%userName%]";
 
 
-    @Getter(lazy = true)
-    private final TopBar topBar = new TopBar();
+
     @FindBy(css = "body")
     protected WebElement body;
     @FindBy(css = ".page-header__title")
