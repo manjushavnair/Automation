@@ -478,9 +478,11 @@ public class BasePageObject {
 
 
 	public void  fillInputAfterClear(WebElement input, String value) {
-	    input.click();
+
         input.clear();
+
         wait.forElementVisibleW(input).sendKeys(value);
+        input.click();
 	}
 
 
