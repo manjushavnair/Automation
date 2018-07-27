@@ -73,7 +73,7 @@ public class LoginPage extends BasePageObject {
             logger.info("Entering  login: ");
             Reporter.log("Entering  login:");
             fillInputAfterClear(username,userName);
-            login_button.click();
+           // login_button.click();
             logger.info("Exiting  login");
             Reporter.log("Exiting  login");
 
