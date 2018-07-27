@@ -14,7 +14,7 @@
         <listener class-name="org.testng.reporters.EmailableReporter2" />
         <listener class-name="org.testng.reporters.SuiteHTMLReporter" />
         <listener class-name="org.testng.reporters.TestHTMLReporter" />
-        <listener class-name=" com.automation.ui.base.common.testnglisteners.InvokeMethodAdapter"/>
+        <listener class-name="com.automation.ui.base.common.testnglisteners.InvokeMethodAdapter"/>
        <!-- <listener class-name="report.realtime.listener.RealTimeTestResultListener" /> -->
     </listeners>
 
