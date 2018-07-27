@@ -42,4 +42,4 @@ deviceName: ANDROID # capability for Appium server. For Android it can be any va
 
 
 #config jira url
-jiraURL=http://jira.x.com
+jiraURL: http://jira.x.com

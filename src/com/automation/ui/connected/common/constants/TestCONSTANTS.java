@@ -9,7 +9,7 @@ public interface TestCONSTANTS {
     public static String BROWSER_TYPE = "BROWSER_TYPE";
     public static String APPLICATION_URL = "APPLICATION_URL";
     public static String CONFIGPATH = "resources/properties/config.properties";
-    public static String EXCEPTIONPATH = "resources/properties/data/exception.properties";
+    public static String EXCEPTIONPATH = "resources/properties/exception.properties";
     public static String ASSERTPATH = "resources/data/assertdata_en_US.properties";
 
 
