@@ -7,8 +7,6 @@ import com.automation.ui.base.common.core.url.BaseUrlBuilder;
 public class SiteUrlBuilder extends BaseUrlBuilder {
 
     private static final String SITE_HOSTNAME = "sandbox-dev.com";
-    private static final String ARTICLE_PATH = "articles";
-    private static final String TOPICS_PATH = "topics";
 
     public SiteUrlBuilder() {
         super(Configuration.getEnv());
@@ -31,15 +29,11 @@ public class SiteUrlBuilder extends BaseUrlBuilder {
         return addPathToUrl(getSiteUrl(), path);
     }
 
-    public String getUrlForSiteArticlePage(String pageTitle) {
-        return getSiteUrl() + ARTICLE_PATH + "/" + pageTitle;
-    }
 
-    public String getUrlForSiteTopic(String topic) {
-        return getSiteUrl() + TOPICS_PATH + "/" + topic;
-    }
 
-    public String getUrlForSiteVideoPage(String videoPage) {
-        return getSiteUrl() + videoPage;
-    }
+ //   public String getUrlForSiteTopic(String topic) {
+   //     return getSiteUrl() + TOPICS_PATH + "/" + topic;
+   // }
+
+
 }
