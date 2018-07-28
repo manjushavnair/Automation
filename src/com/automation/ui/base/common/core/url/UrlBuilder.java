@@ -7,6 +7,7 @@ import okhttp3.HttpUrl;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriverException;
+import com.automation.ui.base.common.constants.*;
 
 import static com.automation.ui.base.common.core.configuration.Configuration.*;
 
@@ -306,7 +307,7 @@ public class UrlBuilder extends BaseUrlBuilder {
         logger.info("getSiteGlobalName siteName : " + siteName + " this.env :" + this.env);
         if (siteName.endsWith(".wikia")) {
 
-            logger.info("getSiteGlobalName step 1 : " + siteName + " this.env :" + this.env);
+            logger.info("getSiteGlobalName OLD SITE : " + siteName + " this.env :" + this.env);
             if (getEnvType(this.env) == EnvType.DEV) {
                 return "wikiaglobal";
             } else {
@@ -315,7 +316,7 @@ public class UrlBuilder extends BaseUrlBuilder {
                 return siteName.replace(".wikia", "");
             }
         } else {
-            logger.info("getSiteGlobalName step 3 : " + siteName + " this.env :" + this.env);
+            logger.info("getSiteGlobalName SITE : " + siteName + " this.env :" + this.env);
 
             return siteName;
         }

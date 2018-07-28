@@ -49,10 +49,10 @@ public class FirefoxBrowser extends BrowserAbstract {
         if ("WINDOWS 8".equalsIgnoreCase(System.getProperty("os.name"))) {
             System.setProperty("webdriver.gecko.driver", "c:" + File.separator + "Program Files (x86)"
                     + File.separator + "Mozilla Firefox" + File.separator + "Firefox.exe");
-//webdriver.gecko.driver
-            //webdriver.firefox.bin
+					//webdriver.gecko.driver
+					//webdriver.firefox.bin
 
-            // System.setProperty("webdriver.firefox.marionette", System.getProperty("user.dir") + "path");
+					// System.setProperty("webdriver.firefox.marionette", System.getProperty("user.dir") + "path");
         }
         else if (System.getProperty("os.name")
                 .contains("Windows Server") ){

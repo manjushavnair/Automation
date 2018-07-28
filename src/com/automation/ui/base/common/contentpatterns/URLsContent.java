@@ -2,7 +2,7 @@ package com.automation.ui.base.common.contentpatterns;
 
 import com.automation.ui.base.common.core.url.UrlBuilder;
 
-public class URLsContent {
+public interface URLsContent {
 
     // Common url component
     //CONTEXT
@@ -138,7 +138,7 @@ public class URLsContent {
 
 
     // External URL
-    public static final String EXTERNAL_URL = "http://www.wikia.com";
+    public static final String EXTERNAL_URL = "http://www.site.com";
 
     public static final String USER_SIGNOUT = EXTERNAL_URL + "/logout";
 
@@ -147,7 +147,4 @@ public class URLsContent {
 
     // Search results page on mobile, replace %query% with searched string
     public static final String MOBILE_SEARCH_RESULTS_PAGE = "/search?query=%query%";
-
-    private URLsContent() {
-    }
-}
+ }

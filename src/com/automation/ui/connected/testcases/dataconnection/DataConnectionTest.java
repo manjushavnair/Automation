@@ -13,7 +13,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import com.automation.ui.base.common.constants.*;
 public class DataConnectionTest extends LoginTest {
 
     private static Logger logger = Logger.getLogger(DataConnectionTest.class);
@@ -43,7 +43,7 @@ public class DataConnectionTest extends LoginTest {
 
             logger.info("Entering into clickAlertManager ");
 
-            Thread.sleep(TestCONSTANTS.WAITTIME100000MILLISEC);
+            Thread.sleep(COREConstants.WAITTIME100000MILLISEC);
 
             dataconnection_page.clickAlertManager();
 

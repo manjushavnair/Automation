@@ -1,6 +1,6 @@
 package com.automation.ui.base.common.core.api;
 
-import com.automation.ui.base.common.constants.COREAPIConstants;
+import com.automation.ui.base.common.constants.*;
 import com.automation.ui.base.common.core.Helios;
 import com.automation.ui.base.common.core.helpers.User;
 import com.automation.ui.base.common.core.url.UrlBuilder;
@@ -28,7 +28,7 @@ import static com.automation.ui.base.common.contentpatterns.URLsContent.API_URL;
 public class EditToken {
 
     private static String EDIT_TOKEN_ERROR_MESSAGE = "Problem with edit token API call";
-    private String baseURL = API_URL.replace(UrlBuilder.HTTPS_PREFIX, UrlBuilder.HTTP_PREFIX);
+    private String baseURL = API_URL.replace(SiteConstants.HTTPS_PREFIX, SiteConstants.HTTP_PREFIX);
     private User user;
     private String username;
 

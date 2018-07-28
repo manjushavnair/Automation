@@ -1,6 +1,6 @@
 package com.automation.ui.base.common.logging;
 
-import com.automation.ui.base.common.core.CommonUtils;
+import com.automation.ui.base.common.utils.CommonUtils;
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.annotations.RelatedIssue;
 import com.automation.ui.base.common.core.configuration.Configuration;

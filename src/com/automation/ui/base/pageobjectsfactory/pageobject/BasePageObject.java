@@ -38,7 +38,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
-
+import com.automation.ui.base.common.constants.*;
 public class BasePageObject {
 
     private static final int TIMEOUT_PAGE_REGISTRATION = 3000;
@@ -135,7 +135,7 @@ public class BasePageObject {
      * us no need for waiting 30 seconds
      */
     protected boolean isElementOnPage(By by) {
-        changeImplicitWait(500, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME500MILLISEC, TimeUnit.MILLISECONDS);
         try {
             return driver.findElements(by).size() > 0;
         } finally {
@@ -155,7 +155,7 @@ public class BasePageObject {
      * us no need for waiting 30 seconds
      */
     protected boolean isElementOnPage(WebElement element) {
-        changeImplicitWait(500, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME500MILLISEC, TimeUnit.MILLISECONDS);
         boolean isElementOnPage = true;
         try {
             // Get location on WebElement is rising exception when element is not present
@@ -226,7 +226,7 @@ public class BasePageObject {
      * no need for waiting 30 seconds
      */
     protected int getNumOfElementOnPage(By cssSelectorBy) {
-        changeImplicitWait(500, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME500MILLISEC, TimeUnit.MILLISECONDS);
         int numElementOnPage;
         try {
             numElementOnPage = driver.findElements(cssSelectorBy).size();
@@ -251,7 +251,7 @@ public class BasePageObject {
     }
 
     protected boolean isElementInContext(String cssSelector, WebElement element) {
-        changeImplicitWait(500, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME500MILLISEC, TimeUnit.MILLISECONDS);
         boolean isElementInElement = true;
         try {
             if (element.findElements(By.cssSelector(cssSelector)).size() < 1) {
@@ -302,7 +302,7 @@ public class BasePageObject {
     }
 
     public void verifyUrlContains(final String givenString, int timeOut) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
             new WebDriverWait(driver, timeOut).until((ExpectedCondition<Boolean>) d -> d.getCurrentUrl()
                     .toLowerCase().contains(givenString.toLowerCase()));
@@ -409,7 +409,7 @@ public class BasePageObject {
     }
 
     public void waitForElementNotVisibleByElement(WebElement element) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
             waitFor.until(CommonExpectedConditions.invisibilityOfElementLocated(element));
         } finally {
@@ -418,7 +418,7 @@ public class BasePageObject {
     }
 
     public void waitForElementNotVisibleByElement(WebElement element, long timeout) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
             new WebDriverWait(driver, timeout)
                     .until(CommonExpectedConditions.invisibilityOfElementLocated(element));
@@ -429,7 +429,7 @@ public class BasePageObject {
 
     public void waitForValueToBePresentInElementsAttributeByCss(String selector, String attribute,
                                                                 String value) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
             waitFor.until(CommonExpectedConditions
                     .valueToBePresentInElementsAttribute(By.cssSelector(selector), attribute, value));
@@ -440,7 +440,7 @@ public class BasePageObject {
 
     public void waitForValueToBePresentInElementsCssByCss(String selector, String cssProperty,
                                                           String expectedValue) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
             waitFor.until(CommonExpectedConditions.cssValuePresentForElement(By.cssSelector(selector),
                     cssProperty, expectedValue));

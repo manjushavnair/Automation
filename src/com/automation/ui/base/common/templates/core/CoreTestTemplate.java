@@ -1,6 +1,6 @@
 package com.automation.ui.base.common.templates.core;
 
-import com.automation.ui.base.common.core.CommonUtils;
+import com.automation.ui.base.common.utils.CommonUtils;
 import com.automation.ui.base.common.core.TestContext;
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.annotations.Execute;
@@ -24,7 +24,6 @@ import org.testng.annotations.*;
 
 import java.io.File;
 import java.lang.reflect.Method;
-import java.util.ResourceBundle;
 
 @Listeners({BrowserAndTestEventListener.class,
         com.automation.ui.base.common.testnglisteners.InvokeMethodAdapter.class})

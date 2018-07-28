@@ -9,8 +9,6 @@ import static com.automation.ui.base.common.core.configuration.Configuration.get
 
 public class BaseUrlBuilder {
 
-    public static final String HTTP_PREFIX = "http://";
-    public static final String HTTPS_PREFIX = "https://";
     protected String env;
     protected EnvType envType;
 

@@ -62,7 +62,7 @@ public class NetworkTrafficInterceptor extends BrowserMobProxyServer {
     }
 
     /**
-     * Looks for correlator pattern in requests query strings to DFP domain, and logs if all the calls
+     * Looks for correlator pattern in requests query strings to domain, and logs if all the calls
      * have the same correlator ID. Any difference is ID is logged as failure.
      */
     public void logDFP(String skinCorrelator) {

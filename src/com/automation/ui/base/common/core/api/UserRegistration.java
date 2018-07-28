@@ -11,6 +11,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
+import com.automation.ui.base.common.constants.*;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -39,8 +40,8 @@ public class UserRegistration {
             HttpPost httpPost = new HttpPost(new URI(url.getProtocol(), url.getUserInfo(), url.getHost(),
                     url.getPort(), url.getPath(), url.getQuery(), url.getRef()));
 
-            httpPost.setHeader("X-Client-Ip", "8.8.8.8");
-            httpPost.setHeader("X-Site-Internal-Request", "1");
+            httpPost.setHeader(COREConstants.X_CLIENT_IP, "8.8.8.8");
+            httpPost.setHeader(COREConstants.X_SITE_INTERNAL_REQUEST, "1");
 
             List<BasicNameValuePair> params = new ArrayList<>();
             params.add(new BasicNameValuePair("username", user.getUsername()));

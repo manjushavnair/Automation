@@ -1,6 +1,6 @@
 package com.automation.ui.base.common.logging;
 
-import com.automation.ui.base.common.core.CommonUtils;
+import com.automation.ui.base.common.utils.CommonUtils;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;

@@ -3,6 +3,7 @@ package com.automation.ui.connected.common.core.url;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
 import com.automation.ui.base.common.core.url.BaseUrlBuilder;
+import com.automation.ui.base.common.constants.*;
 
 public class SiteUrlBuilder extends BaseUrlBuilder {
 
@@ -22,7 +23,7 @@ public class SiteUrlBuilder extends BaseUrlBuilder {
             hostname = env + "." + hostname;
         }
 
-        return HTTP_PREFIX + hostname + "/";
+        return SiteConstants.HTTP_PREFIX + hostname + "/";
     }
 
     public String getSitePageUrl(String path) {

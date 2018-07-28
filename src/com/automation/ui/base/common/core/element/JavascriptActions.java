@@ -7,6 +7,7 @@ import com.automation.ui.connected.pageobjectsfactory.pageobject.SiteBasePageObj
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import com.automation.ui.base.common.constants.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -54,7 +55,7 @@ public class JavascriptActions {
         // TODO: Get rid of this wait
         try {
             Object value = js.executeScript("return " + script);
-            Thread.sleep(1000);
+            Thread.sleep(COREConstants.WAITTIME1000MILLISEC);
             return value;
         } catch (InterruptedException e) {
             Log.log("execute", e, false);
@@ -184,13 +185,14 @@ public class JavascriptActions {
         js.executeScript("window.scrollBy(arguments[0], arguments[1])", x, y);
     }
 
-    public String getCountry() {
+   /* public String getCountry() {
         waitForJavaScriptTruthy("Wikia.geo");
         return js.executeScript("return Wikia.geo.getCountryCode();").toString();
     }
+    */
 
     public void waitForJavaScriptTruthy(final String script) {
-        driver.manage().timeouts().implicitlyWait(500, TimeUnit.MILLISECONDS);
+        driver.manage().timeouts().implicitlyWait(COREConstants.WAITTIME500MILLISEC, TimeUnit.MILLISECONDS);
         try {
             new WebDriverWait(driver, WEBDRIVER_WAIT_TIMEOUT_SEC).until(new ExpectedCondition<Boolean>() {
                 public Boolean apply(WebDriver driver) {

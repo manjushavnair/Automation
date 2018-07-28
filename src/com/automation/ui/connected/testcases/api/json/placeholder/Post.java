@@ -9,14 +9,17 @@ import org.testng.annotations.Test;
 
 import io.restassured.http.ContentType.*;
 
+import com.automation.ui.base.common.rest.restclient.PropertiesUtil;
+import com.automation.ui.base.common.rest.restclient.RestAdapter;
 import com.automation.ui.base.common.rest.restclient.*;
+import com.automation.ui.base.common.rest.restclient.PostAdapter;
 
 
 
 import javax.json.Json;
 import javax.json.JsonObject;
 import java.io.IOException;
-
+import com.automation.ui.base.common.core.api.apicore.*;
 public class Post {
     private PropertiesUtil factory;
 

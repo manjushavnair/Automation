@@ -6,6 +6,7 @@ import com.automation.ui.base.common.core.drivers.BrowserAbstract;
 import com.automation.ui.base.common.logging.Log;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import com.automation.ui.base.common.constants.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -24,7 +25,7 @@ public class AndroidBrowser extends BrowserAbstract {
         destCaps.setCapability("deviceName", Configuration.getDeviceName());
         URL url = null;
         try {
-            url = new URL("http://" + Configuration.getAppiumIp() + "/wd/hub");
+            url = new URL(SiteConstants.HTTP_PREFIX + Configuration.getAppiumIp() + "/wd/hub");
         } catch (MalformedURLException e) {
             Log.log("getAndroindInstance", e, false);
         }

@@ -9,6 +9,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import com.automation.ui.base.common.constants.*;
 
 import java.time.Duration;
 import java.util.List;
@@ -20,12 +21,6 @@ public class Wait {
      * Checks if the element is present in browser DOM
      */
 
-    private static final int DEFAULT_TIMEOUT = 15;
-    private static final int DEFAULT_SLEEP = 5000;
-    private static final String INIT_MESSAGE = "INIT ELEMENT";
-    private static final String INIT_ERROR_MESSAGE = "PROBLEM WITH ELEMENT INIT";
-    private static final String ELEMENT_PRESENT_MESSAGE = "ELEMENT PRESENT";
-    private static final String ELEMENT_PRESENT_ERROR_FORMAT = "PROBLEM WITH FINDING ELEMENT %s";
 
     private WebDriverWait wait;
     private WebDriverWait sleepingWait;
@@ -33,8 +28,8 @@ public class Wait {
 
     public Wait(WebDriver webDriver) {
         this.driver = webDriver;
-        this.wait = new WebDriverWait(webDriver, DEFAULT_TIMEOUT);
-        this.sleepingWait = new WebDriverWait(webDriver, DEFAULT_TIMEOUT, DEFAULT_SLEEP);
+        this.wait = new WebDriverWait(webDriver, SiteConstants.DEFAULT_TIMEOUT);
+        this.sleepingWait = new WebDriverWait(webDriver, SiteConstants.DEFAULT_TIMEOUT, SiteConstants.DEFAULT_SLEEP);
     }
 
     /**
@@ -48,13 +43,13 @@ public class Wait {
      * Checks if the element is present in browser DOM
      */
     public WebElement forElementPresent(By by, boolean failOnTimeout) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
             return wait.until(ExpectedConditions.presenceOfElementLocated(by));
         } catch (TimeoutException e) {
             if (failOnTimeout) {
-                Log.log(ELEMENT_PRESENT_MESSAGE,
-                        String.format(ELEMENT_PRESENT_ERROR_FORMAT, by.toString()), false);
+                Log.log(SiteConstants.ELEMENT_PRESENT_MESSAGE,
+                        String.format(SiteConstants.ELEMENT_PRESENT_ERROR_FORMAT, by.toString()), false);
             }
 
             throw e;
@@ -67,12 +62,12 @@ public class Wait {
      * Checks if the element is present in browser DOM
      */
     public WebElement forElementPresent(By by, int timeout) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
             return new WebDriverWait(driver, timeout).until(ExpectedConditions
                     .presenceOfElementLocated(by));
         } catch (TimeoutException e) {
-            Log.log(ELEMENT_PRESENT_MESSAGE, e, false);
+            Log.log(SiteConstants.ELEMENT_PRESENT_MESSAGE, e, false);
             throw e;
         } finally {
             restoreDeaultImplicitWait();
@@ -89,7 +84,7 @@ public class Wait {
         try {
             element.getTagName();
         } catch (WebDriverException e) {
-            Log.info(INIT_MESSAGE, INIT_ERROR_MESSAGE);
+            Log.info(SiteConstants.INIT_MESSAGE, SiteConstants.INIT_ERROR_MESSAGE);
         }
         try {
             if (SelectorStack.isContextSet()) {
@@ -108,7 +103,7 @@ public class Wait {
         try {
             element.getTagName();
         } catch (WebDriverException e) {
-            Log.info(INIT_MESSAGE, INIT_ERROR_MESSAGE);
+            Log.info(SiteConstants.INIT_MESSAGE, SiteConstants.INIT_ERROR_MESSAGE);
         }
         try {
             if (SelectorStack.isContextSet()) {
@@ -126,7 +121,7 @@ public class Wait {
         try {
             elements.get(index).getTagName();
         } catch (WebDriverException e) {
-            Log.info(INIT_MESSAGE, INIT_ERROR_MESSAGE);
+            Log.info(SiteConstants.INIT_MESSAGE, SiteConstants.INIT_ERROR_MESSAGE);
         }
         try {
             SelectorStack.contextRead();
@@ -141,7 +136,7 @@ public class Wait {
      * Checks if the element is clickable on the browser
      */
     public WebElement forElementClickable(By by) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
             return wait.until(ExpectedConditions.elementToBeClickable(by));
         } finally {
@@ -153,7 +148,7 @@ public class Wait {
      * Checks if the element is clickable on the browser
      */
     public WebElement forElementClickable(By by, int timeout) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
             return new WebDriverWait(driver, timeout).until(ExpectedConditions
                     .elementToBeClickable(by));
@@ -167,7 +162,7 @@ public class Wait {
      * Checks if the element is visible on the browser
      */
     public WebElement forElementVisible(By by) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         } finally {
@@ -187,7 +182,7 @@ public class Wait {
         try {
             element.getTagName();
         } catch (WebDriverException e) {
-            Log.info(INIT_MESSAGE, INIT_ERROR_MESSAGE);
+            Log.info(SiteConstants.INIT_MESSAGE, SiteConstants.INIT_ERROR_MESSAGE);
         }
         if (SelectorStack.isContextSet()) {
             SelectorStack.contextRead();
@@ -198,7 +193,7 @@ public class Wait {
     }
 
     public WebElement forElementVisible(WebElement element, int timeoutSec, int polling) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
             return new WebDriverWait(driver, timeoutSec, polling).until(ExpectedConditions
                     .visibilityOf(element));
@@ -225,7 +220,7 @@ public class Wait {
      */
     @Deprecated
     public WebElement forElementVisible(By by, int timeoutSec, int polling) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
             return new WebDriverWait(driver, timeoutSec, polling).until(
                     ExpectedConditions.visibilityOfElementLocated(by));
@@ -242,9 +237,9 @@ public class Wait {
      * Wait for element to be either invisible or not present on the DOM.
      */
     public boolean forElementNotVisible(By by) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
-            return new WebDriverWait(driver, DEFAULT_TIMEOUT).until(
+            return new WebDriverWait(driver, SiteConstants.DEFAULT_TIMEOUT).until(
                     ExpectedConditions.invisibilityOfElementLocated(by));
         } finally {
             restoreDeaultImplicitWait();
@@ -255,9 +250,9 @@ public class Wait {
      * Wait for element to be either invisible or not present on the DOM.
      */
     public boolean forElementNotVisible(WebElement element) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
-            return new WebDriverWait(driver, DEFAULT_TIMEOUT).until(
+            return new WebDriverWait(driver, SiteConstants.DEFAULT_TIMEOUT).until(
                     CommonExpectedConditions.invisibilityOfElementLocated(element));
         } finally {
             restoreDeaultImplicitWait();
@@ -268,7 +263,7 @@ public class Wait {
      * Wait for element to be either invisible or not present on the DOM.
      */
     public boolean forElementNotVisible(By by, int timeout, int polling) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
             return new WebDriverWait(driver, timeout, polling).until(
                     ExpectedConditions.invisibilityOfElementLocated(by));
@@ -281,7 +276,7 @@ public class Wait {
      * Wait for element to be either invisible or not present on the DOM.
      */
     public boolean forElementNotVisible(By by, Duration timeout) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
             return new WebDriverWait(driver, timeout.getSeconds()).until(
                     ExpectedConditions.invisibilityOfElementLocated(by));
@@ -294,7 +289,7 @@ public class Wait {
      * Wait for element to be in viewport Either position top or left is bigger then -1
      */
     public boolean forElementInViewPort(WebElement element) {
-        changeImplicitWait(250, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
             return wait.until(CommonExpectedConditions.elementInViewPort(element));
         } finally {
@@ -329,7 +324,7 @@ public class Wait {
         try {
             element.getTagName();
         } catch (WebDriverException e) {
-            Log.info(INIT_MESSAGE, INIT_ERROR_MESSAGE);
+            Log.info(SiteConstants.INIT_MESSAGE, SiteConstants.INIT_ERROR_MESSAGE);
         }
         changeImplicitWait(0, TimeUnit.SECONDS);
         try {
@@ -386,7 +381,7 @@ public class Wait {
         try {
             element.getTagName();
         } catch (WebDriverException e) {
-            Log.info(INIT_MESSAGE, INIT_ERROR_MESSAGE);
+            Log.info(SiteConstants.INIT_MESSAGE, SiteConstants.INIT_ERROR_MESSAGE);
         }
         changeImplicitWait(0, TimeUnit.SECONDS);
         try {
@@ -405,7 +400,7 @@ public class Wait {
         try {
             elements.get(0).getTagName();
         } catch (WebDriverException e) {
-            Log.info(INIT_MESSAGE, INIT_ERROR_MESSAGE);
+            Log.info(SiteConstants.INIT_MESSAGE, SiteConstants.INIT_ERROR_MESSAGE);
         }
         changeImplicitWait(0, TimeUnit.SECONDS);
         try {
@@ -500,7 +495,7 @@ public class Wait {
 
     public void forSuccessfulResponseByUrlPattern(final NetworkTrafficInterceptor trafficInterceptor,
                                                   final String pattern, int timeout) {
-        changeImplicitWait(500, TimeUnit.MILLISECONDS);
+        changeImplicitWait(COREConstants.WAITTIME500MILLISEC, TimeUnit.MILLISECONDS);
         try {
             new WebDriverWait(driver, timeout).until(
                     new ExpectedCondition<Boolean>() {
@@ -526,7 +521,7 @@ public class Wait {
 
     public void forSuccessfulResponseByUrlPattern(final NetworkTrafficInterceptor trafficInterceptor,
                                                   final String pattern) {
-        forSuccessfulResponseByUrlPattern(trafficInterceptor, pattern, DEFAULT_TIMEOUT);
+        forSuccessfulResponseByUrlPattern(trafficInterceptor, pattern, SiteConstants.DEFAULT_TIMEOUT);
     }
 
     public void forUrlContains(String text) {
@@ -534,7 +529,7 @@ public class Wait {
     }
 
     private void restoreDeaultImplicitWait() {
-        changeImplicitWait(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
+        changeImplicitWait(SiteConstants.DEFAULT_TIMEOUT, TimeUnit.SECONDS);
     }
 
     private void changeImplicitWait(int value, TimeUnit timeUnit) {
