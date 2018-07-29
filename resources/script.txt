@@ -1,6 +1,8 @@
 <script>
 function createToc()
 {
+
+
 	var h1 = $('td h1');
 	var l = h1.length;
 	var toc = "<ul>";
