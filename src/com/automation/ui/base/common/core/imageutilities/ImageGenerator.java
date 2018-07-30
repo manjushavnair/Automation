@@ -1,7 +1,7 @@
 package com.automation.ui.base.common.core.imageutilities;
 
 
-import com.automation.ui.base.common.constants.SiteConstants;
+import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.utils.CommonUtils;
 import com.automation.ui.base.common.logging.Log;
 import org.apache.commons.lang.exception.ExceptionUtils;
@@ -20,7 +20,7 @@ import java.util.Date;
 public class ImageGenerator {
 
     private String imagePath;
-    private String imageFolder = SiteConstants.IMAGE_UPLOAD_RESOURCES_PATH;
+    private String imageFolder = BASEConstants.IMAGE_UPLOAD_RESOURCES_PATH;
     private BufferedImage imageBuffer;
     private int defaultWidth = 200;
     private int defaultHeight = 200;

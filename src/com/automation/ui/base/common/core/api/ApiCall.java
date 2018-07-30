@@ -1,6 +1,6 @@
 package com.automation.ui.base.common.core.api;
 
-import com.automation.ui.base.common.constants.COREAPIConstants;
+import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.core.Helios;
 import com.automation.ui.base.common.core.helpers.User;
 import com.automation.ui.base.common.logging.Log;
@@ -59,9 +59,9 @@ public abstract class ApiCall {
             // set header
 
             if (getUserName() != null) {
-                httpPost.addHeader(COREAPIConstants.X_Site_AccessToken, Helios.getAccessToken(getUserName()));
+                httpPost.addHeader(BASEConstants.X_Site_AccessToken, Helios.getAccessToken(getUserName()));
             } else if (getUser() != null) {
-                httpPost.addHeader(COREAPIConstants.X_Site_AccessToken, Helios.getAccessToken(getUser().getUserName()));
+                httpPost.addHeader(BASEConstants.X_Site_AccessToken, Helios.getAccessToken(getUser().getUserName()));
             }
             // set query params
             if (getParams() != null) {

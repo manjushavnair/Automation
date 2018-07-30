@@ -1,6 +1,6 @@
 package com.automation.ui.base.common.remote.operations.http;
 
-import com.automation.ui.base.common.constants.COREAPIConstants;
+import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.core.Helios;
 import com.automation.ui.base.common.core.helpers.User;
 import com.automation.ui.base.common.logging.Log;
@@ -89,7 +89,7 @@ class BaseRemoteOperation {
             throws IOException {
         String result = StringUtils.EMPTY;
         if (user != null) {
-            request.setHeader(COREAPIConstants.X_Site_AccessToken, Helios.getAccessToken(user));
+            request.setHeader(BASEConstants.X_Site_AccessToken, Helios.getAccessToken(user));
         }
         try (CloseableHttpResponse response = client.execute(request)) {
             result = handleResponse(request, response);

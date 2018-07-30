@@ -25,7 +25,7 @@ public class AndroidBrowser extends BrowserAbstract {
         destCaps.setCapability("deviceName", Configuration.getDeviceName());
         URL url = null;
         try {
-            url = new URL(SiteConstants.HTTP_PREFIX + Configuration.getAppiumIp() + "/wd/hub");
+            url = new URL(BASEConstants.HTTP_PREFIX + Configuration.getAppiumIp() + "/wd/hub");
         } catch (MalformedURLException e) {
             Log.log("getAndroindInstance", e, false);
         }

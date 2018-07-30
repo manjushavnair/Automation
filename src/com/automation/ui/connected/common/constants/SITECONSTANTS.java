@@ -1,6 +1,6 @@
 package com.automation.ui.connected.common.constants;
 
-public interface TestCONSTANTS {
+public interface SITECONSTANTS {
 
     public static String FIREFOX = "FIREFOX";
     public static String CHROME = "CHROME";

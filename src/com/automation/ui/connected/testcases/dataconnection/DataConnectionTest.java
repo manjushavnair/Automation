@@ -7,7 +7,6 @@ package com.automation.ui.connected.testcases.dataconnection;
  * @author Manjusha Saju
  */
 
-import com.automation.ui.connected.common.constants.TestCONSTANTS;
 import com.automation.ui.connected.testcases.login.LoginTest;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
@@ -43,7 +42,7 @@ public class DataConnectionTest extends LoginTest {
 
             logger.info("Entering into clickAlertManager ");
 
-            Thread.sleep(COREConstants.WAITTIME100000MILLISEC);
+            Thread.sleep(BASEConstants.WAITTIME100000MILLISEC);
 
             dataconnection_page.clickAlertManager();
 

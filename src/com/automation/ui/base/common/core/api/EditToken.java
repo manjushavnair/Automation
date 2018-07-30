@@ -3,7 +3,6 @@ package com.automation.ui.base.common.core.api;
 import com.automation.ui.base.common.constants.*;
 import com.automation.ui.base.common.core.Helios;
 import com.automation.ui.base.common.core.helpers.User;
-import com.automation.ui.base.common.core.url.UrlBuilder;
 import com.automation.ui.base.common.logging.Log;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.apache.http.HttpEntity;
@@ -28,7 +27,7 @@ import static com.automation.ui.base.common.contentpatterns.URLsContent.API_URL;
 public class EditToken {
 
     private static String EDIT_TOKEN_ERROR_MESSAGE = "Problem with edit token API call";
-    private String baseURL = API_URL.replace(SiteConstants.HTTPS_PREFIX, SiteConstants.HTTP_PREFIX);
+    private String baseURL = API_URL.replace(BASEConstants.HTTPS_PREFIX, BASEConstants.HTTP_PREFIX);
     private User user;
     private String username;
 
@@ -76,9 +75,9 @@ public class EditToken {
             HttpGet httpGet = new HttpGet(apiURL);
             // set header
             if (username != null) {
-                httpGet.addHeader(COREAPIConstants.X_Site_AccessToken, Helios.getAccessToken(username));
+                httpGet.addHeader(BASEConstants.X_Site_AccessToken, Helios.getAccessToken(username));
             } else if (user != null) {
-                httpGet.addHeader(COREAPIConstants.X_Site_AccessToken, Helios.getAccessToken(user.getUserName()));
+                httpGet.addHeader(BASEConstants.X_Site_AccessToken, Helios.getAccessToken(user.getUserName()));
             }
 
             Log.info("QUERY EDIT TOKEN: ", httpGet.toString());

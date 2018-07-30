@@ -23,7 +23,7 @@ public class SiteUrlBuilder extends BaseUrlBuilder {
             hostname = env + "." + hostname;
         }
 
-        return SiteConstants.HTTP_PREFIX + hostname + "/";
+        return BASEConstants.HTTP_PREFIX + hostname + "/";
     }
 
     public String getSitePageUrl(String path) {

@@ -1,6 +1,6 @@
 package com.automation.ui.connected.common.prpreader;
 
-import com.automation.ui.connected.common.constants.TestCONSTANTS;
+import com.automation.ui.connected.common.constants.SITECONSTANTS;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,7 +25,7 @@ public class PropertyReader extends Properties {
                     prpreader = new PropertyReader();
                     try {
                         InputStream inStream = new FileInputStream(new File(
-                                TestCONSTANTS.EXCEPTIONPATH));
+                                SITECONSTANTS.EXCEPTIONPATH));
                         prpreader.load(inStream);
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();

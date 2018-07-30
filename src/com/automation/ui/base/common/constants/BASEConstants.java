@@ -1,9 +1,27 @@
 package com.automation.ui.base.common.constants;
 
-public interface COREConstants {
+import java.io.File;
+
+public interface BASEConstants {
     public static String X_UI_Internal_Request = "X-UI-Internal-Request";
     public static String X_CLIENT_IP = "X-Client-Ip";
     public static String X_SITE_INTERNAL_REQUEST = "X-Site-Internal-Request";
+    public static String X_Site_AccessToken = "X-Site-AccessToken";
+
+    public static final String IMAGE_UPLOAD_RESOURCES_PATH =
+            "." + File.separator + "src" + File.separator + "test" + File.separator + "resources"
+                    + File.separator + "ImagesForUploadTests" + File.separator;
+
+
+    public static final String HTTP_PREFIX = "http://";
+    public static final String HTTPS_PREFIX = "https://";
+
+    public static final int DEFAULT_TIMEOUT = 15;
+    public static final int DEFAULT_SLEEP = 5000;
+    public static final String INIT_MESSAGE = "INIT ELEMENT";
+    public static final String INIT_ERROR_MESSAGE = "PROBLEM WITH ELEMENT INIT";
+    public static final String ELEMENT_PRESENT_MESSAGE = "ELEMENT PRESENT";
+    public static final String ELEMENT_PRESENT_ERROR_FORMAT = "PROBLEM WITH FINDING ELEMENT %s";
 
     public static int WAITTIME300SEC = 300;
     public static int WAITTIME500SEC = 300;

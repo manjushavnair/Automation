@@ -40,8 +40,8 @@ public class UserRegistration {
             HttpPost httpPost = new HttpPost(new URI(url.getProtocol(), url.getUserInfo(), url.getHost(),
                     url.getPort(), url.getPath(), url.getQuery(), url.getRef()));
 
-            httpPost.setHeader(COREConstants.X_CLIENT_IP, "8.8.8.8");
-            httpPost.setHeader(COREConstants.X_SITE_INTERNAL_REQUEST, "1");
+            httpPost.setHeader(BASEConstants.X_CLIENT_IP, "8.8.8.8");
+            httpPost.setHeader(BASEConstants.X_SITE_INTERNAL_REQUEST, "1");
 
             List<BasicNameValuePair> params = new ArrayList<>();
             params.add(new BasicNameValuePair("username", user.getUsername()));

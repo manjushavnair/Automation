@@ -1,7 +1,6 @@
 package com.automation.ui.connected.common.prpreader;
 
 import com.automation.ui.connected.common.constants.RESTAPICONSTANTS;
-import com.automation.ui.connected.common.constants.TestCONSTANTS;
 
 import java.io.File;
 import java.io.FileInputStream;

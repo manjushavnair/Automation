@@ -17,7 +17,7 @@ public class ElementStateHelper {
     }
 
     public static boolean isElementVisible(WebElement element, WebDriver webDriver) {
-        webDriver.manage().timeouts().implicitlyWait(COREConstants.WAITTIME500MILLISEC, TimeUnit.MILLISECONDS);
+        webDriver.manage().timeouts().implicitlyWait(BASEConstants.WAITTIME500MILLISEC, TimeUnit.MILLISECONDS);
 
         try {
             return element.isDisplayed();

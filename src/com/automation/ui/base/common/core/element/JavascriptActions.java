@@ -55,7 +55,7 @@ public class JavascriptActions {
         // TODO: Get rid of this wait
         try {
             Object value = js.executeScript("return " + script);
-            Thread.sleep(COREConstants.WAITTIME1000MILLISEC);
+            Thread.sleep(BASEConstants.WAITTIME1000MILLISEC);
             return value;
         } catch (InterruptedException e) {
             Log.log("execute", e, false);
@@ -192,7 +192,7 @@ public class JavascriptActions {
     */
 
     public void waitForJavaScriptTruthy(final String script) {
-        driver.manage().timeouts().implicitlyWait(COREConstants.WAITTIME500MILLISEC, TimeUnit.MILLISECONDS);
+        driver.manage().timeouts().implicitlyWait(BASEConstants.WAITTIME500MILLISEC, TimeUnit.MILLISECONDS);
         try {
             new WebDriverWait(driver, WEBDRIVER_WAIT_TIMEOUT_SEC).until(new ExpectedCondition<Boolean>() {
                 public Boolean apply(WebDriver driver) {
