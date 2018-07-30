@@ -53,7 +53,7 @@ public class LoginTest extends ConnectedBaseTest {
             .getLogger(LoginTest.class);
 
 
-
+    private LoginPage login_page =null;
 
 
     public LoginTest() {
@@ -76,7 +76,7 @@ public class LoginTest extends ConnectedBaseTest {
 
         logger.info("Entering verifyValidLogin");
         Reporter.log("Entering verifyValidLogin");
-        LoginPage login_page = new LoginPage();
+          login_page = new LoginPage();
         login_page.open();
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();

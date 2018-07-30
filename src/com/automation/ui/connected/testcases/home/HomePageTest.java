@@ -24,6 +24,9 @@ public class HomePageTest extends ConnectedBaseTest {
     private static Logger logger = Logger
             .getLogger(HomePageTest.class);
 
+    private  LoginPage login_page=null;
+    private  HomePage  home_page=null;
+
     public HomePageTest() {
 
         super();
@@ -36,7 +39,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
         logger.info("Entering launchHomePage");
         Reporter.log("Entering launchHomePage");
-        LoginPage login_page = new LoginPage();
+          login_page = new LoginPage();
 
         login_page.open();
         // Call the method
@@ -58,7 +61,7 @@ public class HomePageTest extends ConnectedBaseTest {
         }
         login_page.enterUser(userName);
         login_page.enterPassword(passWord);
-        HomePage  home_page= login_page.login();
+         home_page= login_page.login();
 
         logger.info("Exiting launchHomePage and going to  homepage"+urlBuilder.getUrl());
 
@@ -66,15 +69,16 @@ public class HomePageTest extends ConnectedBaseTest {
     }
 
 
-    @Test(enabled = false,priority = 3,groups = {  "validcase"}, description = "Add Connection ")
+    @Test(enabled = false,priority = 2,groups = {  "validcase"}, description = "Add Connection ")
     public void addConnection() throws Throwable {
 
         logger.info("Entering launchHomePage");
         Reporter.log("Entering launchHomePage");
-        LoginPage login_page = new LoginPage();
+       // login_page = new LoginPage();
 
-        login_page.open();
+        //login_page.open();
         // Call the method
+        /*
 
         String userName = "";
         String password = "";
@@ -99,7 +103,9 @@ public class HomePageTest extends ConnectedBaseTest {
         logger.info("Exiting launchHomePage and going to  homepage"+urlBuilder.getUrl());
         home_page.waitForPageReload();
         logger.info("Entering addConnection");
+
         Reporter.log("Entering addConnection");
+        */
         AddCloudDataConnection add_conn_page = new AddCloudDataConnection();
 
         add_conn_page.open();
@@ -108,17 +114,17 @@ public class HomePageTest extends ConnectedBaseTest {
          add_conn_page.waitForPageReload();
 
     }
-    @Test(enabled = true,priority = 2,groups = {  "validcase"}, description = "home page ")
+    @Test(enabled = true,priority = 3,groups = {  "validcase"}, description = "home page ")
     public void launchHomePage_logout() throws Throwable {
 
         logger.info("Logging out from launchHomePage_logout");
         Reporter.log("Logging out from launchHomePage_logout");
-        LoginPage login_page = new LoginPage();
+       // login_page = new LoginPage();
 
-        login_page.open();
+       // login_page.open();
         // Call the method
 
-        String userName = "";
+      /*  String userName = "";
         String passWord = "";
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();
@@ -140,6 +146,7 @@ public class HomePageTest extends ConnectedBaseTest {
         logger.info("Exiting launchHomePage and going to  homepage"+urlBuilder.getUrl());
 
         home_page.waitForPageReload();
+        */
         home_page.goToLogoutPage();
     }
 
