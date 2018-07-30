@@ -2,18 +2,28 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.home;
 
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
+import com.automation.ui.connected.common.prpreader.AssertDataReader;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginCONSTANTS;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
+import org.testng.Reporter;
 
 public class HomePage extends SiteBasePageObject {
 
 
     private static Logger logger = Logger.getLogger(HomePage.class);
 
-    // @FindBy(xpath = "//a[contains(@href,'/home')and contains(.,'Customer Experience')]")
-    //@FindBy(xpath = "//a[@class='active']")
-    private WebElement homepage;
+    @FindBy(xpath = HomeConstants.LOGOUTBUTTON)
+    @CacheLookup
+    private WebElement logout;
+
+    @FindBy(xpath = HomeConstants.MENUBUTTON)
+    @CacheLookup
+    private WebElement menubutton;
 
 
     /*public com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage open() {
@@ -48,17 +58,16 @@ public class HomePage extends SiteBasePageObject {
 
     public HomePage open() {
 
-        logger.info("open");
+        logger.info("open the URL");
         if (Configuration.getEnvType().equals(EnvType.DEV)) {
 
             logger.info(getCurrentUrl());
              getUrl("http://localhost:9000");
-            //  getUrl(getCurrentUrl() + "?action=history");
-           // getUrl(getCurrentUrl());
+             // getUrl(getCurrentUrl());
         } else {
             logger.info(getCurrentUrl());
             getUrl("http://localhost:9000");
-            //  getUrl(getCurrentUrl() + "?action=history");
+            //  getUrl(getCurrentUrl() + " ");
            // getUrl(getCurrentUrl());
         }
        // waitForPageLoad();
@@ -71,7 +80,19 @@ public class HomePage extends SiteBasePageObject {
 
 
     //Go to LoginPage
-    public void goToLoginPage() {
+    public void goToLogoutPage() {
+
+         try {
+            logger.info("Logging out of the URL ");
+            Reporter.log("Logging out of the URL");
+            logout.click();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail( AssertDataReader.readProperty().getValue("OPCUA_LOGOUT_LOGOUTMSG"));
+            Reporter.log("Logged out of the URL successfully");
+
+        }
 
 
     }

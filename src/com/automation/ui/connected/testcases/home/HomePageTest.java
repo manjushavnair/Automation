@@ -8,6 +8,7 @@ package com.automation.ui.connected.testcases.home;
  */
 
 import com.automation.ui.base.common.utils.ExcelUtil;
+import com.automation.ui.connected.common.prpreader.AssertDataReader;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.AddCloudDataConnection;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginPage;
@@ -30,7 +31,7 @@ public class HomePageTest extends ConnectedBaseTest {
     }
 
 
-    @Test(enabled = true,priority = 6,groups = {  "validcase"}, description = "home page ")
+    @Test(enabled = false,priority = 1,groups = {  "validcase"}, description = "home page ")
     public void launchHomePage() throws Throwable {
 
         logger.info("Entering launchHomePage");
@@ -41,34 +42,31 @@ public class HomePageTest extends ConnectedBaseTest {
         // Call the method
 
         String userName = "";
-        String password = "";
+        String passWord = "";
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();
         try {
 
             ExcelUtil eu = getExcelUtil();
             userName = eu.getCellData(1, 1);
-            password = eu.getCellData(1, 2);
+            passWord = eu.getCellData(1, 2);
 
-            logger.info("Entering launchHomePage");
+            logger.info("Entering  " +methodname);
         } catch (Exception e) {
-            Assert.fail("Unable to login");
+            Assert.fail( AssertDataReader.readProperty().getValue("EXCEL_LOGINMSG"));
             e.printStackTrace();
         }
         login_page.enterUser(userName);
-        login_page.enterPassword(password);
+        login_page.enterPassword(passWord);
         HomePage  home_page= login_page.login();
 
         logger.info("Exiting launchHomePage and going to  homepage"+urlBuilder.getUrl());
 
          home_page.waitForPageReload();
-
-
-
     }
 
 
-    @Test(enabled = true,priority = 8,groups = {  "validcase"}, description = "Add Connection ")
+    @Test(enabled = false,priority = 3,groups = {  "validcase"}, description = "Add Connection ")
     public void addConnection() throws Throwable {
 
         logger.info("Entering launchHomePage");
@@ -109,6 +107,40 @@ public class HomePageTest extends ConnectedBaseTest {
         logger.info("Exiting addConnection and going to  add"+add_conn_page.getUrl());
          add_conn_page.waitForPageReload();
 
+    }
+    @Test(enabled = true,priority = 2,groups = {  "validcase"}, description = "home page ")
+    public void launchHomePage_logout() throws Throwable {
+
+        logger.info("Logging out from launchHomePage_logout");
+        Reporter.log("Logging out from launchHomePage_logout");
+        LoginPage login_page = new LoginPage();
+
+        login_page.open();
+        // Call the method
+
+        String userName = "";
+        String passWord = "";
+        String methodname = new Object() {
+        }.getClass().getEnclosingMethod().getName();
+        try {
+
+            ExcelUtil eu = getExcelUtil();
+            userName = eu.getCellData(1, 1);
+            passWord = eu.getCellData(1, 2);
+
+            logger.info("Entering  " +methodname);
+        } catch (Exception e) {
+            Assert.fail( AssertDataReader.readProperty().getValue("EXCEL_LOGINMSG"));
+            e.printStackTrace();
+        }
+        login_page.enterUser(userName);
+        login_page.enterPassword(passWord);
+        HomePage  home_page= login_page.login();
+
+        logger.info("Exiting launchHomePage and going to  homepage"+urlBuilder.getUrl());
+
+        home_page.waitForPageReload();
+        home_page.goToLogoutPage();
     }
 
 
