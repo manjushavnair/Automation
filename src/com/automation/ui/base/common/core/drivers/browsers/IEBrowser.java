@@ -11,6 +11,8 @@ public class IEBrowser extends BrowserAbstract {
 
 
 
+ private static final String CHROMEDRIVER_PATH_FORMAT = "test/IEDriver/IEDriverServer.exe";
+
 
   /*
    public abstract void setOptions();
