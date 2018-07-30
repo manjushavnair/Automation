@@ -12,6 +12,7 @@ public interface BASEConstants {
             "." + File.separator + "src" + File.separator + "test" + File.separator + "resources"
                     + File.separator + "ImagesForUploadTests" + File.separator;
 
+    public static String EXCEPTIONPATH = "resources/properties/exception.properties";
 
     public static final String HTTP_PREFIX = "http://";
     public static final String HTTPS_PREFIX = "https://";

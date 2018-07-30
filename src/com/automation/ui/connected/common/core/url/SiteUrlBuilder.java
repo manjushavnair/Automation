@@ -5,7 +5,7 @@ import com.automation.ui.base.common.core.configuration.EnvType;
 import com.automation.ui.base.common.core.url.*;
 import com.automation.ui.base.common.constants.*;
 
-public class SiteUrlBuilder extends UrlBuilder //NEED TO CHECK
+public class SiteUrlBuilder extends BaseUrlBuilder
 {
 
     private static final String SITE_HOSTNAME = "sandbox-dev.com";

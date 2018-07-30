@@ -1,6 +1,6 @@
 package com.automation.ui.base.common.exception;
 
-import com.automation.ui.connected.common.prpreader.ErrorCodeReader;
+import com.automation.ui.connected.common.prpreader.ExceptionErrorCodeReader;
 import org.apache.log4j.Logger;
 
 public class BusinessException extends Exception {
@@ -32,7 +32,7 @@ public class BusinessException extends Exception {
 
     private String makeMessage(String errorCode, String auxMsg) {
 
-        ErrorCodeReader prpr = ErrorCodeReader.readProperty();
+        ExceptionErrorCodeReader prpr = ExceptionErrorCodeReader.readProperty();
 
         String errorMessage = prpr.getProperty(errorCode);
 

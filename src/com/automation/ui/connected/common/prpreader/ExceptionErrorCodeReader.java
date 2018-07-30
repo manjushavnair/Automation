@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.prpreaders;
+package com.automation.ui.connected.common.prpreader;
 
 import com.automation.ui.connected.common.constants.SITECONSTANTS;
 
@@ -11,21 +11,22 @@ import java.util.Properties;
 import static java.lang.Boolean.parseBoolean;
 import static java.lang.Integer.parseInt;
 
-public class PropertyReader extends Properties {
+public class ExceptionErrorCodeReader extends Properties {
 
-    private static PropertyReader corereader;
+    private static ExceptionErrorCodeReader errorCodereader;
 
-    public static PropertyReader readProperty() {
+    public static ExceptionErrorCodeReader readProperty() {
 
-        if (corereader == null) {
-            synchronized (com.automation.ui.connected.common.prpreader.PropertyReader.class) {
-                if (corereader == null) {
 
-                    corereader = new  PropertyReader();
+        if (errorCodereader == null) {
+            synchronized (ExceptionErrorCodeReader.class) {
+                if (errorCodereader == null) {
+
+                    errorCodereader = new ExceptionErrorCodeReader();
                     try {
                         InputStream inStream = new FileInputStream(new File(
                                 SITECONSTANTS.EXCEPTIONPATH));
-                        corereader.load(inStream);
+                        errorCodereader.load(inStream);
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
 
@@ -37,11 +38,15 @@ public class PropertyReader extends Properties {
             }
         }
 
-        return corereader;
+
+
+
+
+        return errorCodereader;
     }
 
     public String getValue(final String key) {
-        return corereader.getProperty(key);
+        return errorCodereader.getProperty(key);
     }
 
     public boolean getBoolean(final String key) {
