@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.automation.ui.connected.testcases.dataconnection;
+package com.automation.ui.connected.testcases.clouddataconnection;
 
 /**
  * @author Manjusha Saju

@@ -8,7 +8,7 @@ package com.automation.ui.connected.testcases.home;
  */
 
 import com.automation.ui.base.common.utils.ExcelUtil;
-import com.automation.ui.connected.pageobjectsfactory.HomePage;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.AddCloudDataConnection;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginPage;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
@@ -16,10 +16,6 @@ import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-
 
 
 public class HomePageTest extends ConnectedBaseTest {

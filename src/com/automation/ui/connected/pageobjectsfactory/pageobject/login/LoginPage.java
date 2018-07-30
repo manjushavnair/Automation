@@ -7,7 +7,7 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.login;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
-import com.automation.ui.connected.pageobjectsfactory.HomePage;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.common.prpreader.*;
 
 import org.apache.log4j.Logger;
@@ -15,12 +15,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.Reporter;
-import com.automation.ui.connected.common.prpreader.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends BasePageObject {
 

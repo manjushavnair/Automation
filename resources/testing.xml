@@ -43,6 +43,7 @@
 
             <package name="com.automation.ui.connected.testcases.login" />
             <package name="com.automation.ui.connected.testcases.home" />
+            <package name="com.automation.ui.connected.testcases.clouddataconnection" />
 
 
         </packages>
