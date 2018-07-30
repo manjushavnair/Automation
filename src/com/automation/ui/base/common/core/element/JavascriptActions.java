@@ -3,7 +3,7 @@ package com.automation.ui.base.common.core.element;
 import com.automation.ui.base.common.contentpatterns.XSSContent;
 import com.automation.ui.base.common.driverprovider.DriverProvider;
 import com.automation.ui.base.common.logging.Log;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.SiteBasePageObject;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;

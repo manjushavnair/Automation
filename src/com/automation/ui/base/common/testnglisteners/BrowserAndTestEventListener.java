@@ -13,7 +13,7 @@ import com.automation.ui.base.common.exception.BusinessException;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.common.logging.VelocityWrapper;
 import com.automation.ui.base.common.utils.CommonUtils;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.SiteBasePageObject;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.openqa.selenium.*;

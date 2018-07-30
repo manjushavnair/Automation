@@ -1,6 +1,6 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection;
 
-import com.automation.ui.connected.pageobjectsfactory.pageobject.SiteBasePageObject;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

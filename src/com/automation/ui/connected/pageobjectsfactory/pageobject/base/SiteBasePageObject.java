@@ -1,16 +1,13 @@
-package com.automation.ui.connected.pageobjectsfactory.pageobject;
+package com.automation.ui.connected.pageobjectsfactory.pageobject.base;
 
-import com.automation.ui.base.common.contentpatterns.URLsContent;
 import com.automation.ui.base.common.core.Assertion;
 import com.automation.ui.base.common.core.Helios;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.helpers.User;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
-import com.automation.ui.connected.elements.*;
 
 
-import lombok.Getter;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
@@ -37,42 +34,8 @@ public class SiteBasePageObject extends BasePageObject {
 
 
 
-    @FindBy(css = "body")
-    protected WebElement body;
-    @FindBy(css = ".page-header__title")
-    protected WebElement articleTitle;
-    @FindBy(css = "#ca-edit")
-    protected WebElement editButton;
-    @FindBy(css = "ul#pagehistory > li:first-child .comment")
-    protected WebElement cssEditSummary;
-    @FindBy(css = "ul#pagehistory > li:first-child .minoredit")
-    protected WebElement cssMinorEdit;
-    @FindBy(css = "#ca-watch")
-    protected WebElement followButton;
-    @FindBy(css = ".page-header__contribution-buttons .wds-button-group .wds-dropdown")
-    protected WebElement articleEditDropdown;
-    @FindBy(css = "#ca-delete")
-    protected WebElement deleteDropdown;
-    @FindBy(css = "#ca-protect")
-    protected WebElement protectDropdown;
-    @FindBy(css = "#ca-move")
-    protected WebElement renameDropdown;
-    @FindBy(css = "#ca-ve-edit")
-    protected WebElement veEditButton;
-    @FindBy(css = "body.ve")
-    protected WebElement veMode;
-    @FindBy(css = ".editsection a")
-    protected List<WebElement> sectionEditButtons;
-    @FindBy(css = "a.new[href$='redlink=1']")
-    protected List<WebElement> redLinks;
-    @FindBy(css = "body:not(.rte_source):not(.ve):not(.rte_wysiwyg)")
-    protected WebElement srcOnlyMode;
-    @FindBy(css = ".oo-ui-widget-enabled.ve-ui-wikiaFocusWidget")
-    protected WebElement focusMode;
-    @FindBy(css = ".ve-init-mw-viewPageTarget-toolbar")
-    protected WebElement veToolMenu;
-    @FindBy(css = "h3[id='headerWikis']")
-    protected WebElement headerWhereIsMyExtensionPage;
+
+
     @FindBy(css = "#globalNavigation,.site-head.no-shadow,.wds-global-navigation")
     protected WebElement navigationBar;
     @FindBy(css = "#globalNavigation")
@@ -80,14 +43,12 @@ public class SiteBasePageObject extends BasePageObject {
      protected By parentBy = By.xpath("./..");
      @FindBy(css = ".banner-notifications-placeholder,.smart-banner")
     private WebElement bannerNotificationContainer;
-    @FindBys(@FindBy(css = ".wds-banner-notification"))
-    private List<WebElement> notificationElements;
+
+
       @FindBy(css = ".wds-dropdown__toggle .wds-avatar")
     private WebElement globalNavigationAvatar;
     @FindBy(css = ".wds-global-navigation")
     private WebElement globalNavigationBar;
-    @FindBy(id = "recirculation-rail")
-    private WebElement recirculationRightRailModule;
 
 
     private static final int TIMEOUT_PAGE_REGISTRATION = 3000;
@@ -112,7 +73,7 @@ public class SiteBasePageObject extends BasePageObject {
         Object scriptOut = driver.executeScript("return window.M && window.M.prop('userId')");
 
         if (scriptOut != null) {
-            Log.info("Mercury userID: " + scriptOut.toString());
+            Log.info("  userID: " + scriptOut.toString());
         }
     }
     /**
@@ -195,36 +156,6 @@ public class SiteBasePageObject extends BasePageObject {
     }
 
 
-    public String getRightNavText() {
-        //NEEDTOCHECK
-        wait.forElementVisibleW(articleTitle);
-        return articleTitle.getText();
-    }
-
-    public String getFooterText() {
-        //NEEDTOCHECK
-        wait.forElementVisibleW(articleTitle);
-        return articleTitle.getText();
-    }
-
-    public String getLeftNavText() {
-        //NEEDTOCHECK
-        wait.forElementVisibleW(articleTitle);
-        return articleTitle.getText();
-    }
-
-
-    public String getHeaderText() {
-        //NEEDTOCHECK
-        wait.forElementVisibleW(articleTitle);
-        return articleTitle.getText();
-    }
-
-    public void verifyHeader(String fileName) {
-        //NEEDTOCHECK
-        wait.forElementVisibleW(articleTitle);
-        Assertion.assertStringContains(articleTitle.getText(), fileName);
-    }
 
 
 

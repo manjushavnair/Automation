@@ -2,11 +2,10 @@ package com.automation.ui.connected.pageobjectsfactory.componentobject.lightbox;
 
 import com.automation.ui.base.common.logging.Log;
 
-import com.automation.ui.connected.pageobjectsfactory.pageobject.SiteBasePageObject;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class LightboxComponentObject extends SiteBasePageObject {

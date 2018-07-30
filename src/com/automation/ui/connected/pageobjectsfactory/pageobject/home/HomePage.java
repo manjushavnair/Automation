@@ -2,7 +2,7 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.home;
 
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.SiteBasePageObject;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 

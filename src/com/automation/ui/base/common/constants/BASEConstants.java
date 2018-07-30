@@ -41,14 +41,14 @@ public interface BASEConstants {
     public static int WAITTIME500MILLISEC = 500;
     public static int WAITTIME1000MILLISEC = 1000;
     public static int WAITTIME5000MILLISEC = 5000;
-    public static int WAITTIME10000MILLISEC = 10000;//10 security
-    public static int WAITTIME20000MILLISEC = 20000;//20 security
-    public static int WAITTIME30000MILLISEC = 30000;//30 security
-    public static int WAITTIME40000MILLISEC = 40000;//40 security
-    public static int WAITTIME50000MILLISEC = 50000;//50 security
-    public static int WAITTIME60000MILLISEC = 60000;//60 security
-    public static int WAITTIME80000MILLISEC = 80000;//80 security
-    public static int WAITTIME100000MILLISEC = 100000;//100 security
+    public static int WAITTIME10000MILLISEC = 10000;//10 sec
+    public static int WAITTIME20000MILLISEC = 20000;//20 sec
+    public static int WAITTIME30000MILLISEC = 30000;//30 sec
+    public static int WAITTIME40000MILLISEC = 40000;//40 sec
+    public static int WAITTIME50000MILLISEC = 50000;//50 sec
+    public static int WAITTIME60000MILLISEC = 60000;//60 sec
+    public static int WAITTIME80000MILLISEC = 80000;//80 sec
+    public static int WAITTIME100000MILLISEC = 100000;//100 sec 
 
 
 }

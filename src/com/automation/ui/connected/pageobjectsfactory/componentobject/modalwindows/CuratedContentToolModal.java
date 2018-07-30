@@ -1,7 +1,7 @@
 package com.automation.ui.connected.pageobjectsfactory.componentobject.modalwindows;
 
 import com.automation.ui.base.common.logging.Log;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.SiteBasePageObject;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
