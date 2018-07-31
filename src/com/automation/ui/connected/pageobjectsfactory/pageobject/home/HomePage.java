@@ -90,7 +90,7 @@ public class HomePage extends SiteBasePageObject {
          try {
             logger.info("Logging out of the URL ");
             Reporter.log("Logging out of the URL");
-           //  wait.forElementVisible(logout,BASEConstants.WAITTIME10000MILLISEC);
+             wait.forElementVisible(logout,BASEConstants.WAITTIME10000MILLISEC);
 
             logout.click();
 

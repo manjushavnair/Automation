@@ -1,5 +1,6 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection;
 
+import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
@@ -32,7 +33,7 @@ public class AddCloudDataConnection extends SiteBasePageObject {
             logger.info("Entering  addConnection: ");
             Reporter.log("Entering  addConnection:");
             logger.info("click  ");
-
+            wait.forElementVisible(addButton,BASEConstants.WAITTIME5000MILLISEC);
 
             addButton.click();
 
