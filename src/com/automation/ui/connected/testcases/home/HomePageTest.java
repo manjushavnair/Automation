@@ -27,6 +27,7 @@ public class HomePageTest extends ConnectedBaseTest {
     private  LoginPage login_page=null;
     private  HomePage  home_page=null;
 
+
     public HomePageTest() {
 
         super();
@@ -40,6 +41,8 @@ public class HomePageTest extends ConnectedBaseTest {
         logger.info("Entering launchHomePage");
         Reporter.log("Entering launchHomePage");
           login_page = new LoginPage();
+           home_page= login_page.login();
+
 
         login_page.open();
         // Call the method
