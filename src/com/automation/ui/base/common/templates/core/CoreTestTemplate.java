@@ -197,7 +197,7 @@ public abstract class CoreTestTemplate {
         }
     }
 
-    @AfterMethod(alwaysRun = true)
+    //@AfterMethod(alwaysRun = true)
     @AfterClass(alwaysRun = true)
     public void stop() {
 

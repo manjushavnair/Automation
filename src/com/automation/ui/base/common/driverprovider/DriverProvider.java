@@ -4,6 +4,8 @@ import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.drivers.Browser;
 import com.automation.ui.base.common.logging.Log;
+import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +14,8 @@ public class DriverProvider {
 
     private static final List<UIWebDriver> drivers = new ArrayList<>();
     private static int ACTIVE_BROWSER_INDEX = 0;
+    private static Logger logger = Logger.getLogger(DriverProvider.class);
+
 
     private DriverProvider() {
     }
@@ -42,6 +46,7 @@ public class DriverProvider {
             if (webDriver != null) {
                 try {
                     String path = System.getenv("PATH");
+                    logger.info("path"+path);
                     System.out.println(path);
                     webDriver.quit();
                 } catch (UnsatisfiedLinkError | NoClassDefFoundError | NullPointerException e) {

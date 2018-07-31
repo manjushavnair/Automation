@@ -16,6 +16,7 @@ import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 
@@ -35,6 +36,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
 
     @Test(enabled = true,priority = 1,groups = {  "validcase"}, description = "home page ")
+
     public void launchHomePage() throws Throwable {
 
         logger.info("Entering launchHomePage");
@@ -70,6 +72,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
 
     @Test(enabled = true,priority = 2,groups = {  "validcase"}, description = "home page ")
+
     public void launchHomePage_logout() throws Throwable {
 
         logger.info("Logging out from launchHomePage_logout");
