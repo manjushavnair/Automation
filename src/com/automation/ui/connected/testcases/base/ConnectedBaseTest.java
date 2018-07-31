@@ -63,6 +63,7 @@ public class ConnectedBaseTest extends NewTestTemplate  {
         siteCorpSetupURL = UrlBuilder.createUrlBuilderForSiteAndLang("corp", Configuration.DEFAULT_LANGUAGE).getUrl();
     }
 
+    /*
     @BeforeMethod
     protected void setUpBeforeTestMethod() {
         // initialize testPage
@@ -86,6 +87,6 @@ public class ConnectedBaseTest extends NewTestTemplate  {
         Reporter.log("Quiting browser  tearDownAfterTestClass  ::BaseTest");
         // driverManager.quitDriver();
     }
-
+*/
 
 }
