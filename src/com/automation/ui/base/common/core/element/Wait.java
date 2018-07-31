@@ -43,7 +43,7 @@ public class Wait {
      * Checks if the element is present in browser DOM
      */
     public WebElement forElementPresent(By by, boolean failOnTimeout) {
-        changeImplicitWait(BASEConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
+        changeImplicitWait(BASEConstants.WAITTIME500MILLISEC, TimeUnit.MILLISECONDS);
         try {
             return wait.until(ExpectedConditions.presenceOfElementLocated(by));
         } catch (TimeoutException e) {

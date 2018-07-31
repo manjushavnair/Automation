@@ -72,7 +72,7 @@ public class HomePageTest extends ConnectedBaseTest {
     }
 
 
-    @Test(enabled = true,priority = 2,groups = {  "validcase"}, description = "home page ")
+    @Test(enabled = true,priority = 3,groups = {  "validcase"}, description = "home page ")
 
     public void launchHomePage_logout() throws Throwable {
 
@@ -84,6 +84,7 @@ public class HomePageTest extends ConnectedBaseTest {
         // Call the method
 
       /*  String userName = "";
+
         String passWord = "";
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();
@@ -104,13 +105,14 @@ public class HomePageTest extends ConnectedBaseTest {
 
         logger.info("Exiting launchHomePage and going to  homepage"+urlBuilder.getUrl());
 */
-        home_page.waitForPageLoad();
-        home_page.waitForPageReload();
+     //   home_page.waitForPageLoad();
+       home_page.waitForPageReload();
+
 
         home_page.goToLogoutPage();
     }
 
-    @Test(enabled = false,priority = 3,groups = {  "validcase"}, description = "Add Connection ")
+    @Test(enabled = true,priority = 2,groups = {  "validcase"}, description = "Add Connection ")
     public void addConnection() throws Throwable {
 
         logger.info("Entering launchHomePage");

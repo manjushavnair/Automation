@@ -1,5 +1,6 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.home;
 
+import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
 import com.automation.ui.connected.common.prpreader.AssertDataReader;
@@ -16,6 +17,10 @@ public class HomePage extends SiteBasePageObject {
 
 
     private static Logger logger = Logger.getLogger(HomePage.class);
+
+
+    @FindBy(css = "a.logouts")
+    private WebElement logoutLink;
 
     @FindBy(xpath = HomeConstants.LOGOUTBUTTON)
     @CacheLookup
@@ -85,6 +90,8 @@ public class HomePage extends SiteBasePageObject {
          try {
             logger.info("Logging out of the URL ");
             Reporter.log("Logging out of the URL");
+           //  wait.forElementVisible(logout,BASEConstants.WAITTIME10000MILLISEC);
+
             logout.click();
 
         } catch (Exception e) {

@@ -125,8 +125,10 @@ public class BasePageObject {
     public BasePageObject waitForPageReload() {
         waitSafely(
                 () -> wait.forElementVisible(By.className("logo"), Duration.ofSeconds(3)));
+
         waitSafely(() -> wait.forElementNotVisible(By.className("logo")),
                 "Loading overlay still visible, page not loaded in expected time");
+
         logger.info("Loading overlay still visible, page not loaded in expected time");
         return this;
     }
