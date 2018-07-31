@@ -67,7 +67,8 @@ public class HomePageTest extends ConnectedBaseTest {
 
         logger.info("Exiting launchHomePage and going to  homepage"+urlBuilder.getUrl());
 
-         home_page.waitForPageReload();
+        home_page.waitForPageReload();
+
     }
 
 
@@ -102,9 +103,10 @@ public class HomePageTest extends ConnectedBaseTest {
         HomePage  home_page= login_page.login();
 
         logger.info("Exiting launchHomePage and going to  homepage"+urlBuilder.getUrl());
-
+*/
+        home_page.waitForPageLoad();
         home_page.waitForPageReload();
-        */
+
         home_page.goToLogoutPage();
     }
 

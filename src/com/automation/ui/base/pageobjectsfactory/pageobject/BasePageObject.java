@@ -41,7 +41,8 @@ import com.automation.ui.base.common.constants.*;
 public class BasePageObject {
 
     private static final int TIMEOUT_PAGE_REGISTRATION = 3000;
-    private static final String COMSCORE_PIXEL_URL = "script[src*='/scripts/jquery-1.10.2.js']";
+    //content/images/HoneywellLogo.png
+    private static final String COMSCORE_PIXEL_URL = "script[src*='scripts/jquery/jquery-1.10.2.js']";
 
     private static Logger logger = Logger.getLogger(BasePageObject.class);
     public final Wait wait;
@@ -116,6 +117,7 @@ public class BasePageObject {
     //"script[src*='/scripts/beacon.js']";
     // wait for comscore to load
     public void waitForPageLoad() {
+        logger.info("waitForPageLoad"+COMSCORE_PIXEL_URL);
         wait.forElementPresent(
                 By.cssSelector(COMSCORE_PIXEL_URL));
     }
