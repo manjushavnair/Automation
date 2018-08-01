@@ -111,12 +111,12 @@ public class HomePageTest extends ConnectedBaseTest {
 
         Reporter.log("Entering addConnection");
         */
-        AddCloudDataConnection add_conn_page = new AddCloudDataConnection();
 
-       // add_conn_page.open();
-        add_conn_page.addConnection();
-        logger.info("Exiting addConnection and going to  add"+add_conn_page.getUrl());
-         add_conn_page.waitForPageReload();
+
+        // add_conn_page.open();
+        home_page.addConnection();
+        logger.info("Exiting addConnection and going to  add"+home_page.getUrl());
+        home_page.waitForPageReload();
 
     }
 
