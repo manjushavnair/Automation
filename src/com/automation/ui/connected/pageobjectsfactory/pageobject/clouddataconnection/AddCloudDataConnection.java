@@ -14,8 +14,7 @@ public class AddCloudDataConnection extends SiteBasePageObject {
     private static Logger logger = Logger.getLogger(AddCloudDataConnection.class);
 
 
-    @FindBy(xpath = AddCloudDataCONSTANTS.ADDCONNECTIONSBUTTON)
-    private WebElement addButton;
+
 
     public AddCloudDataConnection open( )
             {
@@ -27,29 +26,6 @@ public class AddCloudDataConnection extends SiteBasePageObject {
         //driver.navigate().refresh();
 
         return new AddCloudDataConnection();
-    }
-    public AddCloudDataConnection addConnection( ) {
-        try {
-            logger.info("Entering  addConnection: ");
-            Reporter.log("Entering  addConnection:");
-            logger.info("click  ");
-            wait.forElementVisible(addButton,BASEConstants.WAITTIME5000MILLISEC);
-
-            addButton.click();
-
-            logger.info("clicked ");
-
-            logger.info("Exiting  addConnection");
-            Reporter.log("Exiting  addConnection");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            Assert.fail("Add failed");
-            Reporter.log("Add failed");
-
-        }
-        return this;
-
     }
 
 

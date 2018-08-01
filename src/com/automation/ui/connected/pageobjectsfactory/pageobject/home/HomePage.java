@@ -5,6 +5,8 @@ import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
 import com.automation.ui.connected.common.prpreader.AssertDataReader;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.AddCloudDataCONSTANTS;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.AddCloudDataConnection;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginCONSTANTS;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
@@ -30,6 +32,8 @@ public class HomePage extends SiteBasePageObject {
     @CacheLookup
     private WebElement menubutton;
 
+    @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON)
+    private WebElement addButton;
 
     /*public com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage open() {
         return open(Configuration.getSiteName());
@@ -103,5 +107,30 @@ public class HomePage extends SiteBasePageObject {
 
 
     }
+
+    public AddCloudDataConnection addConnection( ) {
+        try {
+            logger.info("Entering  addConnection: ");
+            Reporter.log("Entering  addConnection:");
+            logger.info("click  ");
+            wait.forElementVisible(addButton,BASEConstants.WAITTIME5000MILLISEC);
+
+            addButton.click();
+
+            logger.info("clicked ");
+
+            logger.info("Exiting  addConnection");
+            Reporter.log("Exiting  addConnection");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Add failed");
+            Reporter.log("Add failed");
+
+        }
+        return new AddCloudDataConnection();
+
+    }
+
 
 }

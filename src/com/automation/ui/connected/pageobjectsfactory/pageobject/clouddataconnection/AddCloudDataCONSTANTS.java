@@ -2,7 +2,7 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconne
 
 public interface AddCloudDataCONSTANTS {
   // public String ADDCONNECTIONSBUTTON = "//button[@class='primary']";
-   public String ADDCONNECTIONSBUTTON = "//button[@class='primary ng-binding']";
+
 
 
 }
