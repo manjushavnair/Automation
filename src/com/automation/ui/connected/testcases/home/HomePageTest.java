@@ -14,6 +14,7 @@ import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnec
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginPage;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
@@ -37,10 +38,10 @@ public class HomePageTest extends ConnectedBaseTest {
 
     @Test(enabled = true,priority = 1,groups = {  "validcase"}, description = "home page ")
 
-    public void launchHomePage() throws Throwable {
+    public void launchLogin() throws Throwable {
 
-        logger.info("Entering launchHomePage");
-        Reporter.log("Entering launchHomePage");
+        logger.info("Entering launchLogin");
+        Reporter.log("Entering launchLogin");
           login_page = new LoginPage();
 
         login_page.open();
@@ -64,101 +65,53 @@ public class HomePageTest extends ConnectedBaseTest {
         login_page.enterUser(userName);
         login_page.enterPassword(passWord);
          home_page= login_page.login();
+      //  home_page.waitForPageReload();
 
-        logger.info("Exiting launchHomePage and going to  homepage"+urlBuilder.getUrl());
 
-        home_page.waitForPageLoad();
+
+
+        // home_page.open();
+
+       //home_page.waitForPageLoad();
+
+        logger.info("Exiting launchLogin and going to  homepage"+urlBuilder.getUrl());
+
+
 
     }
+     @Test(enabled = true,priority = 2,groups = {  "validcase"}, description = "launchHomePage ")
+    public void launchHomePage() throws Throwable {
+        logger.info(" launchHomePage and going to  homepage"+urlBuilder.getUrl());
+
+
+         home_page.wait.forElementVisible(By.cssSelector("primary ng-binding"));
+
+     }
 
 
 
 
-    @Test(enabled = true,priority = 2,groups = {  "validcase"}, description = "Add Connection ")
+    @Test(enabled = true,priority = 3,groups = {  "validcase"}, description = "Add Connection ")
     public void addConnection() throws Throwable {
 
         logger.info("Entering launchHomePage");
         Reporter.log("Entering launchHomePage");
-       // login_page = new LoginPage();
-
-        //login_page.open();
-        // Call the method
-        /*
-
-        String userName = "";
-        String password = "";
-        String methodname = new Object() {
-        }.getClass().getEnclosingMethod().getName();
-        try {
-
-            ExcelUtil eu = getExcelUtil();
-            userName = eu.getCellData(1, 1);
-            password = eu.getCellData(1, 2);
-
-            logger.info("Entering launchHomePage");
-        } catch (Exception e) {
-            Assert.fail("Unable to login");
-            e.printStackTrace();
-        }
-        login_page.enterUser(userName);
-        login_page.enterPassword(password);
-        HomePage  home_page =login_page.login();
-
-
-        logger.info("Exiting launchHomePage and going to  homepage"+urlBuilder.getUrl());
-        home_page.waitForPageReload();
-        logger.info("Entering addConnection");
-
-        Reporter.log("Entering addConnection");
-        */
-
-
         // add_conn_page.open();
+
         home_page.addConnection();
         logger.info("Exiting addConnection and going to  add"+home_page.getUrl());
-        home_page.waitForPageReload();
 
     }
-
-    @Test(enabled = false,priority = 3,groups = {  "validcase"}, description = "home page ")
+/*
+    @Test(enabled = false,priority = 4,groups = {  "validcase"}, description = "home page ")
 
     public void launchHomePage_logout() throws Throwable {
 
         logger.info("Logging out from launchHomePage_logout");
         Reporter.log("Logging out from launchHomePage_logout");
-        // login_page = new LoginPage();
-
-        // login_page.open();
-        // Call the method
-
-      /*  String userName = "";
-
-        String passWord = "";
-        String methodname = new Object() {
-        }.getClass().getEnclosingMethod().getName();
-        try {
-
-            ExcelUtil eu = getExcelUtil();
-            userName = eu.getCellData(1, 1);
-            passWord = eu.getCellData(1, 2);
-
-            logger.info("Entering  " +methodname);
-        } catch (Exception e) {
-            Assert.fail( AssertDataReader.readProperty().getValue("EXCEL_LOGINMSG"));
-            e.printStackTrace();
-        }
-        login_page.enterUser(userName);
-        login_page.enterPassword(passWord);
-        HomePage  home_page= login_page.login();
-
-        logger.info("Exiting launchHomePage and going to  homepage"+urlBuilder.getUrl());
-*/
-        //   home_page.waitForPageLoad();
-        //  home_page.waitForPageReload();
-
 
         home_page.goToLogoutPage();
     }
 
-
+*/
 }

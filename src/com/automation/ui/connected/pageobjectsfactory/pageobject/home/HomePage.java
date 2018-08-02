@@ -67,19 +67,19 @@ public class HomePage extends SiteBasePageObject {
 
     public HomePage open() {
 
-        logger.info("open the URL");
-        if (Configuration.getEnvType().equals(EnvType.DEV)) {
+        logger.info("open the URL"+getCurrentUrl());
+       if (Configuration.getEnvType().equals(EnvType.DEV)) {
 
             logger.info(getCurrentUrl());
-             getUrl("http://localhost:9000");
+              getUrl("http://localhost:9000");
              // getUrl(getCurrentUrl());
         } else {
             logger.info(getCurrentUrl());
-            getUrl("http://localhost:9000");
+          // getUrl("http://localhost:9000");
             //  getUrl(getCurrentUrl() + " ");
-           // getUrl(getCurrentUrl());
+            getUrl(getCurrentUrl());
         }
-       // waitForPageLoad();
+        //waitForPageLoad();
 
 
 
@@ -94,7 +94,7 @@ public class HomePage extends SiteBasePageObject {
          try {
             logger.info("Logging out of the URL ");
             Reporter.log("Logging out of the URL");
-             wait.forElementVisible(logout,BASEConstants.WAITTIME10000MILLISEC);
+            // wait.forElementVisible(logout,BASEConstants.WAITTIME10000MILLISEC);
 
             logout.click();
 

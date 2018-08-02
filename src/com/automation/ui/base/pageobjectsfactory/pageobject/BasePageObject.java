@@ -118,8 +118,10 @@ public class BasePageObject {
     // wait for comscore to load
     public void waitForPageLoad() {
         logger.info("waitForPageLoad"+COMSCORE_PIXEL_URL);
-        wait.forElementPresent(
-                By.cssSelector(COMSCORE_PIXEL_URL));
+        wait.forElementPresent(By.className("logo"));
+
+       // wait.forElementPresent(
+                //By.cssSelector(COMSCORE_PIXEL_URL));
     }
 
     public BasePageObject waitForPageReload() {
