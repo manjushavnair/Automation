@@ -1,6 +1,4 @@
-/**
- *
- */
+
 package com.automation.ui.connected.testcases.home;
 
 /**
@@ -66,13 +64,9 @@ public class HomePageTest extends ConnectedBaseTest {
         login_page.enterPassword(passWord);
          home_page= login_page.login();
       //  home_page.waitForPageReload();
-
-
-
-
         // home_page.open();
 
-       //home_page.waitForPageLoad();
+
 
         logger.info("Exiting launchLogin and going to  homepage"+urlBuilder.getUrl());
 
@@ -80,7 +74,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
     }
      @Test(enabled = true,priority = 2,groups = {  "validcase"}, description = "launchHomePage ")
-    public void launchHomePage() throws Throwable {
+    public void launchHomePage()   {
         logger.info(" launchHomePage and going to  homepage"+urlBuilder.getUrl());
 
 

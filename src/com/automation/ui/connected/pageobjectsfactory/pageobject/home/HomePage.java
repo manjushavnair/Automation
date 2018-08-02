@@ -115,6 +115,8 @@ public class HomePage extends SiteBasePageObject {
             logger.info("click  ");
             wait.forElementVisible(addButton,BASEConstants.WAITTIME5000MILLISEC);
 
+           // wait.forElementClickable(addButton);
+
             addButton.click();
 
             logger.info("clicked ");

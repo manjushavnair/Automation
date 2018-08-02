@@ -1,6 +1,4 @@
-/**
- *
- */
+
 package com.automation.ui.connected.testcases.clouddataconnection;
 
 /**
@@ -29,7 +27,7 @@ public class DataConnectionTest extends LoginTest {
 
      * */
     @Test(priority = 2)
-    public void clickAlertManager() {
+    public void click() {
 
 
     }
