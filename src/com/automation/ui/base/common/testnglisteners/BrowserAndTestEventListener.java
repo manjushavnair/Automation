@@ -44,6 +44,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
     @Override
     public void afterNavigateTo(String url, WebDriver driver) {
         Method method = TestContext.getCurrentTestMethod();
+        Cookie cookie=null;
         if (method != null) {
             Class<?> declaringClass = method.getDeclaringClass();
 
@@ -115,16 +116,18 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
                     logger.info("Step4");
 
+
+
                     if (userOptedIn) {
-                        driver.manage().addCookie(
-                                new Cookie("tracking-opt-in-status", "accepted", cookieDomain, "/",
+						 cookie=new Cookie("tracking-opt-in-status", "accepted", cookieDomain, "/",
                                         cookieDate
-                                ));
+                                );
+						 logger.info("cookie:"+cookie);
+                        driver.manage().addCookie( cookie);
                     } else if (userOptedOut) {
-                        driver.manage().addCookie(
-                                new Cookie("tracking-opt-in-status", "rejected", cookieDomain, "/",
-                                        cookieDate
-                                ));
+						cookie=new Cookie("tracking-opt-in-status", "rejected", cookieDomain, "/", cookieDate  );
+						logger.info("cookie:"+cookie);
+                        driver.manage().addCookie( cookie);
                     }
                 }
 
@@ -136,8 +139,11 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                         .equals(Configuration.getDisableCommunityPageSalesPitchDialog())) {
 
 							logger.info("Step5");
-                    driver.manage().addCookie(
-                            new Cookie("cpBenefitsModalShown", "1", cookieDomain, "/", cookieDate));
+
+
+                        cookie=new Cookie("cpBenefitsModalShown", "1", cookieDomain, "/", cookieDate);
+						 logger.info("cookie:"+cookie);
+                        driver.manage().addCookie( cookie);
                 }
 
                 /*if (TestContext.isFirstLoad() && "true".equals(Configuration.getMockAds())) {

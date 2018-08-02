@@ -55,7 +55,7 @@ public class UrlBuilder extends BaseUrlBuilder {
             throw new WebDriverException("Page name is missing");
         }
 
-        logger.info("getUrlForPageWithWWW " + getUrl(true) + URLsContent.SITE_DIR + pageName);
+      //  logger.info("getUrlForPageWithWWW " + getUrl(true) + URLsContent.SITE_DIR + pageName);
         return getUrl(true) + URLsContent.SITE_DIR + pageName;
     }
 
@@ -63,11 +63,11 @@ public class UrlBuilder extends BaseUrlBuilder {
         if ("".equals(pageName))
             throw new WebDriverException("Page name is missing");
 
-        logger.info("getUrlForPage " + getUrl() + " URLsContent.SITE_DIR " + URLsContent.SITE_DIR + "pageName " + pageName);
         // String url = getUrl() +  pageName;
         String url = getUrl();
 
-        logger.info("getUrlForPage " + url);
+        logger.info("getUrlForPage " + getUrl() + " URLsContent.SITE_DIR " + URLsContent.SITE_DIR + "pageName " + pageName + "url"+url);
+
 
         if (StringUtils.isNotBlank(Configuration.getQS())) {
             return appendQueryStringToURL(url, Configuration.getQS());
@@ -109,7 +109,7 @@ public class UrlBuilder extends BaseUrlBuilder {
 
         String www = addWWW ? "www." : "";
 
-        logger.info("getUrl www :" + www);
+
         String host = getFormattedSiteHost(www, siteaName, envType, language);
 
         if (!DEFAULT_LANGUAGE.equals(language) && forceLanguageInPath) {
@@ -307,7 +307,7 @@ public class UrlBuilder extends BaseUrlBuilder {
 
     private String getSiteGlobalName(String siteName) {
 
-        logger.info("getSiteGlobalName siteName : " + siteName + " this.env :" + this.env);
+       // logger.info("getSiteGlobalName siteName : " + siteName + " this.env :" + this.env);
         if (siteName.endsWith(".wikia")) {
 
             logger.info("getSiteGlobalName OLD SITE : " + siteName + " this.env :" + this.env);
