@@ -6,7 +6,7 @@ browser: CHROME # acceptable values: FF, CHROME, GHOST, ANDROID, CHROMEMOBILEMER
 dpr: 1 # Your device's pixel ratio, do not commit your changes
 siteName: clayhut # default testing site
 env: dev-manju # acceptable values: test, prod, preview, sandbox-number dev-name, adeng (for adeng.connected.site.com)
-seleniumConfigPath: /selenium-config
+seleniumConfigPath: resources/selenium-config
 qs: null
 disableFlash: true
 jsErrorsEnabled: false
@@ -20,7 +20,7 @@ disableCommunityPageSalesPitchDialog: true
 useMITM: false
 useZapProxy: false
 language: en # run tests on site with specific language unless there is an annotation
-
+credentialsPath: resources/selenium-config/credentials.xml
 # Specify browser window size in format <width>x<height>, example: 800x600
 # use "maximised" value if you want browser to be maximised
 browserSize: maximised

@@ -41,7 +41,7 @@ public enum User {
             "ci.user.goSearchPreferredUser.password"),
     BLOCKED_USER("ci.user.tooManyLoginAttempts.username", "ci.user.tooManyLoginAttempts.password"),
     CONSTANTLY_BLOCKED_USER("ci.user.constantlyBlockedAccountUser.username", "ci.user.constantlyBlockedAccountUser.password"),
-    GOOGLE_CONNECTED("ci.user.google_connected.username", "ci.user.google_connected.password"),
+        GOOGLE_CONNECTED("ci.user.google_connected.username", "ci.user.google_connected.password"),
     CONTENT_REVIEWER("ci.user.wikiaContentReviewer.username", "ci.user.wikiaContentReviewer.password"),
     COMMENTS_REGULAR_USER("ci.user.comments.username", "ci.user.comments.password", "ci.user.comments.id", "ci.user.comments.access_token"),
     FORGOTTEN_PASSWORD("ci.user.forgottenPassword.username", "ci.user.forgottenPassword.password"),

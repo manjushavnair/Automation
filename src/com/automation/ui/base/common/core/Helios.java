@@ -90,10 +90,10 @@ public class Helios {
 
     public static void updateTokenCache() {
 
-        System.out.println("user" + User.values().length);
+        System.out.println("user :" + User.values().length);
 
         for (User user : User.values()) {
-            System.out.println("tokencheck" + user.getAccessToken() + " " + user.toString());
+            System.out.println("Username "+user.getUserName()+"tokencheck " + user.getAccessToken()  );
             if (StringUtils.isNotBlank(user.getAccessToken())) {
                 tokenCache.put(user.getUserName(), user.getAccessToken());
             }
