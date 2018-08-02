@@ -68,6 +68,9 @@ public class SiteBasePageObject extends BasePageObject {
     }
 
 
+    public String getUrl() {
+        return driver.getCurrentUrl();
+    }
 
     private void logMercuryUserId() {
         Object scriptOut = driver.executeScript("return window.M && window.M.prop('userId')");
@@ -107,15 +110,21 @@ public class SiteBasePageObject extends BasePageObject {
         driver.manage().addCookie(new Cookie("access_token", token,
                 String.format(".%s", Configuration.getEnvType().getSiteDomain()), null, null));
 
+        logger.info("user was logged in by helios using cookietoken: " + String.format(".%s", Configuration.getEnvType().getSiteDomain()));
+
         if (driver.getCurrentUrl().contains("Logout")) {
             driver.get(wikiURL);
         } else {
             refreshPageAddingCacheBuster();
         }
 
+        logger.info("user was logged in by helios using userName: " + userName);
+
+
         this.verifyUserLoggedIn(userName);
         Log.info("loginCookie",
-                "user was logged in by by helios using access token: " + token);
+                "user was logged in by helios using access token: " + token);
+        logger.info("user was logged in by helios using access token: " + token);
         logMercuryUserId();
 
         return token;

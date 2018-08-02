@@ -1,7 +1,7 @@
 package com.automation.ui.base.common.templates.core;
 
 import com.automation.ui.base.common.utils.CommonUtils;
-import com.automation.ui.base.common.core.TestContext;
+import com.automation.ui.base.common.core.*;
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.annotations.Execute;
 import com.automation.ui.base.common.core.annotations.InBrowser;
@@ -43,6 +43,7 @@ public abstract class CoreTestTemplate {
     protected PropertyReader prpr;
 
     private void refreshDriver() {
+
         driver = DriverProvider.getActiveDriver();
     }
 
@@ -56,7 +57,7 @@ public abstract class CoreTestTemplate {
         initAssertData();
         prepareDirectories();
         //DISABLED NOW
-        // Helios.updateTokenCache();
+        Helios.updateTokenCache();
     }
 
 
@@ -93,6 +94,7 @@ public abstract class CoreTestTemplate {
 
     @BeforeClass(alwaysRun = true)
     public void initTestClass() {
+
         logger.info("beforeClass initTestClass ");
     }
 
@@ -197,7 +199,7 @@ public abstract class CoreTestTemplate {
         }
     }
 
-    //@AfterMethod(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     @AfterClass(alwaysRun = true)
     public void stop() {
 

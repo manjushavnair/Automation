@@ -41,7 +41,7 @@ public class Helios {
     private static final String IOEXCEPTION_ERROR_MESSAGE = "PLEASE CHECK IF YOUR VPN IS ENABLED";
     private static final String IOEXCEPTION_COMMAND = "IO EXCEPTION";
     private static final String X_UI_INTERNAL_REQUEST = "X-UI-Internal-Request";
-    private static final String THE_SCHWARTZ = "THE-SCHWARTZ";
+   // private static final String THE_SCHWARTZ = "THE-SCHWARTZ";
     private static final String CLIENT_PROTOCOL_EXCEPTION = "CLIENT PROTOCOL EXCEPTION";
 
     /**
@@ -72,7 +72,7 @@ public class Helios {
 
         HttpDelete httpDelete =
                 new HttpDelete(String.format("%s/%s/tokens", heliosGetTokenURL, user.getUserId()));
-        httpDelete.setHeader(THE_SCHWARTZ, Configuration.getCredentials().apiToken);
+        //httpDelete.setHeader(THE_SCHWARTZ, Configuration.getCredentials().apiToken);
         httpDelete.setHeader(X_UI_INTERNAL_REQUEST, "0");
 
         try (CloseableHttpResponse response = getDefaultClient().execute(httpDelete)) {
