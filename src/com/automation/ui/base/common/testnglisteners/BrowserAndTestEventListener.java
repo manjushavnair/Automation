@@ -50,7 +50,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
             String cookieDomain = String.format(".%s", Configuration.getEnvType().getSiteDomain());
 
-            logger.info(" cookieDomain afterNavigateTo " + cookieDomain + " Configuration.getEnvType().getSiteDomain() " + Configuration.getEnvType().getSiteDomain());
+            logger.info(" cookieDomain afterNavigateTo " + cookieDomain + " Configuration.getEnvType().getSiteDomain() :" + Configuration.getEnvType().getSiteDomain()+":");
 
             Date cookieDate = new Date(new DateTime().plusYears(10).getMillis());
 

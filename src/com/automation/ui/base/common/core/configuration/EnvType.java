@@ -36,4 +36,10 @@ public enum EnvType {
 
         return this.port;
     }
+
+    public String getKey() {
+
+
+        return this.key;
+    }
 }
