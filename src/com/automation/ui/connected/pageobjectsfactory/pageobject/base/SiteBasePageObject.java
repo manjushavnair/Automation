@@ -101,6 +101,7 @@ public class SiteBasePageObject extends BasePageObject {
 
 
     public String loginAs(User user) {
+
         return loginAs(user.getUserName(), user.getPassword(), urlBuilder.getUrl());
     }
 
