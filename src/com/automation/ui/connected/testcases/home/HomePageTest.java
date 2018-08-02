@@ -85,7 +85,6 @@ public class HomePageTest extends ConnectedBaseTest {
 
 
          home_page.wait.forElementVisible(By.cssSelector("primary ng-binding"));
-
      }
 
 
