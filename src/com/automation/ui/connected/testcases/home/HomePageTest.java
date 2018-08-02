@@ -63,7 +63,7 @@ public class HomePageTest extends ConnectedBaseTest {
         login_page.enterUser(userName);
         login_page.enterPassword(passWord);
          home_page= login_page.login();
-      //  home_page.waitForPageReload();
+        home_page.waitForPageReload();
         // home_page.open();
 
 
@@ -73,7 +73,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
 
     }
-     @Test(enabled = true,priority = 2,groups = {  "validcase"}, description = "launchHomePage ")
+     @Test(enabled = false,priority = 2,groups = {  "validcase"}, description = "launchHomePage ")
     public void launchHomePage()   {
         logger.info(" launchHomePage and going to  homepage"+urlBuilder.getUrl());
 
@@ -84,7 +84,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
 
 
-    @Test(enabled = true,priority = 3,groups = {  "validcase"}, description = "Add Connection ")
+    @Test(enabled = false,priority = 3,groups = {  "validcase"}, description = "Add Connection ")
     public void addConnection() throws Throwable {
 
         logger.info("Entering launchHomePage");

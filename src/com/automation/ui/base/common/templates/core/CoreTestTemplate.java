@@ -57,7 +57,7 @@ public abstract class CoreTestTemplate {
         initAssertData();
         prepareDirectories();
         //DISABLED NOW
-        Helios.updateTokenCache();
+       // Helios.updateTokenCache();
     }
 
 
