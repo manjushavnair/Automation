@@ -29,8 +29,6 @@ public class SiteBasePageObject extends BasePageObject {
 
     private static final By MERCURY_SKIN = By.cssSelector("#ember-container");
     private static final By MERCURY_NAV_ICON = By.cssSelector(".site-head .site-head-icon-nav");
-    private static final String LOGGED_IN_USER_SELECTOR_MERCURY =
-            ".wikia-nav__avatar img[alt*=%userName%]";
 
 
 
@@ -105,7 +103,7 @@ public class SiteBasePageObject extends BasePageObject {
         return loginAs(user.getUserName(), user.getPassword(), urlBuilder.getUrl());
     }
 
-    public String loginAs(String userName, String password, String wikiURL) {
+    public String loginAs(String userName, String password, String siteURL) {
         String token = Helios.getAccessToken(userName);
 
         driver.manage().addCookie(new Cookie("access_token", token,
@@ -114,7 +112,7 @@ public class SiteBasePageObject extends BasePageObject {
         logger.info("user was logged in by helios using cookietoken: " + String.format(".%s", Configuration.getEnvType().getSiteDomain()));
 
         if (driver.getCurrentUrl().contains("Logout")) {
-            driver.get(wikiURL);
+            driver.get(siteURL);
         } else {
             refreshPageAddingCacheBuster();
         }
@@ -141,8 +139,8 @@ public class SiteBasePageObject extends BasePageObject {
             if (driver.findElements(MERCURY_SKIN).size() > 0) {
                 wait.forElementClickable(MERCURY_NAV_ICON);
                 driver.findElement(MERCURY_NAV_ICON).click();
-                wait.forElementVisible(By.cssSelector(
-                        LOGGED_IN_USER_SELECTOR_MERCURY.replace("%userName%", userName.replace(" ", "_"))));
+           //     wait.forElementVisible(By.cssSelector(
+             //           LOGGED_IN_USER_SELECTOR_MERCURY.replace("%userName%", userName.replace(" ", "_"))));
                 // close nav on mercury
                 wait.forElementClickable(MERCURY_NAV_ICON);
                 driver.findElement(MERCURY_NAV_ICON).click();
@@ -201,36 +199,36 @@ public class SiteBasePageObject extends BasePageObject {
 
 
      /*
-    public HistoryPagePageObject openFileHistoryPage(String articlePage, String wikiURL) {
+    public HistoryPagePageObject openFileHistoryPage(String articlePage, String siteURL) {
         getUrl(urlBuilder.appendQueryStringToURL(
-                wikiURL + URLsContent.SITE_DIR + URLsContent.FILE_NAMESPACE + articlePage,
+                siteURL + URLsContent.SITE_DIR + URLsContent.FILE_NAMESPACE + articlePage,
                 URLsContent.ACTION_HISTORY));
         Log.log("openFileHistoryPage", "history page opened", true);
         return new HistoryPagePageObject();
     }
 
-    public AttachedRegisterPage openSpecialUserSignUpPage(String wikiURL) {
-        getUrl(wikiURL + URLsContent.USER_SIGNUP);
+    public AttachedRegisterPage openSpecialUserSignUpPage(String siteURL) {
+        getUrl(siteURL + URLsContent.USER_SIGNUP);
         Log.log("openSpecialUserSignUpPage", "Special:UserSignup page opened", true);
         return new AttachedRegisterPage();
     }
 
-    public PreferencesPageObject openSpecialPreferencesPage(String wikiURL) {
-        getUrl(wikiURL + URLsContent.SITE_DIR + URLsContent.SPECIAL_PREFERENCES);
+    public PreferencesPageObject openSpecialPreferencesPage(String siteURL) {
+        getUrl(siteURL + URLsContent.SITE_DIR + URLsContent.SPECIAL_PREFERENCES);
         Log.log("openSpecialPreferencesPage", "Special:Prefereces page opened", true);
         return new PreferencesPageObject();
     }
 
-    public AttachedSignInPage openSpecialUserLogin(String wikiURL) {
-        getUrl(wikiURL + URLsContent.USER_LOGIN);
+    public AttachedSignInPage openSpecialUserLogin(String siteURL) {
+        getUrl(siteURL + URLsContent.USER_LOGIN);
         Log.log("openSpecialUserLogin", "Special:UserLogin page opened", true);
         return new AttachedSignInPage();
     }
 
 
 
-    public CreateNewSitePageObjectStep1 openSpecialCreateNewWikiPage(String wikiURL) {
-        getUrl(wikiURL + URLsContent.SPECIAL_CREATE_NEW_WIKI);
+    public CreateNewSitePageObjectStep1 openSpecialCreateNewSitePage(String siteURL) {
+        getUrl(siteURL + URLsContent.SPECIAL_CREATE_NEW_WIKI);
         return new CreateNewSitePageObjectStep1();
     }
 
@@ -239,8 +237,8 @@ public class SiteBasePageObject extends BasePageObject {
         new Actions(driver).moveToElement(articleEditDropdown).perform();
     }
 
-    public void openSpecialWatchListPage(String wikiURL) {
-        getUrl(wikiURL + URLsContent.SITE_DIR + URLsContent.SPECIAL_WATCHLIST);
+    public void openSpecialWatchListPage(String siteURL) {
+        getUrl(siteURL + URLsContent.SITE_DIR + URLsContent.SPECIAL_WATCHLIST);
     }
 
 
@@ -314,12 +312,6 @@ public class SiteBasePageObject extends BasePageObject {
                 .toString();
     }
 
-    public void addVideoViaAjax(String videoURL) {
-        String request =
-                "$.ajax('" + getContextUrl() + "wikia.php?controller=Videos&method=addVideo&format=json', {"
-                        + "data: {url: '" + videoURL + "'}," + "type: 'POST' } );";
-        jsActions.execute(request);
-    }
 
     public void verifyVEPublishComplete() {
         waitForElementNotVisibleByElement(veMode);
@@ -398,8 +390,8 @@ public class SiteBasePageObject extends BasePageObject {
   }
 
 
-    public VisualEditorPageObject openNewArticleEditModeVisual(String wikiURL) {
-    getUrl(urlBuilder.appendQueryStringToURL(wikiURL + URLsContent.SITE_DIR + getNameForArticle(),
+    public VisualEditorPageObject openNewArticleEditModeVisual(String siteURL) {
+    getUrl(urlBuilder.appendQueryStringToURL(siteURL + URLsContent.SITE_DIR + getNameForArticle(),
                                              URLsContent.VEACTION_EDIT));
     return new VisualEditorPageObject();
   }
@@ -408,8 +400,8 @@ public class SiteBasePageObject extends BasePageObject {
     return new VisualEditModePageObject();
   }
 
-  public VisualEditModePageObject navigateToArticleEditPage(String wikiURL, String article) {
-    getUrl(urlBuilder.appendQueryStringToURL(wikiURL + URLsContent.SITE_DIR + article,
+  public VisualEditModePageObject navigateToArticleEditPage(String siteURL, String article) {
+    getUrl(urlBuilder.appendQueryStringToURL(siteURL + URLsContent.SITE_DIR + article,
         URLsContent.ACTION_EDIT));
     return new VisualEditModePageObject();
   }
@@ -419,33 +411,33 @@ public class SiteBasePageObject extends BasePageObject {
     return navigateToArticleEditPage(getContextUrl(), title);
   }
 
-  public SourceEditModePageObject navigateToArticleEditPageSrc(String wikiURL, String article) {
-    getUrl(urlBuilder.appendQueryStringToURL(wikiURL + URLsContent.SITE_DIR + article,
+  public SourceEditModePageObject navigateToArticleEditPageSrc(String siteURL, String article) {
+    getUrl(urlBuilder.appendQueryStringToURL(siteURL + URLsContent.SITE_DIR + article,
         URLsContent.ACTION_EDIT));
     return new SourceEditModePageObject();
   }
 
-  public VisualEditModePageObject goToArticleDefaultContentEditPage(String wikiURL,
+  public VisualEditModePageObject goToArticleDefaultContentEditPage(String siteURL,
       String article) {
     getUrl(urlBuilder.appendQueryStringToURL(urlBuilder
                                                  .appendQueryStringToURL(
-                                                     wikiURL + URLsContent.SITE_DIR + article,
+                                                     siteURL + URLsContent.SITE_DIR + article,
                                                      URLsContent.ACTION_EDIT),
                                              URLsContent.USE_DEFAULT_FORMAT));
     return new VisualEditModePageObject();
   }
 
 
-  public VisualEditorPageObject openVEOnArticle(String wikiURL, String article) {
-    getUrl(urlBuilder.appendQueryStringToURL(wikiURL + URLsContent.SITE_DIR + article,
+  public VisualEditorPageObject openVEOnArticle(String siteURL, String article) {
+    getUrl(urlBuilder.appendQueryStringToURL(siteURL + URLsContent.SITE_DIR + article,
                                              URLsContent.VEACTION_EDIT));
     return new VisualEditorPageObject();
   }
 */
 /*
-  public SpecialVideosPageObject openSpecialVideoPage(String wikiURL) {
+  public SpecialVideosPageObject openSpecialVideoPage(String siteURL) {
 
-    getUrl(wikiURL + URLsContent.SITE_DIR + URLsContent.SPECIAL_VIDEOS);
+    getUrl(siteURL + URLsContent.SITE_DIR + URLsContent.SPECIAL_VIDEOS);
     return new SpecialVideosPageObject(driver);
   }
 
@@ -453,13 +445,13 @@ public class SiteBasePageObject extends BasePageObject {
     return openSpecialVideoPage(getContextUrl());
   }
 
-  public SpecialVideosPageObject openSpecialVideoPageMostRecent(String wikiURL) {
-    getUrl(wikiURL + URLsContent.SITE_DIR + URLsContent.SPECIAL_VIDEOS + URLsContent.MOST_RECENT);
+  public SpecialVideosPageObject openSpecialVideoPageMostRecent(String siteURL) {
+    getUrl(siteURL + URLsContent.SITE_DIR + URLsContent.SPECIAL_VIDEOS + URLsContent.MOST_RECENT);
     return new SpecialVideosPageObject(driver);
   }
 
-  public SpecialNewFilesPage openSpecialNewFiles(String wikiURL) {
-    getUrl(wikiURL + URLsContent.SITE_DIR + URLsContent.SPECIAL_NEW_FILES);
+  public SpecialNewFilesPage openSpecialNewFiles(String siteURL) {
+    getUrl(siteURL + URLsContent.SITE_DIR + URLsContent.SPECIAL_NEW_FILES);
     return new SpecialNewFilesPage();
   }
 

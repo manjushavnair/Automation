@@ -16,15 +16,14 @@ public class SiteId {
     private String siteUrl;
     public SiteId(String siteUrl) {
         this.siteUrl = siteUrl;
-        this.extractSiteIdFromSpecialVersion();
-    }
-
+     }
+    //NEED TO REDEFINE
     private void extractSiteIdFromSpecialVersion() {
         NoAuthOperation request = new NoAuthOperation();
         String response = request
-                .execute(this.siteUrl + URLsContent.SITE_DIR + URLsContent.SPECIAL_VERSION,
+                .execute(this.siteUrl + URLsContent.SITE_DIR ,
                         new JSONObject());
-        Pattern p = Pattern.compile(".*city_id: (\\d+).*", Pattern.DOTALL);
+        Pattern p = Pattern.compile(".*id: (\\d+).*", Pattern.DOTALL);
         Matcher m = p.matcher(response);
         if (m.find()) {
             this.siteId = m.group(1);

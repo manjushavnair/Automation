@@ -12,9 +12,7 @@ public class LightboxComponentObject extends SiteBasePageObject {
 
     private static final Integer VIDEO_WIDTH_LIGHTBOX = 737;
 
-    @FindBy(css = ".LightboxHeader button.close.wikia-chiclet-button")
-    protected WebElement closeModalButton;
-    @FindBy(css = ".thumb.thumbinner")
+     @FindBy(css = ".thumb.thumbinner")
     private WebElement imageThumbnail;
     @FindBy(css = "#LightboxModal")
     private WebElement lightBoxModal;
@@ -85,12 +83,7 @@ public class LightboxComponentObject extends SiteBasePageObject {
         jsActions.execute("$('.LightboxHeader').css('opacity', '1')");
     }
 
-    public void clickCloseButton() {
-        //NEEDTOCHECK
-        wait.forElementVisibleW(closeModalButton);
-        scrollAndClick(closeModalButton);
-        Log.log("clickCloseButton ", "lightbox closed", true);
-    }
+
 
     public void clickPinButton() {
         builder.moveToElement(lightBoxModal).

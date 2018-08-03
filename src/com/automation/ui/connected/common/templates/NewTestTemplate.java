@@ -14,7 +14,7 @@ public class NewTestTemplate extends CoreTestTemplate {
 
 
     protected void loadFirstPage() {
-        driver.get(urlBuilder.getUrlForPage(URLsContent.SPECIAL_VERSION) + "?noexternals=1");
+
     }
 
     protected void prepareURLs() {

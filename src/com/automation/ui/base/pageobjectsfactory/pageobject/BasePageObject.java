@@ -758,7 +758,7 @@ public class BasePageObject {
 
     public void openSitePage(String siteURL) {
         getUrl(siteURL);
-        Log.log("openSitePage", "Wiki page is opened", true);
+        Log.log("openSitePage", "Site page is opened", true);
     }
 
     public enum PositionsVideo {

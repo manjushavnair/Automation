@@ -17,20 +17,7 @@ public final class Utils {
         throw new AssertionError();
     }
 
-    public static String extractSiteIdFromMediaSiteUsing(final WebDriver driver) {
-        String text = driver.findElement(By.cssSelector(".colorb tr:nth-child(5) td:nth-child(2)")).getText();
-        // Found text: "city_id: 1362702, cluster: c7, dc: sjc"
-        return StringUtils.substringBetween(text, ": ", ",");
-    }
 
-    private static String extractSiteIdFromMediaSite(String siteUrl) {
-        return new SiteId(siteUrl).getSiteId();
-    }
-
-    public static String excractSiteIdFromSiteName(String siteName) {
-        String siteUrl = UrlBuilder.createUrlBuilderForSite(siteName).getUrl().replace("https://", "http://");
-        return extractSiteIdFromMediaSite(siteUrl);
-    }
 
     public static String buildServicesUrl() {
         File configurationFile = new File(Configuration.getCredentialsFilePath());

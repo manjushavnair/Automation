@@ -308,15 +308,15 @@ public class UrlBuilder extends BaseUrlBuilder {
     private String getSiteGlobalName(String siteName) {
 
        // logger.info("getSiteGlobalName siteName : " + siteName + " this.env :" + this.env);
-        if (siteName.endsWith(".wikia")) {
+        if (siteName.endsWith(".connected")) {
 
             logger.info("getSiteGlobalName OLD SITE : " + siteName + " this.env :" + this.env);
             if (getEnvType(this.env) == EnvType.DEV) {
-                return "wikiaglobal";
+                return "global";
             } else {
                 logger.info("getSiteGlobalName step 2 : " + siteName + " this.env :" + this.env);
 
-                return siteName.replace(".wikia", "");
+                return siteName.replace(".connected", "");
             }
         } else {
             logger.info("getSiteGlobalName SITE : " + siteName + " this.env :" + this.env);

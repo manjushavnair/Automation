@@ -185,11 +185,7 @@ public class JavascriptActions {
         js.executeScript("window.scrollBy(arguments[0], arguments[1])", x, y);
     }
 
-   /* public String getCountry() {
-        waitForJavaScriptTruthy("Wikia.geo");
-        return js.executeScript("return Wikia.geo.getCountryCode();").toString();
-    }
-    */
+
 
     public void waitForJavaScriptTruthy(final String script) {
         driver.manage().timeouts().implicitlyWait(BASEConstants.WAITTIME500MILLISEC, TimeUnit.MILLISECONDS);

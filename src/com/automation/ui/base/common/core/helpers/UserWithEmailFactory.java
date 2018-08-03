@@ -18,22 +18,6 @@ public class UserWithEmailFactory {
                 CREDENTIALS.forgottenPasswordEmail1Password);
     }
 
-    public static UserWithEmail getUserWithSpaces() {
-        return new UserWithEmail(User.FORGOTTEN_PASSWORD_SPACES,
-                CREDENTIALS.forgottenPasswordEmail2Address,
-                CREDENTIALS.forgottenPasswordEmail2Password);
-    }
 
-    public static UserWithEmail getEmailOnlyUser1() {
-        return new UserWithEmail(null,
-                CREDENTIALS.emailQaart1,
-                CREDENTIALS.emailPasswordQaart1);
-    }
-
-    public static UserWithEmail getEmailOnlyUserForConfirmation() {
-        return new UserWithEmail(null,
-                CREDENTIALS.confirmEmailAddress,
-                CREDENTIALS.confirmEmailPassword);
-    }
 
 }
