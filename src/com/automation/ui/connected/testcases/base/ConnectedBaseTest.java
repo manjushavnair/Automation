@@ -39,7 +39,7 @@ public class ConnectedBaseTest extends NewTestTemplate  {
             eu = new ExcelUtil();
 
             eu.setExcelFile(ExcelCONSTANTS.LOGINXLSDATAPATH,
-                    ExcelCONSTANTS.LOGINGITHUB);
+                    ExcelCONSTANTS.LOGINXLSDATASHEETNAMELOGIN);
         } catch (Exception e) {
             e.printStackTrace();
             ;

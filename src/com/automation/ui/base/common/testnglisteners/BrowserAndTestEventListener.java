@@ -132,12 +132,16 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
 
                     if (userOptedIn) {
-						 cookie=new Cookie("tracking-opt-in-status", "accepted", cookieDomain, "/",
-                                        cookieDate
-                                );
-						 logger.info("userOptedIn "+ userOptedIn+"cookie:"+cookie);
-                        driver.manage().addCookie( cookie);
+                       // if(!Configuration.getEnvType().getKey().contains("test"))
+                        {
+                            cookie = new Cookie("tracking-opt-in-status", "accepted", cookieDomain, "/",
+                                    cookieDate
+                            );
+                            logger.info("userOptedIn " + userOptedIn + "cookie:" + cookie);
+                            driver.manage().addCookie(cookie);
+                        }
                     } else if (userOptedOut) {
+
 						cookie=new Cookie("tracking-opt-in-status", "rejected", cookieDomain, "/", cookieDate  );
 						logger.info("cookie:"+cookie);
                         driver.manage().addCookie( cookie);
