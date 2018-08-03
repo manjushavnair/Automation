@@ -20,20 +20,20 @@ public class IEBrowser extends BrowserAbstract {
 
 
 
-  /*
-   public abstract void setOptions();
+    /*
+     public abstract void setOptions();
 
-    protected abstract void startService();
+      protected abstract void startService();
 
 
-   */
-  private static final String CHROMEDRIVER_PATH_WINDOWS = "test/IEDriver/IEDriverServer.exe";
+     */
+    private static final String IEDRIVER_PATH_WINDOWS = "test/IEDriver/IEDriverServer.exe";
 
 
 
     @Override
     public void setOptions() {
-        String ieBinaryPath = CHROMEDRIVER_PATH_WINDOWS;
+        String ieBinaryPath = IEDRIVER_PATH_WINDOWS;
         String osName = System.getProperty("os.name").toUpperCase();
 
 
@@ -45,7 +45,7 @@ public class IEBrowser extends BrowserAbstract {
 
 
         // set application user permissions to 455
-       // iedriver.setExecutable(true);
+        // iedriver.setExecutable(true);
 
 
         System.setProperty("webdriver.ie.driver", iedriver.getPath());
@@ -54,16 +54,26 @@ public class IEBrowser extends BrowserAbstract {
 
     }
 
+    /*
+    Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true,
+    pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0,
+     elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000,
+      ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:23662/,
+      nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+
+     */
     @Override
     public UIWebDriver create() {
 
-        caps.setCapability(CapabilityType.BROWSER_NAME, "IE");
-        caps.setCapability(InternetExplorerDriver.
-                INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-        caps.setCapability("disable-popup-blocking", false);
-        caps.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
+        caps.setCapability(CapabilityType.BROWSER_NAME, "internet explorer");
+        caps.setCapability(CapabilityType.SUPPORTS_JAVASCRIPT, true);
+        caps.setJavascriptEnabled(true);
+        //  caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+        // caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+        //   caps.setCapability("disable-popup-blocking", false);
+        //  caps.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
         //caps.setBrowserName(wdConfig.getBrowserName());
-        return new UIWebDriver(new InternetExplorerDriver( caps), server, false);
+        return new UIWebDriver(new InternetExplorerDriver( caps ), server, false);
     }
 
     @Override
