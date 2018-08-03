@@ -1,3 +1,5 @@
+https://github.com/christian-bromann/awesome-selenium
+
 // Group test suite reference
 http://howtodoinjava.com/testng/how-to-execute-testng-tests-with-maven-build/
 http://websystique.com/java/testing/testng-mockito-example-stubbing-void-methods/
