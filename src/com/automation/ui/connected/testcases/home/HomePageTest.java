@@ -27,6 +27,8 @@ public class HomePageTest extends ConnectedBaseTest {
     private  LoginPage login_page=null;
     private  HomePage  home_page=null;
 
+
+
     public HomePageTest() {
 
         super();
@@ -77,10 +79,10 @@ public class HomePageTest extends ConnectedBaseTest {
      @Test(enabled = true,priority = 2,groups = {  "validcase"}, description = "launchHomePage ")
     public void launchHomePage()   {
          logger.info(" launchHomePage and going to  homepage"+urlBuilder.getUrl() );
-         login_page.wait.forElementClickable(By.cssSelector("primary"));
+         login_page.wait.forElementClickable(By.cssSelector(".primary"));
          logger.info(" home_page.getCurrentUrl() "+ home_page.getCurrentUrl());
 
-home_page.addConnection();
+         home_page.addConnection();
 
             //home_page.addRepo();
      }

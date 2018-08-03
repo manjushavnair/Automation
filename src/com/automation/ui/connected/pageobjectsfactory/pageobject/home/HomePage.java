@@ -20,6 +20,9 @@ public class HomePage extends SiteBasePageObject {
 
     private static Logger logger = Logger.getLogger(HomePage.class);
 
+    @FindBy(css = "primary")
+    private WebElement primarysButton;
+
 
     @FindBy(css = "a.logouts")
     private WebElement logoutLink;
