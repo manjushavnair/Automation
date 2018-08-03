@@ -6,6 +6,7 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.login;
 
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
+import com.automation.ui.base.common.core.url.Page;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.*;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
@@ -50,15 +51,28 @@ public class LoginPage extends SiteBasePageObject {
     }
 
     public LoginPage open() {
+
+        logger.info("getCurrentUrl()"+getCurrentUrl());
+        logger.info("getSiteUrl()"+getSiteUrl());
+        logger.info("getUrl()"+getUrl() );
+        logger.info("getSiteUrlWithPath()"+getSiteUrlWithPath() );
+
+
+
+
         if (Configuration.getEnvType().equals(EnvType.DEV)) {
             logger.info(getCurrentUrl());
             // getUrl("http://www.site.com");
             // getUrl(getCurrentUrl() + "?action=history");
             getUrl(getCurrentUrl());
         } else {
-            logger.info(getCurrentUrl());
+            logger.info(getSiteUrlWithPath());
             //  getUrl(getCurrentUrl() + "?action=something");
-            getUrl(getCurrentUrl());
+         //   getUrl(new Page(getSiteUrl(),"/login"));
+           // getUrl(getCurrentUrl()+"/login");
+
+            getUrl(getSiteUrlWithPath());
+
         }
         return this;
     }
@@ -69,7 +83,7 @@ public class LoginPage extends SiteBasePageObject {
             logger.info("Entering enterUser  login: ");
             Reporter.log("Entering  enterUser login:");
             fillInputAfterClear(username,userName);
-            login_button.click();
+           // login_button.click();
             logger.info("Exiting enterUser login");
             Reporter.log("Exiting  enterUser login");
 
@@ -110,7 +124,7 @@ public class LoginPage extends SiteBasePageObject {
             Reporter.log("Entering  login:");
 
             // savepasswordbutton.click();
-            waitAndClick(savepasswordbutton);
+          //  waitAndClick(savepasswordbutton);
 
             // login_button.click();
             waitAndClick(login_button);

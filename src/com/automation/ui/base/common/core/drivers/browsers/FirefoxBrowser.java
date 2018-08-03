@@ -32,13 +32,6 @@ public class FirefoxBrowser extends BrowserAbstract {
 
 
 
-    public void quitDriver() {
-        if (null != driver) {
-            driver.quit();
-            driver = null;
-        }
-
-    }
    */
 
 

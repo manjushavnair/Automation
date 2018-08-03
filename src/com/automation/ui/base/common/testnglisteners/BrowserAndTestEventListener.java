@@ -159,7 +159,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                 }*/
             }
 
-logger.info("Step6");
+            logger.info("Step6");
             if (TestContext.isFirstLoad()) {
 				logger.info("Step7");
                 User user = null;

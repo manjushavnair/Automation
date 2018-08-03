@@ -19,14 +19,7 @@ public class IEBrowser extends BrowserAbstract {
 
     protected abstract void startService();
 
-    protected abstract void stopService();
-    public void quitDriver() {
-        if (null != driver) {
-            driver.quit();
-            driver = null;
-        }
 
-    }
    */
 
 

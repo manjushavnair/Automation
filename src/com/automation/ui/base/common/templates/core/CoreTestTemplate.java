@@ -38,7 +38,7 @@ public abstract class CoreTestTemplate {
     protected UrlBuilder urlBuilder;
      protected String siteURL;
     protected String siteCorporateURL;
-    protected String siteCorpSetupURL;
+//    protected String siteCorpSetupURL;
 
     protected PropertyReader prpr;
 
@@ -199,8 +199,10 @@ public abstract class CoreTestTemplate {
         }
     }
 
-    @AfterMethod(alwaysRun = true)
-    @AfterClass(alwaysRun = true)
+
+    //  @AfterMethod(alwaysRun = true)
+   // @AfterClass(alwaysRun = true)
+    @AfterSuite(alwaysRun = true)
     public void stop() {
 
         logger.info("Stop  AfterClass or AfterMethod ::CoreTestTemplate ");
@@ -208,6 +210,9 @@ public abstract class CoreTestTemplate {
 
         DriverProvider.close();
     }
+
+
+
 
 
     @AfterSuite

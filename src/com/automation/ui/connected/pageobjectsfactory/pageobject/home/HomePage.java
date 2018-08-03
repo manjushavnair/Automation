@@ -35,6 +35,13 @@ public class HomePage extends SiteBasePageObject {
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON)
     private WebElement addButton;
 
+
+    //@FindBy(css = "a[class^='btn btn-sm btn-primary text-white']")
+    //@FindBy(css = "a[class^='btn btn-sm btn-primary text-white']")
+    //@FindBy(css = "btn btn-sm btn-primary text-white']")
+    @FindBy(css = "a.btn.btn-sm.btn-primary.text-white")
+    private WebElement addRepo;
+
     /*public com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage open() {
         return open(Configuration.getSiteName());
     }
@@ -77,7 +84,7 @@ public class HomePage extends SiteBasePageObject {
             logger.info(getCurrentUrl());
           // getUrl("http://localhost:9000");
             //  getUrl(getCurrentUrl() + " ");
-            getUrl(getCurrentUrl());
+            getUrl(getCurrentUrl()+"/login");
         }
         //waitForPageLoad();
 
@@ -107,6 +114,13 @@ public class HomePage extends SiteBasePageObject {
 
 
     }
+
+    public void addRepo( )
+    {
+
+      wait.forElementClickable(addRepo);
+        addRepo.click();
+        }
 
     public AddCloudDataConnection addConnection( ) {
         try {

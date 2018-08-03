@@ -63,7 +63,7 @@ public class CommonUtils {
             FileUtils.deleteDirectory(new File(dirName));
         } catch (IOException e) {
             e.printStackTrace();
-            logger.info("Unable to delete directory");
+            logger.info("Unable to delete directory: "+dirName);
         }
     }
 

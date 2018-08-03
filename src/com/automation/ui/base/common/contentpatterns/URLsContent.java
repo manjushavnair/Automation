@@ -8,6 +8,10 @@ public interface URLsContent {
     //CONTEXT
     public static final String SITE_DIR = "/";
 
+    //change this for your sites
+    public static final String SITE_CONTEXT = "login";
+
+
     // Special Urls - links to special pages
     public static final String USER_LOGIN = "/signin";
     public static final String USER_SIGNUP = "/";

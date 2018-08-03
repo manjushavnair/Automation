@@ -482,6 +482,10 @@ public class BasePageObject {
     }
 
 
+  public String getSiteUrlWithPath() {
+        return UrlBuilder.createUrlBuilder().getUrlForPath(URLsContent.SITE_CONTEXT);
+    }
+
 	public void  fillInputAfterClear(WebElement input, String value) {
 
         input.clear();

@@ -61,10 +61,10 @@ public class SiteBasePageObject extends BasePageObject {
 
 
 
-
-    public String getWikiUrl() {
+       //NEED TO CHANGE the context based on site context
+     public String getContextUrl() {
         String currentURL = driver.getCurrentUrl();
-        return currentURL.substring(0, currentURL.lastIndexOf("/wiki/"));
+        return currentURL.substring(0, currentURL.lastIndexOf("/login"));
     }
 
 
@@ -316,7 +316,7 @@ public class SiteBasePageObject extends BasePageObject {
 
     public void addVideoViaAjax(String videoURL) {
         String request =
-                "$.ajax('" + getWikiUrl() + "wikia.php?controller=Videos&method=addVideo&format=json', {"
+                "$.ajax('" + getContextUrl() + "wikia.php?controller=Videos&method=addVideo&format=json', {"
                         + "data: {url: '" + videoURL + "'}," + "type: 'POST' } );";
         jsActions.execute(request);
     }
@@ -416,7 +416,7 @@ public class SiteBasePageObject extends BasePageObject {
 
   public VisualEditModePageObject navigateToUniqueArticleEditPage() {
     String title = String.format("%s%s", PageContent.ARTICLE_NAME_PREFIX, LocalDateTime.now());
-    return navigateToArticleEditPage(getWikiUrl(), title);
+    return navigateToArticleEditPage(getContextUrl(), title);
   }
 
   public SourceEditModePageObject navigateToArticleEditPageSrc(String wikiURL, String article) {
@@ -450,7 +450,7 @@ public class SiteBasePageObject extends BasePageObject {
   }
 
   public SpecialVideosPageObject openSpecialVideoPage() {
-    return openSpecialVideoPage(getWikiUrl());
+    return openSpecialVideoPage(getContextUrl());
   }
 
   public SpecialVideosPageObject openSpecialVideoPageMostRecent(String wikiURL) {
@@ -465,7 +465,7 @@ public class SiteBasePageObject extends BasePageObject {
 
 
   public SpecialNewFilesPage openSpecialNewFiles() {
-    return openSpecialNewFiles(getWikiUrl() + URLsContent.SITE_DIR + URLsContent.SPECIAL_NEW_FILES);
+    return openSpecialNewFiles(getContextUrl() + URLsContent.SITE_DIR + URLsContent.SPECIAL_NEW_FILES);
   }
   public SourceEditModePageObject openCurrectArticleSourceMode() {
     String queryStrings[] = {URLsContent.ACTION_EDIT, URLsContent.SOURCE_MODE};

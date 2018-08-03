@@ -4,17 +4,18 @@ public interface LoginCONSTANTS {
 
 
     //login user , password and butting
-    public static String USERID = "//input[@id='i0116']";
+  /*  public static String USERID = "//input[@id='i0116']";
     public static String PASSWORD =  "//input[@id='i0118']";
     public static String SUBMIT ="//input[@id='idSIButton9']";
+    */
 
     //save the user ans apssword checkbox and thn submit
     public static String SAVELOGINCHECK ="//input[@id='idSIButton9']";
     public static String SAVELOGINANDSUBMIT = "//input[@id='KmsiCheckboxField']";
-   /*
 
-    public static String USERID = "//input[@id='username']";
+
+    public static String USERID = "//input[@id='login_field']";
     public static String PASSWORD =  "//input[@id='password']";
-    public static String SUBMIT ="//button[@class='primary']";
-    */
+    public static String SUBMIT ="//input[@value='Sign in']";
+
 }

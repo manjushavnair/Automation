@@ -123,7 +123,7 @@ public class Log {
         log(command, description, success, false);
     }
 
-    public static void log(String command, Throwable e, boolean success) {
+    public static void  log(String command, Throwable e, boolean success) {
         log(command, e.getMessage(), success, false);
     }
 
@@ -302,6 +302,8 @@ public class Log {
 
         // WebElement mercuryScriptVersion = driver.findElement(By.cssSelector("script[src*='mercury_ads_js']"));
 
+        logger.info("CHECKSTOP");
+
         if (driver.getProxy() != null && Configuration.getForceHttps()) {
             Har har = driver.getProxy().getHar();
             for (HarEntry entry : har.getLog().getEntries()) {
@@ -356,7 +358,7 @@ public class Log {
 
         Log.info("Log.LOG_PATH " + Log.LOG_PATH);
 
-        logger.info("Log.LOG_PATH " + Log.LOG_PATH);
+        logger.info("Log.LOG_PATH " + Log.LOG_PATH +" Log.testStarted "+ Log.testStarted);
 
 
         Log.testStarted = false;

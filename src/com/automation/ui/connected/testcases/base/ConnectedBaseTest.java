@@ -39,7 +39,7 @@ public class ConnectedBaseTest extends NewTestTemplate  {
             eu = new ExcelUtil();
 
             eu.setExcelFile(ExcelCONSTANTS.LOGINXLSDATAPATH,
-                    ExcelCONSTANTS.LOGINXLSDATASHEETNAMELOGIN);
+                    ExcelCONSTANTS.LOGINGITHUB);
         } catch (Exception e) {
             e.printStackTrace();
             ;
@@ -52,16 +52,7 @@ public class ConnectedBaseTest extends NewTestTemplate  {
         driver.get(urlBuilder.getUrlForPage(URLsContent.SITE_DIR));
     }
 
-    protected void prepareURLs() {
 
-
-        urlBuilder = UrlBuilder.createUrlBuilder();
-        siteUrlBuilder = new SiteUrlBuilder();
-        siteURL = urlBuilder.getUrl();
-        siteCorporateURL = urlBuilder.getSiteGlobalURL();
-        logger.info("prepareURLs siteCorporateURL : " + siteCorporateURL);
-        siteCorpSetupURL = UrlBuilder.createUrlBuilderForSiteAndLang("corp", Configuration.DEFAULT_LANGUAGE).getUrl();
-    }
 
     /*
     @BeforeMethod
