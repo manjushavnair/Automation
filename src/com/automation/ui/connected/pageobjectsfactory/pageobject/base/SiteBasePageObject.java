@@ -227,10 +227,7 @@ public class SiteBasePageObject extends BasePageObject {
 
 
 
-    public CreateNewSitePageObjectStep1 openSpecialCreateNewSitePage(String siteURL) {
-        getUrl(siteURL + URLsContent.SPECIAL_CREATE_NEW_WIKI);
-        return new CreateNewSitePageObjectStep1();
-    }
+
 
     protected void openArticleEditDropdown() {
 

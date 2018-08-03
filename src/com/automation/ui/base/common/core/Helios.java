@@ -72,8 +72,7 @@ public class Helios {
 
         HttpDelete httpDelete =
                 new HttpDelete(String.format("%s/%s/tokens", heliosGetTokenURL, user.getUserId()));
-        //httpDelete.setHeader(THE_SCHWARTZ, Configuration.getCredentials().apiToken);
-        httpDelete.setHeader(X_UI_INTERNAL_REQUEST, "0");
+         httpDelete.setHeader(X_UI_INTERNAL_REQUEST, "0");
 
         try (CloseableHttpResponse response = getDefaultClient().execute(httpDelete)) {
             Log.log("DELETE TOKENS REQUEST: ", httpDelete.toString(), true);

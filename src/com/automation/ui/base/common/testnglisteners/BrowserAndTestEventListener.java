@@ -104,7 +104,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                     try {
                         JavascriptExecutor js = DriverProvider.getActiveDriver();
                         Object mobileSiteVersion = js.executeScript(
-                                "return requirejs.entries['mobile-wiki/config/environment'].module.exports.default.APP.version");
+                                "return requirejs.entries['mobile-site/config/environment'].module.exports.default.APP.version");
                         Configuration.setTestValue("mobileSiteVersion", mobileSiteVersion.toString());
                     } catch (WebDriverException e) {
                         Configuration.setTestValue("mobileSiteVersion", null);
