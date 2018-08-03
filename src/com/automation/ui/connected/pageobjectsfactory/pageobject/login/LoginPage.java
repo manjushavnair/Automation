@@ -83,7 +83,7 @@ public class LoginPage extends SiteBasePageObject {
             logger.info("Entering enterUser  login: ");
             Reporter.log("Entering  enterUser login:");
             fillInputAfterClear(username,userName);
-             login_button.click();
+            // login_button.click();
             logger.info("Exiting enterUser login");
             Reporter.log("Exiting  enterUser login");
 
@@ -123,8 +123,8 @@ public class LoginPage extends SiteBasePageObject {
             logger.info("Entering  login: ");
             Reporter.log("Entering  login:");
 
-              savepasswordbutton.click();
-            waitAndClick(savepasswordbutton);
+           //   savepasswordbutton.click();
+           // waitAndClick(savepasswordbutton);
 
 
             waitAndClick(login_button);

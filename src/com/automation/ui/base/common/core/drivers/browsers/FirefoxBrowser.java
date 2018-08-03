@@ -8,15 +8,27 @@ import com.automation.ui.base.common.logging.Log;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.GeckoDriverService;
 import org.openqa.selenium.remote.CapabilityType;
-
+import org.openqa.selenium.firefox.FirefoxDriver;
 import java.io.File;
 import java.io.IOException;
 
 public class FirefoxBrowser extends BrowserAbstract {
+
+
+    private static final String FIREFOXDRIVER_PATH_FORMAT = "test/FireFoxDriver/firefoxdriver_%s";
+
+    private static final String FIREFOXDRIVER_PATH_MAC =
+            String.format(FIREFOXDRIVER_PATH_FORMAT, "mac64/geckodriver");
+
+    private static final String FIREFOXDRIVER_PATH_LINUX =
+            String.format(FIREFOXDRIVER_PATH_FORMAT, "linux64/geckodriver");
+
+    private static final String FIREFOXDRIVER_PATH_WINDOWS =
+            String.format(FIREFOXDRIVER_PATH_FORMAT, "win32/geckodriver.exe");
 
     private FirefoxProfile firefoxProfile;
     private GeckoDriverService fxService;
@@ -39,16 +51,62 @@ public class FirefoxBrowser extends BrowserAbstract {
     public void setOptions() {
         // Windows 8 requires to set webdriver.firefox.bin system variable
         // to path where executive file of FF is placed
-        if ("WINDOWS 8".equalsIgnoreCase(System.getProperty("os.name"))) {
+
+
+        String firefoxBinaryPath = "";
+        String osName = System.getProperty("os.name").toUpperCase();
+        if (osName.contains("WINDOWS")) {
+            firefoxBinaryPath = FIREFOXDRIVER_PATH_WINDOWS;
+        } else if (osName.contains("MAC")) {
+            firefoxBinaryPath = FIREFOXDRIVER_PATH_MAC;
+        } else if (osName.contains("LINUX")) {
+            firefoxBinaryPath = FIREFOXDRIVER_PATH_LINUX;
+        }
+
+
+        File ffdriver= new File(ClassLoader.getSystemResource(firefoxBinaryPath).getPath());
+
+        logger.info("FirefoxDriverPath:"+ firefoxBinaryPath + " : " +ffdriver.getPath());
+
+
+
+        // set application user permissions to 455
+        ffdriver.setExecutable(true);
+
+
+        //System.setProperty("webdriver.firefox.driver", ffdriver.getPath());
+        //System.setProperty("webdriver.firefox.marionette", ffdriver.getPath());
+        System.setProperty("webdriver.gecko.driver", ffdriver.getPath());
+        Log.info("Using firefox driver: ", ffdriver.getPath());
+
+
+       /* if ("WINDOWS 8".equalsIgnoreCase(System.getProperty("os.name"))) {
+			logger.info("Firefox setOptions"+System.getProperty("os.name"));
             System.setProperty("webdriver.gecko.driver", "c:" + File.separator + "Program Files (x86)"
                     + File.separator + "Mozilla Firefox" + File.separator + "Firefox.exe");
 					//webdriver.gecko.driver
 					//webdriver.firefox.bin
+					//webdriver.firefox.marionette
 
 					// System.setProperty("webdriver.firefox.marionette", System.getProperty("user.dir") + "path");
         }
+        if ("WINDOWS 7".equalsIgnoreCase(System.getProperty("os.name"))) {
+			logger.info("Firefox setOptions"+System.getProperty("os.name"));
+          //  System.setProperty("webdriver.gecko.driver", "c:" + File.separator + "Program Files (x86)"
+            //        + File.separator + "Mozilla Firefox" + File.separator + "Firefox.exe");
+					//webdriver.gecko.driver
+					//webdriver.firefox.bin
+
+
+            //webdriver.firefox.driver
+            System.setProperty("webdriver.firefox.driver", System.getProperty("user.dir")+"\\"+"geckodriver-v0.21.0-win64.zip");
+
+
+        }
+
         else if (System.getProperty("os.name")
                 .contains("Windows Server") ){
+					logger.info("Firefox setOptions"+System.getProperty("os.name"));
             System.setProperty("webdriver.gecko.driver", "c:" + File.separator + "Program Files"
                     + File.separator + "Mozilla Firefox" + File.separator + "Firefox.exe");
 
@@ -57,9 +115,11 @@ public class FirefoxBrowser extends BrowserAbstract {
             // System.setProperty("webdriver.firefox.marionette", System.getProperty("user.dir") + "path");
         }
 
+ */
 
         // Check if user who is running tests have write access in ~/.mozilla dir and home dir
         if ("LINUX".equalsIgnoreCase(System.getProperty("os.name"))) {
+
             File homePath = new File(System.getenv("HOME") + File.separator);
             File mozillaPath = new File(homePath + File.separator + ".mozilla");
             File tmpFile;
@@ -116,14 +176,14 @@ public class FirefoxBrowser extends BrowserAbstract {
     @Override
     public UIWebDriver create() {
         caps.setCapability(FirefoxDriver.PROFILE, firefoxProfile);
-        caps.setCapability("marionette", false);
+   //     caps.setCapability("marionette", false);
+        caps.setCapability("gecko", true);
+
         caps.setCapability("disable-popup-blocking", false);
         caps.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
 
         //caps.setBrowserName(wdConfig.getBrowserName());
-
-
-        return new UIWebDriver(new FirefoxDriver(caps), server, false);
+        return new UIWebDriver(new FirefoxDriver(caps ), server, false);
     }
 
     @Override
