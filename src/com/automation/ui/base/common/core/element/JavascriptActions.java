@@ -1,13 +1,16 @@
 package com.automation.ui.base.common.core.element;
 
 import com.automation.ui.base.common.contentpatterns.XSSContent;
+import com.automation.ui.base.common.core.drivers.browsers.IEBrowser;
 import com.automation.ui.base.common.driverprovider.DriverProvider;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.automation.ui.base.common.constants.*;
+import org.openqa.selenium.JavascriptExecutor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,6 +18,11 @@ import java.util.concurrent.TimeUnit;
  * Set of commonly used actions invoked by executing JavaScript on a web page
  */
 public class JavascriptActions {
+
+
+    private static Logger logger = Logger
+            .getLogger(JavascriptActions.class);
+
 
     private final static int WEBDRIVER_WAIT_TIMEOUT_SEC = 15;
     private final JavascriptExecutor js;
@@ -53,6 +61,7 @@ public class JavascriptActions {
 
     public Object execute(String script) {
         // TODO: Get rid of this wait
+
         try {
             Object value = js.executeScript("return " + script);
             Thread.sleep(BASEConstants.WAITTIME1000MILLISEC);

@@ -31,7 +31,7 @@ public class Test {
 
         //Call executeAsyncScript() method to wait for 5 seconds
         js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 5000);");
-
+        System.out.println("Successfully called js ");
         //Get the difference (currentTime - startTime)  of times.
         System.out.println("Passed time: " + (System.currentTimeMillis() - start_time));
 

@@ -47,6 +47,9 @@ public class IEBrowser extends BrowserAbstract {
         // set application user permissions to 455
         // iedriver.setExecutable(true);
 
+      //  System.setProperty("webdriver.ie.driver","D:\\Project\\Automation\\target\\classes\\test\\IEDriver\\IEDriverServer.exe");
+
+
 
         System.setProperty("webdriver.ie.driver", iedriver.getPath());
         Log.info("Using ie driver: ", iedriver.getPath());
@@ -55,6 +58,10 @@ public class IEBrowser extends BrowserAbstract {
     }
 
     /*
+    #
+    READ ME
+    https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver#required-configuration
+
     Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true,
     pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0,
      elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000,
@@ -65,15 +72,19 @@ public class IEBrowser extends BrowserAbstract {
     @Override
     public UIWebDriver create() {
 
+
+
+      //  caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+        caps.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
+        caps.setCapability(InternetExplorerDriver.ENABLE_ELEMENT_CACHE_CLEANUP, true);
+
+        caps.setCapability(InternetExplorerDriver.NATIVE_EVENTS, true);
+
         caps.setCapability(CapabilityType.BROWSER_NAME, "internet explorer");
         caps.setCapability(CapabilityType.SUPPORTS_JAVASCRIPT, true);
         caps.setJavascriptEnabled(true);
-        //  caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-        // caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-        //   caps.setCapability("disable-popup-blocking", false);
-        //  caps.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
-        //caps.setBrowserName(wdConfig.getBrowserName());
-        return new UIWebDriver(new InternetExplorerDriver( caps ), server, false);
+
+        return new UIWebDriver(new InternetExplorerDriver(   ), server, false);
     }
 
     @Override
