@@ -63,7 +63,10 @@ public class JavascriptActions {
         // TODO: Get rid of this wait
 
         try {
+
+            //Object value1 = js.executeAsyncScript("return " + script);
             Object value = js.executeScript("return " + script);
+
             Thread.sleep(BASEConstants.WAITTIME1000MILLISEC);
             return value;
         } catch (InterruptedException e) {

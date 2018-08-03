@@ -25,6 +25,7 @@ import org.testng.SkipException;
 
 import java.lang.reflect.Method;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
         implements ITestListener {
@@ -35,8 +36,14 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
     @Override
     public void beforeNavigateTo(String url, WebDriver driver) {
+        // driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
+
+        //for ie
+       // new JavascriptActions(driver).execute("window.stop");
+        //for chrome
         new JavascriptActions(driver).execute("window.stop()");
-        logger.info("beforeNavigateTo : " + url);
+       // new JavascriptActions(driver).execute("window.setTimeout(arguments[arguments.length - 1], 5000);");
+
         Log.ok("Navigate to", VelocityWrapper.fillLink(url, url));
         Log.logJSError();
     }
