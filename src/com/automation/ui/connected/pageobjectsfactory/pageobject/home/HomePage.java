@@ -36,10 +36,8 @@ public class HomePage extends SiteBasePageObject {
     private WebElement addButton;
 
 
-    //@FindBy(css = "a[class^='btn btn-sm btn-primary text-white']")
-    //@FindBy(css = "a[class^='btn btn-sm btn-primary text-white']")
-    //@FindBy(css = "btn btn-sm btn-primary text-white']")
-    @FindBy(css = "a.btn.btn-sm.btn-primary.text-white")
+    //for GITHUB testing
+    @FindBy(css =HomeConstants.NEWREPOCREATION)
     private WebElement addRepo;
 
     /*public com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage open() {
@@ -84,7 +82,7 @@ public class HomePage extends SiteBasePageObject {
             logger.info(getCurrentUrl());
           // getUrl("http://localhost:9000");
             //  getUrl(getCurrentUrl() + " ");
-            getUrl(getCurrentUrl()+"/login");
+            getUrl(getCurrentUrl());
         }
         //waitForPageLoad();
 

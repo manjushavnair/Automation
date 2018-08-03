@@ -63,10 +63,8 @@ public class Log {
     // This is to print log for the beginning of the test case, as we usually run so many test cases as a test suite
     public static void startTestCase(String sTestCaseName) {
 
-        logger.info("****************************************************************************************");
-        logger.info("****************************************************************************************");
+         logger.info("****************************************************************************************");
         logger.info("$$$$$$$$$$$$$$$$$$$$$                 " + sTestCaseName + "       $$$$$$$$$$$$$$$$$$$$$$$$$");
-        logger.info("****************************************************************************************");
         logger.info("****************************************************************************************");
 
     }
@@ -302,15 +300,16 @@ public class Log {
 
         // WebElement mercuryScriptVersion = driver.findElement(By.cssSelector("script[src*='mercury_ads_js']"));
 
-        logger.info("CHECKSTOP");
+
 
         if (driver.getProxy() != null && Configuration.getForceHttps()) {
+
             Har har = driver.getProxy().getHar();
             for (HarEntry entry : har.getLog().getEntries()) {
                 URL url;
                 try {
                     url = new URL(entry.getRequest().getUrl());
-                    if (url.getHost().contains("wikia")) {
+                    if (url.getHost().contains("connected")) {
                         boolean isHttps = entry.getRequest().getUrl().startsWith("https");
                         Log.log("VISITED URL", "Url: " + entry.getRequest().getUrl(),
                                 !Configuration.getForceHttps() || isHttps
@@ -326,6 +325,7 @@ public class Log {
         }
 
         if (driver.getProxy() != null && Configuration.getAdsData()) {
+
             Har har = driver.getProxy().getHar();
             for (HarEntry entry : har.getLog().getEntries()) {
                 try {

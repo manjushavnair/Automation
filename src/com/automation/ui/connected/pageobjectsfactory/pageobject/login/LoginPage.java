@@ -69,7 +69,7 @@ public class LoginPage extends SiteBasePageObject {
             logger.info(getSiteUrlWithPath());
             //  getUrl(getCurrentUrl() + "?action=something");
          //   getUrl(new Page(getSiteUrl(),"/login"));
-           // getUrl(getCurrentUrl()+"/login");
+           // getUrl(getCurrentUrl());
 
             getUrl(getSiteUrlWithPath());
 
@@ -83,7 +83,7 @@ public class LoginPage extends SiteBasePageObject {
             logger.info("Entering enterUser  login: ");
             Reporter.log("Entering  enterUser login:");
             fillInputAfterClear(username,userName);
-           // login_button.click();
+             login_button.click();
             logger.info("Exiting enterUser login");
             Reporter.log("Exiting  enterUser login");
 
@@ -123,10 +123,10 @@ public class LoginPage extends SiteBasePageObject {
             logger.info("Entering  login: ");
             Reporter.log("Entering  login:");
 
-            // savepasswordbutton.click();
-          //  waitAndClick(savepasswordbutton);
+              savepasswordbutton.click();
+            waitAndClick(savepasswordbutton);
 
-            // login_button.click();
+
             waitAndClick(login_button);
             logger.info("Exiting  login");
             Reporter.log("Exiting  login");

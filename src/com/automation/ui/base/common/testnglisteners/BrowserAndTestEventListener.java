@@ -47,8 +47,14 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
         Cookie cookie=null;
         if (method != null) {
             Class<?> declaringClass = method.getDeclaringClass();
-
-            String cookieDomain = String.format(".%s", Configuration.getEnvType().getSiteDomain());
+            String cookieDomain =null;
+            //for localhost:9000 or localhost/ without domain
+            if(Configuration.getEnvType().getKey().contains("test")) {
+                  cookieDomain = String.format("%s", Configuration.getEnvType().getSiteDomain());
+            }
+            else {
+                cookieDomain = String.format(".%s", Configuration.getEnvType().getSiteDomain());
+            }
 
             logger.info(" cookieDomain afterNavigateTo " + cookieDomain + " Configuration.getEnvType().getSiteDomain() :" + Configuration.getEnvType().getSiteDomain()+":");
 
@@ -131,32 +137,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                     }
                 }
 
-                /**
-                 * We want to disable sales pitch dialog for new potential contributors to avoid hiding other
-                 * UI elements. see https://wikia-inc.atlassian.net/browse/CE-3768
-                 */
-                if (TestContext.isFirstLoad() && "true"
-                        .equals(Configuration.getDisableCommunityPageSalesPitchDialog())) {
 
-							logger.info("Step5");
-
-
-                        cookie=new Cookie("cpBenefitsModalShown", "1", cookieDomain, "/", cookieDate);
-						 logger.info("cookie:"+cookie);
-                        driver.manage().addCookie( cookie);
-                }
-
-                /*if (TestContext.isFirstLoad() && "true".equals(Configuration.getMockAds())) {
-                    driver.manage().addCookie(new Cookie("mock-ads", XMLReader.getValue("mock.ads_token"),
-                            cookieDomain, "/", cookieDate
-                    ));
-                    Log.info(String.format(
-                            "Adding moc-ads cookie with value: %s, and domain: %s",
-                            XMLReader.getValue("mock.ads_token"),
-                            String.format(".%s", Configuration.getEnvType()
-                                    .getSiteDomain())
-                    ));
-                }*/
             }
 
             logger.info("Step6");
