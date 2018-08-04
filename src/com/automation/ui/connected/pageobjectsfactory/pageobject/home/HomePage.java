@@ -148,12 +148,13 @@ public class HomePage extends SiteBasePageObject {
 
             wait.forElementVisible(addButton,30);
            jsActions.click(addButton);
+            Thread.sleep(40000);
 
             //((JavascriptExecutor)driver).executeScript("$('button.primary.ng-binding').click()");
 
 
 
-          Thread.sleep(30000);
+
 
        //   addButton.click();
 
