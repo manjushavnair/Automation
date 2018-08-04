@@ -63,9 +63,9 @@ public class HomePageTest extends ConnectedBaseTest {
         logger.info(" launchHomePage and going to  homepage" + urlBuilder.getUrl());
         login_page.wait.forElementClickable(By.cssSelector(".primary"));
         logger.info(" home_page.getCurrentUrl() " + home_page.getCurrentUrl());
-        home_page.waitForPageLoad();
+       // home_page.waitForPageLoad();
 
-        Thread.sleep(30000);
+        Thread.sleep(20000);
 
         //  home_page.addConnection();
 

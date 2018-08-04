@@ -37,8 +37,11 @@ public class HomePage extends SiteBasePageObject {
     private WebElement menubutton;
 
 
-    @FindBy(css = HomeConstants.ADDCONNECTIONSBUTTON)
-    private WebElement addButton;
+   // @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON)
+   // private WebElement addButton;
+
+     @FindBy(css = HomeConstants.ADDCONNECTIONSBUTTON)
+     private WebElement addButton;
 
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_ERROR_MSG)
     private WebElement msg;
@@ -137,14 +140,17 @@ public class HomePage extends SiteBasePageObject {
             logger.info("Entering  addConnection: ");
             Reporter.log("Entering  addConnection:");
             logger.info("click  ");
+          //  addButton.click();
           // wait.forElementClickable(addButton,BASEConstants.WAITTIME10000MILLISEC);
-            waitAndClick(addButton);
+          //  waitAndClick(addButton);
 
-          // wait.forElementVisibleW(addButton);
+           wait.forElementVisible(addButton,30);
 
-            //jsActions.click(addButton);
+          jsActions.click(addButton);
 
-           // addButton.click();
+          Thread.sleep(30000);
+
+       //   addButton.click();
 
             logger.info("clicked ");
        Thread.sleep(5000);
