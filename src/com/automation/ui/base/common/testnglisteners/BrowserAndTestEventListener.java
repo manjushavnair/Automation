@@ -39,9 +39,10 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
         // driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
 
         //for ie
-       // new JavascriptActions(driver).execute("window.stop");
+        // new JavascriptActions(driver).execute("window.stop");
         //for chrome
         new JavascriptActions(driver).execute("window.stop()");
+
        // new JavascriptActions(driver).execute("window.setTimeout(arguments[arguments.length - 1], 5000);");
 
         Log.ok("Navigate to", VelocityWrapper.fillLink(url, url));

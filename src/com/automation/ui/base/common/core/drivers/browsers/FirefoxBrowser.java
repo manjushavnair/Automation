@@ -160,6 +160,11 @@ public class FirefoxBrowser extends BrowserAbstract {
         // if (disableCookies) {
         // 	profile.setPreference("network.cookie.cookieBehavior", 2);
         // }
+
+        firefoxProfile.setPreference("http.response.timeout", 15);
+        firefoxProfile.setPreference("dom.max_script_run_time", 15);
+
+
         firefoxProfile.setPreference("browser.download.folderList", 2);
         firefoxProfile.setPreference("browser.download.manager.showWhenStarting", false);
         //profile.setPreference("browser.download.dir", System.getProperty("user.dir")+ File.separator +"Download");

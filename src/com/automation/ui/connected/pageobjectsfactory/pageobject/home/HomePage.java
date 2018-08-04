@@ -153,7 +153,7 @@ public class HomePage extends SiteBasePageObject {
        //   addButton.click();
 
             logger.info("clicked ");
-       Thread.sleep(5000);
+
 
             logger.info("Exiting  addConnection");
             Reporter.log("Exiting  addConnection");
