@@ -209,7 +209,7 @@ public abstract class CoreTestTemplate {
     @AfterSuite(alwaysRun = true)
     public void stop() {
 
-        logger.info("Stop  AfterClass or AfterMethod ::CoreTestTemplate ");
+        logger.info("Stop  AfterClass or AfterSuite ::CoreTestTemplate ");
 
 
         DriverProvider.close();

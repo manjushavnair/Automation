@@ -141,15 +141,15 @@ public class HomePage extends SiteBasePageObject {
             logger.info("Entering  addConnection: ");
             Reporter.log("Entering  addConnection:");
             logger.info("click  ");
+
           //  addButton.click();
           // wait.forElementClickable(addButton,BASEConstants.WAITTIME10000MILLISEC);
           //  waitAndClick(addButton);
 
-           //wait.forElementVisible(addButton,30);
+            wait.forElementVisible(addButton,30);
+           jsActions.click(addButton);
 
-          //jsActions.click(addButton);
-
-           // ((JavascriptExecutor)driver).executeScript("$('button.primary.ng-binding').click()");
+            //((JavascriptExecutor)driver).executeScript("$('button.primary.ng-binding').click()");
 
 
 
