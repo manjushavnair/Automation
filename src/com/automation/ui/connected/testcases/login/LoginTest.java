@@ -72,7 +72,7 @@ public class LoginTest extends ConnectedBaseTest {
 
 
     @Test(priority = 1, groups = {"base", "validcase"})
-    public void verifyValidLogin() {
+    public void verifyValidLogin()  throws Throwable {
 
         logger.info("Entering verifyValidLogin");
         Reporter.log("Entering verifyValidLogin");
@@ -84,17 +84,11 @@ public class LoginTest extends ConnectedBaseTest {
         String userName = "";
         String password = "";
 
-        try {
 
-            ExcelUtil eu = getExcelUtil();
             userName = eu.getCellData(1, 1);
             password = eu.getCellData(1, 2);
 
-            logger.info("Entering verifyValidLogin");
-        } catch (Exception e) {
-            Assert.fail("Unable to login");
-            e.printStackTrace();
-        }
+
         logger.info("Exiting verifyValidLogin and going to login userName:" + userName + "password : *****");
         login_page.enterUser(userName);
         login_page.enterPassword(password);
@@ -108,7 +102,7 @@ public class LoginTest extends ConnectedBaseTest {
 
 
     @Test(priority = 2, groups = {"base", "invalidcase"})
-    public void verifyInValidUserNullPassword() {
+    public void verifyInValidUserNullPassword()  throws Throwable{
         logger.info("Entering verifyInValidUserNullPassword");
         Reporter.log("Entering verifyInValidUserNullPassword");
         LoginPage login_page = new LoginPage();
@@ -118,17 +112,10 @@ public class LoginTest extends ConnectedBaseTest {
         }.getClass().getEnclosingMethod().getName();
         String userName = "";
         String password = "";
-        try {
 
-            ExcelUtil eu = getExcelUtil();
             userName = eu.getCellData(2, 1);
             password = eu.getCellData(2, 2);
 
-            logger.info("Entering verifyInValidUserNullPassword");
-        } catch (Exception e) {
-            Assert.fail("Unable to login");
-            e.printStackTrace();
-        }
         logger.info("Exiting verifyInValidUserNullPassword userName:" + userName + "password : *****");
         login_page.enterUser(userName);
         login_page.enterPassword(password);
@@ -138,7 +125,7 @@ public class LoginTest extends ConnectedBaseTest {
 
 
     @Test(priority = 3, groups = {"base", "invalidcase"})
-    public void verifyValidUserNullPassword() {
+    public void verifyValidUserNullPassword()  throws Throwable {
 
         logger.info("Entering verifyValidUserNullPassword");
         Reporter.log("Entering verifyValidUserNullPassword");
@@ -149,17 +136,11 @@ public class LoginTest extends ConnectedBaseTest {
         }.getClass().getEnclosingMethod().getName();
         String userName = "";
         String password = "";
-        try {
 
-            ExcelUtil eu = getExcelUtil();
             userName = eu.getCellData(3, 1);
             password = eu.getCellData(3, 2);
 
-            logger.info("Entering verifyValidUserNullPassword");
-        } catch (Exception e) {
-            Assert.fail("Unable to login");
-            e.printStackTrace();
-        }
+
         logger.info("Exiting verifyValidUserNullPassword userName:" + userName + "password : *****");
         login_page.enterUser(userName);
         login_page.enterPassword(password);
@@ -179,17 +160,11 @@ public class LoginTest extends ConnectedBaseTest {
         String password = "";
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();
-        try {
 
-            ExcelUtil eu = getExcelUtil();
             userName = eu.getCellData(4, 1);
              password = eu.getCellData(4, 2);
 
-            logger.info("Entering verifyInValidLogin");
-        } catch (Exception e) {
-            Assert.fail("Unable to login");
-            e.printStackTrace();
-        }
+
         logger.info("Exiting verifyInValidLoginNullPassword and going to login userName:" + userName + "password : *****");
         login_page.enterUser(userName);
         login_page.enterPassword(password);
@@ -210,17 +185,10 @@ public class LoginTest extends ConnectedBaseTest {
         String password = "";
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();
-        try {
 
-            ExcelUtil eu = getExcelUtil();
             userName = eu.getCellData(5, 1);
             password = eu.getCellData(5, 2);
 
-            logger.info("Entering verifyNullUserNullPassword");
-        } catch (Exception e) {
-            Assert.fail("Unable to login");
-            e.printStackTrace();
-        }
         logger.info("Exiting verifyNullUserNullPassword and going to login userName:" + userName + "password : *****");
         login_page.enterUser(userName);
         login_page.enterPassword(password);

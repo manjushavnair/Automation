@@ -50,7 +50,7 @@ public abstract class CoreTestTemplate {
     @BeforeSuite(alwaysRun = true, groups = {"base"})
     public void beforeSuite() {
         // initialize a browser driver, connect to servers
-        logger.info("beforeSuite ::CoreTestTemplate");
+       // logger.info("beforeSuite ::CoreTestTemplate");
         Reporter.log("beforeSuite::CoreTestTemplate");
         initLogs();
         initProperty();
@@ -65,7 +65,7 @@ public abstract class CoreTestTemplate {
      * Initialize Property.
      */
     private void initAssertData() {
-        logger.info("initAssertData readProperty ");
+     //   logger.info("initAssertData readProperty ");
         assertData = AssertDataReader.readProperty();
 
     }
@@ -79,7 +79,7 @@ public abstract class CoreTestTemplate {
             // Initialize Log4j logs
             DOMConfigurator.configure(System.getProperty("user.dir") + File.separator + "resources" + File.separator + "log4j.xml");
             logger = Logger.getLogger(this.getClass());
-            logger.info("Logger is initialized..");
+           // logger.info("Logger is initialized..");
         }
     }
 
@@ -87,7 +87,7 @@ public abstract class CoreTestTemplate {
      * Initialize Property.
      */
     private void initProperty() {
-        logger.info("initProperty readProperty ");
+       // logger.info("initProperty readProperty ");
         prpr = PropertyReader.readProperty();
 
     }
@@ -95,14 +95,14 @@ public abstract class CoreTestTemplate {
     @BeforeClass(alwaysRun = true)
     public void initTestClass() {
 
-        logger.info("beforeClass initTestClass ");
+       // logger.info("beforeClass initTestClass ");
     }
 
     @BeforeMethod(alwaysRun = true)
     public void initTestContext(Method method) {
         TestContext.writeMethodName(method);
         Log.startTest(method);
-        logger.info("beforeMethod initTestContext ");
+       // logger.info("beforeMethod initTestContext ");
 
         com.automation.ui.base.common.core.configuration.Configuration.clearCustomTestProperties();
 
@@ -111,8 +111,8 @@ public abstract class CoreTestTemplate {
         setPropertiesFromAnnotationsOnMethod(method);
         String currentBrowser = com.automation.ui.base.common.core.configuration.Configuration.getBrowser();
 
-        logger.info(" beforeMethod initTestContext Browser parameter changed by annotation"
-                + ", old value: " + browser + ", new value: " + currentBrowser);
+       // logger.info(" beforeMethod initTestContext Browser parameter changed by annotation"
+         //       + ", old value: " + browser + ", new value: " + currentBrowser);
         if (!browser.equals(currentBrowser)) {
             Log.info("Parameter override", "Browser parameter changed by annotation"
                     + ", old value: " + browser + ", new value: " + currentBrowser);

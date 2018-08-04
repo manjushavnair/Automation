@@ -46,7 +46,7 @@ public class DriverProvider {
             if (webDriver != null) {
                 try {
                     String path = System.getenv("PATH");
-                    logger.info("path"+path);
+                   // logger.info("path"+path);
                     System.out.println(path);
                     webDriver.quit();
                 } catch (UnsatisfiedLinkError | NoClassDefFoundError | NullPointerException e) {

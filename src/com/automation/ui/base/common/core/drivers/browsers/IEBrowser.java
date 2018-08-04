@@ -77,12 +77,13 @@ public class IEBrowser extends BrowserAbstract {
       //  caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
         caps.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
         caps.setCapability(InternetExplorerDriver.ENABLE_ELEMENT_CACHE_CLEANUP, true);
+           caps.setCapability(InternetExplorerDriver.NATIVE_EVENTS, true);
 
-        caps.setCapability(InternetExplorerDriver.NATIVE_EVENTS, true);
 
         caps.setCapability(CapabilityType.BROWSER_NAME, "internet explorer");
         caps.setCapability(CapabilityType.SUPPORTS_JAVASCRIPT, true);
         caps.setJavascriptEnabled(true);
+        caps.setCapability("ie.ensureCleanSession", true);
 
         return new UIWebDriver(new InternetExplorerDriver(   ), server, false);
     }

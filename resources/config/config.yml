@@ -23,7 +23,12 @@ language: en # run tests on wikis with specific language unless there is an anno
 credentialsPath: resources/selenium-config/credentials.xml
 # Specify browser window size in format <width>x<height>, example: 800x600
 # use "maximised" value if you want browser to be maximised
+mobileSiteVersion: null
 browserSize: maximised
+useProxy: null
+countryCode: null
+
+unsafePageLoad: null
 
 # Add browser extensions.
 # Acceptable values:

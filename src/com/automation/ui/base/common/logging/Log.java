@@ -358,7 +358,7 @@ public class Log {
 
         Log.info("Log.LOG_PATH " + Log.LOG_PATH);
 
-        logger.info("Log.LOG_PATH " + Log.LOG_PATH +" Log.testStarted "+ Log.testStarted);
+       // logger.info("Log.LOG_PATH " + Log.LOG_PATH +" Log.testStarted "+ Log.testStarted);
 
 
         Log.testStarted = false;

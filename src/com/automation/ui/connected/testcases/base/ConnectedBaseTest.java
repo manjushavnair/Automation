@@ -30,6 +30,7 @@ public class ConnectedBaseTest extends NewTestTemplate  {
     public ConnectedBaseTest() {
         super();
         AssertDataReader.readProperty();
+        eu = getExcelUtil();
 
     }
 

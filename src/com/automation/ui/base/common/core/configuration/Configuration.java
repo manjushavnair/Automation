@@ -84,7 +84,7 @@ public class Configuration {
 
         String value = String.valueOf(readConfiguration().get(propertyName));
         if ("null".equals(value))
-            LOGGER.info(" Configuration Property Name " + propertyName + " dose not exist in the config.yml file ");
+            LOGGER.debug(" Configuration For Property Name " + propertyName + " value dose not exist in the config.yml file ");
         return "null".equals(value) ? null : value;
 
 
@@ -231,7 +231,7 @@ public class Configuration {
 
     public static EnvType getEnvType(String env) {
         String[] sandboxEnvs = new String[]{"verify", "preview", "sandbox", "stable", "adeng"};
-        System.out.println("getEnvType :" + env);
+    //    System.out.println("getEnvType :" + env);
 
         if (env.contains("prod")) {
             return EnvType.PROD;

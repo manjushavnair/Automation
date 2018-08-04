@@ -35,8 +35,6 @@ public class VelocityWrapper {
     static void fillLogRow(List<LogData> logData, String command, String description) {
         StringBuilder builder = new StringBuilder();
 
-        System.out.print("velocityEngine  " + velocityEngine + " " + LOG_ROW_TEMPLATE_PATH);
-
         Template t = velocityEngine.getTemplate(LOG_ROW_TEMPLATE_PATH);
 
 
@@ -221,13 +219,11 @@ public class VelocityWrapper {
 
         Properties props = new Properties();
 
-        //Log.info("velocitytemplates");
-
 
         String path = ClassLoader.getSystemResource("test/velocitytemplates").getPath();
 
         props.put("file.resource.loader.path", path);
-        System.out.println("props : " + props);
+
         ve.init(props);
         return ve;
     }

@@ -23,7 +23,7 @@ public class NewTestTemplate extends CoreTestTemplate {
         siteURL = urlBuilder.getUrl();
         siteCorporateURL = urlBuilder.getSiteGlobalURL();
         //siteCorpSetupURL = UrlBuilder.createUrlBuilderForSiteAndLang("corp", Configuration.DEFAULT_LANGUAGE).getUrl();
-        logger.info("prepareURLs siteCorporateURL : " + siteCorporateURL + " siteURL" +siteURL  );
+        //logger.info("prepareURLs siteCorporateURL : " + siteCorporateURL + " siteURL" +siteURL  );
 
     }
 }

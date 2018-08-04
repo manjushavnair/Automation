@@ -36,8 +36,16 @@ public class HomePage extends SiteBasePageObject {
     @CacheLookup
     private WebElement menubutton;
 
-    @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON)
+
+    @FindBy(css = HomeConstants.ADDCONNECTIONSBUTTON)
     private WebElement addButton;
+
+    @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_ERROR_MSG)
+    private WebElement msg;
+
+    @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_ERROR_MSG_EXTRA)
+    private WebElement msgExtra;
+
 
 
     //for GITHUB testing
@@ -129,15 +137,17 @@ public class HomePage extends SiteBasePageObject {
             logger.info("Entering  addConnection: ");
             Reporter.log("Entering  addConnection:");
             logger.info("click  ");
-         //   wait.forElementClickable(addButton,BASEConstants.WAITTIME10000MILLISEC);
+          // wait.forElementClickable(addButton,BASEConstants.WAITTIME10000MILLISEC);
+            waitAndClick(addButton);
 
-           wait.forElementVisibleW(addButton);
+          // wait.forElementVisibleW(addButton);
 
-            jsActions.click(addButton);
+            //jsActions.click(addButton);
 
            // addButton.click();
 
             logger.info("clicked ");
+       Thread.sleep(5000);
 
             logger.info("Exiting  addConnection");
             Reporter.log("Exiting  addConnection");
@@ -147,10 +157,35 @@ public class HomePage extends SiteBasePageObject {
             Assert.fail("Add failed");
             Reporter.log("Add failed");
 
+
         }
         return new AddCloudDataConnection();
 
     }
 
+
+    public void addConnection_accessdenied( ) {
+
+            logger.info("Entering  addConnection_accessdenied: ");
+            Reporter.log("Entering  addConnection_accessdenied:");
+            try {
+                Thread.sleep(10000);
+            }catch(Exception e)
+            {
+                e.printStackTrace();
+            }
+
+
+        logger.info("accessdenied "+msg.getText());
+
+
+        Assert.assertEquals( msg.getText(),
+                AssertDataReader.readProperty().getValue("OPCUA_ACCESSDENIED"));
+
+            logger.info("Exiting  addConnection_accessdenied");
+            Reporter.log("Exiting  addConnection_accessdenied");
+
+
+    }
 
 }

@@ -136,13 +136,13 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                             cookie = new Cookie("tracking-opt-in-status", "accepted", cookieDomain, "/",
                                     cookieDate
                             );
-                            logger.info("userOptedIn " + userOptedIn + "cookie:" + cookie);
+                           // logger.info("userOptedIn " + userOptedIn + "cookie:" + cookie);
                             driver.manage().addCookie(cookie);
                         }
                     } else if (userOptedOut) {
 
 						cookie=new Cookie("tracking-opt-in-status", "rejected", cookieDomain, "/", cookieDate  );
-						logger.info("cookie:"+cookie);
+						//logger.info("cookie:"+cookie);
                         driver.manage().addCookie( cookie);
                     }
                 }
@@ -209,7 +209,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
     @Override
     public void onTestStart(ITestResult result) {
-        logger.info("onTestStart");
+      //  logger.info("onTestStart");
 
         Log.clearLogStack();
         String testName = result.getName();
@@ -219,7 +219,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        logger.info("onTestSuccess");
+       // logger.info("onTestSuccess");
         try {
             Log.stop();
         } catch (BusinessException e) {
@@ -234,7 +234,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
     @Override
     public void onTestFailure(ITestResult result) {
-        logger.info("onTestFailure");
+       // logger.info("onTestFailure");
 
         driver = DriverProvider.getActiveDriver();
 
@@ -246,7 +246,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                 Log.stop();
             } catch (BusinessException e) {
                 e.printStackTrace();
-                logger.info("onTestFailure   close if issue");
+                //logger.info("onTestFailure   close if issue");
                 DriverProvider.close();
             } finally {
 
@@ -257,7 +257,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        logger.info("onTestSkipped");
+      //  logger.info("onTestSkipped");
         if (!Log.isTestStarted()) {
             Log.startTest(result.getMethod().getConstructorOrMethod().getMethod());
         }
@@ -278,7 +278,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                 Log.stop();
             } catch (BusinessException e) {
                 e.printStackTrace();
-                logger.info("onTestSkipped   close if issue");
+                //logger.info("onTestSkipped   close if issue");
                 DriverProvider.close();
             } finally {
 

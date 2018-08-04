@@ -1,5 +1,5 @@
 package com.automation.ui.base.common.core.drivers;
-
+import java.util.*;
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.XMLReader;
 import com.automation.ui.base.common.core.configuration.Configuration;
@@ -16,7 +16,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
-
+import org.openqa.selenium.Cookie;
 public abstract class BrowserAbstract {
 
     protected DesiredCapabilities caps = new DesiredCapabilities();
@@ -71,6 +71,21 @@ public abstract class BrowserAbstract {
             addExtension(name);
         }
     }
+    protected void deleteAllCookies() {
+      //  webdriver.manage().deleteAllCookies();
+
+    }
+
+    protected void deleteCookiesOneByOne() {
+       /* Set<Cookie> allCookies = driver.manage().getCookies();
+        for (Cookie cookie : allCookies) {
+            driver.manage().deleteCookieNamed(cookie.getName());
+        }
+        */
+
+
+    }
+
 
 
     /**

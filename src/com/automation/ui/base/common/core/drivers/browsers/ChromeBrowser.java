@@ -5,10 +5,11 @@ import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.drivers.BrowserAbstract;
 import com.automation.ui.base.common.core.helpers.Emulator;
+import org.openqa.selenium.remote.CapabilityType;
 import com.automation.ui.base.common.driverprovider.UserAgentsRegistry;
 import com.automation.ui.base.common.logging.Log;
 import org.apache.commons.lang.StringUtils;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.File;
@@ -41,7 +42,6 @@ public class ChromeBrowser extends BrowserAbstract {
             chromeBinaryPath = CHROMEDRIVER_PATH_LINUX;
         }
 
-        System.out.println("chromeBinaryPath :" + chromeBinaryPath);
 
         Log.info("Using chromedriver: ", chromeBinaryPath);
         File chromedriver = new File(ClassLoader.getSystemResource(chromeBinaryPath).getPath());
@@ -57,6 +57,9 @@ public class ChromeBrowser extends BrowserAbstract {
         chromeOptions.addArguments("process-per-site");
         chromeOptions.addArguments("dns-prefetch-disable");
         chromeOptions.addArguments("allow-running-insecure-content");
+        chromeOptions.addArguments("--no-sandbox");
+
+
 
         if ("true".equals(Configuration.getDisableFlash())) {
             chromeOptions.addArguments("disable-bundled-ppapi-flash");
@@ -88,6 +91,8 @@ public class ChromeBrowser extends BrowserAbstract {
         if (Configuration.isUnsafePageLoad()) {
             caps.setCapability("pageLoadStrategy", "none");
         }
+        caps.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
+
 
         return new UIWebDriver(new ChromeDriver(caps), server, useMobile);
     }

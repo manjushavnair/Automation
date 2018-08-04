@@ -81,7 +81,7 @@ public class ExcelUtil {
 
             this.datatypeSheet = workbook.getSheet(sheetName);
 
-            logger.info("Reading the excel file ::" + filePath + " and sheetname ::" + sheetName + "datatypeSheet" + datatypeSheet);
+            //logger.info("Reading the excel file ::" + filePath + " and sheetname ::" + sheetName + "datatypeSheet" + datatypeSheet);
 
         } catch (Exception e) {
             e.printStackTrace();
