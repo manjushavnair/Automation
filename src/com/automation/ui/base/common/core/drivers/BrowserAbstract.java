@@ -7,6 +7,7 @@ import com.automation.ui.base.common.core.networktrafficinterceptor.NetworkTraff
 import com.automation.ui.base.common.testnglisteners.BrowserAndTestEventListener;
 import net.lightbody.bmp.mitm.TrustSource;
 import net.lightbody.bmp.proxy.CaptureType;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.logging.LogType;
@@ -21,6 +22,9 @@ public abstract class BrowserAbstract {
 
     protected DesiredCapabilities caps = new DesiredCapabilities();
     protected NetworkTrafficInterceptor server;
+
+    private static Logger logger = Logger.getLogger(BrowserAbstract.class);
+
 
     /**
      * Get a ready to work instance for chosen browser

@@ -2,7 +2,9 @@ package com.automation.ui.base.common.core.drivers;
 
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.drivers.browsers.*;
+import com.automation.ui.base.common.driverprovider.DriverProvider;
 import com.automation.ui.base.common.logging.Log;
+import org.apache.log4j.Logger;
 
 public enum Browser {
     CHROME(ChromeBrowser.class, "CHROME"),
@@ -13,6 +15,9 @@ public enum Browser {
     CHROME_ANDROID(AndroidBrowser.class, "ANDROID"),
     IE(IEBrowser.class, "IE"),
     DEFAULT(DefaultBrowser.class, "");
+
+    private static Logger logger = Logger.getLogger(Browser.class);
+
 
     private Class<? extends BrowserAbstract> browserClass;
     private String name;
@@ -39,6 +44,7 @@ public enum Browser {
         try {
             return browserClass.newInstance().getInstance();
         } catch (InstantiationException | IllegalAccessException e) {
+            logger.info("Could not initialize the browser");
             Log.logError("Could not initialize the browser", e);
         }
         return null;

@@ -10,6 +10,7 @@ import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnec
 import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.AddCloudDataConnection;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginCONSTANTS;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -144,9 +145,13 @@ public class HomePage extends SiteBasePageObject {
           // wait.forElementClickable(addButton,BASEConstants.WAITTIME10000MILLISEC);
           //  waitAndClick(addButton);
 
-           wait.forElementVisible(addButton,30);
+           //wait.forElementVisible(addButton,30);
 
-          jsActions.click(addButton);
+          //jsActions.click(addButton);
+
+           // ((JavascriptExecutor)driver).executeScript("$('button.primary.ng-binding').click()");
+
+
 
           Thread.sleep(30000);
 

@@ -5,6 +5,7 @@ import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.drivers.BrowserAbstract;
 import com.automation.ui.base.common.core.helpers.Emulator;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.remote.CapabilityType;
 import com.automation.ui.base.common.driverprovider.UserAgentsRegistry;
 import com.automation.ui.base.common.logging.Log;
@@ -27,6 +28,8 @@ public class ChromeBrowser extends BrowserAbstract {
             String.format(CHROMEDRIVER_PATH_FORMAT, "win32/chromedriver.exe");
     private ChromeOptions chromeOptions = new ChromeOptions();
     private boolean useMobile = "CHROMEMOBILEMERCURY".equals(Configuration.getBrowser());
+
+    private static Logger logger = Logger.getLogger(ChromeBrowser.class);
 
     @Override
     public void setOptions() {
