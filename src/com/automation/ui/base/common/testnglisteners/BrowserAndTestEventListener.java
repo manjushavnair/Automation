@@ -63,7 +63,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                 cookieDomain = String.format(".%s", Configuration.getEnvType().getSiteDomain());
             }
 
-            logger.info(" cookieDomain afterNavigateTo " + cookieDomain + " Configuration.getEnvType().getSiteDomain() :" + Configuration.getEnvType().getSiteDomain()+":");
+           // logger.info(" cookieDomain afterNavigateTo " + cookieDomain + " Configuration.getEnvType().getSiteDomain() :" + Configuration.getEnvType().getSiteDomain()+":");
 
             Date cookieDate = new Date(new DateTime().plusYears(10).getMillis());
 
@@ -87,11 +87,10 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                 Log.warning("Url after navigation", "Unable to check URL after navigation - alert present");
             }
 
-            logger.info("Step1");
 
             if (driver.getCurrentUrl().contains(Configuration.getEnvType().getSiteDomain())) {
-                // HACK FOR DISABLING NOTIFICATIONS
-                logger.info("Step2");
+
+
                 try {
                     new JavascriptActions(driver).execute("$(\".sprite.close-notification\")[0].click()");
                 } catch (WebDriverException e) {
@@ -106,7 +105,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                 if (TestContext.isFirstLoad()) {
                     boolean userOptedIn = true;
                     boolean userOptedOut = false;
-                    logger.info("Step3");
+
 
                     try {
                         JavascriptExecutor js = DriverProvider.getActiveDriver();
@@ -127,7 +126,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                         userOptedOut = true;
                     }
 
-                    logger.info("Step4");
+
 
 
 
@@ -151,9 +150,9 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
             }
 
-            logger.info("Step6");
+
             if (TestContext.isFirstLoad()) {
-				logger.info("Step7");
+
                 User user = null;
                 TestContext.setFirstLoad(false);
 
@@ -171,7 +170,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                     new SiteBasePageObject().loginAs(user);
                 }
 
-                   logger.info("Step8"+user);
+
 
                 NetworkTrafficInterceptor
                         networkTrafficInterceptor =

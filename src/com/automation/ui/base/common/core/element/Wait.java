@@ -4,7 +4,9 @@ import com.automation.ui.base.common.core.CommonExpectedConditions;
 import com.automation.ui.base.common.core.SelectorStack;
 import com.automation.ui.base.common.core.networktrafficinterceptor.NetworkTrafficInterceptor;
 import com.automation.ui.base.common.logging.Log;
+import com.automation.ui.connected.testcases.home.HomePageTest;
 import net.lightbody.bmp.core.har.HarEntry;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,7 +22,8 @@ public class Wait {
     /**
      * Checks if the element is present in browser DOM
      */
-
+    private static Logger logger = Logger
+            .getLogger(Wait.class);
 
     private WebDriverWait wait;
     private WebDriverWait sleepingWait;
@@ -178,8 +181,10 @@ public class Wait {
      */
 //NEEDTOCHECK
     public WebElement forElementVisibleW(WebElement element) {
+
         changeImplicitWait(0, TimeUnit.MILLISECONDS);
         try {
+        //    logger.info("element.getTagName()"+element.getTagName().toString());
             element.getTagName();
         } catch (WebDriverException e) {
             Log.info(BASEConstants.INIT_MESSAGE, BASEConstants.INIT_ERROR_MESSAGE);
@@ -533,7 +538,9 @@ public class Wait {
     }
 
     private void changeImplicitWait(int value, TimeUnit timeUnit) {
+       // logger.info("wait till 1 value:"+ value + " timeUnit :"+timeUnit);
         driver.manage().timeouts().implicitlyWait(value, timeUnit);
+       // logger.info("wait till 2 value:"+ value + " timeUnit :"+timeUnit);
     }
 
     /**

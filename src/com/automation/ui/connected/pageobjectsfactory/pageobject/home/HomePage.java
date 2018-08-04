@@ -3,6 +3,7 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.home;
 import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
+import com.automation.ui.base.common.core.element.JavascriptActions;
 import com.automation.ui.connected.common.prpreader.AssertDataReader;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.AddCloudDataCONSTANTS;
@@ -128,11 +129,13 @@ public class HomePage extends SiteBasePageObject {
             logger.info("Entering  addConnection: ");
             Reporter.log("Entering  addConnection:");
             logger.info("click  ");
-            wait.forElementVisible(addButton,BASEConstants.WAITTIME5000MILLISEC);
+         //   wait.forElementClickable(addButton,BASEConstants.WAITTIME10000MILLISEC);
 
-           // wait.forElementClickable(addButton);
+           wait.forElementVisibleW(addButton);
 
-            addButton.click();
+            jsActions.click(addButton);
+
+           // addButton.click();
 
             logger.info("clicked ");
 
