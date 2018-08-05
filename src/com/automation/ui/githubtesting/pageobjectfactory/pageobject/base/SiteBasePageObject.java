@@ -20,10 +20,7 @@ public class SiteBasePageObject extends BasePageObject {
 
 
 
-    @FindBy(css = "#globalNavigation,.site-head.no-shadow,.wds-global-navigation")
-    protected WebElement navigationBar;
-    @FindBy(css = "#globalNavigation")
-    protected WebElement newGlobalNavigation;
+
      protected By parentBy = By.xpath("./..");
 
 
@@ -68,9 +65,6 @@ public class SiteBasePageObject extends BasePageObject {
     }
 
 
-    public int getNavigationBarOffsetFromTop() {
-        return Integer.parseInt(navigationBar.getAttribute("offsetTop")) + navigationBar.getSize().height;
-    }
 
 
     public String loginAs(User user) {
@@ -126,12 +120,6 @@ public class SiteBasePageObject extends BasePageObject {
 
 
 
-
-
-
-    protected Boolean isNewGlobalNavPresent() {
-        return isElementOnPage(newGlobalNavigation);
-    }
 
     public static class AssertionMessages {
 
