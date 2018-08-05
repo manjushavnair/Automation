@@ -1,16 +1,11 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.home;
 
-import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
-import com.automation.ui.base.common.core.element.JavascriptActions;
 import com.automation.ui.connected.common.prpreader.AssertDataReader;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.AddCloudDataCONSTANTS;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.AddCloudDataConnection;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginCONSTANTS;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -38,11 +33,11 @@ public class HomePage extends SiteBasePageObject {
     private WebElement menubutton;
 
 
-   // @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON)
-   // private WebElement addButton;
+    // @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON)
+    // private WebElement addButton;
 
-     @FindBy(css = HomeConstants.ADDCONNECTIONSBUTTON)
-     private WebElement addButton;
+    @FindBy(css = HomeConstants.ADDCONNECTIONSBUTTON)
+    private WebElement addButton;
 
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_ERROR_MSG)
     private WebElement msg;
@@ -51,9 +46,8 @@ public class HomePage extends SiteBasePageObject {
     private WebElement msgExtra;
 
 
-
     //for GITHUB testing
-    @FindBy(css =HomeConstants.NEWREPOCREATION)
+    @FindBy(css = HomeConstants.NEWREPOCREATION)
     private WebElement addRepo;
 
     /*public com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage open() {
@@ -88,21 +82,19 @@ public class HomePage extends SiteBasePageObject {
 
     public HomePage open() {
 
-        logger.info("open the URL"+getCurrentUrl());
-       if (Configuration.getEnvType().equals(EnvType.DEV)) {
+        logger.info("open the URL" + getCurrentUrl());
+        if (Configuration.getEnvType().equals(EnvType.DEV)) {
 
             logger.info(getCurrentUrl());
-              getUrl("http://localhost:9000");
-             // getUrl(getCurrentUrl());
+            getUrl("http://localhost:9000");
+            // getUrl(getCurrentUrl());
         } else {
             logger.info(getCurrentUrl());
-          // getUrl("http://localhost:9000");
+            // getUrl("http://localhost:9000");
             //  getUrl(getCurrentUrl() + " ");
             getUrl(getCurrentUrl());
         }
         //waitForPageLoad();
-
-
 
 
         return this;
@@ -112,7 +104,7 @@ public class HomePage extends SiteBasePageObject {
     //Go to LoginPage
     public void goToLogoutPage() {
 
-         try {
+        try {
             logger.info("Logging out of the URL ");
             Reporter.log("Logging out of the URL");
             // wait.forElementVisible(logout,BASEConstants.WAITTIME10000MILLISEC);
@@ -121,7 +113,7 @@ public class HomePage extends SiteBasePageObject {
 
         } catch (Exception e) {
             e.printStackTrace();
-            Assert.fail( AssertDataReader.readProperty().getValue("OPCUA_LOGOUT_LOGOUTMSG"));
+            Assert.fail(AssertDataReader.readProperty().getValue("OPCUA_LOGOUT_LOGOUTMSG"));
             Reporter.log("Logged out of the URL successfully");
 
         }
@@ -129,34 +121,30 @@ public class HomePage extends SiteBasePageObject {
 
     }
 
-    public void addRepo( )
-    {
+    public void addRepo() {
 
-      wait.forElementClickable(addRepo);
+        wait.forElementClickable(addRepo);
         addRepo.click();
-        }
+    }
 
-    public AddCloudDataConnection addConnection( ) {
+    public AddCloudDataConnection addConnection() {
         try {
             logger.info("Entering  addConnection: ");
             Reporter.log("Entering  addConnection:");
             logger.info("click  ");
 
-          //  addButton.click();
-          // wait.forElementClickable(addButton,BASEConstants.WAITTIME10000MILLISEC);
-          //  waitAndClick(addButton);
+            //  addButton.click();
+            // wait.forElementClickable(addButton,BASEConstants.WAITTIME10000MILLISEC);
+            //  waitAndClick(addButton);
 
-            wait.forElementVisible(addButton,30);
-           jsActions.click(addButton);
+            wait.forElementVisible(addButton, 30);
+            jsActions.click(addButton);
             Thread.sleep(40000);
 
             //((JavascriptExecutor)driver).executeScript("$('button.primary.ng-binding').click()");
 
 
-
-
-
-       //   addButton.click();
+            //   addButton.click();
 
             logger.info("clicked ");
 
@@ -176,26 +164,25 @@ public class HomePage extends SiteBasePageObject {
     }
 
 
-    public void addConnection_accessdenied( ) {
+    public void addConnection_accessdenied() {
 
-            logger.info("Entering  addConnection_accessdenied: ");
-            Reporter.log("Entering  addConnection_accessdenied:");
-            try {
-                Thread.sleep(10000);
-            }catch(Exception e)
-            {
-                e.printStackTrace();
-            }
-
-
-        logger.info("accessdenied "+msg.getText());
+        logger.info("Entering  addConnection_accessdenied: ");
+        Reporter.log("Entering  addConnection_accessdenied:");
+        try {
+            Thread.sleep(10000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
-        Assert.assertEquals( msg.getText(),
+        logger.info("accessdenied " + msg.getText());
+
+
+        Assert.assertEquals(msg.getText(),
                 AssertDataReader.readProperty().getValue("OPCUA_ACCESSDENIED"));
 
-            logger.info("Exiting  addConnection_accessdenied");
-            Reporter.log("Exiting  addConnection_accessdenied");
+        logger.info("Exiting  addConnection_accessdenied");
+        Reporter.log("Exiting  addConnection_accessdenied");
 
 
     }
