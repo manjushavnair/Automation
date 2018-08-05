@@ -40,11 +40,7 @@ public class IEBrowser extends BrowserAbstract {
 
         File iedriver= new File(ClassLoader.getSystemResource(ieBinaryPath).getPath());
 
-        logger.info("IEDriverPath:"+ ieBinaryPath + " : " +iedriver.getPath());
-
-
-
-        // set application user permissions to 455
+           // set application user permissions to 455
         // iedriver.setExecutable(true);
 
       //  System.setProperty("webdriver.ie.driver","D:\\Project\\Automation\\target\\classes\\test\\IEDriver\\IEDriverServer.exe");
