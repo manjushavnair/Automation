@@ -4,8 +4,8 @@
 
 browser: CHROME # acceptable values: FF, CHROME, GHOST, ANDROID, CHROMEMOBILEMERCURY, HTMLUNIT ,IE
 dpr: 1 # Your device's pixel ratio, do not commit your changes
-siteName: localhost # default testing wiki
-env: test # acceptable values: test, prod, preview, sandbox-number dev-name, adeng (for adeng.connected.wikia.com)
+siteName: localhost # default testing site
+env: test # acceptable values: test, prod, preview, sandbox-number dev-name, adeng (for connected.com)
 seleniumConfigPath: resources/selenium-config
 qs: null
 disableFlash: true
@@ -19,7 +19,7 @@ forceLanguageInPath: false
 disableCommunityPageSalesPitchDialog: true
 useMITM: false
 useZapProxy: false
-language: en # run tests on wikis with specific language unless there is an annotation
+language: en # run tests on site with specific language unless there is an annotation
 credentialsPath: resources/selenium-config/credentials.xml
 # Specify browser window size in format <width>x<height>, example: 800x600
 # use "maximised" value if you want browser to be maximised

@@ -1,4 +1,4 @@
-package com.automation.ui.connected.pageobjectsfactory.pageobject.login;
+package com.automation.ui.githubtesting.pageobjectfactory.pageobject.login;
 
 /**
  * @author Manjusha Saju
@@ -6,18 +6,15 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.login;
 
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
-import com.automation.ui.base.common.core.url.Page;
-import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.base.*;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
-import com.automation.ui.connected.common.prpreader.*;
-
+import com.automation.ui.githubtesting.common.prpreader.AssertDataReader;
+import com.automation.ui.githubtesting.pageobjectfactory.pageobject.base.SiteBasePageObject;
+import com.automation.ui.githubtesting.pageobjectfactory.pageobject.home.HomePage;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.Reporter;
-import org.openqa.selenium.support.CacheLookup;
 
 public class LoginPage extends SiteBasePageObject {
 
@@ -38,11 +35,6 @@ public class LoginPage extends SiteBasePageObject {
 
 
 
-    @FindBy(xpath = LoginCONSTANTS.SAVELOGINCHECK)
-    private WebElement savepasswordbutton;
-
-    @FindBy(xpath =  LoginCONSTANTS.SAVELOGINANDSUBMIT)
-    private WebElement choosetosave;
 
     public LoginPage() {
         super();
@@ -123,8 +115,6 @@ public class LoginPage extends SiteBasePageObject {
             logger.info("Entering  login: ");
             Reporter.log("Entering  login:");
 
-            savepasswordbutton.click();
-            waitAndClick(savepasswordbutton);
 
 
            

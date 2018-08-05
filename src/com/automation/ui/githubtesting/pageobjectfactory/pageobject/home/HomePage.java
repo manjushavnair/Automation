@@ -1,10 +1,10 @@
-package com.automation.ui.connected.pageobjectsfactory.pageobject.home;
+package com.automation.ui.githubtesting.pageobjectfactory.pageobject.home;
 
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
-import com.automation.ui.connected.common.prpreader.AssertDataReader;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.AddCloudDataConnection;
+import com.automation.ui.githubtesting.common.prpreader.AssertDataReader;
+import com.automation.ui.githubtesting.pageobjectfactory.pageobject.base.SiteBasePageObject;
+import com.automation.ui.githubtesting.pageobjectfactory.pageobject.clouddataconnection.AddCloudDataConnection;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -28,48 +28,14 @@ public class HomePage extends SiteBasePageObject {
     @CacheLookup
     private WebElement logout;
 
-    @FindBy(xpath = HomeConstants.MENUBUTTON)
-    @CacheLookup
-    private WebElement menubutton;
 
-
-    // @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON)
-    // private WebElement addButton;
-
-    @FindBy(css = HomeConstants.ADDCONNECTIONSBUTTON)
-    private WebElement addButton;
-
-    @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_ERROR_MSG)
-    private WebElement msg;
-
-    @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_ERROR_MSG_EXTRA)
-    private WebElement msgExtra;
 
 
     //for GITHUB testing
     @FindBy(css = HomeConstants.NEWREPOCREATION)
     private WebElement addRepo;
 
-    /*public com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage open() {
-        return open(Configuration.getSiteName());
-    }
 
-    public com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage open(String siteName) {
-        getUrl(UrlBuilder.createUrlBuilderForSite(siteName).getUrl());
-        waitForPageLoad();
-
-        return this;
-    }
-
-    public com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage openAndWaitForGlobalShortcuts() {
-        open();
-        waitFor.until((Function<WebDriver, Boolean>) arg0 -> driver
-                .executeScript(
-                        "return typeof window.wgGlobalShortcutsLoaded !== 'undefined' && window.wgGlobalShortcutsLoaded")
-                .equals(true));
-
-        return this;
-    }*/
 
     public HomePage() {
         super();
@@ -137,9 +103,7 @@ public class HomePage extends SiteBasePageObject {
             // wait.forElementClickable(addButton,BASEConstants.WAITTIME10000MILLISEC);
             //  waitAndClick(addButton);
 
-            wait.forElementVisible(addButton, 30);
-            jsActions.click(addButton);
-            Thread.sleep(40000);
+
 
             //((JavascriptExecutor)driver).executeScript("$('button.primary.ng-binding').click()");
 
@@ -175,11 +139,7 @@ public class HomePage extends SiteBasePageObject {
         }
 
 
-        logger.info("accessdenied " + msg.getText());
 
-
-        Assert.assertEquals(msg.getText(),
-                AssertDataReader.assertreader.getValue("OPCUA_ACCESSDENIED"));
 
         logger.info("Exiting  addConnection_accessdenied");
         Reporter.log("Exiting  addConnection_accessdenied");

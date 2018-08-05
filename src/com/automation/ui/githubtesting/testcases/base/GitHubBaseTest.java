@@ -1,33 +1,24 @@
 /**
  *
  */
-package com.automation.ui.connected.testcases.base;
+package com.automation.ui.githubtesting.testcases.base;
 
 /**
  * @author Manjusha Saju
  */
 
 import com.automation.ui.base.common.contentpatterns.URLsContent;
-import com.automation.ui.base.common.core.configuration.Configuration;
-import com.automation.ui.base.common.core.url.UrlBuilder;
 import com.automation.ui.base.common.utils.ExcelUtil;
-import com.automation.ui.connected.common.constants.ExcelCONSTANTS;
-import com.automation.ui.connected.common.core.url.SiteUrlBuilder;
-import com.automation.ui.connected.common.prpreader.AssertDataReader;
-import com.automation.ui.connected.common.templates.NewTestTemplate;
+import com.automation.ui.githubtesting.common.constants.ExcelCONSTANTS;
+import com.automation.ui.githubtesting.common.templates.NewTestTemplate;
 import org.apache.log4j.Logger;
-import org.testng.Reporter;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 
-public class ConnectedBaseTest extends NewTestTemplate  {
+public class GitHubBaseTest extends NewTestTemplate  {
 
-    private static Logger logger = Logger.getLogger(ConnectedBaseTest.class);
+    private static Logger logger = Logger.getLogger(GitHubBaseTest.class);
     protected ExcelUtil eu = null;
 
-    public ConnectedBaseTest() {
+    public GitHubBaseTest() {
         super();
 
         eu = getExcelUtil();

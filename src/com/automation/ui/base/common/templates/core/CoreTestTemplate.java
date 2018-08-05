@@ -1,6 +1,7 @@
 package com.automation.ui.base.common.templates.core;
 
 import com.automation.ui.base.common.utils.CommonUtils;
+import com.automation.ui.base.common.utils.i18n.*;
 import com.automation.ui.base.common.core.*;
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.annotations.Execute;
@@ -65,9 +66,11 @@ public abstract class CoreTestTemplate {
      * Initialize Property.
      */
     private void initAssertData() {
-     //   logger.info("initAssertData readProperty ");
-        assertData = AssertDataReader.readProperty();
 
+        logger.info("Setting the Site Specific Langauge :"+Configuration.getSiteLanguage());
+
+        //set the langauge specified in he config.yml
+        assertData = AssertDataReader.readProperty(Configuration.getSiteLanguage());
     }
 
 
@@ -104,12 +107,12 @@ public abstract class CoreTestTemplate {
         Log.startTest(method);
        // logger.info("beforeMethod initTestContext ");
 
-        com.automation.ui.base.common.core.configuration.Configuration.clearCustomTestProperties();
+        Configuration.clearCustomTestProperties();
 
-        String browser = com.automation.ui.base.common.core.configuration.Configuration.getBrowser();
+        String browser = Configuration.getBrowser();
         setPropertiesFromAnnotationsOnDeclaringClass(method.getDeclaringClass());
         setPropertiesFromAnnotationsOnMethod(method);
-        String currentBrowser = com.automation.ui.base.common.core.configuration.Configuration.getBrowser();
+        String currentBrowser = Configuration.getBrowser();
 
        // logger.info(" beforeMethod initTestContext Browser parameter changed by annotation"
          //       + ", old value: " + browser + ", new value: " + currentBrowser);
@@ -129,7 +132,7 @@ public abstract class CoreTestTemplate {
 
     private void setTestProperty(String key, String value) {
         if (!"".equals(value)) {
-            com.automation.ui.base.common.core.configuration.Configuration.setTestValue(key, value);
+            Configuration.setTestValue(key, value);
         }
     }
 

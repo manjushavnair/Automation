@@ -1,13 +1,9 @@
-package com.automation.ui.connected.common.prpreader;
-
-import java.util.Locale;
-import java.util.ResourceBundle;
+package com.automation.ui.githubtesting.common.prpreader;
 
 import com.automation.ui.base.common.utils.i18n.LocaleUtil;
-import  com.automation.ui.connected.common.constants.*;
+import com.automation.ui.githubtesting.common.constants.SITECONSTANTS;
 
-import static java.lang.Boolean.parseBoolean;
-import static java.lang.Integer.parseInt;
+import java.util.ResourceBundle;
 
 public class AssertDataReader {
 
