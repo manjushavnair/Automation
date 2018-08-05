@@ -81,12 +81,10 @@ public class LoginTest extends ConnectedBaseTest {
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();
         // Call the method
-        String userName = "";
-        String password = "";
 
 
-            userName = eu.getCellData(1, 1);
-            password = eu.getCellData(1, 2);
+        String userName = eu.getCellData(1, 1);
+        String password = eu.getCellData(1, 2);
 
 
         logger.info("Exiting verifyValidLogin and going to login userName:" + userName + "password : *****");
@@ -110,11 +108,10 @@ public class LoginTest extends ConnectedBaseTest {
         // Call the method
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();
-        String userName = "";
-        String password = "";
 
-            userName = eu.getCellData(2, 1);
-            password = eu.getCellData(2, 2);
+
+        String userName = eu.getCellData(2, 1);
+        String password = eu.getCellData(2, 2);
 
         logger.info("Exiting verifyInValidUserNullPassword userName:" + userName + "password : *****");
         login_page.enterUser(userName);
@@ -134,11 +131,9 @@ public class LoginTest extends ConnectedBaseTest {
         // Call the method
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();
-        String userName = "";
-        String password = "";
 
-            userName = eu.getCellData(3, 1);
-            password = eu.getCellData(3, 2);
+        String userName = eu.getCellData(3, 1);
+        String password = eu.getCellData(3, 2);
 
 
         logger.info("Exiting verifyValidUserNullPassword userName:" + userName + "password : *****");
@@ -155,14 +150,13 @@ public class LoginTest extends ConnectedBaseTest {
         Reporter.log("Entering verifyInValidLogin");
         LoginPage login_page = new LoginPage();
         login_page.open();
-        // Call the method
-        String userName = "";
-        String password = "";
+
+
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();
 
-            userName = eu.getCellData(4, 1);
-             password = eu.getCellData(4, 2);
+        String userName = eu.getCellData(4, 1);
+        String password  = eu.getCellData(4, 2);
 
 
         logger.info("Exiting verifyInValidLoginNullPassword and going to login userName:" + userName + "password : *****");
@@ -181,13 +175,12 @@ public class LoginTest extends ConnectedBaseTest {
         LoginPage login_page = new LoginPage();
         login_page.open();
         // Call the method
-        String userName = "";
-        String password = "";
+
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();
 
-            userName = eu.getCellData(5, 1);
-            password = eu.getCellData(5, 2);
+        String userName = eu.getCellData(5, 1);
+        String password  = eu.getCellData(5, 2);
 
         logger.info("Exiting verifyNullUserNullPassword and going to login userName:" + userName + "password : *****");
         login_page.enterUser(userName);
