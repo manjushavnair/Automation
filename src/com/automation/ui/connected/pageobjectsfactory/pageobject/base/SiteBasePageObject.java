@@ -82,7 +82,7 @@ public class SiteBasePageObject extends BasePageObject {
      */
     public void logOut() {
         try {
-           // getGlobalNavigation().clickSignOut();
+           //  getGlobalNavigation().clickSignOut();
         } catch (TimeoutException e) {
             Log.log("logOut", "page loads for more than 30 seconds", true);
         }
