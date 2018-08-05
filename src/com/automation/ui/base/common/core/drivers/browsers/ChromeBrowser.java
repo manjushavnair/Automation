@@ -61,7 +61,7 @@ public class ChromeBrowser extends BrowserAbstract {
         chromeOptions.addArguments("dns-prefetch-disable");
         chromeOptions.addArguments("allow-running-insecure-content");
         chromeOptions.addArguments("--no-sandbox");
-
+        chromeOptions.addArguments("user-data-dir=" + System.getProperty("user.dir")+File.separator+"logs"+File.separator+"chromeprofile");
 
 
         if ("true".equals(Configuration.getDisableFlash())) {

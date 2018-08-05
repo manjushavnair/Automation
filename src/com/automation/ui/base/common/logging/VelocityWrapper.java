@@ -219,6 +219,8 @@ public class VelocityWrapper {
 
         Properties props = new Properties();
 
+        ve.setProperty("runtime.log", "logs/velocity.log");
+
 
         String path = ClassLoader.getSystemResource("test/velocitytemplates").getPath();
 

@@ -72,7 +72,14 @@ public class CommonUtils {
      */
     public static void createDirectory(String fileName) {
         try {
-            new File(fileName).mkdir();
+           File makeDir= new File(fileName);
+			makeDir.mkdir();
+            // set application user permissions to 455
+			makeDir.setExecutable(true);
+			makeDir.setReadable(true);
+			makeDir.setWritable(true);
+
+
            // System.out.println("directory " + fileName + " created");
         } catch (SecurityException e) {
             throw new TestEnvInitFailedException();
