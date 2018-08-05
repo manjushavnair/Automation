@@ -62,10 +62,10 @@ public class HomePageTest extends GitHubBaseTest {
     public void launchHomePage() throws Throwable {
 
         logger.info(" home_page.getCurrentUrl() " + home_page.getCurrentUrl());
-        home_page.waitForPageLoad();
+      //  home_page.waitForPageLoad();
 
 
-        home_page.addRepo();
+        //home_page.
     }
 
     /*
@@ -86,14 +86,14 @@ public class HomePageTest extends GitHubBaseTest {
     @Test(enabled = true,priority = 4,groups = {  "validcase"}, description = "Add Connection ")
     public void addRepo() throws Throwable {
 
-        logger.info("Entering launchHomePage");
-        Reporter.log("Entering launchHomePage");
+        logger.info("Entering addRepo");
+        Reporter.log("Entering addRepo");
         // add_conn_page.open();
 
         home_page.addRepo();
         home_page.waitForPageLoad();
 
-        logger.info("Exiting addConnection and going to  add"+home_page.getUrl());
+        logger.info("Exiting addRepo and going to  add"+home_page.getUrl());
 
     }
 

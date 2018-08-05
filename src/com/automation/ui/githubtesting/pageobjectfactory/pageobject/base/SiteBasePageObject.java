@@ -12,6 +12,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 
@@ -144,298 +145,27 @@ public class SiteBasePageObject extends BasePageObject {
     }
 
 
-     /*
-    public HistoryPagePageObject openFileHistoryPage(String articlePage, String siteURL) {
-        getUrl(urlBuilder.appendQueryStringToURL(
-                siteURL + URLsContent.SITE_DIR + URLsContent.FILE_NAMESPACE + articlePage,
-                URLsContent.ACTION_HISTORY));
-        Log.log("openFileHistoryPage", "history page opened", true);
-        return new HistoryPagePageObject();
-    }
+    //"script[src*='/scripts/beacon.js']";
+    // wait for comscore to load
+    @Override
+    public void waitForPageLoad() {
 
-    public AttachedRegisterPage openSpecialUserSignUpPage(String siteURL) {
-        getUrl(siteURL + URLsContent.USER_SIGNUP);
-        Log.log("openSpecialUserSignUpPage", "Special:UserSignup page opened", true);
-        return new AttachedRegisterPage();
-    }
+      wait.forElementPresent(By.cssSelector(".octicon.octicon-mark-github"));
 
-    public PreferencesPageObject openSpecialPreferencesPage(String siteURL) {
-        getUrl(siteURL + URLsContent.SITE_DIR + URLsContent.SPECIAL_PREFERENCES);
-        Log.log("openSpecialPreferencesPage", "Special:Prefereces page opened", true);
-        return new PreferencesPageObject();
     }
+    @Override
+    public BasePageObject waitForPageReload() {
+        waitSafely(
+                () -> wait.forElementVisible(By.cssSelector(".octicon.octicon-mark-github"), Duration.ofSeconds(3)));
 
-    public AttachedSignInPage openSpecialUserLogin(String siteURL) {
-        getUrl(siteURL + URLsContent.USER_LOGIN);
-        Log.log("openSpecialUserLogin", "Special:UserLogin page opened", true);
-        return new AttachedSignInPage();
+        waitSafely(() -> wait.forElementNotVisible(By.cssSelector(".octicon.octicon-mark-github")),
+                "Loading overlay still visible, page not loaded in expected time");
+
+        logger.info("Loading overlay still visible, page not loaded in expected time");
+        return this;
     }
 
 
-
-
-
-    protected void openArticleEditDropdown() {
-
-        new Actions(driver).moveToElement(articleEditDropdown).perform();
-    }
-
-    public void openSpecialWatchListPage(String siteURL) {
-        getUrl(siteURL + URLsContent.SITE_DIR + URLsContent.SPECIAL_WATCHLIST);
-    }
-
-
-
-    public DeletePageObject deletePage() {
-        String url =
-                urlBuilder.appendQueryStringToURL(driver.getCurrentUrl(), URLsContent.ACTION_DELETE);
-        getUrl(url);
-        Log.log("deletePage", "delete page opened", true);
-        return new DeletePageObject(driver);
-    }
-
-    public List<Notification> getNotifications() {
-        wait.forElementVisible(BANNER_NOTIFICATION);
-        List<Notification> notificationList = new ArrayList<>();
-        for (WebElement notificationElement : notificationElements) {
-            Notification notification = new Notification(driver, notificationElement);
-            notificationList.add(notification);
-        }
-        return notificationList;
-    }
-
-    public List<Notification> getNotifications(NotificationType notificationType) {
-        List<Notification> notificationList = getNotifications();
-        return notificationList.stream().filter(n -> n.getType().toLowerCase().contains(notificationType.getClassName()))
-                .collect(Collectors.toList());
-    }
-
-    public boolean isNotificationPresent(NotificationType type, String message) {
-        return getNotifications(type).stream().anyMatch(n -> n.getMessage().contains(message));
-    }
-
-
-
-
-
-    public void verifyPageUnfollowed() {
-        wait.forTextInElement(followButton, "Follow");
-        Log.log("verifyPageUnfollowed", "page is not followed", true);
-    }
-
-    public void follow() {
-
-        //NEEDTOCHECK
-        wait.forElementVisibleW(followButton);
-        jsActions.click(followButton);
-        wait.forTextInElement(followButton, "Following");
-        Log.log("followArticle", "page is followed", true, driver);
-    }
-
-    public WatchPageObject unfollowCurrentUrl() {
-        driver.get(
-                urlBuilder.appendQueryStringToURL(driver.getCurrentUrl(), URLsContent.ACTION_UNFOLLOW));
-        return new WatchPageObject();
-    }
-
-    public DeletePageObject deleteUsingDropdown() {
-        this.openArticleEditDropdown();
-        wait.forElementClickable(deleteDropdown);
-        scrollAndClick(deleteDropdown);
-        return new DeletePageObject(driver);
-    }
-    public String getNameForArticle() {
-        return PageContent.ARTICLE_NAME_PREFIX + TimeZoneUtil.getTimeStamp();
-    }
-
-    protected String getPseudoElementValue(WebElement element, String pseudoElement, String cssValue) {
-        return driver
-                .executeScript("return getComputedStyle(arguments[0], arguments[1])[arguments[2]];",
-                        element, pseudoElement, cssValue)
-                .toString();
-    }
-
-
-    public void verifyVEPublishComplete() {
-        waitForElementNotVisibleByElement(veMode);
-        waitForElementNotVisibleByElement(focusMode);
-        waitForElementNotVisibleByElement(veToolMenu);
-        Log.log("verifyVEPublishComplete", "Publish is done", true, driver);
-    }
-
-    public SiteHistoryPageObject openArticleHistoryPage() {
-        getUrl(urlBuilder.appendQueryStringToURL(getCurrentUrl(), URLsContent.ACTION_HISTORY));
-        return new SiteHistoryPageObject();
-    }
-
-
-
-    public void verifyRevisionMarkedAsMinor() {
-        if (isElementOnPage(cssMinorEdit)) {
-            Log.log("cssEditSummary", "minor edit is marked in first revision", true);
-        } else {
-            throw new NoSuchElementException("Minor Edit is not present on the page");
-        }
-    }
-
-
-    public void scrollToRecirculationPrefooter() {
-        wait.forElementPresent(RECIRCULATION_PREFOOTER);
-        //NEEDTOCHECK
-        jsActions.scrollIntoViewE(RECIRCULATION_PREFOOTER);
-        wait.forElementPresent(RECIRCULATION_PREFOOTER_FULFILLED);
-
-        Log.log("scrollToRecirculationPrefooter", "Scroll to the recirculation prefooter", true);
-    }
- */
-/*
-  public VisualEditModePageObject openCKModeWithMainEditButton() {
-    this.openArticleEditDropdown();
-    editButton.click();
-    Log.log("openCKModeWithMainEditButton", "CK main edit button clicked", true,
-        driver);
-    return new VisualEditModePageObject();
-  }
-
-  public VisualEditModePageObject openCKModeWithMainEditButtonDropdown() {
-    this.openArticleEditDropdown();
-    editButton.click();
-    Log.log("openCKModeWithMainEditButton", "CK main edit button clicked", true,
-                          driver);
-    return new VisualEditModePageObject();
-  }
-
-  public VisualEditorPageObject openVEModeWithMainEditButton() {
-    wait.forElementClickable(veEditButton);
-    veEditButton.click();
-    Log.log("openVEModeWithMainEditButton", "VE main edit button clicked", true,
-        driver);
-    return new VisualEditorPageObject();
-  }
-
-  public VisualEditorPageObject openVEModeWithSectionEditButton(int section) {
-    WebElement sectionEditButton = sectionEditButtons.get(section);
-    wait.forElementClickable(sectionEditButton);
-    sectionEditButton.click();
-    Log.log("openVEModeWithSectionEditButton",
-        "VE edit button clicked at section: " + section, true, driver);
-    return new VisualEditorPageObject();
-  }
-
-  protected VisualEditModePageObject openCKModeWithSectionEditButton(int section) {
-    WebElement sectionEditButton = sectionEditButtons.get(section);
-    //NEEDTOCHECK
-    wait.forElementVisibleW(sectionEditButton);
-    sectionEditButton.click();
-    Log.log("openCKModeWithSectionEditButton",
-                          "RTE edit button clicked at section: " + section, true, driver);
-    return new VisualEditModePageObject();
-  }
-
-
-    public VisualEditorPageObject openNewArticleEditModeVisual(String siteURL) {
-    getUrl(urlBuilder.appendQueryStringToURL(siteURL + URLsContent.SITE_DIR + getNameForArticle(),
-                                             URLsContent.VEACTION_EDIT));
-    return new VisualEditorPageObject();
-  }
-  public VisualEditModePageObject navigateToArticleEditPage() {
-    getUrl(urlBuilder.appendQueryStringToURL(driver.getCurrentUrl(), URLsContent.ACTION_EDIT));
-    return new VisualEditModePageObject();
-  }
-
-  public VisualEditModePageObject navigateToArticleEditPage(String siteURL, String article) {
-    getUrl(urlBuilder.appendQueryStringToURL(siteURL + URLsContent.SITE_DIR + article,
-        URLsContent.ACTION_EDIT));
-    return new VisualEditModePageObject();
-  }
-
-  public VisualEditModePageObject navigateToUniqueArticleEditPage() {
-    String title = String.format("%s%s", PageContent.ARTICLE_NAME_PREFIX, LocalDateTime.now());
-    return navigateToArticleEditPage(getContextUrl(), title);
-  }
-
-  public SourceEditModePageObject navigateToArticleEditPageSrc(String siteURL, String article) {
-    getUrl(urlBuilder.appendQueryStringToURL(siteURL + URLsContent.SITE_DIR + article,
-        URLsContent.ACTION_EDIT));
-    return new SourceEditModePageObject();
-  }
-
-  public VisualEditModePageObject goToArticleDefaultContentEditPage(String siteURL,
-      String article) {
-    getUrl(urlBuilder.appendQueryStringToURL(urlBuilder
-                                                 .appendQueryStringToURL(
-                                                     siteURL + URLsContent.SITE_DIR + article,
-                                                     URLsContent.ACTION_EDIT),
-                                             URLsContent.USE_DEFAULT_FORMAT));
-    return new VisualEditModePageObject();
-  }
-
-
-  public VisualEditorPageObject openVEOnArticle(String siteURL, String article) {
-    getUrl(urlBuilder.appendQueryStringToURL(siteURL + URLsContent.SITE_DIR + article,
-                                             URLsContent.VEACTION_EDIT));
-    return new VisualEditorPageObject();
-  }
-*/
-/*
-  public SpecialVideosPageObject openSpecialVideoPage(String siteURL) {
-
-    getUrl(siteURL + URLsContent.SITE_DIR + URLsContent.SPECIAL_VIDEOS);
-    return new SpecialVideosPageObject(driver);
-  }
-
-  public SpecialVideosPageObject openSpecialVideoPage() {
-    return openSpecialVideoPage(getContextUrl());
-  }
-
-  public SpecialVideosPageObject openSpecialVideoPageMostRecent(String siteURL) {
-    getUrl(siteURL + URLsContent.SITE_DIR + URLsContent.SPECIAL_VIDEOS + URLsContent.MOST_RECENT);
-    return new SpecialVideosPageObject(driver);
-  }
-
-  public SpecialNewFilesPage openSpecialNewFiles(String siteURL) {
-    getUrl(siteURL + URLsContent.SITE_DIR + URLsContent.SPECIAL_NEW_FILES);
-    return new SpecialNewFilesPage();
-  }
-
-
-  public SpecialNewFilesPage openSpecialNewFiles() {
-    return openSpecialNewFiles(getContextUrl() + URLsContent.SITE_DIR + URLsContent.SPECIAL_NEW_FILES);
-  }
-  public SourceEditModePageObject openCurrectArticleSourceMode() {
-    String queryStrings[] = {URLsContent.ACTION_EDIT, URLsContent.SOURCE_MODE};
-    goToCurrentUrlWithAppendedMultipleQueryStrings(queryStrings);
-    return new SourceEditModePageObject();
-  }
-
-  public SourceEditModePageObject openSrcModeWithMainEditButton() {
-    wait.forElementClickable(editButton);
-    editButton.click();
-    Log.log("openSrcModeWithMainEditButton", "Src main edit button clicked", true,
-        driver);
-    return new SourceEditModePageObject();
-  }
-
-
-
-  protected SourceEditModePageObject openSrcModeWithSectionEditButton(int section) {
-    WebElement sectionEditButton = sectionEditButtons.get(section);
-    //NEEDTOCHECK
-    wait.forElementVisibleW(sectionEditButton);
-    sectionEditButton.click();
-    Log.log("openSrcModeWithSectionEditButton",
-            "Src edit button clicked at section: " + section, true, driver);
-    return new SourceEditModePageObject();
-  }
-
-  protected SourceEditModePageObject openSrcModeWithMainEditButtonDropdown() {
-    this.openArticleEditDropdown();
-    editButton.click();
-    Log.log("openSrcModeWithMainEditButton", "Src main edit button clicked", true,
-                          driver);
-    return new SourceEditModePageObject();
-  }
-*/
 
 
 }

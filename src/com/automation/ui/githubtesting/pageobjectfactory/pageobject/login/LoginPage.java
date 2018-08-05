@@ -116,7 +116,7 @@ public class LoginPage extends SiteBasePageObject {
             Reporter.log("Entering  login:");
 
 
-            wait.forElementVisibleW(login_button);
+            waitAndClick(login_button);
            
             logger.info("Exiting  login");
             Reporter.log("Exiting  login");

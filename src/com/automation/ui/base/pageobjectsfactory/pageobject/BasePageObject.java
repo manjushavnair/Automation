@@ -116,11 +116,13 @@ public class BasePageObject {
 
     //"script[src*='/scripts/beacon.js']";
     // wait for comscore to load
+
     public void waitForPageLoad() {
         logger.info("waitForPageLoad"+COMSCORE_PIXEL_URL);
-        wait.forElementPresent(By.className("logo"));
+          wait.forElementPresent(By.className("logo"));
 
-       // wait.forElementPresent(
+
+        // wait.forElementPresent(
                 //By.cssSelector(COMSCORE_PIXEL_URL));
     }
 
@@ -248,7 +250,7 @@ public class BasePageObject {
         waitSafely(o, "");
     }
 
-    void waitSafely(Runnable o, String message) {
+    protected void waitSafely(Runnable o, String message) {
         try {
             o.run();
         } catch (TimeoutException e) {
