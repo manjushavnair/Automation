@@ -60,16 +60,12 @@ public class HomePageTest extends GitHubBaseTest {
 
     @Test(enabled = true, priority = 2, groups = {"validcase"}, description = "launchHomePage ")
     public void launchHomePage() throws Throwable {
-        logger.info(" launchHomePage and going to  homepage" + urlBuilder.getUrl());
-        login_page.wait.forElementClickable(By.cssSelector(".primary"));
+
         logger.info(" home_page.getCurrentUrl() " + home_page.getCurrentUrl());
-       // home_page.waitForPageLoad();
+        home_page.waitForPageLoad();
 
-        Thread.sleep(20000);
 
-        //  home_page.addConnection();
-
-        //home_page.addRepo();
+        home_page.addRepo();
     }
 
     /*
@@ -88,13 +84,13 @@ public class HomePageTest extends GitHubBaseTest {
 
 
     @Test(enabled = true,priority = 4,groups = {  "validcase"}, description = "Add Connection ")
-    public void addConnection() throws Throwable {
+    public void addRepo() throws Throwable {
 
         logger.info("Entering launchHomePage");
         Reporter.log("Entering launchHomePage");
         // add_conn_page.open();
 
-        home_page.addConnection();
+        home_page.addRepo();
         home_page.waitForPageLoad();
 
         logger.info("Exiting addConnection and going to  add"+home_page.getUrl());

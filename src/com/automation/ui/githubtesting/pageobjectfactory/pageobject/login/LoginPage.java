@@ -61,9 +61,9 @@ public class LoginPage extends SiteBasePageObject {
             logger.info(getSiteUrlWithPath());
             //  getUrl(getCurrentUrl() + "?action=something");
          //   getUrl(new Page(getSiteUrl(),"/login"));
-            getUrl(getCurrentUrl());
+            getUrl(getCurrentUrl()+"login");
             //for context added url like github.com/login
-           // getUrl(getSiteUrlWithPath());
+          //  getUrl(getSiteUrlWithPath());
 
         }
         return this;
@@ -75,7 +75,7 @@ public class LoginPage extends SiteBasePageObject {
             logger.info("Entering enterUser  login: ");
             Reporter.log("Entering  enterUser login:");
             fillInputAfterClear(username,userName);
-            login_button.click();
+
             logger.info("Exiting enterUser login");
             Reporter.log("Exiting  enterUser login");
 
@@ -116,7 +116,7 @@ public class LoginPage extends SiteBasePageObject {
             Reporter.log("Entering  login:");
 
 
-
+            wait.forElementVisibleW(login_button);
            
             logger.info("Exiting  login");
             Reporter.log("Exiting  login");

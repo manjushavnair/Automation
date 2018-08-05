@@ -31,7 +31,7 @@ public class GitHubBaseTest extends NewTestTemplate  {
             eu = new ExcelUtil();
 
             eu.setExcelFile(ExcelCONSTANTS.LOGINXLSDATAPATH,
-                    ExcelCONSTANTS.LOGINXLSDATASHEETNAMELOGIN);
+                    ExcelCONSTANTS.LOGINGITHUB);
         } catch (Exception e) {
             e.printStackTrace();
             ;

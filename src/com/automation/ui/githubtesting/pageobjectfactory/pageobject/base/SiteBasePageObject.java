@@ -18,30 +18,13 @@ import java.util.concurrent.TimeUnit;
 public class SiteBasePageObject extends BasePageObject {
 
 
-    private static final String LOGGED_IN_USER_SELECTOR_OASIS =
-            ".wds-global-navigation__user-menu.wds-global-navigation__user-logged-in img, "
-                    + ".wds-global-navigation__user-menu.wds-global-navigation__user-logged-in svg";
-
-    private static final By MERCURY_SKIN = By.cssSelector("#ember-container");
-    private static final By MERCURY_NAV_ICON = By.cssSelector(".site-head .site-head-icon-nav");
-
-
-
-
 
     @FindBy(css = "#globalNavigation,.site-head.no-shadow,.wds-global-navigation")
     protected WebElement navigationBar;
     @FindBy(css = "#globalNavigation")
     protected WebElement newGlobalNavigation;
      protected By parentBy = By.xpath("./..");
-     @FindBy(css = ".banner-notifications-placeholder,.smart-banner")
-    private WebElement bannerNotificationContainer;
 
-
-      @FindBy(css = ".wds-dropdown__toggle .wds-avatar")
-    private WebElement globalNavigationAvatar;
-    @FindBy(css = ".wds-global-navigation")
-    private WebElement globalNavigationBar;
 
 
     private static final int TIMEOUT_PAGE_REGISTRATION = 3000;
@@ -83,10 +66,6 @@ public class SiteBasePageObject extends BasePageObject {
         }
     }
 
-
-    public int getBannerNotificationsHeight() {
-        return bannerNotificationContainer.getSize().getHeight();
-    }
 
     public int getNavigationBarOffsetFromTop() {
         return Integer.parseInt(navigationBar.getAttribute("offsetTop")) + navigationBar.getSize().height;
@@ -130,23 +109,7 @@ public class SiteBasePageObject extends BasePageObject {
             if (driver.findElements(By.cssSelector("#PreviewFrame")).size() > 0) {
                 driver.switchTo().frame("PreviewFrame");
             }
-            // open nav if on mercury, required to see login data
-            if (driver.findElements(MERCURY_SKIN).size() > 0) {
-                wait.forElementClickable(MERCURY_NAV_ICON);
-                driver.findElement(MERCURY_NAV_ICON).click();
-           //     wait.forElementVisible(By.cssSelector(
-             //           LOGGED_IN_USER_SELECTOR_MERCURY.replace("%userName%", userName.replace(" ", "_"))));
-                // close nav on mercury
-                wait.forElementClickable(MERCURY_NAV_ICON);
-                driver.findElement(MERCURY_NAV_ICON).click();
-            } else {
-                WebElement avatar = wait.forElementPresent(By.cssSelector(LOGGED_IN_USER_SELECTOR_OASIS));
-                String loggedInUserName = avatar.getAttribute("alt");
-                if (!loggedInUserName.equals(userName) && !loggedInUserName.equals(userName + " avatar")) {
-                    throw new IllegalArgumentException(
-                            "Invalid user, expected " + userName + ", but found: " + loggedInUserName);
-                }
-            }
+
         } finally {
             restoreDefaultImplicitWait();
             driver.switchTo().defaultContent();
@@ -162,18 +125,6 @@ public class SiteBasePageObject extends BasePageObject {
 
 
 
-    public void verifyGlobalNavigation() {
-        //NEEDTOCHECK
-        wait.forElementVisibleW(globalNavigationBar);
-        Log.log("verifyGlobalNavigation", "Verified global navigation", true);
-    }
-
-    public void verifyAvatarVisible() {
-        //NEEDTOCHECK
-
-        wait.forElementVisibleW(globalNavigationAvatar);
-        Log.log("verifyAvatarVisible", "desired avatar is visible on navbar", true);
-    }
 
 
 

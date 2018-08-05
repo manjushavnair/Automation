@@ -3,8 +3,9 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.home;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
 import com.automation.ui.connected.common.prpreader.AssertDataReader;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.AddCloudDataConnection;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.base.*;
+
+import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.*;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;

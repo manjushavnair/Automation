@@ -93,39 +93,7 @@ public class HomePage extends SiteBasePageObject {
         addRepo.click();
     }
 
-    public AddCloudDataConnection addConnection() {
-        try {
-            logger.info("Entering  addConnection: ");
-            Reporter.log("Entering  addConnection:");
-            logger.info("click  ");
 
-            //  addButton.click();
-            // wait.forElementClickable(addButton,BASEConstants.WAITTIME10000MILLISEC);
-            //  waitAndClick(addButton);
-
-
-
-            //((JavascriptExecutor)driver).executeScript("$('button.primary.ng-binding').click()");
-
-
-            //   addButton.click();
-
-            logger.info("clicked ");
-
-
-            logger.info("Exiting  addConnection");
-            Reporter.log("Exiting  addConnection");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            Assert.fail("Add failed");
-            Reporter.log("Add failed");
-
-
-        }
-        return new AddCloudDataConnection();
-
-    }
 
 
     public void addConnection_accessdenied() {
