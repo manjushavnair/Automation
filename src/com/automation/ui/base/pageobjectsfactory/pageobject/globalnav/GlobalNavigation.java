@@ -77,7 +77,7 @@ public class GlobalNavigation extends BasePageObject {
   }
 
 
-  public boolean isWikisMenuVisible() {
+  public boolean isSiteMenuVisible() {
     return isElementDisplayed(siteMenu,3 );
   }
 

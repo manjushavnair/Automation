@@ -55,7 +55,7 @@ public interface URLsContent {
 
 
 
-   public static final String COMMUNITY_WIKI = "community";
+   public static final String COMMUNITY_SITE = "community";
 
     // External URL
     public static final String EXTERNAL_URL = "http://www.site.com";

@@ -32,7 +32,7 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.automation.ui.base.common.contentpatterns.URLsContent.COMMUNITY_WIKI;
+import static com.automation.ui.base.common.contentpatterns.URLsContent.COMMUNITY_SITE;
 
 public class Helios {
 
@@ -237,7 +237,7 @@ public class Helios {
     }
 
     private static String getUserIdUrl(String encodedUsername) {
-        String communityUrl = UrlBuilder.createUrlBuilderForSiteAndLang(COMMUNITY_WIKI, Configuration.DEFAULT_LANGUAGE).getUrl();
+        String communityUrl = UrlBuilder.createUrlBuilderForSiteAndLang(COMMUNITY_SITE, Configuration.DEFAULT_LANGUAGE).getUrl();
         return String.format("%s/api.php?action=query&list=users&ususers=%s&format=json&cb=%d",
                 communityUrl, encodedUsername, DateTime.now().getMillis());
     }
