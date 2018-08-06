@@ -46,7 +46,7 @@ public class SiteBasePageObject extends BasePageObject {
         return driver.getCurrentUrl();
     }
 
-    private void logMercuryUserId() {
+    private void logUserId() {
         Object scriptOut = driver.executeScript("return window.M && window.M.prop('userId')");
 
         if (scriptOut != null) {
@@ -93,7 +93,7 @@ public class SiteBasePageObject extends BasePageObject {
         Log.info("loginCookie",
                 "user was logged in by helios using access token: " + token);
         logger.info("user was logged in by helios using access token: " + token);
-        logMercuryUserId();
+        logUserId();
 
         return token;
     }
