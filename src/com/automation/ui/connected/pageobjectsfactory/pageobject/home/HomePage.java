@@ -34,10 +34,9 @@ public class HomePage extends SiteBasePageObject {
     private WebElement menubutton;
 
 
-    // @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON)
-    // private WebElement addButton;
-
-    @FindBy(css = HomeConstants.ADDCONNECTIONSBUTTON)
+  // @FindBy(css = HomeConstants.ADDCONNECTIONSBUTTON)
+     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON)
+  //@FindBy(className  = HomeConstants.ADDCONNECTIONSBUTTON)
     private WebElement addButton;
 
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_ERROR_MSG)
@@ -46,10 +45,6 @@ public class HomePage extends SiteBasePageObject {
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_ERROR_MSG_EXTRA)
     private WebElement msgExtra;
 
-
-    //for GITHUB testing
-    @FindBy(css = HomeConstants.NEWREPOCREATION)
-    private WebElement addRepo;
 
     /*public com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage open() {
         return open(Configuration.getSiteName());
@@ -122,11 +117,6 @@ public class HomePage extends SiteBasePageObject {
 
     }
 
-    public void addRepo() {
-
-        wait.forElementClickable(addRepo);
-        addRepo.click();
-    }
 
     public AddCloudDataConnection addConnection() {
         try {
@@ -138,14 +128,15 @@ public class HomePage extends SiteBasePageObject {
             // wait.forElementClickable(addButton,BASEConstants.WAITTIME10000MILLISEC);
             //  waitAndClick(addButton);
 
-            wait.forElementVisible(addButton, 30);
+        //   wait.forElementClickable(addButton);
+          //  addButton.click();
+
+          wait.forElementVisible(addButton, 30);
             jsActions.click(addButton);
-            Thread.sleep(40000);
+            Thread.sleep(10000);
 
             //((JavascriptExecutor)driver).executeScript("$('button.primary.ng-binding').click()");
 
-
-            //   addButton.click();
 
             logger.info("clicked ");
 
