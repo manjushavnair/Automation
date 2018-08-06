@@ -1,6 +1,5 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.base;
 
-import com.automation.ui.base.common.core.Assertion;
 import com.automation.ui.base.common.core.Helios;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.helpers.User;
@@ -14,9 +13,7 @@ import org.openqa.selenium.Cookie;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
@@ -49,7 +46,7 @@ public class SiteBasePageObject extends BasePageObject {
     private WebElement globalNavigationBar;
 
 
-    private static final int TIMEOUT_PAGE_REGISTRATION = 3000;
+
     private static Logger logger = Logger.getLogger(SiteBasePageObject.class);
 
     public SiteBasePageObject() {
@@ -70,7 +67,7 @@ public class SiteBasePageObject extends BasePageObject {
         return driver.getCurrentUrl();
     }
 
-    private void logMercuryUserId() {
+    private void logUserId() {
         Object scriptOut = driver.executeScript("return window.M && window.M.prop('userId')");
 
         if (scriptOut != null) {
@@ -124,7 +121,7 @@ public class SiteBasePageObject extends BasePageObject {
         Log.info("loginCookie",
                 "user was logged in by helios using access token: " + token);
         logger.info("user was logged in by helios using access token: " + token);
-        logMercuryUserId();
+        logUserId();
 
         return token;
     }
@@ -135,19 +132,19 @@ public class SiteBasePageObject extends BasePageObject {
             if (driver.findElements(By.cssSelector("#PreviewFrame")).size() > 0) {
                 driver.switchTo().frame("PreviewFrame");
             }
-            // open nav if on mercury, required to see login data
+            // open nav , required to see login data
             if (driver.findElements(MERCURY_SKIN).size() > 0) {
                 wait.forElementClickable(MERCURY_NAV_ICON);
                 driver.findElement(MERCURY_NAV_ICON).click();
            //     wait.forElementVisible(By.cssSelector(
              //           LOGGED_IN_USER_SELECTOR_MERCURY.replace("%userName%", userName.replace(" ", "_"))));
-                // close nav on mercury
+                // close nav
                 wait.forElementClickable(MERCURY_NAV_ICON);
                 driver.findElement(MERCURY_NAV_ICON).click();
             } else {
-                WebElement avatar = wait.forElementPresent(By.cssSelector(LOGGED_IN_USER_SELECTOR_OASIS));
-                String loggedInUserName = avatar.getAttribute("alt");
-                if (!loggedInUserName.equals(userName) && !loggedInUserName.equals(userName + " avatar")) {
+                WebElement logo = wait.forElementPresent(By.cssSelector(LOGGED_IN_USER_SELECTOR_OASIS));
+                String loggedInUserName = logo.getAttribute("alt");
+                if (!loggedInUserName.equals(userName) && !loggedInUserName.equals(userName + " logo")) {
                     throw new IllegalArgumentException(
                             "Invalid user, expected " + userName + ", but found: " + loggedInUserName);
                 }
@@ -177,7 +174,7 @@ public class SiteBasePageObject extends BasePageObject {
         //NEEDTOCHECK
 
         wait.forElementVisibleW(globalNavigationAvatar);
-        Log.log("verifyAvatarVisible", "desired avatar is visible on navbar", true);
+        Log.log("verifyAvatarVisible", "desired logo is visible on navbar", true);
     }
 
 
