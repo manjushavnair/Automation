@@ -1,11 +1,11 @@
-package com.automation.ui.base.common.core.helpers;
+package com.automation.ui.base.common.auth;
 
 import com.automation.ui.base.common.core.XMLReader;
 import com.automation.ui.base.common.core.configuration.Configuration;
 
 import java.io.File;
 
-public enum User {
+public enum User  {
 
 
 	FORGOTTEN_PASSWORD("ci.user.forgottenPassword.username", "ci.user.forgottenPassword.password"),
@@ -21,7 +21,7 @@ public enum User {
     private String userId;
     private String accessToken;
 
-    User(String userNameKey, String passwordKey) {
+      User(String userNameKey, String passwordKey) {
         System.out.println("filePath" + filePath);
         this.userName = XMLReader.getValue(new File(filePath), userNameKey);
         this.password = XMLReader.getValue(new File(filePath), passwordKey);

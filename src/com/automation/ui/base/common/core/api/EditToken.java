@@ -2,7 +2,7 @@ package com.automation.ui.base.common.core.api;
 
 import com.automation.ui.base.common.constants.*;
 import com.automation.ui.base.common.core.Helios;
-import com.automation.ui.base.common.core.helpers.User;
+import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.logging.Log;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.apache.http.HttpEntity;

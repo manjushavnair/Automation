@@ -1,6 +1,6 @@
 package com.automation.ui.base.common.remote.operations.http;
 
-import com.automation.ui.base.common.core.helpers.User;
+import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.logging.Log;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;

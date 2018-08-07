@@ -2,7 +2,7 @@ package com.automation.ui.base.common.core;
 
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
-import com.automation.ui.base.common.core.helpers.User;
+import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.core.url.UrlBuilder;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.common.properties.HeliosConfig;

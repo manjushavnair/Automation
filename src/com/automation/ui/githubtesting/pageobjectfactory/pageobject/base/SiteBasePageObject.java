@@ -2,15 +2,13 @@ package com.automation.ui.githubtesting.pageobjectfactory.pageobject.base;
 
 import com.automation.ui.base.common.core.Helios;
 import com.automation.ui.base.common.core.configuration.Configuration;
-import com.automation.ui.base.common.core.helpers.User;
+import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;

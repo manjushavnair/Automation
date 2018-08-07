@@ -6,7 +6,7 @@ import com.automation.ui.base.common.core.annotations.DontRun;
 import com.automation.ui.base.common.core.annotations.Execute;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.element.JavascriptActions;
-import com.automation.ui.base.common.core.helpers.User;
+import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.core.networktrafficinterceptor.NetworkTrafficInterceptor;
 import com.automation.ui.base.common.driverprovider.DriverProvider;
 import com.automation.ui.base.common.exception.BusinessException;
@@ -25,7 +25,6 @@ import org.testng.SkipException;
 
 import java.lang.reflect.Method;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
         implements ITestListener {

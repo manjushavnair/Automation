@@ -36,7 +36,7 @@ public class GetAdapter extends AbstractAdapter implements RestAdapter {
         }
         String response = null;
         try {
-            response = makeRawRequest(request);
+            response = makeRawRequest(request,true);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -47,8 +47,8 @@ public class HomePageTest extends ConnectedBaseTest {
         String passWord = eu.getCellData(1, 2);
 
         login_page.enterUser(userName);
-        login_page.enterPassword(passWord);
-        home_page = login_page.login();
+       // login_page.enterPassword(passWord);
+       // home_page = login_page.login();
         // home_page.waitForPageReload();
         // home_page.open();
 
@@ -58,7 +58,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
     }
 
-    @Test(enabled = true, priority = 2, groups = {"validcase"}, description = "launchHomePage ")
+    @Test(enabled = false, priority = 2, groups = {"validcase"}, description = "launchHomePage ")
     public void launchHomePage() throws Throwable {
         logger.info(" launchHomePage and going to  homepage" + urlBuilder.getUrl());
         login_page.wait.forElementClickable(By.cssSelector(".primary"));
@@ -87,7 +87,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
 
 
-    @Test(enabled = true,priority = 4,groups = {  "validcase"}, description = "Add Connection ")
+    @Test(enabled = false,priority = 4,groups = {  "validcase"}, description = "Add Connection ")
     public void addConnection() throws Throwable {
 
         logger.info("Entering launchHomePage");

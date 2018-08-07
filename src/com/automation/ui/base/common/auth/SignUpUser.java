@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.core.helpers;
+package com.automation.ui.base.common.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Value;

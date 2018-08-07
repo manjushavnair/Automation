@@ -1,6 +1,6 @@
 package com.automation.ui.base.common.remote.operations.http;
 
-import com.automation.ui.base.common.core.helpers.User;
+import com.automation.ui.base.common.auth.User;
 import org.apache.http.client.methods.HttpPost;
 import org.json.JSONObject;
 

@@ -1,4 +1,4 @@
-package com.automation.ui.base.pageobjectsfactory.pageobject.auth;
+package com.automation.ui.base.common.auth;
 
 
 public interface FormPage {

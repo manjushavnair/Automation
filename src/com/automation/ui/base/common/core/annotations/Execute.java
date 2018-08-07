@@ -1,6 +1,6 @@
 package com.automation.ui.base.common.core.annotations;
 
-import com.automation.ui.base.common.core.helpers.User;
+import com.automation.ui.base.common.auth.User;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

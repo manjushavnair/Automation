@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.core.helpers;
+package com.automation.ui.base.common.auth;
 
 
 import com.automation.ui.base.common.core.configuration.Configuration;

@@ -80,8 +80,8 @@ public class LoginPage extends SiteBasePageObject {
 
     public LoginPage enterUser(String userName) {
         try {
-            logger.info("Entering enterUser  login: ");
-            Reporter.log("Entering  enterUser login:");
+            logger.info("Entering enterUser  login: "+login_button.getText() + " "+login_button.getTagName());
+            Reporter.log("Entering  enterUser login:" );
             fillInputAfterClear(username,userName);
             login_button.click();
             logger.info("Exiting enterUser login");

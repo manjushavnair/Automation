@@ -1,8 +1,8 @@
 package com.automation.ui.base.common.core.api;
 
+import com.automation.ui.base.common.auth.SignUpUser;
 import com.automation.ui.base.common.core.XMLReader;
 import com.automation.ui.base.common.core.configuration.Configuration;
-import com.automation.ui.base.common.core.helpers.*;
 import com.automation.ui.base.common.logging.Log;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;

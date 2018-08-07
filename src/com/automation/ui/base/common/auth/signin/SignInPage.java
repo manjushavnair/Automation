@@ -1,9 +1,9 @@
-package com.automation.ui.base.pageobjectsfactory.pageobject.auth.signin;
+package com.automation.ui.base.common.auth.signin;
 
-import com.automation.ui.base.common.core.helpers.User;
-import com.automation.ui.base.pageobjectsfactory.pageobject.auth.FormPage;
-import com.automation.ui.base.pageobjectsfactory.pageobject.auth.forgotpassword.ForgotPasswordPage;
-import com.automation.ui.base.pageobjectsfactory.pageobject.auth.register.RegisterPage;
+import com.automation.ui.base.common.auth.User;
+import com.automation.ui.base.common.auth.FormPage;
+import com.automation.ui.base.common.auth.forgotpassword.ForgotPasswordPage;
+import com.automation.ui.base.common.auth.register.RegisterPage;
 
 public interface SignInPage extends FormPage {
 

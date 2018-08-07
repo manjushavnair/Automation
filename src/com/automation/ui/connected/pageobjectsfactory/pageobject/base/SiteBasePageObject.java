@@ -2,7 +2,7 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.base;
 
 import com.automation.ui.base.common.core.Helios;
 import com.automation.ui.base.common.core.configuration.Configuration;
-import com.automation.ui.base.common.core.helpers.User;
+import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 
