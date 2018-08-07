@@ -11,7 +11,6 @@ public interface HomeConstants {
    // public String ADDCONNECTIONSBUTTON = "#primary.ng-binding";
   //  public String ADDCONNECTIONSBUTTON = "#.primary.ng-binding";
 
-    public String ADDCONNECTIONSBUTTON = "//button[@class='primary ng-binding']";
 
     //public String ADDCONNECTIONSBUTTON ="button.primary.ng-binding";
 

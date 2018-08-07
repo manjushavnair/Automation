@@ -58,11 +58,20 @@
 
             <methods>
                 <include name="launchHomePage"/>
-                <include name="addConnection"/>
 
 
             </methods>
         </class>
+
+            <class name="com.automation.ui.connected.testcases.clouddataconnection.DataConnectionTest"  >
+
+                <methods>
+
+                    <include name="addConnection"/>
+
+
+                </methods>
+            </class>
         </classes>
     </test>
 

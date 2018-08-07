@@ -53,7 +53,6 @@ public class LoginTest extends ConnectedBaseTest {
             .getLogger(LoginTest.class);
 
 
-    private LoginPage login_page =null;
 
 
     public LoginTest() {
@@ -172,7 +171,7 @@ public class LoginTest extends ConnectedBaseTest {
 
         logger.info("Entering verifyNullUserNullPassword");
         Reporter.log("Entering verifyNullUserNullPassword");
-        LoginPage login_page = new LoginPage();
+         login_page = new LoginPage();
         login_page.open();
         // Call the method
 

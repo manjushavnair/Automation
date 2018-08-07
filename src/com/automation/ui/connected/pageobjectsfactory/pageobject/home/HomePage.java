@@ -36,10 +36,6 @@ public class HomePage extends SiteBasePageObject {
     private WebElement menubutton;
 
 
-  // @FindBy(css = HomeConstants.ADDCONNECTIONSBUTTON)
-     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON)
-  //@FindBy(className  = HomeConstants.ADDCONNECTIONSBUTTON)
-    private WebElement addButton;
 
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_ERROR_MSG)
     private WebElement msg;
@@ -120,31 +116,7 @@ public class HomePage extends SiteBasePageObject {
     }
 
 
-    public AddCloudDataConnection addConnection() {
-        try {
-            logger.info("Entering  addConnection: "+addButton.getTagName() + " " +addButton.getText()+ " "+addButton.getLocation());
 
-            Reporter.log("Entering  addConnection:"+addButton.getTagName() + " " +addButton.getText()+ " "+addButton.getLocation());
-            logger.info("click  ");
-         // wait.forElementVisible(addButton, 30);
-          jsActions.click(addButton);
-           waitAndClick(addButton);
-            Thread.sleep(20000);
-
-
-            logger.info("Exiting  addConnection");
-            Reporter.log("Exiting  addConnection");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            Assert.fail("Add failed");
-            Reporter.log("Add failed");
-
-
-        }
-        return new AddCloudDataConnection();
-
-    }
 
 
     public void addConnection_accessdenied() {
