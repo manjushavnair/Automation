@@ -12,6 +12,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.By;
 
 public class HomePage extends SiteBasePageObject {
 
@@ -120,26 +122,14 @@ public class HomePage extends SiteBasePageObject {
 
     public AddCloudDataConnection addConnection() {
         try {
-            logger.info("Entering  addConnection: ");
-            Reporter.log("Entering  addConnection:");
+            logger.info("Entering  addConnection: "+addButton.getTagName() + " " +addButton.getText()+ " "+addButton.getLocation());
+
+            Reporter.log("Entering  addConnection:"+addButton.getTagName() + " " +addButton.getText()+ " "+addButton.getLocation());
             logger.info("click  ");
-
-            //  addButton.click();
-            // wait.forElementClickable(addButton,BASEConstants.WAITTIME10000MILLISEC);
-            //  waitAndClick(addButton);
-
-        //   wait.forElementClickable(addButton);
-            addButton.click();
-
-       /*   wait.forElementVisible(addButton, 30);
-            jsActions.click(addButton);
-            Thread.sleep(10000);
-            */
-
-            //((JavascriptExecutor)driver).executeScript("$('button.primary.ng-binding').click()");
-
-
-            logger.info("clicked ");
+         // wait.forElementVisible(addButton, 30);
+          jsActions.click(addButton);
+           waitAndClick(addButton);
+            Thread.sleep(20000);
 
 
             logger.info("Exiting  addConnection");
