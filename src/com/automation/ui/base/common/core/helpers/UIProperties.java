@@ -8,10 +8,5 @@ import org.openqa.selenium.WebDriver;
  */
 public class UIProperties {
 
-    /**
-     * Check if current site for children
-     */
-    public static boolean isSiteForChildren(WebDriver webDriver) {
-        return "ec".equals(new JavascriptActions(webDriver).execute("ads.context.targeting.esrbRating"));
-    }
+
 }

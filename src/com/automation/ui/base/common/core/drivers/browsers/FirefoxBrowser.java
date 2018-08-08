@@ -13,6 +13,8 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.GeckoDriverService;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.PageLoadStrategy;
 import java.io.File;
 import java.io.IOException;
 
@@ -32,6 +34,7 @@ public class FirefoxBrowser extends BrowserAbstract {
 
     private FirefoxProfile firefoxProfile;
     private GeckoDriverService fxService;
+    private FirefoxOptions opt ;
     private static Logger logger = Logger
             .getLogger(FirefoxBrowser.class);
 
@@ -146,8 +149,12 @@ public class FirefoxBrowser extends BrowserAbstract {
         firefoxProfile = new FirefoxProfile(
                 new File(ClassLoader.getSystemResource("test/FirefoxProfiles/Default").getPath()));
 
+         opt = new FirefoxOptions();
+        opt.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+
         if ("true".equals(Configuration.getPageLoadStrategy())) {
-            firefoxProfile.setPreference("webdriver.load.strategy", "unstable");
+
+            firefoxProfile.setPreference("webdriver.load.strategy", "normal");
         }
 
         if ("true".equals(Configuration.getDisableFlash())) {

@@ -2,7 +2,7 @@ package com.automation.ui.base.common.prpreaders;
 
 import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.connected.common.constants.SITECONSTANTS;
-
+import com.automation.ui.connected.common.prpreader.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -19,7 +19,7 @@ public class BasePropertyReader extends Properties {
     public static BasePropertyReader readProperty() {
 
         if (corereader == null) {
-            synchronized (com.automation.ui.connected.common.prpreader.PropertyReader.class) {
+            synchronized (BasePropertyReader.class) {
                 if (corereader == null) {
 
                     corereader = new BasePropertyReader();
@@ -40,6 +40,32 @@ public class BasePropertyReader extends Properties {
 
         return corereader;
     }
+
+    public static BasePropertyReader readProperty(String fileName) {
+
+        if (corereader == null) {
+            synchronized (BasePropertyReader.class) {
+                if (corereader == null) {
+
+                    corereader = new BasePropertyReader();
+                    try {
+                        InputStream inStream = new FileInputStream(new File(
+                                fileName));
+                        corereader.load(inStream);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+
+                    }
+                }
+            }
+        }
+
+        return corereader;
+    }
+
 
     public String getValue(final String key) {
         return corereader.getProperty(key);

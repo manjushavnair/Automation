@@ -4,7 +4,8 @@ import org.openqa.selenium.WebElement;
 
 public class ImageHelper {
 
-    private static final String START_TOKEN = "Site-Visualization-Main%2C";
+    //NEED TO CHECK
+    private static final String START_TOKEN = "Site";
     private static final String STOP_TOKEN = ".";
 
     private ImageHelper() {

@@ -5,8 +5,10 @@ import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.drivers.BrowserAbstract;
 import com.automation.ui.base.common.logging.Log;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.CapabilityType;
 
 import java.io.File;
@@ -17,6 +19,8 @@ public class IEBrowser extends BrowserAbstract {
     private static Logger logger = Logger
             .getLogger(IEBrowser.class);
 
+
+    private InternetExplorerOptions ieOption=new InternetExplorerOptions();
 
 
 
@@ -39,6 +43,9 @@ public class IEBrowser extends BrowserAbstract {
 
 
         File iedriver= new File(ClassLoader.getSystemResource(ieBinaryPath).getPath());
+
+        ieOption.setCapability("","");
+        ieOption.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 
            // set application user permissions to 455
         // iedriver.setExecutable(true);
@@ -71,14 +78,12 @@ public class IEBrowser extends BrowserAbstract {
         caps.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
         caps.setCapability(InternetExplorerDriver.ENABLE_ELEMENT_CACHE_CLEANUP, true);
         caps.setCapability(InternetExplorerDriver.NATIVE_EVENTS, true);
-
-
         caps.setCapability(CapabilityType.BROWSER_NAME, "internet explorer");
         caps.setCapability(CapabilityType.SUPPORTS_JAVASCRIPT, true);
         caps.setJavascriptEnabled(true);
         caps.setCapability("ie.ensureCleanSession", true);
 
-        return new UIWebDriver(new InternetExplorerDriver(   ), server, false);
+        return new UIWebDriver(new InternetExplorerDriver(   caps), server, false);
     }
 
     @Override

@@ -16,7 +16,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-
+import org.openqa.selenium.PageLoadStrategy;
 public class ChromeBrowser extends BrowserAbstract {
 
     private static final String CHROMEDRIVER_PATH_FORMAT = "test/ChromeDriver/chromedriver_%s";
@@ -92,12 +92,13 @@ public class ChromeBrowser extends BrowserAbstract {
     public UIWebDriver create() {
         caps.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         if (Configuration.isUnsafePageLoad()) {
-            caps.setCapability("pageLoadStrategy", "none");
+            caps.setCapability("pageLoadStrategy", "normal");
         }
         caps.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
 
 
         return new UIWebDriver(new ChromeDriver(caps), server, useMobile);
+
     }
 
     @Override

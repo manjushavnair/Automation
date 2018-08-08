@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.rest.restclient;
+package com.automation.ui.base.common.rest.restclient.simpletest;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;

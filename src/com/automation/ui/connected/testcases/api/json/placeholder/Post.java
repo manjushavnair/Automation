@@ -1,5 +1,6 @@
 package com.automation.ui.connected.testcases.api.json.placeholder;
 
+import com.automation.ui.base.common.rest.restclient.util.Repository;
 import io.restassured.path.json.JsonPath;
 
 import org.testng.annotations.Optional;
@@ -7,11 +8,8 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
-import io.restassured.http.ContentType.*;
-
-import com.automation.ui.base.common.rest.restclient.PropertiesUtil;
-import com.automation.ui.base.common.rest.restclient.RestAdapter;
-import com.automation.ui.base.common.rest.restclient.*;
+import com.automation.ui.base.common.rest.restclient.util.PropertiesUtil;
+import com.automation.ui.base.common.rest.restclient.adapter.RestAdapter;
 import com.automation.ui.base.common.rest.restclient.PostAdapter;
 
 

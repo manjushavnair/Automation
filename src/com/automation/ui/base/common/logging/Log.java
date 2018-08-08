@@ -324,30 +324,7 @@ public class Log {
             }
         }
 
-        if (driver.getProxy() != null && Configuration.getAdsData()) {
 
-            Har har = driver.getProxy().getHar();
-            for (HarEntry entry : har.getLog().getEntries()) {
-                try {
-                    if (entry.getRequest().getUrl().contains("adeng")) {
-                        String[] urlValue = entry.getRequest().getUrl().split("(adeng).+\\?");
-                        String[] values = urlValue[1].split("&");
-
-                        Log.info(
-                                "Ad parameters",
-                                "Header: " + Arrays.toString(values)
-                        );
-                    }
-                } catch (NullPointerException ex) {
-                    Log
-                            .info(
-                                    "Did not get successful response",
-                                    ex
-                            );
-                }
-            }
-
-        }
 
         if (Configuration.getMobileSiteVersion() != null) {
             Log.info("Mobile Site Version: " + Configuration.getMobileSiteVersion());

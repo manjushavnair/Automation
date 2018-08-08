@@ -1,19 +1,18 @@
-package com.automation.ui.base.common.rest.restclient;
+package com.automation.ui.base.common.rest.restclient.util;
 
-import java.io.FileInputStream;
+import com.automation.ui.base.common.prpreaders.BasePropertyReader;
+
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Properties;
-
 
 
 public class PropertiesUtil {
     private String dataLocation;
-    private Properties properties;
+    private BasePropertyReader properties;
 
     private PropertiesUtil(String dataLocation) throws IOException {
         this.dataLocation = dataLocation;
-        loadProperties();
+        properties=BasePropertyReader.readProperty(this.dataLocation);
     }
 
     public static PropertiesUtil create(String dataLocation) throws IOException {
@@ -40,11 +39,6 @@ public class PropertiesUtil {
         }
     }
 
-    private void loadProperties() throws IOException {
-        FileInputStream fileInputStream = new FileInputStream(dataLocation); //"src/test/resources/api.properties"
-        properties = new Properties();
-        properties.load(fileInputStream);
-    }
 
     @SuppressWarnings("unchecked")
     public <T> T getProperties(String name) {

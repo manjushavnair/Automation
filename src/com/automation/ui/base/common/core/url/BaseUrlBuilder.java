@@ -45,13 +45,6 @@ public class BaseUrlBuilder {
         }
     }
 
-    public String globallyEnableGeoInstantGlobalOnPage(String pageUrl, String instantGlobal) {
-        return this.appendQueryStringToURL(pageUrl, String.format("InstantGlobals.%s=[XX]", instantGlobal));
-    }
-
-    public String globallyDisableGeoInstantGlobalOnPage(String pageUrl, String instantGlobal) {
-        return this.appendQueryStringToURL(pageUrl, String.format("InstantGlobals.%s=[ZZ]", instantGlobal));
-    }
 
     public String getCacheBusterQuery(String pageName) {
         return pageName.equals("") || pageName.equals("/") ? "" : "?cb=" + DateTime.now().getMillis();

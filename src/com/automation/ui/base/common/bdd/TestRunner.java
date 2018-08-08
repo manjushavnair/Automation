@@ -7,7 +7,7 @@ import cucumber.api.CucumberOptions;
 //@RunWith(Cucumber.class)
 @CucumberOptions(
         features = "Feature"
-        , glue = {"com.uiautomation.ui.cucumber.login"}
+        , glue = {"com.automation.ui.base.common.bdd"}
         , monochrome = false
 )
 

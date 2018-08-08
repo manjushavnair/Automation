@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.rest.restclient;
+package com.automation.ui.base.common.rest.restclient.adapter;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

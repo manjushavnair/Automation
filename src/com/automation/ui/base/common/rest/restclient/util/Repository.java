@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.rest.restclient;
+package com.automation.ui.base.common.rest.restclient.util;
 
 import io.restassured.*;
 import io.restassured.http.ContentType;

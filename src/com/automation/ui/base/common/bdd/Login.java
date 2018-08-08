@@ -18,7 +18,7 @@ public class Login {
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get("https://50.23.117.115/webapp/login");
+        driver.get("https://site.com/webapp/login");
     }
 
     @When("^User Navigate to LogIn Page$")

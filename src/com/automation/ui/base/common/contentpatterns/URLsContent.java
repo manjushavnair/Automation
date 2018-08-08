@@ -18,22 +18,15 @@ public interface URLsContent {
     public static final String USER_FORGOT_PASSWORD = "/forgot-password";
 
 
-  public static final String LOGOUT = "Special:UserLogout?noexternals=1";
-
-
-     public static final String NOT_A_VALID_COMMUNITY = "Community_Central:Not_a_valid_community";
-
-  //  public static final String SPECIAL_VERSION = "Special:Version";
+    public static final String NOT_A_VALID_COMMUNITY = "Community_Central:Not_a_valid_community";
 
 
     // Extra switches - appear after ? in link
     public static final String NOEXTERNALS = "?noexternals=1";
 
-   // replace %title% with new article name
-    public static final String ADD_ARTICLE = "index.php?title=%title%&action=edit";
+
     public static final String API_URL = UrlBuilder.createUrlBuilder().getUrl()
             + "/api.php";
-
 
 
     // External sites
@@ -53,9 +46,7 @@ public interface URLsContent {
     public static final String AVATAR_GENERIC = "Avatar.jpg";
 
 
-
-
-   public static final String COMMUNITY_SITE = "community";
+    public static final String COMMUNITY_SITE = "community";
 
     // External URL
     public static final String EXTERNAL_URL = "http://www.site.com";
@@ -63,5 +54,4 @@ public interface URLsContent {
     public static final String USER_SIGNOUT = EXTERNAL_URL + "/logout";
 
 
-
- }
+}

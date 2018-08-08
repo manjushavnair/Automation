@@ -168,13 +168,6 @@ public class Configuration {
         return getProp("logEnabled");
     }
 
-    public static Boolean getAdsData() {
-        return "true".equals(getProp("adsData"));
-    }
-
-    public static String getMockAds() {
-        return getProp("mockAds");
-    }
 
     public static Boolean getForceHttps() {
         return "true".equals(getProp("forceHttps"));
@@ -300,7 +293,5 @@ public class Configuration {
         return res.toArray(new String[res.size()]);
     }
 
-    public static String getDisableCommunityPageSalesPitchDialog() {
-        return getProp("disableCommunityPageSalesPitchDialog");
-    }
+
 }

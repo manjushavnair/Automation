@@ -1,8 +1,9 @@
 //https://prasans.info/2014/06/making-https-call-using-apache-httpclient/
 
-package com.automation.ui.base.common.rest.restclient;
+package com.automation.ui.base.common.rest.restclient.factory;
 
 
+import com.automation.ui.base.common.rest.restclient.secure.HttpsTrustManager;
 import org.apache.http.client.HttpClient;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLContexts;

@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.rest.restclient;
+package com.automation.ui.base.common.rest.restclient.secure;
 
 import javax.net.ssl.X509TrustManager;
 import java.security.cert.CertificateException;

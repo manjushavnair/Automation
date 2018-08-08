@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.rest.restclient;
+package com.automation.ui.base.common.rest.restclient.secure;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

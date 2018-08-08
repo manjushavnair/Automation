@@ -55,12 +55,15 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
         if (method != null) {
             Class<?> declaringClass = method.getDeclaringClass();
             String cookieDomain =null;
+            String cookieName =null;
             //for localhost:9000 or localhost/ without domain
             if(Configuration.getEnvType().getKey().contains("test")) {
                   cookieDomain = String.format("%s", Configuration.getEnvType().getSiteDomain());
+                cookieName =Configuration.getEnvType().getSiteDomain();
             }
             else {
                 cookieDomain = String.format(".%s", Configuration.getEnvType().getSiteDomain());
+                cookieName =Configuration.getEnvType().getSiteDomain();
             }
 
            // logger.info(" cookieDomain afterNavigateTo " + cookieDomain + " Configuration.getEnvType().getSiteDomain() :" + Configuration.getEnvType().getSiteDomain()+":");
@@ -133,7 +136,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                     if (userOptedIn) {
                        // if(!Configuration.getEnvType().getKey().contains("test"))
                         {
-                            cookie = new Cookie("tracking-opt-in-status", "accepted", cookieDomain, "/",
+                            cookie = new Cookie(cookieName, "accepted", cookieDomain, "/",
                                     cookieDate
                             );
                            // logger.info("userOptedIn " + userOptedIn + "cookie:" + cookie);
@@ -141,7 +144,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                         }
                     } else if (userOptedOut) {
 
-						cookie=new Cookie("tracking-opt-in-status", "rejected", cookieDomain, "/", cookieDate  );
+						cookie=new Cookie(cookieName, "rejected", cookieDomain, "/", cookieDate  );
 						//logger.info("cookie:"+cookie);
                         driver.manage().addCookie( cookie);
                     }

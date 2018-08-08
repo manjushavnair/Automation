@@ -19,8 +19,6 @@ public @interface Execute {
 
     String mockAds() default "";
 
-    String disableCommunityPageSalesPitchDialog() default "";
-
     String language() default "";
 
     boolean trackingOptIn() default true;

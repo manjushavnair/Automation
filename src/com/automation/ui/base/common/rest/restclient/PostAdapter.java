@@ -1,5 +1,8 @@
 package com.automation.ui.base.common.rest.restclient;
 
+import com.automation.ui.base.common.rest.restclient.adapter.AbstractAdapter;
+import com.automation.ui.base.common.rest.restclient.adapter.RestAdapter;
+import com.automation.ui.base.common.rest.restclient.secure.HttpsTrustManager;
 import io.restassured.*;
 import io.restassured.config.RestAssuredConfig;
 import io.restassured.config.SSLConfig;

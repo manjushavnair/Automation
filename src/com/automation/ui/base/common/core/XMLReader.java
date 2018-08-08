@@ -1,11 +1,17 @@
 package com.automation.ui.base.common.core;
 
+import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.core.configuration.Configuration;
+import com.automation.ui.base.common.prpreaders.BasePropertyReader;
+import com.automation.ui.connected.common.prpreader.PropertyReader;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.ConfigurationRuntimeException;
 import org.apache.commons.configuration.XMLConfiguration;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 public class XMLReader {
 
@@ -13,6 +19,46 @@ public class XMLReader {
 
     private XMLReader() {
 
+    }
+
+
+
+    private static XMLReader xml;
+    private static XMLConfiguration xmlConf;
+
+    public static XMLReader readProperty(String fileName) {
+
+        if (xml == null) {
+            synchronized (XMLReader.class) {
+                if (xml == null) {
+
+                    xml = new XMLReader();
+                    try {
+
+                        xmlConf = new XMLConfiguration();
+                        InputStream inStream = new FileInputStream(new File(fileName ));
+                        xmlConf.load(inStream);
+
+                    }
+                    catch (ConfigurationException e) {
+                        throw new ConfigurationRuntimeException(e);
+                    }
+                    catch (FileNotFoundException e) {
+                        e.printStackTrace();
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+
+                    }
+                }
+            }
+        }
+
+        return xml;
+    }
+
+    public static String getValue(final String key) {
+        return xmlConf.getString(key);
     }
 
     /**
@@ -32,7 +78,7 @@ public class XMLReader {
         }
     }
 
-    public static String getValue(String key) {
-        return getValue(defaultConfigFile, key);
-    }
+   // public static String getValue(String key) {
+     //   return getValue(defaultConfigFile, key);
+   // }
 }

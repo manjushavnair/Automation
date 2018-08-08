@@ -7,7 +7,6 @@ import okhttp3.HttpUrl;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriverException;
-import com.automation.ui.base.common.constants.*;
 
 import static com.automation.ui.base.common.core.configuration.Configuration.*;
 

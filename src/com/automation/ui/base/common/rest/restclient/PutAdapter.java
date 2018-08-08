@@ -2,6 +2,8 @@ package com.automation.ui.base.common.rest.restclient;
 
 
 
+import com.automation.ui.base.common.rest.restclient.adapter.AbstractAdapter;
+import com.automation.ui.base.common.rest.restclient.adapter.RestAdapter;
 import io.restassured.*;
 import io.restassured.http.ContentType;
 import io.restassured.mapper.*;
@@ -11,7 +13,6 @@ import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
 import static io.restassured.config.EncoderConfig.encoderConfig;
 import static io.restassured.RestAssured.given;
-import static io.restassured.config.EncoderConfig.encoderConfig;
 
 public class PutAdapter extends AbstractAdapter implements RestAdapter {
     private String name;

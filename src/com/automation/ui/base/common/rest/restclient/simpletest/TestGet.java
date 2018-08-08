@@ -1,5 +1,6 @@
-package com.automation.ui.base.common.rest.restclient;
+package com.automation.ui.base.common.rest.restclient.simpletest;
 
+import com.automation.ui.base.common.rest.restclient.factory.HttpClientFactory;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;

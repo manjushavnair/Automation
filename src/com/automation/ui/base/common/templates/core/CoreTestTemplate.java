@@ -42,6 +42,9 @@ public abstract class CoreTestTemplate {
 //    protected String siteCorpSetupURL;
 
     protected PropertyReader prpr;
+    protected XMLReader xmlprpr;
+
+
 
     private void refreshDriver() {
 
@@ -55,6 +58,7 @@ public abstract class CoreTestTemplate {
         Reporter.log("beforeSuite::CoreTestTemplate");
         initLogs();
         initProperty();
+        initXMLProperty();
         initAssertData();
         prepareDirectories();
         //DISABLED NOW
@@ -66,10 +70,8 @@ public abstract class CoreTestTemplate {
      * Initialize Property.
      */
     private void initAssertData() {
-
         logger.info("Setting the Site Specific Langauge :"+Configuration.getSiteLanguage());
-
-        //set the langauge specified in he config.yml
+       //set the langauge specified in he config.yml
         assertData = AssertDataReader.readProperty(Configuration.getSiteLanguage());
     }
 
@@ -95,10 +97,18 @@ public abstract class CoreTestTemplate {
 
     }
 
+   /**
+     * Initialize Property.
+     */
+    private void initXMLProperty() {
+       // logger.info("initProperty initXMLProperty ");
+        xmlprpr = XMLReader.readProperty(Configuration.getCredentialsFilePath());
+
+    }
+
     @BeforeClass(alwaysRun = true)
     public void initTestClass() {
-
-       // logger.info("beforeClass initTestClass ");
+      // logger.info("beforeClass initTestClass ");
     }
 
     @BeforeMethod(alwaysRun = true)
@@ -106,15 +116,12 @@ public abstract class CoreTestTemplate {
         TestContext.writeMethodName(method);
         Log.startTest(method);
        // logger.info("beforeMethod initTestContext ");
-
         Configuration.clearCustomTestProperties();
-
         String browser = Configuration.getBrowser();
         setPropertiesFromAnnotationsOnDeclaringClass(method.getDeclaringClass());
         setPropertiesFromAnnotationsOnMethod(method);
         String currentBrowser = Configuration.getBrowser();
-
-       // logger.info(" beforeMethod initTestContext Browser parameter changed by annotation"
+      // logger.info(" beforeMethod initTestContext Browser parameter changed by annotation"
          //       + ", old value: " + browser + ", new value: " + currentBrowser);
         if (!browser.equals(currentBrowser)) {
             Log.info("Parameter override", "Browser parameter changed by annotation"
@@ -122,12 +129,10 @@ public abstract class CoreTestTemplate {
         }
 
         prepareURLs();
-
-        driver = DriverProvider.getActiveDriver();
+       driver = DriverProvider.getActiveDriver();
         networkTrafficInterceptor = driver.getProxy();
         setWindowSize();
-
-        loadFirstPage();
+       loadFirstPage();
     }
 
     private void setTestProperty(String key, String value) {
@@ -141,10 +146,7 @@ public abstract class CoreTestTemplate {
             setTestProperty("siteName", declaringClass.getAnnotation(Execute.class).onSite());
             setTestProperty("language", declaringClass.getAnnotation(Execute.class).language());
             setTestProperty("disableFlash", declaringClass.getAnnotation(Execute.class).disableFlash());
-            setTestProperty("mockAds", declaringClass.getAnnotation(Execute.class).mockAds());
-            setTestProperty("disableCommunityPageSalesPitchDialog",
-                    declaringClass.getAnnotation(Execute.class).disableCommunityPageSalesPitchDialog());
-        }
+         }
 
         if (declaringClass.isAnnotationPresent(InBrowser.class)) {
             setTestProperty("browser", declaringClass.getAnnotation(InBrowser.class).browser().getName());
@@ -157,10 +159,7 @@ public abstract class CoreTestTemplate {
             setTestProperty("siteName", method.getAnnotation(Execute.class).onSite());
             setTestProperty("language", method.getAnnotation(Execute.class).language());
             setTestProperty("disableFlash", method.getAnnotation(Execute.class).disableFlash());
-            setTestProperty("mockAds", method.getAnnotation(Execute.class).mockAds());
-            setTestProperty("disableCommunityPageSalesPitchDialog",
-                    method.getAnnotation(Execute.class).disableCommunityPageSalesPitchDialog());
-        }
+         }
 
         if (method.isAnnotationPresent(InBrowser.class)) {
             setTestProperty("browser", method.getAnnotation(InBrowser.class).browser().getName());

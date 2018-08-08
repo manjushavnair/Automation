@@ -14,21 +14,18 @@ public class BusinessException extends Exception {
 
     public BusinessException() {
         super();
-        logger.info("Default constructor");
-    }
+     }
 
     public BusinessException(String auxMsg) {
         super(auxMsg);
         this.msg = auxMsg;
-        logger.info("Second constructor");
 
     }
 
     public BusinessException(String errorCode, String auxMsg) {
         super(auxMsg);
         this.msg = makeMessage(errorCode, auxMsg);
-        logger.info("Third constructor");
-    }
+     }
 
     private String makeMessage(String errorCode, String auxMsg) {
 

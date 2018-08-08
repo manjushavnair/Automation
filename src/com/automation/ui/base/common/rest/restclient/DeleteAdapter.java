@@ -1,9 +1,10 @@
 package com.automation.ui.base.common.rest.restclient;
 
 
+import com.automation.ui.base.common.rest.restclient.adapter.AbstractAdapter;
+import com.automation.ui.base.common.rest.restclient.adapter.RestAdapter;
 import io.restassured.*;
 import io.restassured.http.ContentType;
-import io.restassured.internal.mapper.*;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 

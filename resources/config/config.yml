@@ -13,11 +13,8 @@ disableFlash: true
 jsErrorsEnabled: false
 logEnabled: true
 takeScreenshots: true
-adsData: false
-mockAds: false
 forceHttps: false
 forceLanguageInPath: false
-disableCommunityPageSalesPitchDialog: true
 useMITM: false
 useZapProxy: false
 language: en # run tests on site with specific language unless there is an annotation
