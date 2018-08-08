@@ -151,10 +151,6 @@
                         <version>1.4.0.8</version>
                     </dependency>
 
-
-
-
-
                     <dependency>
                         <groupId>com.codeborne</groupId>
                         <artifactId>phantomjsdriver</artifactId>
@@ -336,12 +332,6 @@
             <version>1.1.0</version>
         </dependency>
 
-
-
-
-
-
-
         <dependency>
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>
@@ -510,9 +500,6 @@
                 <systemPath>${env.JAVA_HOME}\lib\tools.jar</systemPath>
             </dependency>
             -->
-
-
-
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -603,18 +590,11 @@
             <artifactId>selenium-server</artifactId>
             <version>3.13.0</version>
         </dependency>
-
-
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>
             <version>4.3.2</version>
         </dependency>
-
-
-
-
-
     </dependencies>
 
     <repositories>

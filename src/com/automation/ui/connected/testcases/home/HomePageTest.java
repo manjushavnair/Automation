@@ -61,7 +61,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
     }
 
-    @Test(enabled = true, priority = 2, groups = {"validcase"}, dependsOnMethods="launchLogin",description = "launchHomePage ")
+    @Test(enabled = true, priority = 2, groups = {"validcase"},description = "launchHomePage ")
     public void launchHomePage() throws Throwable {
         logger.info(" launchHomePage and going to  homepage" + urlBuilder.getUrl());
         home_page=new HomePage();
