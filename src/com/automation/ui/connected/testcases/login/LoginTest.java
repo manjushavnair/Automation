@@ -53,7 +53,6 @@ public class LoginTest extends ConnectedBaseTest {
             .getLogger(LoginTest.class);
 
 
-    private LoginPage login_page =null;
 
 
     public LoginTest() {
@@ -103,7 +102,7 @@ public class LoginTest extends ConnectedBaseTest {
     public void verifyInValidUserNullPassword()  throws Throwable{
         logger.info("Entering verifyInValidUserNullPassword");
         Reporter.log("Entering verifyInValidUserNullPassword");
-        LoginPage login_page = new LoginPage();
+        login_page = new LoginPage();
         login_page.open();
         // Call the method
         String methodname = new Object() {
@@ -126,7 +125,7 @@ public class LoginTest extends ConnectedBaseTest {
 
         logger.info("Entering verifyValidUserNullPassword");
         Reporter.log("Entering verifyValidUserNullPassword");
-        LoginPage login_page = new LoginPage();
+         login_page = new LoginPage();
         login_page.open();
         // Call the method
         String methodname = new Object() {
@@ -148,7 +147,7 @@ public class LoginTest extends ConnectedBaseTest {
 
         logger.info("Entering verifyInValidLogin");
         Reporter.log("Entering verifyInValidLogin");
-        LoginPage login_page = new LoginPage();
+         login_page = new LoginPage();
         login_page.open();
 
 
@@ -172,7 +171,7 @@ public class LoginTest extends ConnectedBaseTest {
 
         logger.info("Entering verifyNullUserNullPassword");
         Reporter.log("Entering verifyNullUserNullPassword");
-        LoginPage login_page = new LoginPage();
+         login_page = new LoginPage();
         login_page.open();
         // Call the method
 

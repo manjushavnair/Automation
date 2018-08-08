@@ -18,9 +18,6 @@ public class HomePageTest extends ConnectedBaseTest {
     private static Logger logger = Logger
             .getLogger(HomePageTest.class);
 
-    private LoginPage login_page = null;
-    private HomePage home_page = null;
-
 
     public HomePageTest() {
 
@@ -29,7 +26,7 @@ public class HomePageTest extends ConnectedBaseTest {
     }
 
 
-    @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "home page ")
+    @Test(enabled = false, priority = 1, groups = {"validcase"}, description = "home page ")
 
     public void launchLogin() throws Throwable {
 
@@ -47,10 +44,12 @@ public class HomePageTest extends ConnectedBaseTest {
         String passWord = eu.getCellData(1, 2);
 
         login_page.enterUser(userName);
-       // login_page.enterPassword(passWord);
-       // home_page = login_page.login();
-        // home_page.waitForPageReload();
-        // home_page.open();
+        login_page.enterPassword(passWord);
+        home_page = login_page.login();
+
+
+       // home_page.waitForPageReload();
+       // home_page.open();
 
 
         logger.info("Exiting launchLogin and going to  homepage" + urlBuilder.getUrl());
@@ -58,14 +57,15 @@ public class HomePageTest extends ConnectedBaseTest {
 
     }
 
-    @Test(enabled = false, priority = 2, groups = {"validcase"}, description = "launchHomePage ")
+    @Test(enabled = true, priority = 2, groups = {"validcase"}, description = "launchHomePage ")
     public void launchHomePage() throws Throwable {
         logger.info(" launchHomePage and going to  homepage" + urlBuilder.getUrl());
-        login_page.wait.forElementClickable(By.cssSelector(".primary"));
+        home_page=new HomePage();
+        home_page.wait.forElementClickable(By.cssSelector(".primary"));
         logger.info(" home_page.getCurrentUrl() " + home_page.getCurrentUrl());
        // home_page.waitForPageLoad();
 
-        Thread.sleep(20000);
+       // Thread.sleep(20000);
 
         //  home_page.addConnection();
 
@@ -87,19 +87,6 @@ public class HomePageTest extends ConnectedBaseTest {
 
 
 
-    @Test(enabled = false,priority = 4,groups = {  "validcase"}, description = "Add Connection ")
-    public void addConnection() throws Throwable {
-
-        logger.info("Entering launchHomePage");
-        Reporter.log("Entering launchHomePage");
-        // add_conn_page.open();
-
-        home_page.addConnection();
-        home_page.waitForPageLoad();
-
-        logger.info("Exiting addConnection and going to  add"+home_page.getUrl());
-
-    }
 
 /*
     @Test(enabled = false,priority = 4,groups = {  "validcase"}, description = "home page ")
