@@ -6,12 +6,24 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Automation</name>
-    <description>Automation Test Automation Project</description>
+    <description>Test Automation Project</description>
+
+
+
+    <scm>
+        <url>scm:git:git@github.com:manjushavnair/Automation.git</url>
+        <connection>scm:git:git@github.com:manjushavnair/Automation.git</connection>
+        <developerConnection>scm:git:git@github.com:manjushavnair/Automation.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+
     <properties>
 
         <robotframework.version>2.9.2</robotframework.version>
         <selenium.version>2.48.2</selenium.version>
         <keywords.class>Selenium2Library</keywords.class>
+        <skipTests>false</skipTests>
     </properties>
 
 
@@ -56,6 +68,8 @@
                 </excludes>
             </resource>
         </resources>
+
+        <pluginManagement>
         <plugins>
 
             <plugin>
@@ -74,9 +88,25 @@
                         <suiteXmlFile>resources/testng.xml</suiteXmlFile>
 
                     </suiteXmlFiles>
+                    <!-- Build with '-D
+                    =true' to bypass test execution @ build time Default: false -->
+                    <skipTests>${skipTests}</skipTests>
+                    <testFailureIgnore>true</testFailureIgnore>
+
                 </configuration>
             </plugin>
 
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>1.8.1</version>
+                <configuration>
+                    <connectionType>developerConnection</connectionType>
+                    <scmVersion>master</scmVersion>
+                    <scmVersionType>branch</scmVersionType>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -101,15 +131,6 @@
                 <!-- <executions> <execution> <goals> <goal>run</goal> </goals> </execution>
                     </executions> -->
                 <dependencies>
-
-
-
-
-
-
-
-
-
                     <!-- to add microsoft active directory login -->
 
 
@@ -195,6 +216,7 @@
                 <version>2.19.1</version> <configuration> <suiteXmlFiles> <suiteXmlFile>resources/testng.xml</suiteXmlFile>
                 </suiteXmlFiles> </configuration> </plugin> -->
         </plugins>
+        </pluginManagement>
     </build>
     <dependencies>
 
