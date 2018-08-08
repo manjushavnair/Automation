@@ -242,11 +242,28 @@
 						<configuration>
 
 							<subject>Test Automation Report</subject>
+							
+							<htmlMessage>
+							                                    <![CDATA[
+							                                    <p>New test build triggered!</p>
+							                                    <p>Attached html file contains the test result status</p> 
+							                                    ]]>
+                        				  </htmlMessage>
 
 							<tagClasses>
 							<tagClass>
 							<displayName>Automation</displayName>
 							<receivers> <receiver>kksclt@gmail.com</receiver> </receivers>
+							  <fileSets>
+							                             <fileSet>
+							                                  <!-- Report directory Path -->
+							                                  <directory>/target</directory>
+							                                       <includes>
+							                                          <!-- Report file name -->
+							                                          <include>cucumber-test-results.html</include>
+							                                       </includes>
+							                             </fileSet>
+                          </fileSets>
 							</tagClass>
 							</tagClasses>
 						</configuration>
