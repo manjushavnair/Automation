@@ -14,6 +14,7 @@ import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import com.automation.ui.base.common.utils.*;
 
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -75,19 +76,16 @@ public abstract class BrowserAbstract {
             addExtension(name);
         }
     }
-    protected void deleteAllCookies() {
-      //  webdriver.manage().deleteAllCookies();
+
+
+
+    protected void deleteAllCookies(WebDriver driver) {
+        CookieUtils.deleteAllCookies(driver);
 
     }
 
-    protected void deleteCookiesOneByOne() {
-       /* Set<Cookie> allCookies = driver.manage().getCookies();
-        for (Cookie cookie : allCookies) {
-            driver.manage().deleteCookieNamed(cookie.getName());
-        }
-        */
-
-
+    protected void deleteCookiesOneByOne(WebDriver driver) {
+        CookieUtils.deleteCookiesOneByOne(  driver);
     }
 
 

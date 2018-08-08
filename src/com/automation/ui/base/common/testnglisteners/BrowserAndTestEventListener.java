@@ -1,18 +1,22 @@
 package com.automation.ui.base.common.testnglisteners;
 
+import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.contentpatterns.URLsContent;
-import com.automation.ui.base.common.core.*;
+import com.automation.ui.base.common.core.AlertHandler;
+import com.automation.ui.base.common.core.SelectorStack;
+import com.automation.ui.base.common.core.TestContext;
+import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.annotations.DontRun;
 import com.automation.ui.base.common.core.annotations.Execute;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.element.JavascriptActions;
-import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.core.networktrafficinterceptor.NetworkTrafficInterceptor;
 import com.automation.ui.base.common.driverprovider.DriverProvider;
 import com.automation.ui.base.common.exception.BusinessException;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.common.logging.VelocityWrapper;
 import com.automation.ui.base.common.utils.CommonUtils;
+import com.automation.ui.base.common.utils.CookieUtils;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
@@ -38,11 +42,11 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
         // driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
 
         //for ie
-         new JavascriptActions(driver).execute("window.stop");
+        new JavascriptActions(driver).execute("window.stop");
         //for chrome
         //new JavascriptActions(driver).execute("window.stop()");
 
-       // new JavascriptActions(driver).execute("window.setTimeout(arguments[arguments.length - 1], 5000);");
+        // new JavascriptActions(driver).execute("window.setTimeout(arguments[arguments.length - 1], 5000);");
 
         Log.ok("Navigate to", VelocityWrapper.fillLink(url, url));
         Log.logJSError();
@@ -51,22 +55,21 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
     @Override
     public void afterNavigateTo(String url, WebDriver driver) {
         Method method = TestContext.getCurrentTestMethod();
-        Cookie cookie=null;
+        Cookie cookie = null;
         if (method != null) {
             Class<?> declaringClass = method.getDeclaringClass();
-            String cookieDomain =null;
-            String cookieName =null;
+            String cookieDomain = null;
+            String cookieName = null;
             //for localhost:9000 or localhost/ without domain
-            if(Configuration.getEnvType().getKey().contains("test")) {
-                  cookieDomain = String.format("%s", Configuration.getEnvType().getSiteDomain());
-                cookieName =Configuration.getEnvType().getSiteDomain();
-            }
-            else {
+            if (Configuration.getEnvType().getKey().contains("test")) {
+                cookieDomain = String.format("%s", Configuration.getEnvType().getSiteDomain());
+                cookieName = Configuration.getEnvType().getSiteDomain();
+            } else {
                 cookieDomain = String.format(".%s", Configuration.getEnvType().getSiteDomain());
-                cookieName =Configuration.getEnvType().getSiteDomain();
+                cookieName = Configuration.getEnvType().getSiteDomain();
             }
 
-           // logger.info(" cookieDomain afterNavigateTo " + cookieDomain + " Configuration.getEnvType().getSiteDomain() :" + Configuration.getEnvType().getSiteDomain()+":");
+            // logger.info(" cookieDomain afterNavigateTo " + cookieDomain + " Configuration.getEnvType().getSiteDomain() :" + Configuration.getEnvType().getSiteDomain()+":");
 
             Date cookieDate = new Date(new DateTime().plusYears(10).getMillis());
 
@@ -130,23 +133,22 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                     }
 
 
-
-
-
                     if (userOptedIn) {
-                       // if(!Configuration.getEnvType().getKey().contains("test"))
+                        // if(!Configuration.getEnvType().getKey().contains("test"))
                         {
-                            cookie = new Cookie(cookieName, "accepted", cookieDomain, "/",
-                                    cookieDate
-                            );
-                           // logger.info("userOptedIn " + userOptedIn + "cookie:" + cookie);
+
+                            cookie = CookieUtils.addCookie("sitename", "accepted", cookieDomain, "/",
+                                    cookieDate);
+
                             driver.manage().addCookie(cookie);
                         }
                     } else if (userOptedOut) {
 
-						cookie=new Cookie(cookieName, "rejected", cookieDomain, "/", cookieDate  );
-						//logger.info("cookie:"+cookie);
-                        driver.manage().addCookie( cookie);
+
+                        cookie = CookieUtils.addCookie("sitename", "rejected", cookieDomain, "/",
+                                cookieDate);
+
+                        driver.manage().addCookie(cookie);
                     }
                 }
 
@@ -172,7 +174,6 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                     // log in, make sure user is logged in and flow is on the requested url
                     new SiteBasePageObject().loginAs(user);
                 }
-
 
 
                 NetworkTrafficInterceptor
@@ -212,7 +213,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
     @Override
     public void onTestStart(ITestResult result) {
-      //  logger.info("onTestStart");
+        //  logger.info("onTestStart");
 
         Log.clearLogStack();
         String testName = result.getName();
@@ -222,7 +223,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
     @Override
     public void onTestSuccess(ITestResult result) {
-       // logger.info("onTestSuccess");
+        // logger.info("onTestSuccess");
         try {
             Log.stop();
         } catch (BusinessException e) {
@@ -237,7 +238,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
     @Override
     public void onTestFailure(ITestResult result) {
-       // logger.info("onTestFailure");
+        // logger.info("onTestFailure");
 
         driver = DriverProvider.getActiveDriver();
 
@@ -260,7 +261,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
     @Override
     public void onTestSkipped(ITestResult result) {
-      //  logger.info("onTestSkipped");
+        //  logger.info("onTestSkipped");
         if (!Log.isTestStarted()) {
             Log.startTest(result.getMethod().getConstructorOrMethod().getMethod());
         }
@@ -323,6 +324,6 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
     @Override
     public void onFinish(ITestContext context) {
         CommonUtils.appendTextToFile(Log.LOG_PATH, "</body></html>");
-       //  CommonUtils.appendTextToFile("", "</body></html>");
+        //  CommonUtils.appendTextToFile("", "</body></html>");
     }
 }

@@ -57,9 +57,11 @@ public class XMLReader {
         return xml;
     }
 
+  /*
     public static String getValue(final String key) {
         return xmlConf.getString(key);
     }
+    */
 
     /**
      * method used to get credentials from configuration xml
@@ -78,7 +80,7 @@ public class XMLReader {
         }
     }
 
-   // public static String getValue(String key) {
-     //   return getValue(defaultConfigFile, key);
-   // }
+     public static String getValue(String key) {
+         return getValue(defaultConfigFile, key);
+     }
 }
