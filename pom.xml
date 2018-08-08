@@ -224,7 +224,7 @@
 					<mailssl>true</mailssl>
 					<mailAltConfig>true</mailAltConfig>
 					<mailuser>manjushavnair@gmail.com</mailuser>
-					<mailpassword>gouri123$</mailpassword>					
+					<mailpassword>manjushavnair$</mailpassword>					
 					<mailhost>smtp.gmail.com</mailhost>
 					<mailport>25</mailport> 
 					<receivers>
