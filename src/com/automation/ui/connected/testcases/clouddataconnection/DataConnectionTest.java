@@ -21,16 +21,8 @@ public class DataConnectionTest extends ConnectedBaseTest {
     }
 
 
-    @Test(enabled = true, priority = 3, groups = {"validcase"}, description = "home page ")
 
-    public void addConnection() throws Throwable {
-        logger.info("Entering addConnection");
-        Reporter.log("Entering addConnection");
-        data_page = new AddCloudDataConnection();
-        data_page.addConnection();
-        data_page.waitForPageLoad();
-        logger.info("Exiting addConnection and going to  add" + data_page.getUrl());
-    }
+
 
 
 

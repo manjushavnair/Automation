@@ -4,6 +4,7 @@ package com.automation.ui.connected.testcases.home;
  * @author Manjusha Saju
  */
 
+import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.AddCloudDataConnection;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginPage;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
@@ -65,11 +66,17 @@ public class HomePageTest extends ConnectedBaseTest {
         logger.info(" home_page.getCurrentUrl() " + home_page.getCurrentUrl());
        // home_page.waitForPageLoad();
 
-       // Thread.sleep(20000);
 
-        //  home_page.addConnection();
+    }
 
-        //home_page.addRepo();
+    @Test(enabled = true, priority = 3, groups = {"validcase"}, description = "home page ")
+
+    public void addConnection() throws Throwable {
+        logger.info("Entering addConnection");
+        Reporter.log("Entering addConnection");
+        data_page=home_page.addConnection();
+        home_page.waitForPageLoad();
+        logger.info("Exiting addConnection and going to  add" + home_page.getUrl());
     }
 
     /*

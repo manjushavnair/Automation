@@ -31,7 +31,6 @@ public class ConnectedBaseTest extends NewTestTemplate  {
     protected ExcelUtil eu = null;
     protected LoginPage login_page = null;
     protected HomePage home_page = null;
-
     protected AddCloudDataConnection data_page = null;
 
     public ConnectedBaseTest() {
@@ -62,30 +61,5 @@ public class ConnectedBaseTest extends NewTestTemplate  {
 
 
 
-    /*
-    @BeforeMethod
-    protected void setUpBeforeTestMethod() {
-        // initialize testPage
-        // login to the app, if necessary
-    }
-
-    @AfterMethod
-    protected void tearDownAfterTestMethod() {
-        // logout of the app, if necessary
-    }
-
-    @BeforeClass
-    protected void setUpBeforeTestClass() {
-        // initialize a browser driver, connect to servers
-    }
-
-    @AfterClass
-    protected void tearDownAfterTestClass() {
-        // close connections, close browser as needed
-        logger.info("Quiting browser  tearDownAfterTestClass  ::BaseTest");
-        Reporter.log("Quiting browser  tearDownAfterTestClass  ::BaseTest");
-        // driverManager.quitDriver();
-    }
-*/
 
 }

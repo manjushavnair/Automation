@@ -7,14 +7,7 @@ public interface HomeConstants {
     public static String LOGOUTBUTTON = "//a[contains(text(),'Logout')]";
     public static String MENUBUTTON =  "//button[@id='ch-menu']";
 
-    //ublic String ADDCONNECTIONSBUTTON = "primary ng-binding";
-   // public String ADDCONNECTIONSBUTTON = "#primary.ng-binding";
-  //  public String ADDCONNECTIONSBUTTON = "#.primary.ng-binding";
-
-
-    //public String ADDCONNECTIONSBUTTON ="button.primary.ng-binding";
-
-
+    public String ADDCONNECTIONSBUTTON = "//button[@class='primary ng-binding']";
 
     public String ADDCONNECTIONSBUTTON_ERROR_MSG="//h1[contains(text(),'Access Denied')]";
     public String ADDCONNECTIONSBUTTON_ERROR_MSG_EXTRA ="//p[contains(text(),'You do not have permission to view this applicatio')]";
