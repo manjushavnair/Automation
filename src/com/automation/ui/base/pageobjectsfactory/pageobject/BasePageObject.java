@@ -764,6 +764,7 @@ public class BasePageObject {
         Log.log("openSitePage", "Site page is opened", true);
     }
 
+
     public enum PositionsVideo {
         LEFT, CENTER, RIGHT
     }
