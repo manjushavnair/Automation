@@ -62,7 +62,7 @@ public class HomePageTest extends ConnectedBaseTest {
     public void launchHomePage() throws Throwable {
         logger.info(" launchHomePage and going to  homepage" + urlBuilder.getUrl());
         home_page=new HomePage();
-        home_page.wait.forElementClickable(By.cssSelector(".primary"));
+        //home_page.wait.forElementClickable(By.cssSelector(".primary"));
         logger.info(" home_page.getCurrentUrl() " + home_page.getCurrentUrl());
        // home_page.waitForPageLoad();
 
