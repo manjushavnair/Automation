@@ -65,6 +65,14 @@
         </class>
 
 
+            <class name="com.automation.ui.connected.testcases.clouddataconnection.AddCloudDataConnectionTest"  >
+
+                <methods>
+
+                    <include name="addConnecetion_Cancel"/>
+                </methods>
+            </class>
+
         </classes>
     </test>
 

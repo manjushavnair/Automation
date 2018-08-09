@@ -19,11 +19,8 @@ public class HomePage extends SiteBasePageObject {
 
 
     private static Logger logger = Logger.getLogger(HomePage.class);
-
-    // @FindBy(css = HomeConstants.ADDCONNECTIONSBUTTON)
     @FindBy(xpath =HomeConstants.ADDCONNECTIONSBUTTON)
-    //@FindBy(className  = HomeConstants.ADDCONNECTIONSBUTTON)
-    private WebElement addButton;
+     private WebElement addButton;
 
     @FindBy(css = "primary")
     private WebElement primarysButton;
@@ -133,7 +130,7 @@ public class HomePage extends SiteBasePageObject {
 
             jsActions.click(addButton);
             waitAndClick(addButton);
-            Thread.sleep(20000);
+            Thread.sleep(2000);
 
 
             logger.info("Exiting  addConnection");
