@@ -6,6 +6,7 @@ package com.automation.ui.base.common.auth;
  */
 public abstract class DirectoryObject  {
 
+
 	
 	public DirectoryObject() {
 		super();
