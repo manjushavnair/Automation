@@ -36,6 +36,10 @@ public class HomePageTest extends ConnectedBaseTest {
         login_page = new LoginPage();
 
         login_page.open();
+
+
+
+
         // Call the method
 
 
@@ -50,7 +54,6 @@ public class HomePageTest extends ConnectedBaseTest {
 
 
        // home_page.waitForPageReload();
-       // home_page.open();
 
 
         logger.info("Exiting launchLogin and going to  homepage" + urlBuilder.getUrl());
@@ -58,7 +61,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
     }
 
-    @Test(enabled = true, priority = 2, groups = {"validcase"}, description = "launchHomePage ")
+    @Test(enabled = true, priority = 2, groups = {"validcase"},description = "launchHomePage ")
     public void launchHomePage() throws Throwable {
         logger.info(" launchHomePage and going to  homepage" + urlBuilder.getUrl());
         home_page=new HomePage();
@@ -80,26 +83,15 @@ public class HomePageTest extends ConnectedBaseTest {
         logger.info("Exiting addConnection and going to  add" + home_page.getUrl());
     }
 
-    /*
-
-    @Test(enabled = true,priority = 3,groups = {  "validcase"}, description = "Add Connection ")
-        public void addConnection_accessdenied() throws Throwable {
-        logger.info("Entering addConnection_accessdenied Threed.sleep");
-
-        home_page.addConnection_accessdenied();
-        Thread.sleep(30000);
-
-    }
-    */
 
 
 
 
 
-/*
+
     @Test(enabled = false,priority = 4,groups = {  "validcase"}, description = "home page ")
 
-    public void launchHomePage_logout() throws Throwable {
+    public void launch_logout() throws Throwable {
 
         logger.info("Logging out from launchHomePage_logout");
         Reporter.log("Logging out from launchHomePage_logout");
@@ -107,5 +99,5 @@ public class HomePageTest extends ConnectedBaseTest {
         home_page.goToLogoutPage();
     }
 
-*/
+
 }

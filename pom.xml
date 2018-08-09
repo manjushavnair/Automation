@@ -6,12 +6,24 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Automation</name>
-    <description>Automation Test Automation Project</description>
+    <description>Test Automation Project</description>
+
+
+
+    <scm>
+        <url>scm:git:git@github.com:manjushavnair/Automation.git</url>
+        <connection>scm:git:git@github.com:manjushavnair/Automation.git</connection>
+        <developerConnection>scm:git:git@github.com:manjushavnair/Automation.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+
     <properties>
 
         <robotframework.version>2.9.2</robotframework.version>
         <selenium.version>2.48.2</selenium.version>
         <keywords.class>Selenium2Library</keywords.class>
+        <skipTests>false</skipTests>
     </properties>
 
 
@@ -56,6 +68,8 @@
                 </excludes>
             </resource>
         </resources>
+
+        <pluginManagement>
         <plugins>
 
             <plugin>
@@ -64,6 +78,10 @@
                 <version>2.3.2</version>
             </plugin>
 
+
+ 			 
+            
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -74,9 +92,25 @@
                         <suiteXmlFile>resources/testng.xml</suiteXmlFile>
 
                     </suiteXmlFiles>
+                    <!-- Build with '-D
+                    =true' to bypass test execution @ build time Default: false -->
+                    <skipTests>${skipTests}</skipTests>
+                    <testFailureIgnore>true</testFailureIgnore>
+
                 </configuration>
             </plugin>
 
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>1.8.1</version>
+                <configuration>
+                    <connectionType>developerConnection</connectionType>
+                    <scmVersion>master</scmVersion>
+                    <scmVersionType>branch</scmVersionType>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -101,15 +135,6 @@
                 <!-- <executions> <execution> <goals> <goal>run</goal> </goals> </execution>
                     </executions> -->
                 <dependencies>
-
-
-
-
-
-
-
-
-
                     <!-- to add microsoft active directory login -->
 
 
@@ -129,10 +154,6 @@
                         <artifactId>robotframework-selenium2library-java</artifactId>
                         <version>1.4.0.8</version>
                     </dependency>
-
-
-
-
 
                     <dependency>
                         <groupId>com.codeborne</groupId>
@@ -190,12 +211,88 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+
+
+     <plugin>
+     <!-- mvn surefire-report:report postman:send-mail -->
+             <groupId>ch.fortysix</groupId>
+             <artifactId>maven-postman-plugin</artifactId>
+            
+				<configuration>
+					<from>manjushavnair@gmail.com</from> 
+					<failonerror>true</failonerror>
+					<mailssl>true</mailssl>
+					<mailAltConfig>true</mailAltConfig>
+					<mailuser>manjushavnair@gmail.com</mailuser>
+					<mailpassword>manjushavnair$</mailpassword>					
+					<mailhost>smtp.gmail.com</mailhost>
+					<mailport>25</mailport> 
+					<receivers>
+					 <receiver>kksclt@gmail.com</receiver>
+					 </receivers>
+				</configuration>
+				<executions>
+					<execution>
+						<id>send a mail</id>
+						<phase>clean</phase>
+						<goals>
+							<goal>send-mail</goal>
+						</goals>
+
+						<configuration>
+
+							<subject>Test Automation Report</subject>
+							
+							<htmlMessage>
+							                                    <![CDATA[
+							                                    <p>New test build triggered!</p>
+							                                    <p>Attached html file contains the test result status</p> 
+							                                    ]]>
+                        				  </htmlMessage>
+
+							<tagClasses>
+							<tagClass>
+							<displayName>Automation</displayName>
+							<receivers> <receiver>kksclt@gmail.com</receiver> </receivers>
+							  <fileSets>
+							                             <fileSet>
+							                                  <!-- Report directory Path -->
+							                                  <directory>/target</directory>
+							                                       <includes>
+							                                          <!-- Report file name -->
+							                                          <include>cucumber-test-results.html</include>
+							                                       </includes>
+							                             </fileSet>
+                          </fileSets>
+							</tagClass>
+							</tagClasses>
+						</configuration>
+
+
+					 </execution>
+             			</executions>
+     		</plugin>
+
             
             <!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version> <configuration> <suiteXmlFiles> <suiteXmlFile>resources/testng.xml</suiteXmlFile>
                 </suiteXmlFiles> </configuration> </plugin> -->
         </plugins>
+        </pluginManagement>
     </build>
+    
+    
+     <reporting>  
+          <plugins>  
+            <plugin>  
+              <groupId>org.apache.maven.plugins</groupId>  
+              <artifactId>maven-surefire-report-plugin</artifactId>  
+              <version>2.15</version>  
+            </plugin>  
+          </plugins>  
+    </reporting>  
+    
+    
     <dependencies>
 
          <!--for jmeter -->
@@ -313,12 +410,6 @@
             <artifactId>phantomjsdriver</artifactId>
             <version>1.1.0</version>
         </dependency>
-
-
-
-
-
-
 
         <dependency>
             <groupId>com.google.code.findbugs</groupId>
@@ -488,9 +579,6 @@
                 <systemPath>${env.JAVA_HOME}\lib\tools.jar</systemPath>
             </dependency>
             -->
-
-
-
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -581,18 +669,11 @@
             <artifactId>selenium-server</artifactId>
             <version>3.13.0</version>
         </dependency>
-
-
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>
             <version>4.3.2</version>
         </dependency>
-
-
-
-
-
     </dependencies>
 
     <repositories>

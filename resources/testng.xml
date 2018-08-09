@@ -51,14 +51,14 @@
         <classes>
           <class name="com.automation.ui.connected.testcases.login.LoginTest"  >
                 <methods>
-                    <include name="verifyValidLogin"/>
+                    <exclude name="verifyValidLogin"/>
                 </methods>
             </class>
             <class name="com.automation.ui.connected.testcases.home.HomePageTest"  >
 
             <methods>
                 <include name="launchHomePage"/>
-                <include name="addConnection"/>
+                <exclude name="addConnection"/>
 
 
             </methods>

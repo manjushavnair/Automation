@@ -146,7 +146,7 @@ public class CommonUtils {
 	    public static String escape(String pString)
 	    {
 	        StringBuffer result = new StringBuffer();
-	        for (int i = 0; pString != null && i < pString.length(); i++)
+	       /* for (int i = 0; pString != null && i < pString.length(); i++)
 	        {
 	            char ch;
 	            ch = pString.charAt(i);
@@ -186,6 +186,7 @@ public class CommonUtils {
 	                result.append(";");
 	            }
 	        }
+	        */
 	        return result.toString();
 	    }
 
