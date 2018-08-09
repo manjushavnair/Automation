@@ -1,6 +1,5 @@
-package com.automation.ui.base.common.core;
+package com.automation.ui.base.common.core.element;
 
-import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;

@@ -28,11 +28,35 @@ public class GlobalNavigation extends BasePageObject {
 
 
 
+
   public GlobalNavigation openMenu() {
     wait.forElementClickable(siteMenu).click();
     Log.log("siteMenu", "clicked on siteMenu   in global nav bar", true);
 
     return this;
+  }
+
+
+  public String getTitle() {
+    String title = driver.getTitle();
+
+    return driver.getTitle();
+  }
+
+
+  public void goBack() {
+    driver.navigate().back();
+
+  }
+
+  public void goForward() {
+    driver.navigate().forward();
+
+  }
+
+  public void refresh() {
+    driver.navigate().refresh();
+
   }
 
 

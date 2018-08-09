@@ -40,6 +40,7 @@ public class JavascriptActions {
     }
 
     public void click(String cssSelector) {
+
         js.executeScript("$('" + cssSelector + "').click()");
     }
 
@@ -58,6 +59,12 @@ public class JavascriptActions {
     public Object execute(String script, WebElement element) {
         return js.executeScript(script, element);
     }
+
+    public Object executeScript(String script, Object... args) {
+
+        return js.executeScript(script, args);
+    }
+
 
     public Object execute(String script) {
         // TODO: Get rid of this wait
@@ -79,6 +86,7 @@ public class JavascriptActions {
     }
 
     public void mouseOver(WebElement element) {
+
         js.executeScript("$(arguments[0]).mouseenter()", element);
     }
 
@@ -109,6 +117,7 @@ public class JavascriptActions {
     }
 
     public void scrollDown(int pixels) {
+
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
 
@@ -126,6 +135,13 @@ public class JavascriptActions {
         //NEEDTOCHECK
         scrollToElement(driver.findElement(elementBy));
     }
+
+
+public void scrollToElemet(WebElement element) {
+		js.executeScript("window.scrollTo(arguments[0],arguments[1])",
+		element.getLocation().x, element.getLocation().y);
+		logger.info(element);
+	}
 
     public void scrollToElement(WebElement element) {
         try {

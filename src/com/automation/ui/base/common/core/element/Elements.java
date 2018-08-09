@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.core.interactions;
+package com.automation.ui.base.common.core.element;
 
 import com.automation.ui.base.common.logging.Log;
 import org.openqa.selenium.By;
@@ -69,4 +69,8 @@ public class Elements {
         }
         return foundElement;
     }
+
+
+
+
 }

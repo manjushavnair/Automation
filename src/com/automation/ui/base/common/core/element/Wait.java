@@ -529,6 +529,25 @@ public class Wait {
         forSuccessfulResponseByUrlPattern(trafficInterceptor, pattern, BASEConstants.DEFAULT_TIMEOUT);
     }
 
+    public void waitForIframe(By locator,int timeOutInSeconds,int pollingEveryInMiliSec) {
+
+        changeImplicitWait(1, TimeUnit.SECONDS);
+        WebDriverWait wait = getWait(timeOutInSeconds, pollingEveryInMiliSec);
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(locator));
+        driver.switchTo().defaultContent();
+        changeImplicitWait(BASEConstants.DEFAULT_TIMEOUT, TimeUnit.SECONDS);
+    }
+    private WebDriverWait getWait(int timeOutInSeconds,int pollingEveryInMiliSec) {
+
+        WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+        wait.pollingEvery(pollingEveryInMiliSec, TimeUnit.MILLISECONDS);
+        wait.ignoring(NoSuchElementException.class);
+        wait.ignoring(ElementNotVisibleException.class);
+        wait.ignoring(StaleElementReferenceException.class);
+        wait.ignoring(NoSuchFrameException.class);
+        return wait;
+    }
+
     public void forUrlContains(String text) {
         wait.until(ExpectedConditions.urlContains(text));
     }
@@ -539,7 +558,7 @@ public class Wait {
 
     private void changeImplicitWait(int value, TimeUnit timeUnit) {
 
-        driver.manage().timeouts().implicitlyWait(value, timeUnit);
+        driver.manage().timeouts().implicitlyWait(value,  timeUnit == null ? TimeUnit.SECONDS : timeUnit);
          logger.info("wait till 2 value:"+ value + " timeUnit :"+timeUnit);
     }
 

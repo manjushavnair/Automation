@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.function.Supplier;
+import org.openqa.selenium.By;
 
 public class Frame {
     private final WebDriver webDriver;
@@ -14,6 +15,18 @@ public class Frame {
         this.webDriver = DriverProvider.getActiveDriver();
         this.frameElement = frameElement;
     }
+
+    public void switchToFrame(By locator) {
+     //   webDriver.switchTo().frame(getElement(locator));
+
+
+    }
+
+    public void switchToFrame(String nameOrId) {
+        webDriver.switchTo().frame(nameOrId);
+
+    }
+
 
     public void frameScope(FrameScope frameScope) {
         try {
@@ -32,4 +45,5 @@ public class Frame {
             webDriver.switchTo().defaultContent();
         }
     }
+
 }
