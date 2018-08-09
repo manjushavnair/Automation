@@ -1,4 +1,4 @@
-package com.automation.ui.base.elements;
+package com.automation.ui.base.common.core.element.frame;
 
 import com.automation.ui.base.common.driverprovider.DriverProvider;
 import org.openqa.selenium.WebDriver;
