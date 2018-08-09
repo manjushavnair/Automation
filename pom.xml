@@ -8,15 +8,12 @@
     <name>Automation</name>
     <description>Test Automation Project</description>
 
-
-
     <scm>
         <url>scm:git:git@github.com:manjushavnair/Automation.git</url>
         <connection>scm:git:git@github.com:manjushavnair/Automation.git</connection>
         <developerConnection>scm:git:git@github.com:manjushavnair/Automation.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
-
 
     <properties>
 
@@ -243,27 +240,27 @@
 
 							<subject>Test Automation Report</subject>
 							
-							<htmlMessage>
-							                                    <![CDATA[
-							                                    <p>New test build triggered!</p>
-							                                    <p>Attached html file contains the test result status</p> 
-							                                    ]]>
-                        				  </htmlMessage>
+                            <htmlMessage>
+                                <![CDATA[
+                                <p>New test build triggered!</p>
+                                <p>Attached html file contains the test result status</p>
+                                ]]>
+                              </htmlMessage>
 
 							<tagClasses>
 							<tagClass>
 							<displayName>Automation</displayName>
-							<receivers> <receiver>kksclt@gmail.com</receiver> </receivers>
-							  <fileSets>
-							                             <fileSet>
-							                                  <!-- Report directory Path -->
-							                                  <directory>/target</directory>
-							                                       <includes>
-							                                          <!-- Report file name -->
-							                                          <include>cucumber-test-results.html</include>
-							                                       </includes>
-							                             </fileSet>
-                          </fileSets>
+                                <receivers> <receiver>kksclt@gmail.com</receiver> </receivers>
+                                <fileSets>
+                                 <fileSet>
+                                      <!-- Report directory Path -->
+                                      <directory>/target</directory>
+                                           <includes>
+                                              <!-- Report file name -->
+                                              <include>cucumber-test-results.html</include>
+                                           </includes>
+                                 </fileSet>
+                              </fileSets>
 							</tagClass>
 							</tagClasses>
 						</configuration>
@@ -295,10 +292,6 @@
     
     <dependencies>
 
-         <!--for jmeter -->
-
-
-        <!-- for jmeter -->
 
         <dependency>
             <groupId>junit</groupId>
@@ -469,7 +462,6 @@
             <version>2.1.5</version>
         </dependency>
 
-
         <dependency>
             <groupId>net.lightbody.bmp</groupId>
             <artifactId>browsermob-proxy</artifactId>
@@ -484,9 +476,7 @@
             <version>2.1.5</version>
         </dependency>
 
-
-
-        <dependency>
+         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-jvm-deps</artifactId>
             <version>1.0.5</version>
