@@ -129,6 +129,7 @@ public class HomePage extends SiteBasePageObject {
             // wait.forElementVisible(addButton, 30);
 
             jsActions.click(addButton);
+
             waitAndClick(addButton);
             Thread.sleep(2000);
 

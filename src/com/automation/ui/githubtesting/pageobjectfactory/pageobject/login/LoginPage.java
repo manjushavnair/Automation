@@ -117,10 +117,10 @@ public class LoginPage extends SiteBasePageObject {
 
 
             waitAndClick(login_button);
-           
+
             logger.info("Exiting  login");
             Reporter.log("Exiting  login");
-            // wait.forElementVisibleW(savepasswordbutton);
+            // wait.forElementVisible(savepasswordbutton);
 
         } catch (Exception e) {
             e.printStackTrace();

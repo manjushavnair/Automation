@@ -166,14 +166,14 @@ public class SiteBasePageObject extends BasePageObject {
 
     public void verifyGlobalNavigation() {
         //NEEDTOCHECK
-        wait.forElementVisibleW(globalNavigationBar);
+        wait.forElementVisible(globalNavigationBar);
         Log.log("verifyGlobalNavigation", "Verified global navigation", true);
     }
 
     public void verifyAvatarVisible() {
         //NEEDTOCHECK
 
-        wait.forElementVisibleW(globalNavigationAvatar);
+        wait.forElementVisible(globalNavigationAvatar);
         Log.log("verifyAvatarVisible", "desired logo is visible on navbar", true);
     }
 
@@ -277,7 +277,7 @@ public class SiteBasePageObject extends BasePageObject {
     public void follow() {
 
         //NEEDTOCHECK
-        wait.forElementVisibleW(followButton);
+        wait.forElementVisible(followButton);
         jsActions.click(followButton);
         wait.forTextInElement(followButton, "Following");
         Log.log("followArticle", "page is followed", true, driver);
@@ -376,7 +376,7 @@ public class SiteBasePageObject extends BasePageObject {
   protected VisualEditModePageObject openCKModeWithSectionEditButton(int section) {
     WebElement sectionEditButton = sectionEditButtons.get(section);
     //NEEDTOCHECK
-    wait.forElementVisibleW(sectionEditButton);
+    wait.forElementVisible(sectionEditButton);
     sectionEditButton.click();
     Log.log("openCKModeWithSectionEditButton",
                           "RTE edit button clicked at section: " + section, true, driver);
@@ -472,7 +472,7 @@ public class SiteBasePageObject extends BasePageObject {
   protected SourceEditModePageObject openSrcModeWithSectionEditButton(int section) {
     WebElement sectionEditButton = sectionEditButtons.get(section);
     //NEEDTOCHECK
-    wait.forElementVisibleW(sectionEditButton);
+    wait.forElementVisible(sectionEditButton);
     sectionEditButton.click();
     Log.log("openSrcModeWithSectionEditButton",
             "Src edit button clicked at section: " + section, true, driver);

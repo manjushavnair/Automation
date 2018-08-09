@@ -494,13 +494,13 @@ public class BasePageObject {
 
         input.clear();
 
-        wait.forElementVisibleW(input).sendKeys(value);
+        wait.forElementVisible(input).sendKeys(value);
 
 	}
 
 
     public void fillInput(WebElement input, String value) {
-         wait.forElementVisibleW(input).sendKeys(value);
+         wait.forElementVisible(input).sendKeys(value);
     }
 
     /**
@@ -750,8 +750,8 @@ public class BasePageObject {
     public boolean isVisible(WebElement element) {
         boolean result;
         try {
-            //NEEDTOCHECK
-            wait.forElementVisibleW(element);
+
+            wait.forElementVisible(element);
             result = true;
         } catch (TimeoutException e) {
             Log.info("Element: " + element.toString() + " not found.", e);

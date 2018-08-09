@@ -53,25 +53,25 @@ public class LightboxComponentObject extends SiteBasePageObject {
 
     public void verifyLightboxPopup() {
         //NEEDTOCHECK
-        wait.forElementVisibleW(lightBoxModal);
+        wait.forElementVisible(lightBoxModal);
         Log.log("verifyLightboxPopup", "Lightbox appeared", true);
     }
 
     public void verifyLightboxVideo() {
         //NEEDTOCHECK
-        wait.forElementVisibleW(videoContainer);
+        wait.forElementVisible(videoContainer);
         Log.log("verifyLightboxVideo", "Lightbox video appeared", true);
     }
 
     public void verifyLightboxImage() {
         //NEEDTOCHECK
-        wait.forElementVisibleW(imageContainer);
+        wait.forElementVisible(imageContainer);
         Log.log("verifyLightboxImage", "Lightbox image appeared", true);
     }
 
     public LightboxComponentObject openLightbox() {
         //NEEDTOCHECK
-        wait.forElementVisibleW(imageThumbnail);
+        wait.forElementVisible(imageThumbnail);
         scrollAndClick(imageThumbnail);
         Log.log("openLightbox", "opened ligthbox", true);
         return new LightboxComponentObject(driver);
@@ -79,7 +79,7 @@ public class LightboxComponentObject extends SiteBasePageObject {
 
     public void makeHeaderVisible() {
         //NEEDTOCHECK
-        wait.forElementVisibleW(titleLink);
+        wait.forElementVisible(titleLink);
         jsActions.execute("$('.LightboxHeader').css('opacity', '1')");
     }
 
@@ -95,16 +95,16 @@ public class LightboxComponentObject extends SiteBasePageObject {
 
    /* public void clickShareButton() {
         //NEEDTOCHECK
-        wait.forElementVisibleW(shareButton);
+        wait.forElementVisible(shareButton);
         shareButton.click();
         //NEEDTOCHECK
-        wait.forElementVisibleW(moreInfoThumbnail);
+        wait.forElementVisible(moreInfoThumbnail);
         Log.log("clickShareButton", "share button is clicked", true);
     }*/
 
     public void clickCloseShareScreenButton() {
         //NEEDTOCHECK
-        wait.forElementVisibleW(closeShareScreenButton);
+        wait.forElementVisible(closeShareScreenButton);
         closeShareScreenButton.click();
         Log
                 .log("clickCloseShareScreenButton", "close share screen button was clicked", true);
@@ -122,11 +122,11 @@ public class LightboxComponentObject extends SiteBasePageObject {
 
     public void verifyShareButtons() {
         //NEEDTOCHECK
-        wait.forElementVisibleW(plusoneShareLink);
-        wait.forElementVisibleW(redditShareLink);
-        wait.forElementVisibleW(stumbleUponShareLink);
-        wait.forElementVisibleW(twitterShareLink);
-        wait.forElementVisibleW(facebookShareLink);
+        wait.forElementVisible(plusoneShareLink);
+        wait.forElementVisible(redditShareLink);
+        wait.forElementVisible(stumbleUponShareLink);
+        wait.forElementVisible(twitterShareLink);
+        wait.forElementVisible(facebookShareLink);
         Log.log("verifyShareButtons", "all share buttons are visible", true);
     }
 
@@ -160,21 +160,21 @@ public class LightboxComponentObject extends SiteBasePageObject {
 
     public void clickCarouselRight() {
         //NEEDTOCHECK
-        wait.forElementVisibleW(carouselRight);
+        wait.forElementVisible(carouselRight);
         carouselRight.click();
         Log.log("clickCarouselRight", "carousel right button is clicked", true);
     }
 
     public void clickCarouselLeft() {
         //NEEDTOCHECK
-        wait.forElementVisibleW(carouselLeft);
+        wait.forElementVisible(carouselLeft);
         carouselLeft.click();
         Log.log("clickCarouselLeft", "carousel left button is clicked", true);
     }
 
     public void verifyCarouselLeftDisabled() {
         //NEEDTOCHECK
-        wait.forElementVisibleW(carouselLeftDisabled);
+        wait.forElementVisible(carouselLeftDisabled);
         Log.log("verifyCarouselLeftDisabled", "carousel left button is disabled", true);
     }
 

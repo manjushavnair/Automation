@@ -19,7 +19,7 @@ public class CuratedContentToolModal extends SiteBasePageObject {
     public boolean isModalVisible() {
         try {
             //NEEDTOCHECK
-            WebElement modal = wait.forElementVisibleW(curatedContentToolModal);
+            WebElement modal = wait.forElementVisible(curatedContentToolModal);
             return modal.isDisplayed();
         } catch (TimeoutException e) {
             Log.log("isModalVisible", e, false);

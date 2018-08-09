@@ -180,7 +180,7 @@ public class Wait {
      * @param element The element to be checked
      */
 //NEEDTOCHECK
-    public WebElement forElementVisibleW(WebElement element) {
+    public WebElement forElementVisible(WebElement element) {
 
         changeImplicitWait(0, TimeUnit.MILLISECONDS);
         try {
