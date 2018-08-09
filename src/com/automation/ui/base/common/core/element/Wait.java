@@ -538,9 +538,9 @@ public class Wait {
     }
 
     private void changeImplicitWait(int value, TimeUnit timeUnit) {
-       // logger.info("wait till 1 value:"+ value + " timeUnit :"+timeUnit);
+
         driver.manage().timeouts().implicitlyWait(value, timeUnit);
-       // logger.info("wait till 2 value:"+ value + " timeUnit :"+timeUnit);
+         logger.info("wait till 2 value:"+ value + " timeUnit :"+timeUnit);
     }
 
     /**

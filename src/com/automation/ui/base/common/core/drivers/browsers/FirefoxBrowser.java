@@ -182,6 +182,10 @@ public class FirefoxBrowser extends BrowserAbstract {
         firefoxProfile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/zip,text/csv,application/msword,application/excel,application/pdf," +
                 "application/vnd.ms-excel,application/msword,application/unknown,application/vnd.openxmlformats-officedocument.wordprocessingml.document");
 
+        firefoxProfile.setAcceptUntrustedCertificates(true);
+        firefoxProfile.setAssumeUntrustedCertificateIssuer(true);
+
+       // firefoxProfile.setCapability("marionette", true);
 
     }
 
@@ -194,7 +198,10 @@ public class FirefoxBrowser extends BrowserAbstract {
         caps.setCapability("disable-popup-blocking", false);
         caps.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
 
+        //return new UIWebDriver(new RemoteWebDriver(new URL(hubUrl), caps));
         //caps.setBrowserName(wdConfig.getBrowserName());
+        //return new UIWebDriver(new FirefoxDriver(caps ), server, false);  //non deprecated
+
         return new UIWebDriver(new FirefoxDriver(caps ), server, false);
     }
 

@@ -13,7 +13,7 @@ public class HtmlUnitBrowser extends BrowserAbstract {
 
     @Override
     public UIWebDriver create() {
-        return new UIWebDriver(new HtmlUnitDriver(), false);
+        return new UIWebDriver(new HtmlUnitDriver(caps), false);
     }
 
     @Override

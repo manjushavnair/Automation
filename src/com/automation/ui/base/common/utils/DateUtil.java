@@ -306,6 +306,8 @@ public class DateUtil {
 
 
 
+
+
     public String getMonthName(int pMonthNum) {
         String lMonthName = "";
         int lMonthNumber = pMonthNum;
@@ -901,10 +903,39 @@ public class DateUtil {
         return curDate;
     }
 
+    public static String getCurrentDateTime() {
+
+        DateFormat dateFormat = new SimpleDateFormat("_yyyy-MM-dd_HH-mm-ss");
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new java.util.Date());
+
+       /* int intYear        = cal.get(Calendar.YEAR);
+        int intMon         = cal.get(Calendar.MONTH);
+        int intDate       = cal.get(Calendar.DATE);
+        int intHH       = cal.get(Calendar.HOUR_OF_DAY);
+        int intMM        = cal.get(Calendar.MINUTE);
+        int intSS        = cal.get(Calendar.SECOND);
+
+        String strDate = intDate + "-" + intMon + "-" + intYear + "-" + intHH + "-" +intMM  + "-" + intSS;
+        */
+
+        String time = "" + dateFormat.format(cal.getTime());
+        return time;
+    }
+
+    public static String getCurrentDate() {
+        return getCurrentDateTime().substring(0, 11);
+    }
+
+
+
+
+
     /**
      *  This method returns the currentdate in String format
      *  @return  String
      */
+    /*
     public static String getCurrentDate()
     {
         String   strDate  = null;
@@ -919,7 +950,7 @@ public class DateUtil {
         strDate = intDate + "-" + intMon + "-" + intYear;
 
         return strDate;
-    }
+    }*/
 
     /**
      * Method isValidDate.

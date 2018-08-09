@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>Automation</groupId>
     <artifactId>Automation</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.4-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Automation</name>
     <description>Test Automation Project</description>
@@ -21,6 +21,8 @@
         <selenium.version>2.48.2</selenium.version>
         <keywords.class>Selenium2Library</keywords.class>
         <skipTests>false</skipTests>
+        <mailpass>manjupass</mailpass>
+
     </properties>
 
 
@@ -211,7 +213,7 @@
 
 
      <plugin>
-     <!-- mvn surefire-report:report postman:send-mail -->
+     <!-- mvn -Dmailpass=manjupass clean compile surefire-report:report postman:send-mail -->
              <groupId>ch.fortysix</groupId>
              <artifactId>maven-postman-plugin</artifactId>
             
@@ -221,7 +223,7 @@
 					<mailssl>true</mailssl>
 					<mailAltConfig>true</mailAltConfig>
 					<mailuser>manjushavnair@gmail.com</mailuser>
-					<mailpassword>manjushavnair$</mailpassword>					
+					<mailpassword>${mailpass}</mailpassword>
 					<mailhost>smtp.gmail.com</mailhost>
 					<mailport>25</mailport> 
 					<receivers>

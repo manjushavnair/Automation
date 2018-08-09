@@ -193,6 +193,17 @@ public abstract class CoreTestTemplate {
        CommonUtils.createDirectory(  File.separator + "logs");
        CommonUtils.createDirectory(  File.separator + "logs"+ File.separator + "chromeprofile");
 
+
+       // CommonUtils.createDirectory("." + File.separator );
+       CommonUtils.createDirectory(  File.separator + "logs");
+       CommonUtils.createDirectory(  File.separator + "logs"+ File.separator + "chromelogs");
+
+
+      // CommonUtils.createDirectory("." + File.separator );
+       CommonUtils.createDirectory(  File.separator + "logs");
+       CommonUtils.createDirectory(  File.separator + "logs"+ File.separator + "ielog");
+
+
     }
 
     protected void setWindowSize() {

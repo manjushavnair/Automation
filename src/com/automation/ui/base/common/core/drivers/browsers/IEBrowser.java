@@ -4,6 +4,7 @@ package com.automation.ui.base.common.core.drivers.browsers;
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.drivers.BrowserAbstract;
 import com.automation.ui.base.common.logging.Log;
+import com.automation.ui.base.common.utils.DateUtil;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
@@ -12,7 +13,7 @@ import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.CapabilityType;
 
 import java.io.File;
-
+import org.openqa.selenium.internal.ElementScrollBehavior;
 public class IEBrowser extends BrowserAbstract {
 
 
@@ -55,6 +56,11 @@ public class IEBrowser extends BrowserAbstract {
 
 
         System.setProperty("webdriver.ie.driver", iedriver.getPath());
+
+        System.setProperty("webdriver.ie.driver.logfile", System.getProperty("user.dir")+File.separator+"logs"+File.separator+"ielog"+File.separator+ "ielog" +
+                DateUtil.getCurrentDate()
+                + ".log");
+
         Log.info("Using ie driver: ", iedriver.getPath());
 
 
@@ -82,7 +88,13 @@ public class IEBrowser extends BrowserAbstract {
         caps.setCapability(CapabilityType.SUPPORTS_JAVASCRIPT, true);
         caps.setJavascriptEnabled(true);
         caps.setCapability("ie.ensureCleanSession", true);
+        caps.setCapability(InternetExplorerDriver.ELEMENT_SCROLL_BEHAVIOR,
+                ElementScrollBehavior.BOTTOM);
 
+
+        caps.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING, true);
+
+        //return new UIWebDriver(new RemoteWebDriver(new URL(hubUrl), caps));
         return new UIWebDriver(new InternetExplorerDriver(   caps), server, false);
     }
 

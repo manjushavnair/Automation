@@ -5,6 +5,7 @@ import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.drivers.BrowserAbstract;
 import com.automation.ui.base.common.core.helpers.Emulator;
+import com.automation.ui.base.common.utils.DateUtil;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.remote.CapabilityType;
 import com.automation.ui.base.common.driverprovider.UserAgentsRegistry;
@@ -53,6 +54,9 @@ public class ChromeBrowser extends BrowserAbstract {
         chromedriver.setExecutable(true);
 
         System.setProperty("webdriver.chrome.driver", chromedriver.getPath());
+        System.setProperty("webdriver.chrome.logfile", System.getProperty("user.dir")+File.separator+"logs"+File.separator+"chromelogs"+File.separator+ "chromelog" +
+                DateUtil.getCurrentDate()
+                + ".log");
         Log.info("Using chromedriver: ", chromedriver.getPath());
 
         chromeOptions.addArguments("start-maximized");
@@ -91,15 +95,20 @@ public class ChromeBrowser extends BrowserAbstract {
     @Override
     public UIWebDriver create() {
         caps.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+        caps.setJavascriptEnabled(true);
         if (Configuration.isUnsafePageLoad()) {
             caps.setCapability("pageLoadStrategy", "normal");
         }
         caps.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
 
+        //return new UIWebDriver(new RemoteWebDriver(new URL(hubUrl), caps));
 
         return new UIWebDriver(new ChromeDriver(caps), server, useMobile);
 
     }
+
+
+
 
     @Override
     public void addExtension(String extensionName) {
