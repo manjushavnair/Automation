@@ -5,7 +5,6 @@ package com.automation.ui.base.common.core.element.dropdown;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.automation.ui.base.common.core.element.textbox.TextBoxHelper;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -14,7 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import com.automation.ui.base.common.core.element.*;
 
-public class DropDownHelper implements IWebComponent {
+public class DropDownHelper implements IHTMLComponent {
 
 
     private static Logger logger = Logger.getLogger(DropDownHelper.class);

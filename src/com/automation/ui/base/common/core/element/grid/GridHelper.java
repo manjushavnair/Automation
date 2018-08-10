@@ -10,10 +10,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import com.automation.ui.base.common.core.element.*;
-import com.automation.ui.base.common.core.element.*;
 
 
-public class GridHelper implements IWebComponent {
+public class GridHelper implements IHTMLComponent {
 
     private static Logger logger = Logger.getLogger(TextBoxHelper.class);
     private WebDriver driver;

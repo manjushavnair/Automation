@@ -1,7 +1,6 @@
 package com.automation.ui.base.common.core.element.button;
 
 
-import com.automation.ui.base.common.core.element.textbox.TextBoxHelper;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -10,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import com.automation.ui.base.common.core.element.*;
 
 
-public class ButtonHelper implements IWebComponent {
+public class ButtonHelper implements IHTMLComponent {
 
     private WebDriver driver;
 
