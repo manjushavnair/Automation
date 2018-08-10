@@ -3,7 +3,7 @@ package com.automation.ui.base.common.core;
 import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.prpreaders.BasePropertyReader;
-import com.automation.ui.connected.common.prpreader.PropertyReader;
+
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.ConfigurationRuntimeException;
 import org.apache.commons.configuration.XMLConfiguration;

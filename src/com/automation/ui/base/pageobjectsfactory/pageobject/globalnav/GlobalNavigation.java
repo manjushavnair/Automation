@@ -2,14 +2,14 @@ package com.automation.ui.base.pageobjectsfactory.pageobject.globalnav;
 
 
 import com.automation.ui.base.common.logging.Log;
-
 import com.automation.ui.base.pageobjectsfactory.pageobject.*;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.base.*;
 
-public class GlobalNavigation extends BasePageObject {
+public abstract class GlobalNavigation extends BasePageObject {
 
 
   @FindBy(css = ".wds-global-navigation__user-menu.wds-global-navigation__user-logged-in")

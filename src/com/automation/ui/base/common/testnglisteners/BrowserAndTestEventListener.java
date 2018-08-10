@@ -2,6 +2,7 @@ package com.automation.ui.base.common.testnglisteners;
 
 import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.contentpatterns.URLsContent;
+import com.automation.ui.base.pageobjectsfactory.pageobject.*;
 import com.automation.ui.base.common.core.AlertHandler;
 import com.automation.ui.base.common.core.SelectorStack;
 import com.automation.ui.base.common.core.TestContext;
@@ -172,8 +173,9 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
                 if (user != null && user != User.ANONYMOUS) {
                     // log in, make sure user is logged in and flow is on the requested url
-                    new SiteBasePageObject().loginAs(user);
-                }
+                     BasePageObject basePObject=new  SiteBasePageObject();
+                     basePObject.loginAs(user);
+              }
 
 
                 NetworkTrafficInterceptor

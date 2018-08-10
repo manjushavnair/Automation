@@ -1,6 +1,4 @@
-package com.automation.ui.connected.common.prpreader;
-
-import com.automation.ui.connected.common.constants.SITECONSTANTS;
+package com.automation.ui.base.common.prpreaders;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,23 +8,24 @@ import java.util.Properties;
 
 import static java.lang.Boolean.parseBoolean;
 import static java.lang.Integer.parseInt;
+import com.automation.ui.base.common.constants.*;
 
-public class PropertyReader extends Properties {
+public class ExceptionErrorCodeReader extends Properties {
 
-    private static PropertyReader prpreader;
+    private static ExceptionErrorCodeReader errorCodereader;
 
-    public static PropertyReader readProperty() {
+    public static ExceptionErrorCodeReader readProperty() {
 
 
-        if (prpreader == null) {
-            synchronized (PropertyReader.class) {
-                if (prpreader == null) {
+        if (errorCodereader == null) {
+            synchronized (ExceptionErrorCodeReader.class) {
+                if (errorCodereader == null) {
 
-                    prpreader = new PropertyReader();
+                    errorCodereader = new ExceptionErrorCodeReader();
                     try {
                         InputStream inStream = new FileInputStream(new File(
-                                SITECONSTANTS.EXCEPTIONPATH));
-                        prpreader.load(inStream);
+                                BASEConstants.EXCEPTIONPATH));
+                        errorCodereader.load(inStream);
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
 
@@ -38,11 +37,15 @@ public class PropertyReader extends Properties {
             }
         }
 
-        return prpreader;
+
+
+
+
+        return errorCodereader;
     }
 
     public String getValue(final String key) {
-        return prpreader.getProperty(key);
+        return errorCodereader.getProperty(key);
     }
 
     public boolean getBoolean(final String key) {

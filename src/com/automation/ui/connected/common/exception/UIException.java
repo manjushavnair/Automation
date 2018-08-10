@@ -1,6 +1,6 @@
 package com.automation.ui.connected.common.exception;
 
-import com.automation.ui.connected.common.prpreader.ExceptionErrorCodeReader;
+import com.automation.ui.base.common.prpreaders.ExceptionErrorCodeReader;
 import org.apache.log4j.Logger;
 
 public class UIException extends Exception {

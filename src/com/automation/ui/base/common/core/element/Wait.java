@@ -4,7 +4,7 @@ import com.automation.ui.base.common.core.CommonExpectedConditions;
 import com.automation.ui.base.common.core.SelectorStack;
 import com.automation.ui.base.common.core.networktrafficinterceptor.NetworkTrafficInterceptor;
 import com.automation.ui.base.common.logging.Log;
-import com.automation.ui.connected.testcases.home.HomePageTest;
+
 import net.lightbody.bmp.core.har.HarEntry;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;

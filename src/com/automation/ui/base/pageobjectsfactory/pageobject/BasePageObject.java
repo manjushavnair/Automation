@@ -14,6 +14,7 @@ import com.automation.ui.base.common.core.element.Wait;
 import com.automation.ui.base.common.core.purge.PurgeMethod;
 import com.automation.ui.base.common.core.url.Page;
 import com.automation.ui.base.common.core.url.UrlBuilder;
+import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.driverprovider.DriverProvider;
 
 import com.automation.ui.base.common.logging.Log;
@@ -64,7 +65,7 @@ import com.automation.ui.base.common.core.element.button.*;
 
 
 
-public class BasePageObject {
+public abstract class BasePageObject {
 
     private static final int TIMEOUT_PAGE_REGISTRATION = 3000;
     //content/images/HoneywellLogo.png
@@ -130,6 +131,14 @@ public class BasePageObject {
                 "Email confirmation link received: " + confirmationLink, true);
 
         return confirmationLink;
+    }
+
+
+    protected abstract String loginAs(String userName, String password, String siteURL);
+
+    public String loginAs(User user) {
+
+        return loginAs(user.getUserName(), user.getPassword(), urlBuilder.getUrl());
     }
 
     public String getUrl() {

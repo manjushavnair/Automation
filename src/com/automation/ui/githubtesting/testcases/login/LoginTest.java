@@ -55,8 +55,6 @@ public class LoginTest extends GitHubBaseTest {
 
 
 
-        eu = getExcelUtil();
-
     }
 
 
