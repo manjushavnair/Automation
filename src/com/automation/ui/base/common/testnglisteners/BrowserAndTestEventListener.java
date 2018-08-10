@@ -173,6 +173,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
                 if (user != null && user != User.ANONYMOUS) {
                     // log in, make sure user is logged in and flow is on the requested url
+                    //NEED TO CHECK
                      BasePageObject basePObject=new  SiteBasePageObject();
                      basePObject.loginAs(user);
               }
