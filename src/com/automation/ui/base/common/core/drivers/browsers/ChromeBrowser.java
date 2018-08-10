@@ -54,9 +54,14 @@ public class ChromeBrowser extends BrowserAbstract {
         chromedriver.setExecutable(true);
 
         System.setProperty("webdriver.chrome.driver", chromedriver.getPath());
-        System.setProperty("webdriver.chrome.logfile", System.getProperty("user.dir")+File.separator+"logs"+File.separator+"chromelogs"+File.separator+ "chromelog" +
+        logger.info("Using chromedriver logs at "+ System.getProperty("user.dir")+File.separator+
+                "logs"+File.separator+"chromelogs");
+        System.setProperty("webdriver.chrome.logfile", System.getProperty("user.dir")+File.separator+
+                "logs"+File.separator+"chromelogs"+File.separator+ "chromelog" +
                 DateUtil.getCurrentDate()
                 + ".log");
+
+        System.setProperty("webdriver.chrome.verboseLogging", "true");
         Log.info("Using chromedriver: ", chromedriver.getPath());
 
         chromeOptions.addArguments("start-maximized");

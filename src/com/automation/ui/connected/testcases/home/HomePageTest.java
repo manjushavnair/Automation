@@ -63,10 +63,11 @@ public class HomePageTest extends ConnectedBaseTest {
 
     @Test(enabled = true, priority = 2, groups = {"validcase"},description = "launchHomePage ")
     public void launchHomePage() throws Throwable {
-        logger.info(" launchHomePage and going to  homepage" + urlBuilder.getUrl());
+       // logger.info(" launchHomePage and going to  homepage" + urlBuilder.getUrl());
         home_page=new HomePage();
         //home_page.wait.forElementClickable(By.cssSelector(".primary"));
-        logger.info(" home_page.getCurrentUrl() " + home_page.getCurrentUrl());
+        Thread.sleep(20000);
+       // logger.info(" home_page.getCurrentUrl() " + home_page.getCurrentUrl());
        // home_page.waitForPageLoad();
 
 
@@ -77,15 +78,31 @@ public class HomePageTest extends ConnectedBaseTest {
     public void addConnection() throws Throwable {
         logger.info("Entering addConnection");
         Reporter.log("Entering addConnection");
-        super.data_page=home_page.addConnection();
+         home_page.addConnection();
         logger.info("Entering addConnection data_page" +data_page);
-        home_page.waitForPageLoad();
-        logger.info("Exiting addConnection and going to  add" + home_page.getUrl());
+      //  home_page.waitForPageLoad();
+        logger.info("Exiting addConnection and going to  add "  );
     }
 
 
 
 
+    @Test(enabled = true, priority = 4,groups = {"validcase"}, description = "home page ")
+
+    public void addConnecetionCancel() throws Throwable {
+        logger.info("Entering addConnecetionCancel sleep" );
+        Thread.sleep(15000);
+
+
+        logger.info("Entering addConnecetionCancel 1 " );
+        Reporter.log("Entering addConnecetionCancel ");
+
+        logger.info("Entering addConnecetionCancel 2");
+       // home_page.addConnecetion_Cancel();
+        Reporter.log("Entering addConnecetionCancel 3");
+      //  home_page.waitForPageLoad();
+        logger.info("Exiting addConnecetion_Cancel  ");
+    }
 
 
 

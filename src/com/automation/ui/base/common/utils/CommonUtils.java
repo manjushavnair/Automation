@@ -63,7 +63,7 @@ public class CommonUtils {
             FileUtils.deleteDirectory(new File(dirName));
         } catch (IOException e) {
             e.printStackTrace();
-           // logger.info("Unable to delete directory: "+dirName);
+            logger.info("Unable to delete directory: "+dirName);
         }
     }
 
@@ -74,6 +74,7 @@ public class CommonUtils {
         try {
            File makeDir= new File(fileName);
 			makeDir.mkdir();
+
             // set application user permissions to 455
 			makeDir.setExecutable(true);
 			makeDir.setReadable(true);
@@ -82,6 +83,7 @@ public class CommonUtils {
 
            // System.out.println("directory " + fileName + " created");
         } catch (SecurityException e) {
+        	e.printStackTrace();
             throw new TestEnvInitFailedException();
         }
     }

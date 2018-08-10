@@ -16,23 +16,15 @@ public class AddCloudDataConnectionTest extends ConnectedBaseTest {
 
 
     public AddCloudDataConnectionTest() {
+
         super();
+        logger.info(" AddCloudDataConnectionTest Constructor");
 
     }
 
 
 
 
-    @Test(enabled = true, priority = 4,groups = {"validcase"}, description = "add conn page ")
-
-    public void addConnecetion_Cancel() throws Throwable {
-        logger.info("Entering addConnecetion_Cancel ");
-        Reporter.log("Entering addConnecetion_Cancel ");
-        data_page= new AddCloudDataConnection();
-        data_page.addConnecetion_Cancel();
-        data_page.waitForPageLoad();
-        logger.info("Exiting addConnecetion_Cancel and going to  add" + data_page.getUrl());
-    }
 
 
 

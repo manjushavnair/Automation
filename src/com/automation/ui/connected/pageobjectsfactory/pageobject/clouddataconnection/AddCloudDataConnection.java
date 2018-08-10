@@ -15,9 +15,6 @@ public class AddCloudDataConnection extends SiteBasePageObject {
     private static Logger logger = Logger.getLogger(AddCloudDataConnection.class);
 
 
-    @FindBy(xpath =AddCloudDataCONSTANTS.ADDCONNECTIONSCANELBUTTON)
-    private WebElement cancelButton;
-
 
 
     public AddCloudDataConnection open( )
@@ -29,25 +26,12 @@ public class AddCloudDataConnection extends SiteBasePageObject {
 
         //driver.navigate().refresh();
 
+
         return new AddCloudDataConnection();
     }
 
 
-    public void addConnecetion_Cancel()
-    {
 
-
-            logger.info("Entering  addConnecetion_Cancel:" );
-            Reporter.log("Entering  addConnecetion_Cancel:" );
-
-            jsActions.click(cancelButton);
-            waitAndClick(cancelButton);
-            logger.info("Exiting  addConnecetion_Cancel");
-            Reporter.log("Exiting  addConnecetion_Cancel");
-
-
-
-    }
 
 
 

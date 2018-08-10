@@ -51,27 +51,25 @@
         <classes>
           <class name="com.automation.ui.connected.testcases.login.LoginTest"  >
                 <methods>
-                    <exclude name="verifyValidLogin"/>
+                    <include name="verifyValidLogin"/>
                 </methods>
             </class>
             <class name="com.automation.ui.connected.testcases.home.HomePageTest"  >
 
             <methods>
                 <include name="launchHomePage"/>
-                <exclude name="addConnection"/>
+                <include name="addConnection"/>
+                <include name="addConnecetionCancel"/>
+
+
+
 
 
             </methods>
         </class>
 
 
-            <class name="com.automation.ui.connected.testcases.clouddataconnection.AddCloudDataConnectionTest"  >
 
-                <methods>
-
-                    <include name="addConnecetion_Cancel"/>
-                </methods>
-            </class>
 
         </classes>
     </test>

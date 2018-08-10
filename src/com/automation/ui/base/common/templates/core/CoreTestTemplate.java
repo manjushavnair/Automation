@@ -76,6 +76,8 @@ public abstract class CoreTestTemplate {
     }
 
 
+
+
     /**
      * Initialize Logger.
      */
@@ -185,23 +187,15 @@ public abstract class CoreTestTemplate {
     }
 
     private void prepareDirectories() {
-        //CommonUtils.deleteDirectory("." + File.separator + "logs");
-       CommonUtils.deleteDirectory( File.separator + "logs"+ File.separator + "chromeprofile");
-       CommonUtils.deleteDirectory( File.separator + "logs");
 
-       // CommonUtils.createDirectory("." + File.separator );
-       CommonUtils.createDirectory(  File.separator + "logs");
-       CommonUtils.createDirectory(  File.separator + "logs"+ File.separator + "chromeprofile");
+        CommonUtils.deleteDirectory( File.separator + "logs");
 
+       CommonUtils.createDirectory(  "."+File.separator + "logs");
 
-       // CommonUtils.createDirectory("." + File.separator );
-       CommonUtils.createDirectory(  File.separator + "logs");
-       CommonUtils.createDirectory(  File.separator + "logs"+ File.separator + "chromelogs");
+       CommonUtils.createDirectory( "."+ File.separator + "logs"+ File.separator + "chromelogs");
 
-
-      // CommonUtils.createDirectory("." + File.separator );
-       CommonUtils.createDirectory(  File.separator + "logs");
-       CommonUtils.createDirectory(  File.separator + "logs"+ File.separator + "ielog");
+       CommonUtils.createDirectory( "." + File.separator + "logs"+ File.separator + "ielog");
+       CommonUtils.createDirectory(  "." +File.separator + "logs"+ File.separator + "chromeprofile");
 
 
     }

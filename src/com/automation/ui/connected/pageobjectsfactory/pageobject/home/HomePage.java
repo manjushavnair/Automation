@@ -38,6 +38,11 @@ public class HomePage extends SiteBasePageObject {
     private WebElement menubutton;
 
 
+    @FindBy(xpath =AddCloudDataCONSTANTS.ADDCONNECTIONSCANELBUTTON)
+    private WebElement cancelButton;
+
+
+
 
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_ERROR_MSG)
     private WebElement msg;
@@ -131,7 +136,7 @@ public class HomePage extends SiteBasePageObject {
             jsActions.click(addButton);
 
             waitAndClick(addButton);
-            Thread.sleep(2000);
+            Thread.sleep(5000);
 
 
             logger.info("Exiting  addConnection");
@@ -145,6 +150,23 @@ public class HomePage extends SiteBasePageObject {
 
         }
         return new AddCloudDataConnection();
+
+    }
+
+    public void addConnecetion_Cancel()
+    {
+
+
+        logger.info("Entering  addConnecetion_Cancel:"+cancelButton.getText() +":: "+ cancelButton.getTagName() );
+        Reporter.log("Entering  addConnecetion_Cancel:" );
+
+        jsActions.click(cancelButton);
+        waitAndClick(cancelButton);
+
+        logger.info("Exiting  addConnecetion_Cancel");
+        Reporter.log("Exiting  addConnecetion_Cancel");
+
+
 
     }
 
