@@ -77,9 +77,6 @@ public class HomePage extends SiteBasePageObject {
     }
 
 
-    public void home() throws InterruptedException {
-
-    }
 
     public HomePage open() {
 
@@ -92,7 +89,7 @@ public class HomePage extends SiteBasePageObject {
         } else {
             logger.info(getCurrentUrl());
             // getUrl("http://localhost:9000");
-            //  getUrl(getCurrentUrl() + " ");
+           // getUrl(getCurrentUrl() + " ");
             getUrl(getCurrentUrl());
         }
         //waitForPageLoad();
@@ -144,8 +141,6 @@ public class HomePage extends SiteBasePageObject {
 
         } catch (Exception e) {
             e.printStackTrace();
-            Assert.fail("Add failed");
-            Reporter.log("Add failed");
 
 
         }
@@ -160,12 +155,20 @@ public class HomePage extends SiteBasePageObject {
         logger.info("Entering  addConnecetion_Cancel:"+cancelButton.getText() +":: "+ cancelButton.getTagName() );
         Reporter.log("Entering  addConnecetion_Cancel:" );
 
+        try {
+
+
         jsActions.click(cancelButton);
         waitAndClick(cancelButton);
 
         logger.info("Exiting  addConnecetion_Cancel");
         Reporter.log("Exiting  addConnecetion_Cancel");
+        } catch (Exception e) {
+            e.printStackTrace();
 
+
+
+        }
 
 
     }

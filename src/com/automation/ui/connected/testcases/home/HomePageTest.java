@@ -98,7 +98,8 @@ public class HomePageTest extends ConnectedBaseTest {
         Reporter.log("Entering addConnecetionCancel ");
 
         logger.info("Entering addConnecetionCancel 2");
-       // home_page.addConnecetion_Cancel();
+        home_page.addConnection();
+      home_page.addConnecetion_Cancel();
         Reporter.log("Entering addConnecetionCancel 3");
       //  home_page.waitForPageLoad();
         logger.info("Exiting addConnecetion_Cancel  ");
