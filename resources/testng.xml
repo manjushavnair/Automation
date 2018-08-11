@@ -59,7 +59,7 @@
             <methods>
                 <include name="launchHomePage"/>
                 <include name="addConnection"/>
-                <include name="addConnecetionCancel"/>
+                <include name="addConnectionCancel"/>
 
 
 

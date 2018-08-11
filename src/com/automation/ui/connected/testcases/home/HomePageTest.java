@@ -89,21 +89,21 @@ public class HomePageTest extends ConnectedBaseTest {
 
     @Test(enabled = true, priority = 4,groups = {"validcase"}, description = "home page ")
 
-    public void addConnecetionCancel() throws Throwable {
+    public void addConnectionCancel() throws Throwable {
 
-        logger.info("Entering addConnecetionCancel 1 " );
-        Reporter.log("Entering addConnecetionCancel ");
+        logger.info("Entering addConnectionCancel 1 " );
+        Reporter.log("Entering addConnectionCancel ");
 
 
 
 
         home_page.addConnection();
-        logger.info("Entering addConnecetionCancel 2 " );
+        logger.info("Entering addConnectionCancel 2 " );
         Thread.sleep(15000);
         home_page.addConnecetionCancel();
-        Reporter.log("Entering addConnecetionCancel 3");
+        Reporter.log("Entering addConnectionCancel 3");
       //  home_page.waitForPageLoad();
-        logger.info("Exiting addConnecetion_Cancel  ");
+        logger.info("Exiting addConnectionCancel  ");
     }
 
 
