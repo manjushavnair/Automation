@@ -148,21 +148,22 @@ public class HomePage extends SiteBasePageObject {
 
     }
 
-    public void addConnecetion_Cancel()
+    public void addConnecetionCancel()
     {
 
 
-        logger.info("Entering  addConnecetion_Cancel:"+cancelButton.getText() +":: "+ cancelButton.getTagName() );
-        Reporter.log("Entering  addConnecetion_Cancel:" );
+        logger.info("Entering  addConnecetionCancel:"+cancelButton.getText() +":: "+ cancelButton.getTagName() );
+        Reporter.log("Entering  addConnecetionCancel:" );
 
         try {
 
 
-        jsActions.click(cancelButton);
+       // jsActions.click(cancelButton);
+       // jsActions.executeScript("arguments[0].setAttribute('style,'border: solid 2px red'');", cancelButton);
         waitAndClick(cancelButton);
 
-        logger.info("Exiting  addConnecetion_Cancel");
-        Reporter.log("Exiting  addConnecetion_Cancel");
+        logger.info("Exiting  addConnecetionCancel");
+        Reporter.log("Exiting  addConnecetionCancel");
         } catch (Exception e) {
             e.printStackTrace();
 
