@@ -158,7 +158,7 @@ public class HomePage extends SiteBasePageObject {
 
        // jsActions.click(cancelButton);
        // jsActions.executeScript("arguments[0].setAttribute('style,'border: solid 2px red'');", cancelButton);
-       // waitAndClick(cancelButton);
+         waitAndClick(cancelButton);
 
         logger.info("Exiting  addConnecetionCancel");
         Reporter.log("Exiting  addConnecetionCancel");
