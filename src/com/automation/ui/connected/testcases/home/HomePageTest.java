@@ -100,7 +100,7 @@ public class HomePageTest extends ConnectedBaseTest {
         home_page.addConnection();
         logger.info("Entering addConnectionCancel 2 " );
         Thread.sleep(15000);
-        home_page.addConnecetionCancel();
+        home_page.addConnectionCancel();
         Reporter.log("Entering addConnectionCancel 3");
       //  home_page.waitForPageLoad();
         logger.info("Exiting addConnectionCancel  ");
