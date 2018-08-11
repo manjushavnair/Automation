@@ -1,4 +1,4 @@
-package com.automation.ui.base.common;
+package com.automation.ui.base.common.core.element.window;
 
 import org.openqa.selenium.Dimension;
 

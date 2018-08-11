@@ -5,8 +5,8 @@
 
 browser: CHROME # acceptable values: FF, CHROME, GHOST, ANDROID, CHROMEMOBILEMERCURY, HTMLUNIT ,IE
 dpr: 1 # Your device's pixel ratio, do not commit your changes
-siteName: localhost   # default testing site
-env: test # acceptable values: test, prod, preview, sandbox-number dev-name, adeng (for connected.com)
+siteName: github   # default testing site
+env: prod # acceptable values: test, prod, preview, sandbox-number dev-name, adeng (for connected.com)
 seleniumConfigPath: resources/selenium-config
 qs: null
 disableFlash: true

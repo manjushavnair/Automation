@@ -7,17 +7,10 @@ package com.automation.ui.connected.testcases.login;
  * @author Manjusha Saju
  */
 
-import com.automation.ui.base.common.utils.ExcelUtil;
-import com.automation.ui.connected.common.prpreader.AssertDataReader;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginPage;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
 import org.apache.log4j.Logger;
-import org.testng.Assert;
 import org.testng.Reporter;
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 //import com.uiautomation.ui.listener.LoginListener;
@@ -61,9 +54,10 @@ public class LoginTest extends ConnectedBaseTest {
 
 
 
-        eu = getExcelUtil();
+
 
     }
+
 
 
 
@@ -73,8 +67,7 @@ public class LoginTest extends ConnectedBaseTest {
     @Test(priority = 1, groups = {"base", "validcase"})
     public void verifyValidLogin()  throws Throwable {
 
-        logger.info("Entering verifyValidLogin");
-        Reporter.log("Entering verifyValidLogin");
+         Reporter.log("Entering verifyValidLogin");
           login_page = new LoginPage();
         login_page.open();
         String methodname = new Object() {
@@ -86,8 +79,7 @@ public class LoginTest extends ConnectedBaseTest {
         String password = eu.getCellData(1, 2);
 
 
-        logger.info("Exiting verifyValidLogin and going to login userName:" + userName + "password : *****");
-        login_page.enterUser(userName);
+         login_page.enterUser(userName);
         login_page.enterPassword(password);
         login_page.login();
         //  driver.navigate().back();
@@ -100,8 +92,7 @@ public class LoginTest extends ConnectedBaseTest {
 
     @Test(priority = 2, groups = {"base", "invalidcase"})
     public void verifyInValidUserNullPassword()  throws Throwable{
-        logger.info("Entering verifyInValidUserNullPassword");
-        Reporter.log("Entering verifyInValidUserNullPassword");
+         Reporter.log("Entering verifyInValidUserNullPassword");
         login_page = new LoginPage();
         login_page.open();
         // Call the method
@@ -112,8 +103,7 @@ public class LoginTest extends ConnectedBaseTest {
         String userName = eu.getCellData(2, 1);
         String password = eu.getCellData(2, 2);
 
-        logger.info("Exiting verifyInValidUserNullPassword userName:" + userName + "password : *****");
-        login_page.enterUser(userName);
+         login_page.enterUser(userName);
         login_page.enterPassword(password);
         login_page.login();
 
@@ -135,8 +125,7 @@ public class LoginTest extends ConnectedBaseTest {
         String password = eu.getCellData(3, 2);
 
 
-        logger.info("Exiting verifyValidUserNullPassword userName:" + userName + "password : *****");
-        login_page.enterUser(userName);
+         login_page.enterUser(userName);
         login_page.enterPassword(password);
         login_page.login();
 
@@ -158,8 +147,7 @@ public class LoginTest extends ConnectedBaseTest {
         String password  = eu.getCellData(4, 2);
 
 
-        logger.info("Exiting verifyInValidLoginNullPassword and going to login userName:" + userName + "password : *****");
-        login_page.enterUser(userName);
+         login_page.enterUser(userName);
         login_page.enterPassword(password);
         login_page.login();
         //  driver.navigate().for();
@@ -181,8 +169,7 @@ public class LoginTest extends ConnectedBaseTest {
         String userName = eu.getCellData(5, 1);
         String password  = eu.getCellData(5, 2);
 
-        logger.info("Exiting verifyNullUserNullPassword and going to login userName:" + userName + "password : *****");
-        login_page.enterUser(userName);
+         login_page.enterUser(userName);
         login_page.enterPassword(password);
         login_page.login();
         //  driver.navigate().back();

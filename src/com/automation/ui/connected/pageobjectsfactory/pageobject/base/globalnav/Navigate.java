@@ -1,6 +1,10 @@
-package com.automation.ui.base.pageobjectsfactory.pageobject;
+package com.automation.ui.connected.pageobjectsfactory.pageobject.base.globalnav;
 
-public class Navigate extends BasePageObject {
+import com.automation.ui.base.pageobjectsfactory.pageobject.*;
+import com.automation.ui.githubtesting.pageobjectfactory.pageobject.base.SiteBasePageObject;
+
+
+public   class Navigate extends SiteBasePageObject {
 
     public Navigate toPage(String pageName) {
         driver.get(urlBuilder.getUrlForPage(pageName) + urlBuilder.getCacheBusterQuery(pageName));

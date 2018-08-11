@@ -1,7 +1,6 @@
 package com.automation.ui.base.common.templates.core;
 
 import com.automation.ui.base.common.utils.CommonUtils;
-import com.automation.ui.base.common.utils.i18n.*;
 import com.automation.ui.base.common.core.*;
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.annotations.Execute;
@@ -15,8 +14,8 @@ import com.automation.ui.base.common.driverprovider.DriverProvider;
 import com.automation.ui.base.common.driverprovider.UseUnstablePageLoadStrategy;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.common.testnglisteners.BrowserAndTestEventListener;
-import com.automation.ui.connected.common.prpreader.AssertDataReader;
-import com.automation.ui.connected.common.prpreader.PropertyReader;
+import com.automation.ui.base.common.prpreaders.AssertDataReader;
+import com.automation.ui.base.common.prpreaders.PropertyReader;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.Dimension;
@@ -61,6 +60,7 @@ public abstract class CoreTestTemplate {
         initXMLProperty();
         initAssertData();
         prepareDirectories();
+        refreshDriver();
         //DISABLED NOW
        // Helios.updateTokenCache();
     }
@@ -110,7 +110,7 @@ public abstract class CoreTestTemplate {
 
     @BeforeClass(alwaysRun = true)
     public void initTestClass() {
-      // logger.info("beforeClass initTestClass ");
+       logger.info("beforeClass initTestClass ");
     }
 
     @BeforeMethod(alwaysRun = true)
@@ -247,5 +247,7 @@ public abstract class CoreTestTemplate {
     protected abstract void prepareURLs();
 
     protected abstract void loadFirstPage();
+
+    protected abstract void  getDataReaders();
 
 }

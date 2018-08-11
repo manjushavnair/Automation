@@ -18,7 +18,7 @@ public class AddCloudDataConnectionTest extends ConnectedBaseTest {
     public AddCloudDataConnectionTest() {
 
         super();
-        logger.info(" AddCloudDataConnectionTest Constructor");
+        logger.info(" AddCloudDataConnectionTest");
 
     }
 

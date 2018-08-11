@@ -43,6 +43,7 @@ public class HomePageTest extends GitHubBaseTest {
 
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();
+
         String userName = eu.getCellData(1, 1);
         String passWord = eu.getCellData(1, 2);
 

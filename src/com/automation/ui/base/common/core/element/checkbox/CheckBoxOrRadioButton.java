@@ -1,15 +1,13 @@
 package com.automation.ui.base.common.core.element.checkbox;
 
-import com.automation.ui.base.common.core.drivers.browsers.ChromeBrowser;
-import com.automation.ui.base.common.core.element.IWebComponent;
-import com.automation.ui.base.common.core.element.textbox.TextBoxHelper;
+import com.automation.ui.base.common.core.element.IHTMLComponent;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class CheckBoxOrRadioButton implements IWebComponent {
+public class CheckBoxOrRadioButton implements IHTMLComponent {
 
     private WebDriver driver;
     private static Logger logger = Logger.getLogger(CheckBoxOrRadioButton.class);

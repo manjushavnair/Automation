@@ -6,9 +6,9 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.login;
 
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
+import com.automation.ui.base.common.prpreaders.AssertDataReader;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.*;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
-import com.automation.ui.connected.common.prpreader.*;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;

@@ -3,6 +3,16 @@ package com.automation.ui.base.common.constants;
 import java.io.File;
 
 public interface BASEConstants {
+
+    public static String FIREFOX = "FIREFOX";
+    public static String CHROME = "CHROME";
+    public static String IE = "internet-explorer";
+
+    public static String EXCEPTIONPATH = "resources/properties/exception.properties";
+    public static String ASSERTPATH = "i18n.assertdata";
+
+    public static String LOGINJSONDATAPATH = "resources/logindataselenium.json";
+
     public static String X_UI_Internal_Request = "X-UI-Internal-Request";
     public static String X_CLIENT_IP = "X-Client-Ip";
     public static String X_SITE_INTERNAL_REQUEST = "X-Site-Internal-Request";
@@ -12,7 +22,6 @@ public interface BASEConstants {
             "." + File.separator + "src" + File.separator + "test" + File.separator + "resources"
                     + File.separator + "ImagesForUploadTests" + File.separator;
 
-    public static String EXCEPTIONPATH = "resources/properties/exception.properties";
 
     public static final String HTTP_PREFIX = "http://";
     public static final String HTTPS_PREFIX = "https://";

@@ -4,7 +4,7 @@ import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.drivers.Browser;
 import com.automation.ui.base.common.logging.Log;
-import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
+
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;

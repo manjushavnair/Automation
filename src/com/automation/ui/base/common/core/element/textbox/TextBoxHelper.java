@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import com.automation.ui.base.common.core.element.*;
 
 
-public class TextBoxHelper implements IWebComponent{
+public class TextBoxHelper implements IHTMLComponent {
 
     private WebDriver driver;
     private static Logger logger = Logger.getLogger(TextBoxHelper.class);

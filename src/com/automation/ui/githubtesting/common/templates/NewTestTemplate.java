@@ -5,23 +5,19 @@ import com.automation.ui.base.common.templates.core.CoreTestTemplate;
 import com.automation.ui.githubtesting.common.core.url.SiteUrlBuilder;
 import org.apache.log4j.Logger;
 
-public class NewTestTemplate extends CoreTestTemplate {
-
-    protected SiteUrlBuilder siteUrlBuilder;
-   private static Logger logger = Logger.getLogger(NewTestTemplate.class);
+public abstract class NewTestTemplate extends CoreTestTemplate {
 
 
-    protected void loadFirstPage() {
-
-    }
+    protected com.automation.ui.connected.common.core.url.SiteUrlBuilder siteUrlBuilder;
+    private static Logger logger = Logger.getLogger(com.automation.ui.githubtesting.common.templates.NewTestTemplate.class);
 
     protected void prepareURLs() {
         urlBuilder = UrlBuilder.createUrlBuilder();
-        siteUrlBuilder = new SiteUrlBuilder();
+        siteUrlBuilder = new com.automation.ui.connected.common.core.url.SiteUrlBuilder();
         siteURL = urlBuilder.getUrl();
         siteCorporateURL = urlBuilder.getSiteGlobalURL();
-        //siteCorpSetupURL = UrlBuilder.createUrlBuilderForSiteAndLang("corp", Configuration.DEFAULT_LANGUAGE).getUrl();
-        //logger.info("prepareURLs siteCorporateURL : " + siteCorporateURL + " siteURL" +siteURL  );
+        getDataReaders();
+
 
     }
 }

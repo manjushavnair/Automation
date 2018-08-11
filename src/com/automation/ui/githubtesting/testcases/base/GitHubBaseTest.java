@@ -21,12 +21,15 @@ public class GitHubBaseTest extends NewTestTemplate  {
     public GitHubBaseTest() {
         super();
 
-        eu = getExcelUtil();
 
     }
 
-    protected ExcelUtil getExcelUtil() {
-   	     ExcelUtil eu = null;
+
+
+
+
+    protected void getDataReaders() {
+
         try {
             eu = new ExcelUtil();
 
@@ -36,40 +39,17 @@ public class GitHubBaseTest extends NewTestTemplate  {
             e.printStackTrace();
             ;
         }
-        return eu;
+
     }
 
 
     protected void loadFirstPage() {
+        logger.info("driver"+driver+"urlBuilder"+urlBuilder);
         driver.get(urlBuilder.getUrlForPage(URLsContent.SITE_DIR));
     }
 
 
 
-    /*
-    @BeforeMethod
-    protected void setUpBeforeTestMethod() {
-        // initialize testPage
-        // login to the app, if necessary
-    }
 
-    @AfterMethod
-    protected void tearDownAfterTestMethod() {
-        // logout of the app, if necessary
-    }
-
-    @BeforeClass
-    protected void setUpBeforeTestClass() {
-        // initialize a browser driver, connect to servers
-    }
-
-    @AfterClass
-    protected void tearDownAfterTestClass() {
-        // close connections, close browser as needed
-        logger.info("Quiting browser  tearDownAfterTestClass  ::BaseTest");
-        Reporter.log("Quiting browser  tearDownAfterTestClass  ::BaseTest");
-        // driverManager.quitDriver();
-    }
-*/
 
 }

@@ -9,7 +9,7 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import com.automation.ui.base.common.core.element.*;
 
-public class AlertHelper implements IWebComponent{
+public class AlertHelper implements IHTMLComponent {
 
     private static Logger logger = Logger.getLogger(TextBoxHelper.class);
     private WebDriver driver;

@@ -1,6 +1,5 @@
 package com.automation.ui.base.common.utils;
 
-import com.automation.ui.connected.common.constants.ExcelCONSTANTS;
 import org.apache.log4j.Logger;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.*;
@@ -26,32 +25,7 @@ public class ExcelUtil {
     private Sheet datatypeSheet;
 
 
-    // This method is to set the File path and to open the Excel file, Pass
-    // Excel Path and Sheetname as Arguments to this method
 
-    public static void main(String arg[]) {
-
-        // Call the method
-        String userName = "";
-        String password = "";
-        try {
-
-            ExcelUtil eu = new ExcelUtil();
-
-            eu.setExcelFile(ExcelCONSTANTS.LOGINXLSDATAPATH,
-                    ExcelCONSTANTS.LOGINXLSDATASHEETNAMELOGIN);
-
-            userName = eu.getCellData(1, 1);
-            password = eu.getCellData(1, 2);
-
-            System.out.print("username" + userName + "password" + password);
-        } catch (Exception e) {
-
-            e.printStackTrace();
-        }
-
-
-    }
 
     /**
      * This method is to read the test data from the Excel cell, in this we are

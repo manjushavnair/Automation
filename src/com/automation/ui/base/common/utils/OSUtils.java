@@ -1,7 +1,5 @@
 package com.automation.ui.base.common.utils;
 
-
-import com.automation.ui.connected.testcases.login.LoginTest;
 import org.apache.log4j.Logger;
 
 import java.util.Properties;

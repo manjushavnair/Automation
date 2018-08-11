@@ -1,30 +1,30 @@
-package com.automation.ui.githubtesting.common.prpreader;
-
-import com.automation.ui.githubtesting.common.constants.RESTAPICONSTANTS;
+package com.automation.ui.base.common.prpreaders;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Properties;
+import com.automation.ui.base.common.constants.*;
 
 import static java.lang.Boolean.parseBoolean;
 import static java.lang.Integer.parseInt;
 
-public class RestAPIReader extends Properties {
+public class PropertyReader extends Properties {
 
-    private static RestAPIReader prpreader;
+    private static PropertyReader prpreader;
 
-    public static RestAPIReader readProperty() {
+    public static PropertyReader readProperty() {
+
 
         if (prpreader == null) {
-            synchronized (RestAPIReader.class) {
+            synchronized (PropertyReader.class) {
                 if (prpreader == null) {
 
-                    prpreader = new RestAPIReader();
+                    prpreader = new PropertyReader();
                     try {
                         InputStream inStream = new FileInputStream(new File(
-                                RESTAPICONSTANTS.RESTPATH));
+                                BASEConstants.EXCEPTIONPATH));
                         prpreader.load(inStream);
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();

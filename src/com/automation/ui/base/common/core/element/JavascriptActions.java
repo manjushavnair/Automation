@@ -90,6 +90,20 @@ public class JavascriptActions {
         js.executeScript("$(arguments[0]).mouseenter()", element);
     }
 
+    /**
+	     * Gets the distance from top to the bottom of the navigation bar, no matter if it's mobile or desktop.
+	     *
+	     * @return offset
+	     */
+	private int getOffset() {
+		SiteBasePageObject sitePage = new SiteBasePageObject();
+		int offset = sitePage.getNavigationBarOffsetFromTop();
+
+
+		return offset;
+	}
+
+
     public boolean isElementInViewPort(WebElement element) {
 
         int offset = getOffset();
@@ -111,6 +125,18 @@ public class JavascriptActions {
                     " + " + offset + ")", element);
         }
     }
+
+
+    public void scrollElementIntoViewPort(WebElement element) {
+        try {
+            if (!isElementInViewPort(element)) {
+                scrollToElement(element);
+            }
+        } catch (WebDriverException e) {
+            Log.info("There might be a problem with scrolling to element", e);
+        }
+    }
+
 
     public void scrollToBottom() {
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
@@ -158,18 +184,6 @@ public void scrollToElemet(WebElement element) {
     }
 
 
-    /**
-     * Gets the distance from top to the bottom of the navigation bar, no matter if it's mobile or desktop.
-     *
-     * @return offset
-     */
-    private int getOffset() {
-        SiteBasePageObject sitePage = new SiteBasePageObject();
-        int offset = sitePage.getNavigationBarOffsetFromTop();
-
-
-        return offset;
-    }
 
     public void scrollToSpecificElement(WebElement element) {
         try {
@@ -199,15 +213,7 @@ public void scrollToElemet(WebElement element) {
         js.executeScript("$(arguments[0]).scrollTop(arguments[1])", modal, scrollTop);
     }
 
-    public void scrollElementIntoViewPort(WebElement element) {
-        try {
-            if (!isElementInViewPort(element)) {
-                scrollToElement(element);
-            }
-        } catch (WebDriverException e) {
-            Log.info("There might be a problem with scrolling to element", e);
-        }
-    }
+
 
     public void scrollBy(int x, int y) {
         js.executeScript("window.scrollBy(arguments[0], arguments[1])", x, y);

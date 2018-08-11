@@ -95,11 +95,6 @@ public class SiteBasePageObject extends BasePageObject {
     }
 
 
-    public String loginAs(User user) {
-
-        return loginAs(user.getUserName(), user.getPassword(), urlBuilder.getUrl());
-    }
-
     public String loginAs(String userName, String password, String siteURL) {
         String token = Helios.getAccessToken(userName);
 

@@ -1,8 +1,6 @@
 package com.automation.ui.base.common.prpreaders;
 
 import com.automation.ui.base.common.constants.BASEConstants;
-import com.automation.ui.connected.common.constants.SITECONSTANTS;
-import com.automation.ui.connected.common.prpreader.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

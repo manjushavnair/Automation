@@ -11,7 +11,7 @@ import com.automation.ui.base.common.core.element.*;
 
 
 
-public class LinkHelper implements  IWebComponent {
+public class LinkHelper implements IHTMLComponent {
 
     private WebDriver driver;
     private BasePageObject basePageObject;

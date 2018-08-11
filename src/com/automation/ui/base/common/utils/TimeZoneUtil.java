@@ -5,7 +5,7 @@ package com.automation.ui.base.common.utils;
 import java.util.Date;
 import java.util.TimeZone;
 
-import com.automation.ui.connected.testcases.login.LoginTest;
+
 import org.apache.log4j.Logger;
 
 

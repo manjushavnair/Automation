@@ -2,7 +2,7 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.home;
 
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
-import com.automation.ui.connected.common.prpreader.AssertDataReader;
+import com.automation.ui.base.common.prpreaders.AssertDataReader;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.*;
 
 import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.*;
@@ -12,8 +12,6 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.Reporter;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.By;
 
 public class HomePage extends SiteBasePageObject {
 
