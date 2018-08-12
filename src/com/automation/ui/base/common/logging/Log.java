@@ -47,7 +47,7 @@ public class Log {
     private static final String REPORT_PATH = "." + File.separator + "logs" + File.separator;
     private static final String SCREEN_DIR_PATH = REPORT_PATH + "screenshots" + File.separator;
     private static final String SCREEN_PATH = SCREEN_DIR_PATH + "screenshot";
-    private static final String LOG_FILE_NAME = "log"+ DateUtil.getCurrentDate() +".html";
+    private static final String LOG_FILE_NAME = "log"+ DateUtil.getCurrentDateTime()+".html";
     public static final String LOG_PATH = REPORT_PATH + LOG_FILE_NAME;
     private static final ArrayList<Boolean> LOGS_RESULTS = new ArrayList<>();
     public static String mobileSiteVersion = "";

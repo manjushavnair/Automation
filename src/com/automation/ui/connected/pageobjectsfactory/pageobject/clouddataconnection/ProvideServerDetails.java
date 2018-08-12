@@ -76,33 +76,17 @@ public class ProvideServerDetails extends SiteBasePageObject {
     public void provideServerDetailsNext()
     {
 
-
-        logger.info("Entering  provideServerDetailsNext:"+nextButton.getText() +":: "+ nextButton.getTagName() );
         Reporter.log("Entering  provideServerDetailsNext:" );
 
         try {
 
             waitAndClick(nextButton);
 
-            //
-
-            //nextButtonErrorMSG
-
-
-            logger.info("Exiting  provideServerDetailsNext");
             Reporter.log("Exiting  provideServerDetailsNext");
         } catch (Exception e) {
             e.printStackTrace();
-
-
-
         }
-
-
     }
-
-
-
 
     public String getConnMessage() {
         wait.forElementVisible(nextButtonErrorMSG);
@@ -152,4 +136,27 @@ public class ProvideServerDetails extends SiteBasePageObject {
         return siteNameErMsg.getText();
 
     }
+
+    /* Method to enter Customer Name under Collector Details*/
+
+    public void provideServerDetailsAddCustName()
+    {
+
+
+           Reporter.log("Entering  provideServerDetailsAddCustName:" );
+
+        try {
+
+            customerNameField.click();
+            fillInputAfterClear(customerNameField,"Sivaprasad Inc");
+            Reporter.log("Exiting provideServerDetailsAddCustName");
+
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
 }

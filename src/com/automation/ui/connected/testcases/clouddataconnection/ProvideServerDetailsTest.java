@@ -32,7 +32,8 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
 
 
     @Test(enabled = true, priority = 4,groups = {"validcase"}, description = "ProvideServerDetails")
-    public void addConnectionCancelTest() throws Throwable {
+    public void provideServerDetailsCancelTest() throws Throwable {
+
 
 
 
@@ -44,12 +45,12 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
         //    Assertion.assertEquals(subhead.getSubheadTitle(),  "Editing template: InfoboxBuilderChangeTemplateNameBySubhead"
         serverdetail_page.provideServerDetailsCancel();
         Reporter.log("Entering provideServerDetailsCancel ");
-        //  home_page.waitForPageLoad();
+
         logger.info("Exiting provideServerDetailsCancel  ");
     }
 
     @Test(enabled = true, priority = 3,groups = {"validcase"}, description = "home page ")
-    public void addConnectionNextTest() throws Throwable {
+    public void provideServerDetailsNextTest() throws Throwable {
 
         logger.info("Entering provideServerDetailsNext  " );
         Reporter.log("Entering provideServerDetailsNext ");
@@ -87,27 +88,42 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
         Assert.assertEquals(serverdetail_page.customerNameErMsg(),
                 AssertDataReader.assertreader.getValue("CUSTOMERNAMEVALIDATIONMESSAGE"));
 
-        Thread.sleep(5000);
+    //    Thread.sleep(5000);
 
     }
 
-/* test to validate site name ( clear site name and check the right error message)*/
-@Test(enabled = true, priority =2 ,groups = {"validcase"}, description = "ProvideServerDetails ")
-public void clearSiteNameTest() throws Throwable {
+/* Test : Add Connection-> locate customername field-> clear the field-> Add right name->Click next*/
+@Test(enabled = true, priority =2 ,groups = {"validcase"}, description = "ProvideServerDetails")
+public void addCustomerNameTest() throws Throwable {
 
     home_page.addConnection();
-    Reporter.log("Entering clearSiteName ");
-    serverdetail_page.clearSiteName();
+
+    serverdetail_page.provideServerDetailsAddCustName();
     serverdetail_page.provideServerDetailsNext();
 
-
-    Assert.assertEquals(serverdetail_page.siteNameErMsg(),
-            AssertDataReader.assertreader.getValue("SITENAMEVALIDATIONMESSAGE"));
-
-    Thread.sleep(5000);
+    Thread.sleep(3000);
 
 }
 
+
+
+    /* Test : Add Connection-> locate customername field-> clear the field-> Add right name->Click next*/
+    @Test(enabled = true, priority =6 ,groups = {"validcase"}, description = "ProvideServerDetails")
+    public void clearSiteNameTest() throws Throwable {
+
+        home_page.addConnection();
+
+        serverdetail_page.clearSiteName();
+        serverdetail_page.provideServerDetailsNext();
+
+
+
+        Assert.assertEquals(serverdetail_page.siteNameErMsg(),
+                AssertDataReader.assertreader.getValue("SITENAMEVALIDATIONMESSAGE"));
+
+      //  Thread.sleep(5000);
+
+    }
 
 
 

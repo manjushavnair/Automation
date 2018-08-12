@@ -70,11 +70,11 @@
 
                 <methods>
                     <include name="clearCustomerNameTest"/>
+                    <include name="addCustomerNameTest"/>
+                    <include name="provideServerDetailsNextTest"/>
                     <include name="clearSiteNameTest"/>
-                    <include name="addConnectionNextTest"/>
-                    <include name="addConnectionCancelTest"/>
-
-
+                    <include name="provideServerDetailsCancelTest"/>
+                    <include name="clearSiteNameTest"/>
 
 
                 </methods>

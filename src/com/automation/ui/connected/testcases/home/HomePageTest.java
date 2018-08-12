@@ -63,12 +63,9 @@ public class HomePageTest extends ConnectedBaseTest {
 
     @Test(enabled = true, priority = 2, groups = {"validcase"},description = "launchHomePage ")
     public void launchHomePage() throws Throwable {
-       // logger.info(" launchHomePage and going to  homepage" + urlBuilder.getUrl());
-        home_page=new HomePage();
-        //home_page.wait.forElementClickable(By.cssSelector(".primary"));
-        Thread.sleep(20000);
-       // logger.info(" home_page.getCurrentUrl() " + home_page.getCurrentUrl());
-       // home_page.waitForPageLoad();
+         home_page=new HomePage();
+        // Thread.sleep(20000);
+
 
 
     }
@@ -80,7 +77,6 @@ public class HomePageTest extends ConnectedBaseTest {
         Reporter.log("Entering addConnection");
          home_page.addConnection();
 
-      //  home_page.waitForPageLoad();
         logger.info("Exiting addConnection and going to  add "  );
     }
 
