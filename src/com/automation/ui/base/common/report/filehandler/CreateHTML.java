@@ -11,6 +11,8 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
+import java.io.ByteArrayOutputStream;
+import java.io.StringReader;
 
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import org.apache.log4j.Logger;
@@ -46,22 +48,36 @@ public class CreateHTML extends CreateFiles {
 		}
 	}
 
-	synchronized private static void createHTML(String htmlPath) {
+	synchronized public static String createHTML(String htmlPath) {
 		TransformerFactory tFactory = TransformerFactory.newInstance();
 		Source xslDoc = new StreamSource(DASHBOARD_XSL_PATH);
 		Source xmlDoc = new StreamSource(XML_PATH);
+
 		Transformer transformer = null;
 		OutputStream htmlFile = null;
+		ByteArrayOutputStream outputXmlResult = null;
 		try {
 			htmlFile = new FileOutputStream(htmlPath);
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		try {
 			transformer = tFactory.newTransformer(xslDoc);
+
+			//outputXmlResult = new ByteArrayOutputStream();
+			//sr.setOutputStream(outputXmlResult);
 			transformer.transform(xmlDoc, new StreamResult(htmlFile));
+
+
+
 		} catch (TransformerException te) {
 			te.printStackTrace();
 		}
+
+		logger.info(xmlDoc.toString());
+		return xmlDoc.toString();
 	}
+
+
 }

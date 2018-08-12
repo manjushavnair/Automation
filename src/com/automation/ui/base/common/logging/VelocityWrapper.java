@@ -12,6 +12,9 @@ import java.util.stream.Collectors;
 
 import static org.testng.internal.Utils.escapeHtml;
 import java.io.*;
+import com.automation.ui.base.common.report.filehandler.*;
+
+
 public class VelocityWrapper {
 
     private static final String LAST_LOG_ROW_TEMPLATE_PATH = "lastLogRow.vm";
@@ -58,10 +61,16 @@ public class VelocityWrapper {
         VelocityContext context = new VelocityContext();
 
         StringWriter writer = new StringWriter();
+
         t.merge(context, writer);
         builder.append(writer.toString());
+
+
         return builder.toString();
     }
+
+
+
 
     public static String fillLogRowWithLink(String link, String label) {
         StringBuilder builder = new StringBuilder();

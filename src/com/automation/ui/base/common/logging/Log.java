@@ -1,5 +1,7 @@
 package com.automation.ui.base.common.logging;
 
+import com.automation.ui.base.common.report.filehandler.CreateHTML;
+import com.automation.ui.base.common.report.filehandler.FileNameConstants;
 import com.automation.ui.base.common.utils.CommonUtils;
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.annotations.RelatedIssue;
@@ -331,7 +333,12 @@ public class Log {
         }
 
         String html = VelocityWrapper.fillLastLogRow();
+        logger.info("html"+html);
         CommonUtils.appendTextToFile(Log.LOG_PATH, html);
+        int suiteIndex = 1;
+
+      //  logger.info("html"+ CreateHTML.createHTML(FileNameConstants.ROOT_FOLDER + File.separator+ FileNameConstants.DASHBOARD_HTML + "-"
+        //        + suiteIndex + ".html"));
 
 
        // logger.info("Log.LOG_PATH " + Log.LOG_PATH +" Log.testStarted "+ Log.testStarted);

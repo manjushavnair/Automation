@@ -57,10 +57,10 @@
             <class name="com.automation.ui.connected.testcases.home.HomePageTest"  >
 
             <methods>
-                <include name="launchHomePage"/>
-                <include name="addConnection"/>
-                <include name="addConnectionCancel"/>
-                <include name="addConnectionNext"/>
+                <exclude name="launchHomePage"/>
+                <exclude name="addConnection"/>
+                <exclude name="addConnectionCancel"/>
+                <exclude name="addConnectionNext"/>
 
 
 
