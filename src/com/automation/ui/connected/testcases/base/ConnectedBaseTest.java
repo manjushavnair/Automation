@@ -13,7 +13,7 @@ import com.automation.ui.connected.common.constants.ExcelCONSTANTS;
 import com.automation.ui.connected.common.templates.NewTestTemplate;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.*;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.*;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.* ;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.* ;
 import org.apache.log4j.Logger;
 
 public class ConnectedBaseTest extends NewTestTemplate  {

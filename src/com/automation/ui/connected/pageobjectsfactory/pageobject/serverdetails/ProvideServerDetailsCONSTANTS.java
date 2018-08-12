@@ -1,4 +1,4 @@
-package com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection;
+package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails;
 
 public interface ProvideServerDetailsCONSTANTS {
 

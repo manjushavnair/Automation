@@ -5,7 +5,7 @@ import com.automation.ui.base.common.core.configuration.EnvType;
 import com.automation.ui.base.common.prpreaders.AssertDataReader;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.*;
 
-import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.*;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.*;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;

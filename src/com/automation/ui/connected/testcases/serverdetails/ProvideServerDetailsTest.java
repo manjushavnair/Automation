@@ -1,4 +1,4 @@
-package com.automation.ui.connected.testcases.clouddataconnection;
+package com.automation.ui.connected.testcases.serverdetails;
 
 /**
  * @author Manjusha Saju
@@ -7,7 +7,7 @@ package com.automation.ui.connected.testcases.clouddataconnection;
 import com.automation.ui.base.common.core.Assertion;
 import com.automation.ui.base.common.prpreaders.AssertDataReader;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.*;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.*;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
