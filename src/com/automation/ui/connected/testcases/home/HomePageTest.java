@@ -8,10 +8,17 @@ import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnec
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginPage;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
+import com.automation.ui.base.common.core.element.*;
+import com.automation.ui.base.common.core.*;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+import java.util.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.TimeoutException;
+
 
 
 public class HomePageTest extends ConnectedBaseTest {
@@ -27,7 +34,7 @@ public class HomePageTest extends ConnectedBaseTest {
     }
 
 
-    @Test(enabled = false, priority = 1, groups = {"validcase"}, description = "home page ")
+    @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "home page ")
 
     public void launchLogin() throws Throwable {
 
@@ -88,24 +95,35 @@ public class HomePageTest extends ConnectedBaseTest {
 
 
     @Test(enabled = true, priority = 4,groups = {"validcase"}, description = "home page ")
-
     public void addConnectionCancel() throws Throwable {
 
-        logger.info("Entering addConnectionCancel 1 " );
+        logger.info("Entering addConnectionCancel " );
         Reporter.log("Entering addConnectionCancel ");
-
-
-
-
         home_page.addConnection();
-        logger.info("Entering addConnectionCancel 2 " );
-        Thread.sleep(15000);
-        home_page.addConnectionCancel();
-        Reporter.log("Entering addConnectionCancel 3");
+         Assertion.assertTrue(home_page.isButtonVisible());
+    //    Assertion.assertEquals(subhead.getSubheadTitle(),  "Editing template: InfoboxBuilderChangeTemplateNameBySubhead"
+          home_page.addConnectionCancel();
+        Reporter.log("Entering addConnectionCancel ");
       //  home_page.waitForPageLoad();
         logger.info("Exiting addConnectionCancel  ");
     }
 
+    @Test(enabled = true, priority = 5,groups = {"validcase"}, description = "home page ")
+    public void addConnectionNext() throws Throwable {
+
+        logger.info("Entering addConnectionNext  " );
+        Reporter.log("Entering addConnectionNext ");
+        home_page.addConnection();
+
+        Assertion.assertTrue(home_page.isButtonVisible());
+        home_page.addConnectionNext();
+        logger.info("Entering addConnectionNext  " +home_page.getConnMessage());
+        Assertion.assertEquals(home_page.getConnMessage(),
+                "Connection name is required");
+
+        Reporter.log("Entering addConnectionNext ");
+        logger.info("Exiting addConnectionNext  ");
+    }
 
 
     @Test(enabled = false,priority = 4,groups = {  "validcase"}, description = "home page ")
@@ -116,6 +134,17 @@ public class HomePageTest extends ConnectedBaseTest {
         Reporter.log("Logging out from launchHomePage_logout");
 
         home_page.goToLogoutPage();
+    }
+
+
+    private void verifyElementsVisible(List<String> elementsList) {
+        elementsList.forEach(element -> Assertion.assertTrue(home_page.isElementVisible(
+                element), element + " is not visible"));
+    }
+
+    private void verifyElementsNotVisible(List<String> elementsList) {
+        elementsList.forEach(element -> Assertion.assertFalse(home_page.isElementVisible(
+                element), element + " is visible"));
     }
 
 

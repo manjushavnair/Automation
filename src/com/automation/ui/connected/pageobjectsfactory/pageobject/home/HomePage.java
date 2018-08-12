@@ -7,12 +7,15 @@ import com.automation.ui.connected.pageobjectsfactory.pageobject.base.*;
 
 import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.*;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.Reporter;
-
+import com.automation.ui.base.common.core.element.*;
 public class HomePage extends SiteBasePageObject {
 
 
@@ -38,6 +41,12 @@ public class HomePage extends SiteBasePageObject {
 
     @FindBy(xpath =AddCloudDataCONSTANTS.ADDCONNECTIONSCANELBUTTON)
     private WebElement cancelButton;
+
+
+    @FindBy(xpath =AddCloudDataCONSTANTS.ADDCONNECTIONSNEXTBUTTON)
+    private WebElement nextButton;
+    @FindBy(xpath =AddCloudDataCONSTANTS.ADDCONNECTIONNAMEERROR)
+    private WebElement nextButtonErrorMSG;
 
 
 
@@ -155,13 +164,9 @@ public class HomePage extends SiteBasePageObject {
 
         try {
 
-
-       // jsActions.click(cancelButton);
-       // jsActions.executeScript("arguments[0].setAttribute('style,'border: solid 2px red'');", cancelButton);
          waitAndClick(cancelButton);
 
-         Thread.sleep(10000);
-        logger.info("Exiting  addConnectionCancel");
+       logger.info("Exiting  addConnectionCancel");
         Reporter.log("Exiting  addConnectionCancel");
         } catch (Exception e) {
             e.printStackTrace();
@@ -173,6 +178,49 @@ public class HomePage extends SiteBasePageObject {
 
     }
 
+
+    public void addConnectionNext()
+    {
+
+
+        logger.info("Entering  addConnectionNext:"+nextButton.getText() +":: "+ nextButton.getTagName() );
+        Reporter.log("Entering  addConnectionNext:" );
+
+        try {
+
+            waitAndClick(nextButton);
+
+            //
+
+            //nextButtonErrorMSG
+
+
+            logger.info("Exiting  addConnectionNext");
+            Reporter.log("Exiting  addConnectionNext");
+        } catch (Exception e) {
+            e.printStackTrace();
+
+
+
+        }
+
+
+    }
+
+
+
+
+    public String getConnMessage() {
+        wait.forElementVisible(nextButtonErrorMSG);
+
+        return nextButtonErrorMSG.getText();
+    }
+
+    public boolean isButtonVisible() {
+        wait.forElementVisible(cancelButton);
+
+        return cancelButton.isDisplayed();
+    }
 
 
     public void addConnection_accessdenied() {
@@ -196,6 +244,16 @@ public class HomePage extends SiteBasePageObject {
         Reporter.log("Exiting  addConnection_accessdenied");
 
 
+    }
+
+    public boolean isElementVisible(String element) {
+        try {
+            wait.forElementVisible(By.cssSelector(element));
+        } catch (TimeoutException | ElementNotVisibleException ex) {
+            logger.info("Web element " + element + " not visible" );
+            return false;
+        }
+        return true;
     }
 
 }

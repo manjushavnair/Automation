@@ -8,16 +8,21 @@ import org.openqa.selenium.WebElement;
 import com.automation.ui.base.common.constants.*;
 
 import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.TimeoutException;
+
 
 public class ElementStateHelper {
 
-    public static final int TIMEOUT = 30;
 
     private static Logger logger = Logger.getLogger(ElementStateHelper.class);
 
     private ElementStateHelper() {
 
     }
+
+
 
 
     public static boolean isElementVisible(WebElement element) {
@@ -33,11 +38,12 @@ public class ElementStateHelper {
         webDriver.manage().timeouts().implicitlyWait(BASEConstants.WAITTIME500MILLISEC, TimeUnit.MILLISECONDS);
 
         try {
+
             return element.isDisplayed();
         } catch (NoSuchElementException | StaleElementReferenceException e) {
             return false;
         } finally {
-            webDriver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
+            webDriver.manage().timeouts().implicitlyWait(BASEConstants.WAITTIME5SEC, TimeUnit.SECONDS);
         }
     }
 }

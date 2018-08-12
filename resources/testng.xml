@@ -15,7 +15,7 @@
         <listener class-name="org.testng.reporters.SuiteHTMLReporter" />
         <listener class-name="org.testng.reporters.TestHTMLReporter" />
         <listener class-name="com.automation.ui.base.common.testnglisteners.InvokeMethodAdapter"/>
-        <!-- <listener class-name="report.realtime.listener.RealTimeTestResultListener" /> -->
+       <listener class-name="com.automation.ui.base.common.report.listener.RealTimeTestResultListener" />
     </listeners>
 
     <test name="Automation"  preserve-order="true">
@@ -57,11 +57,10 @@
             <class name="com.automation.ui.connected.testcases.home.HomePageTest"  >
 
             <methods>
-                <include name="launchHomePage"/>
-                <include name="addConnection"/>
-                <include name="addConnectionCancel"/>
-
-
+                <exclude name="launchHomePage"/>
+                <exclude name="addConnection"/>
+                <exclude name="addConnectionCancel"/>
+                <exclude name="addConnectionNext"/>
 
 
 
