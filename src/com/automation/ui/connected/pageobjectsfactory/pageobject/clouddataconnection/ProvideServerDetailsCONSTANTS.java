@@ -1,6 +1,6 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection;
 
-public interface AddCloudDataCONSTANTS {
+public interface ProvideServerDetailsCONSTANTS {
 
     //button[@class='primary next ng-binding']
 

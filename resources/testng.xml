@@ -57,15 +57,25 @@
             <class name="com.automation.ui.connected.testcases.home.HomePageTest"  >
 
             <methods>
-                <exclude name="launchHomePage"/>
-                <exclude name="addConnection"/>
-                <exclude name="addConnectionCancel"/>
-                <exclude name="addConnectionNext"/>
+                <include name="launchHomePage"/>
+                <include name="addConnection"/>
+
 
 
 
             </methods>
         </class>
+
+            <class name="com.automation.ui.connected.testcases.clouddataconnection.ProvideServerDetailsTest"  >
+
+                <methods>
+                     <include name="addConnectionCancel"/>
+                     <include name="addConnectionNext"/>
+
+
+
+                </methods>
+            </class>
 
 
 

@@ -22,7 +22,8 @@ public class ConnectedBaseTest extends NewTestTemplate  {
     protected ExcelUtil eu = null;
     protected LoginPage login_page = null;
     protected HomePage home_page = null;
-    protected AddCloudDataConnection data_page = null;
+    protected ProvideServerDetails serverdetail_page = null;
+
 
     public ConnectedBaseTest() {
         super();

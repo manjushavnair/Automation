@@ -15,7 +15,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.Reporter;
-import com.automation.ui.base.common.core.element.*;
+
 public class HomePage extends SiteBasePageObject {
 
 
@@ -38,15 +38,6 @@ public class HomePage extends SiteBasePageObject {
     @CacheLookup
     private WebElement menubutton;
 
-
-    @FindBy(xpath =AddCloudDataCONSTANTS.ADDCONNECTIONSCANELBUTTON)
-    private WebElement cancelButton;
-
-
-    @FindBy(xpath =AddCloudDataCONSTANTS.ADDCONNECTIONSNEXTBUTTON)
-    private WebElement nextButton;
-    @FindBy(xpath =AddCloudDataCONSTANTS.ADDCONNECTIONNAMEERROR)
-    private WebElement nextButtonErrorMSG;
 
 
 
@@ -127,7 +118,7 @@ public class HomePage extends SiteBasePageObject {
     }
 
 
-    public AddCloudDataConnection addConnection() {
+    public ProvideServerDetails addConnection() {
 
 
 
@@ -151,76 +142,10 @@ public class HomePage extends SiteBasePageObject {
 
 
         }
-        return new AddCloudDataConnection();
+        return new ProvideServerDetails();
 
     }
 
-    public void addConnectionCancel()
-    {
-
-
-        logger.info("Entering  addConnectionCancel:"+cancelButton.getText() +":: "+ cancelButton.getTagName() );
-        Reporter.log("Entering  addConnectionCancel:" );
-
-        try {
-
-         waitAndClick(cancelButton);
-
-       logger.info("Exiting  addConnectionCancel");
-        Reporter.log("Exiting  addConnectionCancel");
-        } catch (Exception e) {
-            e.printStackTrace();
-
-
-
-        }
-
-
-    }
-
-
-    public void addConnectionNext()
-    {
-
-
-        logger.info("Entering  addConnectionNext:"+nextButton.getText() +":: "+ nextButton.getTagName() );
-        Reporter.log("Entering  addConnectionNext:" );
-
-        try {
-
-            waitAndClick(nextButton);
-
-            //
-
-            //nextButtonErrorMSG
-
-
-            logger.info("Exiting  addConnectionNext");
-            Reporter.log("Exiting  addConnectionNext");
-        } catch (Exception e) {
-            e.printStackTrace();
-
-
-
-        }
-
-
-    }
-
-
-
-
-    public String getConnMessage() {
-        wait.forElementVisible(nextButtonErrorMSG);
-
-        return nextButtonErrorMSG.getText();
-    }
-
-    public boolean isButtonVisible() {
-        wait.forElementVisible(cancelButton);
-
-        return cancelButton.isDisplayed();
-    }
 
 
     public void addConnection_accessdenied() {
