@@ -5,10 +5,12 @@ package com.automation.ui.connected.testcases.clouddataconnection;
  */
 
 import com.automation.ui.base.common.core.Assertion;
+import com.automation.ui.base.common.prpreaders.AssertDataReader;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.clouddataconnection.*;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
 import org.apache.log4j.Logger;
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -23,42 +25,44 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
 
         super();
         logger.info(" ProvideServerDetailsTest");
+        serverdetail_page=new ProvideServerDetails();
+        home_page =new HomePage();
 
     }
 
 
-    @Test(enabled = true, priority = 1,groups = {"validcase"}, description = "home page ")
-    public void addConnectionCancel() throws Throwable {
+    @Test(enabled = true, priority = 4,groups = {"validcase"}, description = "ProvideServerDetails")
+    public void addConnectionCancelTest() throws Throwable {
 
-        serverdetail_page=new ProvideServerDetails();
 
-        logger.info("Entering addConnectionCancel " );
-        Reporter.log("Entering addConnectionCancel ");
-        home_page =new HomePage();
+
+        logger.info("Entering provideServerDetailsCancel " );
+        Reporter.log("Entering provideServerDetailsCancel ");
+
         home_page.addConnection();
         Assertion.assertTrue(serverdetail_page.isButtonVisible());
         //    Assertion.assertEquals(subhead.getSubheadTitle(),  "Editing template: InfoboxBuilderChangeTemplateNameBySubhead"
-        serverdetail_page.addConnectionCancel();
-        Reporter.log("Entering addConnectionCancel ");
+        serverdetail_page.provideServerDetailsCancel();
+        Reporter.log("Entering provideServerDetailsCancel ");
         //  home_page.waitForPageLoad();
-        logger.info("Exiting addConnectionCancel  ");
+        logger.info("Exiting provideServerDetailsCancel  ");
     }
 
-    @Test(enabled = true, priority = 2,groups = {"validcase"}, description = "home page ")
-    public void addConnectionNext() throws Throwable {
+    @Test(enabled = true, priority = 3,groups = {"validcase"}, description = "home page ")
+    public void addConnectionNextTest() throws Throwable {
 
-        logger.info("Entering addConnectionNext  " );
-        Reporter.log("Entering addConnectionNext ");
+        logger.info("Entering provideServerDetailsNext  " );
+        Reporter.log("Entering provideServerDetailsNext ");
         home_page.addConnection();
 
         Assertion.assertTrue(serverdetail_page.isButtonVisible());
-        serverdetail_page.addConnectionNext();
-        logger.info("Entering addConnectionNext  " +serverdetail_page.getConnMessage());
+        serverdetail_page.provideServerDetailsNext();
+        logger.info("Entering provideServerDetailsNext  " +serverdetail_page.getConnMessage());
         Assertion.assertEquals(serverdetail_page.getConnMessage(),
                 "Connection name is required");
 
-        Reporter.log("Entering addConnectionNext ");
-        logger.info("Exiting addConnectionNext  ");
+        Reporter.log("Entering provideServerDetailsNext ");
+        logger.info("Exiting provideServerDetailsNext  ");
     }
 
     private void verifyElementsVisible(List<String> elementsList) {
@@ -71,7 +75,38 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
                 element), element + " is visible"));
     }
 
+    @Test(enabled = true, priority =1 ,groups = {"validcase"}, description = "ProvideServerDetails ")
+    public void clearCustomerNameTest() throws Throwable {
 
+        home_page.addConnection();
+       Reporter.log("Entering clearCustomerName ");
+        serverdetail_page.clearCustomerName();
+        serverdetail_page.provideServerDetailsNext();
+
+
+        Assert.assertEquals(serverdetail_page.customerNameErMsg(),
+                AssertDataReader.assertreader.getValue("CUSTOMERNAMEVALIDATIONMESSAGE"));
+
+        Thread.sleep(5000);
+
+    }
+
+/* test to validate site name ( clear site name and check the right error message)*/
+@Test(enabled = true, priority =2 ,groups = {"validcase"}, description = "ProvideServerDetails ")
+public void clearSiteNameTest() throws Throwable {
+
+    home_page.addConnection();
+    Reporter.log("Entering clearSiteName ");
+    serverdetail_page.clearSiteName();
+    serverdetail_page.provideServerDetailsNext();
+
+
+    Assert.assertEquals(serverdetail_page.siteNameErMsg(),
+            AssertDataReader.assertreader.getValue("SITENAMEVALIDATIONMESSAGE"));
+
+    Thread.sleep(5000);
+
+}
 
 
 

@@ -333,7 +333,7 @@ public class Log {
         }
 
         String html = VelocityWrapper.fillLastLogRow();
-        logger.info("html"+html);
+
         CommonUtils.appendTextToFile(Log.LOG_PATH, html);
         int suiteIndex = 1;
 

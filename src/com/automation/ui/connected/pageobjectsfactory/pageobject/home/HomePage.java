@@ -162,9 +162,6 @@ public class HomePage extends SiteBasePageObject {
         logger.info("accessdenied " + msg.getText());
 
 
-        Assert.assertEquals(msg.getText(),
-                AssertDataReader.assertreader.getValue("OPCUA_ACCESSDENIED"));
-
         logger.info("Exiting  addConnection_accessdenied");
         Reporter.log("Exiting  addConnection_accessdenied");
 

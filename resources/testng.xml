@@ -69,8 +69,11 @@
             <class name="com.automation.ui.connected.testcases.clouddataconnection.ProvideServerDetailsTest"  >
 
                 <methods>
-                     <include name="addConnectionCancel"/>
-                     <include name="addConnectionNext"/>
+                    <include name="clearCustomerNameTest"/>
+                    <include name="clearSiteNameTest"/>
+                    <include name="addConnectionNextTest"/>
+                    <include name="addConnectionCancelTest"/>
+
 
 
 

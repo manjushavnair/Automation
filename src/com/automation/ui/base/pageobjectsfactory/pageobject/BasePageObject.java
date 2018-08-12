@@ -601,6 +601,13 @@ public abstract class BasePageObject {
 
 	}
 
+    public void  clearFieldInput(WebElement input ) {
+
+        input.clear();
+
+
+
+    }
 
     public void fillInput(WebElement input, String value) {
          wait.forElementVisible(input).sendKeys(value);
