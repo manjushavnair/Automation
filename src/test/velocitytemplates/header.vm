@@ -12,10 +12,10 @@
     pre {white-space: pre-wrap;}
     td:nth-child(3){width:100px;}
     tr.success{color:black;background-color:#CCFFCC;}
-    tr.warning{color:black;background-color:#FEE01E;}
+    tr.warning{color:black;background-color:#f0e8b1;}
     tr.error{color:black;background-color:#FFCCCC;}
     tr.info{color:white;background-color:#78a1c0}
-    tr.step{color:white;background:grey}
+    tr.step{color:white;background:#CCD1D1}
     </style>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
