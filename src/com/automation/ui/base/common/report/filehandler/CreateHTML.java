@@ -75,8 +75,7 @@ public class CreateHTML extends CreateFiles {
 			te.printStackTrace();
 		}
 
-		logger.info(xmlDoc.toString());
-		return xmlDoc.toString();
+ 		return xmlDoc.toString();
 	}
 
 

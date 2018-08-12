@@ -274,7 +274,7 @@ public abstract class BasePageObject {
      * @param element to be clicked on
      */
     protected void waitAndClick(WebElement element) {
-        logger.info("waitAndClick 1");
+        //logger.info("waitAndClick 1");
         wait.forElementClickable(element).click();
     }
 

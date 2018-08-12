@@ -125,7 +125,7 @@ public class HomePage extends SiteBasePageObject {
         try {
             logger.info("Entering  addConnection:" );
             Reporter.log("Entering  addConnection:"+addButton.getTagName() + " " +addButton.getText()+ " "+addButton.getLocation());
-            logger.info("click  ");
+
             // wait.forElementVisible(addButton, 30);
 
             jsActions.click(addButton);
