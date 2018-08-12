@@ -1,6 +1,6 @@
-<table><h1>Class: <em>$className.$testName</em></h1>
+<table><h3>Class: <em>$className.$testName</em></h3>
     <tr class="step">
         <td>$command</td>
-        <td><h1><em>$description</em></h1></td>
+        <td><h3><em>$description</em></h3></td>
         <td> <br/> &nbsp;</td>
     </tr>

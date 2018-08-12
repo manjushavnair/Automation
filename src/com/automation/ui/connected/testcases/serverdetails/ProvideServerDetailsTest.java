@@ -35,9 +35,6 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
     public void provideServerDetailsCancelTest() throws Throwable {
 
 
-
-
-        logger.info("Entering provideServerDetailsCancel " );
         Reporter.log("Entering provideServerDetailsCancel ");
 
         home_page.addConnection();
@@ -83,12 +80,8 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
        Reporter.log("Entering clearCustomerName ");
         serverdetail_page.clearCustomerName();
         serverdetail_page.provideServerDetailsNext();
-
-
         Assert.assertEquals(serverdetail_page.customerNameErMsg(),
                 AssertDataReader.assertreader.getValue("CUSTOMERNAMEVALIDATIONMESSAGE"));
-
-    //    Thread.sleep(5000);
 
     }
 
