@@ -36,7 +36,7 @@ import java.util.List;
 import java.util.TimeZone;
 
 import static org.apache.commons.lang.StringEscapeUtils.escapeHtml;
-
+import com.automation.ui.base.common.utils.*;
 
 public class Log {
 
@@ -45,7 +45,7 @@ public class Log {
     private static final String REPORT_PATH = "." + File.separator + "logs" + File.separator;
     private static final String SCREEN_DIR_PATH = REPORT_PATH + "screenshots" + File.separator;
     private static final String SCREEN_PATH = SCREEN_DIR_PATH + "screenshot";
-    private static final String LOG_FILE_NAME = "log.html";
+    private static final String LOG_FILE_NAME = "log"+ DateUtil.getCurrentDate() +".html";
     public static final String LOG_PATH = REPORT_PATH + LOG_FILE_NAME;
     private static final ArrayList<Boolean> LOGS_RESULTS = new ArrayList<>();
     public static String mobileSiteVersion = "";
@@ -333,7 +333,6 @@ public class Log {
         String html = VelocityWrapper.fillLastLogRow();
         CommonUtils.appendTextToFile(Log.LOG_PATH, html);
 
-        Log.info("Log.LOG_PATH " + Log.LOG_PATH);
 
        // logger.info("Log.LOG_PATH " + Log.LOG_PATH +" Log.testStarted "+ Log.testStarted);
 

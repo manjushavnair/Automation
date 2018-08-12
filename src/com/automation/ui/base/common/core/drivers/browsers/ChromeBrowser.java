@@ -47,13 +47,13 @@ public class ChromeBrowser extends BrowserAbstract {
         }
 
 
-        Log.info("Using chromedriver: ", chromeBinaryPath);
+      //  Log.info("Using chromedriver: ", chromeBinaryPath);
         File chromedriver = new File(ClassLoader.getSystemResource(chromeBinaryPath).getPath());
 
         // set application user permissions to 455
         chromedriver.setExecutable(true);
 
-        System.setProperty("webdriver.chrome.driver", chromedriver.getPath());
+      	  System.setProperty("webdriver.chrome.driver", chromedriver.getPath());
         logger.info("Using chromedriver logs at "+ System.getProperty("user.dir")+File.separator+
                 "logs"+File.separator+"chromelogs");
         System.setProperty("webdriver.chrome.logfile", System.getProperty("user.dir")+File.separator+
@@ -62,7 +62,7 @@ public class ChromeBrowser extends BrowserAbstract {
                 + ".log");
 
         System.setProperty("webdriver.chrome.verboseLogging", "true");
-        Log.info("Using chromedriver: ", chromedriver.getPath());
+        //Log.info("Using chromedriver: ", chromedriver.getPath());
 
         chromeOptions.addArguments("start-maximized");
         chromeOptions.addArguments("disable-notifications");
