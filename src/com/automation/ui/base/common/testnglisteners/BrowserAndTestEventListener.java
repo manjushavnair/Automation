@@ -98,12 +98,6 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
             if (driver.getCurrentUrl().contains(Configuration.getEnvType().getSiteDomain())) {
 
 
-                try {
-                    new JavascriptActions(driver).execute("$(\".sprite.close-notification\")[0].click()");
-                } catch (WebDriverException e) {
-                    Log
-                            .info("Hack for disabling notifications", "Failed to execute js action");
-                }
                 /**
                  * All of tests should be executed as an user who opted in (agreed) on using ads tracking.
                  * Manually user would need to click 'agree' in the tracking opt in modal.
