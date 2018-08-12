@@ -11,7 +11,7 @@ import java.util.Properties;
 import java.util.stream.Collectors;
 
 import static org.testng.internal.Utils.escapeHtml;
-
+import java.io.*;
 public class VelocityWrapper {
 
     private static final String LAST_LOG_ROW_TEMPLATE_PATH = "lastLogRow.vm";
@@ -203,7 +203,7 @@ public class VelocityWrapper {
         context.put("testedVersion", testedVersion);
         context.put("mobileSiteVersion", mercuryVersion);
         context.put("mobileSiteVersion", mercuryVersion);
-        context.put("logPath", System.getProperty("user.dir")+"/"+Log.LOG_PATH);
+        context.put("logPath", System.getProperty("user.dir")+File.separator+Log.LOG_PATH);
 
 
         StringWriter writer = new StringWriter();

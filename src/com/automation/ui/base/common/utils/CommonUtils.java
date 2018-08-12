@@ -46,6 +46,8 @@ public class CommonUtils {
         try {
             FileWriter newFile = new FileWriter(filePath, true);
             BufferedWriter out = new BufferedWriter(newFile);
+
+
             out.write(textToWrite);
             out.newLine();
             out.flush();
