@@ -3,9 +3,8 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.home;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
 import com.automation.ui.base.common.prpreaders.AssertDataReader;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.base.*;
-
-import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.*;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.ProvideServerDetails;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
@@ -20,8 +19,8 @@ public class HomePage extends SiteBasePageObject {
 
 
     private static Logger logger = Logger.getLogger(HomePage.class);
-    @FindBy(xpath =HomeConstants.ADDCONNECTIONSBUTTON)
-     private WebElement addButton;
+    @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON)
+    private WebElement addButton;
 
     @FindBy(css = "primary")
     private WebElement primarysButton;
@@ -37,9 +36,6 @@ public class HomePage extends SiteBasePageObject {
     @FindBy(xpath = HomeConstants.MENUBUTTON)
     @CacheLookup
     private WebElement menubutton;
-
-
-
 
 
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_ERROR_MSG)
@@ -75,7 +71,6 @@ public class HomePage extends SiteBasePageObject {
     }
 
 
-
     public HomePage open() {
 
         logger.info("open the URL" + getCurrentUrl());
@@ -87,7 +82,7 @@ public class HomePage extends SiteBasePageObject {
         } else {
             logger.info(getCurrentUrl());
             // getUrl("http://localhost:9000");
-           // getUrl(getCurrentUrl() + " ");
+            // getUrl(getCurrentUrl() + " ");
             getUrl(getCurrentUrl());
         }
         //waitForPageLoad();
@@ -121,10 +116,9 @@ public class HomePage extends SiteBasePageObject {
     public ProvideServerDetails addConnection() {
 
 
-
         try {
-            logger.info("Entering  addConnection:" );
-            Reporter.log("Entering  addConnection:"+addButton.getTagName() + " " +addButton.getText()+ " "+addButton.getLocation());
+            logger.info("Entering  addConnection:");
+            Reporter.log("Entering  addConnection:" + addButton.getTagName() + " " + addButton.getText() + " " + addButton.getLocation());
 
             // wait.forElementVisible(addButton, 30);
 
@@ -145,7 +139,6 @@ public class HomePage extends SiteBasePageObject {
         return new ProvideServerDetails();
 
     }
-
 
 
     public void addConnection_accessdenied() {
@@ -172,7 +165,7 @@ public class HomePage extends SiteBasePageObject {
         try {
             wait.forElementVisible(By.cssSelector(element));
         } catch (TimeoutException | ElementNotVisibleException ex) {
-            logger.info("Web element " + element + " not visible" );
+            logger.info("Web element " + element + " not visible");
             return false;
         }
         return true;

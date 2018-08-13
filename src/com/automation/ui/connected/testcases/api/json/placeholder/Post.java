@@ -1,23 +1,19 @@
 package com.automation.ui.connected.testcases.api.json.placeholder;
 
+import com.automation.ui.base.common.core.api.apicore.ContentType;
+import com.automation.ui.base.common.rest.restclient.PostAdapter;
+import com.automation.ui.base.common.rest.restclient.adapter.RestAdapter;
+import com.automation.ui.base.common.rest.restclient.util.PropertiesUtil;
 import com.automation.ui.base.common.rest.restclient.util.Repository;
 import io.restassured.path.json.JsonPath;
-
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-
-import com.automation.ui.base.common.rest.restclient.util.PropertiesUtil;
-import com.automation.ui.base.common.rest.restclient.adapter.RestAdapter;
-import com.automation.ui.base.common.rest.restclient.PostAdapter;
-
-
-
 import javax.json.Json;
 import javax.json.JsonObject;
 import java.io.IOException;
-import com.automation.ui.base.common.core.api.apicore.*;
+
 public class Post {
     private PropertiesUtil factory;
 

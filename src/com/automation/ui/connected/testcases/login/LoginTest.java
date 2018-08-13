@@ -38,7 +38,6 @@ import org.testng.annotations.Test;
  */
 
 
-
 public class LoginTest extends ConnectedBaseTest {
 
 
@@ -46,29 +45,19 @@ public class LoginTest extends ConnectedBaseTest {
             .getLogger(LoginTest.class);
 
 
-
-
     public LoginTest() {
 
         super();
 
 
-
-
-
     }
 
 
-
-
-
-
-
     @Test(priority = 1, groups = {"base", "validcase"})
-    public void verifyValidLogin()  throws Throwable {
+    public void verifyValidLogin() throws Throwable {
 
-         Reporter.log("Entering verifyValidLogin");
-          login_page = new LoginPage();
+        Reporter.log("Entering verifyValidLogin");
+        login_page = new LoginPage();
         login_page.open();
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();
@@ -79,7 +68,7 @@ public class LoginTest extends ConnectedBaseTest {
         String password = eu.getCellData(1, 2);
 
 
-         login_page.enterUser(userName);
+        login_page.enterUser(userName);
         login_page.enterPassword(password);
         login_page.login();
         //  driver.navigate().back();
@@ -87,12 +76,9 @@ public class LoginTest extends ConnectedBaseTest {
     }
 
 
-
-
-
     @Test(priority = 2, groups = {"base", "invalidcase"})
-    public void verifyInValidUserNullPassword()  throws Throwable{
-         Reporter.log("Entering verifyInValidUserNullPassword");
+    public void verifyInValidUserNullPassword() throws Throwable {
+        Reporter.log("Entering verifyInValidUserNullPassword");
         login_page = new LoginPage();
         login_page.open();
         // Call the method
@@ -103,7 +89,7 @@ public class LoginTest extends ConnectedBaseTest {
         String userName = eu.getCellData(2, 1);
         String password = eu.getCellData(2, 2);
 
-         login_page.enterUser(userName);
+        login_page.enterUser(userName);
         login_page.enterPassword(password);
         login_page.login();
 
@@ -111,11 +97,11 @@ public class LoginTest extends ConnectedBaseTest {
 
 
     @Test(priority = 3, groups = {"base", "invalidcase"})
-    public void verifyValidUserNullPassword()  throws Throwable {
+    public void verifyValidUserNullPassword() throws Throwable {
 
         logger.info("Entering verifyValidUserNullPassword");
         Reporter.log("Entering verifyValidUserNullPassword");
-         login_page = new LoginPage();
+        login_page = new LoginPage();
         login_page.open();
         // Call the method
         String methodname = new Object() {
@@ -125,18 +111,19 @@ public class LoginTest extends ConnectedBaseTest {
         String password = eu.getCellData(3, 2);
 
 
-         login_page.enterUser(userName);
+        login_page.enterUser(userName);
         login_page.enterPassword(password);
         login_page.login();
 
     }
-//added
+
+    //added
     @Test(priority = 4, groups = {"base", "invalidcase"}, description = "invalid login")
     public void verifyInValidUserInvalidPassword() throws Throwable {
 
         logger.info("Entering verifyInValidLogin");
         Reporter.log("Entering verifyInValidLogin");
-         login_page = new LoginPage();
+        login_page = new LoginPage();
         login_page.open();
 
 
@@ -144,10 +131,10 @@ public class LoginTest extends ConnectedBaseTest {
         }.getClass().getEnclosingMethod().getName();
 
         String userName = eu.getCellData(4, 1);
-        String password  = eu.getCellData(4, 2);
+        String password = eu.getCellData(4, 2);
 
 
-         login_page.enterUser(userName);
+        login_page.enterUser(userName);
         login_page.enterPassword(password);
         login_page.login();
         //  driver.navigate().for();
@@ -159,7 +146,7 @@ public class LoginTest extends ConnectedBaseTest {
 
         logger.info("Entering verifyNullUserNullPassword");
         Reporter.log("Entering verifyNullUserNullPassword");
-         login_page = new LoginPage();
+        login_page = new LoginPage();
         login_page.open();
         // Call the method
 
@@ -167,9 +154,9 @@ public class LoginTest extends ConnectedBaseTest {
         }.getClass().getEnclosingMethod().getName();
 
         String userName = eu.getCellData(5, 1);
-        String password  = eu.getCellData(5, 2);
+        String password = eu.getCellData(5, 2);
 
-         login_page.enterUser(userName);
+        login_page.enterUser(userName);
         login_page.enterPassword(password);
         login_page.login();
         //  driver.navigate().back();

@@ -11,12 +11,12 @@ import com.automation.ui.base.common.contentpatterns.URLsContent;
 import com.automation.ui.base.common.utils.ExcelUtil;
 import com.automation.ui.connected.common.constants.ExcelCONSTANTS;
 import com.automation.ui.connected.common.templates.NewTestTemplate;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.home.*;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.login.*;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.* ;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginPage;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.ProvideServerDetails;
 import org.apache.log4j.Logger;
 
-public class ConnectedBaseTest extends NewTestTemplate  {
+public class ConnectedBaseTest extends NewTestTemplate {
 
     private static Logger logger = Logger.getLogger(ConnectedBaseTest.class);
     protected ExcelUtil eu = null;
@@ -31,8 +31,6 @@ public class ConnectedBaseTest extends NewTestTemplate  {
         getDataReaders();
 
     }
-
-
 
 
     protected void getDataReaders() {
@@ -54,10 +52,6 @@ public class ConnectedBaseTest extends NewTestTemplate  {
         driver.get(urlBuilder.getUrlForPage(URLsContent.SITE_DIR));
 
     }
-
-
-
-
 
 
 }

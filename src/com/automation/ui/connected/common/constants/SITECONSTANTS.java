@@ -12,5 +12,4 @@ public interface SITECONSTANTS {
     public static String LOGINJSONDATAPATH = "resources/logindataselenium.json";
 
 
-
 }

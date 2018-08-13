@@ -1,6 +1,6 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails;
 
-import com.automation.ui.connected.pageobjectsfactory.pageobject.base.*;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,26 +33,21 @@ public class ProvideServerDetails extends SiteBasePageObject {
     @FindBy(xpath = ProvideServerDetailsCONSTANTS.SITENAME_ERMSG)
     private WebElement siteNameErMsg;
 
-    public ProvideServerDetails open( )
-            {
-      // getUrl(  );
-      //  waitForPageLoad();
-
-
-
+    public ProvideServerDetails open() {
+        // getUrl(  );
+        //  waitForPageLoad();
         //driver.navigate().refresh();
 
 
         return new ProvideServerDetails();
     }
 
-/*Method to validate Connection cancel in Provide Server Details page*/
-    public void provideServerDetailsCancel()
-    {
+    /*Method to validate Connection cancel in Provide Server Details page*/
+    public void provideServerDetailsCancel() {
 
 
-        logger.info("Entering  provideServerDetailsCancel:"+cancelButton.getText() +":: "+ cancelButton.getTagName() );
-        Reporter.log("Entering  provideServerDetailsCancel:" );
+        logger.info("Entering  provideServerDetailsCancel:" + cancelButton.getText() + ":: " + cancelButton.getTagName());
+        Reporter.log("Entering  provideServerDetailsCancel:");
 
         try {
 
@@ -64,17 +59,15 @@ public class ProvideServerDetails extends SiteBasePageObject {
             e.printStackTrace();
 
 
-
         }
 
 
     }
 
     /*Method to validate Next Connection in Provide Server Details page*/
-    public void provideServerDetailsNext()
-    {
+    public void provideServerDetailsNext() {
 
-        Reporter.log("Entering  provideServerDetailsNext:" );
+        Reporter.log("Entering  provideServerDetailsNext:");
 
         try {
 
@@ -99,11 +92,10 @@ public class ProvideServerDetails extends SiteBasePageObject {
     }
 
 
-    public void clearCustomerName()
-    {
+    public void clearCustomerName() {
 
-           Reporter.log("Entering  clearCustomerName:" );
-           clearFieldInput(customerNameField);
+        Reporter.log("Entering  clearCustomerName:");
+        clearFieldInput(customerNameField);
 
 
     }
@@ -117,15 +109,15 @@ public class ProvideServerDetails extends SiteBasePageObject {
 
     }
 
-/*Method to clear Site name entry from Site name field*/
-    public void clearSiteName()
-    {
+    /*Method to clear Site name entry from Site name field*/
+    public void clearSiteName() {
 
-        Reporter.log("Entering  clearSiteName:" );
+        Reporter.log("Entering  clearSiteName:");
         clearFieldInput(siteNameField);
 
 
     }
+
     /* Method to validate Site name error message*/
     public String siteNameErMsg() {
 
@@ -137,19 +129,18 @@ public class ProvideServerDetails extends SiteBasePageObject {
 
     /* Method to enter Customer Name under Collector Details*/
 
-    public void provideServerDetailsAddCustName()
-    {
+    public void provideServerDetailsAddCustName() {
 
 
-           Reporter.log("Entering  provideServerDetailsAddCustName:" );
+        Reporter.log("Entering  provideServerDetailsAddCustName:");
 
         try {
 
             customerNameField.click();
-            fillInputAfterClear(customerNameField,"Sivaprasad Inc");
+            fillInputAfterClear(customerNameField, "Sivaprasad Inc");
             Reporter.log("Exiting provideServerDetailsAddCustName");
 
-            } catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

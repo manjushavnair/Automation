@@ -1,14 +1,13 @@
 package com.automation.ui.connected.testcases.api.udacity;
-import io.restassured.*;
 
+import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
+import org.testng.annotations.Test;
 
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
-
-import org.testng.annotations.Test;
-import java.util.*;
 public class Udacity {
 
     @Test

@@ -1,9 +1,7 @@
 package com.automation.ui.connected.pageobjectsfactory.componentobject.lightbox;
 
 import com.automation.ui.base.common.logging.Log;
-
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,13 +10,13 @@ public class LightboxComponentObject extends SiteBasePageObject {
 
     private static final Integer VIDEO_WIDTH_LIGHTBOX = 737;
 
-     @FindBy(css = ".thumb.thumbinner")
+    @FindBy(css = ".thumb.thumbinner")
     private WebElement imageThumbnail;
     @FindBy(css = "#LightboxModal")
     private WebElement lightBoxModal;
     @FindBy(css = "span.pin")
     private WebElement pinButton;
-      @FindBy(css = "div.hero-inner img")
+    @FindBy(css = "div.hero-inner img")
     private WebElement moreInfoThumbnail;
     @FindBy(css = "a.facebook")
     private WebElement facebookShareLink;
@@ -82,7 +80,6 @@ public class LightboxComponentObject extends SiteBasePageObject {
         wait.forElementVisible(titleLink);
         jsActions.execute("$('.LightboxHeader').css('opacity', '1')");
     }
-
 
 
     public void clickPinButton() {
@@ -155,7 +152,6 @@ public class LightboxComponentObject extends SiteBasePageObject {
         plusoneShareLink.click();
         Log.log("clickPlusOneShareButton", "plus one share button is clicked", true);
     }
-
 
 
     public void clickCarouselRight() {

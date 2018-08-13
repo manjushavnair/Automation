@@ -1,19 +1,12 @@
-
 package com.automation.ui.connected.testcases.api.spotify;
-import io.restassured.*;
-import io.restassured.http.ContentType;
-import io.restassured.mapper.*;
+
+import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-
-import static io.restassured.RestAssured.given;
-import static io.restassured.config.EncoderConfig.encoderConfig;
-import static io.restassured.RestAssured.given;
-import static io.restassured.config.EncoderConfig.encoderConfig;
-
 import org.testng.annotations.Test;
 
 import java.util.List;
+
+import static io.restassured.RestAssured.given;
 
 public class Album {
 

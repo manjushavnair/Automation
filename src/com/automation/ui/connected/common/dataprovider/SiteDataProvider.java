@@ -9,16 +9,15 @@ public class SiteDataProvider {
     }
 
     @DataProvider
-    private static final Object[][] getLangs()
-    {
+    private static final Object[][] getLangs() {
         return new Object[][]
                 {
-                              {"de","Detch","2"},
-                              {"es","Espion","2"},
-                              {"fr","French","2"},
-                              {"it","Italian","2"},
-                              {"ja","Jakrthe","2"},
-                              {"nl","Newland","2"}
+                        {"de", "Detch", "2"},
+                        {"es", "Espion", "2"},
+                        {"fr", "French", "2"},
+                        {"it", "Italian", "2"},
+                        {"ja", "Jakrthe", "2"},
+                        {"nl", "Newland", "2"}
                 };
     }
 
@@ -27,8 +26,7 @@ public class SiteDataProvider {
         return new Object[][]{{"no"}, {"pl"}, {"pt"}, {"pt-br"}, {"ru"}, {"zh"}};
     }
 
-    public static void main(String ar[])
-    {
+    public static void main(String ar[]) {
         System.out.println(getLangs()[0][0]);
         System.out.println(getLangs()[0][1]);
         System.out.println(getLangs()[0][2]);

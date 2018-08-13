@@ -1,11 +1,9 @@
 package com.automation.ui.connected.testcases.login;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
 import java.util.concurrent.TimeUnit;
 
 public class Test {
@@ -13,13 +11,13 @@ public class Test {
     public static void main(String[] args) throws InterruptedException {
 //webdriver.firefox.marionette
         //  System.setProperty("webdriver.gecko.driver","D:\\Project\\Automation\\target\\classes\\test\\FireFoxDriver\\firefoxdriver_win32\\geckodriver.exe");
-        System.setProperty("webdriver.ie.driver","D:\\Project\\Automation\\target\\classes\\test\\IEDriver\\IEDriverServer.exe");
+        System.setProperty("webdriver.ie.driver", "D:\\Project\\Automation\\target\\classes\\test\\IEDriver\\IEDriverServer.exe");
 
 
         WebDriver driver = new InternetExplorerDriver();
         driver.get("http://demo.guru99.com/V4/");
         //Creating the JavascriptExecutor interface object by Type casting
-        JavascriptExecutor js = (JavascriptExecutor)driver;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
 
 
         System.out.println("Successfully opened the website ");

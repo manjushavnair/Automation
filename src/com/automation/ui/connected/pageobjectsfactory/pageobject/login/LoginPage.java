@@ -7,15 +7,14 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.login;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
 import com.automation.ui.base.common.prpreaders.AssertDataReader;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.base.*;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.Reporter;
-import org.openqa.selenium.support.CacheLookup;
 
 public class LoginPage extends SiteBasePageObject {
 
@@ -35,11 +34,10 @@ public class LoginPage extends SiteBasePageObject {
     private WebElement login_button;
 
 
-
     @FindBy(xpath = LoginCONSTANTS.SAVELOGINCHECK)
     private WebElement savepasswordbutton;
 
-    @FindBy(xpath =  LoginCONSTANTS.SAVELOGINANDSUBMIT)
+    @FindBy(xpath = LoginCONSTANTS.SAVELOGINANDSUBMIT)
     private WebElement choosetosave;
 
     public LoginPage() {
@@ -50,12 +48,10 @@ public class LoginPage extends SiteBasePageObject {
 
     public LoginPage open() {
 
-        logger.info("getCurrentUrl()"+getCurrentUrl());
-        logger.info("getSiteUrl()"+getSiteUrl());
-        logger.info("getUrl()"+getUrl() );
-        logger.info("getSiteUrlWithPath()"+getSiteUrlWithPath() );
-
-
+        logger.info("getCurrentUrl()" + getCurrentUrl());
+        logger.info("getSiteUrl()" + getSiteUrl());
+        logger.info("getUrl()" + getUrl());
+        logger.info("getSiteUrlWithPath()" + getSiteUrlWithPath());
 
 
         if (Configuration.getEnvType().equals(EnvType.DEV)) {
@@ -66,10 +62,10 @@ public class LoginPage extends SiteBasePageObject {
         } else {
             logger.info(getSiteUrlWithPath());
             //  getUrl(getCurrentUrl() + "?action=something");
-         //   getUrl(new Page(getSiteUrl(),"/login"));
+            //   getUrl(new Page(getSiteUrl(),"/login"));
             getUrl(getCurrentUrl());
             //for context added url like github.com/login
-           // getUrl(getSiteUrlWithPath());
+            // getUrl(getSiteUrlWithPath());
 
         }
         return this;
@@ -78,17 +74,17 @@ public class LoginPage extends SiteBasePageObject {
 
     public LoginPage enterUser(String userName) {
         try {
-            logger.info("Entering enterUser  login: "+login_button.getText() + " "+login_button.getTagName());
-            Reporter.log("Entering  enterUser login:" );
-            fillInputAfterClear(username,userName);
+            logger.info("Entering enterUser  login: " + login_button.getText() + " " + login_button.getTagName());
+            Reporter.log("Entering  enterUser login:");
+            fillInputAfterClear(username, userName);
             login_button.click();
             logger.info("Exiting enterUser login");
             Reporter.log("Exiting  enterUser login");
 
         } catch (Exception e) {
             e.printStackTrace();
-            logger.info("Exiting enterUser login"+AssertDataReader.assertreader.getValue("OPCUA_LOGIN_LOGINMSG")) ;
-            Assert.fail( AssertDataReader.assertreader.getValue("OPCUA_LOGIN_LOGINMSG"));
+            logger.info("Exiting enterUser login" + AssertDataReader.assertreader.getValue("OPCUA_LOGIN_LOGINMSG"));
+            Assert.fail(AssertDataReader.assertreader.getValue("OPCUA_LOGIN_LOGINMSG"));
             Reporter.log("Login failed");
 
         }
@@ -101,13 +97,13 @@ public class LoginPage extends SiteBasePageObject {
             logger.info("Entering  enterPassword: ");
             Reporter.log("Entering  enterPassword:");
 
-            fillInputAfterClear(password,upassword);
+            fillInputAfterClear(password, upassword);
             logger.info("Exiting  enterPassword");
             Reporter.log("Exiting  enterPassword");
 
         } catch (Exception e) {
             e.printStackTrace();
-            Assert.fail( AssertDataReader.assertreader.getValue("OPCUA_PASSWORD"));
+            Assert.fail(AssertDataReader.assertreader.getValue("OPCUA_PASSWORD"));
             Reporter.log("password failed");
 
         }
@@ -125,14 +121,13 @@ public class LoginPage extends SiteBasePageObject {
             waitAndClick(savepasswordbutton);
 
 
-
             logger.info("Exiting  login");
             Reporter.log("Exiting  login");
             // wait.forElementVisible(savepasswordbutton);
 
         } catch (Exception e) {
             e.printStackTrace();
-            Assert.fail( AssertDataReader.assertreader.getValue("OPCUA_LOGIN_LOGINMSG"));
+            Assert.fail(AssertDataReader.assertreader.getValue("OPCUA_LOGIN_LOGINMSG"));
             Reporter.log("Login failed");
 
         }
@@ -164,7 +159,6 @@ public class LoginPage extends SiteBasePageObject {
         this.username = username;
 
     }
-
 
 
 }

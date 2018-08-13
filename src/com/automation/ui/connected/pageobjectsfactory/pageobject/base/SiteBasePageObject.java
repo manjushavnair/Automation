@@ -1,12 +1,10 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.base;
 
+import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.core.Helios;
 import com.automation.ui.base.common.core.configuration.Configuration;
-import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
-
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
@@ -26,38 +24,26 @@ public class SiteBasePageObject extends BasePageObject {
 
     private static final By MERCURY_SKIN = By.cssSelector("#ember-container");
     private static final By MERCURY_NAV_ICON = By.cssSelector(".site-head .site-head-icon-nav");
-
-
-
-
-
+    private static Logger logger = Logger.getLogger(SiteBasePageObject.class);
     @FindBy(css = "#globalNavigation,.site-head.no-shadow,.wds-global-navigation")
     protected WebElement navigationBar;
     @FindBy(css = "#globalNavigation")
     protected WebElement newGlobalNavigation;
-     protected By parentBy = By.xpath("./..");
-     @FindBy(css = ".banner-notifications-placeholder,.smart-banner")
+    protected By parentBy = By.xpath("./..");
+    @FindBy(css = ".banner-notifications-placeholder,.smart-banner")
     private WebElement bannerNotificationContainer;
-
-
-      @FindBy(css = ".wds-dropdown__toggle .wds-avatar")
+    @FindBy(css = ".wds-dropdown__toggle .wds-avatar")
     private WebElement globalNavigationAvatar;
     @FindBy(css = ".wds-global-navigation")
     private WebElement globalNavigationBar;
-
-
-
-    private static Logger logger = Logger.getLogger(SiteBasePageObject.class);
 
     public SiteBasePageObject() {
         super();
     }
 
 
-
-
-       //NEED TO CHANGE the context based on site context
-     public String getContextUrl() {
+    //NEED TO CHANGE the context based on site context
+    public String getContextUrl() {
         String currentURL = driver.getCurrentUrl();
         return currentURL.substring(0, currentURL.lastIndexOf("/login"));
     }
@@ -74,12 +60,13 @@ public class SiteBasePageObject extends BasePageObject {
             Log.info("  userID: " + scriptOut.toString());
         }
     }
+
     /**
      * Logout by clicking on "Sign out" option in global navigation
      */
     public void logOut() {
         try {
-           //  getGlobalNavigation().clickSignOut();
+            //  getGlobalNavigation().clickSignOut();
         } catch (TimeoutException e) {
             Log.log("logOut", "page loads for more than 30 seconds", true);
         }
@@ -131,8 +118,8 @@ public class SiteBasePageObject extends BasePageObject {
             if (driver.findElements(MERCURY_SKIN).size() > 0) {
                 wait.forElementClickable(MERCURY_NAV_ICON);
                 driver.findElement(MERCURY_NAV_ICON).click();
-           //     wait.forElementVisible(By.cssSelector(
-             //           LOGGED_IN_USER_SELECTOR_MERCURY.replace("%userName%", userName.replace(" ", "_"))));
+                //     wait.forElementVisible(By.cssSelector(
+                //           LOGGED_IN_USER_SELECTOR_MERCURY.replace("%userName%", userName.replace(" ", "_"))));
                 // close nav
                 wait.forElementClickable(MERCURY_NAV_ICON);
                 driver.findElement(MERCURY_NAV_ICON).click();
@@ -156,9 +143,6 @@ public class SiteBasePageObject extends BasePageObject {
     }
 
 
-
-
-
     public void verifyGlobalNavigation() {
         //NEEDTOCHECK
         wait.forElementVisible(globalNavigationBar);
@@ -171,7 +155,6 @@ public class SiteBasePageObject extends BasePageObject {
         wait.forElementVisible(globalNavigationAvatar);
         Log.log("verifyAvatarVisible", "desired logo is visible on navbar", true);
     }
-
 
 
     protected Boolean isNewGlobalNavPresent() {

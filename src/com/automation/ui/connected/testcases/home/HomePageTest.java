@@ -4,14 +4,15 @@ package com.automation.ui.connected.testcases.home;
  * @author Manjusha Saju
  */
 
+import com.automation.ui.base.common.core.Assertion;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginPage;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
-import com.automation.ui.base.common.core.*;
 import org.apache.log4j.Logger;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-import java.util.*;
+
+import java.util.List;
 
 
 public class HomePageTest extends ConnectedBaseTest {
@@ -38,8 +39,6 @@ public class HomePageTest extends ConnectedBaseTest {
         login_page.open();
 
 
-
-
         // Call the method
 
 
@@ -53,7 +52,7 @@ public class HomePageTest extends ConnectedBaseTest {
         home_page = login_page.login();
 
 
-       // home_page.waitForPageReload();
+        // home_page.waitForPageReload();
 
 
         logger.info("Exiting launchLogin and going to  homepage" + urlBuilder.getUrl());
@@ -61,11 +60,10 @@ public class HomePageTest extends ConnectedBaseTest {
 
     }
 
-    @Test(enabled = true, priority = 2, groups = {"validcase"},description = "launchHomePage ")
+    @Test(enabled = true, priority = 2, groups = {"validcase"}, description = "launchHomePage ")
     public void launchHomePage() throws Throwable {
-         home_page=new HomePage();
+        home_page = new HomePage();
         // Thread.sleep(20000);
-
 
 
     }
@@ -75,17 +73,13 @@ public class HomePageTest extends ConnectedBaseTest {
     public void addConnection() throws Throwable {
         logger.info("Entering addConnection");
         Reporter.log("Entering addConnection");
-         home_page.addConnection();
+        home_page.addConnection();
 
-        logger.info("Exiting addConnection and going to  add "  );
+        logger.info("Exiting addConnection and going to  add ");
     }
 
 
-
-
-
-
-    @Test(enabled = false,priority = 4,groups = {  "validcase"}, description = "home page ")
+    @Test(enabled = false, priority = 4, groups = {"validcase"}, description = "home page ")
 
     public void launch_logout() throws Throwable {
 
