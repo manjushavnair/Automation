@@ -25,6 +25,7 @@ public class RealTimeTestResultListener extends TestListenerAdapter implements I
 	public void onFinish(ISuite arg0) {
 	}
 
+
 	@Override
 	public void onStart(ISuite suite) {
 		/*
