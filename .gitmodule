@@ -1,0 +1,3 @@
+[submodule "AutomationConfig"]
+	path = TealeafSaaS/resources
+	url = https://github.com/manjushavnair/AutomationConfig.git
