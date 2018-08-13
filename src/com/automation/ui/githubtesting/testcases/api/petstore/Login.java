@@ -7,6 +7,7 @@ import static io.restassured.RestAssured.given;
 
 public class Login {
 
+
     @Test(groups = {"login"}, dependsOnGroups = {"user"})
     public void login() {
         RestAssured.baseURI = "http://petstore.swagger.io/v2";
