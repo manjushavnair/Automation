@@ -44,7 +44,7 @@ public class Log {
 
     private static final String POLISH_DATE_FORMAT = "dd/MM/yyyy HH:mm:ss ZZ";
     private static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ssZZ";
-    private static final String REPORT_PATH = "." + File.separator + "logs" + File.separator;
+    private static final String REPORT_PATH = "." + File.separator + "logs" + File.separator+"realreport"+File.separator;
     private static final String SCREEN_DIR_PATH = REPORT_PATH + "screenshots" + File.separator;
     private static final String SCREEN_PATH = SCREEN_DIR_PATH + "screenshot";
     private static final String LOG_FILE_NAME = "log"+ DateUtil.getCurrentDateTime()+".html";

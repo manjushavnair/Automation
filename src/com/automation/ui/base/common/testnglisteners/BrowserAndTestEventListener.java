@@ -26,7 +26,7 @@ import org.joda.time.DateTime;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 import org.testng.ITestContext;
-import org.testng.ITestListener;
+import org.testng.*;
 import org.testng.ITestResult;
 import org.testng.SkipException;
 
@@ -215,6 +215,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
     public void onTestStart(ITestResult result) {
         //  logger.info("onTestStart");
 
+
         Log.clearLogStack();
         String testName = result.getName();
         String className = result.getTestClass().getName();
@@ -293,11 +294,17 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+
+
         Log.ok("Percentage ", " Success");
     }
 
     @Override
     public void onStart(ITestContext context) {
+        //NEED TO CHECK THE REPORT
+
+
+
         Log.startReport();
     }
 

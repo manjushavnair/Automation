@@ -5,7 +5,7 @@ import java.util.List;
 import org.testng.IReporter;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
-import org.testng.ITestResult;
+import org.testng.*;
 import org.testng.TestListenerAdapter;
 import org.testng.xml.XmlSuite;
 
@@ -43,6 +43,7 @@ public class RealTimeTestResultListener extends TestListenerAdapter implements I
 			CreateFiles.createRequiredFolders(suite);
 			XMLGenerator.generateResultXML(suite, consolidatedResult);
 			CreateXML.writeXML(suite, consolidatedResult);
+
 		}
 	}
 

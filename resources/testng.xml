@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Automation" verbose="2">
+<suite name="Automation" verbose="2" >
     <!-- change the below two vvlaues -->
     <!--
     How to run
-    java -cp "C:\Software\selenium\selenium-java-2.53.1.jar;C:\Software\selenium\realReport_1.0.jar;C:\Projects\Automation\Automation\target\Automation-0.0.1-SNAPSHOT-jar-with-dependencies.jar;C:\Software\selenium\testng-6.9.10.jar;C:\Software\selenium\selenium-server-standalone-2.53.1.jar" org.testng.TestNG testng.xml
+    java -cp "C:\Software\selenium\selenium-java-2.53.1.jar;C:\Software\selenium\realReport_1.0.jar;C:\Projects\Automation\Automation\target\Automation-0.0.1-SNAPSHOT-jar-with-dependencies.jar;C:\Software\selenium\testng-6.9.10.jar;C:\Software\selenium\selenium-server-standalone-2.53.1.jar" org.testng.TestNG testng.xml -d test-output\
+
 
     -->
+
+
     <parameter name="appURL" value="https://localhost:9000/"/>
     <parameter name="browserType" value="chrome"/>
 
-    <listeners>
+
+    <listeners >
+
         <listener class-name="org.testng.reporters.EmailableReporter2"/>
         <listener class-name="org.testng.reporters.SuiteHTMLReporter"/>
         <listener class-name="org.testng.reporters.TestHTMLReporter"/>
@@ -18,7 +23,9 @@
         <listener class-name="com.automation.ui.base.common.report.listener.RealTimeTestResultListener"/>
     </listeners>
 
-    <test name="Automation" preserve-order="true">
+    <test name="Automation" preserve-order="true" >
+
+
 
         <groups>
 
@@ -38,7 +45,9 @@
             </run>
         </groups>
 
-        <!-- FOR GITHUB LOGIN TEST
+        <!-- FOR GITHUB LOGIN TEST -->
+
+
 
         <packages>
 
@@ -56,7 +65,7 @@
 
         </classes>
 
-        -->
+        <!--
 
         <packages>
 
@@ -99,6 +108,7 @@
 
 
         </classes>
+        -->
 
     </test>
 

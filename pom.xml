@@ -22,6 +22,8 @@
         <keywords.class>Selenium2Library</keywords.class>
         <skipTests>false</skipTests>
         <mailpass>manjupass</mailpass>
+        <timestamp>${maven.build.timestamp}</timestamp>
+        <maven.build.timestamp.format>yyyy-MM-dd-HH-mm</maven.build.timestamp.format>
 
     </properties>
 
@@ -95,6 +97,7 @@
                     =true' to bypass test execution @ build time Default: false -->
                     <skipTests>${skipTests}</skipTests>
                     <testFailureIgnore>true</testFailureIgnore>
+                    <reportsDirectory>./logs/test-output/${timestamp}</reportsDirectory>
 
                 </configuration>
             </plugin>
