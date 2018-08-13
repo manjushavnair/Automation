@@ -1,4 +1,4 @@
-package com.automation.ui.connected.testcases.api.spotify;
+package com.automation.ui.githubtesting.testcases.api.spotify;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;

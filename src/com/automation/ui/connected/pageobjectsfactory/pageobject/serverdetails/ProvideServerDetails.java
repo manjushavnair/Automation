@@ -14,7 +14,6 @@ public class ProvideServerDetails extends SiteBasePageObject {
     @FindBy(xpath = ProvideServerDetailsCONSTANTS.ADDCONNECTIONSCANELBUTTON)
     private WebElement cancelButton;
 
-
     @FindBy(xpath = ProvideServerDetailsCONSTANTS.ADDCONNECTIONSNEXTBUTTON)
     private WebElement nextButton;
 

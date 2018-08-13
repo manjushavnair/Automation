@@ -1,4 +1,4 @@
-package com.automation.ui.connected.testcases.api.json.placeholder;
+package com.automation.ui.githubtesting.testcases.api.json.placeholder;
 
 import com.automation.ui.base.common.core.api.apicore.ContentType;
 import com.automation.ui.base.common.rest.restclient.PostAdapter;

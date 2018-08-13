@@ -1,4 +1,4 @@
-package com.automation.ui.connected.testcases.api.weather;
+package com.automation.ui.githubtesting.testcases.api.weather;
 
 import io.restassured.RestAssured;
 import org.testng.annotations.Test;

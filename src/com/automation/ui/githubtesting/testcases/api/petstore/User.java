@@ -1,4 +1,4 @@
-package com.automation.ui.connected.testcases.api.petstore;
+package com.automation.ui.githubtesting.testcases.api.petstore;
 
 import io.restassured.RestAssured;
 import org.testng.annotations.Test;

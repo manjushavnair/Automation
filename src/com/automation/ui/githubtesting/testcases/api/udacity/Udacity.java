@@ -1,4 +1,4 @@
-package com.automation.ui.connected.testcases.api.udacity;
+package com.automation.ui.githubtesting.testcases.api.udacity;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
