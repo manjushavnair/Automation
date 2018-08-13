@@ -71,6 +71,9 @@
         </resources>
 
         <pluginManagement>
+
+
+
         <plugins>
 
             <plugin>
@@ -80,7 +83,22 @@
             </plugin>
 
 
- 			 
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-sources</id>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <tasks>
+                                <mkdir dir="logs/chromelogs"/>
+
+                            </tasks>
+                        </configuration>
+
+                    </execution>
+                </executions>
+            </plugin>
             
             
             <plugin>
