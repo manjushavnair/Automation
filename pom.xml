@@ -95,6 +95,9 @@
 
                             </tasks>
                         </configuration>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
 
                     </execution>
                 </executions>
