@@ -91,9 +91,8 @@
                         <phase>compile</phase>
                         <configuration>
                             <tasks>
-                                <echo>testmkdir</echo>
-                                <mkdir dir="logs/chromelogs"/>
 
+                                <mkdir dir="logs/chromelogs"/>
                             </tasks>
                         </configuration>
                         <goals>
