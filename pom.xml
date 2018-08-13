@@ -119,8 +119,7 @@
                     =true' to bypass test execution @ build time Default: false -->
                     <skipTests>${skipTests}</skipTests>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <reportsDirectory>./logs/chromelog</reportsDirectory>
-                    <reportsDirectory>./logs/test-output/${timestamp}</reportsDirectory>
+                     <reportsDirectory>./logs/test-output/${timestamp}</reportsDirectory>
 
                 </configuration>
             </plugin>
