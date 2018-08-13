@@ -87,8 +87,8 @@
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>generate-sources</id>
-                        <phase>generate-sources</phase>
+                        <id>compile</id>
+                        <phase>compile</phase>
                         <configuration>
                             <tasks>
 
