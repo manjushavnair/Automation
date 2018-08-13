@@ -38,6 +38,25 @@
             </run>
         </groups>
 
+        <!-- FOR GITHUB LOGIN TEST
+
+        <packages>
+
+            <package name="com.automation.ui.githubtesting.testcases.home"/>
+        </packages>
+
+        <classes>
+        <class name="com.automation.ui.githubtesting.testcases.home.HomePageTest">
+        <methods>
+            <include name="launchLogin"/>
+            <include name="launchHomePage"/>
+            <include name="addRepo"/>
+        </methods>
+            </class>
+
+        </classes>
+
+        -->
 
         <packages>
 
@@ -55,7 +74,7 @@
                 </methods>
             </class>
 
-            <!--
+
             <class name="com.automation.ui.connected.testcases.home.HomePageTest"  >
 
             <methods>
@@ -76,10 +95,11 @@
 
                 </methods>
             </class>
-            -->
+
 
 
         </classes>
+
     </test>
 
 </suite>
