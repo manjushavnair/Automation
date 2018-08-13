@@ -1,6 +1,6 @@
 package com.automation.ui.base.common.report.filehandler;
 
-import java.io.File;
+import java.io.*;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
@@ -52,30 +52,50 @@ public class CreateHTML extends CreateFiles {
 		TransformerFactory tFactory = TransformerFactory.newInstance();
 		Source xslDoc = new StreamSource(DASHBOARD_XSL_PATH);
 		Source xmlDoc = new StreamSource(XML_PATH);
+		StringWriter writer = new StringWriter();
 
 		Transformer transformer = null;
+
+
+		StreamResult wr=new StreamResult(writer);
+	/*
 		OutputStream htmlFile = null;
-		ByteArrayOutputStream outputXmlResult = null;
 		try {
 			htmlFile = new FileOutputStream(htmlPath);
-
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		 StreamResult sr=new StreamResult(htmlFile);
+		*/
 		try {
 			transformer = tFactory.newTransformer(xslDoc);
-
-			//outputXmlResult = new ByteArrayOutputStream();
-			//sr.setOutputStream(outputXmlResult);
-			transformer.transform(xmlDoc, new StreamResult(htmlFile));
-
-
-
+			//transformer.transform(xmlDoc, sr);
+			transformer.transform(xmlDoc, wr);
 		} catch (TransformerException te) {
 			te.printStackTrace();
 		}
 
- 		return xmlDoc.toString();
+		String result = writer.toString();
+
+	//	logger.info( result);
+
+	/*	try {
+			FileWriter newFile = new FileWriter(htmlPath, true);
+			BufferedWriter out = new BufferedWriter(newFile);
+
+
+			out.write(result);
+			out.newLine();
+			out.flush();
+			out.close();
+
+		} catch ( Exception e) {
+			e.printStackTrace();
+		}
+
+		logger.info("result"+result);
+		*/
+ 		return result;
 	}
 
 

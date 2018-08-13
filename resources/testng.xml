@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Automation" verbose="2"  >
+<suite name="Automation" verbose="2">
     <!-- change the below two vvlaues -->
     <!--
     How to run
@@ -11,14 +11,14 @@
     <parameter name="browserType" value="chrome"/>
 
     <listeners>
-        <listener class-name="org.testng.reporters.EmailableReporter2" />
-        <listener class-name="org.testng.reporters.SuiteHTMLReporter" />
-        <listener class-name="org.testng.reporters.TestHTMLReporter" />
+        <listener class-name="org.testng.reporters.EmailableReporter2"/>
+        <listener class-name="org.testng.reporters.SuiteHTMLReporter"/>
+        <listener class-name="org.testng.reporters.TestHTMLReporter"/>
         <listener class-name="com.automation.ui.base.common.testnglisteners.InvokeMethodAdapter"/>
-       <listener class-name="com.automation.ui.base.common.report.listener.RealTimeTestResultListener" />
+        <listener class-name="com.automation.ui.base.common.report.listener.RealTimeTestResultListener"/>
     </listeners>
 
-    <test name="Automation"  preserve-order="true">
+    <test name="Automation" preserve-order="true">
 
         <groups>
 
@@ -33,39 +33,36 @@
             </define>
 
             <run>
-                <include name="running" />
-                <exclude name="other" />
+                <include name="running"/>
+                <exclude name="other"/>
             </run>
         </groups>
 
 
         <packages>
 
-            <package name="com.automation.ui.connected.testcases.login" />
-            <package name="com.automation.ui.connected.testcases.home" />
-            <package name="com.automation.ui.connected.testcases.serverdetails" />
+            <package name="com.automation.ui.connected.testcases.login"/>
+            <package name="com.automation.ui.connected.testcases.home"/>
+            <package name="com.automation.ui.connected.testcases.serverdetails"/>
 
 
         </packages>
 
         <classes>
-          <class name="com.automation.ui.connected.testcases.login.LoginTest"  >
+            <class name="com.automation.ui.connected.testcases.login.LoginTest">
                 <methods>
                     <include name="verifyValidLogin"/>
                 </methods>
             </class>
+
+            <!--
             <class name="com.automation.ui.connected.testcases.home.HomePageTest"  >
 
             <methods>
                 <include name="launchHomePage"/>
                 <include name="addConnection"/>
-
-
-
-
             </methods>
-        </class>
-
+             </class>
             <class name="com.automation.ui.connected.testcases.serverdetails.ProvideServerDetailsTest"  >
 
                 <methods>
@@ -79,8 +76,7 @@
 
                 </methods>
             </class>
-
-
+            -->
 
 
         </classes>

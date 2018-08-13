@@ -1,6 +1,11 @@
-<table><h3>Class: <em>$className.$testName</em></h3>
-    <tr class="step">
+<table class=".bootstrap-table"> 
+     <tr class="step">
+         <td colspan="3"><em>$className.$testName</td>
+         
+     </tr>
+
+ <tr class="step">
         <td>$command</td>
-        <td><h3><em>$description</em></h3></td>
+        <td><em>$description</em></td>
         <td> <br/> &nbsp;</td>
     </tr>

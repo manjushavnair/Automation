@@ -1,1 +1,6 @@
-<button id="$id">$label</button>
+<table class=".bootstrap-table"> 
+<tr class="step">
+<td><button id="$id">$label</button></td>
+</tr>
+</table>
+

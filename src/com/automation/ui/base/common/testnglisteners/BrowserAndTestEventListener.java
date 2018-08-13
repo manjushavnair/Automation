@@ -18,6 +18,8 @@ import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.common.logging.VelocityWrapper;
 import com.automation.ui.base.common.utils.CommonUtils;
 import com.automation.ui.base.common.utils.CookieUtils;
+import com.automation.ui.base.common.utils.*;
+import com.automation.ui.base.common.report.filehandler.*;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
@@ -30,6 +32,7 @@ import org.testng.SkipException;
 
 import java.lang.reflect.Method;
 import java.util.Date;
+import java.io.*;
 
 public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
         implements ITestListener {
@@ -320,7 +323,12 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
     @Override
     public void onFinish(ITestContext context) {
-        CommonUtils.appendTextToFile(Log.LOG_PATH, "</body></html>");
-        //  CommonUtils.appendTextToFile("", "</body></html>");
+          int suiteIndex=1;
+		  CommonUtils.appendTextToFile(Log.LOG_PATH, CreateHTML.createHTML(FileNameConstants.ROOT_FOLDER + File.separator+ FileNameConstants.DASHBOARD_HTML + "-"
+		                + suiteIndex + ".html"));
+		                    CommonUtils.appendTextToFile(Log.LOG_PATH, "</body></html>");
+
+
+
     }
 }

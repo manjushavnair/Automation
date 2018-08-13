@@ -271,6 +271,7 @@ public class Log {
             classList.add(LogLevel.ERROR);
             classList.add(LogType.STACKTRACE);
             String html = VelocityWrapper.fillErrorLogRow(classList, exceptionMessage, Log.imageCounter);
+           // logger.info("htmlsource"+html);
             try {
                 new Shooter().savePageScreenshot(Log.SCREEN_PATH + Log.imageCounter, driver);
                 CommonUtils.appendTextToFile(Log.LOG_PATH, html);
@@ -334,17 +335,8 @@ public class Log {
 
         String html = VelocityWrapper.fillLastLogRow();
 
-        CommonUtils.appendTextToFile(Log.LOG_PATH, html);
-        int suiteIndex = 1;
-
-      //  logger.info("html"+ CreateHTML.createHTML(FileNameConstants.ROOT_FOLDER + File.separator+ FileNameConstants.DASHBOARD_HTML + "-"
-        //        + suiteIndex + ".html"));
-
-
-       // logger.info("Log.LOG_PATH " + Log.LOG_PATH +" Log.testStarted "+ Log.testStarted);
-
-
-        Log.testStarted = false;
+         CommonUtils.appendTextToFile(Log.LOG_PATH, html);
+         Log.testStarted = false;
     }
 
     public static void startReport() {
@@ -368,6 +360,9 @@ public class Log {
                         testingEnvironment, testedVersion, mobileSiteVersion
                 );
         CommonUtils.appendTextToFile(Log.LOG_PATH, headerHtml);
+
+
+
         appendShowHideButtons();
         try {
             FileInputStream input = new FileInputStream("resources/script.txt");

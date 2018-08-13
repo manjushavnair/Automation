@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import com.automation.ui.connected.testcases.home.HomePageTest;
+import org.apache.log4j.Logger;
 import org.testng.ISuite;
 
 import com.google.common.io.Files;
@@ -15,6 +17,9 @@ import com.automation.ui.base.common.report.datahandler.DataPreparator;
 import com.automation.ui.base.common.report.datahandler.DataSuite;
 
 public class CreateFiles {
+
+	private static Logger logger = Logger
+			.getLogger(CreateFiles.class);
 
 	synchronized public static void createRequiredFolders(ISuite iSuite) {
 		/*
@@ -28,6 +33,9 @@ public class CreateFiles {
 		 * STEP 2: create css, fonts, image, js folders under RootResult folder,
 		 * i.e - 'RealtimeReport'
 		 */
+		//logger.info("FileNameConstants.ROOT_FOLDER"+FileNameConstants.ROOT_FOLDER);
+		//logger.info("FileNameConstants.CSS_FOLDER"+FileNameConstants.CSS_FOLDER );
+
 		createFolderUnder(FileNameConstants.CSS_FOLDER, FileNameConstants.ROOT_FOLDER);
 		createFolderUnder(FileNameConstants.FONT_FOLDER, FileNameConstants.ROOT_FOLDER);
 		createFolderUnder(FileNameConstants.IMAGE_FOLDER, FileNameConstants.ROOT_FOLDER);

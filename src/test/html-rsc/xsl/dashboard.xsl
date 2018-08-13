@@ -15,19 +15,21 @@
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 			<!--<meta http-equiv="refresh" content="3">-->
 				<!-- Bootstrap Core CSS -->
-			<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+			<link href="realreport/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 				<!-- Custom CSS -->
-			<link href="css/new-style.css" rel='stylesheet' type='text/css' />
+			<link href="realreport/css/new-style.css" rel='stylesheet' type='text/css' />
 				<!-- Font CSS -->
-			<link href="css/font-awesome.min.css" rel="stylesheet" type='text/css' />
+			<link href="realreport/css/font-awesome.min.css" rel="stylesheet" type='text/css' />
+			<link href="realreport/css/bootstrap-table.min.css" rel="stylesheet" type='text/css' />
 				<!-- chart -->
-			<script src="js/Chart2.0.js"></script>
+			<script src="realreport/js/Chart2.0.js"></script>
+			<script src="realreport/js/bootstrap-table.min.js"></script>
 				<!-- jQuery JS-->
-			<script src="js/jquery-1.10.2.min.js"></script>
+			<script src="realreport/js/jquery-1.10.2.min.js"></script>
 				<!-- Bootstrap JS -->
-			<script src="js/bootstrap.min.js"></script>
+			<script src="realreport/js/bootstrap.min.js"></script>
 				<!-- Moment Js -->
-			<script src="js/moment.js"></script>
+			<script src="realreport/js/moment.js"></script>
 		</head>
 		<body class="bdy-clr">
 			<xsl:call-template name="header" />

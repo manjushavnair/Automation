@@ -1,6 +1,7 @@
 package com.automation.ui.base.common.logging;
 
 import com.automation.ui.base.common.utils.CommonUtils;
+import org.apache.log4j.Logger;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
@@ -16,6 +17,9 @@ import com.automation.ui.base.common.report.filehandler.*;
 
 
 public class VelocityWrapper {
+
+    private static Logger logger = Logger.getLogger(VelocityWrapper.class);
+
 
     private static final String LAST_LOG_ROW_TEMPLATE_PATH = "lastLogRow.vm";
     private static final String LOG_ROW_TEMPLATE_PATH = "logRow.vm";
@@ -64,7 +68,6 @@ public class VelocityWrapper {
 
         t.merge(context, writer);
         builder.append(writer.toString());
-
 
         return builder.toString();
     }
