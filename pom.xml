@@ -91,12 +91,13 @@
                         <phase>generate-sources</phase>
                         <configuration>
                             <tasks>
+
                                 <mkdir dir="logs/chromelogs"/>
 
                             </tasks>
                         </configuration>
                         <goals>
-                            <goal>compile</goal>
+                            <goal>run</goal>
                         </goals>
 
                     </execution>
