@@ -303,6 +303,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
     public void onStart(ITestContext context) {
         //NEED TO CHECK THE REPORT
 
+        CommonUtils.createDirectory( "."+ File.separator + "logs"+ File.separator + "chromelogs");
 
 
         Log.startReport();
