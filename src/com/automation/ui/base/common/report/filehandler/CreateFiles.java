@@ -26,8 +26,9 @@ public class CreateFiles {
 		 * STEP 1: If RootResult folder, i.e - 'RealtimeReport', does not exist,
 		 * create it
 		 */
-		if (!new File( File.separator + FileNameConstants.ROOT_FOLDER).exists()) {
-			new File( File.separator +  FileNameConstants.ROOT_FOLDER).mkdir();
+
+		if (!new File(  FileNameConstants.ROOT_FOLDER).exists()) {
+			new File(  FileNameConstants.ROOT_FOLDER).mkdir();
 		}
 		/*
 		 * STEP 2: create css, fonts, image, js folders under RootResult folder,
