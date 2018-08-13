@@ -2,11 +2,10 @@
 # To localy override values, create config.yml file next to this one.
 # You can also override these values by specyfing a system property
 
-
 browser: CHROME # acceptable values: FF, CHROME, GHOST, ANDROID, CHROMEMOBILEMERCURY, HTMLUNIT ,IE
 dpr: 1 # Your device's pixel ratio, do not commit your changes
-siteName: github   # default testing site
-env: prod # acceptable values: test, prod, preview, sandbox-number dev-name, adeng (for connected.com)
+siteName: localhost   # default testing site
+env: test # acceptable values: test, prod, preview, sandbox-number dev-name, adeng (for connected.com)
 seleniumConfigPath: resources/selenium-config
 qs: null
 disableFlash: true
