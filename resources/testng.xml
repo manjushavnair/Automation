@@ -46,7 +46,7 @@
         </groups>
 
         <!-- FOR GITHUB LOGIN TEST -->
-
+        <!--
 
 
         <packages>
@@ -64,8 +64,8 @@
             </class>
 
         </classes>
+        -->
 
-        <!--
 
         <packages>
 
@@ -108,7 +108,6 @@
 
 
         </classes>
-        -->
 
     </test>
 
