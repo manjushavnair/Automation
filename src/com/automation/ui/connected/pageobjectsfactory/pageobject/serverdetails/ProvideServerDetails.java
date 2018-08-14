@@ -32,6 +32,45 @@ public class ProvideServerDetails extends SiteBasePageObject {
     @FindBy(xpath = ProvideServerDetailsCONSTANTS.SITENAME_ERMSG)
     private WebElement siteNameErMsg;
 
+
+
+
+    @FindBy(xpath = ProvideServerDetailsCONSTANTS.CONNECTION_SERVERTYPE)
+    private WebElement connServerType;
+
+
+    @FindBy(xpath = ProvideServerDetailsCONSTANTS.CONNECTION_SERVERNAME)
+    private WebElement connServerName;
+
+    @FindBy(xpath = ProvideServerDetailsCONSTANTS.CONNECTION_PORT)
+    private WebElement connServerPort;
+
+    @FindBy(xpath = ProvideServerDetailsCONSTANTS.CONNECTION_SERVER_AUTHUSERNAME)
+    private WebElement connServerAuthUserNAme;
+
+    @FindBy(xpath = ProvideServerDetailsCONSTANTS.CONNECTION_SERVER_AUTHPASSWORD)
+    private WebElement connServerAuthPassword;
+
+    @FindBy(xpath = ProvideServerDetailsCONSTANTS.CONNECTION_TO_SERVER)
+    private WebElement connToServerLink;
+
+    @FindBy(xpath = ProvideServerDetailsCONSTANTS.OPCUA_SERVER_URL)
+    private WebElement opcuaServerURL;
+
+    @FindBy(xpath = ProvideServerDetailsCONSTANTS.MIN_KEY_SIZE)
+    private WebElement minKeySize;
+
+    @FindBy(xpath = ProvideServerDetailsCONSTANTS.SECURITY_ENABLE_FLAG)
+    private WebElement securityKeyFlag;
+
+    @FindBy(xpath = ProvideServerDetailsCONSTANTS.SECURITY_CERT_ACCEPT)
+    private WebElement securityKeyAccept;
+
+    @FindBy(xpath = ProvideServerDetailsCONSTANTS.SECURITY_DOMAIN_CHECK)
+    private WebElement securityDomainCheck;
+
+
+
     public ProvideServerDetails open() {
         // getUrl(  );
         //  waitForPageLoad();
