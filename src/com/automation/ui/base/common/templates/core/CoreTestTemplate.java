@@ -196,6 +196,8 @@ public abstract class CoreTestTemplate {
        CommonUtils.createDirectory( "." + File.separator + "logs"+ File.separator + "ielog");
        CommonUtils.createDirectory(  "." +File.separator + "logs"+ File.separator + "chromeprofile");
        CommonUtils.createDirectory(  "." +File.separator + "logs"+ File.separator + "realreport");
+       CommonUtils.createDirectory( "."+ File.separator + "logs"+ File.separator + "chromelogs");
+       CommonUtils.createDirectory( "."+ File.separator + "logs"+ File.separator + "phantomjslogs");
 
 
 

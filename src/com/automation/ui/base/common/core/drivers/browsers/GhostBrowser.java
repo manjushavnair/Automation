@@ -2,12 +2,14 @@ package com.automation.ui.base.common.core.drivers.browsers;
 
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.drivers.BrowserAbstract;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 
 import java.io.File;
 
 public class GhostBrowser extends BrowserAbstract {
+
 
     @Override
     public void setOptions() {
@@ -28,6 +30,10 @@ public class GhostBrowser extends BrowserAbstract {
 
     @Override
     public UIWebDriver create() {
+
+
+        caps.setJavascriptEnabled(true);
+
         return new UIWebDriver(new PhantomJSDriver(caps), false);
     }
 

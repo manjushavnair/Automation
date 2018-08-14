@@ -83,7 +83,7 @@
             </plugin>
 
             <!-- How to execute -->
-            <!-- mvn  clean antrun:run@ant-execute test -->
+            <!-- mvn  clean antrun:run@ant-execute compile -->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
