@@ -11,8 +11,8 @@ import java.util.Scanner;
 
 public class ContentLoader {
 
-    private static final String TEXT_FILES_PATH_FORMAT = "TextFiles/%s";
-    private static final String IMG_FILES_PATH_FORMAT = "ImagesForUploadTests/%s";
+    private static final String TEXT_FILES_PATH_FORMAT = "/resources/TextFiles/%s";
+    private static final String IMG_FILES_PATH_FORMAT = "/resources/ImagesForUploadTests/%s";
 
     private ContentLoader() {
     }

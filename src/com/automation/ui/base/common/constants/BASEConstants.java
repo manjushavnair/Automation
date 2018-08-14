@@ -19,7 +19,7 @@ public interface BASEConstants {
     public static String X_Site_AccessToken = "X-Site-AccessToken";
 
     public static final String IMAGE_UPLOAD_RESOURCES_PATH =
-            "." + File.separator + "src" + File.separator + "test" + File.separator + "resources"
+              File.separator  + "resources"
                     + File.separator + "ImagesForUploadTests" + File.separator;
 
 
@@ -57,7 +57,7 @@ public interface BASEConstants {
     public static int WAITTIME50000MILLISEC = 50000;//50 sec
     public static int WAITTIME60000MILLISEC = 60000;//60 sec
     public static int WAITTIME80000MILLISEC = 80000;//80 sec
-    public static int WAITTIME100000MILLISEC = 100000;//100 sec 
+    public static int WAITTIME100000MILLISEC = 100000;//100 sec
 
 
 }
