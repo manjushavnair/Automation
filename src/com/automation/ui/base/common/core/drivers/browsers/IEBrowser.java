@@ -32,7 +32,7 @@ public class IEBrowser extends BrowserAbstract {
 
 
      */
-    private static final String IEDRIVER_PATH_WINDOWS = "test/IEDriver/IEDriverServer.exe";
+    private static final String IEDRIVER_PATH_WINDOWS = "IEDriver/IEDriverServer.exe";
 
 
 
@@ -51,7 +51,7 @@ public class IEBrowser extends BrowserAbstract {
            // set application user permissions to 455
         // iedriver.setExecutable(true);
 
-      //  System.setProperty("webdriver.ie.driver","D:\\Project\\Automation\\target\\classes\\test\\IEDriver\\IEDriverServer.exe");
+      //  System.setProperty("webdriver.ie.driver","D:\\Project\\Automation\\target\\classes\\IEDriver\\IEDriverServer.exe");
 
 
 

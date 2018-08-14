@@ -1,5 +1,6 @@
 package com.automation.ui.base.common.logging;
 
+import com.automation.ui.base.common.core.exceptions.TestEnvInitFailedException;
 import com.automation.ui.base.common.utils.CommonUtils;
 import org.apache.log4j.Logger;
 import org.apache.velocity.Template;
@@ -233,8 +234,16 @@ public class VelocityWrapper {
 
         ve.setProperty("runtime.log", "logs/velocity.log");
 
+        String path =null;
+        try {
+            path = ClassLoader.getSystemResource("velocitytemplates").getPath();
+        }
+        catch (Throwable e)
+        {
+            logger.info(e.getMessage());
+            throw new TestEnvInitFailedException("Velocity template path is not configured correctly");
+        }
 
-        String path = ClassLoader.getSystemResource("test/velocitytemplates").getPath();
 
         props.put("file.resource.loader.path", path);
 

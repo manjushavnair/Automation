@@ -21,7 +21,7 @@ import java.io.IOException;
 public class FirefoxBrowser extends BrowserAbstract {
 
 
-    private static final String FIREFOXDRIVER_PATH_FORMAT = "test/FireFoxDriver/firefoxdriver_%s";
+    private static final String FIREFOXDRIVER_PATH_FORMAT = "FireFoxDriver/firefoxdriver_%s";
 
     private static final String FIREFOXDRIVER_PATH_MAC =
             String.format(FIREFOXDRIVER_PATH_FORMAT, "mac64/geckodriver");
@@ -169,7 +169,7 @@ public class FirefoxBrowser extends BrowserAbstract {
         // }
 
         firefoxProfile.setPreference("http.response.timeout", 15);
-        firefoxProfile.setPreference("dom.max_script_run_time", 15);
+        firefoxProfile.setPreference("dom.max_script_run_time", 35);
 
 
         firefoxProfile.setPreference("browser.download.folderList", 2);

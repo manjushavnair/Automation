@@ -10,8 +10,8 @@ public class Test {
 
     public static void main(String[] args) throws InterruptedException {
 //webdriver.firefox.marionette
-        //  System.setProperty("webdriver.gecko.driver","D:\\Project\\Automation\\target\\classes\\test\\FireFoxDriver\\firefoxdriver_win32\\geckodriver.exe");
-        System.setProperty("webdriver.ie.driver","D:\\Project\\Automation\\target\\classes\\test\\IEDriver\\IEDriverServer.exe");
+        //  System.setProperty("webdriver.gecko.driver","D:\\Project\\Automation\\target\\classes\\FireFoxDriver\\firefoxdriver_win32\\geckodriver.exe");
+        System.setProperty("webdriver.ie.driver","D:\\Project\\Automation\\target\\classes\\IEDriver\\IEDriverServer.exe");
 
 
         WebDriver driver = new InternetExplorerDriver();

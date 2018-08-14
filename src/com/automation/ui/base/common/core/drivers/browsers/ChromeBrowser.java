@@ -4,6 +4,7 @@ import com.automation.ui.base.common.core.ExtHelper;
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.drivers.BrowserAbstract;
+import com.automation.ui.base.common.core.exceptions.TestEnvInitFailedException;
 import com.automation.ui.base.common.core.helpers.Emulator;
 import com.automation.ui.base.common.utils.DateUtil;
 import org.apache.log4j.Logger;
@@ -20,7 +21,7 @@ import java.util.Map;
 import org.openqa.selenium.PageLoadStrategy;
 public class ChromeBrowser extends BrowserAbstract {
 
-    private static final String CHROMEDRIVER_PATH_FORMAT = "test/ChromeDriver/chromedriver_%s";
+    private static final String CHROMEDRIVER_PATH_FORMAT = "ChromeDriver/chromedriver_%s";
     private static final String CHROMEDRIVER_PATH_MAC =
             String.format(CHROMEDRIVER_PATH_FORMAT, "mac64/chromedriver");
     private static final String CHROMEDRIVER_PATH_LINUX =
@@ -48,7 +49,15 @@ public class ChromeBrowser extends BrowserAbstract {
 
 
       //  Log.info("Using chromedriver: ", chromeBinaryPath);
-        File chromedriver = new File(ClassLoader.getSystemResource(chromeBinaryPath).getPath());
+        File chromedriver =null;
+        try {
+            chromedriver = new File(ClassLoader.getSystemResource(chromeBinaryPath).getPath());
+        }catch(Exception e)
+        {
+            logger.info(e.getMessage());
+            throw new TestEnvInitFailedException("Browser binary path "+chromeBinaryPath+" not available");
+
+        }
 
         // set application user permissions to 455
         chromedriver.setExecutable(true);
