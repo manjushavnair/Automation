@@ -82,22 +82,29 @@
                 <version>2.3.2</version>
             </plugin>
 
+            <!-- How to execute -->
+            <!-- mvn  clean antrun:run@ant-execute test -->
 
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+
                 <executions>
                     <execution>
-                        <id>compile</id>
-                        <phase>compile</phase>
-                        <configuration>
-                            <tasks>
 
+                        <phase>compile</phase>
+                        <id>ant-execute</id>
+                        <configuration>
+                            <target >
+                                <echo message="Creating log directory"/>
                                 <mkdir dir="logs/chromelogs"/>
-                            </tasks>
+                            </target>
                         </configuration>
                         <goals>
                             <goal>run</goal>
                         </goals>
+
 
                     </execution>
                 </executions>
