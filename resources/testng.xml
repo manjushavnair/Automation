@@ -83,7 +83,7 @@
                 </methods>
             </class>
 
-
+<!--
             <class name="com.automation.ui.connected.testcases.home.HomePageTest"  >
 
             <methods>
@@ -104,7 +104,7 @@
 
                 </methods>
             </class>
-
+-->
 
 
         </classes>

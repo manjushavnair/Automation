@@ -1,6 +1,7 @@
 package com.automation.ui.base.common.core.drivers.browsers;
 
-import com.automation.ui.base.common.core.ExtHelper;
+
+import com.automation.ui.base.common.utils.*;
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.drivers.BrowserAbstract;
@@ -207,6 +208,6 @@ public class FirefoxBrowser extends BrowserAbstract {
 
     @Override
     public void addExtension(String extensionName) {
-        firefoxProfile.addExtension(ExtHelper.findExtension(extensionName, "xpi"));
+        firefoxProfile.addExtension(BrowserExtentionHelper.findExtension(extensionName, "xpi"));
     }
 }

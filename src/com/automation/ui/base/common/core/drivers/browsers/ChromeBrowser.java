@@ -1,6 +1,7 @@
 package com.automation.ui.base.common.core.drivers.browsers;
 
-import com.automation.ui.base.common.core.ExtHelper;
+import com.automation.ui.base.common.utils.*;
+
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.drivers.BrowserAbstract;
@@ -126,6 +127,6 @@ public class ChromeBrowser extends BrowserAbstract {
 
     @Override
     public void addExtension(String extensionName) {
-        chromeOptions.addExtensions(ExtHelper.findExtension(extensionName, "crx"));
+        chromeOptions.addExtensions(BrowserExtentionHelper.findExtension(extensionName, "crx"));
     }
 }

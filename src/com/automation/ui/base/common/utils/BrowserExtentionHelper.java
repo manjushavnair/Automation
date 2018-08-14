@@ -16,8 +16,8 @@ public class BrowserExtentionHelper {
     }
 
     public static File findExtension(String name, String suffix) {
-        File extensions = new File("." + File.separator + "src" + File.separator + "test"
-                + File.separator + "resources" + File.separator + "extensions");
+        File extensions = new File(File.separator + "resources"
+                + File.separator + "extensions");
         String fullName = name + "." + suffix;
         Collection<File> extFiles = FileUtils.listFiles(extensions, new String[]{suffix}, true);
 

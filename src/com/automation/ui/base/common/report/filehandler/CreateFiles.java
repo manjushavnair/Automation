@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import com.automation.ui.base.common.core.exceptions.TestEnvInitFailedException;
 import com.automation.ui.connected.testcases.home.HomePageTest;
 import org.apache.log4j.Logger;
 import org.testng.ISuite;
@@ -26,9 +27,14 @@ public class CreateFiles {
 		 * STEP 1: If RootResult folder, i.e - 'RealtimeReport', does not exist,
 		 * create it
 		 */
-
-		if (!new File(  FileNameConstants.ROOT_FOLDER).exists()) {
-			new File(  FileNameConstants.ROOT_FOLDER).mkdir();
+		try {
+			if (!new File(FileNameConstants.ROOT_FOLDER).exists()) {
+				new File(FileNameConstants.ROOT_FOLDER).mkdir();
+			}
+		}catch(Throwable e)
+		{
+			logger.info(e.getMessage());
+			throw new TestEnvInitFailedException("Report specifc root folder is missing");
 		}
 		/*
 		 * STEP 2: create css, fonts, image, js folders under RootResult folder,
@@ -98,8 +104,14 @@ public class CreateFiles {
 
 	synchronized private static File[] getFilesUnder(String parentDirectoryPath) {
 		File[] files = null;
-		if (new File("./" + parentDirectoryPath).exists()) {
-			files = new File("./" + parentDirectoryPath).listFiles();
+		try {
+			if (new File("./" + parentDirectoryPath).exists()) {
+				files = new File("./" + parentDirectoryPath).listFiles();
+			}
+		}catch(Throwable e){
+			logger.info(e.getMessage());
+			throw new TestEnvInitFailedException("Report specifc resources directory are missing");
+
 		}
 		return files;
 	}
