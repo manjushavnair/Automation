@@ -25,7 +25,7 @@ public class JSONHelper {
     private static Logger logger = Logger.getLogger(JSONHelper.class);
 
     JSONHelper() {
-        // PropertyConfigurator.configure("log4j.properties");
+        // PropertyConfigurator.configure("resources/log4j.properties");
     }
 
     /**
