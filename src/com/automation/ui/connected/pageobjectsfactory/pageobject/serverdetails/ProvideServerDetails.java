@@ -175,7 +175,7 @@ public class ProvideServerDetails extends SiteBasePageObject {
         try {
 
             customerNameField.click();
-            fillInputAfterClear(customerNameField, "Sivaprasad Inc");
+            fillInputAfterClear(customerNameField, "Connected Assets Demo");
             Reporter.log("Exiting provideServerDetailsAddCustName");
 
         } catch (Exception e) {
@@ -185,5 +185,44 @@ public class ProvideServerDetails extends SiteBasePageObject {
 
     }
 
+    /* Method to enter site  Name under Collector Details*/
 
+    public void provideServerDetailsAddSiteName() {
+
+
+        Reporter.log("Entering  provideServerDetailsAddSiteName:");
+
+        try {
+
+            siteNameField.click();
+            fillInputAfterClear(siteNameField, "Bracknell");
+            Reporter.log("Exiting provideServerDetailsAddSiteName");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+     /* Method to enter site  Name under Collector Details*/
+
+    public void provideServerDetailsConnDetails() {
+
+
+        Reporter.log("Entering  provideServerDetailsConnDetails:");
+
+        try {
+
+            connServerName.click();
+            fillInputAfterClear(connServerName, "Bracknell");
+            Reporter.log("Exiting provideServerDetailsConnDetails");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
 }
