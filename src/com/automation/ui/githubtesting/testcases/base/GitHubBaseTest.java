@@ -33,7 +33,7 @@ public class GitHubBaseTest extends NewTestTemplate  {
         try {
             eu = new ExcelUtil();
 
-            eu.setExcelFile(ExcelCONSTANTS.LOGINXLSDATAPATH,
+            eu.setExcelFile("C:\\Software\\selenium\\githubdataselenium.xls",
                     ExcelCONSTANTS.LOGINGITHUB);
         } catch (Exception e) {
             e.printStackTrace();
