@@ -1,13 +1,24 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails;
 
 import com.automation.ui.base.common.logging.Log;
+import com.automation.ui.base.common.utils.*;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.*;
 import org.testng.Reporter;
-
+import java.util.*;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.*;
+import org.openqa.selenium.support.*;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 public class ProvideServerDetails extends SiteBasePageObject {
 
 
@@ -37,9 +48,9 @@ public class ProvideServerDetails extends SiteBasePageObject {
 
 
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.CONNECTION_SERVERTYPE)
-    private WebElement connServerType;
 
+    @FindBy(xpath = ProvideServerDetailsCONSTANTS.CONNECTION_SERVERTYPE)
+    private  WebElement connServerType;
 
     @FindBy(xpath = ProvideServerDetailsCONSTANTS.CONNECTION_SERVERNAME)
     private WebElement connServerName;
@@ -236,13 +247,69 @@ public class ProvideServerDetails extends SiteBasePageObject {
         Reporter.log("Entering  provideServerConnectionType:");
 
         try {
+
+          //  WebElement selectedMedia = connServerType.get(2);
+
             wait.forElementClickable(connServerType);
+
             connServerType.click();
+
+            Select select = new Select(connServerType);
+            select.selectByVisibleText("PHD Server");
+
+
+
+            builder.moveToElement(connServerType).click(connServerType);
+            builder.perform();
+
+
+
+         //  scrollAndClick(connServerType,3);
+
+            Thread.sleep(10000);
+
+
         } catch (NoSuchElementException e) {
+            logger.info("provideServerConnectionType");
+        }
+        catch ( Exception e) {
             logger.info("provideServerConnectionType");
         }
 
 
 
     }
+
+    public void selectAlignment(ServerType position) {
+        wait.forElementVisible(connServerType);//.get(1));
+        Select positionDropdown = new Select(connServerType);//.get(1));
+        switch (position) {
+            case OPCUA:
+                positionDropdown.selectByVisibleText(position.getServerType());
+                break;
+            case PHD:
+                positionDropdown.selectByVisibleText(position.getServerType());
+                break;
+            case UASERVER:
+                positionDropdown.selectByVisibleText(position.getServerType());
+                break;
+            default:
+                throw new NoSuchElementException("Non-existing alignment selected");
+        }
+     }
+
+    public enum ServerType {
+        OPCUA, PHD, UASERVER;
+
+        private final String serverType;
+
+        ServerType() {
+            this.serverType =  this.toString().toLowerCase();
+        }
+
+        public String getServerType() {
+            return this.serverType;
+        }
+    }
+
 }

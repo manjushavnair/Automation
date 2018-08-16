@@ -9,8 +9,8 @@ import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
 import com.automation.ui.base.common.core.element.*;
 
 public class DropDownHelper implements IHTMLComponent {
@@ -34,7 +34,25 @@ public class DropDownHelper implements IHTMLComponent {
         Select select = new Select(element);
         select.selectByVisibleText(visibleValue);
      }
-
+    public enum sortOptions {
+        RELEVANCY, PUBLISH_DATE, DURATION;
+    }
+   /* public void sortBy(sortOptions option) {
+        Select dropDown = new Select(basePageObject.getElement());
+        switch (option) {
+            case RELEVANCY:
+                dropDown.selectByIndex(0);
+                break;
+            case PUBLISH_DATE:
+                dropDown.selectByIndex(1);
+                break;
+            case DURATION:
+                dropDown.selectByIndex(2);
+                break;
+            default:
+                throw new NoSuchElementException("Non-existing sort option selected");
+        }
+    }*/
     public void SelectUsingValue(By locator,String value) {
         Select select = new Select(basePageObject.getElement(locator));
         select.selectByValue(value);
@@ -46,7 +64,8 @@ public class DropDownHelper implements IHTMLComponent {
      }
 
     public String getSelectedValue(By locator) {
-         return getSelectedValue(basePageObject.getElement(locator));
+
+        return getSelectedValue(basePageObject.getElement(locator));
     }
 
     public String getSelectedValue(WebElement element) {
