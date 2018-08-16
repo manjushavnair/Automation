@@ -119,4 +119,15 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
     }
 
 
+    /* Test : Add Connection-> locate customername field-> clear the field-> Add right name->Click next*/
+    @Test(enabled = true, priority = 7, groups = {"validcase"}, description = "ProvideServerDetails")
+    public void provideConnectionType() throws Throwable {
+
+        home_page.addConnection();
+
+        serverdetail_page.provideServerConnectionType();
+
+   Thread.sleep(5000);
+
+    }
 }

@@ -83,7 +83,7 @@
                 </methods>
             </class>
 
-<!--
+
             <class name="com.automation.ui.connected.testcases.home.HomePageTest"  >
 
             <methods>
@@ -100,11 +100,12 @@
                     <include name="clearSiteNameTest"/>
                     <include name="provideServerDetailsCancelTest"/>
                     <include name="clearSiteNameTest"/>
+                    <include name="provideConnectionType"/>
 
 
                 </methods>
             </class>
--->
+
 
 
         </classes>

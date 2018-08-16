@@ -1,7 +1,9 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails;
 
+import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Reporter;
@@ -222,6 +224,24 @@ public class ProvideServerDetails extends SiteBasePageObject {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+    }
+
+      /* Method to enter site  Name under Collector Details*/
+
+    public void provideServerConnectionType() {
+
+
+        Reporter.log("Entering  provideServerConnectionType:");
+
+        try {
+            wait.forElementClickable(connServerType);
+            connServerType.click();
+        } catch (NoSuchElementException e) {
+            logger.info("provideServerConnectionType");
+        }
+
 
 
     }
