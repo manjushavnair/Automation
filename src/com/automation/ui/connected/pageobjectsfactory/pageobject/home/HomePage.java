@@ -151,7 +151,7 @@ public class HomePage extends SiteBasePageObject {
 
                    jsActions.click(addButtonTop);
 
-                   // waitAndClick(addButtonTop);
+                    waitAndClick(addButtonTop);
 
 
                }
