@@ -87,7 +87,7 @@
 
                 <methods>
                     <include name="launchHomePage"/>
-                    <exclude name="addConnection"/>
+                    <include name="addConnection"/>
                 </methods>
             </class>
 
@@ -95,13 +95,13 @@
             <class name="com.automation.ui.connected.testcases.serverdetails.ProvideServerDetailsTest">
 
                 <methods>
-                    <exclude name="clearCustomerNameTest"/>
-                    <exclude name="addCustomerNameTest"/>
-                    <exclude name="provideServerDetailsNextTest"/>
-                    <exclude name="clearSiteNameTest"/>
-                    <exclude name="provideServerDetailsCancelTest"/>
-                    <exclude name="clearSiteNameTest"/>
-                    <exclude name="provideConnectionType"/>
+                    <include name="clearCustomerNameTest"/>
+                    <include name="addCustomerNameTest"/>
+                    <include name="provideServerDetailsNextTest"/>
+                    <include name="clearSiteNameTest"/>
+                    <include name="provideServerDetailsCancelTest"/>
+                    <include name="clearSiteNameTest"/>
+                    <include name="provideConnectionType"/>
                 </methods>
             </class>
 
