@@ -82,7 +82,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
 
         logger.info("Entering dcConnectionDetailsTest");
         connectiondetail_page.dcDetails();
-        Thread.sleep(5000);
+        Thread.sleep(10000);
         logger.info("Exiting dcConnectionDetailsTest");
 
     }
