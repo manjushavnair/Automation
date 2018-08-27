@@ -25,10 +25,20 @@ public class ElementStateHelper {
 
 
 
+
+
+
     public static boolean isElementVisible(WebElement element) {
     try {
+
       return element.isDisplayed();
-    } catch (NoSuchElementException e) {
+    }
+    catch (TimeoutException e) {
+	      logger.info(e.getMessage());
+	      return false;
+    }
+
+    catch (NoSuchElementException e) {
       logger.info(e.getMessage());
       return false;
     }

@@ -90,15 +90,7 @@ public class HomePageTest extends ConnectedBaseTest {
     }
 
 
-    private void verifyElementsVisible(List<String> elementsList) {
-        elementsList.forEach(element -> Assertion.assertTrue(home_page.isElementVisible(
-                element), element + " is not visible"));
-    }
 
-    private void verifyElementsNotVisible(List<String> elementsList) {
-        elementsList.forEach(element -> Assertion.assertFalse(home_page.isElementVisible(
-                element), element + " is visible"));
-    }
 
 
 }

@@ -2,13 +2,11 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.home;
 
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
+import com.automation.ui.base.common.core.element.ElementStateHelper;
 import com.automation.ui.base.common.prpreaders.AssertDataReader;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.ProvideServerDetails;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetails;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -19,8 +17,13 @@ public class HomePage extends SiteBasePageObject {
 
 
     private static Logger logger = Logger.getLogger(HomePage.class);
+
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON)
     private WebElement addButton;
+
+    @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_TOP)
+    private WebElement addButtonTop;
+
 
     @FindBy(css = "primary")
     private WebElement primarysButton;
@@ -113,7 +116,7 @@ public class HomePage extends SiteBasePageObject {
     }
 
 
-    public ProvideServerDetails addConnection() {
+    public AddServerDetails addConnection() {
 
 
         try {
@@ -121,11 +124,15 @@ public class HomePage extends SiteBasePageObject {
             Reporter.log("Entering  addConnection:" + addButton.getTagName() + " " + addButton.getText() + " " + addButton.getLocation());
 
             // wait.forElementVisible(addButton, 30);
+           if( ElementStateHelper.isElementVisible(addButton)) {
 
-            jsActions.click(addButton);
 
-            waitAndClick(addButton);
-            Thread.sleep(5000);
+               jsActions.click(addButton);
+
+               waitAndClick(addButton);
+
+               Thread.sleep(5000);
+           }
 
 
             logger.info("Exiting  addConnection");
@@ -136,7 +143,7 @@ public class HomePage extends SiteBasePageObject {
 
 
         }
-        return new ProvideServerDetails();
+        return new AddServerDetails();
 
     }
 
@@ -161,14 +168,6 @@ public class HomePage extends SiteBasePageObject {
 
     }
 
-    public boolean isElementVisible(String element) {
-        try {
-            wait.forElementVisible(By.cssSelector(element));
-        } catch (TimeoutException | ElementNotVisibleException ex) {
-            logger.info("Web element " + element + " not visible");
-            return false;
-        }
-        return true;
-    }
+
 
 }

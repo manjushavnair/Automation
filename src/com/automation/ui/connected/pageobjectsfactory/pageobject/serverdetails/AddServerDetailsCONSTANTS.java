@@ -1,6 +1,6 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails;
 
-public interface ProvideServerDetailsCONSTANTS {
+public interface AddServerDetailsCONSTANTS {
 
     //button[@class='primary next ng-binding']
 

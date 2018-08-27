@@ -8,13 +8,16 @@ package com.automation.ui.connected.testcases.base;
  */
 
 import com.automation.ui.base.common.contentpatterns.URLsContent;
+import com.automation.ui.base.common.core.Assertion;
 import com.automation.ui.base.common.utils.ExcelUtil;
 import com.automation.ui.connected.common.constants.ExcelCONSTANTS;
 import com.automation.ui.connected.common.templates.NewTestTemplate;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginPage;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.ProvideServerDetails;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetails;
 import org.apache.log4j.Logger;
+
+import java.util.List;
 
 public class ConnectedBaseTest extends NewTestTemplate {
 
@@ -22,7 +25,7 @@ public class ConnectedBaseTest extends NewTestTemplate {
     protected ExcelUtil eu = null;
     protected LoginPage login_page = null;
     protected HomePage home_page = null;
-    protected ProvideServerDetails serverdetail_page = null;
+    protected AddServerDetails serverdetail_page = null;
 
 
     public ConnectedBaseTest() {
@@ -51,6 +54,16 @@ public class ConnectedBaseTest extends NewTestTemplate {
     protected void loadFirstPage() {
         driver.get(urlBuilder.getUrlForPage(URLsContent.SITE_DIR));
 
+    }
+
+    protected void verifyElementsVisible(List<String> elementsList) {
+        elementsList.forEach(element -> Assertion.assertTrue(home_page.isElementVisible(
+                element), element + " is not visible"));
+    }
+
+    protected void verifyElementsNotVisible(List<String> elementsList) {
+        elementsList.forEach(element -> Assertion.assertFalse(home_page.isElementVisible(
+                element), element + " is visible"));
     }
 
 

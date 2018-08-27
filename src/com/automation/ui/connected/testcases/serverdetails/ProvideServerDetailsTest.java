@@ -7,16 +7,13 @@ package com.automation.ui.connected.testcases.serverdetails;
 import com.automation.ui.base.common.core.Assertion;
 import com.automation.ui.base.common.prpreaders.AssertDataReader;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.ProvideServerDetails;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetails;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
 import com.automation.ui.connected.testcases.base.ServerType;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import java.util.List;
-
 
 
 public class ProvideServerDetailsTest extends ConnectedBaseTest {
@@ -28,13 +25,13 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
 
         super();
         logger.info(" ProvideServerDetailsTest");
-        serverdetail_page = new ProvideServerDetails();
+        serverdetail_page = new AddServerDetails();
         home_page = new HomePage();
 
     }
 
 
-    @Test(enabled = true, priority = 4, groups = {"validcase"}, description = "ProvideServerDetails")
+    @Test(enabled = true, priority = 4, groups = {"validcase"}, description = "AddServerDetails")
     public void provideServerDetailsCancelTest() throws Throwable {
 
 
@@ -66,17 +63,7 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
         logger.info("Exiting provideServerDetailsNext  ");
     }
 
-    private void verifyElementsVisible(List<String> elementsList) {
-        elementsList.forEach(element -> Assertion.assertTrue(home_page.isElementVisible(
-                element), element + " is not visible"));
-    }
-
-    private void verifyElementsNotVisible(List<String> elementsList) {
-        elementsList.forEach(element -> Assertion.assertFalse(home_page.isElementVisible(
-                element), element + " is visible"));
-    }
-
-    @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "ProvideServerDetails ")
+    @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "AddServerDetails ")
     public void clearCustomerNameTest() throws Throwable {
 
         home_page.addConnection();
@@ -89,7 +76,7 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
     }
 
     /* Test : Add Connection-> locate customername field-> clear the field-> Add right name->Click next*/
-    @Test(enabled = true, priority = 2, groups = {"validcase"}, description = "ProvideServerDetails")
+    @Test(enabled = true, priority = 2, groups = {"validcase"}, description = "AddServerDetails")
     public void addCustomerNameTest() throws Throwable {
 
         home_page.addConnection();
@@ -103,7 +90,7 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
 
 
     /* Test : Add Connection-> locate customername field-> clear the field-> Add right name->Click next*/
-    @Test(enabled = true, priority = 6, groups = {"validcase"}, description = "ProvideServerDetails")
+    @Test(enabled = true, priority = 6, groups = {"validcase"}, description = "AddServerDetails")
     public void clearSiteNameTest() throws Throwable {
 
         home_page.addConnection();
@@ -121,7 +108,7 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
 
 
     /* Test : Add Connection-> locate customername field-> clear the field-> Add right name->Click next*/
-    @Test(enabled = true, priority = 7, groups = {"validcase"}, description = "ProvideServerDetails")
+    @Test(enabled = true, priority = 7, groups = {"validcase"}, description = "AddServerDetails")
     public void provideConnectionType() throws Throwable {
         home_page.addConnection();
         serverdetail_page.provideServerConnectionType(ServerType.SDX_COLLECTOR);

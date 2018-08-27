@@ -6,10 +6,7 @@ import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.concurrent.TimeUnit;
@@ -144,13 +141,13 @@ public class SiteBasePageObject extends BasePageObject {
 
 
     public void verifyGlobalNavigation() {
-        //NEEDTOCHECK
+
         wait.forElementVisible(globalNavigationBar);
         Log.log("verifyGlobalNavigation", "Verified global navigation", true);
     }
 
     public void verifyAvatarVisible() {
-        //NEEDTOCHECK
+
 
         wait.forElementVisible(globalNavigationAvatar);
         Log.log("verifyAvatarVisible", "desired logo is visible on navbar", true);
@@ -158,6 +155,7 @@ public class SiteBasePageObject extends BasePageObject {
 
 
     protected Boolean isNewGlobalNavPresent() {
+
         return isElementOnPage(newGlobalNavigation);
     }
 
@@ -170,6 +168,18 @@ public class SiteBasePageObject extends BasePageObject {
         private AssertionMessages() {
             throw new IllegalAccessError("Utility class");
         }
+    }
+
+
+    public boolean isElementVisible(String element) {
+        try {
+            wait.forElementVisible(By.cssSelector(element));
+
+        } catch (TimeoutException | ElementNotVisibleException ex) {
+            logger.info("Web element " + element + " not visible");
+            return false;
+        }
+        return true;
     }
 
 

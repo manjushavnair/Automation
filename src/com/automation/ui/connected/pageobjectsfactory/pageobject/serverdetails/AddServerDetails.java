@@ -1,97 +1,82 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails;
 
-import com.automation.ui.base.common.logging.Log;
-import com.automation.ui.base.common.utils.*;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import com.automation.ui.connected.testcases.base.*;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 import org.testng.Reporter;
-import java.util.*;
-import org.apache.log4j.Logger;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.*;
-import org.openqa.selenium.support.*;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.*;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-public class ProvideServerDetails extends SiteBasePageObject {
+
+public class AddServerDetails extends SiteBasePageObject {
 
 
-    private static Logger logger = Logger.getLogger(ProvideServerDetails.class);
+    private static Logger logger = Logger.getLogger(AddServerDetails.class);
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.ADDCONNECTIONSCANELBUTTON)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.ADDCONNECTIONSCANELBUTTON)
     private WebElement cancelButton;
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.ADDCONNECTIONSNEXTBUTTON)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.ADDCONNECTIONSNEXTBUTTON)
     private WebElement nextButton;
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.ADDCONNECTIONNAMEERROR)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.ADDCONNECTIONNAMEERROR)
     private WebElement nextButtonErrorMSG;
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.CUSOTMERNAME)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.CUSOTMERNAME)
     private WebElement customerNameField;
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.CUSTOMERNAME_ERMSG)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.CUSTOMERNAME_ERMSG)
     private WebElement customerNameErMsg;
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.SITENAME)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.SITENAME)
     private WebElement siteNameField;
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.SITENAME_ERMSG)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.SITENAME_ERMSG)
     private WebElement siteNameErMsg;
 
-
-
-
-
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.CONNECTION_SERVERTYPE)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_SERVERTYPE)
     private  WebElement connServerType;
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.CONNECTION_SERVERNAME)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_SERVERNAME)
     private WebElement connServerName;
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.CONNECTION_PORT)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_PORT)
     private WebElement connServerPort;
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.CONNECTION_SERVER_AUTHUSERNAME)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_SERVER_AUTHUSERNAME)
     private WebElement connServerAuthUserNAme;
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.CONNECTION_SERVER_AUTHPASSWORD)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_SERVER_AUTHPASSWORD)
     private WebElement connServerAuthPassword;
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.CONNECTION_TO_SERVER)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_TO_SERVER)
     private WebElement connToServerLink;
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.OPCUA_SERVER_URL)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.OPCUA_SERVER_URL)
     private WebElement opcuaServerURL;
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.MIN_KEY_SIZE)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.MIN_KEY_SIZE)
     private WebElement minKeySize;
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.SECURITY_ENABLE_FLAG)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.SECURITY_ENABLE_FLAG)
     private WebElement securityKeyFlag;
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.SECURITY_CERT_ACCEPT)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.SECURITY_CERT_ACCEPT)
     private WebElement securityKeyAccept;
 
-    @FindBy(xpath = ProvideServerDetailsCONSTANTS.SECURITY_DOMAIN_CHECK)
+    @FindBy(xpath = AddServerDetailsCONSTANTS.SECURITY_DOMAIN_CHECK)
     private WebElement securityDomainCheck;
 
 
 
-    public ProvideServerDetails open() {
+    public AddServerDetails open() {
         // getUrl(  );
         //  waitForPageLoad();
         //driver.navigate().refresh();
 
 
-        return new ProvideServerDetails();
+        return new AddServerDetails();
     }
 
     /*Method to validate Connection cancel in Provide Server Details page*/
@@ -287,7 +272,7 @@ public class ProvideServerDetails extends SiteBasePageObject {
                 positionDropdown.selectByVisibleText(position.getServerType());
                 break;
             default:
-                throw new NoSuchElementException("Non-existing alignment selected");
+                throw new NoSuchElementException("Non-existing ServerType selected");
         }
      }
 
