@@ -33,8 +33,22 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         Thread.sleep(10000);
     }
 
-
     @Test(enabled = true, priority = 5, groups = {"validcase"}, description = "UAConnectionDetails")
+    public void dcConnectionPauseTest() throws Throwable {
+
+
+        logger.info("Entering dcConnectionPauseTest");
+        connectiondetail_page.dcDropdown();
+        Thread.sleep(5000);
+        logger.info("Exiting dcConnectionDropdownTest");
+        logger.info("Entering dcConnectionPauseTest");
+        connectiondetail_page.dcPause();
+        Thread.sleep(5000);
+        logger.info("Exiting dcConnectionPauseTest");
+    }
+
+
+    @Test(enabled = true, priority = 6, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionEditTest() throws Throwable {
 
 
@@ -42,6 +56,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         connectiondetail_page.dcDropdown();
         Thread.sleep(5000);
         logger.info("Exiting dcConnectionDropdownTest");
+        logger.info("Entering dcConnectionEditTest");
         connectiondetail_page.dcEdit();
         Thread.sleep(5000);
         logger.info("Exiting dcConnectionEditTest");
