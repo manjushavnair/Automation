@@ -153,7 +153,7 @@ public class HomePage extends SiteBasePageObject {
 
                    logger.info("Entering  addConnection: 5");
 
-                    waitAndClick(addButtonTop);
+                  //  waitAndClick(addButtonTop);
 
                    logger.info("Entering  addConnection: 6");
 
