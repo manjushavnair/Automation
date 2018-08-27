@@ -61,4 +61,29 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         Thread.sleep(5000);
         logger.info("Exiting dcConnectionEditTest");
     }
+
+    @Test(enabled = true, priority = 7, groups = {"validcase"}, description = "UAConnectionDetails")
+    public void dcConnectionRemoveTest() throws Throwable {
+
+
+        logger.info("Entering dcConnectionDropdownTest");
+        connectiondetail_page.dcDropdown();
+        Thread.sleep(5000);
+        logger.info("Exiting dcConnectionDropdownTest");
+        logger.info("Entering dcConnectionRemoveTest");
+        connectiondetail_page.dcRemove();
+        Thread.sleep(5000);
+        logger.info("Exiting dcConnectionRemoveTest");
+    }
+
+    @Test(enabled = true, priority = 8, groups = {"validcase"}, description = "UAConnectionDetails")
+    public void dcConnectionDetailsTest() throws Throwable {
+
+
+        logger.info("Entering dcConnectionDetailsTest");
+        connectiondetail_page.dcDetails();
+        Thread.sleep(5000);
+        logger.info("Exiting dcConnectionDetailsTest");
+
+    }
 }

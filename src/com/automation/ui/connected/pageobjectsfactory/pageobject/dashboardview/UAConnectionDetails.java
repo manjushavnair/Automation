@@ -68,5 +68,31 @@ public class UAConnectionDetails extends SiteBasePageObject {
         }
     }
 
+    public void dcRemove() {
+        try {
+            logger.info("Click on DataConnection Remove");
+            wait.forElementVisible(dcRemove, BASEConstants.WAITTIME10000MILLISEC);
+            scrollAndClick(dcRemove, 2);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            ;
+        }
+    }
+
+    public void dcDetails() {
+        try {
+            logger.info("Click on DataConnection Details");
+            wait.forElementVisible(dcDetails, BASEConstants.WAITTIME10000MILLISEC);
+            waitAndClick(dcDetails);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            ;
+        }
+    }
+
+
 
 }
