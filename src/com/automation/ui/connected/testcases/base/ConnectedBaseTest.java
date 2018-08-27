@@ -12,6 +12,7 @@ import com.automation.ui.base.common.core.Assertion;
 import com.automation.ui.base.common.utils.ExcelUtil;
 import com.automation.ui.connected.common.constants.ExcelCONSTANTS;
 import com.automation.ui.connected.common.templates.NewTestTemplate;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.dashboardview.UAConnectionDetails;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginPage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetails;
@@ -26,7 +27,7 @@ public class ConnectedBaseTest extends NewTestTemplate {
     protected LoginPage login_page = null;
     protected HomePage home_page = null;
     protected AddServerDetails serverdetail_page = null;
-
+    protected UAConnectionDetails connectiondetail_page = null;
 
     public ConnectedBaseTest() {
         super();

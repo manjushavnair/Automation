@@ -91,6 +91,8 @@
                 <include name="addConnection"/>
             </methods>
              </class>
+
+
             <class name="com.automation.ui.connected.testcases.serverdetails.ProvideServerDetailsTest"  >
 
                 <methods>
@@ -101,11 +103,14 @@
                     <exclude name="provideServerDetailsCancelTest"/>
                     <exclude name="clearSiteNameTest"/>
                     <exclude name="provideConnectionType"/>
-
-
                 </methods>
             </class>
 
+            <class name="com.automation.ui.connected.testcases.dashboardviewTest.UAConnectionDetailsTest">
+                <methods>
+                    <include name="UAConnectionDetailsTest"/>
+                </methods>
+            </class>
 
 
         </classes>
