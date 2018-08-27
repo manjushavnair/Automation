@@ -72,7 +72,7 @@
             <package name="com.automation.ui.connected.testcases.login"/>
             <package name="com.automation.ui.connected.testcases.home"/>
             <package name="com.automation.ui.connected.testcases.serverdetails"/>
-
+            <package name="com.automation.ui.connected.testcases.dashboardviewTest"/>
 
         </packages>
 
@@ -108,7 +108,7 @@
 
             <class name="com.automation.ui.connected.testcases.dashboardviewTest.UAConnectionDetailsTest">
                 <methods>
-                    <include name="UAConnectionDetailsTest"/>
+                    <include name="dcConnectionDropdownTest"/>
                 </methods>
             </class>
 
