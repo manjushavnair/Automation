@@ -121,11 +121,15 @@ public class HomePage extends SiteBasePageObject {
 
         try {
             logger.info("Entering  addConnection:");
-            Reporter.log("Entering  addConnection:" + addButton.getTagName() + " " + addButton.getText() + " " + addButton.getLocation());
 
 
             wait.forElementVisible(addButton);
+            logger.info("Entering  addConnection: 1");
            if( ElementStateHelper.isElementVisible(addButton)) {
+               logger.info("Entering  addConnection: 2");
+
+               Reporter.log("Entering  addConnection:" + addButton.getTagName() + " " + addButton.getText() + " " + addButton.getLocation());
+
 
 
                jsActions.click(addButton);
@@ -135,13 +139,19 @@ public class HomePage extends SiteBasePageObject {
                Thread.sleep(5000);
            }
 
+            logger.info("Entering  addConnection: 3");
             wait.forElementVisible(addButtonTop);
+            logger.info("Entering  addConnection: 4");
             if( ElementStateHelper.isElementVisible(addButtonTop)) {
+                logger.info("Entering  addConnection: 5");
+
+                Reporter.log("Entering  addConnection:" + addButtonTop.getTagName() + " " + addButtonTop.getText() + " " + addButtonTop.getLocation());
 
 
-                jsActions.click(addButton);
 
-                waitAndClick(addButton);
+                jsActions.click(addButtonTop);
+
+                waitAndClick(addButtonTop);
 
                 Thread.sleep(5000);
             }
