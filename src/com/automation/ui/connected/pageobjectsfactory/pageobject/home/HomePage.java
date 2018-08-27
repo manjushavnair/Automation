@@ -134,7 +134,11 @@ public class HomePage extends SiteBasePageObject {
 
              //  jsActions.click(addButton);
 
+               logger.info("Entering  addConnection: 3");
+
                waitAndClick(addButton);
+
+               logger.info("Entering  addConnection: 4");
 
 
            }
