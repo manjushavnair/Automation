@@ -94,13 +94,13 @@
             <class name="com.automation.ui.connected.testcases.serverdetails.ProvideServerDetailsTest"  >
 
                 <methods>
-                    <include name="clearCustomerNameTest"/>
+                    <exclude name="clearCustomerNameTest"/>
                     <exclude name="addCustomerNameTest"/>
                     <exclude name="provideServerDetailsNextTest"/>
                     <exclude name="clearSiteNameTest"/>
                     <exclude name="provideServerDetailsCancelTest"/>
                     <exclude name="clearSiteNameTest"/>
-                    <include name="provideConnectionType"/>
+                    <exclude name="provideConnectionType"/>
 
 
                 </methods>
