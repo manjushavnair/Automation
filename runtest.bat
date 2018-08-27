@@ -1,3 +1,5 @@
+cls
+
 echo "Run Test"
 
 cd c:\projects\automation
