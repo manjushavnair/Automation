@@ -25,7 +25,7 @@ public class HomePageTest extends ConnectedBaseTest {
     }
 
 
-    @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "home page ")
+    @Test(enabled = true, priority = 6, groups = {"validcase"}, description = "home page ")
 
     public void launchLogin() throws Throwable {
 
@@ -57,7 +57,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
     }
 
-    @Test(enabled = true, priority = 2, groups = {"validcase"}, description = "launchHomePage ")
+    @Test(enabled = true, priority = 7, groups = {"validcase"}, description = "launchHomePage ")
     public void launchHomePage() throws Throwable {
         home_page = new HomePage();
         // Thread.sleep(20000);
@@ -65,7 +65,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
     }
 
-    @Test(enabled = true, priority = 3, groups = {"validcase"}, description = "home page ")
+    @Test(enabled = true, priority = 8, groups = {"validcase"}, description = "home page ")
 
     public void addConnection() throws Throwable {
         logger.info("Entering addConnection");
@@ -76,7 +76,7 @@ public class HomePageTest extends ConnectedBaseTest {
     }
 
 
-    @Test(enabled = false, priority = 4, groups = {"validcase"}, description = "home page ")
+    @Test(enabled = false, priority = 9, groups = {"validcase"}, description = "home page ")
 
     public void launch_logout() throws Throwable {
 

@@ -31,7 +31,7 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
     }
 
 
-    @Test(enabled = true, priority = 4, groups = {"validcase"}, description = "AddServerDetails")
+    @Test(enabled = true, priority = 10, groups = {"validcase"}, description = "AddServerDetails")
     public void provideServerDetailsCancelTest() throws Throwable {
 
 
@@ -46,7 +46,7 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
         logger.info("Exiting provideServerDetailsCancel  ");
     }
 
-    @Test(enabled = true, priority = 3, groups = {"validcase"}, description = "home page ")
+    @Test(enabled = true, priority = 11, groups = {"validcase"}, description = "home page ")
     public void provideServerDetailsNextTest() throws Throwable {
 
         logger.info("Entering provideServerDetailsNext  ");
@@ -63,7 +63,7 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
         logger.info("Exiting provideServerDetailsNext  ");
     }
 
-    @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "AddServerDetails ")
+    @Test(enabled = true, priority = 12, groups = {"validcase"}, description = "AddServerDetails ")
     public void clearCustomerNameTest() throws Throwable {
 
         home_page.addConnection();
@@ -76,7 +76,7 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
     }
 
     /* Test : Add Connection-> locate customername field-> clear the field-> Add right name->Click next*/
-    @Test(enabled = true, priority = 2, groups = {"validcase"}, description = "AddServerDetails")
+    @Test(enabled = true, priority = 13, groups = {"validcase"}, description = "AddServerDetails")
     public void addCustomerNameTest() throws Throwable {
 
         home_page.addConnection();
@@ -90,7 +90,7 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
 
 
     /* Test : Add Connection-> locate customername field-> clear the field-> Add right name->Click next*/
-    @Test(enabled = true, priority = 6, groups = {"validcase"}, description = "AddServerDetails")
+    @Test(enabled = true, priority = 14, groups = {"validcase"}, description = "AddServerDetails")
     public void clearSiteNameTest() throws Throwable {
 
         home_page.addConnection();
@@ -108,7 +108,7 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
 
 
     /* Test : Add Connection-> locate customername field-> clear the field-> Add right name->Click next*/
-    @Test(enabled = true, priority = 7, groups = {"validcase"}, description = "AddServerDetails")
+    @Test(enabled = true, priority = 15, groups = {"validcase"}, description = "AddServerDetails")
     public void provideConnectionType() throws Throwable {
         home_page.addConnection();
         serverdetail_page.provideServerConnectionType(ServerType.SDX_COLLECTOR);

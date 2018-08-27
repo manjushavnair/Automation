@@ -23,7 +23,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
     }
 
 
-    @Test(enabled = true, priority = 4, groups = {"validcase"}, description = "UAConnectionDetails")
+    @Test(enabled = true, priority = 16, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionDropdownTest() throws Throwable {
 
 
@@ -33,7 +33,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         Thread.sleep(10000);
     }
 
-    @Test(enabled = true, priority = 5, groups = {"validcase"}, description = "UAConnectionDetails")
+    @Test(enabled = true, priority = 17, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionPauseTest() throws Throwable {
 
 
@@ -48,7 +48,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
     }
 
 
-    @Test(enabled = true, priority = 6, groups = {"validcase"}, description = "UAConnectionDetails")
+    @Test(enabled = true, priority = 18, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionEditTest() throws Throwable {
 
 
@@ -62,7 +62,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         logger.info("Exiting dcConnectionEditTest");
     }
 
-    @Test(enabled = true, priority = 7, groups = {"validcase"}, description = "UAConnectionDetails")
+    @Test(enabled = true, priority = 19, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionRemoveTest() throws Throwable {
 
 
@@ -76,7 +76,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         logger.info("Exiting dcConnectionRemoveTest");
     }
 
-    @Test(enabled = true, priority = 8, groups = {"validcase"}, description = "UAConnectionDetails")
+    @Test(enabled = true, priority = 20, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionDetailsTest() throws Throwable {
 
 
@@ -87,7 +87,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
 
     }
 
-    @Test(enabled = true, priority = 9, groups = {"validcase"}, description = "UAConnectionDetails")
+    @Test(enabled = true, priority = 21, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionDetailsEditTest() throws Throwable {
 
 
@@ -100,7 +100,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
 
     }
 
-    @Test(enabled = true, priority = 10, groups = {"validcase"}, description = "UAConnectionDetails")
+    @Test(enabled = true, priority = 22, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionDetailsEdit_Tabs() throws Throwable {
 
 
