@@ -106,6 +106,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
 
         logger.info("Entering dcConnectionDetailsEditTags");
         connectiondetail_page.dcDetails();
+        connectiondetail_page.dcDetails_Edit();
         Thread.sleep(3000);
         connectiondetail_page.dcDetails_Edit_Tag();
         Thread.sleep(3000);
@@ -119,6 +120,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
 
         logger.info("Entering dcConnectionDetailsEditPref");
         connectiondetail_page.dcDetails();
+        connectiondetail_page.dcDetails_Edit();
         Thread.sleep(3000);
         connectiondetail_page.dcDetails_Edit_Preferances();
         Thread.sleep(3000);
@@ -132,6 +134,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
 
         logger.info("Entering dcConnectionDetailsEditServer");
         connectiondetail_page.dcDetails();
+        connectiondetail_page.dcDetails_Edit();
         Thread.sleep(3000);
         connectiondetail_page.dcDetails_Edit_Server();
         Thread.sleep(3000);
