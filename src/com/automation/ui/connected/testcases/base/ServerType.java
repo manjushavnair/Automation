@@ -12,12 +12,15 @@ public enum ServerType {
     private String serverType;
 
     ServerType(String type) {
-        this.serverType =  type;
+        this.serverType = type;
     }
 
-    public String getServerType()
-    {
-        return  this.serverType;
+    public String getServerType() {
+        return this.serverType;
     }
-    @Override public String toString() { return this.serverType; }
+
+    @Override
+    public String toString() {
+        return this.serverType;
+    }
 }

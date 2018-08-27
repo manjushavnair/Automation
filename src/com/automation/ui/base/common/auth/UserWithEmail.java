@@ -1,6 +1,5 @@
 package com.automation.ui.base.common.auth;
 
-import com.automation.ui.base.common.auth.User;
 import lombok.AllArgsConstructor;
 import lombok.Value;
 

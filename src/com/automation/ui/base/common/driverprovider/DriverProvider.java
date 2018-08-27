@@ -4,7 +4,6 @@ import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.drivers.Browser;
 import com.automation.ui.base.common.logging.Log;
-
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
@@ -46,8 +45,8 @@ public class DriverProvider {
             if (webDriver != null) {
                 try {
                     String path = System.getenv("PATH");
-                   // logger.info("path"+path);
-                  //  System.out.println(path);
+                    // logger.info("path"+path);
+                    //  System.out.println(path);
                     webDriver.quit();
                 } catch (UnsatisfiedLinkError | NoClassDefFoundError | NullPointerException e) {
 

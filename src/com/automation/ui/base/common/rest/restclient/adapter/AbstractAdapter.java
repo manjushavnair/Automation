@@ -1,9 +1,9 @@
 package com.automation.ui.base.common.rest.restclient.adapter;
 
+import com.automation.ui.base.common.core.api.apicore.ContentType;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import com.automation.ui.base.common.core.api.apicore.*;
 
 public class AbstractAdapter {
     private Object object;

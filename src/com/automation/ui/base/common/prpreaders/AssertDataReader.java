@@ -1,23 +1,19 @@
 package com.automation.ui.base.common.prpreaders;
 
-import java.util.ResourceBundle;
-
+import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.utils.i18n.LocaleUtil;
 
-import com.automation.ui.base.common.constants.*;
-
-import static java.lang.Integer.parseInt;
+import java.util.ResourceBundle;
 
 public class AssertDataReader {
 
 
     public static AssertDataReader assertreader;
 
-    private ResourceBundle rBundle=null;
+    private ResourceBundle rBundle = null;
 
-    private AssertDataReader(String langauge)
-    {
-        rBundle= ResourceBundle.getBundle(BASEConstants.ASSERTPATH, LocaleUtil.getLocaleFromLanguage(langauge));
+    private AssertDataReader(String langauge) {
+        rBundle = ResourceBundle.getBundle(BASEConstants.ASSERTPATH, LocaleUtil.getLocaleFromLanguage(langauge));
     }
 
     public static AssertDataReader readProperty(String langauge) {

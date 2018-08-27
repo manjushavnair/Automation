@@ -4,11 +4,10 @@ package com.automation.ui.githubtesting.testcases.home;
  * @author Manjusha Saju
  */
 
-import com.automation.ui.githubtesting.pageobjectfactory.pageobject.home.*;
-import com.automation.ui.githubtesting.pageobjectfactory.pageobject.login.*;
+import com.automation.ui.githubtesting.pageobjectfactory.pageobject.home.HomePage;
+import com.automation.ui.githubtesting.pageobjectfactory.pageobject.login.LoginPage;
 import com.automation.ui.githubtesting.testcases.base.GitHubBaseTest;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -63,7 +62,7 @@ public class HomePageTest extends GitHubBaseTest {
     public void launchHomePage() throws Throwable {
 
         logger.info(" home_page.getCurrentUrl() " + home_page.getCurrentUrl());
-      //  home_page.waitForPageLoad();
+        //  home_page.waitForPageLoad();
 
 
         //home_page.
@@ -82,9 +81,7 @@ public class HomePageTest extends GitHubBaseTest {
     */
 
 
-
-
-    @Test(enabled = true,priority = 4,groups = {  "validcase"}, description = "Add Connection ")
+    @Test(enabled = true, priority = 4, groups = {"validcase"}, description = "Add Connection ")
     public void addRepo() throws Throwable {
 
         logger.info("Entering addRepo");
@@ -94,7 +91,7 @@ public class HomePageTest extends GitHubBaseTest {
         home_page.addRepo();
         home_page.waitForPageLoad();
 
-        logger.info("Exiting addRepo and going to  add"+home_page.getUrl());
+        logger.info("Exiting addRepo and going to  add" + home_page.getUrl());
 
     }
 

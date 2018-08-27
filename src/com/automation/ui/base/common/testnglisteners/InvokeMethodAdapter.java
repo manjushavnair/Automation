@@ -18,6 +18,7 @@ import java.util.List;
 public class InvokeMethodAdapter implements IInvokedMethodListener {
 
     private static Logger logger = Logger.getLogger(InvokeMethodAdapter.class);
+
     @Override
     public void afterInvocation(IInvokedMethod method, ITestResult result) {
         if (method.isTestMethod()) {

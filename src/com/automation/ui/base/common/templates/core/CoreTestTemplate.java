@@ -1,8 +1,8 @@
 package com.automation.ui.base.common.templates.core;
 
-import com.automation.ui.base.common.utils.CommonUtils;
-import com.automation.ui.base.common.core.*;
+import com.automation.ui.base.common.core.TestContext;
 import com.automation.ui.base.common.core.UIWebDriver;
+import com.automation.ui.base.common.core.XMLReader;
 import com.automation.ui.base.common.core.annotations.Execute;
 import com.automation.ui.base.common.core.annotations.InBrowser;
 import com.automation.ui.base.common.core.annotations.NetworkTrafficDump;
@@ -13,9 +13,10 @@ import com.automation.ui.base.common.core.url.UrlBuilder;
 import com.automation.ui.base.common.driverprovider.DriverProvider;
 import com.automation.ui.base.common.driverprovider.UseUnstablePageLoadStrategy;
 import com.automation.ui.base.common.logging.Log;
-import com.automation.ui.base.common.testnglisteners.BrowserAndTestEventListener;
 import com.automation.ui.base.common.prpreaders.AssertDataReader;
 import com.automation.ui.base.common.prpreaders.PropertyReader;
+import com.automation.ui.base.common.testnglisteners.BrowserAndTestEventListener;
+import com.automation.ui.base.common.utils.CommonUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.Dimension;
@@ -36,13 +37,12 @@ public abstract class CoreTestTemplate {
     protected AssertDataReader assertData;
 
     protected UrlBuilder urlBuilder;
-     protected String siteURL;
+    protected String siteURL;
     protected String siteCorporateURL;
 //    protected String siteCorpSetupURL;
 
     protected PropertyReader prpr;
     protected XMLReader xmlprpr;
-
 
 
     private void refreshDriver() {
@@ -53,7 +53,7 @@ public abstract class CoreTestTemplate {
     @BeforeSuite(alwaysRun = true, groups = {"base"})
     public void beforeSuite() {
         // initialize a browser driver, connect to servers
-       // logger.info("beforeSuite ::CoreTestTemplate");
+        // logger.info("beforeSuite ::CoreTestTemplate");
         Reporter.log("beforeSuite::CoreTestTemplate");
         initLogs();
         initProperty();
@@ -62,7 +62,7 @@ public abstract class CoreTestTemplate {
         prepareDirectories();
         refreshDriver();
         //DISABLED NOW
-       // Helios.updateTokenCache();
+        // Helios.updateTokenCache();
     }
 
 
@@ -70,12 +70,10 @@ public abstract class CoreTestTemplate {
      * Initialize Property.
      */
     private void initAssertData() {
-        logger.info("Setting the Site Specific Langauge :"+Configuration.getSiteLanguage());
-       //set the langauge specified in he config.yml
+        logger.info("Setting the Site Specific Langauge :" + Configuration.getSiteLanguage());
+        //set the langauge specified in he config.yml
         assertData = AssertDataReader.readProperty(Configuration.getSiteLanguage());
     }
-
-
 
 
     /**
@@ -86,7 +84,7 @@ public abstract class CoreTestTemplate {
             // Initialize Log4j logs
             DOMConfigurator.configure(System.getProperty("user.dir") + File.separator + "resources" + File.separator + "log4j.xml");
             logger = Logger.getLogger(this.getClass());
-           // logger.info("Logger is initialized..");
+            // logger.info("Logger is initialized..");
         }
     }
 
@@ -94,47 +92,47 @@ public abstract class CoreTestTemplate {
      * Initialize Property.
      */
     private void initProperty() {
-       // logger.info("initProperty readProperty ");
+        // logger.info("initProperty readProperty ");
         prpr = PropertyReader.readProperty();
 
     }
 
-   /**
+    /**
      * Initialize Property.
      */
     private void initXMLProperty() {
-       // logger.info("initProperty initXMLProperty ");
+        // logger.info("initProperty initXMLProperty ");
         xmlprpr = XMLReader.readProperty(Configuration.getCredentialsFilePath());
 
     }
 
     @BeforeClass(alwaysRun = true)
     public void initTestClass() {
-       logger.info("beforeClass initTestClass ");
+        logger.info("beforeClass initTestClass ");
     }
 
     @BeforeMethod(alwaysRun = true)
     public void initTestContext(Method method) {
         TestContext.writeMethodName(method);
         Log.startTest(method);
-       // logger.info("beforeMethod initTestContext ");
+        // logger.info("beforeMethod initTestContext ");
         Configuration.clearCustomTestProperties();
         String browser = Configuration.getBrowser();
         setPropertiesFromAnnotationsOnDeclaringClass(method.getDeclaringClass());
         setPropertiesFromAnnotationsOnMethod(method);
         String currentBrowser = Configuration.getBrowser();
-      // logger.info(" beforeMethod initTestContext Browser parameter changed by annotation"
-         //       + ", old value: " + browser + ", new value: " + currentBrowser);
+        // logger.info(" beforeMethod initTestContext Browser parameter changed by annotation"
+        //       + ", old value: " + browser + ", new value: " + currentBrowser);
         if (!browser.equals(currentBrowser)) {
             Log.info("Parameter override", "Browser parameter changed by annotation"
                     + ", old value: " + browser + ", new value: " + currentBrowser);
         }
 
         prepareURLs();
-       driver = DriverProvider.getActiveDriver();
+        driver = DriverProvider.getActiveDriver();
         networkTrafficInterceptor = driver.getProxy();
         setWindowSize();
-       loadFirstPage();
+        loadFirstPage();
     }
 
     private void setTestProperty(String key, String value) {
@@ -148,7 +146,7 @@ public abstract class CoreTestTemplate {
             setTestProperty("siteName", declaringClass.getAnnotation(Execute.class).onSite());
             setTestProperty("language", declaringClass.getAnnotation(Execute.class).language());
             setTestProperty("disableFlash", declaringClass.getAnnotation(Execute.class).disableFlash());
-         }
+        }
 
         if (declaringClass.isAnnotationPresent(InBrowser.class)) {
             setTestProperty("browser", declaringClass.getAnnotation(InBrowser.class).browser().getName());
@@ -161,7 +159,7 @@ public abstract class CoreTestTemplate {
             setTestProperty("siteName", method.getAnnotation(Execute.class).onSite());
             setTestProperty("language", method.getAnnotation(Execute.class).language());
             setTestProperty("disableFlash", method.getAnnotation(Execute.class).disableFlash());
-         }
+        }
 
         if (method.isAnnotationPresent(InBrowser.class)) {
             setTestProperty("browser", method.getAnnotation(InBrowser.class).browser().getName());
@@ -188,17 +186,16 @@ public abstract class CoreTestTemplate {
 
     private void prepareDirectories() {
 
-        CommonUtils.deleteDirectory( File.separator + "logs");
+        CommonUtils.deleteDirectory(File.separator + "logs");
 
-       CommonUtils.createDirectory(  "."+File.separator + "logs");
+        CommonUtils.createDirectory("." + File.separator + "logs");
 
 
-       CommonUtils.createDirectory( "." + File.separator + "logs"+ File.separator + "ielog");
-       CommonUtils.createDirectory(  "." +File.separator + "logs"+ File.separator + "chromeprofile");
-       CommonUtils.createDirectory(  "." +File.separator + "logs"+ File.separator + "realreport");
-       CommonUtils.createDirectory( "."+ File.separator + "logs"+ File.separator + "chromelogs");
-       CommonUtils.createDirectory( "."+ File.separator + "logs"+ File.separator + "phantomjslogs");
-
+        CommonUtils.createDirectory("." + File.separator + "logs" + File.separator + "ielog");
+        CommonUtils.createDirectory("." + File.separator + "logs" + File.separator + "chromeprofile");
+        CommonUtils.createDirectory("." + File.separator + "logs" + File.separator + "realreport");
+        CommonUtils.createDirectory("." + File.separator + "logs" + File.separator + "chromelogs");
+        CommonUtils.createDirectory("." + File.separator + "logs" + File.separator + "phantomjslogs");
 
 
     }
@@ -217,7 +214,7 @@ public abstract class CoreTestTemplate {
 
 
     //  @AfterMethod(alwaysRun = true)
-   // @AfterClass(alwaysRun = true)
+    // @AfterClass(alwaysRun = true)
     @AfterSuite(alwaysRun = true)
     public void stop() {
 
@@ -226,9 +223,6 @@ public abstract class CoreTestTemplate {
 
         DriverProvider.close();
     }
-
-
-
 
 
     @AfterSuite
@@ -251,6 +245,6 @@ public abstract class CoreTestTemplate {
 
     protected abstract void loadFirstPage();
 
-    protected abstract void  getDataReaders();
+    protected abstract void getDataReaders();
 
 }

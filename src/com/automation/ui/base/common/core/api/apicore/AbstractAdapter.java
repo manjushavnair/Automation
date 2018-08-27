@@ -5,25 +5,14 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 
 
 public class AbstractAdapter {
@@ -67,53 +56,53 @@ public class AbstractAdapter {
         return gson.toJson(je);
     }
 
-     public   String getResponseStringFromConn(HttpURLConnection conn, String payLoad) throws IOException {
+    public String getResponseStringFromConn(HttpURLConnection conn, String payLoad) throws IOException {
 
-	        // Send the http message payload to the server.
-	        if (payLoad != null) {
-	            conn.setDoOutput(true);
-	            OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
-	            osw.write(payLoad);
-	            osw.flush();
-	            osw.close();
-	        }
+        // Send the http message payload to the server.
+        if (payLoad != null) {
+            conn.setDoOutput(true);
+            OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
+            osw.write(payLoad);
+            osw.flush();
+            osw.close();
+        }
 
-	        // Get the message response from the server.
-	        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-	        String line = "";
-	        StringBuffer stringBuffer = new StringBuffer();
-	        while ((line = br.readLine()) != null) {
-	            stringBuffer.append(line);
-	        }
+        // Get the message response from the server.
+        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String line = "";
+        StringBuffer stringBuffer = new StringBuffer();
+        while ((line = br.readLine()) != null) {
+            stringBuffer.append(line);
+        }
 
-	        br.close();
+        br.close();
 
-	        return stringBuffer.toString();
+        return stringBuffer.toString();
     }
 
-     public  byte[] getByteaArrayFromConn(HttpURLConnection conn, boolean isSuccess) throws IOException {
+    public byte[] getByteaArrayFromConn(HttpURLConnection conn, boolean isSuccess) throws IOException {
 
-	        InputStream is = conn.getInputStream();
-	        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-	        byte[] buff = new byte[1024];
-	        int bytesRead = 0;
+        InputStream is = conn.getInputStream();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        byte[] buff = new byte[1024];
+        int bytesRead = 0;
 
-	        while ((bytesRead = is.read(buff, 0, buff.length)) != -1) {
-	            baos.write(buff, 0, bytesRead);
-	        }
+        while ((bytesRead = is.read(buff, 0, buff.length)) != -1) {
+            baos.write(buff, 0, bytesRead);
+        }
 
-	        byte[] bytes = baos.toByteArray();
-	        baos.close();
-	        return bytes;
+        byte[] bytes = baos.toByteArray();
+        baos.close();
+        return bytes;
     }
 
     public String makeRawRequest(HttpURLConnection connection, boolean isSuccess) throws IOException {
 
-		BufferedReader in = null;
-		    if (isSuccess) {
-		            in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-		        } else {
-		            in = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
+        BufferedReader in = null;
+        if (isSuccess) {
+            in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        } else {
+            in = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
         }
 
         String inputLine;
@@ -128,69 +117,69 @@ public class AbstractAdapter {
     }
 
     /**
-	     * for bad response, whose responseCode is not 200 level
-	     *
-	     * @param responseCode
-	     * @param errorCode
-	     * @param errorMsg
-	     * @return
-	     * @throws JSONException
-	     */
-	    public  JSONObject processResponse(int responseCode, String errorCode, String errorMsg) throws JSONException {
-	        JSONObject response = new JSONObject();
-	        response.put("responseCode", responseCode);
-	        response.put("errorCode", errorCode);
-	        response.put("errorMsg", errorMsg);
+     * for bad response, whose responseCode is not 200 level
+     *
+     * @param responseCode
+     * @param errorCode
+     * @param errorMsg
+     * @return
+     * @throws JSONException
+     */
+    public JSONObject processResponse(int responseCode, String errorCode, String errorMsg) throws JSONException {
+        JSONObject response = new JSONObject();
+        response.put("responseCode", responseCode);
+        response.put("errorCode", errorCode);
+        response.put("errorMsg", errorMsg);
 
-	        return response;
-	    }
+        return response;
+    }
 
-	    /**
-	     * for bad response, whose responseCode is not 200 level
-	     *
-	     * @param responseCode
-	     * @param errorCode
-	     * @param errorMsg
-	     * @return
-	     * @throws JSONException
-	     */
-	    public  JSONObject processGoodRespStr(int responseCode, String goodRespStr) throws JSONException {
-	        JSONObject response = new JSONObject();
-	        response.put("responseCode", responseCode);
-	        if (goodRespStr.equalsIgnoreCase("")) {
-	            response.put("responseMsg", "");
-	        } else {
-	            response.put("responseMsg", new JSONObject(goodRespStr));
-	        }
+    /**
+     * for bad response, whose responseCode is not 200 level
+     *
+     * @param responseCode
+     * @param errorCode
+     * @param errorMsg
+     * @return
+     * @throws JSONException
+     */
+    public JSONObject processGoodRespStr(int responseCode, String goodRespStr) throws JSONException {
+        JSONObject response = new JSONObject();
+        response.put("responseCode", responseCode);
+        if (goodRespStr.equalsIgnoreCase("")) {
+            response.put("responseMsg", "");
+        } else {
+            response.put("responseMsg", new JSONObject(goodRespStr));
+        }
 
-	        return response;
-	    }
+        return response;
+    }
 
-	    /**
-	     * for good response
-	     *
-	     * @param responseCode
-	     * @param responseMsg
-	     * @return
-	     * @throws JSONException
-	     */
-	    public  JSONObject processBadRespStr(int responseCode, String responseMsg) throws JSONException {
+    /**
+     * for good response
+     *
+     * @param responseCode
+     * @param responseMsg
+     * @return
+     * @throws JSONException
+     */
+    public JSONObject processBadRespStr(int responseCode, String responseMsg) throws JSONException {
 
-	        JSONObject response = new JSONObject();
-	        response.put("responseCode", responseCode);
-	        if (responseMsg.equalsIgnoreCase("")) { // good response is empty string
-	            response.put("responseMsg", "");
-	        } else { // bad response is json string
-	            JSONObject errorObject = new JSONObject(responseMsg).optJSONObject("odata.error");
+        JSONObject response = new JSONObject();
+        response.put("responseCode", responseCode);
+        if (responseMsg.equalsIgnoreCase("")) { // good response is empty string
+            response.put("responseMsg", "");
+        } else { // bad response is json string
+            JSONObject errorObject = new JSONObject(responseMsg).optJSONObject("odata.error");
 
-	            String errorCode = errorObject.optString("code");
-	            String errorMsg = errorObject.optJSONObject("message").optString("value");
-	            response.put("responseCode", responseCode);
-	            response.put("errorCode", errorCode);
-	            response.put("errorMsg", errorMsg);
-	        }
+            String errorCode = errorObject.optString("code");
+            String errorMsg = errorObject.optJSONObject("message").optString("value");
+            response.put("responseCode", responseCode);
+            response.put("errorCode", errorCode);
+            response.put("errorMsg", errorMsg);
+        }
 
-	        return response;
+        return response;
     }
 
 

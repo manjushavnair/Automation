@@ -1,6 +1,7 @@
 package com.automation.ui.base.common.core.api;
 
 import com.automation.ui.base.common.auth.SignUpUser;
+import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.core.XMLReader;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.logging.Log;
@@ -11,7 +12,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
-import com.automation.ui.base.common.constants.*;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

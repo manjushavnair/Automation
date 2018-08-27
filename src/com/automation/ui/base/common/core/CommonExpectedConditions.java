@@ -457,7 +457,6 @@ public class CommonExpectedConditions {
     }
 
 
-
     public static ExpectedCondition<Boolean> cssValuePresentForElement(final By bySelector,
                                                                        final String cssProperty,
                                                                        final String expectedValue) {

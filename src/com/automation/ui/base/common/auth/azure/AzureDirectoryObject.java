@@ -1,17 +1,17 @@
 package com.automation.ui.base.common.auth.azure;
 
-import java.security.acl.Group;
-import java.util.ArrayList;
-
-import javax.xml.bind.annotation.XmlRootElement;
-
 import com.automation.ui.base.common.auth.DirectoryObject;
 import com.automation.ui.base.common.auth.User;
 import org.json.JSONObject;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import java.security.acl.Group;
+import java.util.ArrayList;
+
 /**
- *  The User Class holds together all the members of a WAAD User entity and all the access methods and set methods
- *  @author Azure Active Directory Contributor
+ * The User Class holds together all the members of a WAAD User entity and all the access methods and set methods
+ *
+ * @author Azure Active Directory Contributor
  */
 @XmlRootElement
 public class AzureDirectoryObject extends DirectoryObject {
@@ -65,7 +65,7 @@ public class AzureDirectoryObject extends DirectoryObject {
     /**
      * The constructor for the User class. Initializes the dynamic lists and managerDisplayname variables.
      */
-    public AzureDirectoryObject(){
+    public AzureDirectoryObject() {
         directReports = null;
         groups = new ArrayList<Group>();
         roles = new ArrayList<Group>();
@@ -465,11 +465,11 @@ public class AzureDirectoryObject extends DirectoryObject {
         return new JSONObject(this).toString();
     }
 
-    public String getManagerDisplayname(){
+    public String getManagerDisplayname() {
         return managerDisplayname;
     }
 
-    public void setManagerDisplayname(String managerDisplayname){
+    public void setManagerDisplayname(String managerDisplayname) {
         this.managerDisplayname = managerDisplayname;
     }
 }

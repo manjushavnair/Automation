@@ -1,9 +1,6 @@
 package com.automation.ui.base.common.core;
 
-import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.core.configuration.Configuration;
-import com.automation.ui.base.common.prpreaders.BasePropertyReader;
-
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.ConfigurationRuntimeException;
 import org.apache.commons.configuration.XMLConfiguration;
@@ -16,15 +13,11 @@ import java.io.InputStream;
 public class XMLReader {
 
     private static final File defaultConfigFile = new File(Configuration.getCredentialsFilePath());
-
+    private static XMLReader xml;
+    private static XMLConfiguration xmlConf;
     private XMLReader() {
 
     }
-
-
-
-    private static XMLReader xml;
-    private static XMLConfiguration xmlConf;
 
     public static XMLReader readProperty(String fileName) {
 
@@ -36,14 +29,12 @@ public class XMLReader {
                     try {
 
                         xmlConf = new XMLConfiguration();
-                        InputStream inStream = new FileInputStream(new File(fileName ));
+                        InputStream inStream = new FileInputStream(new File(fileName));
                         xmlConf.load(inStream);
 
-                    }
-                    catch (ConfigurationException e) {
+                    } catch (ConfigurationException e) {
                         throw new ConfigurationRuntimeException(e);
-                    }
-                    catch (FileNotFoundException e) {
+                    } catch (FileNotFoundException e) {
                         e.printStackTrace();
 
                     } catch (Exception e) {
@@ -69,7 +60,7 @@ public class XMLReader {
     public static String getValue(File file, String key) {
 
         if (!file.exists() || file.isDirectory()) {
-            throw new ConfigurationRuntimeException("Cannot find a file with credentials"+file);
+            throw new ConfigurationRuntimeException("Cannot find a file with credentials" + file);
         }
 
         try {
@@ -80,7 +71,7 @@ public class XMLReader {
         }
     }
 
-     public static String getValue(String key) {
-         return getValue(defaultConfigFile, key);
-     }
+    public static String getValue(String key) {
+        return getValue(defaultConfigFile, key);
+    }
 }

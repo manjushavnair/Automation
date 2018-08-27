@@ -1,7 +1,5 @@
 package com.automation.ui.base.pageobjectsfactory.pageobject;
 
-import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
-
 public abstract class DetachedWindow extends BasePageObject {
 
     protected void gainFocus() {

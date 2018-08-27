@@ -1,8 +1,8 @@
 package com.automation.ui.base.common.core;
 
+import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
-import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.core.url.UrlBuilder;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.common.properties.HeliosConfig;
@@ -41,7 +41,7 @@ public class Helios {
     private static final String IOEXCEPTION_ERROR_MESSAGE = "PLEASE CHECK IF YOUR VPN IS ENABLED";
     private static final String IOEXCEPTION_COMMAND = "IO EXCEPTION";
     private static final String X_UI_INTERNAL_REQUEST = "X-UI-Internal-Request";
-   // private static final String THE_SCHWARTZ = "THE-SCHWARTZ";
+    // private static final String THE_SCHWARTZ = "THE-SCHWARTZ";
     private static final String CLIENT_PROTOCOL_EXCEPTION = "CLIENT PROTOCOL EXCEPTION";
 
     /**
@@ -72,7 +72,7 @@ public class Helios {
 
         HttpDelete httpDelete =
                 new HttpDelete(String.format("%s/%s/tokens", heliosGetTokenURL, user.getUserId()));
-         httpDelete.setHeader(X_UI_INTERNAL_REQUEST, "0");
+        httpDelete.setHeader(X_UI_INTERNAL_REQUEST, "0");
 
         try (CloseableHttpResponse response = getDefaultClient().execute(httpDelete)) {
             Log.log("DELETE TOKENS REQUEST: ", httpDelete.toString(), true);
@@ -92,7 +92,7 @@ public class Helios {
         System.out.println("user :" + User.values().length);
 
         for (User user : User.values()) {
-            System.out.println("Username "+user.getUserName()+"tokencheck " + user.getAccessToken()  );
+            System.out.println("Username " + user.getUserName() + "tokencheck " + user.getAccessToken());
             if (StringUtils.isNotBlank(user.getAccessToken())) {
                 tokenCache.put(user.getUserName(), user.getAccessToken());
             }

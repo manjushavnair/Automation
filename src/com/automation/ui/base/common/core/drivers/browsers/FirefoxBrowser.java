@@ -1,21 +1,21 @@
 package com.automation.ui.base.common.core.drivers.browsers;
 
 
-import com.automation.ui.base.common.utils.*;
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.drivers.BrowserAbstract;
 import com.automation.ui.base.common.logging.Log;
+import com.automation.ui.base.common.utils.BrowserExtentionHelper;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriverException;
-
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.GeckoDriverService;
 import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.PageLoadStrategy;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -32,12 +32,11 @@ public class FirefoxBrowser extends BrowserAbstract {
 
     private static final String FIREFOXDRIVER_PATH_WINDOWS =
             String.format(FIREFOXDRIVER_PATH_FORMAT, "win32/geckodriver.exe");
-
-    private FirefoxProfile firefoxProfile;
-    private GeckoDriverService fxService;
-    private FirefoxOptions opt ;
     private static Logger logger = Logger
             .getLogger(FirefoxBrowser.class);
+    private FirefoxProfile firefoxProfile;
+    private GeckoDriverService fxService;
+    private FirefoxOptions opt;
 
   /*
    public abstract void setOptions();
@@ -49,7 +48,6 @@ public class FirefoxBrowser extends BrowserAbstract {
 
 
    */
-
 
     @Override
     public void setOptions() {
@@ -68,10 +66,9 @@ public class FirefoxBrowser extends BrowserAbstract {
         }
 
 
-        File ffdriver= new File(ClassLoader.getSystemResource(firefoxBinaryPath).getPath());
+        File ffdriver = new File(ClassLoader.getSystemResource(firefoxBinaryPath).getPath());
 
-        logger.info("FirefoxDriverPath:"+ firefoxBinaryPath + " : " +ffdriver.getPath());
-
+        logger.info("FirefoxDriverPath:" + firefoxBinaryPath + " : " + ffdriver.getPath());
 
 
         // set application user permissions to 455
@@ -85,7 +82,7 @@ public class FirefoxBrowser extends BrowserAbstract {
 
 
        /* if ("WINDOWS 8".equalsIgnoreCase(System.getProperty("os.name"))) {
-			logger.info("Firefox setOptions"+System.getProperty("os.name"));
+            logger.info("Firefox setOptions"+System.getProperty("os.name"));
             System.setProperty("webdriver.gecko.driver", "c:" + File.separator + "Program Files (x86)"
                     + File.separator + "Mozilla Firefox" + File.separator + "Firefox.exe");
 					//webdriver.gecko.driver
@@ -150,7 +147,7 @@ public class FirefoxBrowser extends BrowserAbstract {
         firefoxProfile = new FirefoxProfile(
                 new File(ClassLoader.getSystemResource("test/FirefoxProfiles/Default").getPath()));
 
-         opt = new FirefoxOptions();
+        opt = new FirefoxOptions();
         opt.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 
         if ("true".equals(Configuration.getPageLoadStrategy())) {
@@ -186,14 +183,14 @@ public class FirefoxBrowser extends BrowserAbstract {
         firefoxProfile.setAcceptUntrustedCertificates(true);
         firefoxProfile.setAssumeUntrustedCertificateIssuer(true);
 
-       // firefoxProfile.setCapability("marionette", true);
+        // firefoxProfile.setCapability("marionette", true);
 
     }
 
     @Override
     public UIWebDriver create() {
         caps.setCapability(FirefoxDriver.PROFILE, firefoxProfile);
-   //     caps.setCapability("marionette", false);
+        //     caps.setCapability("marionette", false);
         caps.setCapability("gecko", true);
 
         caps.setCapability("disable-popup-blocking", false);
@@ -203,7 +200,7 @@ public class FirefoxBrowser extends BrowserAbstract {
         //caps.setBrowserName(wdConfig.getBrowserName());
         //return new UIWebDriver(new FirefoxDriver(caps ), server, false);  //non deprecated
 
-        return new UIWebDriver(new FirefoxDriver(caps ), server, false);
+        return new UIWebDriver(new FirefoxDriver(caps), server, false);
     }
 
     @Override

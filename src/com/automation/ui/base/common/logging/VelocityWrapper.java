@@ -7,20 +7,16 @@ import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 
+import java.io.File;
 import java.io.StringWriter;
 import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
 import static org.testng.internal.Utils.escapeHtml;
-import java.io.*;
-import com.automation.ui.base.common.report.filehandler.*;
 
 
 public class VelocityWrapper {
-
-    private static Logger logger = Logger.getLogger(VelocityWrapper.class);
-
 
     private static final String LAST_LOG_ROW_TEMPLATE_PATH = "lastLogRow.vm";
     private static final String LOG_ROW_TEMPLATE_PATH = "logRow.vm";
@@ -34,6 +30,7 @@ public class VelocityWrapper {
     private static final String HEADER_TEMPLATE_PATH = "header.vm";
     private static final String ERROR_LOG_ROW_WO_SCREENSHOT_AND_SOURCE_TEMPLATE_PATH =
             "errorLogRowWoScreenshotAndSource.vm";
+    private static Logger logger = Logger.getLogger(VelocityWrapper.class);
     private static VelocityEngine velocityEngine = getVelocityEngine();
 
     private VelocityWrapper() {
@@ -72,8 +69,6 @@ public class VelocityWrapper {
 
         return builder.toString();
     }
-
-
 
 
     public static String fillLogRowWithLink(String link, String label) {
@@ -198,7 +193,6 @@ public class VelocityWrapper {
     }
 
 
-
     static String fillHeader(String date, String polishDate, String browser, String os,
                              String testingEnvironmentUrl, String testingEnvironment,
                              String testedVersion, String mercuryVersion) {
@@ -216,7 +210,7 @@ public class VelocityWrapper {
         context.put("testedVersion", testedVersion);
         context.put("mobileSiteVersion", mercuryVersion);
         context.put("mobileSiteVersion", mercuryVersion);
-        context.put("logPath", System.getProperty("user.dir")+File.separator+Log.LOG_PATH);
+        context.put("logPath", System.getProperty("user.dir") + File.separator + Log.LOG_PATH);
 
 
         StringWriter writer = new StringWriter();
@@ -234,12 +228,10 @@ public class VelocityWrapper {
 
         ve.setProperty("runtime.log", "logs/velocity.log");
 
-        String path =null;
+        String path = null;
         try {
             path = ClassLoader.getSystemResource("velocitytemplates").getPath();
-        }
-        catch (Throwable e)
-        {
+        } catch (Throwable e) {
             logger.info(e.getMessage());
             throw new TestEnvInitFailedException("Velocity template path is not configured correctly");
         }

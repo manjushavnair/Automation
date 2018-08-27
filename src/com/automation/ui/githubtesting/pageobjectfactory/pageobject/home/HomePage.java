@@ -28,12 +28,9 @@ public class HomePage extends SiteBasePageObject {
     private WebElement logout;
 
 
-
-
     //for GITHUB testing
     @FindBy(css = HomeConstants.NEWREPOCREATION)
     private WebElement addRepo;
-
 
 
     public HomePage() {
@@ -93,8 +90,6 @@ public class HomePage extends SiteBasePageObject {
     }
 
 
-
-
     public void addConnection_accessdenied() {
 
         logger.info("Entering  addConnection_accessdenied: ");
@@ -104,8 +99,6 @@ public class HomePage extends SiteBasePageObject {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
 
 
         logger.info("Exiting  addConnection_accessdenied");

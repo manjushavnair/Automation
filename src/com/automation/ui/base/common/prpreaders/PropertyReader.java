@@ -1,11 +1,12 @@
 package com.automation.ui.base.common.prpreaders;
 
+import com.automation.ui.base.common.constants.BASEConstants;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Properties;
-import com.automation.ui.base.common.constants.*;
 
 import static java.lang.Boolean.parseBoolean;
 import static java.lang.Integer.parseInt;

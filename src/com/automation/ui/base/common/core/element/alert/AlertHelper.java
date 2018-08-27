@@ -1,13 +1,13 @@
 package com.automation.ui.base.common.core.element.alert;
 
 
+import com.automation.ui.base.common.core.element.IHTMLComponent;
 import com.automation.ui.base.common.core.element.textbox.TextBoxHelper;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
-import com.automation.ui.base.common.core.element.*;
 
 public class AlertHelper implements IHTMLComponent {
 
@@ -16,9 +16,9 @@ public class AlertHelper implements IHTMLComponent {
 
     private BasePageObject basePageObject;
 
-    public AlertHelper(WebDriver driver,BasePageObject basePageObject) {
+    public AlertHelper(WebDriver driver, BasePageObject basePageObject) {
         this.driver = driver;
-        this.basePageObject=basePageObject;
+        this.basePageObject = basePageObject;
     }
 
     public Alert getAlert() {

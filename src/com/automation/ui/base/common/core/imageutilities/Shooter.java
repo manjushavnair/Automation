@@ -32,7 +32,7 @@ public class Shooter {
     }
 
     public File capturePage(WebDriver driver) {
-		//OutputType.BASE64 anothe option
+        //OutputType.BASE64 anothe option
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     }
 

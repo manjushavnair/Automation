@@ -13,7 +13,7 @@ import com.automation.ui.githubtesting.common.constants.ExcelCONSTANTS;
 import com.automation.ui.githubtesting.common.templates.NewTestTemplate;
 import org.apache.log4j.Logger;
 
-public class GitHubBaseTest extends NewTestTemplate  {
+public class GitHubBaseTest extends NewTestTemplate {
 
     private static Logger logger = Logger.getLogger(GitHubBaseTest.class);
     protected ExcelUtil eu = null;
@@ -23,9 +23,6 @@ public class GitHubBaseTest extends NewTestTemplate  {
 
 
     }
-
-
-
 
 
     protected void getDataReaders() {
@@ -44,12 +41,9 @@ public class GitHubBaseTest extends NewTestTemplate  {
 
 
     protected void loadFirstPage() {
-        logger.info("driver"+driver+"urlBuilder"+urlBuilder);
+        logger.info("driver" + driver + "urlBuilder" + urlBuilder);
         driver.get(urlBuilder.getUrlForPage(URLsContent.SITE_DIR));
     }
-
-
-
 
 
 }

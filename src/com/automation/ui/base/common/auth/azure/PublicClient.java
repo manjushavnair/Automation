@@ -1,29 +1,9 @@
 package com.automation.ui.base.common.auth.azure;
 
-import java.net.HttpURLConnection;
-import java.net.*;
-import java.io.*;
-import java.util.*;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import com.microsoft.aad.adal4j.AuthenticationResult;
-import com.nimbusds.openid.connect.sdk.AuthenticationResponse;
-import com.nimbusds.openid.connect.sdk.AuthenticationResponseParser;
-import com.nimbusds.openid.connect.sdk.AuthenticationSuccessResponse;
-
 import com.microsoft.aad.adal4j.AuthenticationContext;
-import com.microsoft.aad.adal4j.AuthenticationException;
 import com.microsoft.aad.adal4j.AuthenticationResult;
-import com.microsoft.aad.adal4j.ClientCredential;
-import com.nimbusds.jwt.JWTParser;
-import com.nimbusds.oauth2.sdk.AuthorizationCode;
-import com.nimbusds.openid.connect.sdk.AuthenticationErrorResponse;
-import com.nimbusds.openid.connect.sdk.AuthenticationResponse;
-import com.nimbusds.openid.connect.sdk.AuthenticationResponseParser;
-import com.nimbusds.openid.connect.sdk.AuthenticationSuccessResponse;
-import org.apache.commons.lang3.*;
+
+import javax.naming.ServiceUnavailableException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -32,17 +12,6 @@ import java.net.URL;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-
-import javax.naming.ServiceUnavailableException;
-
-import com.microsoft.aad.adal4j.AuthenticationContext;
-import com.microsoft.aad.adal4j.AuthenticationResult;
-
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import com.microsoft.aad.adal4j.AuthenticationResult;
 
 public class PublicClient {
 
@@ -58,12 +27,12 @@ public class PublicClient {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(
                 System.in))) {
             System.out.print("Enter username: ");
-          //  String username = br.readLine();
+            //  String username = br.readLine();
             System.out.print("Enter password: ");
             //String password = br.readLine();
 
-            String username="M.Sivaprasad@cbpatqa.onmicrosoft.com";
-            String password="tru=E5hsC";
+            String username = "M.Sivaprasad@cbpatqa.onmicrosoft.com";
+            String password = "tru=E5hsC";
 
 
             // Request access token from AAD
@@ -105,13 +74,13 @@ public class PublicClient {
 
         conn.setRequestMethod("GET");
         conn.setRequestProperty("Authorization", "Bearer " + accessToken);
-        conn.setRequestProperty("Accept","application/json");
+        conn.setRequestProperty("Accept", "application/json");
 
         int httpResponseCode = conn.getResponseCode();
-        if(httpResponseCode == 200) {
+        if (httpResponseCode == 200) {
             BufferedReader in = null;
             StringBuilder response;
-            try{
+            try {
                 in = new BufferedReader(
                         new InputStreamReader(conn.getInputStream()));
                 String inputLine;

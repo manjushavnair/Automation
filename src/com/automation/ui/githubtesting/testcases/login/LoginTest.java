@@ -38,7 +38,6 @@ import org.testng.annotations.Test;
  */
 
 
-
 public class LoginTest extends GitHubBaseTest {
 
 
@@ -46,7 +45,7 @@ public class LoginTest extends GitHubBaseTest {
             .getLogger(LoginTest.class);
 
 
-    private LoginPage login_page =null;
+    private LoginPage login_page = null;
 
 
     public LoginTest() {
@@ -54,20 +53,15 @@ public class LoginTest extends GitHubBaseTest {
         super();
 
 
-
     }
 
 
-
-
-
-
     @Test(priority = 1, groups = {"base", "validcase"})
-    public void verifyValidLogin()  throws Throwable {
+    public void verifyValidLogin() throws Throwable {
 
         logger.info("Entering verifyValidLogin");
         Reporter.log("Entering verifyValidLogin");
-          login_page = new LoginPage();
+        login_page = new LoginPage();
         login_page.open();
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();
@@ -87,11 +81,8 @@ public class LoginTest extends GitHubBaseTest {
     }
 
 
-
-
-
     @Test(priority = 2, groups = {"base", "invalidcase"})
-    public void verifyInValidUserNullPassword()  throws Throwable{
+    public void verifyInValidUserNullPassword() throws Throwable {
         logger.info("Entering verifyInValidUserNullPassword");
         Reporter.log("Entering verifyInValidUserNullPassword");
         LoginPage login_page = new LoginPage();
@@ -113,7 +104,7 @@ public class LoginTest extends GitHubBaseTest {
 
 
     @Test(priority = 3, groups = {"base", "invalidcase"})
-    public void verifyValidUserNullPassword()  throws Throwable {
+    public void verifyValidUserNullPassword() throws Throwable {
 
         logger.info("Entering verifyValidUserNullPassword");
         Reporter.log("Entering verifyValidUserNullPassword");
@@ -133,7 +124,8 @@ public class LoginTest extends GitHubBaseTest {
         login_page.login();
 
     }
-//added
+
+    //added
     @Test(priority = 4, groups = {"base", "invalidcase"}, description = "invalid login")
     public void verifyInValidUserInvalidPassword() throws Throwable {
 
@@ -147,7 +139,7 @@ public class LoginTest extends GitHubBaseTest {
         }.getClass().getEnclosingMethod().getName();
 
         String userName = eu.getCellData(4, 1);
-        String password  = eu.getCellData(4, 2);
+        String password = eu.getCellData(4, 2);
 
 
         logger.info("Exiting verifyInValidLoginNullPassword and going to login userName:" + userName + "password : *****");
@@ -171,7 +163,7 @@ public class LoginTest extends GitHubBaseTest {
         }.getClass().getEnclosingMethod().getName();
 
         String userName = eu.getCellData(5, 1);
-        String password  = eu.getCellData(5, 2);
+        String password = eu.getCellData(5, 2);
 
         logger.info("Exiting verifyNullUserNullPassword and going to login userName:" + userName + "password : *****");
         login_page.enterUser(userName);

@@ -10,11 +10,10 @@ public class AssertDataReader {
 
     public static AssertDataReader assertreader;
 
-    private ResourceBundle rBundle=null;
+    private ResourceBundle rBundle = null;
 
-    private AssertDataReader(String langauge)
-    {
-        rBundle= ResourceBundle.getBundle(SITECONSTANTS.ASSERTPATH, LocaleUtil.getLocaleFromLanguage(langauge));
+    private AssertDataReader(String langauge) {
+        rBundle = ResourceBundle.getBundle(SITECONSTANTS.ASSERTPATH, LocaleUtil.getLocaleFromLanguage(langauge));
     }
 
     public static AssertDataReader readProperty(String langauge) {

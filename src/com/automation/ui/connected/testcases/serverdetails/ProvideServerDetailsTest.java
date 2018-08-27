@@ -112,7 +112,7 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
     public void provideConnectionType() throws Throwable {
         home_page.addConnection();
         serverdetail_page.provideServerConnectionType(ServerType.SDX_COLLECTOR);
-         Thread.sleep(5000);
+        Thread.sleep(5000);
 
     }
 }

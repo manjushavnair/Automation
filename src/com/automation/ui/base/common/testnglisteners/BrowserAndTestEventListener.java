@@ -2,7 +2,6 @@ package com.automation.ui.base.common.testnglisteners;
 
 import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.contentpatterns.URLsContent;
-import com.automation.ui.base.pageobjectsfactory.pageobject.*;
 import com.automation.ui.base.common.core.AlertHandler;
 import com.automation.ui.base.common.core.SelectorStack;
 import com.automation.ui.base.common.core.TestContext;
@@ -16,23 +15,24 @@ import com.automation.ui.base.common.driverprovider.DriverProvider;
 import com.automation.ui.base.common.exception.BusinessException;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.common.logging.VelocityWrapper;
+import com.automation.ui.base.common.report.filehandler.CreateHTML;
+import com.automation.ui.base.common.report.filehandler.FileNameConstants;
 import com.automation.ui.base.common.utils.CommonUtils;
 import com.automation.ui.base.common.utils.CookieUtils;
-import com.automation.ui.base.common.utils.*;
-import com.automation.ui.base.common.report.filehandler.*;
+import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 import org.testng.ITestContext;
-import org.testng.*;
+import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.SkipException;
 
+import java.io.File;
 import java.lang.reflect.Method;
 import java.util.Date;
-import java.io.*;
 
 public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
         implements ITestListener {
@@ -171,9 +171,9 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                 if (user != null && user != User.ANONYMOUS) {
                     // log in, make sure user is logged in and flow is on the requested url
                     //NEED TO CHECK
-                     BasePageObject basePObject=new  SiteBasePageObject();
-                     basePObject.loginAs(user);
-              }
+                    BasePageObject basePObject = new SiteBasePageObject();
+                    basePObject.loginAs(user);
+                }
 
 
                 NetworkTrafficInterceptor
@@ -304,8 +304,6 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
         //NEED TO CHECK THE REPORT
 
 
-
-
         Log.startReport();
     }
 
@@ -331,11 +329,10 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
     @Override
     public void onFinish(ITestContext context) {
-          int suiteIndex=1;
-		  CommonUtils.appendTextToFile(Log.LOG_PATH, CreateHTML.createHTML(FileNameConstants.ROOT_FOLDER + File.separator+ FileNameConstants.DASHBOARD_HTML + "-"
-		                + suiteIndex + ".html"));
-		                    CommonUtils.appendTextToFile(Log.LOG_PATH, "</body></html>");
-
+        int suiteIndex = 1;
+        CommonUtils.appendTextToFile(Log.LOG_PATH, CreateHTML.createHTML(FileNameConstants.ROOT_FOLDER + File.separator + FileNameConstants.DASHBOARD_HTML + "-"
+                + suiteIndex + ".html"));
+        CommonUtils.appendTextToFile(Log.LOG_PATH, "</body></html>");
 
 
     }

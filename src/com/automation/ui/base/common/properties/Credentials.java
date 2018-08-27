@@ -36,7 +36,6 @@ public class Credentials {
         emailPassword = XMLReader.getValue(file, "ci.email.generic.password");
 
 
-
         forgottenPasswordEmail1Address = XMLReader.getValue(file, "ci.email.forgotPass1.username");
         forgottenPasswordEmail1Password = XMLReader.getValue(file, "ci.email.forgotPass1.password");
 
@@ -67,8 +66,6 @@ public class Credentials {
     }
 
 
-
-
     public String getEmail() {
         return email;
     }
@@ -78,7 +75,6 @@ public class Credentials {
     }
 
 
-
     public String getForgottenPasswordEmail1Address() {
         return forgottenPasswordEmail1Address;
     }
@@ -86,9 +82,6 @@ public class Credentials {
     public String getForgottenPasswordEmail1Password() {
         return forgottenPasswordEmail1Password;
     }
-
-
-
 
 
     public String getApiToken() {

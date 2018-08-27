@@ -2,8 +2,8 @@ package com.automation.ui.base.common.core.imageutilities;
 
 
 import com.automation.ui.base.common.constants.BASEConstants;
-import com.automation.ui.base.common.utils.CommonUtils;
 import com.automation.ui.base.common.logging.Log;
+import com.automation.ui.base.common.utils.CommonUtils;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.openqa.selenium.WebDriverException;
 

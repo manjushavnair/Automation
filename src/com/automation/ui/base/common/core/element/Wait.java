@@ -1,17 +1,16 @@
 package com.automation.ui.base.common.core.element;
 
+import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.core.CommonExpectedConditions;
 import com.automation.ui.base.common.core.SelectorStack;
 import com.automation.ui.base.common.core.networktrafficinterceptor.NetworkTrafficInterceptor;
 import com.automation.ui.base.common.logging.Log;
-
 import net.lightbody.bmp.core.har.HarEntry;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import com.automation.ui.base.common.constants.*;
 
 import java.time.Duration;
 import java.util.List;
@@ -184,7 +183,7 @@ public class Wait {
 
         changeImplicitWait(0, TimeUnit.MILLISECONDS);
         try {
-        //    logger.info("element.getTagName()"+element.getTagName().toString());
+            //    logger.info("element.getTagName()"+element.getTagName().toString());
             element.getTagName();
         } catch (WebDriverException e) {
             Log.info(BASEConstants.INIT_MESSAGE, BASEConstants.INIT_ERROR_MESSAGE);
@@ -529,7 +528,7 @@ public class Wait {
         forSuccessfulResponseByUrlPattern(trafficInterceptor, pattern, BASEConstants.DEFAULT_TIMEOUT);
     }
 
-    public void waitForIframe(By locator,int timeOutInSeconds,int pollingEveryInMiliSec) {
+    public void waitForIframe(By locator, int timeOutInSeconds, int pollingEveryInMiliSec) {
 
         changeImplicitWait(1, TimeUnit.SECONDS);
         WebDriverWait wait = getWait(timeOutInSeconds, pollingEveryInMiliSec);
@@ -537,7 +536,8 @@ public class Wait {
         driver.switchTo().defaultContent();
         changeImplicitWait(BASEConstants.DEFAULT_TIMEOUT, TimeUnit.SECONDS);
     }
-    private WebDriverWait getWait(int timeOutInSeconds,int pollingEveryInMiliSec) {
+
+    private WebDriverWait getWait(int timeOutInSeconds, int pollingEveryInMiliSec) {
 
         WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
         wait.pollingEvery(pollingEveryInMiliSec, TimeUnit.MILLISECONDS);
@@ -558,8 +558,8 @@ public class Wait {
 
     private void changeImplicitWait(int value, TimeUnit timeUnit) {
 
-        driver.manage().timeouts().implicitlyWait(value,  timeUnit == null ? TimeUnit.SECONDS : timeUnit);
-       //  logger.info("wait till 2 value:"+ value + " timeUnit :"+timeUnit);
+        driver.manage().timeouts().implicitlyWait(value, timeUnit == null ? TimeUnit.SECONDS : timeUnit);
+        //  logger.info("wait till 2 value:"+ value + " timeUnit :"+timeUnit);
     }
 
     /**

@@ -4,15 +4,12 @@ package com.automation.ui.connected.testcases.home;
  * @author Manjusha Saju
  */
 
-import com.automation.ui.base.common.core.Assertion;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginPage;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
 import org.apache.log4j.Logger;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 
 public class HomePageTest extends ConnectedBaseTest {
@@ -88,9 +85,6 @@ public class HomePageTest extends ConnectedBaseTest {
 
         home_page.goToLogoutPage();
     }
-
-
-
 
 
 }

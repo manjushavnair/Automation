@@ -1,10 +1,11 @@
 package com.automation.ui.base.common.core.drivers;
-import java.util.*;
+
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.XMLReader;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.networktrafficinterceptor.NetworkTrafficInterceptor;
 import com.automation.ui.base.common.testnglisteners.BrowserAndTestEventListener;
+import com.automation.ui.base.common.utils.CookieUtils;
 import net.lightbody.bmp.mitm.TrustSource;
 import net.lightbody.bmp.proxy.CaptureType;
 import org.apache.log4j.Logger;
@@ -14,18 +15,15 @@ import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import com.automation.ui.base.common.utils.*;
 
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
-import org.openqa.selenium.Cookie;
+
 public abstract class BrowserAbstract {
 
+    private static Logger logger = Logger.getLogger(BrowserAbstract.class);
     protected DesiredCapabilities caps = new DesiredCapabilities();
     protected NetworkTrafficInterceptor server;
-
-    private static Logger logger = Logger.getLogger(BrowserAbstract.class);
-
 
     /**
      * Get a ready to work instance for chosen browser
@@ -78,16 +76,14 @@ public abstract class BrowserAbstract {
     }
 
 
-
     protected void deleteAllCookies(WebDriver driver) {
         CookieUtils.deleteAllCookies(driver);
 
     }
 
     protected void deleteCookiesOneByOne(WebDriver driver) {
-        CookieUtils.deleteCookiesOneByOne(  driver);
+        CookieUtils.deleteCookiesOneByOne(driver);
     }
-
 
 
     /**

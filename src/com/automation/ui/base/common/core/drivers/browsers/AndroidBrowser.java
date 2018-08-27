@@ -1,12 +1,12 @@
 package com.automation.ui.base.common.core.drivers.browsers;
 
+import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.drivers.BrowserAbstract;
 import com.automation.ui.base.common.logging.Log;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import com.automation.ui.base.common.constants.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;

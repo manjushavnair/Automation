@@ -1,8 +1,8 @@
 package com.automation.ui.base.common.remote.operations.http;
 
+import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.core.Helios;
-import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.common.remote.RemoteException;
 import lombok.AccessLevel;

@@ -1,4 +1,5 @@
 package com.automation.ui.base.common.utils;
+
 import org.apache.log4j.Logger;
 
 import java.text.DecimalFormat;
@@ -6,11 +7,7 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 
-
-
-
-public class CurrencyUtil
-{
+public class CurrencyUtil {
 
     /**
      * This is the static constant stores Default pattern for Currency.
@@ -42,23 +39,16 @@ public class CurrencyUtil
             .getLogger(CurrencyUtil.class);
 
 
-
-
-
-
-
     /**
      * This method is used for formatting the given amount to string
      * using given currency pattern.
      *
-     * @param a_amount	The amount to be converted to the string by using the
-     *					given currency pattern.
+     * @param a_amount  The amount to be converted to the string by using the
+     *                  given currency pattern.
      * @param a_pattern The given pattern for converting the amount to string.
-     * @return	String	  The converted string for the amount
-     *
+     * @return String     The converted string for the amount
      */
-    public static final String formatCurrency(double a_amount, String a_pattern)
-    {
+    public static final String formatCurrency(double a_amount, String a_pattern) {
         NumberFormat nf = NumberFormat.getCurrencyInstance();
         DecimalFormat df = (DecimalFormat) nf;
         df.applyPattern(a_pattern);
@@ -71,6 +61,7 @@ public class CurrencyUtil
 
     /**
      * Method formatCurrency.
+     *
      * @param amountString
      * @return String
      */
@@ -85,6 +76,7 @@ public class CurrencyUtil
 
     /**
      * Method formatCurrency.
+     *
      * @param amountString
      * @param locale
      * @return String
@@ -100,6 +92,7 @@ public class CurrencyUtil
 
     /**
      * Method formatCurrency.
+     *
      * @param amount
      * @return String
      */
@@ -116,6 +109,7 @@ public class CurrencyUtil
 
     /**
      * Method formatPlainCurrency.
+     *
      * @param amount
      * @return String
      */
@@ -132,6 +126,7 @@ public class CurrencyUtil
 
     /**
      * Method formatCurrency.
+     *
      * @param amount
      * @param locale
      * @return String

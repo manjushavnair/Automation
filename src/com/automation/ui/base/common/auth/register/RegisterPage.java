@@ -1,7 +1,7 @@
 package com.automation.ui.base.common.auth.register;
 
-import com.automation.ui.base.common.auth.SignUpUser;
 import com.automation.ui.base.common.auth.FormPage;
+import com.automation.ui.base.common.auth.SignUpUser;
 import com.automation.ui.base.common.auth.signin.SignInPage;
 
 import java.time.LocalDate;

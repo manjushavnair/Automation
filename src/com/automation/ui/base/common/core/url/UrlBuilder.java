@@ -21,8 +21,6 @@ public class UrlBuilder extends BaseUrlBuilder {
     private String language;
 
 
-
-
     private UrlBuilder(String site, String env, Boolean forceHttps, Boolean forceLanguageInPath, String language) {
         super(env);
         this.siteName = site;
@@ -54,7 +52,7 @@ public class UrlBuilder extends BaseUrlBuilder {
             throw new WebDriverException("Page name is missing");
         }
 
-      //  logger.info("getUrlForPageWithWWW " + getUrl(true) + URLsContent.SITE_DIR + pageName);
+        //  logger.info("getUrlForPageWithWWW " + getUrl(true) + URLsContent.SITE_DIR + pageName);
         return getUrl(true) + URLsContent.SITE_DIR + pageName;
     }
 
@@ -65,7 +63,7 @@ public class UrlBuilder extends BaseUrlBuilder {
         // String url = getUrl() +  pageName;
         String url = getUrl();
 
-      //  logger.info("getUrlForPage " + getUrl() + " URLsContent.SITE_DIR " + URLsContent.SITE_DIR + "pageName " + pageName + "url"+url);
+        //  logger.info("getUrlForPage " + getUrl() + " URLsContent.SITE_DIR " + URLsContent.SITE_DIR + "pageName " + pageName + "url"+url);
 
 
         if (StringUtils.isNotBlank(Configuration.getQS())) {
@@ -94,7 +92,7 @@ public class UrlBuilder extends BaseUrlBuilder {
     public String getUrl(String language, boolean addWWW, EnvType envType) {
         final String siteaName = getSiteGlobalName(siteName);
 
-      //  logger.info("getUrl siteaName :" + siteaName);
+        //  logger.info("getUrl siteaName :" + siteaName);
 
         if (language == null || siteaName == null)
             throw new NullPointerException("Site name and language are required");
@@ -120,7 +118,7 @@ public class UrlBuilder extends BaseUrlBuilder {
 
     private String getFormattedSiteHost(String www, String siteName, EnvType envType, String language) {
 
-      //  logger.info("getFormattedSiteHost  www: " + www + "siteName " + siteName + " envType " + envType.getSiteDomain() + " language  " + language);
+        //  logger.info("getFormattedSiteHost  www: " + www + "siteName " + siteName + " envType " + envType.getSiteDomain() + " language  " + language);
 
         if (!forceLanguageInPath && !(DEFAULT_LANGUAGE).equals(language)) {
             return getFormattedSiteHost(www, String.join(".", language, siteName), envType);
@@ -176,7 +174,7 @@ public class UrlBuilder extends BaseUrlBuilder {
         switch (envType) {
             case DEV: {
                 String devBoxOwner = this.env.split("-")[1];
-              //  logger.info("getFormattedSiteHost  www: " + www + " siteName " + siteName + "envType " + domain + " devBoxOwner  " + devBoxOwner);
+                //  logger.info("getFormattedSiteHost  www: " + www + " siteName " + siteName + "envType " + domain + " devBoxOwner  " + devBoxOwner);
 
                 return String.join(".", www + siteName, devBoxOwner, envType.getSiteDomain());
             }
@@ -306,19 +304,19 @@ public class UrlBuilder extends BaseUrlBuilder {
 
     private String getSiteGlobalName(String siteName) {
 
-       // logger.info("getSiteGlobalName siteName : " + siteName + " this.env :" + this.env);
+        // logger.info("getSiteGlobalName siteName : " + siteName + " this.env :" + this.env);
         if (siteName.endsWith(".connected")) {
 
-         //   logger.info("getSiteGlobalName OLD SITE : " + siteName + " this.env :" + this.env);
+            //   logger.info("getSiteGlobalName OLD SITE : " + siteName + " this.env :" + this.env);
             if (getEnvType(this.env) == EnvType.DEV) {
                 return "global";
             } else {
-           //     logger.info("getSiteGlobalName step 2 : " + siteName + " this.env :" + this.env);
+                //     logger.info("getSiteGlobalName step 2 : " + siteName + " this.env :" + this.env);
 
                 return siteName.replace(".connected", "");
             }
         } else {
-           // logger.info("getSiteGlobalName SITE : " + siteName + " this.env :" + this.env);
+            // logger.info("getSiteGlobalName SITE : " + siteName + " this.env :" + this.env);
 
             return siteName;
         }

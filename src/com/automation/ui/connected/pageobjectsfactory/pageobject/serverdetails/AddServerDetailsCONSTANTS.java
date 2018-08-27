@@ -21,16 +21,16 @@ public interface AddServerDetailsCONSTANTS {
     public String CONNECTION_SERVER_AUTHUSERNAME = "//input[@id='uName']";
     public String CONNECTION_SERVER_AUTHPASSWORD = "//input[@id='pass']";
 
-    public String CONNECTION_TO_SERVER ="//a[@class='link ng-binding ng-scope']";
+    public String CONNECTION_TO_SERVER = "//a[@class='link ng-binding ng-scope']";
 
-    public String OPCUA_SERVER_URL="//input[@id='opcName']";
+    public String OPCUA_SERVER_URL = "//input[@id='opcName']";
 
-    public String MIN_KEY_SIZE="//select[@id='mks']";
+    public String MIN_KEY_SIZE = "//select[@id='mks']";
 
-    public String SECURITY_ENABLE_FLAG="//body[@class='ng-scope']//div[@class='ch-content ch-menuOpen']//div[@class='ng-scope']//div[@class='ch-pageContent ng-scope']//div[@class='ng-scope']//div[@class='ch-wizard ng-scope']//div[@class='ch-contentWrapper']//div[@class='ng-scope']//section[@class='content']//ul[@class='form verticalForm']//li//span//span[@class='highlightOption']//label[2]//span[1]";
+    public String SECURITY_ENABLE_FLAG = "//body[@class='ng-scope']//div[@class='ch-content ch-menuOpen']//div[@class='ng-scope']//div[@class='ch-pageContent ng-scope']//div[@class='ng-scope']//div[@class='ch-wizard ng-scope']//div[@class='ch-contentWrapper']//div[@class='ng-scope']//section[@class='content']//ul[@class='form verticalForm']//li//span//span[@class='highlightOption']//label[2]//span[1]";
 
-    public String SECURITY_CERT_ACCEPT="//ul[@class='form verticalForm']//li[1]//span[1]//span[1]//label[1]//span[1]";
-    public String SECURITY_DOMAIN_CHECK="//div[@class='ch-pageContent ng-scope']";
+    public String SECURITY_CERT_ACCEPT = "//ul[@class='form verticalForm']//li[1]//span[1]//span[1]//label[1]//span[1]";
+    public String SECURITY_DOMAIN_CHECK = "//div[@class='ch-pageContent ng-scope']";
 
 
 }

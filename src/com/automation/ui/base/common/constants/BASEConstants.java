@@ -19,7 +19,7 @@ public interface BASEConstants {
     public static String X_Site_AccessToken = "X-Site-AccessToken";
 
     public static final String IMAGE_UPLOAD_RESOURCES_PATH =
-              File.separator  + "resources"
+            File.separator + "resources"
                     + File.separator + "ImagesForUploadTests" + File.separator;
 
 

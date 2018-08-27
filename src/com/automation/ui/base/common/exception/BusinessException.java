@@ -14,7 +14,7 @@ public class BusinessException extends Exception {
 
     public BusinessException() {
         super();
-     }
+    }
 
     public BusinessException(String auxMsg) {
         super(auxMsg);
@@ -25,7 +25,7 @@ public class BusinessException extends Exception {
     public BusinessException(String errorCode, String auxMsg) {
         super(auxMsg);
         this.msg = makeMessage(errorCode, auxMsg);
-     }
+    }
 
     private String makeMessage(String errorCode, String auxMsg) {
 

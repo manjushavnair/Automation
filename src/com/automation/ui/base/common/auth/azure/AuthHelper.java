@@ -1,13 +1,11 @@
 package com.automation.ui.base.common.auth.azure;
 
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-
 import com.microsoft.aad.adal4j.AuthenticationResult;
 import com.nimbusds.openid.connect.sdk.AuthenticationResponse;
-import com.nimbusds.openid.connect.sdk.AuthenticationResponseParser;
 import com.nimbusds.openid.connect.sdk.AuthenticationSuccessResponse;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 public final class AuthHelper {
 

@@ -2,7 +2,6 @@ package com.automation.ui.base.common.core.drivers;
 
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.drivers.browsers.*;
-import com.automation.ui.base.common.driverprovider.DriverProvider;
 import com.automation.ui.base.common.logging.Log;
 import org.apache.log4j.Logger;
 

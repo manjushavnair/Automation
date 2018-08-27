@@ -13,7 +13,7 @@ public class DbTest {
 
     @Before
     public void setup() {
-	/*Store mk= mock(Store.class);
+    /*Store mk= mock(Store.class);
 	when(mk.remove(params)).thenReturn(true);
 	n=new Db();
 	n.setRs(mk);

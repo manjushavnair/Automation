@@ -125,23 +125,21 @@ public class HomePage extends SiteBasePageObject {
             Thread.sleep(5000);
 
 
-           if( ElementStateHelper.isElementVisible(addButton)) {
-                 waitAndClick(addButton);
+            if (ElementStateHelper.isElementVisible(addButton)) {
+                waitAndClick(addButton);
 
 
-
-           }
-           else {
+            } else {
 
 
-               wait.forElementVisible(addButtonTop);
+                wait.forElementVisible(addButtonTop);
 
-               if (ElementStateHelper.isElementVisible(addButtonTop)) {
+                if (ElementStateHelper.isElementVisible(addButtonTop)) {
 
-                     waitAndClick(addButtonTop);
+                    waitAndClick(addButtonTop);
 
-               }
-           }
+                }
+            }
             Thread.sleep(5000);
 
 
@@ -177,7 +175,6 @@ public class HomePage extends SiteBasePageObject {
 
 
     }
-
 
 
 }

@@ -2,29 +2,23 @@ package com.automation.ui.base.common.utils;
 
 import org.apache.log4j.Logger;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.*;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.*;
-
-
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ExcelUtil {
 
     private static Logger logger = Logger.getLogger(ExcelUtil.class);
     private Sheet datatypeSheet;
-
-
 
 
     /**
@@ -108,19 +102,18 @@ public class ExcelUtil {
 
         try {
             Workbook workbook = WorkbookFactory
-                    .create(new File(  filePath ));
+                    .create(new File(filePath));
             for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
 
             }
 
         } catch (InvalidFormatException | IOException e) {
 
-          logger.info(e.getMessage());
+            logger.info(e.getMessage());
         }
         return listOfSheets;
 
     }
-
 
 
     public String getCellData(int rowNum, int colNum) throws Exception {
@@ -134,7 +127,7 @@ public class ExcelUtil {
 
             return cellData;
 
-        } catch ( Exception e) {
+        } catch (Exception e) {
 
             logger.info("InvalidFormatException");
         }

@@ -1,4 +1,5 @@
 package com.automation.ui.base.common.core.api.apicore;
+
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -36,7 +37,7 @@ public class GetAdapter extends AbstractAdapter implements RestAdapter {
         }
         String response = null;
         try {
-            response = makeRawRequest(request,true);
+            response = makeRawRequest(request, true);
         } catch (IOException e) {
             e.printStackTrace();
         }

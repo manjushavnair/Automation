@@ -1,8 +1,7 @@
 package com.automation.ui.base.pageobjectsfactory.pageobject;
 
-import com.automation.ui.base.common.utils.*;
-
-
+import com.automation.ui.base.common.auth.User;
+import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.contentpatterns.URLsContent;
 import com.automation.ui.base.common.contentpatterns.XSSContent;
 import com.automation.ui.base.common.core.Assertion;
@@ -11,13 +10,17 @@ import com.automation.ui.base.common.core.EmailUtils;
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.element.JavascriptActions;
 import com.automation.ui.base.common.core.element.Wait;
+import com.automation.ui.base.common.core.element.alert.AlertHelper;
+import com.automation.ui.base.common.core.element.button.ButtonHelper;
+import com.automation.ui.base.common.core.element.checkbox.CheckBoxOrRadioButton;
+import com.automation.ui.base.common.core.element.link.LinkHelper;
+import com.automation.ui.base.common.core.element.textbox.TextBoxHelper;
 import com.automation.ui.base.common.core.purge.PurgeMethod;
 import com.automation.ui.base.common.core.url.Page;
 import com.automation.ui.base.common.core.url.UrlBuilder;
-import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.driverprovider.DriverProvider;
-
 import com.automation.ui.base.common.logging.Log;
+import com.automation.ui.base.common.utils.TimeZoneUtil;
 import com.google.common.base.Function;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.http.HttpStatus;
@@ -27,44 +30,18 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.By;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.automation.ui.base.common.utils.*;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.*;
-import java.util.Optional;
 import java.util.concurrent.TimeUnit;
-import com.automation.ui.base.common.constants.*;
-import com.automation.ui.base.common.core.element.link.*;
-import com.automation.ui.base.common.core.element.textbox.*;
-import com.automation.ui.base.common.core.element.alert.*;
-import com.automation.ui.base.common.core.element.checkbox.*;
-import com.automation.ui.base.common.core.element.button.*;
-
-
-
-
-
-
 
 
 public abstract class BasePageObject {
@@ -95,11 +72,11 @@ public abstract class BasePageObject {
         this.wait = new Wait(driver);
         this.jsActions = new JavascriptActions(driver);
 
-        linkHelper=new LinkHelper(driver,this);
-        textHelper = new TextBoxHelper(driver,this);
-        crHelper =new CheckBoxOrRadioButton(driver,this);
-        btnHelper =new ButtonHelper(driver,this);
-        alertHelper =new AlertHelper(driver,this);
+        linkHelper = new LinkHelper(driver, this);
+        textHelper = new TextBoxHelper(driver, this);
+        crHelper = new CheckBoxOrRadioButton(driver, this);
+        btnHelper = new ButtonHelper(driver, this);
+        alertHelper = new AlertHelper(driver, this);
 
         PageFactory.initElements(driver, this);
 
@@ -169,12 +146,12 @@ public abstract class BasePageObject {
     // wait for comscore to load
 
     public void waitForPageLoad() {
-        logger.info("waitForPageLoad"+COMSCORE_PIXEL_URL);
-          wait.forElementPresent(By.className("logo"));
+        logger.info("waitForPageLoad" + COMSCORE_PIXEL_URL);
+        wait.forElementPresent(By.className("logo"));
 
 
         // wait.forElementPresent(
-                //By.cssSelector(COMSCORE_PIXEL_URL));
+        //By.cssSelector(COMSCORE_PIXEL_URL));
     }
 
     public BasePageObject waitForPageReload() {
@@ -205,7 +182,6 @@ public abstract class BasePageObject {
     protected Dimension getWindowSize() {
         return driver.manage().window().getSize();
     }
-
 
 
     /**
@@ -374,7 +350,7 @@ public abstract class BasePageObject {
 
     */
 
-    protected By getElementLocator(Object obj,String element) throws SecurityException,NoSuchFieldException {
+    protected By getElementLocator(Object obj, String element) throws SecurityException, NoSuchFieldException {
         Class childClass = obj.getClass();
         By locator = null;
         try {
@@ -390,30 +366,30 @@ public abstract class BasePageObject {
     }
 
 
-		private By getFindByAnno(FindBy anno){
-			logger.info(anno);
-			switch (anno.how()) {
+    private By getFindByAnno(FindBy anno) {
+        logger.info(anno);
+        switch (anno.how()) {
 
-			case CLASS_NAME:
-				return new By.ByClassName(anno.using());
-			case CSS:
-				return new By.ByCssSelector(anno.using());
-			case ID:
-				return new By.ById(anno.using());
+            case CLASS_NAME:
+                return new By.ByClassName(anno.using());
+            case CSS:
+                return new By.ByCssSelector(anno.using());
+            case ID:
+                return new By.ById(anno.using());
             case TAG_NAME:
                 return new By.ByTagName(anno.using());
-		     case LINK_TEXT:
-				return new By.ByLinkText(anno.using());
-			case NAME:
-				return new By.ByName(anno.using());
-			case PARTIAL_LINK_TEXT:
-				return new By.ByPartialLinkText(anno.using());
-			case XPATH:
-				return new By.ByXPath(anno.using());
-			default :
-				throw new IllegalArgumentException("Locator not Found : " + anno.how() + " : " + anno.using());
-			}
-	}
+            case LINK_TEXT:
+                return new By.ByLinkText(anno.using());
+            case NAME:
+                return new By.ByName(anno.using());
+            case PARTIAL_LINK_TEXT:
+                return new By.ByPartialLinkText(anno.using());
+            case XPATH:
+                return new By.ByXPath(anno.using());
+            default:
+                throw new IllegalArgumentException("Locator not Found : " + anno.how() + " : " + anno.using());
+        }
+    }
 
     public void verifyUrlContains(final String givenString, int timeOut) {
         changeImplicitWait(BASEConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
@@ -591,28 +567,27 @@ public abstract class BasePageObject {
     }
 
 
-  public String getSiteUrlWithPath() {
+    public String getSiteUrlWithPath() {
         return UrlBuilder.createUrlBuilder().getUrlForPath(URLsContent.SITE_CONTEXT);
     }
 
-	public void  fillInputAfterClear(WebElement input, String value) {
+    public void fillInputAfterClear(WebElement input, String value) {
 
         input.clear();
 
         wait.forElementVisible(input).sendKeys(value);
 
-	}
+    }
 
-    public void  clearFieldInput(WebElement input ) {
+    public void clearFieldInput(WebElement input) {
 
         input.clear();
-
 
 
     }
 
     public void fillInput(WebElement input, String value) {
-         wait.forElementVisible(input).sendKeys(value);
+        wait.forElementVisible(input).sendKeys(value);
     }
 
     /**
@@ -765,8 +740,8 @@ public abstract class BasePageObject {
 
     public Set<String> getWindowHandlens() {
 
-			return driver.getWindowHandles();
-		}
+        return driver.getWindowHandles();
+    }
 
 
     public void switchToParentWindow() {
@@ -791,17 +766,18 @@ public abstract class BasePageObject {
         switchToParentWindow();
     }
 
-public void switchToWindow(int index) {
+    public void switchToWindow(int index) {
 
-		LinkedList<String> windowsId = new LinkedList<String>(
-				getWindowHandlens());
+        LinkedList<String> windowsId = new LinkedList<String>(
+                getWindowHandlens());
 
-		if (index < 0 || index > windowsId.size())
-			throw new IllegalArgumentException("Invalid Index : " + index);
+        if (index < 0 || index > windowsId.size())
+            throw new IllegalArgumentException("Invalid Index : " + index);
 
-		driver.switchTo().window(windowsId.get(index));
-		logger.info(index);
-	}
+        driver.switchTo().window(windowsId.get(index));
+        logger.info(index);
+    }
+
     private int getTabsCount() {
         return driver.getWindowHandles().size();
     }
@@ -885,18 +861,18 @@ public void switchToWindow(int index) {
     /**
      * Check for element is present based on locator
      * If the element is present return the web element otherwise null
+     *
      * @param locator
      * @return WebElement or null
      */
 
     public WebElement getElement(By locator) {
 
-        WebElement webElement=null;
+        WebElement webElement = null;
 
         //NEED TO CHECK THIS IMPL
-        if(isElementOnPage(locator))
-        {
-            webElement =driver.findElement(locator);
+        if (isElementOnPage(locator)) {
+            webElement = driver.findElement(locator);
             return webElement;
         }
 
@@ -910,22 +886,23 @@ public void switchToWindow(int index) {
 
     }
 
-       /**
-		 * Check for element is present based on locator
-		 * If the element is present return the web element otherwise null
-		 * @param locator
-		 * @return WebElement or null
-		 */
+    /**
+     * Check for element is present based on locator
+     * If the element is present return the web element otherwise null
+     *
+     * @param locator
+     * @return WebElement or null
+     */
 
-		public WebElement getElementWithNull(By locator) {
+    public WebElement getElementWithNull(By locator) {
 
-			try {
-				return driver.findElement(locator);
-			} catch (NoSuchElementException e) {
-				// Ignore
-			}
-			return null;
-		}
+        try {
+            return driver.findElement(locator);
+        } catch (NoSuchElementException e) {
+            // Ignore
+        }
+        return null;
+    }
 
     public WebElement getElementByCssSelector(String elementName) {
         WebElement element = driver.findElement(By.cssSelector(elementName));

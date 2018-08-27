@@ -1,16 +1,10 @@
 package com.automation.ui.base.common.core.element;
 
+import com.automation.ui.base.common.constants.BASEConstants;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import com.automation.ui.base.common.constants.*;
+import org.openqa.selenium.*;
 
 import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
-import org.openqa.selenium.TimeoutException;
 
 
 public class ElementStateHelper {
@@ -23,26 +17,18 @@ public class ElementStateHelper {
     }
 
 
-
-
-
-
-
     public static boolean isElementVisible(WebElement element) {
-    try {
+        try {
 
-      return element.isDisplayed();
+            return element.isDisplayed();
+        } catch (TimeoutException e) {
+            logger.info(e.getMessage());
+            return false;
+        } catch (NoSuchElementException e) {
+            logger.info(e.getMessage());
+            return false;
+        }
     }
-    catch (TimeoutException e) {
-	      logger.info(e.getMessage());
-	      return false;
-    }
-
-    catch (NoSuchElementException e) {
-      logger.info(e.getMessage());
-      return false;
-    }
-  }
 
     public static boolean isElementVisible(WebElement element, WebDriver webDriver) {
         webDriver.manage().timeouts().implicitlyWait(BASEConstants.WAITTIME500MILLISEC, TimeUnit.MILLISECONDS);

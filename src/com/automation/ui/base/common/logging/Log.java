@@ -1,8 +1,5 @@
 package com.automation.ui.base.common.logging;
 
-import com.automation.ui.base.common.report.filehandler.CreateHTML;
-import com.automation.ui.base.common.report.filehandler.FileNameConstants;
-import com.automation.ui.base.common.utils.CommonUtils;
 import com.automation.ui.base.common.core.UIWebDriver;
 import com.automation.ui.base.common.core.annotations.RelatedIssue;
 import com.automation.ui.base.common.core.configuration.Configuration;
@@ -10,6 +7,8 @@ import com.automation.ui.base.common.core.imageutilities.Shooter;
 import com.automation.ui.base.common.core.url.UrlBuilder;
 import com.automation.ui.base.common.driverprovider.DriverProvider;
 import com.automation.ui.base.common.exception.BusinessException;
+import com.automation.ui.base.common.utils.CommonUtils;
+import com.automation.ui.base.common.utils.DateUtil;
 import lombok.Getter;
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.core.har.HarEntry;
@@ -38,16 +37,15 @@ import java.util.List;
 import java.util.TimeZone;
 
 import static org.apache.commons.lang.StringEscapeUtils.escapeHtml;
-import com.automation.ui.base.common.utils.*;
 
 public class Log {
 
     private static final String POLISH_DATE_FORMAT = "dd/MM/yyyy HH:mm:ss ZZ";
     private static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ssZZ";
-    private static final String REPORT_PATH = "." + File.separator + "logs" + File.separator+"realreport"+File.separator;
+    private static final String REPORT_PATH = "." + File.separator + "logs" + File.separator + "realreport" + File.separator;
     private static final String SCREEN_DIR_PATH = REPORT_PATH + "screenshots" + File.separator;
     private static final String SCREEN_PATH = SCREEN_DIR_PATH + "screenshot";
-    private static final String LOG_FILE_NAME = "log"+ DateUtil.getCurrentDateTime()+".html";
+    private static final String LOG_FILE_NAME = "log" + DateUtil.getCurrentDateTime() + ".html";
     public static final String LOG_PATH = REPORT_PATH + LOG_FILE_NAME;
     private static final ArrayList<Boolean> LOGS_RESULTS = new ArrayList<>();
     public static String mobileSiteVersion = "";
@@ -65,7 +63,7 @@ public class Log {
     // This is to print log for the beginning of the test case, as we usually run so many test cases as a test suite
     public static void startTestCase(String sTestCaseName) {
 
-         logger.info("****************************************************************************************");
+        logger.info("****************************************************************************************");
         logger.info("$$$$$$$$$$$$$$$$$$$$$                 " + sTestCaseName + "       $$$$$$$$$$$$$$$$$$$$$$$$$");
         logger.info("****************************************************************************************");
 
@@ -123,7 +121,7 @@ public class Log {
         log(command, description, success, false);
     }
 
-    public static void  log(String command, Throwable e, boolean success) {
+    public static void log(String command, Throwable e, boolean success) {
         log(command, e.getMessage(), success, false);
     }
 
@@ -271,7 +269,7 @@ public class Log {
             classList.add(LogLevel.ERROR);
             classList.add(LogType.STACKTRACE);
             String html = VelocityWrapper.fillErrorLogRow(classList, exceptionMessage, Log.imageCounter);
-           // logger.info("htmlsource"+html);
+            // logger.info("htmlsource"+html);
             try {
                 new Shooter().savePageScreenshot(Log.SCREEN_PATH + Log.imageCounter, driver);
                 CommonUtils.appendTextToFile(Log.LOG_PATH, html);
@@ -304,7 +302,6 @@ public class Log {
         // WebElement mercuryScriptVersion = driver.findElement(By.cssSelector("script[src*='mercury_ads_js']"));
 
 
-
         if (driver.getProxy() != null && Configuration.getForceHttps()) {
 
             Har har = driver.getProxy().getHar();
@@ -328,15 +325,14 @@ public class Log {
         }
 
 
-
         if (Configuration.getMobileSiteVersion() != null) {
             Log.info("Mobile Site Version: " + Configuration.getMobileSiteVersion());
         }
 
         String html = VelocityWrapper.fillLastLogRow();
 
-         CommonUtils.appendTextToFile(Log.LOG_PATH, html);
-         Log.testStarted = false;
+        CommonUtils.appendTextToFile(Log.LOG_PATH, html);
+        Log.testStarted = false;
     }
 
     public static void startReport() {
@@ -360,7 +356,6 @@ public class Log {
                         testingEnvironment, testedVersion, mobileSiteVersion
                 );
         CommonUtils.appendTextToFile(Log.LOG_PATH, headerHtml);
-
 
 
         appendShowHideButtons();

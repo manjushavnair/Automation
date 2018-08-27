@@ -14,14 +14,16 @@ public class SiteId {
     @Getter
     private String siteId;
     private String siteUrl;
+
     public SiteId(String siteUrl) {
         this.siteUrl = siteUrl;
-     }
+    }
+
     //NEED TO REDEFINE
     private void extractSiteIdFromSpecialVersion() {
         NoAuthOperation request = new NoAuthOperation();
         String response = request
-                .execute(this.siteUrl + URLsContent.SITE_DIR ,
+                .execute(this.siteUrl + URLsContent.SITE_DIR,
                         new JSONObject());
         Pattern p = Pattern.compile(".*id: (\\d+).*", Pattern.DOTALL);
         Matcher m = p.matcher(response);

@@ -13,7 +13,7 @@ public class OSUtils {
 
     static {
         Properties props = System.getProperties();
-        String separator = (String)props.get("file.separator");
+        String separator = (String) props.get("file.separator");
         if (separator.equals("/")) {
             FILE_SEPARATOR = "/";
         } else {
@@ -22,12 +22,12 @@ public class OSUtils {
     }
 
 
-    public static void callingGC(){
+    public static void callingGC() {
         Runtime getRT = Runtime.getRuntime();
-        System.out.println("Memory status before gc at:	"+new java.util.Date()+" totalmemory : "+getRT.totalMemory()+" : freememory:"+getRT.freeMemory());
+        System.out.println("Memory status before gc at:	" + new java.util.Date() + " totalmemory : " + getRT.totalMemory() + " : freememory:" + getRT.freeMemory());
         System.gc();
         getRT = Runtime.getRuntime();
-        System.out.println("Memory after gc at:	"+new java.util.Date()+" totalmemory : "+getRT.totalMemory()+" : freememory:"+getRT.freeMemory());
+        System.out.println("Memory after gc at:	" + new java.util.Date() + " totalmemory : " + getRT.totalMemory() + " : freememory:" + getRT.freeMemory());
     }//Ending callingGC
 
 }

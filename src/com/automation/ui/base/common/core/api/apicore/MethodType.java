@@ -1,4 +1,5 @@
 package com.automation.ui.base.common.core.api.apicore;
+
 public enum MethodType {
 
     GET("GET"),

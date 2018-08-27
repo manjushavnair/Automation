@@ -1,24 +1,22 @@
 package com.automation.ui.base.common.core.helpers;
 
-import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.Enumeration;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.commons.lang3.text.WordUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import javax.servlet.http.HttpServletRequest;
+import java.lang.reflect.Field;
+import java.util.Arrays;
+import java.util.Enumeration;
+import java.util.List;
+
 /**
  * This class provides the methods to parse JSON Data from a JSON Formatted
  * String.
  *
  * @author Azure Active Directory Contributor
- *
  */
 public class JSONHelper {
 
@@ -32,8 +30,7 @@ public class JSONHelper {
      * This method parses an JSON Array out of a collection of JSON Objects
      * within a string.
      *
-     * @param jSonData
-     *            The JSON String that holds the collection.
+     * @param jSonData The JSON String that holds the collection.
      * @return An JSON Array that would contains all the collection object.
      * @throws Exception
      */
@@ -60,8 +57,7 @@ public class JSONHelper {
     /**
      * This method parses the skip token from a json formatted string.
      *
-     * @param jsonData
-     *            The JSON Formatted String.
+     * @param jsonData The JSON Formatted String.
      * @return The skipToken.
      * @throws Exception
      */
@@ -104,11 +100,9 @@ public class JSONHelper {
      * This method would create a string consisting of a JSON document with all
      * the necessary elements set from the HttpServletRequest request.
      *
-     * @param request
-     *            The HttpServletRequest
+     * @param request The HttpServletRequest
      * @return the string containing the JSON document.
-     * @throws Exception
-     *             If there is any error processing the request.
+     * @throws Exception If there is any error processing the request.
      */
     public static String createJSONString(HttpServletRequest request, String controller) throws Exception {
         JSONObject obj = new JSONObject();
@@ -152,7 +146,6 @@ public class JSONHelper {
     }
 
     /**
-     *
      * @param key
      * @param value
      * @return string format of this JSON obje
@@ -174,12 +167,9 @@ public class JSONHelper {
      * This is a generic method that copies the simple attribute values from an
      * argument jsonObject to an argument generic object.
      *
-     * @param jsonObject
-     *            The jsonObject from where the attributes are to be copied.
-     * @param destObject
-     *            The object where the attributes should be copied into.
-     * @throws Exception
-     *             Throws a Exception when the operation are unsuccessful.
+     * @param jsonObject The jsonObject from where the attributes are to be copied.
+     * @param destObject The object where the attributes should be copied into.
+     * @throws Exception Throws a Exception when the operation are unsuccessful.
      */
     public static <T> void convertJSONObjectToDirectoryObject(JSONObject jsonObject, T destObject) throws Exception {
 
@@ -196,8 +186,8 @@ public class JSONHelper {
                 destObject
                         .getClass()
                         .getMethod(String.format("set%s", WordUtils.capitalize(fieldList[i].getName())),
-                                new Class[] { String.class })
-                        .invoke(destObject, new Object[] { jsonObject.optString(fieldList[i].getName()) });
+                                new Class[]{String.class})
+                        .invoke(destObject, new Object[]{jsonObject.optString(fieldList[i].getName())});
             }
         }
     }

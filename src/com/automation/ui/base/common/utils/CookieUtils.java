@@ -12,16 +12,15 @@ import java.util.Set;
 public class CookieUtils {
 
 
-
     private static Log log = LogFactory.getLog(CookieUtils.class);
 
     private CookieUtils() {
     }
 
     public static void deleteAllCookies(WebDriver driver) {
-	         driver.manage().deleteAllCookies();
+        driver.manage().deleteAllCookies();
 
-	    }
+    }
 
     /**
      * Clears the given cookie by setting the maxAge to 0 and the value to ""
@@ -36,14 +35,13 @@ public class CookieUtils {
     }
 
     public static void deleteCookiesOneByOne(WebDriver driver) {
-	         Set<Cookie> allCookies = driver.manage().getCookies();
-	        for (Cookie cookie : allCookies) {
-	            driver.manage().deleteCookieNamed(cookie.getName());
-	        }
+        Set<Cookie> allCookies = driver.manage().getCookies();
+        for (Cookie cookie : allCookies) {
+            driver.manage().deleteCookieNamed(cookie.getName());
+        }
 
 
-
-	    }
+    }
 
 
     /**
@@ -58,8 +56,6 @@ public class CookieUtils {
 
         driver.manage().deleteCookie(new Cookie(cookieName, valueName));
     }
-
-
 
 
     /**
@@ -120,12 +116,12 @@ public class CookieUtils {
             String path,
             Date maxAge) throws IllegalArgumentException {
 
-        if (name == null || name.equals("")|| value == null ||value.equals("")) {
+        if (name == null || name.equals("") || value == null || value.equals("")) {
 
             throw new IllegalArgumentException("Name or value cannot be null for new Cookie ");
         }
 
-        Cookie cookie = new Cookie(name, value, domain, path,  maxAge);
+        Cookie cookie = new Cookie(name, value, domain, path, maxAge);
         return cookie;
     }
 

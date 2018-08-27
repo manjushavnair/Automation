@@ -20,16 +20,30 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         super();
         logger.info(" UAConnectionDetailsTest");
         connectiondetail_page = new UAConnectionDetails();
-            }
+    }
 
 
-    @Test(enabled = true, priority =4, groups = {"validcase"}, description = "UAConnectionDetails")
+    @Test(enabled = true, priority = 4, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionDropdownTest() throws Throwable {
 
 
-        logger.info("Entering UAConnectionDetails");
-       connectiondetail_page.dcDropdown();
-       logger.info("Exiting provideServerDetailsCancel");
-       Thread.sleep(10000);
+        logger.info("Entering dcConnectionDropdownTest");
+        connectiondetail_page.dcDropdown();
+        logger.info("Exiting dcConnectionDropdownTest");
+        Thread.sleep(10000);
+    }
+
+
+    @Test(enabled = true, priority = 5, groups = {"validcase"}, description = "UAConnectionDetails")
+    public void dcConnectionEditTest() throws Throwable {
+
+
+        logger.info("Entering dcConnectionEditTest");
+        connectiondetail_page.dcDropdown();
+        Thread.sleep(5000);
+        logger.info("Exiting dcConnectionDropdownTest");
+        connectiondetail_page.dcEdit();
+        Thread.sleep(5000);
+        logger.info("Exiting dcConnectionEditTest");
     }
 }

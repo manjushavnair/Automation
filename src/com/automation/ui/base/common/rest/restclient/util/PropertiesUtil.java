@@ -12,7 +12,7 @@ public class PropertiesUtil {
 
     private PropertiesUtil(String dataLocation) throws IOException {
         this.dataLocation = dataLocation;
-        properties=BasePropertyReader.readProperty(this.dataLocation);
+        properties = BasePropertyReader.readProperty(this.dataLocation);
     }
 
     public static PropertiesUtil create(String dataLocation) throws IOException {
@@ -68,6 +68,6 @@ public class PropertiesUtil {
     }
 
     public String data(Repository value) {
-                return getProperties(value.getValue());
+        return getProperties(value.getValue());
     }
 }

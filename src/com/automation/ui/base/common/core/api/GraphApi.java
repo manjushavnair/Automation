@@ -1,7 +1,7 @@
 package com.automation.ui.base.common.core.api;
 
-import com.automation.ui.base.common.core.XMLReader;
 import com.automation.ui.base.common.auth.FacebookUser;
+import com.automation.ui.base.common.core.XMLReader;
 import com.automation.ui.base.common.logging.Log;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;

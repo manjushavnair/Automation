@@ -1,5 +1,7 @@
 package com.automation.ui.base.common.prpreaders;
 
+import com.automation.ui.base.common.constants.BASEConstants;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,7 +10,6 @@ import java.util.Properties;
 
 import static java.lang.Boolean.parseBoolean;
 import static java.lang.Integer.parseInt;
-import com.automation.ui.base.common.constants.*;
 
 public class ExceptionErrorCodeReader extends Properties {
 
@@ -36,9 +37,6 @@ public class ExceptionErrorCodeReader extends Properties {
                 }
             }
         }
-
-
-
 
 
         return errorCodereader;

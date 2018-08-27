@@ -5,14 +5,14 @@ import com.automation.ui.base.common.core.configuration.Configuration;
 
 import java.io.File;
 
-public enum User  {
+public enum User {
 
 
-	FORGOTTEN_PASSWORD("ci.user.forgottenPassword.username", "ci.user.forgottenPassword.password"),
-	USER("ci.user.regular.username", "ci.user.regular.password", "ci.user.regular.user_id", "ci.user.regular.access_token"),
-	USER_2("ci.user.regular2.username", "ci.user.regular2.password"),
-	ANONYMOUS("anonymous", "anonymous"),
-	USER_CTEST("ci.user.ctest3.username", "ci.user.ctest3.password"),;
+    FORGOTTEN_PASSWORD("ci.user.forgottenPassword.username", "ci.user.forgottenPassword.password"),
+    USER("ci.user.regular.username", "ci.user.regular.password", "ci.user.regular.user_id", "ci.user.regular.access_token"),
+    USER_2("ci.user.regular2.username", "ci.user.regular2.password"),
+    ANONYMOUS("anonymous", "anonymous"),
+    USER_CTEST("ci.user.ctest3.username", "ci.user.ctest3.password"),;
 
     private final String userName;
 
@@ -21,7 +21,7 @@ public enum User  {
     private String userId;
     private String accessToken;
 
-      User(String userNameKey, String passwordKey) {
+    User(String userNameKey, String passwordKey) {
         System.out.println("filePath" + filePath);
         this.userName = XMLReader.getValue(new File(filePath), userNameKey);
         this.password = XMLReader.getValue(new File(filePath), passwordKey);

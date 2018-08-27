@@ -2,10 +2,6 @@ package com.automation.ui.base.common.remote;
 
 import com.automation.ui.base.common.core.XMLReader;
 import com.automation.ui.base.common.core.configuration.Configuration;
-import com.automation.ui.base.common.core.url.UrlBuilder;
-import org.apache.commons.lang.StringUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 import java.io.File;
 import java.util.Objects;
@@ -16,7 +12,6 @@ public final class Utils {
     private Utils() {
         throw new AssertionError();
     }
-
 
 
     public static String buildServicesUrl() {

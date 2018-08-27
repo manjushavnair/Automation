@@ -1,8 +1,8 @@
 package com.automation.ui.githubtesting.pageobjectfactory.pageobject.base;
 
+import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.core.Helios;
 import com.automation.ui.base.common.core.configuration.Configuration;
-import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.pageobjectsfactory.pageobject.BasePageObject;
 import org.apache.log4j.Logger;
@@ -17,24 +17,17 @@ import java.util.concurrent.TimeUnit;
 public class SiteBasePageObject extends BasePageObject {
 
 
-
-
-     protected By parentBy = By.xpath("./..");
-
-
-
     private static final int TIMEOUT_PAGE_REGISTRATION = 3000;
     private static Logger logger = Logger.getLogger(SiteBasePageObject.class);
+    protected By parentBy = By.xpath("./..");
 
     public SiteBasePageObject() {
         super();
     }
 
 
-
-
-       //NEED TO CHANGE the context based on site context
-     public String getContextUrl() {
+    //NEED TO CHANGE the context based on site context
+    public String getContextUrl() {
         String currentURL = driver.getCurrentUrl();
         return currentURL.substring(0, currentURL.lastIndexOf("/login"));
     }
@@ -51,6 +44,7 @@ public class SiteBasePageObject extends BasePageObject {
             Log.info("  userID: " + scriptOut.toString());
         }
     }
+
     /**
      * Logout by clicking on "Sign out" option in global navigation
      */
@@ -61,8 +55,6 @@ public class SiteBasePageObject extends BasePageObject {
             Log.log("logOut", "page loads for more than 30 seconds", true);
         }
     }
-
-
 
 
     public String loginAs(User user) {
@@ -114,31 +106,15 @@ public class SiteBasePageObject extends BasePageObject {
         this.verifyUserLoggedIn(user.getUserName());
     }
 
-
-
-
-
-
-    public static class AssertionMessages {
-
-        public static final String INVALID_NUMBER_OF_CONFIRMING_NOTIFICATIONS =
-                "Number of action confirming notifications is invalid";
-        public static final String BANNER_NOTIFICATION_NOT_VISIBLE = "Banner notification message is not visible";
-
-        private AssertionMessages() {
-            throw new IllegalAccessError("Utility class");
-        }
-    }
-
-
     //"script[src*='/scripts/beacon.js']";
     // wait for comscore to load
     @Override
     public void waitForPageLoad() {
 
-      wait.forElementPresent(By.cssSelector(".octicon.octicon-mark-github"));
+        wait.forElementPresent(By.cssSelector(".octicon.octicon-mark-github"));
 
     }
+
     @Override
     public BasePageObject waitForPageReload() {
         waitSafely(
@@ -151,7 +127,16 @@ public class SiteBasePageObject extends BasePageObject {
         return this;
     }
 
+    public static class AssertionMessages {
 
+        public static final String INVALID_NUMBER_OF_CONFIRMING_NOTIFICATIONS =
+                "Number of action confirming notifications is invalid";
+        public static final String BANNER_NOTIFICATION_NOT_VISIBLE = "Banner notification message is not visible";
+
+        private AssertionMessages() {
+            throw new IllegalAccessError("Utility class");
+        }
+    }
 
 
 }

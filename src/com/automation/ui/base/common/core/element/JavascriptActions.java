@@ -1,7 +1,7 @@
 package com.automation.ui.base.common.core.element;
 
+import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.contentpatterns.XSSContent;
-import com.automation.ui.base.common.core.drivers.browsers.IEBrowser;
 import com.automation.ui.base.common.driverprovider.DriverProvider;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
@@ -9,8 +9,6 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import com.automation.ui.base.common.constants.*;
-import org.openqa.selenium.JavascriptExecutor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -20,11 +18,9 @@ import java.util.concurrent.TimeUnit;
 public class JavascriptActions {
 
 
+    private final static int WEBDRIVER_WAIT_TIMEOUT_SEC = 15;
     private static Logger logger = Logger
             .getLogger(JavascriptActions.class);
-
-
-    private final static int WEBDRIVER_WAIT_TIMEOUT_SEC = 15;
     private final JavascriptExecutor js;
     private final WebDriver driver;
 
@@ -94,17 +90,17 @@ public class JavascriptActions {
     }
 
     /**
-	     * Gets the distance from top to the bottom of the navigation bar, no matter if it's mobile or desktop.
-	     *
-	     * @return offset
-	     */
-	private int getOffset() {
-		SiteBasePageObject sitePage = new SiteBasePageObject();
-		int offset = sitePage.getNavigationBarOffsetFromTop();
+     * Gets the distance from top to the bottom of the navigation bar, no matter if it's mobile or desktop.
+     *
+     * @return offset
+     */
+    private int getOffset() {
+        SiteBasePageObject sitePage = new SiteBasePageObject();
+        int offset = sitePage.getNavigationBarOffsetFromTop();
 
 
-		return offset;
-	}
+        return offset;
+    }
 
 
     public boolean isElementInViewPort(WebElement element) {
@@ -166,11 +162,11 @@ public class JavascriptActions {
     }
 
 
-public void scrollToElemet(WebElement element) {
-		js.executeScript("window.scrollTo(arguments[0],arguments[1])",
-		element.getLocation().x, element.getLocation().y);
-		logger.info(element);
-	}
+    public void scrollToElemet(WebElement element) {
+        js.executeScript("window.scrollTo(arguments[0],arguments[1])",
+                element.getLocation().x, element.getLocation().y);
+        logger.info(element);
+    }
 
     public void scrollToElement(WebElement element) {
         try {
@@ -185,7 +181,6 @@ public void scrollToElemet(WebElement element) {
                             "arguments[0].clientTop - " + getOffset() + "));", element);
         }
     }
-
 
 
     public void scrollToSpecificElement(WebElement element) {
@@ -217,11 +212,9 @@ public void scrollToElemet(WebElement element) {
     }
 
 
-
     public void scrollBy(int x, int y) {
         js.executeScript("window.scrollBy(arguments[0], arguments[1])", x, y);
     }
-
 
 
     public void waitForJavaScriptTruthy(final String script) {

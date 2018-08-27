@@ -3,16 +3,14 @@ package com.automation.ui.base.common.rest.restclient;
 
 import com.automation.ui.base.common.rest.restclient.adapter.AbstractAdapter;
 import com.automation.ui.base.common.rest.restclient.adapter.RestAdapter;
-import io.restassured.*;
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.mapper.ObjectMapperType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.config.EncoderConfig.encoderConfig;
-
-
-import io.restassured.mapper.*;
 
 public class GetAdapter extends AbstractAdapter implements RestAdapter {
     private String name;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Automation" verbose="2" >
+<suite name="Automation" verbose="2">
     <!-- change the below two vvlaues -->
     <!--
     How to run
@@ -14,7 +14,7 @@
     <parameter name="browserType" value="chrome"/>
 
 
-    <listeners >
+    <listeners>
 
         <listener class-name="org.testng.reporters.EmailableReporter2"/>
         <listener class-name="org.testng.reporters.SuiteHTMLReporter"/>
@@ -23,8 +23,7 @@
         <listener class-name="com.automation.ui.base.common.report.listener.RealTimeTestResultListener"/>
     </listeners>
 
-    <test name="Automation" preserve-order="true" >
-
+    <test name="Automation" preserve-order="true">
 
 
         <groups>
@@ -84,16 +83,16 @@
             </class>
 
 
-            <class name="com.automation.ui.connected.testcases.home.HomePageTest"  >
+            <class name="com.automation.ui.connected.testcases.home.HomePageTest">
 
-            <methods>
-                <include name="launchHomePage"/>
-                <exclude name="addConnection"/>
-            </methods>
-             </class>
+                <methods>
+                    <include name="launchHomePage"/>
+                    <exclude name="addConnection"/>
+                </methods>
+            </class>
 
 
-            <class name="com.automation.ui.connected.testcases.serverdetails.ProvideServerDetailsTest"  >
+            <class name="com.automation.ui.connected.testcases.serverdetails.ProvideServerDetailsTest">
 
                 <methods>
                     <exclude name="clearCustomerNameTest"/>
