@@ -56,8 +56,8 @@ public class CreateHTML extends CreateFiles {
 
 		Transformer transformer = null;
 
-		logger.info("DASHBOARD_XSL_PATH"+DASHBOARD_XSL_PATH);
-		logger.info("DASHBOARD_XML_PATH"+XML_PATH);
+	//	logger.info("DASHBOARD_XSL_PATH"+DASHBOARD_XSL_PATH);
+	//	logger.info("DASHBOARD_XML_PATH"+XML_PATH);
 		StreamResult wr=new StreamResult(writer);
 	/*
 		OutputStream htmlFile = null;
