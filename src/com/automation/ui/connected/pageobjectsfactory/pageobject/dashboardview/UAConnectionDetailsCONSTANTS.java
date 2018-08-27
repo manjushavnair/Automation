@@ -7,6 +7,9 @@ public interface UAConnectionDetailsCONSTANTS {
     public String DATACONNECTIONREMOVE = "//a[@id='ui-id-8']";
     public String DATACONNECTIONPAUSE = "//a[@class='icon pause ng-binding']";
     public String DATACONNECTIONDETAILS = "//a[@class='link ng-binding']";
+    public String DATACONNECTIONDETAILS_EDIT = "//a[@class='edit']";
+
+
 
 
 }

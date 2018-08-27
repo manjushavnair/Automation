@@ -112,6 +112,9 @@
                     <include name="dcConnectionEditTest"/>
                     <exclude name="dcConnectionRemoveTest"/>
                     <include name="dcConnectionDetailsTest"/>
+                    <include name="dcConnectionDetailsEditTest"/>
+
+
 
                 </methods>
             </class>

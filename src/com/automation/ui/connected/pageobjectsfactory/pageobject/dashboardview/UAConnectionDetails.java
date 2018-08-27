@@ -21,6 +21,11 @@ public class UAConnectionDetails extends SiteBasePageObject {
     private WebElement dcRemove;
     @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONDETAILS)
     private WebElement dcDetails;
+    @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONDETAILS_EDIT)
+    private WebElement dcDetailsEdit;
+
+
+
 
     public UAConnectionDetails open() {
 
@@ -93,6 +98,16 @@ public class UAConnectionDetails extends SiteBasePageObject {
         }
     }
 
+    public void dcDetails_Edit() {
+        try {
+            logger.info("Click on DataConnection Details");
+            wait.forElementVisible(dcDetailsEdit, BASEConstants.WAITTIME10000MILLISEC);
+            waitAndClick(dcDetailsEdit);
 
+        } catch (Exception e) {
+            e.printStackTrace();
+            ;
+        }
+    }
 
 }

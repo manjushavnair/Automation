@@ -86,4 +86,16 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         logger.info("Exiting dcConnectionDetailsTest");
 
     }
+
+    @Test(enabled = true, priority = 9, groups = {"validcase"}, description = "UAConnectionDetails")
+    public void dcConnectionDetailsEditTest() throws Throwable {
+
+
+        logger.info("Entering dcConnectionDetailsEditTest");
+        connectiondetail_page.dcDetails();
+        connectiondetail_page.dcDetails_Edit();
+        Thread.sleep(10000);
+        logger.info("Exiting dcConnectionDetailsEditTest");
+
+    }
 }
