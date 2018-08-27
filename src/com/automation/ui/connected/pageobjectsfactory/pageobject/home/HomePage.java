@@ -26,7 +26,7 @@ public class HomePage extends SiteBasePageObject {
 
 
     @FindBy(css = "primary")
-    private WebElement primarysButton;
+    private WebElement primaryButton;
 
 
     @FindBy(css = "a.logouts")
@@ -48,11 +48,11 @@ public class HomePage extends SiteBasePageObject {
     private WebElement msgExtra;
 
 
-    /*public com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage open() {
+    /*public  HomePage open() {
         return open(Configuration.getSiteName());
     }
 
-    public com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage open(String siteName) {
+    public  HomePage open(String siteName) {
         getUrl(UrlBuilder.createUrlBuilderForSite(siteName).getUrl());
         waitForPageLoad();
 
@@ -126,19 +126,8 @@ public class HomePage extends SiteBasePageObject {
 
 
            if( ElementStateHelper.isElementVisible(addButton)) {
-               logger.info("Entering  addConnection: 2");
+                 waitAndClick(addButton);
 
-           //    Reporter.log("Entering  addConnection:" + addButton.getTagName() + " " + addButton.getText() + " " + addButton.getLocation());
-
-
-
-             //  jsActions.click(addButton);
-
-               logger.info("Entering  addConnection: 3");
-
-               waitAndClick(addButton);
-
-               logger.info("Entering  addConnection: 4");
 
 
            }
@@ -149,15 +138,7 @@ public class HomePage extends SiteBasePageObject {
 
                if (ElementStateHelper.isElementVisible(addButtonTop)) {
 
-                   logger.info("Entering  addConnection:" + addButtonTop.getTagName() + " " + addButtonTop.getText() + " " + addButtonTop.getLocation());
-
-                 //  Reporter.log("Entering  addConnection:" + addButtonTop.getTagName() + " " + addButtonTop.getText() + " " + addButtonTop.getLocation());
-
-                 //  jsActions.click(addButtonTop);
-
-                   waitAndClick(addButtonTop);
-
-
+                     waitAndClick(addButtonTop);
 
                }
            }
