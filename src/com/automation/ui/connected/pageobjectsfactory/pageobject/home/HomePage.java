@@ -124,7 +124,7 @@ public class HomePage extends SiteBasePageObject {
 
             Thread.sleep(5000);
 
-            wait.forElementVisible(addButton);
+           // wait.forElementVisible(addButton);
 
 
            if( ElementStateHelper.isElementVisible(addButton)) {
