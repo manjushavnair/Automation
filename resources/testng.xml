@@ -113,6 +113,10 @@
                     <exclude name="dcConnectionRemoveTest"/>
                     <include name="dcConnectionDetailsTest"/>
                     <include name="dcConnectionDetailsEditTest"/>
+                    <include name="dcConnectionDetailsEditTags"/>
+                    <include name="dcConnectionDetailsEditPref"/>
+                    <include name="dcConnectionDetailsEditServer"/>
+
 
 
 

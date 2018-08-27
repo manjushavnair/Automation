@@ -25,6 +25,12 @@ public class UAConnectionDetails extends SiteBasePageObject {
     private WebElement dcDetailsEdit;
 
 
+    @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONDETAILS_PREF)
+    private WebElement dcDetailsEditPref;
+    @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONDETAILS_SERVER)
+    private WebElement dcDetailsEditServer;
+    @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONDETAILS_TAGS)
+    private WebElement dcDetailsEditTags;
 
 
     public UAConnectionDetails open() {
@@ -103,6 +109,42 @@ public class UAConnectionDetails extends SiteBasePageObject {
             logger.info("Click on DataConnection Details");
             wait.forElementVisible(dcDetailsEdit, BASEConstants.WAITTIME10000MILLISEC);
             waitAndClick(dcDetailsEdit);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            ;
+        }
+    }
+
+    public void dcDetails_Edit_Tag() {
+        try {
+            logger.info("Click on dcDetails_Edit_Tag");
+            wait.forElementVisible(dcDetailsEditTags, BASEConstants.WAITTIME10000MILLISEC);
+            waitAndClick(dcDetailsEditTags);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            ;
+        }
+    }
+
+    public void dcDetails_Edit_Preferances() {
+        try {
+            logger.info("Click on dcDetails_Edit_Preferancess");
+            wait.forElementVisible(dcDetailsEditPref, BASEConstants.WAITTIME10000MILLISEC);
+            waitAndClick(dcDetailsEditPref);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            ;
+        }
+    }
+
+    public void dcDetails_Edit_Server() {
+        try {
+            logger.info("Click on dcDetails_Edit_Server");
+            wait.forElementVisible(dcDetailsEditServer, BASEConstants.WAITTIME10000MILLISEC);
+            waitAndClick(dcDetailsEditServer);
 
         } catch (Exception e) {
             e.printStackTrace();
