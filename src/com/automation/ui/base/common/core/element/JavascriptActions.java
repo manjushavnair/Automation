@@ -49,14 +49,17 @@ public class JavascriptActions {
     }
 
     public void focusCss(String cssSelector) {
+
         js.executeScript("$('" + cssSelector + "').focus()");
     }
 
     public void focus(WebElement element) {
+
         js.executeScript("$(arguments[0]).focus()", element);
     }
 
     public Object execute(String script, WebElement element) {
+
         return js.executeScript(script, element);
     }
 
