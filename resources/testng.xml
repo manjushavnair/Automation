@@ -108,6 +108,7 @@
             <class name="com.automation.ui.connected.testcases.dashboardviewtest.UAConnectionDetailsTest">
                 <methods>
                     <include name="dcConnectionDropdownTest"/>
+                    <include name="dcConnectionEditTest"/>
                 </methods>
             </class>
 
