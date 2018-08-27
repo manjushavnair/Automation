@@ -154,7 +154,6 @@ public class HomePage extends SiteBasePageObject {
         } catch (Exception e) {
             e.printStackTrace();
 
-
         }
         return new AddServerDetails();
 
