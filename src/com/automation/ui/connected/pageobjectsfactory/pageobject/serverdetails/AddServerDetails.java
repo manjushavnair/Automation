@@ -1,13 +1,13 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails;
 
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
-import com.automation.ui.connected.testcases.base.*;
+import com.automation.ui.connected.testcases.base.ServerType;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.support.*;
-import org.testng.Reporter;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
 
 public class AddServerDetails extends SiteBasePageObject {
 
@@ -36,7 +36,7 @@ public class AddServerDetails extends SiteBasePageObject {
     private WebElement siteNameErMsg;
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_SERVERTYPE)
-    private  WebElement connServerType;
+    private WebElement connServerType;
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_SERVERNAME)
     private WebElement connServerName;
@@ -67,7 +67,6 @@ public class AddServerDetails extends SiteBasePageObject {
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.SECURITY_DOMAIN_CHECK)
     private WebElement securityDomainCheck;
-
 
 
     public AddServerDetails open() {
@@ -205,7 +204,7 @@ public class AddServerDetails extends SiteBasePageObject {
     }
 
 
-     /* Method to enter site  Name under Collector Details*/
+    /* Method to enter site  Name under Collector Details*/
 
     public void provideServerDetailsConnDetails() {
 
@@ -225,7 +224,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
     }
 
-      /* Method to enter site  Name under Collector Details*/
+    /* Method to enter site  Name under Collector Details*/
 
     public void provideServerConnectionType(ServerType serverType) {
 
@@ -234,7 +233,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
         try {
 
-          //  WebElement selectedMedia = connServerType.get(2);
+            //  WebElement selectedMedia = connServerType.get(2);
 
             wait.forElementClickable(connServerType);
 
@@ -244,10 +243,9 @@ public class AddServerDetails extends SiteBasePageObject {
             select.selectByVisibleText(serverType.getServerType());
             builder.moveToElement(connServerType).click(connServerType);
             builder.perform();
-          } catch (NoSuchElementException e) {
+        } catch (NoSuchElementException e) {
             logger.info("provideServerConnectionType");
-        }
-        catch ( Exception e) {
+        } catch (Exception e) {
             logger.info("provideServerConnectionType");
         }
     }
@@ -274,8 +272,7 @@ public class AddServerDetails extends SiteBasePageObject {
             default:
                 throw new NoSuchElementException("Non-existing ServerType selected");
         }
-     }
-
+    }
 
 
 }

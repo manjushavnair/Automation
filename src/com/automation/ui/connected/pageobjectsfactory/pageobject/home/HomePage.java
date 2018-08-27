@@ -123,7 +123,8 @@ public class HomePage extends SiteBasePageObject {
             logger.info("Entering  addConnection:");
             Reporter.log("Entering  addConnection:" + addButton.getTagName() + " " + addButton.getText() + " " + addButton.getLocation());
 
-            // wait.forElementVisible(addButton, 30);
+
+            wait.forElementVisible(addButton);
            if( ElementStateHelper.isElementVisible(addButton)) {
 
 
@@ -133,6 +134,17 @@ public class HomePage extends SiteBasePageObject {
 
                Thread.sleep(5000);
            }
+
+            wait.forElementVisible(addButtonTop);
+            if( ElementStateHelper.isElementVisible(addButtonTop)) {
+
+
+                jsActions.click(addButton);
+
+                waitAndClick(addButton);
+
+                Thread.sleep(5000);
+            }
 
 
             logger.info("Exiting  addConnection");
