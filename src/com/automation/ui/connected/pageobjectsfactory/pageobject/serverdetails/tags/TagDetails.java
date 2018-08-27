@@ -27,15 +27,7 @@ public class TagDetails extends SiteBasePageObject {
 
 
     public void dcDetails() {
-        try {
-            logger.info("Click on DataConnection Details");
-            wait.forElementVisible(dcDetails, BASEConstants.WAITTIME10000MILLISEC);
-            waitAndClick(dcDetails);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            ;
-        }
     }
 
 
