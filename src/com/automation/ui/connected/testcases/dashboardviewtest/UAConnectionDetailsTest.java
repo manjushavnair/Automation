@@ -30,5 +30,6 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         logger.info("Entering UAConnectionDetails");
        connectiondetail_page.dcDropdown();
        logger.info("Exiting provideServerDetailsCancel");
+       Thread.sleep(10000);
     }
 }
