@@ -30,7 +30,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
             }
 
 
-    @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "UAConnectionDetails")
+    @Test(enabled = true, priority =4, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionDropdownTest() throws Throwable {
 
 
