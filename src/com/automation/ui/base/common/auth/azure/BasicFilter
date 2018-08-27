@@ -89,11 +89,12 @@ public class BasicFilter implements Filter {
         return authData.getExpiresOnDate().before(new Date()) ? true : false;
     }
 
-    private void updateAuthDataUsingRefreshToken(HttpServletRequest httpRequest) throws Throwable {
+  /*  private void updateAuthDataUsingRefreshToken(HttpServletRequest httpRequest) throws Throwable {
         AuthenticationResult authData =
                 getAccessTokenFromRefreshToken(AuthHelper.getAuthSessionObject(httpRequest).getRefreshToken());
         setSessionPrincipal(httpRequest, authData);
     }
+    */
 
     private void processAuthenticationData(HttpServletRequest httpRequest, String currentUri, String fullUrl)
             throws Throwable {
@@ -211,7 +212,7 @@ public class BasicFilter implements Filter {
         }
     }
 
-    private AuthenticationResult getAccessTokenFromRefreshToken(
+   /* private AuthenticationResult getAccessTokenFromRefreshToken(
             String refreshToken) throws Throwable {
         AuthenticationContext context;
         AuthenticationResult result = null;
@@ -234,6 +235,7 @@ public class BasicFilter implements Filter {
         }
         return result;
     }
+    */
 
     private AuthenticationResult getAccessToken(
             AuthorizationCode authorizationCode, String currentUri)

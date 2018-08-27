@@ -9,6 +9,7 @@ import com.automation.ui.base.common.prpreaders.AssertDataReader;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.ProvideServerDetails;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
+import com.automation.ui.connected.testcases.base.ServerType;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -122,12 +123,9 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
     /* Test : Add Connection-> locate customername field-> clear the field-> Add right name->Click next*/
     @Test(enabled = true, priority = 7, groups = {"validcase"}, description = "ProvideServerDetails")
     public void provideConnectionType() throws Throwable {
-
         home_page.addConnection();
-
-        serverdetail_page.provideServerConnectionType();
-
-   Thread.sleep(5000);
+        serverdetail_page.provideServerConnectionType(ServerType.SDX_COLLECTOR);
+         Thread.sleep(5000);
 
     }
 }

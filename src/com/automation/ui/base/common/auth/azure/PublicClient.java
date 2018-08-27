@@ -46,17 +46,25 @@ import com.microsoft.aad.adal4j.AuthenticationResult;
 
 public class PublicClient {
 
-    private final static String AUTHORITY = "https://login.microsoftonline.com/common/";
-    private final static String CLIENT_ID = "<your_client_id>";
+    private final static String AUTHORITY = "https://login.microsoftonline.com/common/oauth2/authorize?" +
+            "client_id=4f5374e9-1917-4fa9-af77-8ff401e3ec85" +
+            "&response_type=code" +
+            "&redirect_uri=http:\\localhost:9000" +
+            "&response_mode=query";
+    private final static String CLIENT_ID = "4f5374e9-1917-4fa9-af77-8ff401e3ec85";
 
     public static void main(String args[]) throws Exception {
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(
                 System.in))) {
             System.out.print("Enter username: ");
-            String username = br.readLine();
+          //  String username = br.readLine();
             System.out.print("Enter password: ");
-            String password = br.readLine();
+            //String password = br.readLine();
+
+            String username="M.Sivaprasad@cbpatqa.onmicrosoft.com";
+            String password="tru=E5hsC";
+
 
             // Request access token from AAD
             AuthenticationResult result = getAccessTokenFromUserCredentials(

@@ -3,6 +3,7 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.base.common.utils.*;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
+import com.automation.ui.connected.testcases.base.*;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.*;
@@ -241,7 +242,7 @@ public class ProvideServerDetails extends SiteBasePageObject {
 
       /* Method to enter site  Name under Collector Details*/
 
-    public void provideServerConnectionType() {
+    public void provideServerConnectionType(ServerType serverType) {
 
 
         Reporter.log("Entering  provideServerConnectionType:");
@@ -255,42 +256,34 @@ public class ProvideServerDetails extends SiteBasePageObject {
             connServerType.click();
 
             Select select = new Select(connServerType);
-            select.selectByVisibleText("PHD Server");
-
-
-
+            select.selectByVisibleText(serverType.getServerType());
             builder.moveToElement(connServerType).click(connServerType);
             builder.perform();
-
-
-
-         //  scrollAndClick(connServerType,3);
-
-            Thread.sleep(10000);
-
-
-        } catch (NoSuchElementException e) {
+          } catch (NoSuchElementException e) {
             logger.info("provideServerConnectionType");
         }
         catch ( Exception e) {
             logger.info("provideServerConnectionType");
         }
-
-
-
     }
 
-    public void selectAlignment(ServerType position) {
+    public void selectServerType(ServerType position) {
         wait.forElementVisible(connServerType);//.get(1));
         Select positionDropdown = new Select(connServerType);//.get(1));
         switch (position) {
-            case OPCUA:
+            case OPCUA_SERVER:
                 positionDropdown.selectByVisibleText(position.getServerType());
                 break;
-            case PHD:
+            case ODBC_COLLECTOR:
                 positionDropdown.selectByVisibleText(position.getServerType());
                 break;
-            case UASERVER:
+            case OPCUA_UA_SERVER:
+                positionDropdown.selectByVisibleText(position.getServerType());
+                break;
+            case PHD_SERVER:
+                positionDropdown.selectByVisibleText(position.getServerType());
+                break;
+            case SDX_COLLECTOR:
                 positionDropdown.selectByVisibleText(position.getServerType());
                 break;
             default:
@@ -298,18 +291,6 @@ public class ProvideServerDetails extends SiteBasePageObject {
         }
      }
 
-    public enum ServerType {
-        OPCUA, PHD, UASERVER;
 
-        private final String serverType;
-
-        ServerType() {
-            this.serverType =  this.toString().toLowerCase();
-        }
-
-        public String getServerType() {
-            return this.serverType;
-        }
-    }
 
 }
