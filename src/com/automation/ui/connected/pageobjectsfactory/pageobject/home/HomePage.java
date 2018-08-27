@@ -123,7 +123,7 @@ public class HomePage extends SiteBasePageObject {
             logger.info("Entering  addConnection:");
 
 
-            wait.forElementVisible(addButton);
+          //  wait.forElementVisible(addButton);
             logger.info("Entering  addConnection: 1");
            if( ElementStateHelper.isElementVisible(addButton)) {
                logger.info("Entering  addConnection: 2");
@@ -146,8 +146,6 @@ public class HomePage extends SiteBasePageObject {
                 logger.info("Entering  addConnection: 5");
 
                 Reporter.log("Entering  addConnection:" + addButtonTop.getTagName() + " " + addButtonTop.getText() + " " + addButtonTop.getLocation());
-
-
 
                 jsActions.click(addButtonTop);
 
