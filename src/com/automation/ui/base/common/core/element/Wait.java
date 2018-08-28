@@ -36,6 +36,7 @@ public class Wait {
 
     /**
      * Checks if the element is present in browser DOM
+     * @return WebElement
      */
     public WebElement forElementPresent(By by) {
         return forElementPresent(by, true);
@@ -43,6 +44,7 @@ public class Wait {
 
     /**
      * Checks if the element is present in browser DOM
+     * @return WebElement
      */
     public WebElement forElementPresent(By by, boolean failOnTimeout) {
         changeImplicitWait(BASEConstants.WAITTIME500MILLISEC, TimeUnit.MILLISECONDS);
@@ -62,6 +64,7 @@ public class Wait {
 
     /**
      * Checks if the element is present in browser DOM
+     * @return WebElement
      */
     public WebElement forElementPresent(By by, int timeout) {
         changeImplicitWait(BASEConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
@@ -80,6 +83,7 @@ public class Wait {
      * Checks if the element is clickable in browser
      *
      * @param element The element to be checked
+     *                @return WebElement
      */
     public WebElement forElementClickable(WebElement element) {
         changeImplicitWait(0, TimeUnit.MILLISECONDS);
@@ -136,6 +140,7 @@ public class Wait {
 
     /**
      * Checks if the element is clickable on the browser
+     * @return WebElement
      */
     public WebElement forElementClickable(By by) {
         changeImplicitWait(BASEConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
@@ -148,6 +153,7 @@ public class Wait {
 
     /**
      * Checks if the element is clickable on the browser
+     * @return WebElement
      */
     public WebElement forElementClickable(By by, int timeout) {
         changeImplicitWait(BASEConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
@@ -162,6 +168,7 @@ public class Wait {
 
     /**
      * Checks if the element is visible on the browser
+     *  @return WebElement
      */
     public WebElement forElementVisible(By by) {
         changeImplicitWait(BASEConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
@@ -178,7 +185,7 @@ public class Wait {
      *
      * @param element The element to be checked
      */
-//NEEDTOCHECK
+
     public WebElement forElementVisible(WebElement element) {
 
         changeImplicitWait(0, TimeUnit.MILLISECONDS);
@@ -252,6 +259,7 @@ public class Wait {
 
     /**
      * Wait for element to be either invisible or not present on the DOM.
+     *  @return boolean
      */
     public boolean forElementNotVisible(WebElement element) {
         changeImplicitWait(BASEConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
@@ -265,6 +273,7 @@ public class Wait {
 
     /**
      * Wait for element to be either invisible or not present on the DOM.
+     *  @return boolean
      */
     public boolean forElementNotVisible(By by, int timeout, int polling) {
         changeImplicitWait(BASEConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
@@ -278,6 +287,7 @@ public class Wait {
 
     /**
      * Wait for element to be either invisible or not present on the DOM.
+     *  @return boolean
      */
     public boolean forElementNotVisible(By by, Duration timeout) {
         changeImplicitWait(BASEConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
@@ -291,6 +301,7 @@ public class Wait {
 
     /**
      * Wait for element to be in viewport Either position top or left is bigger then -1
+     *  @return boolean
      */
     public boolean forElementInViewPort(WebElement element) {
         changeImplicitWait(BASEConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
@@ -314,6 +325,7 @@ public class Wait {
 
     /**
      * Wait for element to not be present in DOM
+     *  @return boolean
      */
     public boolean forElementNotPresent(By selector) {
         changeImplicitWait(0, TimeUnit.SECONDS);

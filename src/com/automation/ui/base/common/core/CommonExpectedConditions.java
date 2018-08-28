@@ -137,6 +137,7 @@ public class CommonExpectedConditions {
      * it.
      *
      * @param givenElement element to be checked
+     *                       @param <WebElement>
      */
     public static ExpectedCondition<WebElement> elementNotToBeClickable(
             final WebElement givenElement) {
@@ -187,6 +188,7 @@ public class CommonExpectedConditions {
 
     /**
      * An expectation for checking if the given text is not present in the specified element.
+     * @param <Boolean> This describes my type parameter
      */
     public static ExpectedCondition<Boolean> textToBeNotPresentInElement(
             final WebElement givenElement,
@@ -245,6 +247,7 @@ public class CommonExpectedConditions {
 
     /**
      * An expectation for checking if the given text is not present in the specified element.
+     *  @param <Boolean>
      */
     public static ExpectedCondition<Boolean> textToBeNotPresentInElement(final By selectorBy,
                                                                          final String text) {
@@ -435,6 +438,7 @@ public class CommonExpectedConditions {
 
     /**
      * @param accuracy in percentage between 0 and 100.
+     * @param <Boolean>
      */
     public static ExpectedCondition<Boolean> elementToHaveColor(final WebElement element,
                                                                 final Color color,

@@ -11,27 +11,27 @@ public abstract class DirectoryObject {
     }
 
     /**
-     * @return
+     * @return String velue
      */
     public abstract String getObjectId();
 
     /**
-     * @param objectId
+     *@param objectId
      */
     public abstract void setObjectId(String objectId);
 
     /**
-     * @return
+     * @return String velue
      */
     public abstract String getObjectType();
 
     /**
-     * @param objectType
+     * @param objectType 
      */
     public abstract void setObjectType(String objectType);
 
     /**
-     * @return
+     * @return String velue
      */
     public abstract String getDisplayName();
 

@@ -305,7 +305,7 @@ public class AzureDirectoryObject extends DirectoryObject {
     }
 
     /**
-     * @param mail The MailNickname to set to this User object.
+     * @param mailNickname The MailNickname to set to this User object.
      */
     public void setMailNickname(String mailNickname) {
         this.mailNickname = mailNickname;

@@ -24,6 +24,10 @@ public class HomePageTest extends ConnectedBaseTest {
 
     }
 
+    /***
+     *
+     * @throws Throwable
+     */
 
     @Test(enabled = true, priority = 6, groups = {"validcase"}, description = "home page ")
 
@@ -56,6 +60,10 @@ public class HomePageTest extends ConnectedBaseTest {
 
 
     }
+    /***
+     *
+     * @throws Throwable
+     */
 
     @Test(enabled = true, priority = 7, groups = {"validcase"}, description = "launchHomePage ")
     public void launchHomePage() throws Throwable {
@@ -64,6 +72,10 @@ public class HomePageTest extends ConnectedBaseTest {
 
 
     }
+    /***
+     *
+     * @throws Throwable
+     */
 
     @Test(enabled = true, priority = 8, groups = {"validcase"}, description = "home page ")
 
@@ -74,6 +86,10 @@ public class HomePageTest extends ConnectedBaseTest {
 
         logger.info("Exiting addConnection and going to  add ");
     }
+    /***
+     *
+     * @throws Throwable
+     */
 
 
     @Test(enabled = false, priority = 9, groups = {"validcase"}, description = "home page ")

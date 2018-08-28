@@ -22,7 +22,10 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         connectiondetail_page = new UAConnectionDetails();
     }
 
-
+    /***
+     *
+     * @throws Throwable
+     */
     @Test(enabled = true, priority = 16, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionDropdownTest() throws Throwable {
 
@@ -32,6 +35,11 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         logger.info("Exiting dcConnectionDropdownTest");
         Thread.sleep(10000);
     }
+
+    /***
+     *
+     * @throws Throwable
+     */
 
     @Test(enabled = true, priority = 17, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionPauseTest() throws Throwable {
@@ -47,6 +55,10 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         logger.info("Exiting dcConnectionPauseTest");
     }
 
+    /***
+     *
+     * @throws Throwable
+     */
 
     @Test(enabled = true, priority = 18, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionEditTest() throws Throwable {
@@ -61,6 +73,10 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         Thread.sleep(5000);
         logger.info("Exiting dcConnectionEditTest");
     }
+    /***
+     *
+     * @throws Throwable
+     */
 
     @Test(enabled = true, priority = 19, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionRemoveTest() throws Throwable {
@@ -75,6 +91,10 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         Thread.sleep(5000);
         logger.info("Exiting dcConnectionRemoveTest");
     }
+    /***
+     *
+     * @throws Throwable
+     */
 
     @Test(enabled = true, priority = 20, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionDetailsTest() throws Throwable {
@@ -86,6 +106,10 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         logger.info("Exiting dcConnectionDetailsTest");
 
     }
+    /***
+     *
+     * @throws Throwable
+     */
 
     @Test(enabled = true, priority = 21, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionDetailsEditTest() throws Throwable {
@@ -99,6 +123,10 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         logger.info("Exiting dcConnectionDetailsEditTest");
 
     }
+    /***
+     *
+     * @throws Throwable
+     */
 
     @Test(enabled = true, priority = 22, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionDetailsEdit_Tabs() throws Throwable {

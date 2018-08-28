@@ -27,6 +27,7 @@ public abstract class BrowserAbstract {
 
     /**
      * Get a ready to work instance for chosen browser
+     * @return UIWebDriver
      */
     public UIWebDriver getInstance() {
         setOptions();
@@ -42,11 +43,13 @@ public abstract class BrowserAbstract {
 
     /**
      * Set Browser specific options, before creating a working instance
+     * @return void
      */
     public abstract void setOptions();
 
     /**
      * Create a working instance of a Browser
+     *  @return UIWebDriver
      */
     public abstract UIWebDriver create();
 
@@ -66,6 +69,7 @@ public abstract class BrowserAbstract {
 
     /**
      * Add browser extensions
+     *  @return void
      */
     public abstract void addExtension(String extensionName);
 
@@ -88,6 +92,7 @@ public abstract class BrowserAbstract {
 
     /**
      * Set Proxy instance for a Browser instance
+     *  @return void
      */
     protected void setProxy() {
         if (Configuration.useProxy()) {

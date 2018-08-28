@@ -45,8 +45,8 @@
         </groups>
 
         <!-- FOR GITHUB LOGIN TEST -->
-        <!--
 
+<!--
 
         <packages>
 
@@ -63,8 +63,8 @@
             </class>
 
         </classes>
-        -->
 
+-->
 
         <packages>
 
@@ -78,6 +78,10 @@
         <classes>
             <class name="com.automation.ui.connected.testcases.login.LoginTest">
                 <methods>
+                    <exclude name="verifyInValidUserNullPassword"/>
+                    <exclude name="verifyValidUserNullPassword"/>
+                    <exclude name="verifyInValidUserInvalidPassword"/>
+                    <exclude name="verifyNullUserNullPassword"/>
                     <include name="verifyValidLogin"/>
                 </methods>
             </class>
@@ -121,6 +125,7 @@
 
 
         </classes>
+
 
     </test>
 
