@@ -142,7 +142,6 @@ public class HomePage extends SiteBasePageObject {
 
                 }
             }
-            Thread.sleep(2000);
 
 
             logger.info("Exiting  addConnection");
