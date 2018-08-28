@@ -132,6 +132,7 @@ public class HomePage extends SiteBasePageObject {
 
             } else {
 
+                Thread.sleep(2000);
 
                 wait.forElementVisible(addButtonTop);
 
