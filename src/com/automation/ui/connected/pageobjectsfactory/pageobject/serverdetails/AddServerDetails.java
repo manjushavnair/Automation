@@ -176,7 +176,7 @@ public class AddServerDetails extends SiteBasePageObject {
         Reporter.log("Entering  provideServerDetailsAddCustName:");
 
         try {
-
+            scrollTo(customerNameField);
             customerNameField.click();
             fillInputAfterClear(customerNameField, "Connected Assets Demo");
             Reporter.log("Exiting provideServerDetailsAddCustName");
@@ -188,6 +188,25 @@ public class AddServerDetails extends SiteBasePageObject {
 
     }
 
+    /* Method to enter Customer Name under Collector Details*/
+
+    public void provideServerDetailsTagQueryName() {
+
+
+        Reporter.log("Entering  provideServerDetailsTagQueryName:");
+
+        try {
+            scrollTo(tagQuery);
+            tagQuery.click();
+            fillInputAfterClear(tagQuery, "Select * from table where tagname like 'p%'");
+            Reporter.log("Exiting provideServerDetailsTagQueryName");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
     public void provideServerDetailsAddCust_Conn_Query_Name() {
 
 
@@ -195,25 +214,46 @@ public class AddServerDetails extends SiteBasePageObject {
 
         try {
 
-            customerNameField.click();
-            fillInputAfterClear(customerNameField, "Connected Assets Demo");
 
-            siteNameField.click();
-            fillInputAfterClear(siteNameField, "Bracknell");
+            provideServerDetailsAddCustName();
 
+            provideServerDetailsAddSiteName ();
 
-            connServerName.click();
-            fillInputAfterClear(connServerName, "opcua.server.com");
+            provideServerDetailsConnDetails();
 
+            chooseServerType();
 
-
-            scrollTo(tagQuery);
+            provideServerDetailsTagQueryName();
 
 
-            tagQuery.click();
-            fillInputAfterClear(tagQuery, "Select * from table where tagname like 'p%'");
-            Thread.sleep(4000);
+
             Reporter.log("Exiting provideServerDetailsAddCustAndConnName");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+   ;
+
+    public void chooseServerType() {
+
+
+        Reporter.log("Entering  chooseServerType:");
+
+        try {
+
+            provideServerConnectionType(ServerType.SDX_COLLECTOR);
+
+            Thread.sleep(2000);
+            provideServerConnectionType (ServerType.ODBC_COLLECTOR);
+            Thread.sleep(2000);
+            provideServerConnectionType (ServerType.PHD_SERVER);
+            Thread.sleep(2000);
+            provideServerConnectionType (ServerType.OPCUA_SERVER);
+            Thread.sleep(2000);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -231,6 +271,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
         try {
 
+            scrollTo(siteNameField);
             siteNameField.click();
             fillInputAfterClear(siteNameField, "Bracknell");
             Reporter.log("Exiting provideServerDetailsAddSiteName");
@@ -252,8 +293,9 @@ public class AddServerDetails extends SiteBasePageObject {
 
         try {
 
+            scrollTo(connServerName);
             connServerName.click();
-            fillInputAfterClear(connServerName, "Bracknell");
+            fillInputAfterClear(connServerName, "opc.org.com");
             Reporter.log("Exiting provideServerDetailsConnDetails");
 
         } catch (Exception e) {
@@ -274,7 +316,9 @@ public class AddServerDetails extends SiteBasePageObject {
 
             //  WebElement selectedMedia = connServerType.get(2);
 
+
             wait.forElementClickable(connServerType);
+            scrollTo(connServerType);
 
             connServerType.click();
 
