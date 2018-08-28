@@ -201,7 +201,7 @@ public class AddServerDetails extends SiteBasePageObject {
         logger.info("Entering  provideServerSecurityCheck:");
 
         try {
-            scrollTo(securityKeyFlag);
+          //  scrollTo(securityKeyFlag);
            // wait.forElementClickable(securityKeyFlag);
             boolean bValue = false;
 
