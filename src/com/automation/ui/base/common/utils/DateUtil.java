@@ -85,7 +85,7 @@ public class DateUtil {
      *               ------   -------                 ------------        -------
      *               G        era designator          (Text)              AD
      *               y        year                    (Number)            1996
-     *               M        month in year           (Text & Number)     July & 07
+     *               M        month in year           (Text &amp; Number)     July & 07
      *               d        day in month            (Number)            10
      *               h        hour in am/pm (1~12)    (Number)            12
      *               H        hour in day (0~23)      (Number)            0
@@ -127,7 +127,7 @@ public class DateUtil {
      * ------   -------                 ------------        -------
      * G        era designator          (Text)              AD
      * y        year                    (Number)            1996
-     * M        month in year           (Text & Number)     July & 07
+     * M        month in year           (Text &amp; Number)     July & 07
      * d        day in month            (Number)            10
      * h        hour in am/pm (1~12)    (Number)            12
      * H        hour in day (0~23)      (Number)            0

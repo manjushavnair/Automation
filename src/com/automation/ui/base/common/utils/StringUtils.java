@@ -326,7 +326,7 @@ public class StringUtils {
      *
      * @param a_stringToBeConverted The delimeted string to be converted
      *                              into string array
-     * @param a_delimiter           Given delimeter used for converting the delimeted
+     * @param a_delimeter           Given delimeter used for converting the delimeted
      *                              string into  string array.
      * @return String[] The string array converted from the delimeted string.
      */
@@ -466,7 +466,7 @@ public class StringUtils {
      * This  method is used to reverse a string .The password enter in the descending order will be reversed
      * and cross checked .Used for easy computation purpose.
      *
-     * @param String
+     * @param strPassword
      * @return String
      */
     public static String reverseString(String strPassword) {
@@ -478,7 +478,7 @@ public class StringUtils {
     /**
      * This method trims the given string if it is not null
      *
-     * @param String
+     * @param strValue
      * @return String
      */
     public static String trimString(String strValue) {
@@ -599,7 +599,7 @@ public class StringUtils {
      * @param ch       character to use for padding
      * @param padToLen final length of string after padding
      * @param postfix  if true put padding after string, else before string
-     * @returns String containing str with padding added
+     * @return String containing str with padding added
      */
     public static String padString(String str, char ch, int padToLen, boolean postfix) {
         StringBuffer sb = new StringBuffer();
@@ -634,10 +634,10 @@ public class StringUtils {
      * This method pads the given string with the
      * given charecter with alingment left or right
      *
-     * @param String  string
-     * @param int     length
-     * @param char    charecter
-     * @param boolean paddingLeft
+     * @param string  string
+     * @param length     length
+     * @param charecter    charecter
+     * @param paddingLeft paddingLeft
      * @return string padded string
      */
     public static String paddingString(String string, int length, char charecter, boolean paddingLeft) {
@@ -809,60 +809,7 @@ public class StringUtils {
         return value.toString();
     }
 
-    /**
-     * This method is used for replacing all occurrences of oldString
-     * content with newString content in a given String.
-     *
-     * @param a_content   The string the original string to be replaced.
-     * @param a_oldString The substring of the orignal string to be replaced.
-     * @param a_newString The string used to replace the old string.
-     * @return String        The modified content string.
-     */
-    /*public static final String replace(String a_content,
-                                       String a_oldString,
-                                       String a_newString)
-    {
-        int oldpos = 0;
-        int pos = 0;
 
-        if (null == a_content || null == a_oldString
-                || 0 == a_oldString.length() || null == a_newString)
-        {
-            throw new IllegalArgumentException("null or empty String");
-        }//end if (null == a_content || null == a_oldString
-        //		   || 0 == oldStringLength || null == a_newString)
-
-        StringBuffer result = null;
-        do
-        {
-            pos = a_content.indexOf(a_oldString, oldpos);
-            if (0 > pos)
-            {
-                break;
-            }//end if (0 > pos)
-
-            if (null == result)
-            {
-                result = new StringBuffer();
-            }//end if (null == result)
-
-            result.append(a_content.substring(oldpos, pos));
-            result.append(a_newString);
-            pos += a_oldString.length();
-            oldpos = pos;
-        }
-        while (true);
-
-        if (0 == oldpos)
-        {
-            return a_content;
-        }
-        else
-        {
-            result.append(a_content.substring(oldpos));
-            return new String(result);
-        }//end if (0 == oldpos) else
-    }*/
     static public boolean isEmpty4Tab(String s) {
         if (s == null || s.length() == 0)
             return true;

@@ -30,7 +30,7 @@ public class JSONHelper {
      * This method parses an JSON Array out of a collection of JSON Objects
      * within a string.
      *
-     * @param jSonData The JSON String that holds the collection.
+     * @param jsonObject The JSON String that holds the collection.
      * @return An JSON Array that would contains all the collection object.
      * @throws Exception
      */
@@ -57,7 +57,7 @@ public class JSONHelper {
     /**
      * This method parses the skip token from a json formatted string.
      *
-     * @param jsonData The JSON Formatted String.
+     * @param jsonObject The JSON Formatted String.
      * @return The skipToken.
      * @throws Exception
      */

@@ -89,7 +89,7 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
     /***
      *
      * @throws Throwable
-     * Test : Add Connection-> locate customername field-> clear the field-> Add right name->Click next
+     * Test : Add Connection-&gt; locate customername field-&gt; clear the field-&gt; Add right name-&gt;Click next
      * */
     @Test(enabled = true, priority = 13, groups = {"validcase"}, description = "AddServerDetails")
     public void addCustomerNameTest() throws Throwable {
@@ -104,7 +104,7 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
     }
 
     /***
-     *Test : Add Connection-> locate customername field-> clear the field-> Add right name->Click next
+     *Test : Add Connection-&gt;locate customername field-&gt; clear the field-&gt; Add right name-&gt;Click next
      * @throws Throwable
      */
 
@@ -126,7 +126,8 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
     }
 
 
-    /** Test : Add Connection-> locate customername field-> clear the field-> Add right name->Click next
+    /**
+     * Test : Add Connection-&gt; locate customername field-&gt; clear the field-&gt; Add right name-&gt;Click next
      * */
     @Test(enabled = true, priority = 15, groups = {"validcase"}, description = "AddServerDetails")
     public void provideConnectionType() throws Throwable {

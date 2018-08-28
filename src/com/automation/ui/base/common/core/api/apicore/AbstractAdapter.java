@@ -119,10 +119,10 @@ public class AbstractAdapter {
     /**
      * for bad response, whose responseCode is not 200 level
      *
-     * @param responseCode
+     * @param responseCode Get the data for the responsecode
      * @param errorCode
      * @param errorMsg
-     * @return
+     * @return JSONObject
      * @throws JSONException
      */
     public JSONObject processResponse(int responseCode, String errorCode, String errorMsg) throws JSONException {
@@ -137,10 +137,10 @@ public class AbstractAdapter {
     /**
      * for bad response, whose responseCode is not 200 level
      *
-     * @param responseCode
-     * @param errorCode
-     * @param errorMsg
-     * @return
+     * @param responseCode Get the data for the responsecode
+     * @param goodRespStr
+
+     * @return JSONObject
      * @throws JSONException
      */
     public JSONObject processGoodRespStr(int responseCode, String goodRespStr) throws JSONException {
@@ -158,9 +158,9 @@ public class AbstractAdapter {
     /**
      * for good response
      *
-     * @param responseCode
+     * @param responseCode Get the data for the responsecode
      * @param responseMsg
-     * @return
+     * @return JSONObject
      * @throws JSONException
      */
     public JSONObject processBadRespStr(int responseCode, String responseMsg) throws JSONException {

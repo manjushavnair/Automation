@@ -342,7 +342,7 @@ public final class NumberUtil {
      * @param v    the value
      * @param low  the low bound below which v cannot go.
      * @param high the high bound above which v cannot go.
-     * @return low if v < low, high if v > high, but normally just v.
+     * @return low if v &lt; low, high if v &gt; high, but normally just v.
      */
     public static int corral(int v, int low, int high) {
         if (v < low) {
