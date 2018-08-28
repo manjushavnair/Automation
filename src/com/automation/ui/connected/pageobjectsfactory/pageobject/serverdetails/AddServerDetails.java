@@ -470,7 +470,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
             provideServerPort("9021");
 
-            provideServerURL("opc.tcp://AS2CCHAPIOPCUA.HSEPERTH.HSE.HONEYWELL.COM.AU:53530/OPCUA/SimulationServer");
+            provideServerURL("opc.tcp://AS2CCHAPIOPCUA.hscperth.hsc.honeywell.com.au:53530/OPCUA/SimulationServer");
 
             provideServerUserName("Opcconfiguser");
 
