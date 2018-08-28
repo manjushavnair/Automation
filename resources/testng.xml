@@ -78,10 +78,10 @@
         <classes>
             <class name="com.automation.ui.connected.testcases.login.LoginTest">
                 <methods>
-                    <include name="verifyInValidUserNullPassword"/>
-                    <include name="verifyValidUserNullPassword"/>
-                    <include name="verifyInValidUserInvalidPassword"/>
-                    <include name="verifyNullUserNullPassword"/>
+                    <exclude name="verifyInValidUserNullPassword"/>
+                    <exclude name="verifyValidUserNullPassword"/>
+                    <exclude name="verifyInValidUserInvalidPassword"/>
+                    <exclude name="verifyNullUserNullPassword"/>
                     <include name="verifyValidLogin"/>
                 </methods>
             </class>
@@ -91,7 +91,7 @@
 
                 <methods>
                     <include name="launchHomePage"/>
-                    <include name="addConnection"/>
+                    <exclude name="addConnection"/>
                 </methods>
             </class>
 
@@ -111,13 +111,13 @@
 
             <class name="com.automation.ui.connected.testcases.dashboardviewtest.UAConnectionDetailsTest">
                 <methods>
-                    <include name="dcConnectionDropdownTest"/>
+                    <exclude name="dcConnectionDropdownTest"/>
                     <exclude name="dcConnectionPauseTest"/>
-                    <include name="dcConnectionEditTest"/>
+                    <exclude name="dcConnectionEditTest"/>
                     <exclude name="dcConnectionRemoveTest"/>
-                    <include name="dcConnectionDetailsTest"/>
-                    <include name="dcConnectionDetailsEditTest"/>
-                    <include name="dcConnectionDetailsEdit_Tabs"/>
+                    <exclude name="dcConnectionDetailsTest"/>
+                    <exclude name="dcConnectionDetailsEditTest"/>
+                    <exclude name="dcConnectionDetailsEdit_Tabs"/>
 
 
                 </methods>

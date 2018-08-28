@@ -99,7 +99,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
         serverdetail_page.provideServerDetailsAddCustName();
         serverdetail_page.provideServerDetailsNext();
 
-        Thread.sleep(3000);
+        Thread.sleep(2000);
 
     }
 
