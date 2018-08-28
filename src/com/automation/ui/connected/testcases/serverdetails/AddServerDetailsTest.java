@@ -96,7 +96,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
 
         home_page.addConnection();
 
-        serverdetail_page.provideServerDetailsAddCustName();
+        serverdetail_page.provideServerDetailsAddCustName("Connected Assets Demo");
         serverdetail_page.provideServerDetailsNext();
 
         Thread.sleep(2000);
@@ -144,7 +144,6 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
         serverdetail_page.provideServerDetailsAddCust_Conn_Query_Name();
 
 
-        Thread.sleep(2000);
 
         serverdetail_page.provideServerDetailsNext();
         Thread.sleep(2000);
