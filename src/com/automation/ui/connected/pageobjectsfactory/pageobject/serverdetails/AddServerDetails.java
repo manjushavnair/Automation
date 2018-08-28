@@ -209,8 +209,8 @@ public class AddServerDetails extends SiteBasePageObject {
 
             bValue = securityKeyFlag.isEnabled();
             logger.info("Entering  provideServerSecurityCheck:" +bValue);
-            logger.info("Entering  provideServerSecurityCheck:" +securityKeyFlag.isSelected());
-            logger.info("Entering  provideServerSecurityCheck:" +securityKeyFlag.getText());
+            logger.info("Entering  provideServerSecurityCheck:" +securityKeyFlag.getAttribute("Yes"));
+            logger.info("Entering  provideServerSecurityCheck:" +securityKeyFlag.getTagName());
             List <WebElement> ls=securityKeyFlag.findElements(By.name("enableSec"));
             int iSize = ls.size();
 
