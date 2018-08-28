@@ -4,9 +4,9 @@ import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePa
 import com.automation.ui.connected.testcases.base.ServerType;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.*;
+import org.openqa.selenium.support.ui.*;
 import org.testng.Reporter;
 import java.util.*;
 
@@ -194,16 +194,42 @@ public class AddServerDetails extends SiteBasePageObject {
 
     }
 
-    public void provideServerSecurityCheck( ) {
+    public void provideServerSecurityCheckDisable( ) {
 
 
         Reporter.log("Entering  provideServerSecurityCheck:");
+        logger.info("Entering  provideServerSecurityCheck:");
 
         try {
             scrollTo(securityKeyFlag);
             wait.forElementClickable(securityKeyFlag);
-            if(!securityKeyFlag.isSelected())
-                securityKeyFlag.click();
+            boolean bValue = false;
+
+            // This statement will return True, in case of first Radio button is selected
+
+            bValue = securityKeyFlag.isEnabled();
+            logger.info("Entering  provideServerSecurityCheck:" +bValue);
+            logger.info("Entering  provideServerSecurityCheck:" +securityKeyFlag.isSelected());
+            logger.info("Entering  provideServerSecurityCheck:" +securityKeyFlag.getText());
+            List <WebElement> ls=securityKeyFlag.findElements(By.name("enableSec"));
+            int iSize = ls.size();
+
+            // Start the loop from first Check Box to last Check Boxe
+            for(int i=0; i < iSize ; i++ ){
+                // Store the Check Box name to the string variable, using 'Value' attribute
+                String sValue = ls.get(i).getAttribute("value");
+                logger.info("Entering  provideServerSecurityCheck: sValue : " +sValue);
+
+
+                // Select the Check Box it the value of the Check Box is same what you are looking for
+                if (sValue.equalsIgnoreCase("Yes")){
+                    ls.get(i).click();
+                    // This will take the execution out of for loop
+                    break;
+                }
+            }
+            if(bValue)
+                securityKeyFlag.
 
 
         } catch (Exception e) {
@@ -492,7 +518,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
             provideServerURL("opc.tcp://AS2CCHAPIOPCUA.hscperth.hsc.honeywell.com.au:53530/OPCUA/SimulationServer");
 
-            provideServerSecurityCheck();
+            provideServerSecurityCheckDisable();
 
             provideServerUserName("Opcconfiguser");
 
