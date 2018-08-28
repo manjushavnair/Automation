@@ -197,7 +197,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
         try {
             scrollTo(tagQuery);
-            tagQuery.click();
+
             fillInputAfterClear(tagQuery, "Select * from table where tagname like 'p%'");
             Reporter.log("Exiting provideServerDetailsTagQueryName");
 
