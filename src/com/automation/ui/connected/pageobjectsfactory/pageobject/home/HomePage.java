@@ -122,7 +122,7 @@ public class HomePage extends SiteBasePageObject {
         try {
             logger.info("Entering  addConnection:");
 
-            Thread.sleep(5000);
+            Thread.sleep(2000);
 
 
             if (ElementStateHelper.isElementVisible(addButton)) {
@@ -145,7 +145,7 @@ public class HomePage extends SiteBasePageObject {
 
                 }
             }
-            Thread.sleep(5000);
+            Thread.sleep(2000);
 
 
             logger.info("Exiting  addConnection");
