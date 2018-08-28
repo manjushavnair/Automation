@@ -99,6 +99,8 @@
             <class name="com.automation.ui.connected.testcases.serverdetails.AddServerDetailsTest">
 
                 <methods>
+                    <include name="provideAllServerDetails"/>
+
                     <exclude name="clearCustomerNameTest"/>
                     <exclude name="addCustomerNameTest"/>
                     <exclude name="provideServerDetailsNextTest"/>
@@ -106,7 +108,6 @@
                     <exclude name="provideServerDetailsCancelTest"/>
                     <exclude name="clearSiteNameTest"/>
                     <include name="provideConnectionType"/>
-                    <include name="provideAllServerDetails"/>
 
 
                 </methods>

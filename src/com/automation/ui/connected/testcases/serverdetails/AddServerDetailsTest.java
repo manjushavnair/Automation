@@ -37,7 +37,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 10, groups = {"validcase"}, description = "AddServerDetails")
+    @Test(enabled = true, priority = 17, groups = {"validcase"}, description = "AddServerDetails")
     public void provideServerDetailsCancelTest() throws Throwable {
 
 
@@ -140,7 +140,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
     }
 
        /** */
-    @Test(enabled = true, priority = 16, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
+    @Test(enabled = true, priority = 10, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
              ,dataProvider = "getServerDetailsforOPCUA", description = "AddServerDetails")
     public void provideAllServerDetails(Map<String, Object> connInfo) throws Throwable {
         home_page.addConnection();
