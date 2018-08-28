@@ -229,7 +229,7 @@ public class AddServerDetails extends SiteBasePageObject {
                 }
             }
             if(bValue)
-                securityKeyFlag.
+                securityKeyFlag.click();
 
 
         } catch (Exception e) {
