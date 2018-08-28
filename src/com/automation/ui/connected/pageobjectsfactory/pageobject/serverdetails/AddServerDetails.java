@@ -125,6 +125,7 @@ public class AddServerDetails extends SiteBasePageObject {
         }
     }
 
+
     public String getConnMessage() {
         wait.forElementVisible(nextButtonErrorMSG);
 
