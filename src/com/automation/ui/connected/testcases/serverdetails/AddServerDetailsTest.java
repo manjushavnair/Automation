@@ -16,15 +16,15 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 
-public class ProvideServerDetailsTest extends ConnectedBaseTest {
+public class AddServerDetailsTest extends ConnectedBaseTest {
 
-    private static Logger logger = Logger.getLogger(ProvideServerDetailsTest.class);
+    private static Logger logger = Logger.getLogger(AddServerDetailsTest.class);
 
 
-    public ProvideServerDetailsTest() {
+    public AddServerDetailsTest() {
 
         super();
-        logger.info(" ProvideServerDetailsTest");
+        logger.info(" AddServerDetailsTest");
         serverdetail_page = new AddServerDetails();
         home_page = new HomePage();
 
@@ -54,7 +54,7 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 11, groups = {"validcase"}, description = "home page ")
+    @Test(enabled = true, priority = 11, groups = {"validcase"}, description = "AddServerDetails ")
     public void provideServerDetailsNextTest() throws Throwable {
 
         logger.info("Entering provideServerDetailsNext  ");
@@ -133,7 +133,7 @@ public class ProvideServerDetailsTest extends ConnectedBaseTest {
     public void provideConnectionType() throws Throwable {
         home_page.addConnection();
         serverdetail_page.provideServerConnectionType(ServerType.SDX_COLLECTOR);
-        Thread.sleep(5000);
+        Thread.sleep(1000);
 
     }
 }
