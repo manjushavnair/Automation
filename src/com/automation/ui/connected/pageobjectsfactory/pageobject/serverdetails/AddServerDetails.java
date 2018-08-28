@@ -41,6 +41,11 @@ public class AddServerDetails extends SiteBasePageObject {
     @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_SERVERNAME)
     private WebElement connServerName;
 
+    @FindBy(xpath = AddServerDetailsCONSTANTS.ADDCONNECTIONNAME)
+    private WebElement connName;
+
+
+
     @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_PORT)
     private WebElement connServerPort;
 
@@ -170,7 +175,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
     /* Method to enter Customer Name under Collector Details*/
 
-    public void provideServerDetailsAddCustName() {
+    public void provideServerDetailsAddCustName(String custName) {
 
 
         Reporter.log("Entering  provideServerDetailsAddCustName:");
@@ -178,7 +183,7 @@ public class AddServerDetails extends SiteBasePageObject {
         try {
             scrollTo(customerNameField);
             customerNameField.click();
-            fillInputAfterClear(customerNameField, "Connected Assets Demo");
+            fillInputAfterClear(customerNameField, custName);
             Reporter.log("Exiting provideServerDetailsAddCustName");
 
         } catch (Exception e) {
@@ -188,83 +193,14 @@ public class AddServerDetails extends SiteBasePageObject {
 
     }
 
-    /* Method to enter Customer Name under Collector Details*/
-
-    public void provideServerDetailsTagQueryName() {
-
-
-        Reporter.log("Entering  provideServerDetailsTagQueryName:");
-
-        try {
-            scrollTo(tagQuery);
-
-            fillInputAfterClear(tagQuery, "Select * from table where tagname like 'p%'");
-            Reporter.log("Exiting provideServerDetailsTagQueryName");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-    }
-    public void provideServerDetailsAddCust_Conn_Query_Name() {
-
-
-        Reporter.log("Entering  provideServerDetailsAddCustAndConnName:");
-
-        try {
-
-
-            provideServerDetailsAddCustName();
-
-            provideServerDetailsAddSiteName ();
-
-            provideServerDetailsConnDetails();
-
-            chooseServerType();
-
-            provideServerDetailsTagQueryName();
 
 
 
-            Reporter.log("Exiting provideServerDetailsAddCustAndConnName");
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-    }
-
-   ;
-
-    public void chooseServerType() {
-
-
-        Reporter.log("Entering  chooseServerType:");
-
-        try {
-
-            provideServerConnectionType(ServerType.SDX_COLLECTOR);
-
-            Thread.sleep(2000);
-            provideServerConnectionType (ServerType.ODBC_COLLECTOR);
-            Thread.sleep(2000);
-            provideServerConnectionType (ServerType.PHD_SERVER);
-            Thread.sleep(2000);
-            provideServerConnectionType (ServerType.OPCUA_SERVER);
-            Thread.sleep(2000);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-    }
 
     /* Method to enter site  Name under Collector Details*/
 
-    public void provideServerDetailsAddSiteName() {
+    public void provideServerDetailsAddSiteName(String siteName) {
 
 
         Reporter.log("Entering  provideServerDetailsAddSiteName:");
@@ -273,7 +209,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
             scrollTo(siteNameField);
             siteNameField.click();
-            fillInputAfterClear(siteNameField, "Bracknell");
+            fillInputAfterClear(siteNameField, siteName);
             Reporter.log("Exiting provideServerDetailsAddSiteName");
 
         } catch (Exception e) {
@@ -284,19 +220,16 @@ public class AddServerDetails extends SiteBasePageObject {
     }
 
 
-    /* Method to enter site  Name under Collector Details*/
-
-    public void provideServerDetailsConnDetails() {
+    public void provideServerDetailsConnName(String connValue) {
 
 
-        Reporter.log("Entering  provideServerDetailsConnDetails:");
+        Reporter.log("Entering  provideServerDetailsConnName:");
 
         try {
-
-            scrollTo(connServerName);
-            connServerName.click();
-            fillInputAfterClear(connServerName, "opc.org.com");
-            Reporter.log("Exiting provideServerDetailsConnDetails");
+            scrollTo(connName);
+            connName.click();
+            fillInputAfterClear(connName, connValue);
+            Reporter.log("Exiting provideServerDetailsConnName");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -304,6 +237,9 @@ public class AddServerDetails extends SiteBasePageObject {
 
 
     }
+
+
+
 
     /* Method to enter site  Name under Collector Details*/
 
@@ -332,6 +268,122 @@ public class AddServerDetails extends SiteBasePageObject {
             logger.info("provideServerConnectionType");
         }
     }
+
+
+
+    public void provideServerDetailsServerName(String connServerValue) {
+
+
+        Reporter.log("Entering  provideServerDetailsServerName:");
+
+        try {
+
+            scrollTo(connServerName);
+            connServerName.click();
+            fillInputAfterClear(connServerName, connServerValue);
+            Reporter.log("Exiting provideServerDetailsServerName");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+    public void provideServerDetailsTagQueryName(String query) {
+
+
+        Reporter.log("Entering  provideServerDetailsTagQueryName:");
+
+        try {
+            scrollTo(tagQuery);
+            tagQuery.click();
+            fillInputAfterClear(tagQuery, query);
+            Reporter.log("Exiting provideServerDetailsTagQueryName");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+
+
+    public void chooseServerType() {
+
+
+        Reporter.log("Entering  chooseServerType:");
+
+        try {
+
+            provideServerConnectionType(ServerType.SDX_COLLECTOR);
+
+
+            provideServerConnectionType (ServerType.ODBC_COLLECTOR);
+
+            provideServerConnectionType (ServerType.PHD_SERVER);
+            Thread.sleep(1000);
+            provideServerConnectionType (ServerType.OPCUA_SERVER);
+            Thread.sleep(1000);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public void provideServerDetailsAddCust_Conn_Query_Name() {
+
+
+        Reporter.log("Entering  provideServerDetailsAddCustAndConnName:");
+
+        try {
+
+
+            provideServerDetailsAddCustName("Connected Assets Demo");
+
+            provideServerDetailsAddSiteName ("Bracknell");
+
+            provideServerDetailsConnName ("OPCUAUITEST");
+
+            chooseServerType();
+
+            provideServerDetailsServerName("opc.org.com");
+
+            provideServerDetailsTagQueryName("Select * from table where tagname like 'p%'");
+
+            Reporter.log("Exiting provideServerDetailsAddCustAndConnName");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+    public void provideServerPort() {
+
+
+        Reporter.log("Entering  provideServerPort:");
+
+        try {
+            scrollTo(connServerPort);
+            connServerPort.click();
+            fillInputAfterClear(connServerPort, "4553");
+            Reporter.log("Exiting provideServerPort");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
 
     public void selectServerType(ServerType position) {
         wait.forElementVisible(connServerType);//.get(1));
