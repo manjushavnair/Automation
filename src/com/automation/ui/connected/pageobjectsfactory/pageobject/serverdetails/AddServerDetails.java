@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
+import java.util.*;
 
 public class AddServerDetails extends SiteBasePageObject {
 
@@ -185,7 +186,6 @@ public class AddServerDetails extends SiteBasePageObject {
             scrollTo(customerNameField);
             customerNameField.click();
             fillInputAfterClear(customerNameField, custName);
-            Reporter.log("Exiting provideServerDetailsAddCustName");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -272,7 +272,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
 
 
-    public void provideServerDetailsServerName(String connServerValue) {
+    public void provideServerDetailsClientServerName(String connServerValue) {
 
 
         Reporter.log("Entering  provideServerDetailsServerName:");
@@ -283,6 +283,50 @@ public class AddServerDetails extends SiteBasePageObject {
             connServerName.click();
             fillInputAfterClear(connServerName, connServerValue);
             Reporter.log("Exiting provideServerDetailsServerName");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+
+    public void chooseOPCUAServerType() {
+
+
+        Reporter.log("Entering  chooseOPCUAServerType:");
+
+        try {
+
+
+            provideServerConnectionType (ServerType.OPCUA_UA_SERVER);
+            Thread.sleep(1000);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public void chooseServerType() {
+
+
+        Reporter.log("Entering  chooseServerType:");
+
+        try {
+
+           provideServerConnectionType(ServerType.SDX_COLLECTOR);
+
+
+            provideServerConnectionType (ServerType.ODBC_COLLECTOR);
+
+            provideServerConnectionType (ServerType.PHD_SERVER);
+
+            provideServerConnectionType (ServerType.OPCUA_UA_SERVER);
+
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -313,61 +357,12 @@ public class AddServerDetails extends SiteBasePageObject {
 
 
 
-    public void chooseServerType() {
 
 
-        Reporter.log("Entering  chooseServerType:");
-
-        try {
-
-            provideServerConnectionType(ServerType.SDX_COLLECTOR);
 
 
-            provideServerConnectionType (ServerType.ODBC_COLLECTOR);
 
-            provideServerConnectionType (ServerType.PHD_SERVER);
-            Thread.sleep(1000);
-            provideServerConnectionType (ServerType.OPCUA_UA_SERVER);
-            Thread.sleep(1000);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-    }
-
-    public void provideServerDetailsAddCust_Conn_Query_Name() {
-
-
-        Reporter.log("Entering  provideServerDetailsAddCustAndConnName:");
-
-        try {
-
-
-            provideServerDetailsAddCustName("Connected Assets Demo");
-
-            provideServerDetailsAddSiteName ("Bracknell");
-
-            provideServerDetailsConnName ("OPCUAUITEST");
-
-            chooseServerType();
-
-            provideServerDetailsServerName("opc.org.com");
-
-            provideServerDetailsTagQueryName("Select * from table where tagname like 'p%'");
-
-            Reporter.log("Exiting provideServerDetailsAddCustAndConnName");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-    }
-
-
-    public void provideServerPort() {
+    public void provideServerPort(String port) {
 
 
         Reporter.log("Entering  provideServerPort:");
@@ -375,7 +370,7 @@ public class AddServerDetails extends SiteBasePageObject {
         try {
             scrollTo(connServerPort);
             connServerPort.click();
-            fillInputAfterClear(connServerPort, "4553");
+            fillInputAfterClear(connServerPort, port);
             Reporter.log("Exiting provideServerPort");
 
         } catch (Exception e) {
@@ -384,7 +379,108 @@ public class AddServerDetails extends SiteBasePageObject {
 
     }
 
+       public void provideServerURL(String url) {
 
+
+        Reporter.log("Entering  provideServerPassword:");
+
+        try {
+            scrollTo(opcuaServerURL);
+            opcuaServerURL.click();
+            fillInputAfterClear(opcuaServerURL, url);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void provideConnectToServer( ) {
+
+
+        Reporter.log("Entering  provideConnectToServer:");
+
+        try {
+            scrollTo(connToServerLink);
+            waitAndClick(connToServerLink);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+
+    public void provideServerUserName(String userName) {
+
+
+        Reporter.log("Entering  provideServerUserName:");
+
+        try {
+            scrollTo(connServerAuthUserNAme);
+            connServerAuthUserNAme.click();
+            fillInputAfterClear(connServerAuthUserNAme, userName);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void provideServerPassword(String pass) {
+
+
+        Reporter.log("Entering  provideServerPassword:");
+
+        try {
+            scrollTo(connServerAuthPassword);
+            connServerAuthPassword.click();
+            fillInputAfterClear(connServerAuthPassword, pass);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    public void  provideAllServerDetails(Map<String, Object> connInfo) {
+
+
+        Reporter.log("Entering  provideAllServerDetails:");
+
+        try {
+
+           // String slotName = connInfo.get("custName").toString();
+
+            provideServerDetailsAddCustName("Connected Assets Demo");
+
+            provideServerDetailsAddSiteName ("Bracknell");
+
+            provideServerDetailsConnName ("OPCUAUITEST");
+
+            chooseOPCUAServerType();
+
+            provideServerDetailsClientServerName("localhost");
+
+            provideServerPort("9021");
+
+            provideServerURL("opc.tcp://AS2CCHAPIOPCUA.HSEPERTH.HSE.HONEYWELL.COM.AU:53530/OPCUA/SimulationServer");
+
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
 
     public void selectServerType(ServerType position) {
         wait.forElementVisible(connServerType);//.get(1));

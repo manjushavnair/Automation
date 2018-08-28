@@ -1,15 +1,16 @@
 package com.automation.ui.connected.common.dataprovider;
 
 import org.testng.annotations.DataProvider;
+import com.google.common.collect.ImmutableMap;
 
 public class SiteDataProvider {
 
-    private SiteDataProvider() {
+    public SiteDataProvider() {
 
     }
 
     @DataProvider
-    private static final Object[][] getLangs() {
+    public static final Object[][] getLangs() {
         return new Object[][]
                 {
                         {"de", "Detch", "2"},
@@ -21,8 +22,23 @@ public class SiteDataProvider {
                 };
     }
 
+    @DataProvider(name = "getServerDetailsforOPCUA")
+    public static final Object[][] getServerDetailsforOPCUA() {
+        return new Object[][]
+                {
+                        {
+                            ImmutableMap.<String, Object>builder()
+                                .put("custName", "name")
+                                .put("slotSize","dd")
+                                .build()
+                        }
+
+                };
+    }
+
+
     @DataProvider
-    private static final Object[][] getLangSecondHalf() {
+    public static final Object[][] getLangSecondHalf() {
         return new Object[][]{{"no"}, {"pl"}, {"pt"}, {"pt-br"}, {"ru"}, {"zh"}};
     }
 

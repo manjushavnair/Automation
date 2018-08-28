@@ -6,6 +6,7 @@ package com.automation.ui.connected.testcases.serverdetails;
 
 import com.automation.ui.base.common.core.Assertion;
 import com.automation.ui.base.common.prpreaders.AssertDataReader;
+import com.automation.ui.connected.common.dataprovider.SiteDataProvider;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetails;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
@@ -14,6 +15,7 @@ import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+import java.util.*;
 
 
 public class AddServerDetailsTest extends ConnectedBaseTest {
@@ -138,10 +140,12 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
     }
 
        /** */
-    @Test(enabled = true, priority = 16, groups = {"validcase"}, description = "AddServerDetails")
-    public void provideServerDetailsAddCust_Conn_Query_Name() throws Throwable {
+    @Test(enabled = true, priority = 16, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
+             ,dataProvider = "getServerDetailsforOPCUA", description = "AddServerDetails")
+    public void provideAllServerDetails(Map<String, Object> connInfo) throws Throwable {
         home_page.addConnection();
-        serverdetail_page.provideServerDetailsAddCust_Conn_Query_Name();
+
+        serverdetail_page.provideAllServerDetails(connInfo);
 
 
 
