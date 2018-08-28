@@ -472,6 +472,11 @@ public class AddServerDetails extends SiteBasePageObject {
 
             provideServerURL("opc.tcp://AS2CCHAPIOPCUA.HSEPERTH.HSE.HONEYWELL.COM.AU:53530/OPCUA/SimulationServer");
 
+            provideServerUserName("Opcconfiguser");
+
+            provideServerPassword("Password.123");
+
+            provideConnectToServer();
 
 
 
