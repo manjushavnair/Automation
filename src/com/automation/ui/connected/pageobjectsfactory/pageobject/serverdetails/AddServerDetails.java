@@ -205,15 +205,7 @@ public class AddServerDetails extends SiteBasePageObject {
             connServerName.click();
             fillInputAfterClear(connServerName, "opcua.server.com");
 
-            provideServerConnectionType (ServerType.SDX_COLLECTOR);
 
-            Thread.sleep(2000);
-            provideServerConnectionType (ServerType.ODBC_COLLECTOR);
-            Thread.sleep(2000);
-            provideServerConnectionType (ServerType.OPCUA_SERVER);
-            Thread.sleep(2000);
-            provideServerConnectionType (ServerType.PHD_SERVER);
-            Thread.sleep(2000);
 
             scrollTo(tagQuery);
 
