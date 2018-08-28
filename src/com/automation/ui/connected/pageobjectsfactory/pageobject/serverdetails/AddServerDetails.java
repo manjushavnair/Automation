@@ -327,7 +327,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
             provideServerConnectionType (ServerType.PHD_SERVER);
             Thread.sleep(1000);
-            provideServerConnectionType (ServerType.OPCUA_SERVER);
+            provideServerConnectionType (ServerType.OPCUA_UA_SERVER);
             Thread.sleep(1000);
 
         } catch (Exception e) {
