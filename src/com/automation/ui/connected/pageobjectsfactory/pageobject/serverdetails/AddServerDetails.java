@@ -194,6 +194,26 @@ public class AddServerDetails extends SiteBasePageObject {
 
     }
 
+    public void provideServerSecurityCheck( ) {
+
+
+        Reporter.log("Entering  provideServerSecurityCheck:");
+
+        try {
+            scrollTo(securityKeyFlag);
+            wait.forElementClickable(securityKeyFlag);
+            if(!securityKeyFlag.isSelected())
+                securityKeyFlag.click();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
 
 
 
@@ -471,6 +491,8 @@ public class AddServerDetails extends SiteBasePageObject {
             provideServerPort("9021");
 
             provideServerURL("opc.tcp://AS2CCHAPIOPCUA.hscperth.hsc.honeywell.com.au:53530/OPCUA/SimulationServer");
+
+            provideServerSecurityCheck();
 
             provideServerUserName("Opcconfiguser");
 
