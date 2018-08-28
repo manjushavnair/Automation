@@ -202,7 +202,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
         try {
             scrollTo(securityKeyFlag);
-            wait.forElementClickable(securityKeyFlag);
+           // wait.forElementClickable(securityKeyFlag);
             boolean bValue = false;
 
             // This statement will return True, in case of first Radio button is selected
