@@ -143,9 +143,13 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
         home_page.addConnection();
         serverdetail_page.provideServerDetailsAddCust_Conn_Query_Name();
         serverdetail_page.provideServerConnectionType(ServerType.SDX_COLLECTOR);
+        Thread.sleep(2000);
         serverdetail_page.provideServerConnectionType(ServerType.OPCUA_SERVER);
+        Thread.sleep(2000);
         serverdetail_page.provideServerConnectionType(ServerType.ODBC_COLLECTOR);
+        Thread.sleep(2000);
         serverdetail_page.provideServerConnectionType(ServerType.OPCUA_SERVER);
+        Thread.sleep(2000);
 
         serverdetail_page.provideServerDetailsNext();
         Thread.sleep(1000);

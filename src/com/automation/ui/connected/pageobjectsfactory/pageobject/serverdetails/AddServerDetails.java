@@ -197,8 +197,15 @@ public class AddServerDetails extends SiteBasePageObject {
 
             customerNameField.click();
             fillInputAfterClear(customerNameField, "Connected Assets Demo");
+
+            siteNameField.click();
+            fillInputAfterClear(siteNameField, "Bracknell");
+
             connServerName.click();
-            fillInputAfterClear(connServerName, "Bracknell");
+            fillInputAfterClear(connServerName, "opcua.server.com");
+
+
+
             tagQuery.click();
             fillInputAfterClear(tagQuery, "Select * from table where tagname like 'p%'");
 
