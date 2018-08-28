@@ -78,10 +78,10 @@
         <classes>
             <class name="com.automation.ui.connected.testcases.login.LoginTest">
                 <methods>
-                    <exclude name="verifyInValidUserNullPassword"/>
-                    <exclude name="verifyValidUserNullPassword"/>
-                    <exclude name="verifyInValidUserInvalidPassword"/>
-                    <exclude name="verifyNullUserNullPassword"/>
+                    <include name="verifyInValidUserNullPassword"/>
+                    <include name="verifyValidUserNullPassword"/>
+                    <include name="verifyInValidUserInvalidPassword"/>
+                    <include name="verifyNullUserNullPassword"/>
                     <include name="verifyValidLogin"/>
                 </methods>
             </class>
