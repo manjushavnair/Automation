@@ -106,6 +106,9 @@
                     <include name="provideServerDetailsCancelTest"/>
                     <include name="clearSiteNameTest"/>
                     <include name="provideConnectionType"/>
+                    <include name="provideServerDetailsAddCust_Conn_Query_Name"/>
+
+
                 </methods>
             </class>
 

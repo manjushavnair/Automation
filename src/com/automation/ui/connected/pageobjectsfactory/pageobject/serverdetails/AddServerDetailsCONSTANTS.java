@@ -23,6 +23,7 @@ public interface AddServerDetailsCONSTANTS {
 
     public String CONNECTION_TO_SERVER = "//a[@class='link ng-binding ng-scope']";
 
+    public String QUERY ="//textarea[@id='tagQuery']";
     public String OPCUA_SERVER_URL = "//input[@id='opcName']";
 
     public String MIN_KEY_SIZE = "//select[@id='mks']";

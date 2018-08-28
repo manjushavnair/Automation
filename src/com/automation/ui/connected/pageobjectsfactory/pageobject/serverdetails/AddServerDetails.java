@@ -67,6 +67,11 @@ public class AddServerDetails extends SiteBasePageObject {
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.SECURITY_DOMAIN_CHECK)
     private WebElement securityDomainCheck;
+    @FindBy(xpath = AddServerDetailsCONSTANTS.QUERY)
+    private WebElement tagQuery;
+
+
+
 
 
     public AddServerDetails open() {
@@ -175,6 +180,29 @@ public class AddServerDetails extends SiteBasePageObject {
             customerNameField.click();
             fillInputAfterClear(customerNameField, "Connected Assets Demo");
             Reporter.log("Exiting provideServerDetailsAddCustName");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public void provideServerDetailsAddCust_Conn_Query_Name() {
+
+
+        Reporter.log("Entering  provideServerDetailsAddCustAndConnName:");
+
+        try {
+
+            customerNameField.click();
+            fillInputAfterClear(customerNameField, "Connected Assets Demo");
+            connServerName.click();
+            fillInputAfterClear(connServerName, "Bracknell");
+            tagQuery.click();
+            fillInputAfterClear(tagQuery, "Select * from table where tagname like 'p%'");
+
+            Reporter.log("Exiting provideServerDetailsAddCustAndConnName");
 
         } catch (Exception e) {
             e.printStackTrace();

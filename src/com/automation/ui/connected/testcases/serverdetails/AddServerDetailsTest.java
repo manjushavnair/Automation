@@ -136,4 +136,22 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
         Thread.sleep(1000);
 
     }
+
+       /** */
+    @Test(enabled = true, priority = 16, groups = {"validcase"}, description = "AddServerDetails")
+    public void provideServerDetailsAddCust_Conn_Query_Name() throws Throwable {
+        home_page.addConnection();
+        serverdetail_page.provideServerDetailsAddCust_Conn_Query_Name();
+        serverdetail_page.provideServerConnectionType(ServerType.SDX_COLLECTOR);
+        serverdetail_page.provideServerConnectionType(ServerType.OPCUA_SERVER);
+        serverdetail_page.provideServerConnectionType(ServerType.ODBC_COLLECTOR);
+        serverdetail_page.provideServerConnectionType(ServerType.OPCUA_SERVER);
+
+        serverdetail_page.provideServerDetailsNext();
+        Thread.sleep(1000);
+
+    }
+
+
+
 }
