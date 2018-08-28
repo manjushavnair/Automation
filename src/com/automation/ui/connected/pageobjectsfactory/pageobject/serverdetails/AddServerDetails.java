@@ -213,6 +213,7 @@ public class AddServerDetails extends SiteBasePageObject {
             logger.info("Entering  provideServerSecurityCheck:" +securityKeyFlag.getTagName());
             List <WebElement> ls=securityKeyFlag.findElements(By.name("enableSec"));
             int iSize = ls.size();
+            logger.info("Entering  provideServerSecurityCheck:size " +iSize);
 
             // Start the loop from first Check Box to last Check Boxe
             for(int i=0; i < iSize ; i++ ){
