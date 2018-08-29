@@ -90,6 +90,10 @@ public class AddServerDetails extends SiteBasePageObject {
     @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_STATUS)
     private WebElement connStatus;
 
+    @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_NEXT)
+    private WebElement connNext;
+
+
 
 
 
@@ -508,6 +512,24 @@ public class AddServerDetails extends SiteBasePageObject {
     }
 
 
+    public void provideConnectToNext( ) {
+
+
+        Reporter.log("Entering  provideConnectToNext:");
+
+        try {
+            scrollTo(connNext);
+            waitAndClick(connNext);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+
 
     public void provideServerUserName(String userName) {
 
@@ -580,10 +602,8 @@ public class AddServerDetails extends SiteBasePageObject {
 
            if (Assertion.assertStringContains(connStatus.getText(), "Authentication successful"))
             {
-                System.out.println("Authticated");
+                provideConnectToNext();
             }
-
-
 
 
         } catch (Exception e) {

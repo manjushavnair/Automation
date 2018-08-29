@@ -46,4 +46,5 @@ public interface AddServerDetailsCONSTANTS {
     public String SECURITY_CONNECTION_WARNING= "//h1[contains(text(),'Connection is not secure')]";
     public String CONNECTION_STATUS = "//label[@class='success ng-binding ng-scope']";
 
+    public String CONNECTION_NEXT = "//button[@class='primary next ng-binding']";
 }
