@@ -603,6 +603,7 @@ public class AddServerDetails extends SiteBasePageObject {
            if (Assertion.assertStringContains(connStatus.getText(), "Authentication successful"))
             {
                 provideConnectToNext();
+
             }
 
 
