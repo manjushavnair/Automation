@@ -28,7 +28,8 @@ public class Test {
 
      //  WebElement one = driver.findElement(By.xpath("//input[@id='a42']"));
 
-        WebElement two = driver.findElement(By.xpath("//label[@for='a42']//span"));
+        WebElement yes = driver.findElement(By.xpath("//label[@for='es1']//span"));
+        WebElement no = driver.findElement(By.xpath("//label[@for='es2']//span"));
 
         WebElement three = driver.findElement(By.xpath("//h1[contains(text(),'Connection is not secure')]"));
         WebElement four = driver.findElement(By.xpath("//label[@class='success']"));
@@ -37,7 +38,7 @@ public class Test {
 
 
 
-        System.out.println("Successfully opened the website  "+ two.getText() + " :" +two.getTagName());
+        System.out.println("Successfully opened the website  "+ no.getText() + " :" +no.getTagName());
       // System.out.println("Successfully opened the website  "+ one.getText() + " : " +one.getTagName());
 
        /* one.isEnabled();
