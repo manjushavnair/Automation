@@ -398,11 +398,13 @@ public class AddServerDetails extends SiteBasePageObject {
     public void securityYes() {
 
 
-        Reporter.log("Entering  securityYes");
+        logger.info("Entering  securityYes");
 
         try {
 
          securityYes.click();
+
+            logger.info("Exiting  securityYes");
 
 
         } catch (Exception e) {
@@ -576,7 +578,8 @@ public class AddServerDetails extends SiteBasePageObject {
             provideConnectToServer();
 
 
-            if (Assertion.assertStringContains(connStatus.getText(), "Authentication successful")) {
+          //  if (Assertion.assertStringContains(connStatus.getText(), "Authentication successful"))
+            {
                 //next
             }
 
