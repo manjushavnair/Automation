@@ -1,5 +1,6 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails;
 
+import com.automation.ui.base.common.core.Assertion;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import com.automation.ui.connected.testcases.base.ServerType;
 import org.apache.log4j.Logger;
@@ -73,9 +74,21 @@ public class AddServerDetails extends SiteBasePageObject {
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.SECURITY_DOMAIN_CHECK)
     private WebElement securityDomainCheck;
+
     @FindBy(xpath = AddServerDetailsCONSTANTS.QUERY)
     private WebElement tagQuery;
 
+    @FindBy(xpath = AddServerDetailsCONSTANTS.SECURITY_NO)
+    private WebElement securityNo;
+
+    @FindBy(xpath = AddServerDetailsCONSTANTS.SECURITY_YES)
+    private WebElement securityYes;
+
+    @FindBy(xpath = AddServerDetailsCONSTANTS.SECURITY_CONNECTION_WARNING)
+    private WebElement connWarning;
+
+    @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_STATUS)
+    private WebElement connStatus;
 
 
 
@@ -382,7 +395,40 @@ public class AddServerDetails extends SiteBasePageObject {
 
     }
 
+    public void securityYes() {
 
+
+        Reporter.log("Entering  securityYes");
+
+        try {
+
+         securityYes.click();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+    public void securityNo() {
+
+
+        Reporter.log("Entering  securityNo:");
+
+        try {
+
+            securityNo.click();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
     public void provideServerDetailsTagQueryName(String query) {
 
 
@@ -521,11 +567,19 @@ public class AddServerDetails extends SiteBasePageObject {
 
             provideServerSecurityCheckDisable();
 
+            securityYes();
+
             provideServerUserName("Opcconfiguser");
 
             provideServerPassword("Password.123");
 
             provideConnectToServer();
+
+
+            if (Assertion.assertStringContains(connStatus.getText(), "Authentication successful")) {
+                //next
+            }
+
 
 
 

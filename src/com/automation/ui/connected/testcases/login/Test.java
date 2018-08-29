@@ -28,7 +28,7 @@ public class Test {
 
      //  WebElement one = driver.findElement(By.xpath("//input[@id='a42']"));
 
-        WebElement yes = driver.findElement(By.xpath("//label[@for='es1']//span"));
+      WebElement yes = driver.findElement(By.xpath("//label[@for='es1']//span"));
         WebElement no = driver.findElement(By.xpath("//label[@for='es2']//span"));
 
         WebElement three = driver.findElement(By.xpath("//h1[contains(text(),'Connection is not secure')]"));
@@ -50,9 +50,9 @@ public class Test {
 System.out.println(two.isSelected());
 */
         Thread.sleep(15000);
-        two.click();
+        no.click();
 
-        System.out.println(two.isSelected());
+        System.out.println(no.isSelected());
         System.out.println(three.getText());
         System.out.println(four.getText());
 

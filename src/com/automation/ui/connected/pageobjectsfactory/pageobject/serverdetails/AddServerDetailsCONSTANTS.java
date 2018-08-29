@@ -1,5 +1,8 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
 public interface AddServerDetailsCONSTANTS {
 
     //button[@class='primary next ng-binding']
@@ -36,5 +39,11 @@ public interface AddServerDetailsCONSTANTS {
     public String SECURITY_CERT_ACCEPT = "//ul[@class='form verticalForm']//li[1]//span[1]//span[1]//label[1]//span[1]";
     public String SECURITY_DOMAIN_CHECK = "//div[@class='ch-pageContent ng-scope']";
 
+
+    public String SECURITY_YES = "//label[@for='es1']//span";
+    public String SECURITY_NO = "//label[@for='es2']//span";
+
+    public String SECURITY_CONNECTION_WARNING= "//h1[contains(text(),'Connection is not secure')]";
+    public String CONNECTION_STATUS = "//label[@class='success']";
 
 }
