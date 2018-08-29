@@ -578,9 +578,9 @@ public class AddServerDetails extends SiteBasePageObject {
             provideConnectToServer();
             Thread.sleep(60000);
 
-          //  if (Assertion.assertStringContains(connStatus.getText(), "Authentication successful"))
+           if (Assertion.assertStringContains(connStatus.getText(), "Authentication successful"))
             {
-                //next
+                System.out.println("Authticated");
             }
 
 
