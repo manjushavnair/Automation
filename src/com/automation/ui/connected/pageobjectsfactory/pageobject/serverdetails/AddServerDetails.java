@@ -567,7 +567,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
             provideServerURL("opc.tcp://AS2CCHAPIOPCUA.hscperth.hsc.honeywell.com.au:53530/OPCUA/SimulationServer");
 
-            provideServerSecurityCheckDisable();
+          //  provideServerSecurityCheckDisable();
 
             securityYes();
 
