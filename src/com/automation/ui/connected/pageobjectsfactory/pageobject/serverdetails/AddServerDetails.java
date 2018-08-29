@@ -569,7 +569,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
           //  provideServerSecurityCheckDisable();
 
-            securityYes();
+            securityNo();
 
             provideServerUserName("Opcconfiguser");
 
