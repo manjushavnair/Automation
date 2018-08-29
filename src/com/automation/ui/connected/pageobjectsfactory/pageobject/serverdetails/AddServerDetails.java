@@ -598,7 +598,6 @@ public class AddServerDetails extends SiteBasePageObject {
             provideServerPassword("Password.123");
 
             provideConnectToServer();
-            Thread.sleep(60000);
 
            if (Assertion.assertStringContains(connStatus.getText(), "Authentication successful"))
             {
