@@ -207,7 +207,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
     }
 
-    public void provideServerSecurityCheckDisable( ) {
+    /*public void provideServerSecurityCheckDisable( ) {
 
 
         Reporter.log("Entering  provideServerSecurityCheck:");
@@ -252,7 +252,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
 
     }
-
+*/
 
 
 
