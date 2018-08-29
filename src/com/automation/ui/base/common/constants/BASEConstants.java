@@ -42,7 +42,7 @@ public interface BASEConstants {
     public static int WAITTIME60SEC = 60;
     public static int WAITTIME30SEC = 30;
     public static int WAITTIME20SEC = 20;
-    public static int WAITTIME15SEC = 15;
+    public static int WAITTIME15SEC = 8;
     public static int WAITTIME10SEC = 10;
     public static int WAITTIME5SEC = 5;
 
