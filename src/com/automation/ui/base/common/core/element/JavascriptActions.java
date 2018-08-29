@@ -18,7 +18,6 @@ import java.util.concurrent.TimeUnit;
 public class JavascriptActions {
 
 
-    private final static int WEBDRIVER_WAIT_TIMEOUT_SEC = 15;
     private static Logger logger = Logger
             .getLogger(JavascriptActions.class);
     private final JavascriptExecutor js;
@@ -220,7 +219,7 @@ public class JavascriptActions {
     public void waitForJavaScriptTruthy(final String script) {
         driver.manage().timeouts().implicitlyWait(BASEConstants.WAITTIME500MILLISEC, TimeUnit.MILLISECONDS);
         try {
-            new WebDriverWait(driver, WEBDRIVER_WAIT_TIMEOUT_SEC).until(new ExpectedCondition<Boolean>() {
+            new WebDriverWait(driver, BASEConstants.WAITTIME15SEC).until(new ExpectedCondition<Boolean>() {
                 public Boolean apply(WebDriver driver) {
                     try {
                         return (boolean) js.executeScript("return !!(" + script + ");");
@@ -231,7 +230,7 @@ public class JavascriptActions {
                 }
             });
         } finally {
-            driver.manage().timeouts().implicitlyWait(WEBDRIVER_WAIT_TIMEOUT_SEC, TimeUnit.MILLISECONDS);
+            driver.manage().timeouts().implicitlyWait(BASEConstants.WAITTIME15SEC, TimeUnit.MILLISECONDS);
         }
     }
 

@@ -18,7 +18,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
-
+import com.automation.ui.base.common.constants.*;
 public abstract class BrowserAbstract {
 
     private static Logger logger = Logger.getLogger(BrowserAbstract.class);
@@ -60,7 +60,7 @@ public abstract class BrowserAbstract {
     }
 
     protected void setTimeputs(WebDriver webDriver) {
-        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(BASEConstants.WAITTIME15SEC, TimeUnit.SECONDS);
     }
 
     protected void setListeners(UIWebDriver webDriver) {
