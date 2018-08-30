@@ -322,6 +322,7 @@
                             <configuration>
 
                                 <subject>Test Automation Report</subject>
+                                <failonerror>false</failonerror>
 
                                 <htmlMessage>
                                     <![CDATA[
