@@ -35,7 +35,9 @@ public class ConnectedBaseTest extends NewTestTemplate {
 
     public ConnectedBaseTest() {
         super();
-
+        filter = new FilterDetails();
+        serverdetail_page = new AddServerDetails();
+        home_page = new HomePage();
         getDataReaders();
 
     }

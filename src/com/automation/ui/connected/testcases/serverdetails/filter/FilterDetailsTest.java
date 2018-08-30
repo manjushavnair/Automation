@@ -24,9 +24,6 @@ public class FilterDetailsTest extends ConnectedBaseTest {
 
         super();
         logger.info(" FilterDetailsTest");
-        filter = new FilterDetails();
-        serverdetail_page = new AddServerDetails();
-        home_page = new HomePage();
     }
 
        /** */

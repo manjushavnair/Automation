@@ -27,8 +27,8 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
 
         super();
         logger.info(" AddServerDetailsTest");
-        serverdetail_page = new AddServerDetails();
-        home_page = new HomePage();
+     //   serverdetail_page = new AddServerDetails();
+      //  home_page = new HomePage();
 
     }
 
