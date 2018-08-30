@@ -11,5 +11,7 @@ public interface HomeConstants {
     public String ADDCONNECTIONSBUTTON_ERROR_MSG = "//h1[contains(text(),'Access Denied')]";
     public String ADDCONNECTIONSBUTTON_ERROR_MSG_EXTRA = "//p[contains(text(),'You do not have permission to view this applicatio')]";
 
+    public static String CLOUDDATABUTTON = "//a[contains(text(),'Cloud Data')]";
+
 
 }

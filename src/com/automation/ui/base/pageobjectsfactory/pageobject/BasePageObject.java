@@ -4,7 +4,7 @@ import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.contentpatterns.URLsContent;
 import com.automation.ui.base.common.contentpatterns.XSSContent;
-import com.automation.ui.base.common.core.Assertion;
+import com.automation.ui.base.common.core.assertion.Assertion;
 import com.automation.ui.base.common.core.CommonExpectedConditions;
 import com.automation.ui.base.common.core.EmailUtils;
 import com.automation.ui.base.common.core.UIWebDriver;
@@ -242,6 +242,17 @@ public abstract class BasePageObject {
         } catch (TimeoutException e) {
             return false;
         }
+    }
+
+    public boolean isElementVisible(String element) {
+        try {
+            wait.forElementVisible(By.cssSelector(element));
+
+        } catch (TimeoutException | ElementNotVisibleException ex) {
+            logger.info("Web element " + element + " not visible");
+            return false;
+        }
+        return true;
     }
 
     /**

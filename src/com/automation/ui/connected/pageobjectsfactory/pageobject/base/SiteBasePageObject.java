@@ -15,24 +15,16 @@ import java.util.concurrent.TimeUnit;
 public class SiteBasePageObject extends BasePageObject {
 
 
-    private static final String LOGGED_IN_USER_SELECTOR_OASIS =
+    private static final String LOGGED_IN_USER_SELECTOR =
             ".wds-global-navigation__user-menu.wds-global-navigation__user-logged-in img, "
                     + ".wds-global-navigation__user-menu.wds-global-navigation__user-logged-in svg";
 
-    private static final By MERCURY_SKIN = By.cssSelector("#ember-container");
-    private static final By MERCURY_NAV_ICON = By.cssSelector(".site-head .site-head-icon-nav");
-    private static Logger logger = Logger.getLogger(SiteBasePageObject.class);
+     private static Logger logger = Logger.getLogger(SiteBasePageObject.class);
     @FindBy(css = "#globalNavigation,.site-head.no-shadow,.wds-global-navigation")
     protected WebElement navigationBar;
     @FindBy(css = "#globalNavigation")
     protected WebElement newGlobalNavigation;
-    protected By parentBy = By.xpath("./..");
-    @FindBy(css = ".banner-notifications-placeholder,.smart-banner")
-    private WebElement bannerNotificationContainer;
-    @FindBy(css = ".wds-dropdown__toggle .wds-avatar")
-    private WebElement globalNavigationAvatar;
-    @FindBy(css = ".wds-global-navigation")
-    private WebElement globalNavigationBar;
+
 
     public SiteBasePageObject() {
         super();
@@ -70,9 +62,7 @@ public class SiteBasePageObject extends BasePageObject {
     }
 
 
-    public int getBannerNotificationsHeight() {
-        return bannerNotificationContainer.getSize().getHeight();
-    }
+
 
     public int getNavigationBarOffsetFromTop() {
         return Integer.parseInt(navigationBar.getAttribute("offsetTop")) + navigationBar.getSize().height;
@@ -111,23 +101,14 @@ public class SiteBasePageObject extends BasePageObject {
             if (driver.findElements(By.cssSelector("#PreviewFrame")).size() > 0) {
                 driver.switchTo().frame("PreviewFrame");
             }
-            // open nav , required to see login data
-            if (driver.findElements(MERCURY_SKIN).size() > 0) {
-                wait.forElementClickable(MERCURY_NAV_ICON);
-                driver.findElement(MERCURY_NAV_ICON).click();
-                //     wait.forElementVisible(By.cssSelector(
-                //           LOGGED_IN_USER_SELECTOR_MERCURY.replace("%userName%", userName.replace(" ", "_"))));
-                // close nav
-                wait.forElementClickable(MERCURY_NAV_ICON);
-                driver.findElement(MERCURY_NAV_ICON).click();
-            } else {
-                WebElement logo = wait.forElementPresent(By.cssSelector(LOGGED_IN_USER_SELECTOR_OASIS));
+
+                WebElement logo = wait.forElementPresent(By.cssSelector(LOGGED_IN_USER_SELECTOR));
                 String loggedInUserName = logo.getAttribute("alt");
                 if (!loggedInUserName.equals(userName) && !loggedInUserName.equals(userName + " logo")) {
                     throw new IllegalArgumentException(
                             "Invalid user, expected " + userName + ", but found: " + loggedInUserName);
                 }
-            }
+
         } finally {
             restoreDefaultImplicitWait();
             driver.switchTo().defaultContent();
@@ -140,18 +121,7 @@ public class SiteBasePageObject extends BasePageObject {
     }
 
 
-    public void verifyGlobalNavigation() {
 
-        wait.forElementVisible(globalNavigationBar);
-        Log.log("verifyGlobalNavigation", "Verified global navigation", true);
-    }
-
-    public void verifyAvatarVisible() {
-
-
-        wait.forElementVisible(globalNavigationAvatar);
-        Log.log("verifyAvatarVisible", "desired logo is visible on navbar", true);
-    }
 
 
     protected Boolean isNewGlobalNavPresent() {
@@ -159,27 +129,8 @@ public class SiteBasePageObject extends BasePageObject {
         return isElementOnPage(newGlobalNavigation);
     }
 
-    public boolean isElementVisible(String element) {
-        try {
-            wait.forElementVisible(By.cssSelector(element));
 
-        } catch (TimeoutException | ElementNotVisibleException ex) {
-            logger.info("Web element " + element + " not visible");
-            return false;
-        }
-        return true;
-    }
 
-    public static class AssertionMessages {
-
-        public static final String INVALID_NUMBER_OF_CONFIRMING_NOTIFICATIONS =
-                "Number of action confirming notifications is invalid";
-        public static final String BANNER_NOTIFICATION_NOT_VISIBLE = "Banner notification message is not visible";
-
-        private AssertionMessages() {
-            throw new IllegalAccessError("Utility class");
-        }
-    }
 
 
 }

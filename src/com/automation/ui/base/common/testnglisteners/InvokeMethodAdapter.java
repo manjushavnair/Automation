@@ -1,6 +1,6 @@
 package com.automation.ui.base.common.testnglisteners;
 
-import com.automation.ui.base.common.core.Assertion;
+import com.automation.ui.base.common.core.assertion.Assertion;
 import com.automation.ui.base.common.core.annotations.DontRun;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.exceptions.TestFailedException;

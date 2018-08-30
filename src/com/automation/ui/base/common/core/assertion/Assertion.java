@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.core;
+package com.automation.ui.base.common.core.assertion;
 
 import com.automation.ui.base.common.logging.Log;
 import org.testng.Assert;

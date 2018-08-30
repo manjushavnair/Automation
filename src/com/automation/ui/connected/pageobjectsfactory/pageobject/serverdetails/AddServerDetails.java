@@ -1,6 +1,6 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails;
 
-import com.automation.ui.base.common.core.Assertion;
+import com.automation.ui.base.common.core.assertion.Assertion;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import com.automation.ui.connected.testcases.base.ServerType;
 import org.apache.log4j.Logger;

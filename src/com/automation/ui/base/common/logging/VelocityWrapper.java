@@ -209,8 +209,7 @@ public class VelocityWrapper {
         context.put("testingEnvironment", testingEnvironment);
         context.put("testedVersion", testedVersion);
         context.put("mobileSiteVersion", mercuryVersion);
-        context.put("mobileSiteVersion", mercuryVersion);
-        context.put("logPath", System.getProperty("user.dir") + File.separator + Log.LOG_PATH);
+         context.put("logPath", System.getProperty("user.dir") + File.separator + Log.LOG_PATH);
 
 
         StringWriter writer = new StringWriter();

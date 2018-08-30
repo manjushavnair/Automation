@@ -3,9 +3,8 @@ package com.automation.ui.connected.testcases.login;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 
-import com.automation.ui.base.common.core.Assertion;
+import com.automation.ui.base.common.core.assertion.Assertion;
 
 import java.util.concurrent.TimeUnit;
 

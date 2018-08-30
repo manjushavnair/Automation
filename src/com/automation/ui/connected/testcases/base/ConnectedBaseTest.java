@@ -8,7 +8,7 @@ package com.automation.ui.connected.testcases.base;
  */
 
 import com.automation.ui.base.common.contentpatterns.URLsContent;
-import com.automation.ui.base.common.core.Assertion;
+import com.automation.ui.base.common.core.assertion.Assertion;
 import com.automation.ui.base.common.utils.ExcelUtil;
 import com.automation.ui.connected.common.constants.ExcelCONSTANTS;
 import com.automation.ui.connected.common.templates.NewTestTemplate;
@@ -42,6 +42,9 @@ public class ConnectedBaseTest extends NewTestTemplate {
         try {
             eu = new ExcelUtil();
 
+
+
+//  eu.setExcelFile(ExcelCONSTANTS.LOGINXLSDATAPATH,                   ExcelCONSTANTS.LOGINXLSDATASHEETNAMELOGIN);
             eu.setExcelFile("C:\\Software\\selenium\\dataselenium.xls",
                     ExcelCONSTANTS.LOGINXLSDATASHEETNAMELOGIN);
         } catch (Exception e) {
