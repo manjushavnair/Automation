@@ -17,5 +17,4 @@ git pull
 
 
 												        
-mvn -Dmailpass=hari123$ antrun:run@ant-execute  clean compile test surefire-report:report postman:send-mail 
-
+mvn -Dmailpass=hari123$  antrun:run@ant-execute clean compile test surefire-report:report postman:send-mail
