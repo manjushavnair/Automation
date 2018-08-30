@@ -5,6 +5,8 @@ package com.automation.ui.connected.testcases.serverdetails.filter;
  */
 
 import com.automation.ui.connected.common.dataprovider.SiteDataProvider;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetails;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.filter.*;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
 import org.apache.log4j.Logger;
@@ -22,7 +24,9 @@ public class FilterDetailsTest extends ConnectedBaseTest {
 
         super();
         logger.info(" FilterDetailsTest");
-         filter = new FilterDetails();
+        filter = new FilterDetails();
+        serverdetail_page = new AddServerDetails();
+        home_page = new HomePage();
     }
 
        /** */
