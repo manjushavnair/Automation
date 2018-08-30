@@ -30,9 +30,8 @@
                 <include name="invalidcase"/>
 
             </define>
-            <define name="runing">
-
-                <include name="validcase"/>
+            <define name="running">
+               <include name="validcase"/>
             </define>
 
             <run>
@@ -41,8 +40,12 @@
             </run>
         </groups>
 
-        <!-- START GITHUB LOGIN TEST -->
+
+
+
+        <!-- START GITHUB   -->
         <!-- sample testing part-->
+        <!-- uncomment from here
         <packages>
             <package name="com.automation.ui.githubtesting.testcases.home"/>
         </packages>
@@ -57,9 +60,11 @@
             </class>
 
         </classes>
-        <!-- END of GITHUB TESTING PART-->
+        -->
+        <!-- END  GITHUB  -->
 
-       <!--
+        <!-- START CONNECTED-->
+
         <packages>
 
             <package name="com.automation.ui.connected.testcases.login"/>
@@ -94,7 +99,6 @@
 
                 <methods>
                     <include name="provideAllServerDetails"/>
-
                     <exclude name="clearCustomerNameTest"/>
                     <exclude name="addCustomerNameTest"/>
                     <exclude name="provideServerDetailsNextTest"/>
@@ -125,8 +129,9 @@
 
 
         </classes>
--->
 
+
+        <!-- END CONNECTED -->
     </test>
 
 </suite>
