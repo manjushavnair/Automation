@@ -32,33 +32,19 @@
 
     </properties>
 
-
-    <!--<pluginGroups>
-        <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
-    </pluginGroups>
-    -->
     <profiles>
-
-        <profile>
-            <id>sonar</id>
+         <profile>
+            <id>serverConfig</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
-                <property>
-                    <name>offline</name>
-                    <value>false</value>
-                </property>
-            </activation>
+             </activation>
             <properties>
-                <!-- Optional URL to server. Default value is http://localhost:9000 -->
-                <sonar.host.url>
-                    http://localhost:9000
-                </sonar.host.url>
-                <user>${env.oracleUsername}</user>
-                <password>${env.oraclePassword}</password>
+                <sonar.host.url>http://localhost:9000</sonar.host.url>
+                <user>${env.username}</user>
+                <password>${env.password}</password>
             </properties>
-        </profile>
+         </profile>
     </profiles>
-
 
     <build>
         <sourceDirectory>src</sourceDirectory>
@@ -79,10 +65,8 @@
 
         <pluginManagement>
 
-
             <plugins>
-
-                <plugin>
+               <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
                     <version>2.3.2</version>
@@ -134,7 +118,7 @@
 
                                     <echo message="Creating log directory"/>
                                     <echo>Displaying value </echo>
-                                    <echo>${myversion}</echo>
+                                    <echo>${env.oracleUsername}</echo>
 
                                 </target>
                             </configuration>
