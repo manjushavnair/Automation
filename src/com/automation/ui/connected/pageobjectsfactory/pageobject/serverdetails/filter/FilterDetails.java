@@ -16,8 +16,8 @@ public class FilterDetails extends SiteBasePageObject {
     @FindBy(xpath = FilterDetailsCONSTANTS.LISTOFTAG)
     private WebElement listTag;
 
-    @FindBy(xpath = FilterDetailsCONSTANTS.LISTPARTIALTAG)
-    private WebElement partTag;
+    @FindBy(xpath = FilterDetailsCONSTANTS.ASSETTREETAG)
+    private WebElement assetTreeTag;
 
     @FindBy(xpath = FilterDetailsCONSTANTS.FILTER_NEXT)
     private WebElement next;
@@ -33,7 +33,7 @@ public class FilterDetails extends SiteBasePageObject {
         return new FilterDetails();
     }
 
-    /*Method to validate Next Connection in Provide Server Details page*/
+
     public void next() {
 
         Reporter.log("Entering  next:");
@@ -49,6 +49,45 @@ public class FilterDetails extends SiteBasePageObject {
     }
 
 
+
+    public void listFilterTag() {
+
+
+        logger.info("Entering  listFilterTag");
+
+        try {
+
+            listTag.click();
+
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+    public void assetTreeTag() {
+
+
+        logger.info("Entering  assetTreeTag");
+
+        try {
+
+            assetTreeTag.click();
+
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
 
 
 

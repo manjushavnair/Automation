@@ -5,7 +5,7 @@ public interface FilterDetailsCONSTANTS {
 
     public String ALLTAG = "//label[@for='s1']//span";
     public String LISTOFTAG = "//label[@for='s2']//span";
-    public String LISTPARTIALTAG = "//label[@for='s3']//span";
+    public String ASSETTREETAG = "//label[@for='s3']//span";
 
     public String FILTER_NEXT = "//button[@class='primary next ng-binding']";
     public String CONNECTION_BACK = "//button[@class='link back ng-binding']";

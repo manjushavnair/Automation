@@ -16,6 +16,7 @@ import com.automation.ui.connected.pageobjectsfactory.pageobject.dashboardview.U
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginPage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetails;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.filter.FilterDetails;
 import org.apache.log4j.Logger;
 
 import java.util.List;
@@ -28,6 +29,9 @@ public class ConnectedBaseTest extends NewTestTemplate {
     protected HomePage home_page = null;
     protected AddServerDetails serverdetail_page = null;
     protected UAConnectionDetails connectiondetail_page = null;
+    protected FilterDetails filter = null;
+
+
 
     public ConnectedBaseTest() {
         super();

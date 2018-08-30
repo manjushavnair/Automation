@@ -72,6 +72,9 @@
             <package name="com.automation.ui.connected.testcases.home"/>
             <package name="com.automation.ui.connected.testcases.serverdetails"/>
             <package name="com.automation.ui.connected.testcases.dashboardviewtest"/>
+            <package name="com.automation.ui.connected.testcases.serverdetails.filter"/>
+
+
 
         </packages>
 
@@ -125,6 +128,13 @@
 
                 </methods>
             </class>
+
+            <class name="com.automation.ui.connected.testcases.serverdetails.filter.FilterDetailsTest">
+            <methods>
+            <include name="filterAlltags"/>
+            </methods>
+            </class>
+
 
         </classes>
 
