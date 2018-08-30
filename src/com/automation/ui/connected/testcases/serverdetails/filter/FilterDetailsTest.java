@@ -38,6 +38,8 @@ public class FilterDetailsTest extends ConnectedBaseTest {
         serverdetail_page.provideAllServerDetails(connInfo );
 
         filter.assetTreeTag();
+        Thread.sleep(6000000);
+
 
 
 
