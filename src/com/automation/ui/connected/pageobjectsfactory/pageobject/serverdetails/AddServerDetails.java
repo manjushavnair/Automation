@@ -605,6 +605,8 @@ public class AddServerDetails extends SiteBasePageObject {
 
             }
 
+            Thread.sleep(120000);
+
 
         } catch (Exception e) {
             e.printStackTrace();
