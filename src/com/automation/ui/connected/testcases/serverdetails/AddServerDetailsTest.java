@@ -149,9 +149,6 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
 
 
 
-       // serverdetail_page.provideServerDetailsNext();
-        Thread.sleep(10000);
-
     }
 
 

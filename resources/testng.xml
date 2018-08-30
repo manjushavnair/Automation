@@ -109,7 +109,7 @@
                     <exclude name="clearSiteNameTest"/>
                     <exclude name="provideServerDetailsCancelTest"/>
                     <exclude name="clearSiteNameTest"/>
-                    <include name="provideConnectionType"/>
+                    <exclude name="provideConnectionType"/>
 
 
                 </methods>
@@ -131,7 +131,7 @@
 
             <class name="com.automation.ui.connected.testcases.serverdetails.filter.FilterDetailsTest">
             <methods>
-            <include name="filterAlltags"/>
+            <include name="filterAseetTreeTag"/>
             </methods>
             </class>
 
