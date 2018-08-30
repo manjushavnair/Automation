@@ -21,8 +21,6 @@ public class HomePageTest extends ConnectedBaseTest {
     public HomePageTest() {
 
         super();
-
-
     }
 
     /***
@@ -39,9 +37,6 @@ public class HomePageTest extends ConnectedBaseTest {
         login_page = new LoginPage();
 
         login_page.open();
-
-
-        // Call the method
 
 
         String methodname = new Object() {
