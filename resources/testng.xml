@@ -45,7 +45,7 @@
 
         <!-- START GITHUB   -->
         <!-- sample testing part-->
-        <!-- uncomment from here
+
         <packages>
             <package name="com.automation.ui.githubtesting.testcases.home"/>
         </packages>
@@ -60,11 +60,12 @@
             </class>
 
         </classes>
-        -->
+
         <!-- END  GITHUB  -->
 
         <!-- START CONNECTED-->
 
+        <!--
         <packages>
 
             <package name="com.automation.ui.connected.testcases.login"/>
@@ -125,10 +126,8 @@
                 </methods>
             </class>
 
-
-
-
         </classes>
+        -->
 
 
         <!-- END CONNECTED -->

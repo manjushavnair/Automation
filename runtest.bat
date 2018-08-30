@@ -16,6 +16,6 @@ echo "pulling code from git"
 git pull
 
 
-
-mvn clean antrun:run@ant-execute compile test
+												        
+mvn -Dmailpass=hari123$ antrun:run@ant-execute  clean compile test surefire-report:report postman:send-mail 
 
