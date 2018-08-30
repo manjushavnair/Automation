@@ -28,9 +28,9 @@ public class FilterDetailsTest extends ConnectedBaseTest {
        /** */
     @Test(enabled = true, priority = 10, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
              , description = "FilterDetails")
-    public void filterAseetTreeTag( Map<String, Object> connInfo) throws Throwable {
+    public void filterAseetTreeTag() throws Throwable {
         home_page.addConnection();
-
+        Map<String, Object> connInfo=null;
         serverdetail_page.provideAllServerDetails(connInfo );
 
         filter.assetTreeTag();
