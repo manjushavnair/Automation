@@ -106,7 +106,7 @@
                     <exclude name="clearSiteNameTest"/>
                     <exclude name="provideServerDetailsCancelTest"/>
                     <exclude name="clearSiteNameTest"/>
-                    <include name="provideConnectionType"/>
+                    <exclude name="provideConnectionType"/>
 
 
                 </methods>
