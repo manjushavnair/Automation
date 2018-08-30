@@ -31,7 +31,7 @@
 
             </define>
             <define name="running">
-               <include name="validcase"/>
+                <include name="validcase"/>
             </define>
 
             <run>
@@ -41,26 +41,24 @@
         </groups>
 
 
-
-
         <!-- START GITHUB   -->
         <!-- sample testing part-->
-<!--
-        <packages>
-            <package name="com.automation.ui.githubtesting.testcases.home"/>
-        </packages>
+        <!--
+                <packages>
+                    <package name="com.automation.ui.githubtesting.testcases.home"/>
+                </packages>
 
-        <classes>
-        <class name="com.automation.ui.githubtesting.testcases.home.HomePageTest">
-        <methods>
-            <include name="launchLogin"/>
-            <include name="launchHomePage"/>
-            <include name="addRepo"/>
-        </methods>
-            </class>
+                <classes>
+                <class name="com.automation.ui.githubtesting.testcases.home.HomePageTest">
+                <methods>
+                    <include name="launchLogin"/>
+                    <include name="launchHomePage"/>
+                    <include name="addRepo"/>
+                </methods>
+                    </class>
 
-        </classes>
--->
+                </classes>
+        -->
         <!-- END  GITHUB  -->
 
         <!-- START CONNECTED-->
@@ -73,7 +71,6 @@
             <package name="com.automation.ui.connected.testcases.serverdetails"/>
             <package name="com.automation.ui.connected.testcases.dashboardviewtest"/>
             <package name="com.automation.ui.connected.testcases.serverdetails.filter"/>
-
 
 
         </packages>
@@ -130,14 +127,13 @@
             </class>
 
             <class name="com.automation.ui.connected.testcases.serverdetails.filter.FilterDetailsTest">
-            <methods>
-            <include name="filterAseetTreeTag"/>
-            </methods>
+                <methods>
+                    <include name="filterAseetTreeTag"/>
+                </methods>
             </class>
 
 
         </classes>
-
 
 
         <!-- END CONNECTED -->
