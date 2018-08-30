@@ -9,6 +9,7 @@ import com.automation.ui.base.common.prpreaders.AssertDataReader;
 import com.automation.ui.connected.common.dataprovider.SiteDataProvider;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetails;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.filter.FilterDetails;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
 import com.automation.ui.connected.testcases.base.ServerType;
 import org.apache.log4j.Logger;
@@ -27,8 +28,10 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
 
         super();
         logger.info(" AddServerDetailsTest");
-     //   serverdetail_page = new AddServerDetails();
-      //  home_page = new HomePage();
+
+        filter = new FilterDetails();
+        serverdetail_page = new AddServerDetails();
+        home_page = new HomePage();
 
     }
 
