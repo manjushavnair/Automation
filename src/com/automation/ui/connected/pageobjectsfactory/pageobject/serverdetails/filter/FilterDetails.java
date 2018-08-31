@@ -45,9 +45,10 @@ public class FilterDetails extends SiteBasePageObject {
     public void filterExportTag() {
         Reporter.log("Entering  filterExportTag:");
         try {
-            wait.forElementVisible(filterExportTag );
+           // wait.forElementVisible(filterExportTag );
             logger.info("Entering  filterExportTag:");
-            waitAndClick(filterExportTag);;
+            //waitAndClick(filterExportTag);;
+            filterExportTag.click();
         } catch (Exception e) {
             e.printStackTrace();
         }
