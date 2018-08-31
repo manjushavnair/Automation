@@ -42,7 +42,7 @@ public class FilterDetailsTest extends ConnectedBaseTest {
     }
 
 
-    @Test(enabled = true, priority = 31, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
+    @Test(enabled = true, priority = 33, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
             , description = "FilterDetails")
     public void filterAllTag() throws Throwable {
         home_page.addConnection();
@@ -51,7 +51,11 @@ public class FilterDetailsTest extends ConnectedBaseTest {
 
         filter.allTag();
         filter.filterEditTag();
+        Thread.sleep(3000);
         filter.filterExportTag();
+
+        Thread.sleep(5000);
+
 
 
     }
@@ -67,7 +71,7 @@ public class FilterDetailsTest extends ConnectedBaseTest {
 
     }
 
-    @Test(enabled = true, priority = 33, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
+    @Test(enabled = true, priority = 31, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
             , description = "FilterDetails")
     public void filterChangeFilters() throws Throwable {
         home_page.addConnection();
