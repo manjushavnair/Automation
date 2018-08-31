@@ -128,7 +128,10 @@
 
             <class name="com.automation.ui.connected.testcases.serverdetails.filter.FilterDetailsTest">
                 <methods>
-                    <include name="filterAseetTreeTag"/>
+
+                    <include name="filterChangeFilters"/>
+                    <include name="filterAllTag"/>
+                    <exclude name="filterAseetTreeTag"/>
                 </methods>
             </class>
 

@@ -12,10 +12,15 @@ public interface FilterDetailsCONSTANTS {
     public String FILTERLINEITEM_DELETE = "//a[@class='delete icon']";
     public String FILTER_VIEWALL = "//a[@class='link ng-binding']";
     public String FILTER_SEARCH = "//a[@class='search']";
-    public String FILTER_NEWTAG = "//button[@class='primaryLink ng-binding']";
+    public String FILTER_NEWTAGFILTER = "//button[@class='primaryLink ng-binding']";
 
     public String FILTER_SQUAREL = "//label[@for='t1']//span";
-    public String ADDCONNECTIONNAME = "//input[@id='connName']";
+
+    public String FILTEREDITTAG = "//button[contains(@class,'primaryLink')]";
+
+    public String FILTEREXPORTCONFIG = "//a[@id='ui-id-19']";
+    public String FILTERIMPORTONFIG = "//a[@id='ui-id-20']";
+
 
 
 

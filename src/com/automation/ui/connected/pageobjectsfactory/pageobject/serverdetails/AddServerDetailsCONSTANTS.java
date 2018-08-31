@@ -47,4 +47,8 @@ public interface AddServerDetailsCONSTANTS {
     public String CONNECTION_STATUS = "//label[@class='success ng-binding ng-scope']";
 
     public String CONNECTION_NEXT = "//button[@class='primary next ng-binding']";
+
+    public String CONNECTION_MAKEITPRIVATE ="//a[@id='makeItPrivate']";
+
+    public String CONNECTION_MAKEITPRIVATE_CLOSE="//div[@id='nonSecBanner']//a[@id='closeFlag']";
 }

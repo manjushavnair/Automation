@@ -29,8 +29,8 @@ public class FilterDetailsTest extends ConnectedBaseTest {
         home_page = new HomePage();
     }
 
-       /** */
-    @Test(enabled = true, priority = 10, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
+
+    @Test(enabled = true, priority = 30, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
              , description = "FilterDetails")
     public void filterAseetTreeTag() throws Throwable {
         home_page.addConnection();
@@ -39,12 +39,51 @@ public class FilterDetailsTest extends ConnectedBaseTest {
 
         filter.assetTreeTag();
        Thread.sleep(600000);
+    }
 
 
+    @Test(enabled = true, priority = 31, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
+            , description = "FilterDetails")
+    public void filterAllTag() throws Throwable {
+        home_page.addConnection();
+        Map<String, Object> connInfo=null;
+        serverdetail_page.provideAllServerDetails(connInfo );
+
+        filter.allTag();
+        filter.filterEditTag();
+        filter.filterExportTag();
 
 
     }
 
+    @Test(enabled = true, priority = 32, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
+            , description = "FilterDetails")
+    public void filterListFilter() throws Throwable {
+        home_page.addConnection();
+        Map<String, Object> connInfo=null;
+        serverdetail_page.provideAllServerDetails(connInfo );
 
+        filter.listFilterTag();
 
+    }
+
+    @Test(enabled = true, priority = 32, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
+            , description = "FilterDetails")
+    public void filterChangeFilters() throws Throwable {
+        home_page.addConnection();
+        Map<String, Object> connInfo=null;
+        serverdetail_page.provideAllServerDetails(connInfo );
+
+        filter.listFilterTag();
+
+        Thread.sleep(3000);
+        filter.allTag();
+
+        Thread.sleep(3000);
+
+        filter.assetTreeTag();
+
+        Thread.sleep(3000);
+
+    }
 }

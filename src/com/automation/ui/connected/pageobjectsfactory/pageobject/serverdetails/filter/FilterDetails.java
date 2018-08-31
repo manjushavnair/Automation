@@ -25,12 +25,46 @@ public class FilterDetails extends SiteBasePageObject {
     @FindBy(xpath = FilterDetailsCONSTANTS.CONNECTION_BACK)
     private WebElement back;
 
+    @FindBy(xpath = FilterDetailsCONSTANTS.FILTEREDITTAG)
+    private WebElement filterEditTag;
+
+    @FindBy(xpath = FilterDetailsCONSTANTS.FILTEREXPORTCONFIG)
+    private WebElement filterExportTag;
+
+    @FindBy(xpath = FilterDetailsCONSTANTS.FILTERIMPORTONFIG)
+    private WebElement filterImportTag;
 
 
 
     public FilterDetails open() {
 
         return new FilterDetails();
+    }
+
+    public void filterExportTag() {
+        Reporter.log("Entering  filterExportTag:");
+        try {
+            waitAndClick(filterExportTag);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void filterImportTag() {
+        Reporter.log("Entering  filterImportTag:");
+        try {
+            waitAndClick(filterImportTag);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void filterEditTag() {
+       Reporter.log("Entering  filterEditTag:");
+       try {
+           waitAndClick(filterEditTag);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -92,17 +126,9 @@ public class FilterDetails extends SiteBasePageObject {
 
 
     public void allTag() {
-
-
-        logger.info("Entering  allTag");
-
-        try {
-
+     logger.info("Entering  allTag");
+       try {
          allTag.click();
-
-
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }

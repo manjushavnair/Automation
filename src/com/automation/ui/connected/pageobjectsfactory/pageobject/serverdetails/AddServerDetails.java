@@ -93,7 +93,11 @@ public class AddServerDetails extends SiteBasePageObject {
     @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_NEXT)
     private WebElement connNext;
 
+    @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_MAKEITPRIVATE)
+    private WebElement connPrivate;
 
+    @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_MAKEITPRIVATE_CLOSE)
+    private WebElement connPrivateClose;
 
 
 
@@ -435,6 +439,38 @@ public class AddServerDetails extends SiteBasePageObject {
 
 
     }
+
+    public void provideConnectAlertClose( ) {
+
+
+        Reporter.log("Entering  provideConnectAlertClose:");
+
+        try {
+            scrollTo(connPrivateClose);
+            waitAndClick(connPrivateClose);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+    public void provideConnectAlertMakePrivate( ) {
+
+
+        Reporter.log("Entering  provideConnectAlertMakePrivate:");
+
+        try {
+            scrollTo(connPrivate);
+            waitAndClick(connPrivate);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public void provideServerDetailsTagQueryName(String query) {
 
 
@@ -589,9 +625,10 @@ public class AddServerDetails extends SiteBasePageObject {
 
             provideServerURL("opc.tcp://AS2CCHAPIOPCUA.hscperth.hsc.honeywell.com.au:53530/OPCUA/SimulationServer");
 
-          //  provideServerSecurityCheckDisable();
 
             securityNo();
+
+            provideConnectAlertClose();
 
             provideServerUserName("Opcconfiguser");
 
