@@ -45,7 +45,9 @@ public class FilterDetails extends SiteBasePageObject {
     public void filterExportTag() {
         Reporter.log("Entering  filterExportTag:");
         try {
-            waitAndClick(filterExportTag);
+            wait.forElementVisible(filterExportTag );
+            logger.info("Entering  filterExportTag:");
+            waitAndClick(filterExportTag);;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -66,7 +68,6 @@ public class FilterDetails extends SiteBasePageObject {
            logger.info("Entering  filterEditTag:");
            waitAndClick(filterEditTag);
            logger.info("Exiting  filterEditTag:");
-           Thread.sleep(10000);
 
         } catch (Exception e) {
             e.printStackTrace();
