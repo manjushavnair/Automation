@@ -78,16 +78,22 @@ public class FilterDetailsTest extends ConnectedBaseTest {
         Map<String, Object> connInfo=null;
         serverdetail_page.provideAllServerDetails(connInfo );
 
-       //filter.listFilterTag();
 
-        Thread.sleep(3000);
-        filter.allTag();
 
-        Thread.sleep(3000);
 
         filter.assetTreeTag();
 
         Thread.sleep(3000);
+
+
+        filter.allTag();
+
+        Thread.sleep(3000);
+
+         filter.listFilterTag();
+
+        Thread.sleep(3000);
+
 
     }
 }

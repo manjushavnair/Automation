@@ -1,5 +1,6 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.filter;
 
+import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
@@ -59,9 +60,11 @@ public class FilterDetails extends SiteBasePageObject {
         }
     }
     public void filterEditTag() {
-       Reporter.log("Entering  filterEditTag:");
+       logger.info("Entering  filterEditTag:");
        try {
+           wait.forElementVisible(filterEditTag );
            waitAndClick(filterEditTag);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
