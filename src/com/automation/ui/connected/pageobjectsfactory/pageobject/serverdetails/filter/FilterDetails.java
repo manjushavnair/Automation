@@ -63,7 +63,7 @@ public class FilterDetails extends SiteBasePageObject {
        logger.info("Entering  filterEditTag:");
        try {
           // wait.forElementVisible(filterEditTag );
-           waitAndClick(filterEditTag);
+           filterEditTag.click();
 
         } catch (Exception e) {
             e.printStackTrace();
