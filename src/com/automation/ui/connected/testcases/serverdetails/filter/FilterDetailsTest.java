@@ -67,14 +67,14 @@ public class FilterDetailsTest extends ConnectedBaseTest {
 
     }
 
-    @Test(enabled = true, priority = 32, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
+    @Test(enabled = true, priority = 33, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
             , description = "FilterDetails")
     public void filterChangeFilters() throws Throwable {
         home_page.addConnection();
         Map<String, Object> connInfo=null;
         serverdetail_page.provideAllServerDetails(connInfo );
 
-        filter.listFilterTag();
+       //filter.listFilterTag();
 
         Thread.sleep(3000);
         filter.allTag();
