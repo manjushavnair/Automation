@@ -16,7 +16,7 @@ public interface FilterDetailsCONSTANTS {
 
     public String FILTER_SQUAREL = "//label[@for='t1']//span";
 
-    public String FILTEREDITTAG = "//button[contains(@class,'primaryLink')]";
+    public String FILTEREDITTAG = "//a[@id='ui-id-10']";
 
     public String FILTEREXPORTCONFIG = "//a[@id='ui-id-19']";
     public String FILTERIMPORTONFIG = "//a[@id='ui-id-20']";
