@@ -528,6 +528,14 @@ public class DateUtil {
         return curDate;
     }
 
+
+
+    public static String getCurrentDateInReportFormat() {
+        SimpleDateFormat curDateFormater = new SimpleDateFormat("yyyy-MM-dd_hh-mm-ss");
+        String curDate = curDateFormater.format(new Date());
+        return curDate;
+    }
+
     public static String getCurrentDateTime() {
 
         DateFormat dateFormat = new SimpleDateFormat("_yyyy-MM-dd_HH-mm-ss");

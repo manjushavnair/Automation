@@ -9,6 +9,7 @@ import com.automation.ui.base.common.driverprovider.DriverProvider;
 import com.automation.ui.base.common.exception.BusinessException;
 import com.automation.ui.base.common.utils.CommonUtils;
 import com.automation.ui.base.common.utils.DateUtil;
+import com.automation.ui.base.common.report.filehandler.*;
 import lombok.Getter;
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.core.har.HarEntry;
@@ -45,7 +46,8 @@ public class Log {
     private static final String REPORT_PATH = "." + File.separator + "logs" + File.separator + "realreport" + File.separator;
     private static final String SCREEN_DIR_PATH = REPORT_PATH + "screenshots" + File.separator;
     private static final String SCREEN_PATH = SCREEN_DIR_PATH + "screenshot";
-    private static final String LOG_FILE_NAME = "log" + DateUtil.getCurrentDateTime() + ".html";
+    //create log file in the  physical location ,suite indes hardcoded as 1 for now
+    private static final String LOG_FILE_NAME = "log_" + DateUtil.getCurrentDateInReportFormat() + "-1.html";
     public static final String LOG_PATH = REPORT_PATH + LOG_FILE_NAME;
     private static final ArrayList<Boolean> LOGS_RESULTS = new ArrayList<>();
     public static String mobileSiteVersion = "";
@@ -78,6 +80,20 @@ public class Log {
 
     }
 
+  private static void createScreenShotHTMLFile(String htmlFile)
+  {
+
+
+	   File html=null;
+	          try {
+	             //html = File.createTempFile();
+	              html =new File(htmlFile , ".html");
+
+	          } catch (Exception e) {
+	              e.printStackTrace();
+              }
+  }
+
 
     public static void log(String command, String description, boolean success, WebDriver driver) {
         LOGS_RESULTS.add(success);
@@ -85,6 +101,7 @@ public class Log {
 
         try {
             new Shooter().savePageScreenshot(Log.SCREEN_PATH + Log.imageCounter, driver);
+            createScreenShotHTMLFile(Log.SCREEN_PATH + Log.imageCounter);
             VelocityWrapper.fillErrorLogRow(Arrays.asList(LogLevel.ERROR), description, Log.imageCounter);
         } catch (Exception e) {
             VelocityWrapper
@@ -95,6 +112,7 @@ public class Log {
         }
 
         new Shooter().savePageScreenshot(SCREEN_PATH + imageCounter, driver);
+        createScreenShotHTMLFile(Log.SCREEN_PATH + Log.imageCounter);
 
         LogData logType = success ? LogLevel.OK : LogLevel.ERROR;
         VelocityWrapper
@@ -106,6 +124,7 @@ public class Log {
         LOGS_RESULTS.add(success);
         imageCounter += 1;
         new Shooter().savePageScreenshot(SCREEN_PATH + imageCounter, driver);
+        createScreenShotHTMLFile(Log.SCREEN_PATH + Log.imageCounter);
         String
                 html =
                 VelocityWrapper
@@ -272,6 +291,7 @@ public class Log {
             // logger.info("htmlsource"+html);
             try {
                 new Shooter().savePageScreenshot(Log.SCREEN_PATH + Log.imageCounter, driver);
+                createScreenShotHTMLFile(Log.SCREEN_PATH + Log.imageCounter);
                 CommonUtils.appendTextToFile(Log.LOG_PATH, html);
             } catch (Exception e) {
                 html = VelocityWrapper.fillErrorLogRowWoScreenshotAndSource(classList, exceptionMessage);

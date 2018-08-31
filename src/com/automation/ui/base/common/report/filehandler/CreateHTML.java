@@ -13,6 +13,7 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 import java.io.StringWriter;
+import com.automation.ui.base.common.utils.*;
 
 public class CreateHTML extends CreateFiles {
 
@@ -33,13 +34,14 @@ public class CreateHTML extends CreateFiles {
                     + ".xml";
 
 
-            String dashboardHtmlPath = FileNameConstants.ROOT_FOLDER + File.separator + FileNameConstants.DASHBOARD_HTML + "-"
+            String dashboardHtmlPath = FileNameConstants.ROOT_FOLDER + File.separator + FileNameConstants.DASHBOARD_HTML + "_"+DateUtil.getCurrentDateInReportFormat()+"-"
                     + suiteIndex + ".html";
             createHTML(dashboardHtmlPath);
         } else {
             // log error
         }
     }
+
 
     synchronized public static String createHTML(String htmlPath) {
         TransformerFactory tFactory = TransformerFactory.newInstance();

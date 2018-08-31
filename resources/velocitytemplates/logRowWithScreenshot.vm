@@ -3,6 +3,6 @@
     <td>$description</td>
     <td> <br/>
         <a href='screenshots/screenshot${imageCounter}.png'>Screenshot</a><br/>
-        <a href='screenshots/screenshot${imageCounter}.html'>HTML Source</a>
+      <!--   <a href='screenshots/screenshot${imageCounter}.html'>HTML Source</a> -->
     </td>
 </tr>

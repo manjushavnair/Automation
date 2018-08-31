@@ -7,6 +7,8 @@ import com.automation.ui.base.common.report.datahandler.DataSuite;
 import com.google.common.io.Files;
 import org.apache.log4j.Logger;
 import org.testng.ISuite;
+import com.automation.ui.base.common.utils.*;
+
 
 import java.io.*;
 
@@ -64,9 +66,13 @@ public class CreateFiles {
         if (DataMap.suiteMap.containsKey(iSuite)) {
             int suiteIndex = DataMap.suiteMap.get(iSuite);
             String suiteName = DataPreparator.prepareSuiteName(iSuite);
+
+           // Create the file link in the index.html
             DataSuite ds = new DataSuite(suiteIndex, suiteName,
-                    FileNameConstants.DASHBOARD_HTML + "-" + suiteIndex + ".html");
+                    FileNameConstants.DASHBOARD_HTML + "_"+DateUtil.getCurrentDateInReportFormat()+ "-" + suiteIndex + ".html");
             DataMap.suiteSet.add(ds);
+
+
         }
 
 		/*

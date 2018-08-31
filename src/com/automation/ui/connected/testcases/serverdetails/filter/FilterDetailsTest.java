@@ -38,30 +38,8 @@ public class FilterDetailsTest extends ConnectedBaseTest {
         serverdetail_page.provideAllServerDetails(connInfo );
 
         filter.assetTreeTag();
-        Thread.sleep(600000);
+       // Thread.sleep(600000);
 
-/*
-<span ng-class="{'partSelect':item.partialSelect}"></span>
-<label for="t1" class="ng-binding">Square1</label>
-
-<td class="cell-name" width="30%">
-                                                    <div class="indent" style="padding-left: 53px" ng-click="steps.loadChildTreeNodes(item)"></div>
-                                                    <span class="draggableItem">
-                                                        <input type="checkbox" name="ch1" id="ns=2;s=MySwitch" ng-click="steps.toggleChildren(item); steps.toggleParent(item.parentNode); steps.ShowNodeSelectCount();" ng-model="item.selected" class="ng-pristine ng-untouched ng-valid ng-not-empty">
-                                                        <label for="ns=2;s=MySwitch"><span ng-class="{'partSelect':item.partialSelect}"></span></label>
-                                                        <label for="t1" class="ng-binding">MySwitch</label>
-                                                    </span>
-                                                </td>
-
-
-<button class="primaryLink ng-binding" ng-click="steps.startAddingNewFilter()">New tag filter</button>
-<input ch-focus="" class="textbox ng-pristine ng-valid ng-empty ng-touched" placeholder="Type to search" ng-model="steps.previewResults.FilterOn">
-<a href="#" class="search" ng-click="steps.fetchFilteredTags()"></a>
-<a href="#" class="link ng-binding" ng-click="steps.viewAllClick(filter)">View all</a>
-<a href="#" class="delete icon" ng-click="steps.deleteFilterClick($index)"></a>
-
-<input type="checkbox" name="ch1" id="ns=2;s=MyLevel.Alarm/0:AckedState/0:FalseState" ng-click="steps.toggleChildren(item); steps.toggleParent(item.parentNode); steps.ShowNodeSelectCount();" ng-model="item.selected" class="ng-untouched ng-valid ng-not-empty ng-dirty ng-valid-parse">
- */
 
 
 

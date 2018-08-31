@@ -46,7 +46,7 @@ public class FileNameConstants {
 	 * public static final String CLASS_PAGE_XSL = "class-page.xsl";
 	 */
 
-    public static final String DASHBOARD_HTML = "dashboard";
+    public static final String DASHBOARD_HTML = "log";
 
     public static final String INDEX_HTML = "index.html";
 
