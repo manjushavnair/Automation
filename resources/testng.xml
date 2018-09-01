@@ -91,7 +91,7 @@
 
                 <methods>
                     <include name="launchHomePage"/>
-                    <exclude name="addConnection"/>
+                    <include name="addConnection"/>
                 </methods>
             </class>
 
@@ -100,27 +100,27 @@
 
                 <methods>
                     <include name="provideAllServerDetails"/>
-                    <exclude name="clearCustomerNameTest"/>
-                    <exclude name="addCustomerNameTest"/>
-                    <exclude name="provideServerDetailsNextTest"/>
-                    <exclude name="clearSiteNameTest"/>
-                    <exclude name="provideServerDetailsCancelTest"/>
-                    <exclude name="clearSiteNameTest"/>
-                    <exclude name="provideConnectionType"/>
+                    <include name="clearCustomerNameTest"/>
+                    <include name="addCustomerNameTest"/>
+                    <include name="provideServerDetailsNextTest"/>
+                    <include name="clearSiteNameTest"/>
+                    <include name="provideServerDetailsCancelTest"/>
+                    <include name="clearSiteNameTest"/>
+                    <include name="provideConnectionType"/>
 
 
                 </methods>
             </class>
 
             <class name="com.automation.ui.connected.testcases.dashboardviewtest.UAConnectionDetailsTest">
-                <methods>
-                    <exclude name="dcConnectionDropdownTest"/>
-                    <exclude name="dcConnectionPauseTest"/>
-                    <exclude name="dcConnectionEditTest"/>
-                    <exclude name="dcConnectionRemoveTest"/>
-                    <exclude name="dcConnectionDetailsTest"/>
-                    <exclude name="dcConnectionDetailsEditTest"/>
-                    <exclude name="dcConnectionDetailsEdit_Tabs"/>
+                <methods >
+                    <include name="dcConnectionDropdownTest"/>
+                    <include name="dcConnectionPauseTest"/>
+                    <include name="dcConnectionEditTest"/>
+                    <include name="dcConnectionRemoveTest"/>
+                    <include name="dcConnectionDetailsTest"/>
+                    <include name="dcConnectionDetailsEditTest"/>
+                    <include name="dcConnectionDetailsEdit_Tabs"/>
 
 
                 </methods>
