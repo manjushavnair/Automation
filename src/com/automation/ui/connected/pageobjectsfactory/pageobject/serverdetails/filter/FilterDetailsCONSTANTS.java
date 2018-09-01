@@ -18,8 +18,8 @@ public interface FilterDetailsCONSTANTS {
 
     public String FILTEREDITTAG = "//a[@id='ui-id-10']";
 
-    public String FILTEREXPORTCONFIG = "//a[@id='ui-id-19']";
-    public String FILTERIMPORTONFIG = "//a[@id='ui-id-20']";
+    public String FILTEREXPORTCONFIG = "//a[@id='ui-id-11']";
+    public String FILTERIMPORTONFIG = "//a[@id='ui-id-12']";
 
 
 

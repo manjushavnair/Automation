@@ -51,7 +51,7 @@ public class FilterDetails extends SiteBasePageObject {
             logger.info("Entering  filterExportTag:");
              waitAndClick(filterExportTag);;
             Select select = new Select(filterExportTag);
-            select.selectByVisibleText("Export Tags");
+            select.selectByVisibleText("Export Config");
             builder.moveToElement(filterExportTag).click(filterExportTag);
             builder.perform();
 
