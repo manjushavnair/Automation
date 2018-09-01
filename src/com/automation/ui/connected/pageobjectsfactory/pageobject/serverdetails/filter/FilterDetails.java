@@ -48,13 +48,8 @@ public class FilterDetails extends SiteBasePageObject {
         Reporter.log("Entering  filterExportTag:");
         try {
             wait.forElementVisible(filterExportTag );
-            logger.info("Entering  filterExportTag:");
-             waitAndClick(filterExportTag);;
-          /*  Select select = new Select(filterExportTag);
-            select.selectByVisibleText("Export Config");
-            builder.moveToElement(filterExportTag).click(filterExportTag);
-            builder.perform();
-            */
+               waitAndClick(filterExportTag);;
+
 
         } catch (Exception e) {
             e.printStackTrace();
