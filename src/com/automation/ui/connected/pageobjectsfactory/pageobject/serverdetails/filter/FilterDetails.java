@@ -1,19 +1,16 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.filter;
 
-import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Reporter;
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.*;
-import org.openqa.selenium.support.ui.*;
+
 public class FilterDetails extends SiteBasePageObject {
 
 
     private static Logger logger = Logger.getLogger(FilterDetails.class);
-   @FindBy(xpath = FilterDetailsCONSTANTS.ALLTAG)
+    @FindBy(xpath = FilterDetailsCONSTANTS.ALLTAG)
     private WebElement allTag;
 
     @FindBy(xpath = FilterDetailsCONSTANTS.LISTOFTAG)
@@ -38,7 +35,6 @@ public class FilterDetails extends SiteBasePageObject {
     private WebElement filterImportTag;
 
 
-
     public FilterDetails open() {
 
         return new FilterDetails();
@@ -47,8 +43,9 @@ public class FilterDetails extends SiteBasePageObject {
     public void filterExportTag() {
         Reporter.log("Entering  filterExportTag:");
         try {
-            wait.forElementVisible(filterExportTag );
-               waitAndClick(filterExportTag);;
+            wait.forElementVisible(filterExportTag);
+            waitAndClick(filterExportTag);
+            ;
 
 
         } catch (Exception e) {
@@ -64,13 +61,12 @@ public class FilterDetails extends SiteBasePageObject {
             e.printStackTrace();
         }
     }
+
     public void filterEditTag() {
-       logger.info("Entering  filterEditTag:");
-       try {
-          wait.forElementVisible(filterEditTag );
-           logger.info("Entering  filterEditTag:");
-           waitAndClick(filterEditTag);
-           logger.info("Exiting  filterEditTag:");
+        logger.info("Entering  filterEditTag:");
+        try {
+            wait.forElementVisible(filterEditTag);
+            waitAndClick(filterEditTag);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -93,7 +89,6 @@ public class FilterDetails extends SiteBasePageObject {
     }
 
 
-
     public void listFilterTag() {
 
 
@@ -102,8 +97,6 @@ public class FilterDetails extends SiteBasePageObject {
         try {
 
             listTag.click();
-
-
 
 
         } catch (Exception e) {
@@ -124,29 +117,24 @@ public class FilterDetails extends SiteBasePageObject {
             assetTreeTag.click();
 
 
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
 
 
     }
-
 
 
     public void allTag() {
-     logger.info("Entering  allTag");
-       try {
-         allTag.click();
+        logger.info("Entering  allTag");
+        try {
+            allTag.click();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
 
     }
-
-
 
 
 }
