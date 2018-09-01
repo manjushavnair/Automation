@@ -77,12 +77,8 @@ public class FilterDetails extends SiteBasePageObject {
     public void next() {
 
         Reporter.log("Entering  next:");
-
         try {
-
             waitAndClick(next);
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
