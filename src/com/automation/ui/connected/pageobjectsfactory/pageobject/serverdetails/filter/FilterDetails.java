@@ -33,6 +33,9 @@ public class FilterDetails extends SiteBasePageObject {
 
     @FindBy(xpath = FilterDetailsCONSTANTS.FILTERIMPORTONFIG)
     private WebElement filterImportTag;
+    @FindBy(xpath = FilterDetailsCONSTANTS.FILTER_NEWTAGFILTER)
+    private WebElement filterNewTag;
+
 
 
     public FilterDetails open() {

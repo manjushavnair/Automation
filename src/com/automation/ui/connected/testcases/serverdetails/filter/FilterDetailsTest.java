@@ -69,6 +69,8 @@ public class FilterDetailsTest extends ConnectedBaseTest {
 
         filter.listFilterTag();
 
+
+
     }
 
     @Test(enabled = true, priority = 31, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
@@ -96,4 +98,6 @@ public class FilterDetailsTest extends ConnectedBaseTest {
 
 
     }
+
+
 }
