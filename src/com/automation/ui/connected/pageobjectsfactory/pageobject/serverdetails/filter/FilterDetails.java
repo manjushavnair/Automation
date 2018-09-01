@@ -6,7 +6,9 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Reporter;
-
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.*;
+import org.openqa.selenium.support.ui.*;
 public class FilterDetails extends SiteBasePageObject {
 
 
@@ -45,10 +47,14 @@ public class FilterDetails extends SiteBasePageObject {
     public void filterExportTag() {
         Reporter.log("Entering  filterExportTag:");
         try {
-           // wait.forElementVisible(filterExportTag );
+            wait.forElementVisible(filterExportTag );
             logger.info("Entering  filterExportTag:");
-            //waitAndClick(filterExportTag);;
-            filterExportTag.click();
+             waitAndClick(filterExportTag);;
+            Select select = new Select(filterExportTag);
+            select.selectByVisibleText("Export Tags");
+            builder.moveToElement(filterExportTag).click(filterExportTag);
+            builder.perform();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
