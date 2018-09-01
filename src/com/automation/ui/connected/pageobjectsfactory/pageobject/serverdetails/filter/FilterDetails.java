@@ -8,6 +8,7 @@ import org.testng.Reporter;
 
 public class FilterDetails extends SiteBasePageObject {
 
+
     private static Logger logger = Logger.getLogger(FilterDetails.class);
     @FindBy(xpath = FilterDetailsCONSTANTS.ALLTAG)
     private WebElement allTag;
