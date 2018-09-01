@@ -50,10 +50,11 @@ public class FilterDetails extends SiteBasePageObject {
             wait.forElementVisible(filterExportTag );
             logger.info("Entering  filterExportTag:");
              waitAndClick(filterExportTag);;
-            Select select = new Select(filterExportTag);
+          /*  Select select = new Select(filterExportTag);
             select.selectByVisibleText("Export Config");
             builder.moveToElement(filterExportTag).click(filterExportTag);
             builder.perform();
+            */
 
         } catch (Exception e) {
             e.printStackTrace();
