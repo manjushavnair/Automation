@@ -86,38 +86,22 @@ public class FilterDetails extends SiteBasePageObject {
 
 
     public void listFilterTag() {
-
-
         logger.info("Entering  listFilterTag");
-
-        try {
-
-            listTag.click();
-
-
+         try {
+             listTag.click();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-    }
+     }
 
 
     public void assetTreeTag() {
-
-
-        logger.info("Entering  assetTreeTag");
-
-        try {
-
+         logger.info("Entering  assetTreeTag");
+       try {
             assetTreeTag.click();
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
 
