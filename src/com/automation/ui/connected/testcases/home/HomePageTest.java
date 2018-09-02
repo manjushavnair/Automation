@@ -4,6 +4,7 @@ package com.automation.ui.connected.testcases.home;
  * @author Manjusha Saju
  */
 
+import com.automation.ui.connected.pageobjectsfactory.pageobject.globalnav.GlobalNavigation;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginPage;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
@@ -63,6 +64,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
     @Test(enabled = true, priority = 7, groups = {"validcase"}, description = "launchHomePage ")
     public void launchHomePage() throws Throwable {
+        global_nav=new GlobalNavigation();
         home_page = new HomePage();
         // Thread.sleep(20000);
 
@@ -94,8 +96,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
         logger.info("Logging out from launchHomePage_logout");
         Reporter.log("Logging out from launchHomePage_logout");
-
-        home_page.goToLogoutPage();
+        global_nav.goToLogoutPage();
     }
 
 

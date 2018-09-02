@@ -2,35 +2,37 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.globalnav;
 
 
 import com.automation.ui.base.common.logging.Log;
+import com.automation.ui.base.common.prpreaders.AssertDataReader;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomeConstants;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.githubtesting.pageobjectfactory.pageobject.base.SiteBasePageObject;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
+import org.testng.Reporter;
 
 public class GlobalNavigation extends SiteBasePageObject {
 
+    private static Logger logger = Logger.getLogger(GlobalNavigation.class);
 
-    @FindBy(css = ".wds-global-navigation__user-menu.wds-global-navigation__user-logged-in")
+
+
+    @FindBy(xpath = NAVIGATIONConstants.CLOUDAVATAR)
     private WebElement userAvatar;
 
 
-    @FindBy(css = ".wds-global-navigation__user-logged-in .wds-dropdown__content")
-    private WebElement userMenu;
+    @FindBy(xpath = NAVIGATIONConstants.CLOUDDATABUTTON)
+    private WebElement cloudButtonu;
 
-    @FindBy(css = ".wds-sign-out__button")
+    @FindBy(xpath = NAVIGATIONConstants.LOGOUTBUTTON)
+    @CacheLookup
     private WebElement signOutButton;
 
 
-    @FindBy(css = ".wds-global-navigation__dropdown-toggle span")
-    private WebElement siteMenu;
 
-
-    public GlobalNavigation openMenu() {
-        wait.forElementClickable(siteMenu).click();
-        Log.log("siteMenu", "clicked on siteMenu   in global nav bar", true);
-
-        return this;
-    }
 
 
     public String getTitle() {
@@ -69,9 +71,27 @@ public class GlobalNavigation extends SiteBasePageObject {
         Log.info("link to sign out clicked");
     }
 
-    public boolean isUserMenuOpened() {
-        return isElementDisplayed(userMenu);
+
+    //Go to LoginPage
+    public void goToLogoutPage() {
+
+        try {
+            logger.info("Logging out of the URL ");
+            Reporter.log("Logging out of the URL");
+            // wait.forElementVisible(logout,BASEConstants.WAITTIME10000MILLISEC);
+
+            signOutButton.click();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail(AssertDataReader.assertreader.getValue("OPCUA_LOGOUT_LOGOUTMSG"));
+            Reporter.log("Logged out of the URL successfully");
+
+        }
+
+
     }
+
 
 
     public boolean isUserLoggedOut() {
@@ -79,9 +99,6 @@ public class GlobalNavigation extends SiteBasePageObject {
     }
 
 
-    public boolean isSiteMenuVisible() {
-        return isElementDisplayed(siteMenu, 3);
-    }
 
 
     public boolean isUserAvatarVisible() {
