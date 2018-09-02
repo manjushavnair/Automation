@@ -37,10 +37,6 @@ public interface FilterDetailsCONSTANTS {
 
 
     public String FILTERTAGSEARCHADD="//div[contains(@class,'sectionWrapper')]//button[contains(@class,'primary')]";
-
-
-
-
     public String FILTERTAGSEARCHALL="//label[contains(@for,'fltall')]//span";
     public String FILTERTAGSEARCHITEM="//label[contains(@for,'flt0')]//span";
 

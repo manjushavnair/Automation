@@ -59,15 +59,7 @@ public class HomePage extends SiteBasePageObject {
         return this;
     }
 
-    public com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage openAndWaitForGlobalShortcuts() {
-        open();
-        waitFor.until((Function<WebDriver, Boolean>) arg0 -> driver
-                .executeScript(
-                        "return typeof window.wgGlobalShortcutsLoaded !== 'undefined' && window.wgGlobalShortcutsLoaded")
-                .equals(true));
-
-        return this;
-    }*/
+    */
 
     public HomePage() {
         super();

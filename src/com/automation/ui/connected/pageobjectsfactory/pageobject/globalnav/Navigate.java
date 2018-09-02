@@ -1,4 +1,4 @@
-package com.automation.ui.connected.pageobjectsfactory.pageobject.base.globalnav;
+package com.automation.ui.connected.pageobjectsfactory.pageobject.globalnav;
 
 import com.automation.ui.githubtesting.pageobjectfactory.pageobject.base.SiteBasePageObject;
 
