@@ -104,7 +104,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
         serverdetail_page.provideServerDetailsAddCustName("Connected Assets Demo");
         serverdetail_page.provideServerDetailsNext();
 
-        Thread.sleep(2000);
+
 
     }
 
@@ -126,7 +126,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
         Assert.assertEquals(serverdetail_page.siteNameErMsg(),
                 AssertDataReader.assertreader.getValue("SITENAMEVALIDATIONMESSAGE"));
 
-        //  Thread.sleep(5000);
+
 
     }
 
@@ -138,7 +138,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
     public void provideConnectionType() throws Throwable {
         home_page.addConnection();
         serverdetail_page.provideServerConnectionType(ServerType.SDX_COLLECTOR);
-        Thread.sleep(1000);
+
 
     }
 
