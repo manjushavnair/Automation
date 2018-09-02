@@ -150,8 +150,6 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
 
         serverdetail_page.provideAllServerDetails(connInfo);
 
-
-
     }
 
 

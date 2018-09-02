@@ -123,9 +123,9 @@
             <class name="com.automation.ui.connected.testcases.serverdetails.filter.FilterDetailsTest">
                 <methods>
 
-                    <exclude name="filterChangeFilters"/>
+                    <include name="filterChangeFilters"/>
                     <include name="filterAllTag"/>
-                    <exclude name="filterAseetTreeTag"/>
+                    <include name="filterAseetTreeTag"/>
                 </methods>
             </class>
         </classes>
