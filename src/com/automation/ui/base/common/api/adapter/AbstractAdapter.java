@@ -1,5 +1,6 @@
 package com.automation.ui.base.common.api.adapter;
 
+import com.automation.ui.base.common.api.util.ContentType;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;

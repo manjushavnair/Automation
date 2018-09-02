@@ -2,6 +2,7 @@ package com.automation.ui.githubtesting.testcases.api.json.placeholder;
 
 import com.automation.ui.base.common.api.clientimpl.restlet.PostAdapter;
 import com.automation.ui.base.common.api.adapter.RestAdapter;
+import com.automation.ui.base.common.api.util.ContentType;
 import com.automation.ui.base.common.api.util.PropertiesUtil;
 import com.automation.ui.base.common.api.util.Repository;
 import io.restassured.path.json.JsonPath;
@@ -12,7 +13,7 @@ import org.testng.annotations.Test;
 import javax.json.Json;
 import javax.json.JsonObject;
 import java.io.IOException;
-import com.automation.ui.base.common.api.adapter.*;
+
 public class Post {
     private PropertiesUtil factory;
 

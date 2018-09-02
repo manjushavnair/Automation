@@ -1,6 +1,7 @@
 package com.automation.ui.base.common.api.clientimpl.http;
 
-import com.automation.ui.base.common.api.adapter.MethodType;
+import com.automation.ui.base.common.api.util.ContentType;
+import com.automation.ui.base.common.api.util.MethodType;
 import com.google.gson.Gson;
 
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.api.adapter;
+package com.automation.ui.base.common.api.util;
 
 public enum ContentType {
 
