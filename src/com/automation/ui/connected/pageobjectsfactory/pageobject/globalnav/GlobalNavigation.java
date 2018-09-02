@@ -76,7 +76,7 @@ public class GlobalNavigation extends SiteBasePageObject {
     public void goToLogoutPage() {
 
         try {
-            logger.info("Logging out of the URL ");
+            logger.debug("Logging out of the URL ");
             Reporter.log("Logging out of the URL");
             // wait.forElementVisible(logout,BASEConstants.WAITTIME10000MILLISEC);
 

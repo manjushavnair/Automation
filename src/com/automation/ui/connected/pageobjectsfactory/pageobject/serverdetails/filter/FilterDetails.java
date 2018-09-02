@@ -66,7 +66,7 @@ public class FilterDetails extends SiteBasePageObject {
     }
 
     public void filterEditTag() {
-        logger.info("Entering  filterEditTag:");
+        logger.debug("Entering  filterEditTag:");
         try {
             wait.forElementVisible(filterEditTag);
             waitAndClick(filterEditTag);
@@ -89,7 +89,7 @@ public class FilterDetails extends SiteBasePageObject {
 
 
     public void listFilterTag() {
-        logger.info("Entering  listFilterTag");
+        logger.debug("Entering  listFilterTag");
          try {
              listTag.click();
         } catch (Exception e) {
@@ -99,7 +99,7 @@ public class FilterDetails extends SiteBasePageObject {
 
 
     public void assetTreeTag() {
-         logger.info("Entering  assetTreeTag");
+         logger.debug("Entering  assetTreeTag");
        try {
             assetTreeTag.click();
         } catch (Exception e) {
@@ -109,7 +109,7 @@ public class FilterDetails extends SiteBasePageObject {
 
 
     public void allTag() {
-        logger.info("Entering  allTag");
+        logger.debug("Entering  allTag");
         try {
             allTag.click();
         } catch (Exception e) {

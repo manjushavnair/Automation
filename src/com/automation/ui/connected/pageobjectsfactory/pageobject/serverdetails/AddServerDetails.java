@@ -114,14 +114,14 @@ public class AddServerDetails extends SiteBasePageObject {
     public void provideServerDetailsCancel() {
 
 
-        logger.info("Entering  provideServerDetailsCancel:" + cancelButton.getText() + ":: " + cancelButton.getTagName());
+        logger.debug("Entering  provideServerDetailsCancel:" + cancelButton.getText() + ":: " + cancelButton.getTagName());
         Reporter.log("Entering  provideServerDetailsCancel:");
 
         try {
 
             waitAndClick(cancelButton);
 
-            logger.info("Exiting  provideServerDetailsCancel");
+            logger.debug("Exiting  provideServerDetailsCancel");
             Reporter.log("Exiting  provideServerDetailsCancel");
         } catch (Exception e) {
             e.printStackTrace();
@@ -219,7 +219,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
 
         Reporter.log("Entering  provideServerSecurityCheck:");
-        logger.info("Entering  provideServerSecurityCheck:");
+        logger.debug("Entering  provideServerSecurityCheck:");
 
         try {
           //  scrollTo(securityKeyFlag);
@@ -229,18 +229,18 @@ public class AddServerDetails extends SiteBasePageObject {
             // This statement will return True, in case of first Radio button is selected
 
             bValue = securityKeyFlag.isEnabled();
-            logger.info("Entering  provideServerSecurityCheck:" +bValue);
-            logger.info("Entering  provideServerSecurityCheck:" +securityKeyFlag.isDisplayed());
-            logger.info("Entering  provideServerSecurityCheck:" +securityKeyFlag.getText());
+            logger.debug("Entering  provideServerSecurityCheck:" +bValue);
+            logger.debug("Entering  provideServerSecurityCheck:" +securityKeyFlag.isDisplayed());
+            logger.debug("Entering  provideServerSecurityCheck:" +securityKeyFlag.getText());
             List <WebElement> ls=securityKeyFlag.findElements(By.name("es2"));
             int iSize = ls.size();
-            logger.info("Entering  provideServerSecurityCheck:size " +iSize);
+            logger.debug("Entering  provideServerSecurityCheck:size " +iSize);
 
             // Start the loop from first Check Box to last Check Boxe
             for(int i=0; i < iSize ; i++ ){
                 // Store the Check Box name to the string variable, using 'Value' attribute
                 String sValue = ls.get(i).getAttribute("value");
-                logger.info("Entering  provideServerSecurityCheck: sValue : " +sValue);
+                logger.debug("Entering  provideServerSecurityCheck: sValue : " +sValue);
 
 
                 // Select the Check Box it the value of the Check Box is same what you are looking for
@@ -332,9 +332,9 @@ public class AddServerDetails extends SiteBasePageObject {
             builder.moveToElement(connServerType).click(connServerType);
             builder.perform();
         } catch (NoSuchElementException e) {
-            logger.info("provideServerConnectionType");
+            logger.debug("provideServerConnectionType");
         } catch (Exception e) {
-            logger.info("provideServerConnectionType");
+            logger.debug("provideServerConnectionType");
         }
     }
 
@@ -406,13 +406,13 @@ public class AddServerDetails extends SiteBasePageObject {
     public void securityYes() {
 
 
-        logger.info("Entering  securityYes");
+        logger.debug("Entering  securityYes");
 
         try {
 
          securityYes.click();
 
-            logger.info("Exiting  securityYes");
+            logger.debug("Exiting  securityYes");
 
 
         } catch (Exception e) {

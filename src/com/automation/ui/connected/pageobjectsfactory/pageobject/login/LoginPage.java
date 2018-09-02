@@ -42,25 +42,25 @@ public class LoginPage extends SiteBasePageObject {
 
     public LoginPage() {
         super();
-        logger.info("default constructor called");
+        logger.debug("default constructor called");
         Reporter.log("default constructor called");
     }
 
     public LoginPage open() {
 
-        logger.info("getCurrentUrl()" + getCurrentUrl());
-        logger.info("getSiteUrl()" + getSiteUrl());
-        logger.info("getUrl()" + getUrl());
-        logger.info("getSiteUrlWithPath()" + getSiteUrlWithPath());
+        logger.debug("getCurrentUrl()" + getCurrentUrl());
+        logger.debug("getSiteUrl()" + getSiteUrl());
+        logger.debug("getUrl()" + getUrl());
+        logger.debug("getSiteUrlWithPath()" + getSiteUrlWithPath());
 
 
         if (Configuration.getEnvType().equals(EnvType.DEV)) {
-            logger.info(getCurrentUrl());
+            logger.debug(getCurrentUrl());
             // getUrl("http://www.site.com");
             // getUrl(getCurrentUrl() + "?action=history");
             getUrl(getCurrentUrl());
         } else {
-            logger.info(getSiteUrlWithPath());
+            logger.debug(getSiteUrlWithPath());
             //  getUrl(getCurrentUrl() + "?action=something");
             //   getUrl(new Page(getSiteUrl(),"/login"));
             getUrl(getCurrentUrl());
@@ -74,16 +74,16 @@ public class LoginPage extends SiteBasePageObject {
 
     public LoginPage enterUser(String userName) {
         try {
-            logger.info("Entering enterUser  login: " + login_button.getText() + " " + login_button.getTagName());
+            logger.debug("Entering enterUser  login: " + login_button.getText() + " " + login_button.getTagName());
             Reporter.log("Entering  enterUser login:");
             fillInputAfterClear(username, userName);
             login_button.click();
-            logger.info("Exiting enterUser login");
+            logger.debug("Exiting enterUser login");
             Reporter.log("Exiting  enterUser login");
 
         } catch (Exception e) {
             e.printStackTrace();
-            logger.info("Exiting enterUser login" + AssertDataReader.assertreader.getValue("OPCUA_LOGIN_LOGINMSG"));
+            logger.debug("Exiting enterUser login" + AssertDataReader.assertreader.getValue("OPCUA_LOGIN_LOGINMSG"));
             Assert.fail(AssertDataReader.assertreader.getValue("OPCUA_LOGIN_LOGINMSG"));
             Reporter.log("Login failed");
 
@@ -94,11 +94,11 @@ public class LoginPage extends SiteBasePageObject {
 
     public LoginPage enterPassword(String upassword) {
         try {
-            logger.info("Entering  enterPassword: ");
+            logger.debug("Entering  enterPassword: ");
             Reporter.log("Entering  enterPassword:");
 
             fillInputAfterClear(password, upassword);
-            logger.info("Exiting  enterPassword");
+            logger.debug("Exiting  enterPassword");
             Reporter.log("Exiting  enterPassword");
 
         } catch (Exception e) {
@@ -114,14 +114,14 @@ public class LoginPage extends SiteBasePageObject {
 
     public HomePage login() {
         try {
-            logger.info("Entering  login: ");
+            logger.debug("Entering  login: ");
             Reporter.log("Entering  login:");
 
             savepasswordbutton.click();
             waitAndClick(savepasswordbutton);
 
 
-            logger.info("Exiting  login");
+            logger.debug("Exiting  login");
             Reporter.log("Exiting  login");
             // wait.forElementVisible(savepasswordbutton);
 

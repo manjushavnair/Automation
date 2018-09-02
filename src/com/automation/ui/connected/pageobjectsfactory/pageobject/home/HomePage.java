@@ -66,14 +66,14 @@ public class HomePage extends SiteBasePageObject {
 
     public HomePage open() {
 
-        logger.info("open the URL" + getCurrentUrl());
+        logger.debug("open the URL" + getCurrentUrl());
         if (Configuration.getEnvType().equals(EnvType.DEV)) {
 
-            logger.info(getCurrentUrl());
+            logger.debug(getCurrentUrl());
             getUrl("http://localhost:9000");
             // getUrl(getCurrentUrl());
         } else {
-            logger.info(getCurrentUrl());
+            logger.debug(getCurrentUrl());
             // getUrl("http://localhost:9000");
             // getUrl(getCurrentUrl() + " ");
             getUrl(getCurrentUrl());
@@ -91,7 +91,7 @@ public class HomePage extends SiteBasePageObject {
 
 
         try {
-            logger.info("Entering  addConnection:");
+            logger.debug("Entering  addConnection:");
 
             Thread.sleep(2000);
 
@@ -116,7 +116,7 @@ public class HomePage extends SiteBasePageObject {
             }
 
 
-            logger.info("Exiting  addConnection");
+            logger.debug("Exiting  addConnection");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -129,7 +129,7 @@ public class HomePage extends SiteBasePageObject {
 
     public void addConnection_accessdenied() {
 
-        logger.info("Entering  addConnection_accessdenied: ");
+        logger.debug("Entering  addConnection_accessdenied: ");
         Reporter.log("Entering  addConnection_accessdenied:");
         try {
             Thread.sleep(10000);
@@ -138,10 +138,10 @@ public class HomePage extends SiteBasePageObject {
         }
 
 
-        logger.info("accessdenied " + msg.getText());
+        logger.debug("accessdenied " + msg.getText());
 
 
-        logger.info("Exiting  addConnection_accessdenied");
+        logger.debug("Exiting  addConnection_accessdenied");
         Reporter.log("Exiting  addConnection_accessdenied");
 
 

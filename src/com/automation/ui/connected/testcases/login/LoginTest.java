@@ -61,7 +61,7 @@ public class LoginTest extends ConnectedBaseTest {
     @Test(priority = 1, groups = {"base", "invalidcase"}, description = "invalid login")
     public void verifyNullUserNullPassword() throws Throwable {
 
-        logger.info("Entering verifyNullUserNullPassword");
+        logger.debug("Entering verifyNullUserNullPassword");
         Reporter.log("Entering verifyNullUserNullPassword");
         login_page = new LoginPage();
         login_page.open();
@@ -86,7 +86,7 @@ public class LoginTest extends ConnectedBaseTest {
     @Test(priority = 2, groups = {"base", "invalidcase"}, description = "invalid login")
     public void verifyInValidUserInvalidPassword() throws Throwable {
 
-        logger.info("Entering verifyInValidLogin");
+        logger.debug("Entering verifyInValidLogin");
         Reporter.log("Entering verifyInValidLogin");
         login_page = new LoginPage();
         login_page.open();
@@ -113,7 +113,7 @@ public class LoginTest extends ConnectedBaseTest {
     @Test(priority = 3, groups = {"base", "invalidcase"})
     public void verifyValidUserNullPassword() throws Throwable {
 
-        logger.info("Entering verifyValidUserNullPassword");
+        logger.debug("Entering verifyValidUserNullPassword");
         Reporter.log("Entering verifyValidUserNullPassword");
         login_page = new LoginPage();
         login_page.open();

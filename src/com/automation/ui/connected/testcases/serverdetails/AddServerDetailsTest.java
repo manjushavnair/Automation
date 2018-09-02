@@ -27,7 +27,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
     public AddServerDetailsTest() {
 
         super();
-        logger.info(" AddServerDetailsTest");
+        logger.debug(" AddServerDetailsTest");
 
         filter = new FilterDetails();
         serverdetail_page = new AddServerDetails();
@@ -52,7 +52,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
         serverdetail_page.provideServerDetailsCancel();
         Reporter.log("Entering provideServerDetailsCancel ");
 
-        logger.info("Exiting provideServerDetailsCancel  ");
+        logger.debug("Exiting provideServerDetailsCancel  ");
     }
     /***
      *
@@ -62,18 +62,18 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
     @Test(enabled = true, priority = 11, groups = {"validcase"}, description = "FilterDetails ")
     public void provideServerDetailsNextTest() throws Throwable {
 
-        logger.info("Entering provideServerDetailsNext  ");
+        logger.debug("Entering provideServerDetailsNext  ");
         Reporter.log("Entering provideServerDetailsNext ");
         home_page.addConnection();
 
         Assertion.assertTrue(serverdetail_page.isButtonVisible());
         serverdetail_page.provideServerDetailsNext();
-        logger.info("Entering provideServerDetailsNext  " + serverdetail_page.getConnMessage());
+        logger.debug("Entering provideServerDetailsNext  " + serverdetail_page.getConnMessage());
         Assertion.assertEquals(serverdetail_page.getConnMessage(),
                 "Connection name is required");
 
         Reporter.log("Entering provideServerDetailsNext ");
-        logger.info("Exiting provideServerDetailsNext  ");
+        logger.debug("Exiting provideServerDetailsNext  ");
     }
     /***
      *

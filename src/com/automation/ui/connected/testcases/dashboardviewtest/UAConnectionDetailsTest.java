@@ -18,7 +18,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
     public UAConnectionDetailsTest() {
 
         super();
-        logger.info(" UAConnectionDetailsTest");
+        logger.debug(" UAConnectionDetailsTest");
         connectiondetail_page = new UAConnectionDetails();
     }
 
@@ -30,9 +30,9 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
     public void dcConnectionDropdownTest() throws Throwable {
 
 
-        logger.info("Entering dcConnectionDropdownTest");
+        logger.debug("Entering dcConnectionDropdownTest");
         connectiondetail_page.dcDropdown();
-        logger.info("Exiting dcConnectionDropdownTest");
+        logger.debug("Exiting dcConnectionDropdownTest");
         Thread.sleep(10000);
     }
 
@@ -45,14 +45,14 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
     public void dcConnectionPauseTest() throws Throwable {
 
 
-        logger.info("Entering dcConnectionPauseTest");
+        logger.debug("Entering dcConnectionPauseTest");
         connectiondetail_page.dcDropdown();
         Thread.sleep(5000);
-        logger.info("Exiting dcConnectionDropdownTest");
-        logger.info("Entering dcConnectionPauseTest");
+        logger.debug("Exiting dcConnectionDropdownTest");
+        logger.debug("Entering dcConnectionPauseTest");
         connectiondetail_page.dcPause();
         Thread.sleep(5000);
-        logger.info("Exiting dcConnectionPauseTest");
+        logger.debug("Exiting dcConnectionPauseTest");
     }
 
     /***
@@ -64,14 +64,14 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
     public void dcConnectionEditTest() throws Throwable {
 
 
-        logger.info("Entering dcConnectionEditTest");
+        logger.debug("Entering dcConnectionEditTest");
         connectiondetail_page.dcDropdown();
         Thread.sleep(5000);
-        logger.info("Exiting dcConnectionDropdownTest");
-        logger.info("Entering dcConnectionEditTest");
+        logger.debug("Exiting dcConnectionDropdownTest");
+        logger.debug("Entering dcConnectionEditTest");
         connectiondetail_page.dcEdit();
         Thread.sleep(5000);
-        logger.info("Exiting dcConnectionEditTest");
+        logger.debug("Exiting dcConnectionEditTest");
     }
     /***
      *
@@ -82,14 +82,14 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
     public void dcConnectionRemoveTest() throws Throwable {
 
 
-        logger.info("Entering dcConnectionDropdownTest");
+        logger.debug("Entering dcConnectionDropdownTest");
         connectiondetail_page.dcDropdown();
         Thread.sleep(5000);
-        logger.info("Exiting dcConnectionDropdownTest");
-        logger.info("Entering dcConnectionRemoveTest");
+        logger.debug("Exiting dcConnectionDropdownTest");
+        logger.debug("Entering dcConnectionRemoveTest");
         connectiondetail_page.dcRemove();
         Thread.sleep(5000);
-        logger.info("Exiting dcConnectionRemoveTest");
+        logger.debug("Exiting dcConnectionRemoveTest");
     }
     /***
      *
@@ -100,10 +100,10 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
     public void dcConnectionDetailsTest() throws Throwable {
 
 
-        logger.info("Entering dcConnectionDetailsTest");
+        logger.debug("Entering dcConnectionDetailsTest");
         connectiondetail_page.dcDetails();
         Thread.sleep(5000);
-        logger.info("Exiting dcConnectionDetailsTest");
+        logger.debug("Exiting dcConnectionDetailsTest");
 
     }
     /***
@@ -115,12 +115,12 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
     public void dcConnectionDetailsEditTest() throws Throwable {
 
 
-        logger.info("Entering dcConnectionDetailsEditTest");
+        logger.debug("Entering dcConnectionDetailsEditTest");
         connectiondetail_page.dcDetails();
         Thread.sleep(5000);
         connectiondetail_page.dcDetails_Edit();
         Thread.sleep(5000);
-        logger.info("Exiting dcConnectionDetailsEditTest");
+        logger.debug("Exiting dcConnectionDetailsEditTest");
 
     }
     /***
@@ -132,7 +132,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
     public void dcConnectionDetailsEdit_Tabs() throws Throwable {
 
 
-        logger.info("Entering dcConnectionDetailsEdit_Tabs");
+        logger.debug("Entering dcConnectionDetailsEdit_Tabs");
         connectiondetail_page.dcDetails();
         connectiondetail_page.dcDetails_Edit();
         Thread.sleep(3000);
@@ -144,7 +144,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
 
         connectiondetail_page.dcDetails_Edit_Server();
         Thread.sleep(3000);
-        logger.info("Exiting dcConnectionDetailsEdit_Tabs");
+        logger.debug("Exiting dcConnectionDetailsEdit_Tabs");
 
     }
 

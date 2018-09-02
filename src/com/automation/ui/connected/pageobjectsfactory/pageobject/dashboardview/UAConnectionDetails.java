@@ -42,7 +42,7 @@ public class UAConnectionDetails extends SiteBasePageObject {
 
     public void dcDropdown() {
         try {
-            logger.info("Click on DataConnection drop down");
+            logger.debug("Click on DataConnection drop down");
             wait.forElementVisible(dcDropdownButton, BASEConstants.WAITTIME10000MILLISEC);
 
             dcDropdownButton.click();
@@ -55,7 +55,7 @@ public class UAConnectionDetails extends SiteBasePageObject {
 
     public void dcPause() {
         try {
-            logger.info("Click on DataConnection Pause");
+            logger.debug("Click on DataConnection Pause");
             wait.forElementVisible(dcPause, BASEConstants.WAITTIME10000MILLISEC);
             scrollAndClick(dcPause, 0);
 
@@ -68,7 +68,7 @@ public class UAConnectionDetails extends SiteBasePageObject {
 
     public void dcEdit() {
         try {
-            logger.info("Click on DataConnection Edit");
+            logger.debug("Click on DataConnection Edit");
             wait.forElementVisible(dcEdit, BASEConstants.WAITTIME10000MILLISEC);
             scrollAndClick(dcEdit, 1);
 
@@ -81,7 +81,7 @@ public class UAConnectionDetails extends SiteBasePageObject {
 
     public void dcRemove() {
         try {
-            logger.info("Click on DataConnection Remove");
+            logger.debug("Click on DataConnection Remove");
             wait.forElementVisible(dcRemove, BASEConstants.WAITTIME10000MILLISEC);
             scrollAndClick(dcRemove, 2);
 
@@ -94,7 +94,7 @@ public class UAConnectionDetails extends SiteBasePageObject {
 
     public void dcDetails() {
         try {
-            logger.info("Click on DataConnection Details");
+            logger.debug("Click on DataConnection Details");
             wait.forElementVisible(dcDetails, BASEConstants.WAITTIME10000MILLISEC);
             waitAndClick(dcDetails);
 
@@ -106,7 +106,7 @@ public class UAConnectionDetails extends SiteBasePageObject {
 
     public void dcDetails_Edit() {
         try {
-            logger.info("Click on DataConnection Details");
+            logger.debug("Click on DataConnection Details");
             wait.forElementVisible(dcDetailsEdit, BASEConstants.WAITTIME10000MILLISEC);
             waitAndClick(dcDetailsEdit);
 
@@ -118,7 +118,7 @@ public class UAConnectionDetails extends SiteBasePageObject {
 
     public void dcDetails_Edit_Tag() {
         try {
-            logger.info("Click on dcDetails_Edit_Tag");
+            logger.debug("Click on dcDetails_Edit_Tag");
             wait.forElementVisible(dcDetailsEditTags, BASEConstants.WAITTIME10000MILLISEC);
             waitAndClick(dcDetailsEditTags);
 
@@ -130,7 +130,7 @@ public class UAConnectionDetails extends SiteBasePageObject {
 
     public void dcDetails_Edit_Preferances() {
         try {
-            logger.info("Click on dcDetails_Edit_Preferancess");
+            logger.debug("Click on dcDetails_Edit_Preferancess");
             wait.forElementVisible(dcDetailsEditPref, BASEConstants.WAITTIME10000MILLISEC);
             waitAndClick(dcDetailsEditPref);
 
@@ -142,7 +142,7 @@ public class UAConnectionDetails extends SiteBasePageObject {
 
     public void dcDetails_Edit_Server() {
         try {
-            logger.info("Click on dcDetails_Edit_Server");
+            logger.debug("Click on dcDetails_Edit_Server");
             wait.forElementVisible(dcDetailsEditServer, BASEConstants.WAITTIME10000MILLISEC);
             waitAndClick(dcDetailsEditServer);
 

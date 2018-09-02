@@ -33,7 +33,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
     public void launchLogin() throws Throwable {
 
-        logger.info("Entering launchLogin");
+        logger.debug("Entering launchLogin");
         Reporter.log("Entering launchLogin");
         login_page = new LoginPage();
 
@@ -53,7 +53,7 @@ public class HomePageTest extends ConnectedBaseTest {
         // home_page.waitForPageReload();
 
 
-        logger.info("Exiting launchLogin and going to  homepage" + urlBuilder.getUrl());
+        logger.debug("Exiting launchLogin and going to  homepage" + urlBuilder.getUrl());
 
 
     }
@@ -78,11 +78,11 @@ public class HomePageTest extends ConnectedBaseTest {
     @Test(enabled = true, priority = 8, groups = {"validcase"}, description = "home page ")
 
     public void addConnection() throws Throwable {
-        logger.info("Entering addConnection");
+        logger.debug("Entering addConnection");
         Reporter.log("Entering addConnection");
         home_page.addConnection();
 
-        logger.info("Exiting addConnection and going to  add ");
+        logger.debug("Exiting addConnection and going to  add ");
     }
     /***
      *
@@ -94,7 +94,7 @@ public class HomePageTest extends ConnectedBaseTest {
 
     public void launch_logout() throws Throwable {
 
-        logger.info("Logging out from launchHomePage_logout");
+        logger.debug("Logging out from launchHomePage_logout");
         Reporter.log("Logging out from launchHomePage_logout");
         global_nav.goToLogoutPage();
     }

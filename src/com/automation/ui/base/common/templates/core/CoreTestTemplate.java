@@ -53,7 +53,7 @@ public abstract class CoreTestTemplate {
     @BeforeSuite(alwaysRun = true, groups = {"base"})
     public void beforeSuite() {
         // initialize a browser driver, connect to servers
-        // logger.info("beforeSuite ::CoreTestTemplate");
+        // logger.debug("beforeSuite ::CoreTestTemplate");
         Reporter.log("beforeSuite::CoreTestTemplate");
         initLogs();
         initProperty();
@@ -70,7 +70,7 @@ public abstract class CoreTestTemplate {
      * Initialize Property.
      */
     private void initAssertData() {
-        logger.info("Setting the Site Specific Langauge :" + Configuration.getSiteLanguage());
+        logger.debug("Setting the Site Specific Langauge :" + Configuration.getSiteLanguage());
         //set the langauge specified in he config.yml
         assertData = AssertDataReader.readProperty(Configuration.getSiteLanguage());
     }
@@ -84,7 +84,7 @@ public abstract class CoreTestTemplate {
             // Initialize Log4j logs
             DOMConfigurator.configure(System.getProperty("user.dir") + File.separator + "resources" + File.separator + "log4j.xml");
             logger = Logger.getLogger(this.getClass());
-            // logger.info("Logger is initialized..");
+            // logger.debug("Logger is initialized..");
         }
     }
 
@@ -92,7 +92,7 @@ public abstract class CoreTestTemplate {
      * Initialize Property.
      */
     private void initProperty() {
-        // logger.info("initProperty readProperty ");
+        // logger.debug("initProperty readProperty ");
         prpr = PropertyReader.readProperty();
 
     }
@@ -101,27 +101,27 @@ public abstract class CoreTestTemplate {
      * Initialize Property.
      */
     private void initXMLProperty() {
-        // logger.info("initProperty initXMLProperty ");
+        // logger.debug("initProperty initXMLProperty ");
         xmlprpr = XMLReader.readProperty(Configuration.getCredentialsFilePath());
 
     }
 
     @BeforeClass(alwaysRun = true)
     public void initTestClass() {
-        logger.info("beforeClass initTestClass ");
+        logger.debug("beforeClass initTestClass ");
     }
 
     @BeforeMethod(alwaysRun = true)
     public void initTestContext(Method method) {
         TestContext.writeMethodName(method);
         Log.startTest(method);
-        // logger.info("beforeMethod initTestContext ");
+        // logger.debug("beforeMethod initTestContext ");
         Configuration.clearCustomTestProperties();
         String browser = Configuration.getBrowser();
         setPropertiesFromAnnotationsOnDeclaringClass(method.getDeclaringClass());
         setPropertiesFromAnnotationsOnMethod(method);
         String currentBrowser = Configuration.getBrowser();
-        // logger.info(" beforeMethod initTestContext Browser parameter changed by annotation"
+        // logger.debug(" beforeMethod initTestContext Browser parameter changed by annotation"
         //       + ", old value: " + browser + ", new value: " + currentBrowser);
         if (!browser.equals(currentBrowser)) {
             Log.info("Parameter override", "Browser parameter changed by annotation"
@@ -218,7 +218,7 @@ public abstract class CoreTestTemplate {
     @AfterSuite(alwaysRun = true)
     public void stop() {
 
-        logger.info("Stop  AfterClass or AfterSuite ::CoreTestTemplate ");
+        logger.debug("Stop  AfterClass or AfterSuite ::CoreTestTemplate ");
 
 
         DriverProvider.close();
@@ -227,7 +227,7 @@ public abstract class CoreTestTemplate {
 
     @AfterSuite
     protected void tearDownAfterTestSuite() {
-        logger.info("Quiting the tearDownAfterTestSuite ::CoeTestTemplate ");
+        logger.debug("Quiting the tearDownAfterTestSuite ::CoeTestTemplate ");
 
     }
 
