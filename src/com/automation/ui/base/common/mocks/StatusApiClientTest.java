@@ -1,6 +1,6 @@
 package com.automation.ui.base.common.mocks;
 
-import com.automation.ui.base.common.rest.restclient.StatusApiClient;
+import com.automation.ui.base.common.api.clientimpl.http.StatusApiClient;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
 import org.apache.http.client.ClientProtocolException;
