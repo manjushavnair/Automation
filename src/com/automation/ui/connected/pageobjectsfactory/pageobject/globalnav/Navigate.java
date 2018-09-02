@@ -16,12 +16,6 @@ public class Navigate extends SiteBasePageObject {
 
         driver.get(urlBuilder.getUrl() + path + query);
 
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         return this;
     }
 

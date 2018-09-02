@@ -62,7 +62,7 @@ public class HomePageTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 7, groups = {"validcase"}, description = "launchHomePage ")
+    @Test(enabled = true, priority = 7, groups = {"validcase"}, description = "home page ")
     public void launchHomePage() throws Throwable {
         global_nav=new GlobalNavigation();
         home_page = new HomePage();
