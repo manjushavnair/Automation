@@ -29,12 +29,12 @@
 
     <!-- Application Loggers -->
     <logger name="Automation">
-        <level value="DEBUG"/>
+        <level value="WARN"/>
     </logger>
 
     <!-- Root logger -->
     <root>
-        <level value="DEBUG"/>
+        <level value="WARN"/>
         <appender-ref ref="console"/>
         <appender-ref ref="file"/>
     </root>
