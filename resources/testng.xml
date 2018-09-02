@@ -5,8 +5,6 @@
     How to run using testng from command prompt
     java -cp "C:\Software\selenium\selenium-java-2.53.1.jar;C:\Software\selenium\realReport_1.0.jar;C:\Projects\Automation\Automation\target\Automation-0.0.1-SNAPSHOT-jar-with-dependencies.jar;C:\Software\selenium\testng-6.9.10.jar;C:\Software\selenium\selenium-server-standalone-2.53.1.jar" org.testng.TestNG testng.xml -d test-output\
     -->
-
-
     <parameter name="appURL" value="https://localhost:9000/"/>
     <parameter name="browserType" value="chrome"/>
 
@@ -21,14 +19,10 @@
     </listeners>
 
     <test name="Automation" preserve-order="true">
-
-
-        <groups>
-
+       <groups>
             <define name="other">
                 <include name="base"/>
                 <include name="invalidcase"/>
-
             </define>
             <define name="running">
                 <include name="validcase"/>
@@ -134,12 +128,7 @@
                     <exclude name="filterAseetTreeTag"/>
                 </methods>
             </class>
-
-
-
         </classes>
-
-
         <!-- END CONNECTED -->
     </test>
 
