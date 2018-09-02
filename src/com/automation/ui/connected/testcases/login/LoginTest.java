@@ -52,55 +52,57 @@ public class LoginTest extends ConnectedBaseTest {
 
     }
 
+
     /***
      *
      * @throws Throwable
      */
 
-    @Test(priority = 5, groups = {"base", "validcase"})
-    public void verifyValidLogin() throws Throwable {
+    @Test(priority = 1, groups = {"base", "invalidcase"}, description = "invalid login")
+    public void verifyNullUserNullPassword() throws Throwable {
 
-        Reporter.log("Entering verifyValidLogin");
+        logger.info("Entering verifyNullUserNullPassword");
+        Reporter.log("Entering verifyNullUserNullPassword");
         login_page = new LoginPage();
         login_page.open();
-        String methodname = new Object() {
-        }.getClass().getEnclosingMethod().getName();
         // Call the method
 
+        String methodname = new Object() {
+        }.getClass().getEnclosingMethod().getName();
 
-        String userName = eu.getCellData(1, 1);
-        String password = eu.getCellData(1, 2);
-
+        String userName = eu.getCellData(5, 1);
+        String password = eu.getCellData(5, 2);
 
         login_page.enterUser(userName);
         login_page.enterPassword(password);
         login_page.login();
         //  driver.navigate().back();
-
     }
-
     /***
      *
      * @throws Throwable
      */
 
-    @Test(priority = 4, groups = {"base", "invalidcase"})
-    public void verifyInValidUserNullPassword() throws Throwable {
-        Reporter.log("Entering verifyInValidUserNullPassword");
+    @Test(priority = 2, groups = {"base", "invalidcase"}, description = "invalid login")
+    public void verifyInValidUserInvalidPassword() throws Throwable {
+
+        logger.info("Entering verifyInValidLogin");
+        Reporter.log("Entering verifyInValidLogin");
         login_page = new LoginPage();
         login_page.open();
-        // Call the method
+
+
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();
 
+        String userName = eu.getCellData(4, 1);
+        String password = eu.getCellData(4, 2);
 
-        String userName = eu.getCellData(2, 1);
-        String password = eu.getCellData(2, 2);
 
         login_page.enterUser(userName);
         login_page.enterPassword(password);
         login_page.login();
-
+        //  driver.navigate().for();
     }
 
     /***
@@ -134,53 +136,57 @@ public class LoginTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(priority = 2, groups = {"base", "invalidcase"}, description = "invalid login")
-    public void verifyInValidUserInvalidPassword() throws Throwable {
-
-        logger.info("Entering verifyInValidLogin");
-        Reporter.log("Entering verifyInValidLogin");
+    @Test(priority = 4, groups = {"base", "invalidcase"})
+    public void verifyInValidUserNullPassword() throws Throwable {
+        Reporter.log("Entering verifyInValidUserNullPassword");
         login_page = new LoginPage();
         login_page.open();
-
-
+        // Call the method
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();
 
-        String userName = eu.getCellData(4, 1);
-        String password = eu.getCellData(4, 2);
 
+        String userName = eu.getCellData(2, 1);
+        String password = eu.getCellData(2, 2);
 
         login_page.enterUser(userName);
         login_page.enterPassword(password);
         login_page.login();
-        //  driver.navigate().for();
+
     }
+
 
     /***
      *
      * @throws Throwable
      */
 
-    @Test(priority = 1, groups = {"base", "invalidcase"}, description = "invalid login")
-    public void verifyNullUserNullPassword() throws Throwable {
+    @Test(priority = 5, groups = {"base", "validcase"})
+    public void verifyValidLogin() throws Throwable {
 
-        logger.info("Entering verifyNullUserNullPassword");
-        Reporter.log("Entering verifyNullUserNullPassword");
+        Reporter.log("Entering verifyValidLogin");
         login_page = new LoginPage();
         login_page.open();
-        // Call the method
-
         String methodname = new Object() {
         }.getClass().getEnclosingMethod().getName();
+        // Call the method
 
-        String userName = eu.getCellData(5, 1);
-        String password = eu.getCellData(5, 2);
+
+        String userName = eu.getCellData(1, 1);
+        String password = eu.getCellData(1, 2);
+
 
         login_page.enterUser(userName);
         login_page.enterPassword(password);
         login_page.login();
         //  driver.navigate().back();
+
     }
+
+
+
+
+
 
 
 }
