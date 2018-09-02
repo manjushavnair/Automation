@@ -103,7 +103,7 @@
 
                 </methods>
             </class>
-
+<!--
             <class name="com.automation.ui.connected.testcases.dashboardviewtest.UAConnectionDetailsTest">
                 <methods >
                     <include name="dcConnectionDropdownTest"/>
@@ -117,7 +117,8 @@
 
                 </methods>
             </class>
-
+-->
+            <!--
             <class name="com.automation.ui.connected.testcases.serverdetails.filter.FilterDetailsTest">
                 <methods>
 
@@ -126,8 +127,12 @@
                     <include name="filterAseetTreeTag"/>
                 </methods>
             </class>
+
+-->
         </classes>
+
         <!-- END CONNECTED -->
+
     </test>
 
 </suite>

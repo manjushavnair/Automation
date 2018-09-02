@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 
 public interface AddServerDetailsCONSTANTS {
 
-    //button[@class='primary next ng-binding']
 
 
     public String ADDCONNECTIONSCANELBUTTON = "//button[@class='ng-binding ng-scope secondaryLink']";
