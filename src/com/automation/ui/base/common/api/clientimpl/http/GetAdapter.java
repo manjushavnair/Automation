@@ -12,6 +12,8 @@ import io.restassured.path.json.JsonPath;
 public class GetAdapter extends  AbstractAdapter implements RestAdapter {
     private String name;
 
+    //   HttpGet request = new HttpGet("http://lifecharger.org/3-tips-for-a-better-life/");
+
     protected GetAdapter(GetBuilder<?, ?> builder) {
         super(builder);
         this.name = builder.name;
