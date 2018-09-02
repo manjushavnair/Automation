@@ -49,6 +49,7 @@ public class AddServerDetails extends SiteBasePageObject {
 
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_PORT)
+    @CacheLookup
     private WebElement connServerPort;
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_SERVER_AUTHUSERNAME)
@@ -58,18 +59,23 @@ public class AddServerDetails extends SiteBasePageObject {
     private WebElement connServerAuthPassword;
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_TO_SERVER)
+    @CacheLookup
     private WebElement connToServerLink;
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.OPCUA_SERVER_URL)
+    @CacheLookup
     private WebElement opcuaServerURL;
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.MIN_KEY_SIZE)
+    @CacheLookup
     private WebElement minKeySize;
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.SECURITY_ENABLE_FLAG)
+    @CacheLookup
     private WebElement securityKeyFlag;
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.SECURITY_CERT_ACCEPT)
+    @CacheLookup
     private WebElement securityKeyAccept;
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.SECURITY_DOMAIN_CHECK)
@@ -79,24 +85,29 @@ public class AddServerDetails extends SiteBasePageObject {
     private WebElement tagQuery;
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.SECURITY_NO)
+    @CacheLookup
     private WebElement securityNo;
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.SECURITY_YES)
     private WebElement securityYes;
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.SECURITY_CONNECTION_WARNING)
+    @CacheLookup
     private WebElement connWarning;
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_STATUS)
     private WebElement connStatus;
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_NEXT)
+    @CacheLookup
     private WebElement connNext;
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_MAKEITPRIVATE)
+    @CacheLookup
     private WebElement connPrivate;
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.CONNECTION_MAKEITPRIVATE_CLOSE)
+    @CacheLookup
     private WebElement connPrivateClose;
 
 

@@ -19,18 +19,13 @@ public class HomePage extends SiteBasePageObject {
     private static Logger logger = Logger.getLogger(HomePage.class);
 
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON)
+    @CacheLookup
     private WebElement addButton;
 
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_TOP)
+    @CacheLookup
     private WebElement addButtonTop;
 
-
-    @FindBy(css = "primary")
-    private WebElement primaryButton;
-
-
-    @FindBy(css = "a.logouts")
-    private WebElement logoutLink;
 
 
 
@@ -40,9 +35,11 @@ public class HomePage extends SiteBasePageObject {
 
 
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_ERROR_MSG)
+    @CacheLookup
     private WebElement msg;
 
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_ERROR_MSG_EXTRA)
+    @CacheLookup
     private WebElement msgExtra;
 
 

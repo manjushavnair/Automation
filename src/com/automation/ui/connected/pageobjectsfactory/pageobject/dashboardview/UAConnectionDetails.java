@@ -4,6 +4,7 @@ import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
 public class UAConnectionDetails extends SiteBasePageObject {
@@ -12,16 +13,22 @@ public class UAConnectionDetails extends SiteBasePageObject {
     private static Logger logger = Logger.getLogger(UAConnectionDetails.class);
 
     @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONDROPDOWN)
+    @CacheLookup
     private WebElement dcDropdownButton;
     @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONPAUSE)
+    @CacheLookup
     private WebElement dcPause;
     @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONEDIT)
+    @CacheLookup
     private WebElement dcEdit;
     @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONREMOVE)
+    @CacheLookup
     private WebElement dcRemove;
     @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONDETAILS)
+    @CacheLookup
     private WebElement dcDetails;
     @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONDETAILS_EDIT)
+    @CacheLookup
     private WebElement dcDetailsEdit;
 
 

@@ -5,33 +5,41 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Reporter;
-
+import org.openqa.selenium.support.CacheLookup;
 public class FilterDetails extends SiteBasePageObject {
 
 
     private static Logger logger = Logger.getLogger(FilterDetails.class);
     @FindBy(xpath = FilterDetailsCONSTANTS.ALLTAG)
+    @CacheLookup
     private WebElement allTag;
 
     @FindBy(xpath = FilterDetailsCONSTANTS.LISTOFTAG)
+    @CacheLookup
     private WebElement listTag;
 
     @FindBy(xpath = FilterDetailsCONSTANTS.ASSETTREETAG)
+    @CacheLookup
     private WebElement assetTreeTag;
 
     @FindBy(xpath = FilterDetailsCONSTANTS.FILTER_NEXT)
+    @CacheLookup
     private WebElement next;
 
     @FindBy(xpath = FilterDetailsCONSTANTS.CONNECTION_BACK)
+    @CacheLookup
     private WebElement back;
 
     @FindBy(xpath = FilterDetailsCONSTANTS.FILTEREDITTAG)
+    @CacheLookup
     private WebElement filterEditTag;
 
     @FindBy(xpath = FilterDetailsCONSTANTS.FILTEREXPORTCONFIG)
+    @CacheLookup
     private WebElement filterExportTag;
 
     @FindBy(xpath = FilterDetailsCONSTANTS.FILTERIMPORTONFIG)
+    @CacheLookup
     private WebElement filterImportTag;
     @FindBy(xpath = FilterDetailsCONSTANTS.FILTER_NEWTAGFILTER)
     private WebElement filterNewTag;
