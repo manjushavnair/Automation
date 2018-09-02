@@ -63,9 +63,7 @@
             <package name="com.automation.ui.connected.testcases.serverdetails"/>
             <package name="com.automation.ui.connected.testcases.dashboardviewtest"/>
             <package name="com.automation.ui.connected.testcases.serverdetails.filter"/>
-
-
-        </packages>
+             </packages>
 
         <classes>
             <class name="com.automation.ui.connected.testcases.login.LoginTest">
@@ -80,8 +78,7 @@
 
 
             <class name="com.automation.ui.connected.testcases.home.HomePageTest">
-
-                <methods>
+              <methods>
                     <include name="launchHomePage"/>
                     <include name="addConnection"/>
                 </methods>
@@ -89,7 +86,6 @@
 
 
             <class name="com.automation.ui.connected.testcases.serverdetails.AddServerDetailsTest">
-
                 <methods>
                     <include name="provideAllServerDetails"/>
                     <include name="clearCustomerNameTest"/>
@@ -99,8 +95,6 @@
                     <include name="provideServerDetailsCancelTest"/>
                     <include name="clearSiteNameTest"/>
                     <include name="provideConnectionType"/>
-
-
                 </methods>
             </class>
 
@@ -113,21 +107,16 @@
                     <include name="dcConnectionDetailsTest"/>
                     <include name="dcConnectionDetailsEditTest"/>
                     <include name="dcConnectionDetailsEdit_Tabs"/>
-
-
-                </methods>
+              </methods>
             </class>
 
             <class name="com.automation.ui.connected.testcases.serverdetails.filter.FilterDetailsTest">
                 <methods>
-
-                    <include name="filterChangeFilters"/>
+                   <include name="filterChangeFilters"/>
                     <include name="filterAllTag"/>
                     <include name="filterAseetTreeTag"/>
                 </methods>
             </class>
-
-
         </classes>
 
         <!-- END CONNECTED -->
