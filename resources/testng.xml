@@ -29,9 +29,7 @@
             </define>
 
             <run>
-                <include name="running"/>
-                <exclude name="other"/>
-            </run>
+             </run>
         </groups>
 
 
