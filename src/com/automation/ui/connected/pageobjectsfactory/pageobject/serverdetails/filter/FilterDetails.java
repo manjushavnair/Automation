@@ -97,7 +97,6 @@ public class FilterDetails extends SiteBasePageObject {
         }
      }
 
-
     public void assetTreeTag() {
          logger.debug("Entering  assetTreeTag");
        try {
