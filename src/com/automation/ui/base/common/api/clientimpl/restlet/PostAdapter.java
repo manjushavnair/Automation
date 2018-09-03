@@ -153,6 +153,7 @@ public class PostAdapter extends AbstractAdapter implements RestAdapter {
                 .post(getMethod());
 
         String json = response.asString();
+        System.out.println("json: "+json);
         //  List<String> jsonResponse = response.jsonPath().getList("$");
         return new JsonPath(json);
     }
@@ -160,6 +161,7 @@ public class PostAdapter extends AbstractAdapter implements RestAdapter {
     @Override
     public <T> T execute(Class<T> responseClass) {
         //RestAssured.port = Integer.valueOf(443);
+        System.out.println("here: ");
         return given()
                 .config(RestAssured.config().encoderConfig(encoderConfig()
                         .appendDefaultContentCharsetToContentTypeIfUndefined(true)))

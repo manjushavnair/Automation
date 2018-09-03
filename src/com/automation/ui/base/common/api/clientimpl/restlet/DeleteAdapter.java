@@ -47,6 +47,9 @@ public class DeleteAdapter extends AbstractAdapter implements RestAdapter {
         return new JsonPath(json);
     }
 
+    //3757978f62c331da8278ccc1804c7012
+    //openwkey
+
     @Override
     public <T> T execute(Class<T> responseClass) {
         return given()
