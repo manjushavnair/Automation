@@ -17,6 +17,7 @@ import org.junit.Test;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.X509TrustManager;
 import java.security.SecureRandom;
+import java.util.HashMap;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
@@ -47,11 +48,17 @@ public class PostAdapter extends AbstractAdapter implements RestAdapter {
     @Override
     public JsonPath execute() {
         System.out.println("!!!!!!!!!!!POST!!!!!!!!!!! ");
+        HashMap hmap=new HashMap( );
+        hmap.put("id","openwkey");
+        hmap.put("APPID", "3757978f62c331da8278ccc1804c7012");
+
+
+
         Response response = given()
                 .baseUri(getEndPoint())
                 .contentType(getContentType().getContentType())
                 .body(getObject().toString())
-            //    .header("Content-Type","application/json")
+                .formParams(hmap)
                 .expect()
                 .contentType(ContentType.JSON)
                 .statusCode(200)

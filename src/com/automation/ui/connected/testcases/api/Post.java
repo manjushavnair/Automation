@@ -50,12 +50,9 @@ public class Post {
                 .add("latitude", 37.76)
                 .add("longitude", -122.43)
                 .add("altitude", 150)
-                .add("id","openwkey")
-                .add("APPID", "3757978f62c331da8278ccc1804c7012")
-
                 .build();
 
-              HashMap hmap=new HashMap( );
+        HashMap hmap=new HashMap( );
         hmap.put("id","openwkey");
         hmap.put("APPID", "3757978f62c331da8278ccc1804c7012");
 
@@ -69,7 +66,6 @@ public class Post {
 
                 .setContentType(ContentType.JSON)
                 .setRequestObject(request)
-                //.setHeaders(hmap)
                 .setEndPoint(factory.data(Repository.ENDPOINT))
                 .setMethodName(factory.data(Repository.METHOD))
                 .build();
