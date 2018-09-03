@@ -31,8 +31,10 @@ public class GetAdapter extends AbstractAdapter implements RestAdapter {
 
     @Override
     public JsonPath execute() {
+        System.out.println("@@@@@@@@@@@@GET@@@@@@@@@@@@@@"+getObject().toString());
         Response response = given()
                 .baseUri(getEndPoint())
+                .params(getParams())
                 .contentType(getContentType().getContentType())
                 .body(getObject().toString())
                 .expect()

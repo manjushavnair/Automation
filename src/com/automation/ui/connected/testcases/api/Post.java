@@ -1,17 +1,34 @@
 package com.automation.ui.connected.testcases.api;
 
+import com.automation.ui.base.common.api.secure.HttpsTrustManager;
+import io.restassured.config.RestAssuredConfig;
+import io.restassured.config.SSLConfig;
+import io.restassured.response.Response;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.conn.ssl.SSLContexts;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.automation.ui.base.common.api.util.*;
+import io.restassured.path.json.JsonPath;
+import com.automation.ui.base.common.api.adapter.*;
+import com.automation.ui.base.common.api.clientimpl.restassured.*;
 
 import io.restassured.*;
-import io.restassured.http.ContentType;
+
 
 import static io.restassured.RestAssured.*;
+import static io.restassured.config.EncoderConfig.encoderConfig;
 
 
 import java.io.IOException;
+import java.security.SecureRandom;
+import java.util.HashMap;
+import java.util.List;
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.X509TrustManager;
 
 public class Post {
     private PropertiesUtil factory;
@@ -23,20 +40,36 @@ public class Post {
                         String properties) throws IOException {
         factory = PropertiesUtil.create(properties);
     }
-/*
 
+    @Test(groups = "post")
     public void postRequest() {
 
         JsonObject request = Json.createObjectBuilder()
-                .add("UserName", factory.data(Repository.USER_NAME))
-                .add("Password", factory.data(Repository.PASSWORD))
+                .add("external_id","SF_TEST001")
+                .add("name", "San Francisco Test Station")
+                .add("latitude", 37.76)
+                .add("longitude", -122.43)
+                .add("altitude", 150)
+                .add("id","openwkey")
+                .add("APPID", "3757978f62c331da8278ccc1804c7012")
+
                 .build();
 
+              HashMap hmap=new HashMap( );
+        hmap.put("id","openwkey");
+        hmap.put("APPID", "3757978f62c331da8278ccc1804c7012");
+
+
+
+
+        System.out.println("%%%%%%%%POST%%%%%%%%%%%");
         System.out.println("request:"+request.toString());
 
         RestAdapter response = PostAdapter.builder()
+
                 .setContentType(ContentType.JSON)
                 .setRequestObject(request)
+                //.setHeaders(hmap)
                 .setEndPoint(factory.data(Repository.ENDPOINT))
                 .setMethodName(factory.data(Repository.METHOD))
                 .build();
@@ -47,42 +80,7 @@ public class Post {
         jsonPath.prettyPrint();
 
     }
-    */
-
-/*
- //3757978f62c331da8278ccc1804c7012
-    //openwkey
-
-    api.openweathermap.org/data/2.5/forecast?
- */
-
-//https://techbeacon.com/how-perform-api-testing-rest-assured
-@Test(groups = "post")
-public void byCityName() {
-    RestAssured.baseURI = "http://api.openweathermap.org/data/2.5";
-
-   /* PreemptiveBasicAuthScheme authScheme = new PreemptiveBasicAuthScheme();
-    authScheme.setUserName("admin");
-    authScheme.setPassword("admin");
-    RestAssured.authentication = authScheme;
-
-    */
-
-
-    given()
-            .contentType(ContentType.JSON)
-            .param("id",factory.data(Repository.ID))
-            .param("APPID", factory.data(Repository.APPID)).expect()
-
-            .when()
-            .get("/weather?q=New York,New York")
-
-            .then()
-            .assertThat()
-            .statusCode(200)
-            .log().all();
 
 
 
-}
 }

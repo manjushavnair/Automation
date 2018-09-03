@@ -19,6 +19,8 @@ import java.util.Map;
 public class AbstractAdapter {
 
     private Object object;
+    private Map map;
+    private Map header;
     private String endPoint;
     private String method;
     private ContentType contentType;
@@ -28,6 +30,8 @@ public class AbstractAdapter {
         this.endPoint = builder.endPoint;
         this.method = builder.method;
         this.contentType = builder.contentType;
+        this.map = builder.map;
+        this.header = builder.header;
     }
 
     public static AbstractBuilder<?, ?> builder() {
@@ -37,6 +41,14 @@ public class AbstractAdapter {
     public Object getObject() {
         return object;
     }
+    public Map getParams() {
+        return map;
+    }
+    public Map getHeaders() {
+        return header;
+    }
+
+
 
     public String getEndPoint() {
         return endPoint;
@@ -228,10 +240,23 @@ public class AbstractAdapter {
         private String endPoint;
         private String method;
         private ContentType contentType;
+        private Map map;
+        private Map header;
 
         @SuppressWarnings("unchecked")
         public B setRequestObject(Object object) {
             this.object = object;
+            return (B) this;
+        }
+
+        @SuppressWarnings("unchecked")
+        public B setParams(Map map) {
+            this.map = map;
+            return (B) this;
+        }
+        @SuppressWarnings("unchecked")
+        public B setHeaders(Map header) {
+            this.header = header;
             return (B) this;
         }
 

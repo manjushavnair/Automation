@@ -39,7 +39,6 @@ public class DeleteAdapter extends AbstractAdapter implements RestAdapter {
                 .contentType(ContentType.JSON)
                 .statusCode(200)
                 .log().all()
-
                 .when()
                 .delete(getMethod());
 
