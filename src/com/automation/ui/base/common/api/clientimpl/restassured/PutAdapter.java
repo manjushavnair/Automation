@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.api.clientimpl.restlet;
+package com.automation.ui.base.common.api.clientimpl.restassured;
 
 
 import com.automation.ui.base.common.api.adapter.AbstractAdapter;
@@ -12,22 +12,23 @@ import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
 import static io.restassured.config.EncoderConfig.encoderConfig;
 
-public class DeleteAdapter extends AbstractAdapter implements RestAdapter {
+public class PutAdapter extends AbstractAdapter implements RestAdapter {
     private String name;
 
-    protected DeleteAdapter(DeleteBuilder<?, ?> builder) {
+    protected PutAdapter(GetBuilder<?, ?> builder) {
         super(builder);
         this.name = builder.name;
 
     }
 
-    public static DeleteBuilder<?, ?> builder() {
-        return new DefaultDeleteBuilder();
+    public static GetBuilder<?, ?> builder() {
+        return new DefaultGetBuilder();
     }
 
     public String getName() {
         return name;
     }
+
 
     @Override
     public JsonPath execute() {
@@ -38,17 +39,16 @@ public class DeleteAdapter extends AbstractAdapter implements RestAdapter {
                 .expect()
                 .contentType(ContentType.JSON)
                 .statusCode(200)
-                .log().all()
-
+                .log()
+                .all()
                 .when()
-                .delete(getMethod());
+                .put(getMethod());
 
         String json = response.asString();
+
         return new JsonPath(json);
     }
 
-    //3757978f62c331da8278ccc1804c7012
-    //openwkey
 
     @Override
     public <T> T execute(Class<T> responseClass) {
@@ -58,18 +58,18 @@ public class DeleteAdapter extends AbstractAdapter implements RestAdapter {
                 .baseUri(getEndPoint())
                 .contentType(getContentType().getContentType())
                 .body(getObject(), ObjectMapperType.GSON)
-                .basePath("/")
                 .port(Integer.valueOf(443))
+                .basePath("/")
                 .expect()
                 .contentType(ContentType.JSON)
                 .statusCode(200)
                 .log().all()
 
                 .when()
-                .delete(getMethod()).as(responseClass, ObjectMapperType.GSON);
+                .put(getMethod()).as(responseClass, ObjectMapperType.GSON);
     }
 
-    public static abstract class DeleteBuilder<S extends DeleteAdapter, B extends DeleteBuilder<S, B>> extends AbstractBuilder<S, B> {
+    public static abstract class GetBuilder<S extends PutAdapter, B extends GetBuilder<S, B>> extends AbstractAdapter.AbstractBuilder<S, B> {
         private String name;
 
         @SuppressWarnings("unchecked")
@@ -80,10 +80,10 @@ public class DeleteAdapter extends AbstractAdapter implements RestAdapter {
 
     }
 
-    private static class DefaultDeleteBuilder extends DeleteBuilder<DeleteAdapter, DefaultDeleteBuilder> {
+    private static class DefaultGetBuilder extends GetBuilder<PutAdapter, DefaultGetBuilder> {
         @Override
-        public DeleteAdapter build() {
-            return new DeleteAdapter(this);
+        public PutAdapter build() {
+            return new PutAdapter(this);
         }
     }
 }

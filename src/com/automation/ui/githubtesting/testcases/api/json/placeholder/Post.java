@@ -1,6 +1,6 @@
 package com.automation.ui.githubtesting.testcases.api.json.placeholder;
 
-import com.automation.ui.base.common.api.clientimpl.restlet.PostAdapter;
+import com.automation.ui.base.common.api.clientimpl.restassured.PostAdapter;
 import com.automation.ui.base.common.api.adapter.RestAdapter;
 import com.automation.ui.base.common.api.util.ContentType;
 import com.automation.ui.base.common.api.util.PropertiesUtil;

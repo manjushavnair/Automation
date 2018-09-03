@@ -1,23 +1,16 @@
 package com.automation.ui.connected.testcases.api;
 
-import com.automation.ui.base.common.api.clientimpl.restlet.PostAdapter;
-import io.restassured.path.json.JsonPath;
-
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.automation.ui.base.common.api.util.*;
-import com.automation.ui.base.common.api.adapter.*;
 
-import io.restassured.RestAssured;
-import org.testng.annotations.Test;
+import io.restassured.*;
+import io.restassured.http.ContentType;
 
-import static io.restassured.RestAssured.given;
-
+import static io.restassured.RestAssured.*;
 
 
-import javax.json.Json;
-import javax.json.JsonObject;
 import java.io.IOException;
 
 public class Post {
@@ -31,7 +24,7 @@ public class Post {
         factory = PropertiesUtil.create(properties);
     }
 /*
-    @Test(groups = "post")
+
     public void postRequest() {
 
         JsonObject request = Json.createObjectBuilder()
@@ -55,18 +48,41 @@ public class Post {
 
     }
     */
-@Test
+
+/*
+ //3757978f62c331da8278ccc1804c7012
+    //openwkey
+
+    api.openweathermap.org/data/2.5/forecast?
+ */
+
+//https://techbeacon.com/how-perform-api-testing-rest-assured
+@Test(groups = "post")
 public void byCityName() {
     RestAssured.baseURI = "http://api.openweathermap.org/data/2.5";
 
+   /* PreemptiveBasicAuthScheme authScheme = new PreemptiveBasicAuthScheme();
+    authScheme.setUserName("admin");
+    authScheme.setPassword("admin");
+    RestAssured.authentication = authScheme;
+
+    */
+
+
     given()
-            .contentType("application/json; charset=utf-8")
-            .expect()
-            .statusCode(200)
-            .log().all()
+            .contentType(ContentType.JSON)
+            .param("id",factory.data(Repository.ID))
+            .param("APPID", factory.data(Repository.APPID)).expect()
 
             .when()
-                .get("/weather?q=New York,New York");
+            .get("/weather?q=New York,New York")
+
+            .then()
+            .assertThat()
+            .statusCode(200)
+            .log().all();
+
+
 
 }
 }

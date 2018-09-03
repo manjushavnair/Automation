@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.api.clientimpl.restlet;
+package com.automation.ui.base.common.api.clientimpl.restassured;
 
 import com.automation.ui.base.common.api.adapter.AbstractAdapter;
 import com.automation.ui.base.common.api.adapter.RestAdapter;
