@@ -60,7 +60,7 @@ public class XMLReader {
     public static String getValue(File file, String key) {
 
         if (!file.exists() || file.isDirectory()) {
-            throw new ConfigurationRuntimeException("Cannot find a file with credentials" + file);
+            throw new ConfigurationRuntimeException("Cannot find a file with credentials " + file);
         }
 
         try {

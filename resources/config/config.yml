@@ -17,7 +17,8 @@ forceLanguageInPath: false
 useMITM: false
 useZapProxy: false
 language: en # run tests on site with specific language unless there is an annotation
-credentialsPath: resources/selenium-config/credentials.xml
+credentialsPath: resources/selenium-config
+restResourcesPath: resources/properties
 # Specify browser window size in format <width>x<height>, example: 800x600
 # use "maximised" value if you want browser to be maximised
 mobileSiteVersion: null

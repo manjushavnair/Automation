@@ -35,12 +35,18 @@ import java.util.Map;
  * config_default.yml</li>
  * </ol>
  */
+
+
 public class Configuration {
 
     public static final String DEFAULT_LANGUAGE = "en";
     private static final String DEFAULT_CONFIG_FILE_NAME = "resources/config/config_default.yml";
     private static final String LOCAL_CONFIG_FILE_NAME = "resources/config/config.yml";
     private static final String SELENIUM_CONFIG_REPO_CONFIG_FILE_NAME = "config.xml";
+    private static final String CREDENTIAL_CONFIG_FILE_NAME = "credentials.xml";
+    private static final String REST_CONFIG_FILE_NAME = "restconfig.xml";
+
+
     private static Map<String, String> defaultConfig;
     private static Map<String, String> testConfig = new HashMap<>();
     //NEEDTOCHECK THE URL
@@ -140,6 +146,17 @@ public class Configuration {
     }
 
     public static String getCredentialsFilePath() {
+        return Paths.get(getProp("credentialsPath"), CREDENTIAL_CONFIG_FILE_NAME)
+                .toString();
+    }
+
+    public static String getRestConfigFilePath() {
+        return Paths.get(getProp("restResourcesPath"), REST_CONFIG_FILE_NAME)
+                .toString();
+    }
+
+
+    public static String getSeleniumConfigFilePath() {
         return Paths.get(getProp("seleniumConfigPath"), SELENIUM_CONFIG_REPO_CONFIG_FILE_NAME)
                 .toString();
     }

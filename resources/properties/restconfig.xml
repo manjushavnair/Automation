@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <service1>
+        <resources>
+            <appid>openwkey</appid>
+            <appkey>3757978f62c331da8278ccc1804c7012</appkey>
+            <resource1>http://api.openweathermap.org/data/2.5</resource1>
+            <method1>/weather</method1>
+        </resources>
+    </service1>
+</config>

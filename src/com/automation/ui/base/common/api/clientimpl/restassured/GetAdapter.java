@@ -8,6 +8,7 @@ import io.restassured.http.ContentType;
 import io.restassured.mapper.ObjectMapperType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.config.EncoderConfig.encoderConfig;
@@ -32,21 +33,22 @@ public class GetAdapter extends AbstractAdapter implements RestAdapter {
     @Override
     public JsonPath execute() {
         System.out.println("@@@@@@@@@@@@GET@@@@@@@@@@@@@@"+getObject().toString());
-        Response response = given()
+        ValidatableResponse  response = given()
                 .baseUri(getEndPoint())
                 .params(getParams())
                 .contentType(getContentType().getContentType())
                 .body(getObject().toString())
                 .expect()
                 .contentType(ContentType.JSON)
-                .statusCode(200)
                 .log().all()
-
                 .when()
-                .get(getMethod());
+                .get(getMethod())
+                .then()
+                .assertThat()
+                .statusCode(200);
 
-        String json = response.asString();
-        return new JsonPath(json);
+           String json = response.toString();
+           return new JsonPath(json);
     }
 
     @Override
