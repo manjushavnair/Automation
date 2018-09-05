@@ -110,6 +110,7 @@ public class HomePage extends SiteBasePageObject {
 
                 waitAndClick(addButtonTop);
 
+
               /*  if (ElementStateHelper.isElementVisible(addButtonTop)) {
 
                     logger.warn("Entering  addConnection: 3 " );
