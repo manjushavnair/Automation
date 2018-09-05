@@ -64,7 +64,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
     public void dcConnectionEditTest() throws Throwable {
 
 
-        logger.debug("Entering dcConnectionEditTest");
+        logger.info("Entering dcConnectionEditTest");
         connectiondetail_page.dcDropdown();
         Thread.sleep(5000);
         logger.debug("Exiting dcConnectionDropdownTest");

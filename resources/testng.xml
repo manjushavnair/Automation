@@ -102,7 +102,7 @@
                 <methods >
                     <include name="dcConnectionDropdownTest"/>
                     <exclude name="dcConnectionPauseTest"/>
-                    <include name="dcConnectionEditTest"/>
+                    <exclude name="dcConnectionEditTest"/>
                     <exclude name="dcConnectionRemoveTest"/>
                     <include name="dcConnectionDetailsTest"/>
                     <exclude name="dcConnectionDetailsEditTest"/>
