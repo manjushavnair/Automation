@@ -161,7 +161,7 @@ public class LoginTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(priority = 5, groups = {"base", "validcase"})
+    @Test(priority = 0, groups = {"base", "validcase"})
     public void verifyValidLogin() throws Throwable {
 
         Reporter.log("Entering verifyValidLogin");

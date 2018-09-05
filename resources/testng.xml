@@ -19,7 +19,7 @@
     </listeners>
 
     <test name="Automation" preserve-order="true">
-       <groups>
+      <!-- <groups>
             <define name="other">
                 <include name="base"/>
                 <include name="invalidcase"/>
@@ -31,6 +31,7 @@
             <run>
              </run>
         </groups>
+        -->
 
 
         <!-- START GITHUB   -->
@@ -54,71 +55,80 @@
         <!-- END  GITHUB  -->
 
         <!-- START CONNECTED-->
-
+<!--
 
         <packages>
 
-            <package name="com.automation.ui.connected.testcases.login"/>
-           <package name="com.automation.ui.connected.testcases.home"/>
-            <!--  <package name="com.automation.ui.connected.testcases.serverdetails"/>
+             <package name="com.automation.ui.connected.testcases.login"/>
+             <package name="com.automation.ui.connected.testcases.home"/>
+             <package name="com.automation.ui.connected.testcases.serverdetails"/>
              <package name="com.automation.ui.connected.testcases.dashboardviewtest"/>
              <package name="com.automation.ui.connected.testcases.serverdetails.filter"/>
-             -->
-             </packages>
+
+         </packages>
+         -->
 
         <classes>
             <class name="com.automation.ui.connected.testcases.login.LoginTest">
                 <methods>
-                    <exclude name="verifyInValidUserNullPassword"/>
-                    <exclude name="verifyValidUserNullPassword"/>
-                    <exclude name="verifyInValidUserInvalidPassword"/>
-                    <exclude name="verifyNullUserNullPassword"/>
-                    <include name="verifyValidLogin"/>
+                    <exclude name="verifyInValidUserNullPassword"/> <!-- priority 4 -->
+                    <exclude name="verifyValidUserNullPassword"/> <!-- priority 3 -->
+                    <exclude name="verifyInValidUserInvalidPassword"/> <!-- priority 2 -->
+                    <exclude name="verifyNullUserNullPassword"/> <!-- priority 1 -->
+                    <include name="verifyValidLogin"/> <!-- priority 0 -->
                 </methods>
             </class>
 
 
             <class name="com.automation.ui.connected.testcases.home.HomePageTest">
               <methods>
-                    <include name="launchHomePage"/>
-                    <include name="addConnection"/>
+                    <include name="launchHomePage"/> <!-- priority 7 -->
+                    <include name="addConnection"/> <!-- priority 8 -->
                 </methods>
             </class>
-<!--
+
 
             <class name="com.automation.ui.connected.testcases.serverdetails.AddServerDetailsTest">
                 <methods>
-                    <include name="provideAllServerDetails"/>
-                    <exclude name="clearCustomerNameTest"/>
-                    <exclude name="addCustomerNameTest"/>
-                    <exclude name="provideServerDetailsNextTest"/>
-                    <exclude name="clearSiteNameTest"/>
-                    <exclude name="provideServerDetailsCancelTest"/>
-                    <exclude name="clearSiteNameTest"/>
-                    <exclude name="provideConnectionType"/>
+                    <include name="provideAllServerDetails"/>  <!-- priority 0 -->
+                    <include name="clearCustomerNameTest"/> <!-- priority 2 -->
+                    <include name="addCustomerNameTest"/> <!-- priority 3 -->
+                    <include name="provideServerDetailsNextTest"/> <!-- priority 1 -->
+                    <include name="clearSiteNameTest"/> <!-- priority 4 -->
+                    <include name="provideServerDetailsCancelTest"/> <!-- priority 6 -->
+                    <include name="provideConnectionType"/> <!-- priority 5 -->
                 </methods>
             </class>
 
             <class name="com.automation.ui.connected.testcases.dashboardviewtest.UAConnectionDetailsTest">
                 <methods >
-                    <include name="dcConnectionDropdownTest"/>
-                    <exclude name="dcConnectionPauseTest"/>
-                    <exclude name="dcConnectionEditTest"/>
-                    <exclude name="dcConnectionRemoveTest"/>
-                    <include name="dcConnectionDetailsTest"/>
-                    <exclude name="dcConnectionDetailsEditTest"/>
-                    <include name="dcConnectionDetailsEdit_Tabs"/>
+                    <include name="dcConnectionDropdownTest"/>  <!-- priority 0 -->
+                    <include name="dcConnectionPauseTest"/>  <!-- priority 1 -->
+                    <include name="dcConnectionEditTest"/>  <!-- priority 2-->
+                    <include name="dcConnectionRemoveTest"/>  <!-- priority 3 -->
+                    <include name="dcConnectionDetailsTest"/>    <!-- priority 4 -->
+                    <include name="dcConnectionDetailsEditTest"/> <!-- priority 5 -->
+                    <include name="dcConnectionDetailsEdit_Tabs"/> <!-- priority 6 -->
               </methods>
             </class>
 
+
+
             <class name="com.automation.ui.connected.testcases.serverdetails.filter.FilterDetailsTest">
                 <methods>
-                   <include name="filterChangeFilters"/>
-                    <include name="filterAllTag"/>
-                    <include name="filterAseetTreeTag"/>
+                    <include name="filterChangeFilters"/> <!-- priority 1 -->
+                    <include name="filterListFilter"/> <!-- priority 2 -->
+                    <include name="filterAllTag"/><!-- priority 3 -->
+                    <include name="filterAseetTreeTag"/> <!-- priority 0 -->
                 </methods>
             </class>
-            -->
+
+            <class name="com.automation.ui.connected.testcases.globalnav.GlobalNavigationTest">
+                <methods>
+                    <include name="logout"/> <!-- priority 0 -->
+                </methods>
+            </class>
+
         </classes>
 
         <!-- END CONNECTED -->

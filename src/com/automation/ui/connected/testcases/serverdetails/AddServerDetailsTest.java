@@ -35,12 +35,22 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
 
     }
 
+    /** */
+    @Test(enabled = true, priority = 0, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
+            ,dataProvider = "getServerDetailsforOPCUA", description = "FilterDetails")
+    public void provideAllServerDetails(Map<String, Object> connInfo) throws Throwable {
+        home_page.addConnection();
+
+        serverdetail_page.provideAllServerDetails(connInfo);
+
+    }
+
     /***
      *
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 10, groups = {"validcase"}, description = "FilterDetails")
+    @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "FilterDetails")
     public void provideServerDetailsCancelTest() throws Throwable {
 
 
@@ -59,7 +69,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 11, groups = {"validcase"}, description = "FilterDetails ")
+    @Test(enabled = true, priority = 2, groups = {"validcase"}, description = "FilterDetails ")
     public void provideServerDetailsNextTest() throws Throwable {
 
         logger.debug("Entering provideServerDetailsNext  ");
@@ -80,7 +90,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 12, groups = {"validcase"}, description = "FilterDetails ")
+    @Test(enabled = true, priority = 3, groups = {"validcase"}, description = "FilterDetails ")
     public void clearCustomerNameTest() throws Throwable {
 
         home_page.addConnection();
@@ -96,7 +106,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
      * @throws Throwable
      * Test : Add Connection-&gt; locate customername field-&gt; clear the field-&gt; Add right name-&gt;Click next
      * */
-    @Test(enabled = true, priority = 13, groups = {"validcase"}, description = "FilterDetails")
+    @Test(enabled = true, priority = 4, groups = {"validcase"}, description = "FilterDetails")
     public void addCustomerNameTest() throws Throwable {
 
         home_page.addConnection();
@@ -114,7 +124,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
      */
 
 
-    @Test(enabled = true, priority = 14, groups = {"validcase"}, description = "FilterDetails")
+    @Test(enabled = true, priority =5, groups = {"validcase"}, description = "FilterDetails")
     public void clearSiteNameTest() throws Throwable {
 
         home_page.addConnection();
@@ -134,7 +144,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
     /**
      * Test : Add Connection-&gt; locate customername field-&gt; clear the field-&gt; Add right name-&gt;Click next
      * */
-    @Test(enabled = true, priority = 15, groups = {"validcase"}, description = "FilterDetails")
+    @Test(enabled = true, priority = 6, groups = {"validcase"}, description = "FilterDetails")
     public void provideConnectionType() throws Throwable {
         home_page.addConnection();
         serverdetail_page.provideServerConnectionType(ServerType.SDX_COLLECTOR);
@@ -142,15 +152,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
 
     }
 
-       /** */
-    @Test(enabled = true, priority = 9, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
-             ,dataProvider = "getServerDetailsforOPCUA", description = "FilterDetails")
-    public void provideAllServerDetails(Map<String, Object> connInfo) throws Throwable {
-        home_page.addConnection();
 
-        serverdetail_page.provideAllServerDetails(connInfo);
-
-    }
 
 
 

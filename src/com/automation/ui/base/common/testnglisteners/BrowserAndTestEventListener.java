@@ -256,7 +256,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
             } finally {
 
-                logger.warn("finlayy  fssonTestFailure close if issue");
+
 
 
 

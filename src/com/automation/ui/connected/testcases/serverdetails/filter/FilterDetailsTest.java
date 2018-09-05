@@ -30,7 +30,7 @@ public class FilterDetailsTest extends ConnectedBaseTest {
     }
 
 
-    @Test(enabled = true, priority = 30, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
+    @Test(enabled = true, priority = 0, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
              , description = "FilterDetails")
     public void filterAseetTreeTag() throws Throwable {
         home_page.addConnection();
@@ -42,7 +42,7 @@ public class FilterDetailsTest extends ConnectedBaseTest {
     }
 
 
-    @Test(enabled = true, priority = 33, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
+    @Test(enabled = true, priority = 3, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
             , description = "FilterDetails")
     public void filterAllTag() throws Throwable {
         home_page.addConnection();
@@ -60,7 +60,7 @@ public class FilterDetailsTest extends ConnectedBaseTest {
 
     }
 
-    @Test(enabled = true, priority = 32, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
+    @Test(enabled = true, priority = 2, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
             , description = "FilterDetails")
     public void filterListFilter() throws Throwable {
         home_page.addConnection();
@@ -73,7 +73,7 @@ public class FilterDetailsTest extends ConnectedBaseTest {
 
     }
 
-    @Test(enabled = true, priority = 31, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
+    @Test(enabled = true, priority = 1, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
             , description = "FilterDetails")
     public void filterChangeFilters() throws Throwable {
         home_page.addConnection();

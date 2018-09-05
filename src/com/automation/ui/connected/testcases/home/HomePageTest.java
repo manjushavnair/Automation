@@ -24,45 +24,13 @@ public class HomePageTest extends ConnectedBaseTest {
         super();
     }
 
+
     /***
      *
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 6, groups = {"validcase"}, description = "home page ")
-
-    public void launchLogin() throws Throwable {
-
-        logger.debug("Entering launchLogin");
-        Reporter.log("Entering launchLogin");
-        login_page = new LoginPage();
-
-        login_page.open();
-
-
-        String methodname = new Object() {
-        }.getClass().getEnclosingMethod().getName();
-        String userName = eu.getCellData(1, 1);
-        String passWord = eu.getCellData(1, 2);
-
-        login_page.enterUser(userName);
-        login_page.enterPassword(passWord);
-        home_page = login_page.login();
-
-
-        // home_page.waitForPageReload();
-
-
-        logger.debug("Exiting launchLogin and going to  homepage" + urlBuilder.getUrl());
-
-
-    }
-    /***
-     *
-     * @throws Throwable
-     */
-
-    @Test(enabled = true, priority = 7, groups = {"validcase"}, description = "home page ")
+    @Test(enabled = true, priority = 0, groups = {"validcase"}, description = "home page ")
     public void launchHomePage() throws Throwable {
         global_nav=new GlobalNavigation();
         home_page = new HomePage();
@@ -75,7 +43,7 @@ public class HomePageTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 8, groups = {"validcase"}, description = "home page ")
+    @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "home page ")
 
     public void addConnection() throws Throwable {
         logger.debug("Entering addConnection");
@@ -83,20 +51,6 @@ public class HomePageTest extends ConnectedBaseTest {
         home_page.addConnection();
 
         logger.debug("Exiting addConnection and going to  add ");
-    }
-    /***
-     *
-     * @throws Throwable
-     */
-
-
-    @Test(enabled = false, priority = 9, groups = {"validcase"}, description = "home page ")
-
-    public void launch_logout() throws Throwable {
-
-        logger.debug("Logging out from launchHomePage_logout");
-        Reporter.log("Logging out from launchHomePage_logout");
-        global_nav.goToLogoutPage();
     }
 
 

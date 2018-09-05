@@ -22,7 +22,8 @@ restResourcesPath: resources/properties
 # Specify browser window size in format <width>x<height>, example: 800x600
 # use "maximised" value if you want browser to be maximised
 mobileSiteVersion: null
-browserSize: maximised
+#maximised
+browserSize: minimise
 useProxy: null
 countryCode: null
 
