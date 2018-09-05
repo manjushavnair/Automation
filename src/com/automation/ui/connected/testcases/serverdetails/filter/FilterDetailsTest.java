@@ -33,7 +33,7 @@ public class FilterDetailsTest extends ConnectedBaseTest {
     @Test(enabled = true, priority = 0, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
              , description = "FilterDetails")
     public void filterAseetTreeTag() throws Throwable {
-        home_page.addConnection();
+        home_page.addConnection("filterAseetTreeTag");
         Map<String, Object> connInfo=null;
         serverdetail_page.provideAllServerDetails(connInfo );
 
@@ -46,7 +46,7 @@ public class FilterDetailsTest extends ConnectedBaseTest {
     @Test(enabled = true, priority = 1, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
             , description = "FilterDetails")
     public void filterChangeFilters() throws Throwable {
-        home_page.addConnection();
+        home_page.addConnection("filterChangeFilters");
         Map<String, Object> connInfo=null;
         serverdetail_page.provideAllServerDetails(connInfo );
         filter.assetTreeTag();
@@ -61,7 +61,7 @@ public class FilterDetailsTest extends ConnectedBaseTest {
     @Test(enabled = true, priority = 2, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
             , description = "FilterDetails")
     public void filterListFilter() throws Throwable {
-        home_page.addConnection();
+        home_page.addConnection("filterListFilter");
         Map<String, Object> connInfo=null;
         serverdetail_page.provideAllServerDetails(connInfo );
 
@@ -75,7 +75,7 @@ public class FilterDetailsTest extends ConnectedBaseTest {
     @Test(enabled = true, priority = 3, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
             , description = "FilterDetails")
     public void filterAllTag() throws Throwable {
-        home_page.addConnection();
+        home_page.addConnection("filterAllTag");
         Map<String, Object> connInfo=null;
         serverdetail_page.provideAllServerDetails(connInfo );
 

@@ -36,7 +36,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
     @Test(enabled = true, priority = 0, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
             ,dataProvider = "getServerDetailsforOPCUA", description = "FilterDetails")
     public void provideAllServerDetails(Map<String, Object> connInfo) throws Throwable {
-        home_page.addConnection();
+        home_page.addConnection("provideAllServerDetails");
         serverdetail_page.provideAllServerDetails(connInfo);
     }
 
@@ -48,7 +48,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
     @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "FilterDetails")
     public void provideServerDetailsCancelTest() throws Throwable {
         Reporter.log("Entering provideServerDetailsCancel ");
-        home_page.addConnection();
+        home_page.addConnection("provideServerDetailsCancelTest");
         Assertion.assertTrue(serverdetail_page.isButtonVisible());
         //    Assertion.assertEquals(subhead.getSubheadTitle(),  "Editing template: InfoboxBuilderChangeTemplateNameBySubhead"
         serverdetail_page.provideServerDetailsCancel();
@@ -65,7 +65,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
 
         logger.debug("Entering provideServerDetailsNext  ");
         Reporter.log("Entering provideServerDetailsNext ");
-        home_page.addConnection();
+        home_page.addConnection("provideServerDetailsNextTest");
 
         Assertion.assertTrue(serverdetail_page.isButtonVisible());
         serverdetail_page.provideServerDetailsNext();
@@ -84,7 +84,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
     @Test(enabled = true, priority = 3, groups = {"validcase"}, description = "FilterDetails ")
     public void clearCustomerNameTest() throws Throwable {
 
-        home_page.addConnection();
+        home_page.addConnection("clearCustomerNameTest");
         Reporter.log("Entering clearCustomerName ");
         serverdetail_page.clearCustomerName();
         serverdetail_page.provideServerDetailsNext();
@@ -99,7 +99,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
     @Test(enabled = true, priority = 4, groups = {"validcase"}, description = "FilterDetails")
     public void addCustomerNameTest() throws Throwable {
 
-        home_page.addConnection();
+        home_page.addConnection("addCustomerNameTest");
         serverdetail_page.provideServerDetailsAddCustName("Connected Assets Demo");
         serverdetail_page.provideServerDetailsNext();
      }
@@ -113,7 +113,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
     @Test(enabled = true, priority =5, groups = {"validcase"}, description = "FilterDetails")
     public void clearSiteNameTest() throws Throwable {
 
-        home_page.addConnection();
+        home_page.addConnection("clearSiteNameTest");
         serverdetail_page.clearSiteName();
         serverdetail_page.provideServerDetailsNext();
         Assert.assertEquals(serverdetail_page.siteNameErMsg(),
@@ -126,7 +126,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
      * */
     @Test(enabled = true, priority = 6, groups = {"validcase"}, description = "FilterDetails")
     public void provideConnectionType() throws Throwable {
-        home_page.addConnection();
+        home_page.addConnection("provideConnectionType");
         serverdetail_page.provideServerConnectionType(ServerType.SDX_COLLECTOR);
     }
 

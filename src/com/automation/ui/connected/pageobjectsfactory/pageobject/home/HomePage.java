@@ -84,24 +84,23 @@ public class HomePage extends SiteBasePageObject {
 
 
 
-    public AddServerDetails addConnection() {
+    public AddServerDetails addConnection(String method) {
 
 
         try {
 
 
-            Thread.sleep(2000);
 
 
             if (ElementStateHelper.isElementVisible(addButton)) {
-                logger.warn("Entering  addConnection: if");
+                logger.warn("Entering  addConnection: if " +method);
 
                 waitAndClick(addButton);
 
 
             } else {
-                logger.warn("Entering  addConnection: else");
-                Thread.sleep(2000);
+                logger.warn("Entering  addConnection: else " +method);
+
 
                 wait.forElementVisible(addButtonTop);
 
