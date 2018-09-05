@@ -531,7 +531,7 @@ public class DateUtil {
 
 
     public static String getCurrentDateInReportFormat() {
-        SimpleDateFormat curDateFormater = new SimpleDateFormat("yyyy-MM-dd_hh-mm-ss");
+        SimpleDateFormat curDateFormater = new SimpleDateFormat("yyyy-MM-dd_hh-mm");
         String curDate = curDateFormater.format(new Date());
         return curDate;
     }

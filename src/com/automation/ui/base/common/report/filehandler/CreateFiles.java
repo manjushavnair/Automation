@@ -61,6 +61,27 @@ public class CreateFiles {
         copyFilesToDestination(js_files, FileNameConstants.ROOT_FOLDER + "/" + FileNameConstants.JS_FOLDER);
 
 		/*
+		Find all files in report  Folder
+		*/
+        File f=new File("./" + FileNameConstants.ROOT_FOLDER);
+
+
+        File[] files = f.listFiles(new FilenameFilter(){
+           @Override
+           public boolean accept(File directory, String fileName) {
+             if (fileName.matches("[log0-9_-]+\\.html")) {
+                  return true;
+              }
+                return false;
+            }
+
+       } );
+
+
+
+
+
+        /*
 		 * STEP 5: Put values related to current suite at a set, 'suiteSet'
 		 */
         if (DataMap.suiteMap.containsKey(iSuite)) {
@@ -71,6 +92,11 @@ public class CreateFiles {
             DataSuite ds = new DataSuite(suiteIndex, suiteName,
                     FileNameConstants.DASHBOARD_HTML + "_"+DateUtil.getCurrentDateInReportFormat()+ "-" + suiteIndex + ".html");
             DataMap.suiteSet.add(ds);
+            for(File f1 : files) {
+                  ds = new DataSuite(suiteIndex, suiteName, f1.getName());
+                     DataMap.suiteSet.add(ds);
+            }
+
 
 
         }
@@ -127,9 +153,11 @@ public class CreateFiles {
         if (pw != null) {
             pw.write(FileNameConstants.INDEX_HEADER);
             pw.write(FileNameConstants.INDEX_BODY_PRE);
+
             for (DataSuite ds : DataMap.suiteSet) {
+
                 pw.write("<a class='btn btn-link' href='" + ds.getSuiteHTMLPath()
-                        + "' style='font-size:24px;'><i class='fa fa-dashboard'></i> " + ds.getSuiteName()
+                        + "' style='font-size:24px;'><i class='fa fa-dashboard'></i> " + ds.getSuiteName() + " Report " +ds.getSuiteHTMLPath()
                         + "</a><br/>");
             }
             pw.write(FileNameConstants.INDEX_BODY_POST);

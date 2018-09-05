@@ -251,9 +251,13 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
                 Log.stop();
             } catch (BusinessException e) {
                 e.printStackTrace();
-                //logger.info("onTestFailure   close if issue");
+                 logger.info("onTestFailure close if issue");
                 DriverProvider.close();
+
             } finally {
+
+                logger.warn("finlayy  fssonTestFailure close if issue");
+
 
 
             }

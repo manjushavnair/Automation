@@ -59,10 +59,11 @@
         <packages>
 
             <package name="com.automation.ui.connected.testcases.login"/>
-            <package name="com.automation.ui.connected.testcases.home"/>
-            <package name="com.automation.ui.connected.testcases.serverdetails"/>
-            <package name="com.automation.ui.connected.testcases.dashboardviewtest"/>
-            <package name="com.automation.ui.connected.testcases.serverdetails.filter"/>
+           <package name="com.automation.ui.connected.testcases.home"/>
+            <!--  <package name="com.automation.ui.connected.testcases.serverdetails"/>
+             <package name="com.automation.ui.connected.testcases.dashboardviewtest"/>
+             <package name="com.automation.ui.connected.testcases.serverdetails.filter"/>
+             -->
              </packages>
 
         <classes>
@@ -83,7 +84,7 @@
                     <include name="addConnection"/>
                 </methods>
             </class>
-
+<!--
 
             <class name="com.automation.ui.connected.testcases.serverdetails.AddServerDetailsTest">
                 <methods>
@@ -117,6 +118,7 @@
                     <include name="filterAseetTreeTag"/>
                 </methods>
             </class>
+            -->
         </classes>
 
         <!-- END CONNECTED -->

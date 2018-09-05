@@ -45,9 +45,10 @@ public class DriverProvider {
             if (webDriver != null) {
                 try {
                     String path = System.getenv("PATH");
-                    // logger.info("path"+path);
-                    //  System.out.println(path);
-                    webDriver.quit();
+
+                    webDriver.quit(); //quit whole sessions and windows
+                //    webDriver.close();  //close browser if we have nutiple browser window
+
                 } catch (UnsatisfiedLinkError | NoClassDefFoundError | NullPointerException e) {
 
                     Log.log("Closing Browser", e, true);
