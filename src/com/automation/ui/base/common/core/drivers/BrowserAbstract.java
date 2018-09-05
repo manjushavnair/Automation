@@ -60,7 +60,7 @@ public abstract class BrowserAbstract {
     }
 
     protected void setTimeputs(WebDriver webDriver) {
-        webDriver.manage().timeouts().implicitlyWait(BASEConstants.WAITTIME5SEC, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
     }
 
     protected void setListeners(UIWebDriver webDriver) {
