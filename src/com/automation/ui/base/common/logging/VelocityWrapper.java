@@ -28,8 +28,7 @@ public class VelocityWrapper {
     private static final String FIRST_LOG_ROW_TEMPLATE_PATH = "firstLogRow.vm";
     private static final String BUTTON_TEMPLATE_PATH = "button.vm";
     private static final String HEADER_TEMPLATE_PATH = "header.vm";
-    private static final String ERROR_LOG_ROW_WO_SCREENSHOT_AND_SOURCE_TEMPLATE_PATH =
-            "errorLogRowWoScreenshotAndSource.vm";
+    private static final String ERROR_LOG_ROW_WO_SCREENSHOT_AND_SOURCE_TEMPLATE_PATH ="errorLogRowWoScreenshotAndSource.vm";
     private static Logger logger = Logger.getLogger(VelocityWrapper.class);
     private static VelocityEngine velocityEngine = getVelocityEngine();
 

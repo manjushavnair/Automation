@@ -1,6 +1,7 @@
-<table class=".bootstrap-table"> 
+<table style="background-color: #e7505a;"> 
      <tr class="step">
-         <td colspan="3"><em>$className.$testName</td>
+         <td ><em>Test Method Name</td>
+         <td colspan="2"><em>$className.$testName</td>
          
      </tr>
 

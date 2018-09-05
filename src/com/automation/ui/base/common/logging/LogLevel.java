@@ -1,6 +1,7 @@
 package com.automation.ui.base.common.logging;
 
 public enum LogLevel implements LogData {
+    ERRORMSG("errormsg"),
     ERROR("error"),
     OK("success"),
     WARNING("warning"),

@@ -11,11 +11,15 @@
     td:nth-child(2) {word-break: break-all;}
     pre {white-space: pre-wrap;}
     td:nth-child(3){width:100px;}
-    tr.success{color:black;background-color:#CCFFCC;}
+    tr.success{color:black;background-color:#8BC34A;}
     tr.warning{color:black;background-color:#f0e8b1;}
-    tr.error{color:black;background-color:#FFCCCC;}
-    tr.info{color:white;background-color:#78a1c0}
-    tr.step{color:white;background:#CCD1D1}
+    tr.error{color:black;background-color:#F44336;}
+    tr.info{color:white;background-color:#FFCA28}
+    tr.step{color:black;background:#f7f7f7}
+    tr.errormsg{color:black;background:#32c5d2}
+    tr.endmsg{color:black;background:#3598dc}
+
+
     </style>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">

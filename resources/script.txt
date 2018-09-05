@@ -10,9 +10,9 @@ function createToc()
 		var ident = "toc"+i;
 		var tr = h1[i].parentNode.parentNode;
 		h1[i].setAttribute('id', ident);
-		if (tr.style.backgroundColor == "red")
+		if (tr.style.backgroundColor == "#F44336")
 		{
-			var temp = "<li><a style=\"color:red;\" href='#" + ident + "' >" + h1[i].textContent + "</a></li>";
+			var temp = "<li><a style=\"color:#F44336;\" href='#" + ident + "' >" + h1[i].textContent + "</a></li>";
 		}
 		else
 		{
@@ -31,7 +31,7 @@ function markMethodAsFailed() {
 	for (var i=0; i<l; i++)
 	{
 		var b = a[i].children[0];
-		b.style.backgroundColor = "red";
+		b.style.backgroundColor = "#F44336";
 	}
 }
 function addLinkBackToTheJob() {
