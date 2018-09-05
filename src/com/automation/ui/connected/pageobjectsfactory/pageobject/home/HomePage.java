@@ -102,7 +102,7 @@ public class HomePage extends SiteBasePageObject {
                 logger.warn("Entering  addConnection: else " +method);
 
 
-                wait.forElementVisible(addButtonTop,15);
+               // wait.forElementVisible(addButtonTop,15);
 
                 logger.warn("Entering  addConnection: 2 " );
 
