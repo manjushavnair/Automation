@@ -18,7 +18,7 @@
         <listener class-name="com.automation.ui.base.common.report.listener.RealTimeTestResultListener"/>
     </listeners>
 
-    <test name="Automation" preserve-order="false">
+    <test name="Automation" preserve-order="true">
        <groups>
             <define name="other">
                 <include name="base"/>
