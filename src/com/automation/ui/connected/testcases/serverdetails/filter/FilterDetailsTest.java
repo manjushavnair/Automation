@@ -42,6 +42,36 @@ public class FilterDetailsTest extends ConnectedBaseTest {
     }
 
 
+
+    @Test(enabled = true, priority = 1, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
+            , description = "FilterDetails")
+    public void filterChangeFilters() throws Throwable {
+        home_page.addConnection();
+        Map<String, Object> connInfo=null;
+        serverdetail_page.provideAllServerDetails(connInfo );
+        filter.assetTreeTag();
+        Thread.sleep(3000);
+        filter.allTag();
+        Thread.sleep(3000);
+        filter.listFilterTag();
+        Thread.sleep(3000);
+    }
+
+
+    @Test(enabled = true, priority = 2, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
+            , description = "FilterDetails")
+    public void filterListFilter() throws Throwable {
+        home_page.addConnection();
+        Map<String, Object> connInfo=null;
+        serverdetail_page.provideAllServerDetails(connInfo );
+
+        filter.listFilterTag();
+
+
+
+    }
+
+
     @Test(enabled = true, priority = 3, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
             , description = "FilterDetails")
     public void filterAllTag() throws Throwable {
@@ -59,45 +89,5 @@ public class FilterDetailsTest extends ConnectedBaseTest {
 
 
     }
-
-    @Test(enabled = true, priority = 2, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
-            , description = "FilterDetails")
-    public void filterListFilter() throws Throwable {
-        home_page.addConnection();
-        Map<String, Object> connInfo=null;
-        serverdetail_page.provideAllServerDetails(connInfo );
-
-        filter.listFilterTag();
-
-
-
-    }
-
-    @Test(enabled = true, priority = 1, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
-            , description = "FilterDetails")
-    public void filterChangeFilters() throws Throwable {
-        home_page.addConnection();
-        Map<String, Object> connInfo=null;
-        serverdetail_page.provideAllServerDetails(connInfo );
-
-
-
-
-        filter.assetTreeTag();
-
-        Thread.sleep(3000);
-
-
-        filter.allTag();
-
-        Thread.sleep(3000);
-
-         filter.listFilterTag();
-
-        Thread.sleep(3000);
-
-
-    }
-
 
 }

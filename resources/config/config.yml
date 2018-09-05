@@ -23,10 +23,9 @@ restResourcesPath: resources/properties
 # use "maximised" value if you want browser to be maximised
 mobileSiteVersion: null
 #maximised
-browserSize: minimise
+browserSize: maximised
 useProxy: null
 countryCode: null
-
 unsafePageLoad: null
 
 # Add browser extensions.

@@ -25,14 +25,11 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
 
 
     public AddServerDetailsTest() {
-
         super();
         logger.debug(" AddServerDetailsTest");
-
         filter = new FilterDetails();
         serverdetail_page = new AddServerDetails();
         home_page = new HomePage();
-
     }
 
     /** */
@@ -40,9 +37,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
             ,dataProvider = "getServerDetailsforOPCUA", description = "FilterDetails")
     public void provideAllServerDetails(Map<String, Object> connInfo) throws Throwable {
         home_page.addConnection();
-
         serverdetail_page.provideAllServerDetails(connInfo);
-
     }
 
     /***
@@ -52,16 +47,12 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
 
     @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "FilterDetails")
     public void provideServerDetailsCancelTest() throws Throwable {
-
-
         Reporter.log("Entering provideServerDetailsCancel ");
-
         home_page.addConnection();
         Assertion.assertTrue(serverdetail_page.isButtonVisible());
         //    Assertion.assertEquals(subhead.getSubheadTitle(),  "Editing template: InfoboxBuilderChangeTemplateNameBySubhead"
         serverdetail_page.provideServerDetailsCancel();
         Reporter.log("Entering provideServerDetailsCancel ");
-
         logger.debug("Exiting provideServerDetailsCancel  ");
     }
     /***
@@ -99,8 +90,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
         serverdetail_page.provideServerDetailsNext();
         Assert.assertEquals(serverdetail_page.customerNameErMsg(),
                 AssertDataReader.assertreader.getValue("CUSTOMERNAMEVALIDATIONMESSAGE"));
-
-    }
+     }
     /***
      *
      * @throws Throwable
@@ -110,13 +100,9 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
     public void addCustomerNameTest() throws Throwable {
 
         home_page.addConnection();
-
         serverdetail_page.provideServerDetailsAddCustName("Connected Assets Demo");
         serverdetail_page.provideServerDetailsNext();
-
-
-
-    }
+     }
 
     /***
      *Test : Add Connection-&gt;locate customername field-&gt; clear the field-&gt; Add right name-&gt;Click next
@@ -128,17 +114,11 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
     public void clearSiteNameTest() throws Throwable {
 
         home_page.addConnection();
-
         serverdetail_page.clearSiteName();
         serverdetail_page.provideServerDetailsNext();
-
-
         Assert.assertEquals(serverdetail_page.siteNameErMsg(),
                 AssertDataReader.assertreader.getValue("SITENAMEVALIDATIONMESSAGE"));
-
-
-
-    }
+     }
 
 
     /**
@@ -148,12 +128,6 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
     public void provideConnectionType() throws Throwable {
         home_page.addConnection();
         serverdetail_page.provideServerConnectionType(ServerType.SDX_COLLECTOR);
-
-
     }
-
-
-
-
 
 }
