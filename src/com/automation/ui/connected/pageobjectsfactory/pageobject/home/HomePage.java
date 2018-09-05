@@ -88,23 +88,26 @@ public class HomePage extends SiteBasePageObject {
 
 
         try {
-            logger.debug("Entering  addConnection:");
+
 
             Thread.sleep(2000);
 
 
             if (ElementStateHelper.isElementVisible(addButton)) {
+                logger.warn("Entering  addConnection: if");
 
                 waitAndClick(addButton);
 
 
             } else {
-
+                logger.warn("Entering  addConnection: else");
                 Thread.sleep(2000);
 
                 wait.forElementVisible(addButtonTop);
 
                 if (ElementStateHelper.isElementVisible(addButtonTop)) {
+
+                    logger.warn("Entering  addConnection: else->if");
 
 
                     waitAndClick(addButtonTop);
