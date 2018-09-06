@@ -7,6 +7,8 @@ public interface AddServerDetailsCONSTANTS {
 
 
 
+
+
     public String ADDCONNECTIONSCANELBUTTON = "//button[@class='ng-binding ng-scope secondaryLink']";
     public String ADDCONNECTIONSNEXTBUTTON = "//button[@class='primary next ng-binding']";
 
