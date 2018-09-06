@@ -89,6 +89,7 @@
             </class>
 
 
+
             <class name="com.automation.ui.connected.testcases.serverdetails.AddServerDetailsTest">
                 <methods>
                   <!--  <include name="provideAllServerDetails"/>  --><!-- priority 0 -->
