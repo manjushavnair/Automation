@@ -42,7 +42,7 @@ public class UAConnectionDetailsPage extends SiteBasePageObject {
     public UAConnectionDetailsPage open() {
 
 
-            logger.warn("open the URL" + getCurrentUrl());
+            logger.debug("open the URL" + getCurrentUrl());
 
             getUrl(getCurrentUrl());
 
@@ -51,7 +51,7 @@ public class UAConnectionDetailsPage extends SiteBasePageObject {
 
     public void dcDropdown() {
         try {
-            logger.warn("Click on DataConnection drop down");
+            logger.debug("Click on DataConnection drop down");
             waitAndClick(dcDropdownButton);
            // wait.forElementVisible(dcDropdownButton, BASEConstants.WAITTIME1000MILLISEC);
            //dcDropdownButton.click();
@@ -78,10 +78,10 @@ public class UAConnectionDetailsPage extends SiteBasePageObject {
 
     public void dcEdit() {
         try {
-            logger.warn("Click on DataConnection Edit 1");
+            logger.debug("Click on DataConnection Edit 1");
           //  wait.forElementVisible(dcEdit, BASEConstants.WAITTIME10000MILLISEC);
             scrollAndClick(dcEdit, 1);
-            logger.warn("Click on DataConnection Edit 2 ");
+            logger.debug("Click on DataConnection Edit 2 ");
             waitAndClick(dcEdit);
 
 
