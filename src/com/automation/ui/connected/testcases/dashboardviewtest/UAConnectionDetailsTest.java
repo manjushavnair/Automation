@@ -70,7 +70,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
     public void dcConnectionEditTest() throws Throwable {
 
 
-        logger.info("Entering dcConnectionDropdownTest");
+        logger.warn("Entering dcConnectionDropdownTest");
         connectiondetail_page.dcDropdown();
         Thread.sleep(5000);
         logger.debug("Exiting dcConnectionDropdownTest");

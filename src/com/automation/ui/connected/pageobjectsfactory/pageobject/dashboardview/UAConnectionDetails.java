@@ -54,7 +54,7 @@ public class UAConnectionDetails extends SiteBasePageObject {
 
     public void dcDropdown() {
         try {
-            logger.debug("Click on DataConnection drop down");
+            logger.warn("Click on DataConnection drop down");
             waitAndClick(dcDropdownButton);
            // wait.forElementVisible(dcDropdownButton, BASEConstants.WAITTIME1000MILLISEC);
 
