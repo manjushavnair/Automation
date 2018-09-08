@@ -83,9 +83,10 @@ public class UAConnectionDetails extends SiteBasePageObject {
 
     public void dcEdit() {
         try {
-            logger.debug("Click on DataConnection Edit");
+            logger.warn("Click on DataConnection Edit 1");
           //  wait.forElementVisible(dcEdit, BASEConstants.WAITTIME10000MILLISEC);
             scrollAndClick(dcEdit, 1);
+            logger.warn("Click on DataConnection Edit 2 ");
             waitAndClick(dcEdit);
 
 
