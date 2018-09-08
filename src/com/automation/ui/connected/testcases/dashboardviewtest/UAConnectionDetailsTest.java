@@ -68,7 +68,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
 
     @Test(enabled = true, priority = 2, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionEditTest() throws Throwable {
-
+        Thread.sleep(5000);
 
         logger.warn("Entering dcConnectionDropdownTest 2");
         connectiondetail_page.dcDropdown();
