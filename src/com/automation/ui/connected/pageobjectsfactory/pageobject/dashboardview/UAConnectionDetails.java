@@ -56,8 +56,7 @@ public class UAConnectionDetails extends SiteBasePageObject {
             waitAndClick(dcDropdownButton);
            // wait.forElementVisible(dcDropdownButton, BASEConstants.WAITTIME1000MILLISEC);
            //dcDropdownButton.click();
-
-        } catch (Exception e) {
+         } catch (Exception e) {
             e.printStackTrace();
         }
 
