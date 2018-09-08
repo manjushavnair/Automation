@@ -49,7 +49,6 @@ public class UAConnectionDetails extends SiteBasePageObject {
 
             return this;
     }
-
     public void dcDropdown() {
         try {
             logger.warn("Click on DataConnection drop down");
