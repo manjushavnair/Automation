@@ -81,10 +81,10 @@ public class FilterDetailsPageTest extends ConnectedBaseTest {
 
         filter.allTag();
         filter.filterEditTag();
-        Thread.sleep(3000);
+
         filter.filterExportTag();
 
-        Thread.sleep(5000);
+
 
 
 
