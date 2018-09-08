@@ -33,11 +33,11 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
     @Test(enabled = true, priority = 0, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionDropdownTest() throws Throwable {
 
-connectiondetail_page.open();
+
         logger.debug("Entering dcConnectionDropdownTest");
         connectiondetail_page.dcDropdown();
         logger.debug("Exiting dcConnectionDropdownTest");
-        Thread.sleep(10000);
+        Thread.sleep(5000);
     }
 
     /***
