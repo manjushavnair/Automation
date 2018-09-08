@@ -55,9 +55,10 @@ public class UAConnectionDetails extends SiteBasePageObject {
     public void dcDropdown() {
         try {
             logger.debug("Click on DataConnection drop down");
-            wait.forElementVisible(dcDropdownButton, BASEConstants.WAITTIME10000MILLISEC);
+            waitAndClick(dcDropdownButton);
+           // wait.forElementVisible(dcDropdownButton, BASEConstants.WAITTIME1000MILLISEC);
 
-            dcDropdownButton.click();
+            //dcDropdownButton.click();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -67,9 +68,11 @@ public class UAConnectionDetails extends SiteBasePageObject {
 
     public void dcPause() {
         try {
-            logger.debug("Click on DataConnection Pause");
-            wait.forElementVisible(dcPause, BASEConstants.WAITTIME10000MILLISEC);
-            scrollAndClick(dcPause, 0);
+
+            waitAndClick(dcPause);
+           // logger.debug("Click on DataConnection Pause");
+            //wait.forElementVisible(dcPause, BASEConstants.WAITTIME1000MILLISEC);
+            //scrollAndClick(dcPause, 0);
 
 
         } catch (Exception e) {

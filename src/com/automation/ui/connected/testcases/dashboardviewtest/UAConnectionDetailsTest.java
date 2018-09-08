@@ -48,7 +48,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
     @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionPauseTest() throws Throwable {
 
-        connectiondetail_page.open();
+
 
         Thread.sleep(5000);
         logger.debug("Entering dcConnectionPauseTest");
