@@ -66,8 +66,11 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
         logger.debug("Entering provideServerDetailsNext  ");
         Reporter.log("Entering provideServerDetailsNext ");
         home_page.addConnection("provideServerDetailsNextTest");
+        logger.debug("clicked addconn provideServerDetailsNext  ");
 
         Assertion.assertTrue(serverdetail_page.isButtonVisible());
+        logger.debug("asserted ");
+
         serverdetail_page.provideServerDetailsNext();
         logger.debug("Entering provideServerDetailsNext  " + serverdetail_page.getConnMessage());
         Assertion.assertEquals(serverdetail_page.getConnMessage(),
@@ -86,6 +89,8 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
 
         home_page.addConnection("clearCustomerNameTest");
         Reporter.log("Entering clearCustomerName ");
+        logger.debug("call clear ");
+
         serverdetail_page.clearCustomerName();
         serverdetail_page.provideServerDetailsNext();
         Assert.assertEquals(serverdetail_page.customerNameErMsg(),
