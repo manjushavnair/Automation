@@ -48,7 +48,6 @@ public class UAConnectionDetails extends SiteBasePageObject {
             getUrl(getCurrentUrl());
 
             return this;
-
     }
 
     public void dcDropdown() {
