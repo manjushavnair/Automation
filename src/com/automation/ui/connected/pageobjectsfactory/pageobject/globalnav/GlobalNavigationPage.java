@@ -77,6 +77,7 @@ public class GlobalNavigationPage extends SiteBasePageObject {
 
 
 
+
     public boolean isUserLoggedOut() {
         return driver.findElements(By.cssSelector(".wds-global-navigation__account-menu")).size() > 0;
     }
