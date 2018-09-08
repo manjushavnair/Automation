@@ -15,6 +15,7 @@ public class GlobalNavigationPage extends SiteBasePageObject {
 
 
 
+
     @FindBy(xpath = NAVIGATIONConstants.CLOUDAVATAR)
     private WebElement userAvatar;
 
@@ -24,7 +25,9 @@ public class GlobalNavigationPage extends SiteBasePageObject {
 
     @FindBy(xpath = NAVIGATIONConstants.LOGOUTBUTTON)
 
+
     private WebElement signOutButton;
+
 
 
 
@@ -63,7 +66,9 @@ public class GlobalNavigationPage extends SiteBasePageObject {
     public void clickSignOut() {
 
       //  wait.forElementClickable(signOutButton).click();
-        waitAndClick(signOutButton);
+      //  waitAndClick(signOutButton);
+        signOutButton.click();
+
         Log.info("link to sign out clicked");
     }
 

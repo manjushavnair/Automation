@@ -83,8 +83,8 @@
 
             <class name="com.automation.ui.connected.testcases.home.HomePageTest">
               <methods>
-                    <include name="launchHomePage"/> <!-- priority 7 -->
-                    <include name="addConnection"/> <!-- priority 8 -->
+                    <include name="launchHomePage"/> <!-- priority 0 -->
+                    <include name="addConnection"/> <!-- priority 1 -->
                 </methods>
             </class>
 

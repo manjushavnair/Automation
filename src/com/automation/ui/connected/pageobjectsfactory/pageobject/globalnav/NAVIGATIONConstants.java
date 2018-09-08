@@ -9,5 +9,7 @@ public interface NAVIGATIONConstants {
     public static String LOGOUTBUTTON = "//a[contains(text(),'Logout')]";
 //a[@class='cloud icon']
 
+    //a[contains(text(),'Logout')]
+
 
 }
