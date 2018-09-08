@@ -93,12 +93,12 @@
             <class name="com.automation.ui.connected.testcases.serverdetails.AddServerDetailsTest">
                 <methods>
                   <!--  <include name="provideAllServerDetails"/>  --><!-- priority 0 -->
-                    <include name="clearCustomerNameTest"/> <!-- priority 2 -->
-                    <include name="addCustomerNameTest"/> <!-- priority 3 -->
-                    <include name="provideServerDetailsNextTest"/> <!-- priority 1 -->
-                    <include name="clearSiteNameTest"/> <!-- priority 4 -->
-                    <include name="provideServerDetailsCancelTest"/> <!-- priority 6 -->
-                    <include name="provideConnectionType"/> <!-- priority 5 -->
+                    <exclude name="clearCustomerNameTest"/> <!-- priority 2 -->
+                    <exclude name="addCustomerNameTest"/> <!-- priority 3 -->
+                    <exclude name="provideServerDetailsNextTest"/> <!-- priority 1 -->
+                    <exclude name="clearSiteNameTest"/> <!-- priority 4 -->
+                    <exclude name="provideServerDetailsCancelTest"/> <!-- priority 6 -->
+                    <exclude name="provideConnectionType"/> <!-- priority 5 -->
                 </methods>
             </class>
 
