@@ -33,6 +33,8 @@ public class GlobalNavigationPageTest extends ConnectedBaseTest {
     public void logout() throws Throwable {
        global_nav.clickSignOut();
 
+       Thread.sleep(5000);
+
     }
 
 

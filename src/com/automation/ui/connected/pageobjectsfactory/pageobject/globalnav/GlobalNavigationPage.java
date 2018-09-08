@@ -61,7 +61,7 @@ public class GlobalNavigationPage extends SiteBasePageObject {
     }
 
     public void clickSignOut() {
-        clickUserLogo();
+
         wait.forElementClickable(signOutButton).click();
         Log.info("link to sign out clicked");
     }
