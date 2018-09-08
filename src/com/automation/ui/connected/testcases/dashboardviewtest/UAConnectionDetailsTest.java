@@ -23,6 +23,9 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         connectiondetail_page = new UAConnectionDetails();
     }
 
+
+
+
     /***
      *
      * @throws Throwable
@@ -30,7 +33,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
     @Test(enabled = true, priority = 0, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionDropdownTest() throws Throwable {
 
-
+connectiondetail_page.open();
         logger.debug("Entering dcConnectionDropdownTest");
         connectiondetail_page.dcDropdown();
         logger.debug("Exiting dcConnectionDropdownTest");
@@ -44,6 +47,8 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
 
     @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionPauseTest() throws Throwable {
+
+        connectiondetail_page.open();
 
         Thread.sleep(5000);
         logger.debug("Entering dcConnectionPauseTest");
