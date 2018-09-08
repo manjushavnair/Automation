@@ -28,16 +28,16 @@ public class HomePage extends SiteBasePageObject {
 
 
     @FindBy(xpath = HomeConstants.MENUBUTTON)
-    @CacheLookup
+
     private WebElement menubutton;
 
 
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_ERROR_MSG)
-    @CacheLookup
+
     private WebElement msg;
 
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_ERROR_MSG_EXTRA)
-    @CacheLookup
+
     private WebElement msgExtra;
 
 

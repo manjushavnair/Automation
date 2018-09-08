@@ -23,7 +23,7 @@ public class GlobalNavigationPage extends SiteBasePageObject {
     private WebElement cloudButtonu;
 
     @FindBy(xpath = NAVIGATIONConstants.LOGOUTBUTTON)
-    @CacheLookup
+
     private WebElement signOutButton;
 
 

@@ -27,7 +27,7 @@ public class UAConnectionDetailsPage extends SiteBasePageObject {
 
     private WebElement dcDetails;
     @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONDETAILS_EDIT)
-    @CacheLookup
+
     private WebElement dcDetailsEdit;
 
 
