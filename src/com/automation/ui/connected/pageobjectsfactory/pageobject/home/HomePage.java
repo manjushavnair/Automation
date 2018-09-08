@@ -82,7 +82,7 @@ public class HomePage extends SiteBasePageObject {
 
 
 
-    public AddServerDetailsPage addConnection(String method) {
+    public AddServerDetailsPage addConnection( ) {
 
 
         try {
@@ -91,13 +91,13 @@ public class HomePage extends SiteBasePageObject {
 
 
             if (ElementStateHelper.isElementVisible(addButton)) {
-                logger.debug("Entering  addConnection: if " +method);
+                logger.debug("Entering  addConnection: if " );
 
                 waitAndClick(addButton);
 
 
             } else {
-                logger.debug("Entering  addConnection: else " +method);
+                logger.debug("Entering  addConnection: else " );
 
 
                 wait.forElementVisible(addButtonTop,15);

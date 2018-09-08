@@ -47,7 +47,7 @@ public class HomePageTest extends ConnectedBaseTest {
     public void addConnection() throws Throwable {
         logger.debug("Entering addConnection");
         Reporter.log("Entering addConnection");
-        home_page.addConnection("addConnection");
+        home_page.addConnection( );
 
         logger.debug("Exiting addConnection and going to  add ");
     }
