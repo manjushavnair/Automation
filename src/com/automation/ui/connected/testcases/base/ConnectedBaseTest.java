@@ -29,7 +29,7 @@ public class ConnectedBaseTest extends NewTestTemplate {
     protected LoginPage login_page = null;
     protected HomePage home_page = null;
     protected AddServerDetails serverdetail_page = null;
-    protected UAConnectionDetails connectiondetail_page = null;
+   // protected UAConnectionDetails connectiondetail_page = null;
     protected FilterDetails filter = null;
     protected GlobalNavigation global_nav=null;
 

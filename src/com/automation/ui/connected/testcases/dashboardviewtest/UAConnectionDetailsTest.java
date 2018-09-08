@@ -14,6 +14,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
 
     private static Logger logger = Logger.getLogger(UAConnectionDetailsTest.class);
 
+    UAConnectionDetails connectiondetail_page=null;
 
     public UAConnectionDetailsTest() {
 
@@ -44,10 +45,10 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
     @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "UAConnectionDetails")
     public void dcConnectionPauseTest() throws Throwable {
 
-
+        Thread.sleep(5000);
         logger.debug("Entering dcConnectionPauseTest");
         connectiondetail_page.dcDropdown();
-        Thread.sleep(5000);
+
         logger.debug("Exiting dcConnectionDropdownTest");
         logger.debug("Entering dcConnectionPauseTest");
         connectiondetail_page.dcPause();
