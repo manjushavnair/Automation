@@ -79,6 +79,8 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
         Thread.sleep(5000);
         logger.debug("Exiting dcConnectionEditTest");
     }
+
+
     /***
      *
      * @throws Throwable
