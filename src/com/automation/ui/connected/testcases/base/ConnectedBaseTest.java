@@ -12,12 +12,11 @@ import com.automation.ui.base.common.core.assertion.Assertion;
 import com.automation.ui.base.common.utils.ExcelUtil;
 import com.automation.ui.connected.common.constants.ExcelCONSTANTS;
 import com.automation.ui.connected.common.templates.NewTestTemplate;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.dashboardview.UAConnectionDetails;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.globalnav.GlobalNavigation;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.globalnav.GlobalNavigationPage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginPage;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetails;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.filter.FilterDetails;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetailsPage;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.filter.FilterDetailsPage;
 import org.apache.log4j.Logger;
 
 import java.util.List;
@@ -28,10 +27,10 @@ public class ConnectedBaseTest extends NewTestTemplate {
     protected ExcelUtil eu = null;
     protected LoginPage login_page = null;
     protected HomePage home_page = null;
-    protected AddServerDetails serverdetail_page = null;
-   // protected UAConnectionDetails connectiondetail_page = null;
-    protected FilterDetails filter = null;
-    protected GlobalNavigation global_nav=null;
+    protected AddServerDetailsPage serverdetail_page = null;
+   // protected UAConnectionDetailsPage connectiondetail_page = null;
+    protected FilterDetailsPage filter = null;
+    protected GlobalNavigationPage global_nav=null;
 
 
 

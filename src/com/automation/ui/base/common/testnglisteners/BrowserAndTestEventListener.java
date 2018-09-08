@@ -52,7 +52,7 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
         // new JavascriptActions(driver).execute("window.setTimeout(arguments[arguments.length - 1], 5000);");
 
-        Log.ok("Navigate to", VelocityWrapper.fillLink(url, url));
+        Log.ok("NavigatePage to", VelocityWrapper.fillLink(url, url));
         Log.logJSError();
     }
 
@@ -313,22 +313,22 @@ public class BrowserAndTestEventListener extends AbstractWebDriverEventListener
 
     @Override
     public void beforeNavigateBack(WebDriver driver) {
-        Log.ok("Navigate Back", "attempting to navigate back");
+        Log.ok("NavigatePage Back", "attempting to navigate back");
     }
 
     @Override
     public void afterNavigateBack(WebDriver driver) {
-        Log.log("Navigate Back", "previous page loaded", true);
+        Log.log("NavigatePage Back", "previous page loaded", true);
     }
 
     @Override
     public void beforeNavigateForward(WebDriver driver) {
-        Log.ok("Navigate Forward", "attempting to navigate forward");
+        Log.ok("NavigatePage Forward", "attempting to navigate forward");
     }
 
     @Override
     public void afterNavigateForward(WebDriver driver) {
-        Log.log("Navigate Forward", "forward page loaded", true);
+        Log.log("NavigatePage Forward", "forward page loaded", true);
     }
 
     @Override

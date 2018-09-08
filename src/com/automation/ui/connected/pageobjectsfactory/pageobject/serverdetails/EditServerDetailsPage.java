@@ -3,16 +3,16 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
 
-public class EditServerDetails extends SiteBasePageObject {
+public class EditServerDetailsPage extends SiteBasePageObject {
 
 
-    private static Logger logger = Logger.getLogger(EditServerDetails.class);
+    private static Logger logger = Logger.getLogger(EditServerDetailsPage.class);
 
 
-    public EditServerDetails open() {
+    public EditServerDetailsPage open() {
 
 
-        return new EditServerDetails();
+        return new EditServerDetailsPage();
     }
 
 

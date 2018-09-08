@@ -8,8 +8,8 @@ import com.automation.ui.base.common.core.assertion.Assertion;
 import com.automation.ui.base.common.prpreaders.AssertDataReader;
 import com.automation.ui.connected.common.dataprovider.SiteDataProvider;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetails;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.filter.FilterDetails;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetailsPage;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.filter.FilterDetailsPage;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
 import com.automation.ui.connected.testcases.base.ServerType;
 import org.apache.log4j.Logger;
@@ -19,22 +19,22 @@ import org.testng.annotations.Test;
 import java.util.*;
 
 
-public class AddServerDetailsTest extends ConnectedBaseTest {
+public class AddServerDetailsPageTest extends ConnectedBaseTest {
 
-    private static Logger logger = Logger.getLogger(AddServerDetailsTest.class);
+    private static Logger logger = Logger.getLogger(AddServerDetailsPageTest.class);
 
 
-    public AddServerDetailsTest() {
+    public AddServerDetailsPageTest() {
         super();
-        logger.debug(" AddServerDetailsTest");
-        filter = new FilterDetails();
-        serverdetail_page = new AddServerDetails();
+        logger.debug(" AddServerDetailsPageTest");
+        filter = new FilterDetailsPage();
+        serverdetail_page = new AddServerDetailsPage();
         home_page = new HomePage();
     }
 
     /** */
     @Test(enabled = true, priority = 0, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
-            ,dataProvider = "getServerDetailsforOPCUA", description = "FilterDetails")
+            ,dataProvider = "getServerDetailsforOPCUA", description = "FilterDetailsPage")
     public void provideAllServerDetails(Map<String, Object> connInfo) throws Throwable {
         home_page.addConnection("provideAllServerDetails");
         serverdetail_page.provideAllServerDetails(connInfo);
@@ -45,7 +45,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "FilterDetails")
+    @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "FilterDetailsPage")
     public void provideServerDetailsCancelTest() throws Throwable {
         Reporter.log("Entering provideServerDetailsCancel ");
         home_page.addConnection("provideServerDetailsCancelTest");
@@ -60,7 +60,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 2, groups = {"validcase"}, description = "FilterDetails ")
+    @Test(enabled = true, priority = 2, groups = {"validcase"}, description = "FilterDetailsPage ")
     public void provideServerDetailsNextTest() throws Throwable {
 
         logger.debug("Entering provideServerDetailsNext  ");
@@ -84,7 +84,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 3, groups = {"validcase"}, description = "FilterDetails ")
+    @Test(enabled = true, priority = 3, groups = {"validcase"}, description = "FilterDetailsPage ")
     public void clearCustomerNameTest() throws Throwable {
 
         home_page.addConnection("clearCustomerNameTest");
@@ -101,7 +101,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
      * @throws Throwable
      * Test : Add Connection-&gt; locate customername field-&gt; clear the field-&gt; Add right name-&gt;Click next
      * */
-    @Test(enabled = true, priority = 4, groups = {"validcase"}, description = "FilterDetails")
+    @Test(enabled = true, priority = 4, groups = {"validcase"}, description = "FilterDetailsPage")
     public void addCustomerNameTest() throws Throwable {
 
         home_page.addConnection("addCustomerNameTest");
@@ -115,7 +115,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
      */
 
 
-    @Test(enabled = true, priority =5, groups = {"validcase"}, description = "FilterDetails")
+    @Test(enabled = true, priority =5, groups = {"validcase"}, description = "FilterDetailsPage")
     public void clearSiteNameTest() throws Throwable {
 
         home_page.addConnection("clearSiteNameTest");
@@ -129,7 +129,7 @@ public class AddServerDetailsTest extends ConnectedBaseTest {
     /**
      * Test : Add Connection-&gt; locate customername field-&gt; clear the field-&gt; Add right name-&gt;Click next
      * */
-    @Test(enabled = true, priority = 6, groups = {"validcase"}, description = "FilterDetails")
+    @Test(enabled = true, priority = 6, groups = {"validcase"}, description = "FilterDetailsPage")
     public void provideConnectionType() throws Throwable {
         home_page.addConnection("provideConnectionType");
         serverdetail_page.provideServerConnectionType(ServerType.SDX_COLLECTOR);

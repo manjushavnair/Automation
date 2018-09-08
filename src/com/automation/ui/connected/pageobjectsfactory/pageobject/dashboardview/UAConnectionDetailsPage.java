@@ -1,31 +1,30 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.dashboardview;
 
-import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
-public class UAConnectionDetails extends SiteBasePageObject {
+public class UAConnectionDetailsPage extends SiteBasePageObject {
 
 
-    private static Logger logger = Logger.getLogger(UAConnectionDetails.class);
+    private static Logger logger = Logger.getLogger(UAConnectionDetailsPage.class);
 
     @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONDROPDOWN)
-    @CacheLookup
+
     private WebElement dcDropdownButton;
     @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONPAUSE)
-    @CacheLookup
+
     private WebElement dcPause;
     @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONEDIT)
-    @CacheLookup
+
     private WebElement dcEdit;
     @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONREMOVE)
-    @CacheLookup
+
     private WebElement dcRemove;
     @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONDETAILS)
-    @CacheLookup
+
     private WebElement dcDetails;
     @FindBy(xpath = UAConnectionDetailsCONSTANTS.DATACONNECTIONDETAILS_EDIT)
     @CacheLookup
@@ -40,7 +39,7 @@ public class UAConnectionDetails extends SiteBasePageObject {
     private WebElement dcDetailsEditTags;
 
 
-    public UAConnectionDetails open() {
+    public UAConnectionDetailsPage open() {
 
 
             logger.warn("open the URL" + getCurrentUrl());
@@ -49,6 +48,7 @@ public class UAConnectionDetails extends SiteBasePageObject {
 
             return this;
     }
+
     public void dcDropdown() {
         try {
             logger.warn("Click on DataConnection drop down");
@@ -79,10 +79,10 @@ public class UAConnectionDetails extends SiteBasePageObject {
     public void dcEdit() {
         try {
             logger.warn("Click on DataConnection Edit 1");
-            wait.forElementVisible(dcEdit, BASEConstants.WAITTIME1000MILLISEC);
+          //  wait.forElementVisible(dcEdit, BASEConstants.WAITTIME10000MILLISEC);
             scrollAndClick(dcEdit, 1);
             logger.warn("Click on DataConnection Edit 2 ");
-          //  waitAndClick(dcEdit);
+            waitAndClick(dcEdit);
 
 
         } catch (Exception e) {
@@ -94,9 +94,9 @@ public class UAConnectionDetails extends SiteBasePageObject {
     public void dcRemove() {
         try {
             logger.debug("Click on DataConnection Remove");
-            wait.forElementVisible(dcRemove, BASEConstants.WAITTIME1000MILLISEC);
+          //  wait.forElementVisible(dcRemove, BASEConstants.WAITTIME10000MILLISEC);
             scrollAndClick(dcRemove, 2);
-           // waitAndClick(dcRemove);
+            waitAndClick(dcRemove);
 
 
 

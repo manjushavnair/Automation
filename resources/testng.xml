@@ -90,7 +90,7 @@
 
 
 
-            <class name="com.automation.ui.connected.testcases.serverdetails.AddServerDetailsTest">
+            <class name="com.automation.ui.connected.testcases.serverdetails.AddServerDetailsPageTest">
                 <methods>
                     <exclude name="provideAllServerDetails"/> <!-- priority 0 -->
                     <exclude name="clearCustomerNameTest"/> <!-- priority 2 -->
@@ -103,7 +103,7 @@
                 </methods>
             </class>
 
-            <class name="com.automation.ui.connected.testcases.dashboardviewtest.UAConnectionDetailsTest">
+            <class name="com.automation.ui.connected.testcases.dashboardviewtest.UAConnectionDetailsPageTest">
                 <methods >
                     <include name="dcConnectionDropdownTest"/>  <!-- priority 0 -->
                     <include name="dcConnectionPauseTest"/>  <!-- priority 1 -->
@@ -117,7 +117,7 @@
 
 
 
-            <class name="com.automation.ui.connected.testcases.serverdetails.filter.FilterDetailsTest">
+            <class name="com.automation.ui.connected.testcases.serverdetails.filter.FilterDetailsPageTest">
                 <methods>
                     <include name="filterChangeFilters"/> <!-- priority 1 -->
                     <include name="filterListFilter"/> <!-- priority 2 -->
@@ -126,7 +126,7 @@
                 </methods>
             </class>
 
-            <class name="com.automation.ui.connected.testcases.globalnav.GlobalNavigationTest">
+            <class name="com.automation.ui.connected.testcases.globalnav.GlobalNavigationPageTest">
                 <methods>
                     <include name="logout"/> <!-- priority 0 -->
                 </methods>

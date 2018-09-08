@@ -10,16 +10,16 @@ import org.testng.annotations.Test;
 
 import com.automation.ui.connected.pageobjectsfactory.pageobject.globalnav.*;
 
-public class GlobalNavigationTest extends ConnectedBaseTest {
+public class GlobalNavigationPageTest extends ConnectedBaseTest {
 
-    private static Logger logger = Logger.getLogger(GlobalNavigationTest.class);
+    private static Logger logger = Logger.getLogger(GlobalNavigationPageTest.class);
 
 
-    public GlobalNavigationTest() {
+    public GlobalNavigationPageTest() {
 
         super();
-        logger.debug(" GlobalNavigationTest");
-        global_nav  = new GlobalNavigation();
+        logger.debug(" GlobalNavigationPageTest");
+        global_nav  = new GlobalNavigationPage();
      }
 
     /***
@@ -29,7 +29,7 @@ public class GlobalNavigationTest extends ConnectedBaseTest {
 
 
     @Test(enabled = true, priority = 0, groups = {"validcase"}
-             , description = "GlobalNavigationTest")
+             , description = "GlobalNavigationPageTest")
     public void logout() throws Throwable {
        global_nav.clickSignOut();
 

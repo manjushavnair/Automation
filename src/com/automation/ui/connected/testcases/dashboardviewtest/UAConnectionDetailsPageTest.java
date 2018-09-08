@@ -4,23 +4,23 @@ package com.automation.ui.connected.testcases.dashboardviewtest;
  * @author Manjusha Saju
  */
 
-import com.automation.ui.connected.pageobjectsfactory.pageobject.dashboardview.UAConnectionDetails;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.dashboardview.UAConnectionDetailsPage;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
 
-public class UAConnectionDetailsTest extends ConnectedBaseTest {
+public class UAConnectionDetailsPageTest extends ConnectedBaseTest {
 
-    private static Logger logger = Logger.getLogger(UAConnectionDetailsTest.class);
+    private static Logger logger = Logger.getLogger(UAConnectionDetailsPageTest.class);
 
-    UAConnectionDetails connectiondetail_page=null;
+    UAConnectionDetailsPage connectiondetail_page=null;
 
-    public UAConnectionDetailsTest() {
+    public UAConnectionDetailsPageTest() {
 
         super();
-        logger.debug(" UAConnectionDetailsTest");
-        connectiondetail_page = new UAConnectionDetails();
+        logger.debug(" UAConnectionDetailsPageTest");
+        connectiondetail_page = new UAConnectionDetailsPage();
     }
 
 
@@ -30,7 +30,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
      *
      * @throws Throwable
      */
-    @Test(enabled = true, priority = 0, groups = {"validcase"}, description = "UAConnectionDetails")
+    @Test(enabled = true, priority = 0, groups = {"validcase"}, description = "UAConnectionDetailsPage")
     public void dcConnectionDropdownTest() throws Throwable {
 
 
@@ -45,7 +45,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "UAConnectionDetails")
+    @Test(enabled = true, priority = 1, groups = {"validcase"}, description = "UAConnectionDetailsPage")
     public void dcConnectionPauseTest() throws Throwable {
 
 
@@ -66,7 +66,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 2, groups = {"validcase"}, description = "UAConnectionDetails")
+    @Test(enabled = true, priority = 2, groups = {"validcase"}, description = "UAConnectionDetailsPage")
     public void dcConnectionEditTest() throws Throwable {
         Thread.sleep(5000);
 
@@ -86,7 +86,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 3, groups = {"validcase"}, description = "UAConnectionDetails")
+    @Test(enabled = true, priority = 3, groups = {"validcase"}, description = "UAConnectionDetailsPage")
     public void dcConnectionRemoveTest() throws Throwable {
 
 
@@ -104,7 +104,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 4, groups = {"validcase"}, description = "UAConnectionDetails")
+    @Test(enabled = true, priority = 4, groups = {"validcase"}, description = "UAConnectionDetailsPage")
     public void dcConnectionDetailsTest() throws Throwable {
 
 
@@ -119,7 +119,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 5, groups = {"validcase"}, description = "UAConnectionDetails")
+    @Test(enabled = true, priority = 5, groups = {"validcase"}, description = "UAConnectionDetailsPage")
     public void dcConnectionDetailsEditTest() throws Throwable {
 
 
@@ -136,7 +136,7 @@ public class UAConnectionDetailsTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-    @Test(enabled = true, priority = 6, groups = {"validcase"}, description = "UAConnectionDetails")
+    @Test(enabled = true, priority = 6, groups = {"validcase"}, description = "UAConnectionDetailsPage")
     public void dcConnectionDetailsEdit_Tabs() throws Throwable {
 
 

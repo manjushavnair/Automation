@@ -21,7 +21,7 @@ public class Login {
         driver.get("https://site.com/webapp/login");
     }
 
-    @When("^User Navigate to LogIn Page$")
+    @When("^User NavigatePage to LogIn Page$")
     public void user_Navigate_to_LogIn_Page() throws Throwable {
         System.out.println("Login Page appeared");
     }

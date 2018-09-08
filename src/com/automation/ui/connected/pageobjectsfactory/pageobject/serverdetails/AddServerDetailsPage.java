@@ -11,10 +11,10 @@ import org.openqa.selenium.support.ui.*;
 import org.testng.Reporter;
 import java.util.*;
 
-public class AddServerDetails extends SiteBasePageObject {
+public class AddServerDetailsPage extends SiteBasePageObject {
 
 
-    private static Logger logger = Logger.getLogger(AddServerDetails.class);
+    private static Logger logger = Logger.getLogger(AddServerDetailsPage.class);
 
     @FindBy(xpath = AddServerDetailsCONSTANTS.ADDCONNECTIONSCANELBUTTON)
     private WebElement cancelButton;
@@ -112,13 +112,13 @@ public class AddServerDetails extends SiteBasePageObject {
 
 
 
-    public AddServerDetails open() {
+    public AddServerDetailsPage open() {
         // getUrl(  );
         //  waitForPageLoad();
         //driver.navigate().refresh();
 
 
-        return new AddServerDetails();
+        return new AddServerDetailsPage();
     }
 
     /*Method to validate Connection cancel in Provide Server Details page*/

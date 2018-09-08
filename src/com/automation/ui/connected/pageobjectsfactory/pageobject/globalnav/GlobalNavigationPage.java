@@ -2,21 +2,16 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.globalnav;
 
 
 import com.automation.ui.base.common.logging.Log;
-import com.automation.ui.base.common.prpreaders.AssertDataReader;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomeConstants;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.githubtesting.pageobjectfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
-import org.testng.Reporter;
 
-public class GlobalNavigation extends SiteBasePageObject {
+public class GlobalNavigationPage extends SiteBasePageObject {
 
-    private static Logger logger = Logger.getLogger(GlobalNavigation.class);
+    private static Logger logger = Logger.getLogger(GlobalNavigationPage.class);
 
 
 
@@ -58,7 +53,7 @@ public class GlobalNavigation extends SiteBasePageObject {
     }
 
 
-    public GlobalNavigation clickUserLogo() {
+    public GlobalNavigationPage clickUserLogo() {
         wait.forElementClickable(userAvatar).click();
         Log.info("clicked on user logo in global nav bar");
 

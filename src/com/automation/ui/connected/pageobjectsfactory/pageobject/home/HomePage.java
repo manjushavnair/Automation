@@ -3,14 +3,12 @@ package com.automation.ui.connected.pageobjectsfactory.pageobject.home;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
 import com.automation.ui.base.common.core.element.ElementStateHelper;
-import com.automation.ui.base.common.prpreaders.AssertDataReader;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetails;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetailsPage;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 import org.testng.Reporter;
 
 public class HomePage extends SiteBasePageObject {
@@ -19,11 +17,11 @@ public class HomePage extends SiteBasePageObject {
     private static Logger logger = Logger.getLogger(HomePage.class);
 
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON)
-    @CacheLookup
+
     private WebElement addButton;
 
     @FindBy(xpath = HomeConstants.ADDCONNECTIONSBUTTON_TOP)
-    @CacheLookup
+
     private WebElement addButtonTop;
 
 
@@ -84,7 +82,7 @@ public class HomePage extends SiteBasePageObject {
 
 
 
-    public AddServerDetails addConnection(String method) {
+    public AddServerDetailsPage addConnection(String method) {
 
 
         try {
@@ -129,7 +127,7 @@ public class HomePage extends SiteBasePageObject {
             e.printStackTrace();
 
         }
-        return new AddServerDetails();
+        return new AddServerDetailsPage();
 
     }
 
