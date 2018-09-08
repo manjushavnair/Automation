@@ -31,6 +31,7 @@ public class GlobalNavigationPageTest extends ConnectedBaseTest {
     @Test(enabled = true, priority = 0, groups = {"validcase"}
              , description = "GlobalNavigationPageTest")
     public void logout() throws Throwable {
+        Thread.sleep(10000);
        global_nav.clickSignOut();
 
        Thread.sleep(5000);
