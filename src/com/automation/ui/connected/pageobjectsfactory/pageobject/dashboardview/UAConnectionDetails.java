@@ -43,7 +43,7 @@ public class UAConnectionDetails extends SiteBasePageObject {
     public UAConnectionDetails open() {
 
 
-            logger.debug("open the URL" + getCurrentUrl());
+            logger.warn("open the URL" + getCurrentUrl());
 
             getUrl(getCurrentUrl());
 
