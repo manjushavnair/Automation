@@ -24,14 +24,7 @@ public class GlobalNavigationPage extends SiteBasePageObject {
     private WebElement cloudButtonu;
 
     @FindBy(xpath = NAVIGATIONConstants.LOGOUTBUTTON)
-
-
     private WebElement signOutButton;
-
-
-
-
-
 
     public String getTitle() {
         String title = driver.getTitle();
@@ -66,8 +59,8 @@ public class GlobalNavigationPage extends SiteBasePageObject {
     public void clickSignOut() {
 
       //  wait.forElementClickable(signOutButton).click();
-      //  waitAndClick(signOutButton);
-        signOutButton.click();
+      waitAndClick(signOutButton);
+      //  signOutButton.click();
 
         Log.info("link to sign out clicked");
     }
