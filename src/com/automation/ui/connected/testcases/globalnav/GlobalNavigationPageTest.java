@@ -28,12 +28,22 @@ public class GlobalNavigationPageTest extends ConnectedBaseTest {
      */
 
 
+
     @Test(enabled = true, priority = 0, groups = {"validcase"}
+            , description = "GlobalNavigationPageTest")
+    public void cloudDataButton() throws Throwable {
+        global_nav.cloudDataButton();
+
+
+
+    }
+
+    @Test(enabled = true, priority = 1, groups = {"validcase"}
              , description = "GlobalNavigationPageTest")
     public void logout() throws Throwable {
          global_nav.clickSignOut();
 
-       Thread.sleep(5000);
+
 
     }
 

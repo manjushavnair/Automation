@@ -128,7 +128,9 @@
 
             <class name="com.automation.ui.connected.testcases.globalnav.GlobalNavigationPageTest">
                 <methods>
-                    <include name="logout"/> <!-- priority 0 -->
+
+                    <include name="cloudDataButton"/> <!-- priority 0 -->
+                    <include name="logout"/> <!-- priority 1 -->
                 </methods>
             </class>
 

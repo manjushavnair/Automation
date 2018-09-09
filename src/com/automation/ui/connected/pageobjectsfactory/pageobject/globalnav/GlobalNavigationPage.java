@@ -27,12 +27,6 @@ public class GlobalNavigationPage extends SiteBasePageObject {
     @FindBy(xpath = NAVIGATIONConstants.LOGOUTBUTTON)
     private WebElement signOutButton;
 
-    @FindBy(css = NAVIGATIONConstants.LOGOUTBUTTONLINK)
-    private WebElement logOutButtonLink;
-
-
-
-
     public String getTitle() {
         String title = driver.getTitle();
 
@@ -61,6 +55,10 @@ public class GlobalNavigationPage extends SiteBasePageObject {
         Log.info("clicked on user logo in global nav bar");
 
         return this;
+    }
+
+    public void cloudDataButton() {
+        waitAndClick(cloudButtonu);
     }
 
     public void clickSignOut() {
