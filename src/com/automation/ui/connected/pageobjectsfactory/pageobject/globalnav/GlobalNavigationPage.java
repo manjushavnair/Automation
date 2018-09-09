@@ -1,6 +1,7 @@
 package com.automation.ui.connected.pageobjectsfactory.pageobject.globalnav;
 
 
+import com.automation.ui.base.common.core.element.ElementStateHelper;
 import com.automation.ui.base.common.logging.Log;
 import com.automation.ui.githubtesting.pageobjectfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;
@@ -58,11 +59,15 @@ public class GlobalNavigationPage extends SiteBasePageObject {
 
     public void clickSignOut() {
 
-      //  wait.forElementClickable(signOutButton).click();
-     // waitAndClick(signOutButton);
-       signOutButton.click();
+        logger.warn("---------clickSignOut-----------");
+        if (ElementStateHelper.isElementVisible(signOutButton)) {
 
-        Log.info("link to sign out clicked");
+            wait.forElementClickable(signOutButton).click();
+            // waitAndClick(signOutButton);
+            //  signOutButton.click();
+
+            Log.info("link to sign out clicked");
+        }
     }
 
 
