@@ -99,8 +99,7 @@
                     <include name="clearSiteNameTest"/> <!-- priority 4 -->
                     <include name="provideServerDetailsCancelTest"/> <!-- priority 6 -->
                     <include name="provideConnectionType"/> <!-- priority 5 -->
-
-                </methods>
+               </methods>
             </class>
 
             <class name="com.automation.ui.connected.testcases.dashboardviewtest.UAConnectionDetailsPageTest">
@@ -128,7 +127,6 @@
 
             <class name="com.automation.ui.connected.testcases.globalnav.GlobalNavigationPageTest">
                 <methods>
-
                     <include name="cloudDataButton"/> <!-- priority 0 -->
                     <include name="logout"/> <!-- priority 1 -->
                 </methods>
