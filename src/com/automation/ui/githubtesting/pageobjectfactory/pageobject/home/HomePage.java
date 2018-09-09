@@ -20,12 +20,7 @@ public class HomePage extends SiteBasePageObject {
     private WebElement primarysButton;
 
 
-    @FindBy(css = "a.logouts")
-    private WebElement logoutLink;
 
-    @FindBy(xpath = HomeConstants.LOGOUTBUTTON)
-    @CacheLookup
-    private WebElement logout;
 
 
     //for GITHUB testing

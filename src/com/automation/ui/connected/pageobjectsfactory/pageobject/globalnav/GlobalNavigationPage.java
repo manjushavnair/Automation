@@ -27,6 +27,12 @@ public class GlobalNavigationPage extends SiteBasePageObject {
     @FindBy(xpath = NAVIGATIONConstants.LOGOUTBUTTON)
     private WebElement signOutButton;
 
+    @FindBy(css = NAVIGATIONConstants.LOGOUTBUTTON)
+    private WebElement logOutButtonLink;
+
+
+
+
     public String getTitle() {
         String title = driver.getTitle();
 
@@ -65,9 +71,9 @@ public class GlobalNavigationPage extends SiteBasePageObject {
         }catch(Exception e){
             e.printStackTrace();
         }
-        if (ElementStateHelper.isElementVisible(signOutButton)) {
+        if (ElementStateHelper.isElementVisible(logOutButtonLink)) {
             logger.warn("---------clickSignOut----------- 2");
-            wait.forElementClickable(signOutButton).click();
+            wait.forElementClickable(logOutButtonLink).click();
             // waitAndClick(signOutButton);
             //  signOutButton.click();
 

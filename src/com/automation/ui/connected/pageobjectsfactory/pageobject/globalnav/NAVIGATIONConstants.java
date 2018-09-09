@@ -8,8 +8,14 @@ public interface NAVIGATIONConstants {
 
    // public static String LOGOUTBUTTON = "//a[contains(text(),'Logout')]";
 
-    public static String LOGOUTBUTTON = "//a[@class='logout icon']";
+  //  public static String LOGOUTBUTTON = "//a[@class='logout icon']";
  // public String FILTER_VIEWALL = "//a[@class='cloud icon']";
+ public static String LOGOUTBUTTON = "a.logouts";
+
+
+
+
+
 
 
 
