@@ -26,7 +26,7 @@ public interface BASEConstants {
     public static final String HTTP_PREFIX = "http://";
     public static final String HTTPS_PREFIX = "https://";
 
-    public static final int DEFAULT_TIMEOUT = 10;
+    public static final int DEFAULT_TIMEOUT = 15;
     public static final int DEFAULT_SLEEP = 5000;
     public static final String INIT_MESSAGE = "INIT ELEMENT";
     public static final String INIT_ERROR_MESSAGE = "PROBLEM WITH ELEMENT INIT";

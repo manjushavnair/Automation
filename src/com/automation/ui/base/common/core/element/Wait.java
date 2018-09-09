@@ -2,6 +2,7 @@ package com.automation.ui.base.common.core.element;
 
 import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.core.CommonExpectedConditions;
+import com.automation.ui.base.common.core.configuration.*;
 import com.automation.ui.base.common.core.SelectorStack;
 import com.automation.ui.base.common.core.networktrafficinterceptor.NetworkTrafficInterceptor;
 import com.automation.ui.base.common.logging.Log;
@@ -30,8 +31,9 @@ public class Wait {
 
     public Wait(WebDriver webDriver) {
         this.driver = webDriver;
-        this.wait = new WebDriverWait(webDriver, BASEConstants.DEFAULT_TIMEOUT);
-        this.sleepingWait = new WebDriverWait(webDriver, BASEConstants.DEFAULT_TIMEOUT, BASEConstants.DEFAULT_SLEEP);
+
+        this.wait = new WebDriverWait(webDriver, Configuration.getDefaultTimeOut());
+        this.sleepingWait = new WebDriverWait(webDriver, Configuration.getDefaultTimeOut(), BASEConstants.DEFAULT_SLEEP);
     }
 
     /**
@@ -250,7 +252,7 @@ public class Wait {
     public boolean forElementNotVisible(By by) {
         changeImplicitWait(BASEConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
-            return new WebDriverWait(driver, BASEConstants.DEFAULT_TIMEOUT).until(
+            return new WebDriverWait(driver, Configuration.getDefaultTimeOut()).until(
                     ExpectedConditions.invisibilityOfElementLocated(by));
         } finally {
             restoreDeaultImplicitWait();
@@ -264,7 +266,7 @@ public class Wait {
     public boolean forElementNotVisible(WebElement element) {
         changeImplicitWait(BASEConstants.WAITTIME250MILLISEC, TimeUnit.MILLISECONDS);
         try {
-            return new WebDriverWait(driver, BASEConstants.DEFAULT_TIMEOUT).until(
+            return new WebDriverWait(driver, Configuration.getDefaultTimeOut()).until(
                     CommonExpectedConditions.invisibilityOfElementLocated(element));
         } finally {
             restoreDeaultImplicitWait();
@@ -537,7 +539,7 @@ public class Wait {
 
     public void forSuccessfulResponseByUrlPattern(final NetworkTrafficInterceptor trafficInterceptor,
                                                   final String pattern) {
-        forSuccessfulResponseByUrlPattern(trafficInterceptor, pattern, BASEConstants.DEFAULT_TIMEOUT);
+        forSuccessfulResponseByUrlPattern(trafficInterceptor, pattern, Configuration.getDefaultTimeOut());
     }
 
     public void waitForIframe(By locator, int timeOutInSeconds, int pollingEveryInMiliSec) {
@@ -546,7 +548,7 @@ public class Wait {
         WebDriverWait wait = getWait(timeOutInSeconds, pollingEveryInMiliSec);
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(locator));
         driver.switchTo().defaultContent();
-        changeImplicitWait(BASEConstants.DEFAULT_TIMEOUT, TimeUnit.SECONDS);
+        changeImplicitWait(Configuration.getDefaultTimeOut(), TimeUnit.SECONDS);
     }
 
     private WebDriverWait getWait(int timeOutInSeconds, int pollingEveryInMiliSec) {
@@ -565,7 +567,7 @@ public class Wait {
     }
 
     private void restoreDeaultImplicitWait() {
-        changeImplicitWait(BASEConstants.DEFAULT_TIMEOUT, TimeUnit.SECONDS);
+        changeImplicitWait(Configuration.getDefaultTimeOut(), TimeUnit.SECONDS);
     }
 
     private void changeImplicitWait(int value, TimeUnit timeUnit) {

@@ -116,6 +116,14 @@ public class Configuration {
         return getProp("dpr");
     }
 
+       public static int getDefaultTimeOut() {
+
+
+        return Integer.parseInt(getProp("DEFAULT_TIMEOUT_SECONDS"));
+	    }
+
+
+
     public static String getDefaultSiteName() {
         return getPropertyFromFile("siteName");
     }
