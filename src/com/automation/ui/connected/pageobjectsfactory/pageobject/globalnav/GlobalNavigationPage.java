@@ -64,22 +64,7 @@ public class GlobalNavigationPage extends SiteBasePageObject {
     }
 
     public void clickSignOut() {
-
-
-        try {
-            Thread.sleep(10000);
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-
-
-
-
-      //  driver.findElement(By.xpath("//a[contains(.,'Logout')]")).click();
-        //false  a true false
-
         waitAndClick(signOutButton);
-
     }
 
 
