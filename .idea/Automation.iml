@@ -29,7 +29,7 @@
     <orderEntry type="library" name="Maven: net.minidev:json-smart:2.3" level="project" />
     <orderEntry type="library" name="Maven: net.minidev:accessors-smart:1.2" level="project" />
     <orderEntry type="library" name="Maven: com.nimbusds:lang-tag:1.4.3" level="project" />
-    <orderEntry type="library" name="Maven: com.nimbusds:nimbus-jose-jwt:6.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.nimbusds:nimbus-jose-jwt:6.0.2" level="project" />
     <orderEntry type="library" name="Maven: com.microsoft.azure:adal4j:1.6.0" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.10" level="project" />
     <orderEntry type="library" name="Maven: javax.json:javax.json-api:1.1.2" level="project" />
@@ -57,7 +57,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.sun:tools:0">
         <CLASSES>
-          <root url="jar://D:/Software/jdk1.8.0_60/lib/tools.jar!/" />
+          <root url="jar://C:/Software/JDK1844/lib/tools.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

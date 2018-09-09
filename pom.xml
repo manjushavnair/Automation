@@ -118,8 +118,7 @@
 
                                     <echo message="Creating log directory"/>
                                     <echo>Displaying value </echo>
-                                    <echo>${env.oracleUsername}</echo>
-
+                             
                                 </target>
                             </configuration>
                             <goals>
