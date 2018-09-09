@@ -27,7 +27,7 @@ public class GlobalNavigationPage extends SiteBasePageObject {
     @FindBy(xpath = NAVIGATIONConstants.LOGOUTBUTTON)
     private WebElement signOutButton;
 
-    @FindBy(css = NAVIGATIONConstants.LOGOUTBUTTON)
+    @FindBy(css = NAVIGATIONConstants.LOGOUTBUTTONLINK)
     private WebElement logOutButtonLink;
 
 
@@ -71,6 +71,10 @@ public class GlobalNavigationPage extends SiteBasePageObject {
         }catch(Exception e){
             e.printStackTrace();
         }
+        scrollAndClick(signOutButton, 1);
+        waitAndClick(signOutButton);
+
+/*
         if (ElementStateHelper.isElementVisible(logOutButtonLink)) {
             logger.warn("---------clickSignOut----------- 2");
             wait.forElementClickable(logOutButtonLink).click();
@@ -79,6 +83,7 @@ public class GlobalNavigationPage extends SiteBasePageObject {
 
             Log.info("link to sign out clicked");
         }
+        */
     }
 
 
