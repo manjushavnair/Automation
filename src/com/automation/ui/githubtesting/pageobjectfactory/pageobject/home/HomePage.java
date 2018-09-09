@@ -58,25 +58,7 @@ public class HomePage extends SiteBasePageObject {
     }
 
 
-    //Go to LoginPage
-    public void goToLogoutPage() {
 
-        try {
-            logger.info("Logging out of the URL ");
-            Reporter.log("Logging out of the URL");
-            // wait.forElementVisible(logout,BASEConstants.WAITTIME10000MILLISEC);
-
-            logout.click();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            Assert.fail(AssertDataReader.assertreader.getValue("OPCUA_LOGOUT_LOGOUTMSG"));
-            Reporter.log("Logged out of the URL successfully");
-
-        }
-
-
-    }
 
     public void addRepo() {
 
