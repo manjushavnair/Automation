@@ -59,9 +59,9 @@ public class GlobalNavigationPage extends SiteBasePageObject {
 
     public void clickSignOut() {
 
-        logger.warn("---------clickSignOut-----------");
+        logger.warn("---------clickSignOut----s------- 1");
         if (ElementStateHelper.isElementVisible(signOutButton)) {
-
+            logger.warn("---------clickSignOut----------- 2");
             wait.forElementClickable(signOutButton).click();
             // waitAndClick(signOutButton);
             //  signOutButton.click();
