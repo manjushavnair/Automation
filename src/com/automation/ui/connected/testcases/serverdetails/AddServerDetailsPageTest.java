@@ -122,7 +122,7 @@ public class AddServerDetailsPageTest extends ConnectedBaseTest {
         serverdetail_page.clearSiteName();
         serverdetail_page.provideServerDetailsNext();
         Assert.assertEquals(serverdetail_page.siteNameErMsg(),
-                AssertDataReader.assertreader.getValue("SITENAMEVALIDATIONMESSAGE"));
+        AssertDataReader.assertreader.getValue("SITENAMEVALIDATIONMESSAGE"));
      }
 
 
