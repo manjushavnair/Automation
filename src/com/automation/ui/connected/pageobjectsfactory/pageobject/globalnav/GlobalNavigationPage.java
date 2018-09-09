@@ -59,7 +59,12 @@ public class GlobalNavigationPage extends SiteBasePageObject {
 
     public void clickSignOut() {
 
-        logger.warn("---------clickSignOut----s------- 1");
+        logger.warn("---------clickSignOut-------- 1");
+        try {
+            Thread.sleep(10000);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         if (ElementStateHelper.isElementVisible(signOutButton)) {
             logger.warn("---------clickSignOut----------- 2");
             wait.forElementClickable(signOutButton).click();
