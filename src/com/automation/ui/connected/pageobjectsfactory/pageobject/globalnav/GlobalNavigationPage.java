@@ -74,7 +74,6 @@ public class GlobalNavigationPage extends SiteBasePageObject {
         }
 
 
-
         scrollAndClick(signOutButton, 1);
         waitAndClick(signOutButton);
 
