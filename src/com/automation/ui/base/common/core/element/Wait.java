@@ -593,4 +593,6 @@ public class Wait {
             Log.log("Wait.forXMilliseconds", e, false);
         }
     }
+
 }
+
