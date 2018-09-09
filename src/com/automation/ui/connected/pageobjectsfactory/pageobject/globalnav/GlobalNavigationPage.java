@@ -65,10 +65,7 @@ public class GlobalNavigationPage extends SiteBasePageObject {
 
     public void clickSignOut() {
 
-        logger.warn("---------clickSignOut-------- " +signOutButton.isDisplayed() + " " + signOutButton.getText() + " "
-        + signOutButton.getTagName() + " "
-                +signOutButton.isEnabled()
-                + " "+signOutButton.isSelected());
+
         try {
             Thread.sleep(10000);
         }catch(Exception e){
@@ -76,23 +73,13 @@ public class GlobalNavigationPage extends SiteBasePageObject {
         }
 
 
-        //a[contains(text(),'Logout')]
 
-        driver.findElement(By.xpath("//a[contains(.,'Logout')]")).click();
+
+      //  driver.findElement(By.xpath("//a[contains(.,'Logout')]")).click();
         //false  a true false
 
-      //  waitAndClick(signOutButton);
+        waitAndClick(signOutButton);
 
- /*
-        if (ElementStateHelper.isElementVisible(logOutButtonLink)) {
-            logger.warn("---------clickSignOut----------- 2");
-            wait.forElementClickable(logOutButtonLink).click();
-            // waitAndClick(signOutButton);
-            //  signOutButton.click();
-
-            Log.info("link to sign out clicked");
-        }
-        */
     }
 
 
