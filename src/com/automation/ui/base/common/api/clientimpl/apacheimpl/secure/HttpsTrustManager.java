@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.api.secure;
+package com.automation.ui.base.common.api.clientimpl.apacheimpl.secure;
 
 import javax.net.ssl.X509TrustManager;
 import java.security.cert.CertificateException;

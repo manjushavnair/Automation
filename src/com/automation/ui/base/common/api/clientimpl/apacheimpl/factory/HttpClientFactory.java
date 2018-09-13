@@ -1,9 +1,9 @@
 //https://prasans.info/2014/06/making-https-call-using-apache-httpclient/
 
-package com.automation.ui.base.common.api.factory;
+package com.automation.ui.base.common.api.clientimpl.apacheimpl.factory;
 
 
-import com.automation.ui.base.common.api.secure.HttpsTrustManager;
+import com.automation.ui.base.common.api.clientimpl.apacheimpl.secure.HttpsTrustManager;
 import org.apache.http.client.HttpClient;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLContexts;
@@ -16,9 +16,9 @@ import java.security.SecureRandom;
 
 public class HttpClientFactory {
 
-    private static CloseableHttpClient client;
+    private   CloseableHttpClient client;
 
-    public static HttpClient getHttpsClient() throws Exception {
+    public   HttpClient getHttpsClient() throws Exception {
 
 
         if (client != null) {
@@ -33,7 +33,7 @@ public class HttpClientFactory {
         return client;
     }
 
-    public static void releaseInstance() {
-        client = null;
+    public   void releaseInstance() {
+        this.client = null;
     }
 }

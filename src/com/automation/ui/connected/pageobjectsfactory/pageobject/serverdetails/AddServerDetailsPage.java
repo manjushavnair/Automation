@@ -381,7 +381,6 @@ public class AddServerDetailsPage extends SiteBasePageObject {
 
 
             provideServerConnectionType (ServerType.OPCUA_UA_SERVER);
-            Thread.sleep(1000);
 
         } catch (Exception e) {
             e.printStackTrace();

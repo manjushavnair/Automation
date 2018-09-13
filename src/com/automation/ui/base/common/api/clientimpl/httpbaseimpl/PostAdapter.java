@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.api.clientimpl.http;
+package com.automation.ui.base.common.api.clientimpl.httpbaseimpl;
 
 import com.automation.ui.base.common.api.util.ContentType;
 import com.automation.ui.base.common.api.util.MethodType;

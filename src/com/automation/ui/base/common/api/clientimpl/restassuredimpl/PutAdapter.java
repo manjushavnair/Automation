@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.api.clientimpl.restassured;
+package com.automation.ui.base.common.api.clientimpl.restassuredimpl;
 
 
 import com.automation.ui.base.common.api.adapter.AbstractAdapter;

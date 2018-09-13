@@ -281,7 +281,7 @@ public class UrlBuilder extends BaseUrlBuilder {
     }
 
     public String getUrlProtocol() {
-        return this.forceHttps ? "https" : "http";
+        return this.forceHttps ? "https" : "httpbaseimpl";
     }
 
     public String getSiteGlobalURL() {

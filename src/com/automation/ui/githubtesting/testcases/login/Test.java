@@ -15,7 +15,7 @@ public class Test {
 
 
         WebDriver driver = new InternetExplorerDriver();
-        driver.get("http://demo.guru99.com/V4/");
+        driver.get("httpbaseimpl://demo.guru99.com/V4/");
         //Creating the JavascriptExecutor interface object by Type casting
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -33,7 +33,7 @@ public class Test {
         //Get the difference (currentTime - startTime)  of times.
         System.out.println("Passed time: " + (System.currentTimeMillis() - start_time));
 
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
         driver.quit();
     }
 

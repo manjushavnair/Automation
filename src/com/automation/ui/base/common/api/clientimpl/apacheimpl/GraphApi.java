@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.api.clientimpl.http;
+package com.automation.ui.base.common.api.clientimpl.apacheimpl;
 
 import com.automation.ui.base.common.auth.FacebookUser;
 import com.automation.ui.base.common.core.XMLReader;

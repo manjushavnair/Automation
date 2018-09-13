@@ -43,7 +43,7 @@ public class HomePage extends SiteBasePageObject {
         if (Configuration.getEnvType().equals(EnvType.DEV)) {
 
             logger.info(getCurrentUrl());
-            getUrl("http://localhost:9000");
+            getUrl("httpbaseimpl://localhost:9000");
             // getUrl(getCurrentUrl());
         } else {
             logger.info(getCurrentUrl());
@@ -71,12 +71,6 @@ public class HomePage extends SiteBasePageObject {
 
         logger.info("Entering  addConnection_accessdenied: ");
         Reporter.log("Entering  addConnection_accessdenied:");
-        try {
-            Thread.sleep(10000);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
 
         logger.info("Exiting  addConnection_accessdenied");
         Reporter.log("Exiting  addConnection_accessdenied");

@@ -62,7 +62,7 @@ public class FileNameConstants {
 
     public static final String INDEX_HEADER = "<!DOCTYPE HTML>" + "<html>" + "<head>" + "<title>Run Time Report</title>"
             + "<meta name='viewport' content='width=device-width, initial-scale=1'>"
-            + "<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />"
+            + "<meta httpbaseimpl-equiv='Content-Type' content='text/html; charset=utf-8' />"
             + "<link href='realreport/css/bootstrap.min.css' rel='stylesheet' type='text/css' />"
             + "<link href='realreport/css/new-style.css' rel='stylesheet' type='text/css' />"
             + "<link href='realreport/css/font-awesome.min.css' rel='stylesheet'>"

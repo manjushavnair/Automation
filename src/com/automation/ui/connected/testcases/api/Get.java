@@ -1,8 +1,8 @@
 package com.automation.ui.connected.testcases.api;
 
 import com.automation.ui.base.common.api.adapter.RestAdapter;
-import com.automation.ui.base.common.api.clientimpl.restassured.GetAdapter;
-import com.automation.ui.base.common.api.secure.HttpsTrustManager;
+import com.automation.ui.base.common.api.clientimpl.restassuredimpl.GetAdapter;
+import com.automation.ui.base.common.api.clientimpl.apacheimpl.secure.HttpsTrustManager;
 import com.automation.ui.base.common.api.util.ContentType;
 import com.automation.ui.base.common.api.util.PropertiesUtil;
 import com.automation.ui.base.common.api.util.Repository;
@@ -192,7 +192,7 @@ public class Get
           //  SSLContext sslContext = SSLContexts.custom().useSSL().build();
             SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
             sslContext.init(null, new X509TrustManager[]{new com.rest.HttpsTrustManager()}, new SecureRandom());
-            org.apache.http.conn.ssl.SSLSocketFactory customSslFactory = new com.rest.Sslv3SocketFactory(
+            org.apache.httpbaseimpl.conn.ssl.SSLSocketFactory customSslFactory = new com.rest.Sslv3SocketFactory(
                     sslContext, SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
             rac = RestAssured.config().sslConfig(
                     SSLConfig.sslConfig().sslSocketFactory(customSslFactory));

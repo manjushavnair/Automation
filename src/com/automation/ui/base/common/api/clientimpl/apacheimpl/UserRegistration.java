@@ -1,36 +1,26 @@
-package com.automation.ui.base.common.api.clientimpl.http;
+package com.automation.ui.base.common.api.clientimpl.apacheimpl;
 
+import com.automation.ui.base.common.api.clientimpl.apacheimpl.ApiCall;
 import com.automation.ui.base.common.auth.SignUpUser;
 import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.constants.BASEConstants;
 import com.automation.ui.base.common.core.XMLReader;
 import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.logging.Log;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
 
 
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.List;
 
-import java.util.ArrayList;
-import org.apache.http.message.BasicNameValuePair;
 import com.automation.ui.base.common.core.url.*;
-import com.automation.ui.base.common.constants.*;
-import com.automation.ui.base.common.auth.User;
 
-public class UserRegistration extends  ApiCall{
+public class UserRegistration extends ApiCall {
 
 
     private String baseURL = UrlBuilder.createUrlBuilderForSite("community")

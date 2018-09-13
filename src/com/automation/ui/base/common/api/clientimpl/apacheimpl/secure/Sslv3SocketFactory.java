@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.api.secure;
+package com.automation.ui.base.common.api.clientimpl.apacheimpl.secure;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

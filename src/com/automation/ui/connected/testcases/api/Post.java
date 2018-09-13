@@ -1,34 +1,18 @@
 package com.automation.ui.connected.testcases.api;
 
-import com.automation.ui.base.common.api.secure.HttpsTrustManager;
-import io.restassured.config.RestAssuredConfig;
-import io.restassured.config.SSLConfig;
-import io.restassured.response.Response;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.conn.ssl.SSLContexts;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.automation.ui.base.common.api.util.*;
 import io.restassured.path.json.JsonPath;
 import com.automation.ui.base.common.api.adapter.*;
-import com.automation.ui.base.common.api.clientimpl.restassured.*;
-
-import io.restassured.*;
-
-
-import static io.restassured.RestAssured.*;
-import static io.restassured.config.EncoderConfig.encoderConfig;
+import com.automation.ui.base.common.api.clientimpl.restassuredimpl.*;
 
 
 import java.io.IOException;
-import java.security.SecureRandom;
 import java.util.HashMap;
-import java.util.List;
 import javax.json.Json;
 import javax.json.JsonObject;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.X509TrustManager;
 
 public class Post {
     private PropertiesUtil factory;

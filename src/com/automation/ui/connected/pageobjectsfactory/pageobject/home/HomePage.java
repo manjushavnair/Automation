@@ -65,7 +65,7 @@ public class HomePage extends SiteBasePageObject {
         if (Configuration.getEnvType().equals(EnvType.DEV)) {
 
             logger.debug(getCurrentUrl());
-            getUrl("http://localhost:9000");
+            getUrl("httpbaseimpl://localhost:9000");
             // getUrl(getCurrentUrl());
         } else {
             logger.debug(getCurrentUrl());

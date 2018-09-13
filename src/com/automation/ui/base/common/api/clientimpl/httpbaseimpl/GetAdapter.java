@@ -1,28 +1,25 @@
-package com.automation.ui.base.common.api.clientimpl.http;
+package com.automation.ui.base.common.api.clientimpl.httpbaseimpl;
 
 import com.automation.ui.base.common.api.util.ContentType;
 import com.automation.ui.base.common.api.util.MethodType;
-import com.automation.ui.base.common.api.adapter.*;
 import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
+import com.automation.ui.base.common.api.adapter.*;
 import io.restassured.path.json.JsonPath;
 
-import static io.restassured.RestAssured.given;
-
-public class PutAdapter extends  AbstractAdapter implements  RestAdapter {
+public class GetAdapter extends  AbstractAdapter implements RestAdapter {
     private String name;
 
-    protected PutAdapter(GetBuilder<?, ?> builder) {
+    //   HttpGet request = new HttpGet("http://lifecharger.org/3-tips-for-a-better-life/");
+
+    protected GetAdapter(GetBuilder<?, ?> builder) {
         super(builder);
         this.name = builder.name;
 
     }
-
     @Override
     public JsonPath execute() {
 
@@ -43,7 +40,7 @@ public class PutAdapter extends  AbstractAdapter implements  RestAdapter {
         String body = jsonParser.toJson(getObject());
         HttpURLConnection request = null;
         try {
-            request = putRequest(endpoint, body);
+            request = getRequest(endpoint);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -58,26 +55,15 @@ public class PutAdapter extends  AbstractAdapter implements  RestAdapter {
         return jsonParser.fromJson(response, responseClass);
     }
 
-    private HttpURLConnection putRequest(String command, String body) throws IOException {
-        HttpURLConnection con = null;
-        try {
-            URL obj = new URL(command);
-            con = (HttpURLConnection) obj.openConnection();
-            con.setRequestMethod(MethodType.PUT.getMethodType());
-            con.setRequestProperty("Content-Type", ContentType.JSON.getContentType());
-            con.setDoOutput(true);
-            OutputStreamWriter osw = new OutputStreamWriter(con.getOutputStream());
-            osw.write(body);
-            osw.flush();
-            osw.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private HttpURLConnection getRequest(String command) throws IOException {
+        URL obj = new URL(command);
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        con.setRequestMethod(MethodType.GET.getMethodType());
+        con.setRequestProperty("Content-Type", ContentType.JSON.getContentType());
         return con;
     }
 
-
-    public static abstract class GetBuilder<S extends PutAdapter, B extends GetBuilder<S, B>> extends AbstractBuilder<S, B> {
+    public static abstract class GetBuilder<S extends GetAdapter, B extends GetBuilder<S, B>> extends AbstractBuilder<S, B> {
         private String name;
 
         @SuppressWarnings("unchecked")
@@ -88,11 +74,10 @@ public class PutAdapter extends  AbstractAdapter implements  RestAdapter {
 
     }
 
-    private static class DefaultGetBuilder extends GetBuilder<PutAdapter, DefaultGetBuilder> {
+    private static class DefaultGetBuilder extends GetBuilder<GetAdapter, DefaultGetBuilder> {
         @Override
-        public PutAdapter build() {
-            return new PutAdapter(this);
+        public GetAdapter build() {
+            return new GetAdapter(this);
         }
     }
 }
-

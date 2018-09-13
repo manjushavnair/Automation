@@ -71,7 +71,7 @@ public class AbstractAdapter {
 
     public String getResponseStringFromConn(HttpURLConnection conn, String payLoad) throws IOException {
 
-        // Send the http message payload to the server.
+        // Send the httpbaseimpl message payload to the server.
         if (payLoad != null) {
             conn.setDoOutput(true);
             OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());

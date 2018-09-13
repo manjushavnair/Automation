@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.api.clientimpl.http;
+package com.automation.ui.base.common.api.clientimpl.apacheimpl;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

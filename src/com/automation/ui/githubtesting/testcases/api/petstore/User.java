@@ -13,7 +13,7 @@ public class User {
 
     @Test(groups = {"user"})
     public void user() {
-        RestAssured.baseURI = "http://petstore.swagger.io/v2";
+        RestAssured.baseURI = "httpbaseimpl://petstore.swagger.io/v2";
 
         JsonObject request = Json.createObjectBuilder()
                 .add("id", "0")

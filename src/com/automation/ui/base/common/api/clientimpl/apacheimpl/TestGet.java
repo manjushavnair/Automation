@@ -1,6 +1,6 @@
-package com.automation.ui.base.common.api.clientimpl.http;
+package com.automation.ui.base.common.api.clientimpl.apacheimpl;
 
-import com.automation.ui.base.common.api.factory.HttpClientFactory;
+import com.automation.ui.base.common.api.clientimpl.apacheimpl.factory.HttpClientFactory;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -13,9 +13,9 @@ public class TestGet {
     public static void main(String[] args) throws ClientProtocolException, Exception {
 
 
-        HttpClient client = HttpClientFactory.getHttpsClient();
+        HttpClient client = new HttpClientFactory().getHttpsClient();
         // client = new DefaultHttpClient();
-        HttpGet request = new HttpGet("http://lifecharger.org/3-tips-for-a-better-life/");
+        HttpGet request = new HttpGet("httpbaseimpl://lifecharger.org/3-tips-for-a-better-life/");
         HttpResponse response = client.execute(request);
         BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
         String line = "";

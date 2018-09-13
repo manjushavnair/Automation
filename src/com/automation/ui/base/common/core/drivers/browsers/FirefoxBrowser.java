@@ -166,7 +166,7 @@ public class FirefoxBrowser extends BrowserAbstract {
         // 	profile.setPreference("network.cookie.cookieBehavior", 2);
         // }
 
-        firefoxProfile.setPreference("http.response.timeout", 15);
+        firefoxProfile.setPreference("httpbaseimpl.response.timeout", 15);
         firefoxProfile.setPreference("dom.max_script_run_time", 35);
 
 

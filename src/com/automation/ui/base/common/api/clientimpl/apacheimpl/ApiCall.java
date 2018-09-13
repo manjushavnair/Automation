@@ -1,4 +1,4 @@
-package com.automation.ui.base.common.api.clientimpl.http;
+package com.automation.ui.base.common.api.clientimpl.apacheimpl;
 
 import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.constants.BASEConstants;
@@ -14,13 +14,17 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
+import java.io.*;
+
 import org.openqa.selenium.WebDriverException;
 
+
 import java.io.IOException;
-import java.net.URI;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
 
 public abstract class ApiCall {
 
@@ -86,12 +90,23 @@ public abstract class ApiCall {
 
             CloseableHttpResponse resp = httpClient.execute(httpPost);
 
+            HttpResponse response = null;
+            response = httpClient.execute(httpPost);
+
+            HttpEntity entity = response.getEntity();
+            //return EntityUtils.toString(entity);
+
             Log.info("CONTENT: ", "Content posted to: " + httpPost.toString());
             Log.info("CONTENT: ",
                     "Response: " + EntityUtils.toString(resp.getEntity(), "UTF-8"));
 
 
-        } catch (ClientProtocolException e) {
+        }
+        catch (UnsupportedEncodingException e) {
+
+            throw new WebDriverException(ERROR_MESSAGE);
+        }
+        catch (ClientProtocolException e) {
             Log.log("EXCEPTION", ExceptionUtils.getStackTrace(e), false);
             throw new WebDriverException(ERROR_MESSAGE);
         } catch (IOException e) {

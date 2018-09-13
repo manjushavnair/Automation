@@ -23,7 +23,7 @@ public interface BASEConstants {
                     + File.separator + "ImagesForUploadTests" + File.separator;
 
 
-    public static final String HTTP_PREFIX = "http://";
+    public static final String HTTP_PREFIX = "httpbaseimpl://";
     public static final String HTTPS_PREFIX = "https://";
 
     public static final int DEFAULT_TIMEOUT = 15;

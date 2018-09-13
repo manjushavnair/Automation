@@ -37,7 +37,7 @@ public class UAConnectionDetailsPageTest extends ConnectedBaseTest {
         logger.debug("Entering dcConnectionDropdownTest");
         connectiondetail_page.dcDropdown();
         logger.debug("Exiting dcConnectionDropdownTest");
-        Thread.sleep(5000);
+       // //Thread.sleep(5000);
     }
 
     /***
@@ -50,14 +50,14 @@ public class UAConnectionDetailsPageTest extends ConnectedBaseTest {
 
 
 
-        Thread.sleep(5000);
+       // //Thread.sleep(5000);
         logger.debug("Entering dcConnectionPauseTest");
         connectiondetail_page.dcDropdown();
 
         logger.debug("Exiting dcConnectionDropdownTest");
         logger.debug("Entering dcConnectionPauseTest");
         connectiondetail_page.dcPause();
-        Thread.sleep(5000);
+        ////Thread.sleep(5000);
         logger.debug("Exiting dcConnectionPauseTest");
     }
 
@@ -68,15 +68,15 @@ public class UAConnectionDetailsPageTest extends ConnectedBaseTest {
 
     @Test(enabled = true, priority = 2, groups = {"validcase"}, description = "UAConnectionDetailsPage")
     public void dcConnectionEditTest() throws Throwable {
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
 
         logger.debug("Entering dcConnectionDropdownTest 2");
         connectiondetail_page.dcDropdown();
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         logger.debug("Exiting dcConnectionDropdownTest 2");
         logger.debug("Entering dcConnectionEditTest");
         connectiondetail_page.dcEdit();
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         logger.debug("Exiting dcConnectionEditTest");
     }
 
@@ -92,11 +92,11 @@ public class UAConnectionDetailsPageTest extends ConnectedBaseTest {
 
         logger.debug("Entering dcConnectionDropdownTest");
         connectiondetail_page.dcDropdown();
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         logger.debug("Exiting dcConnectionDropdownTest");
         logger.debug("Entering dcConnectionRemoveTest");
         connectiondetail_page.dcRemove();
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         logger.debug("Exiting dcConnectionRemoveTest");
     }
     /***
@@ -110,7 +110,7 @@ public class UAConnectionDetailsPageTest extends ConnectedBaseTest {
 
         logger.debug("Entering dcConnectionDetailsTest");
         connectiondetail_page.dcDetails();
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         logger.debug("Exiting dcConnectionDetailsTest");
 
     }
@@ -125,9 +125,9 @@ public class UAConnectionDetailsPageTest extends ConnectedBaseTest {
 
         logger.debug("Entering dcConnectionDetailsEditTest");
         connectiondetail_page.dcDetails();
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         connectiondetail_page.dcDetails_Edit();
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         logger.debug("Exiting dcConnectionDetailsEditTest");
 
     }
@@ -143,15 +143,15 @@ public class UAConnectionDetailsPageTest extends ConnectedBaseTest {
         logger.debug("Entering dcConnectionDetailsEdit_Tabs");
         connectiondetail_page.dcDetails();
         connectiondetail_page.dcDetails_Edit();
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
         connectiondetail_page.dcDetails_Edit_Tag();
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
        ;
         connectiondetail_page.dcDetails_Edit_Preferances();
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
 
         connectiondetail_page.dcDetails_Edit_Server();
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
         logger.debug("Exiting dcConnectionDetailsEdit_Tabs");
 
     }

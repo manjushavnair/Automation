@@ -107,33 +107,7 @@ public class CommonUtils {
         return fileCheck.getAbsolutePath();
     }
 
-    public static String sendPost(String apiUrl, String[][] param) {
-        try {
-            CloseableHttpClient httpclient = HttpClients.createDefault();
-            HttpPost httpPost = new HttpPost(apiUrl);
-            List<NameValuePair> paramPairs = new ArrayList<NameValuePair>();
 
-            for (int i = 0; i < param.length; i++) {
-                paramPairs.add(new BasicNameValuePair(param[i][0], param[i][1]));
-            }
-            httpPost.setEntity(new UrlEncodedFormEntity(paramPairs));
-
-            HttpResponse response = null;
-            response = httpclient.execute(httpPost);
-
-            HttpEntity entity = response.getEntity();
-            return EntityUtils.toString(entity);
-        } catch (UnsupportedEncodingException e) {
-            Log.log("sendPost", e, false);
-            return null;
-        } catch (ClientProtocolException e) {
-            Log.log("sendPost", e, false);
-            return null;
-        } catch (IOException e) {
-            Log.log("sendPost", e, false);
-            return null;
-        }
-    }
 
     /**
      * * Escapes all of the special characters out of a String.<BR>
