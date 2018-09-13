@@ -154,9 +154,7 @@ public abstract class ApiCall {
     }
 
     public String call(HttpRequestOptions options) {
-
-
-        try {
+         try {
             setRequestType(options);
              /*
              url = new URL(getURL() + "user-registration/users/emailconfirmed");
@@ -203,8 +201,6 @@ public abstract class ApiCall {
     {
         return this.url;
     }
-
-
 
     public int getResponseStatusCode() {
         return this.response.getStatusLine().getStatusCode();
