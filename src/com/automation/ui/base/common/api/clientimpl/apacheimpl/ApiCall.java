@@ -1,4 +1,5 @@
 package com.automation.ui.base.common.api.clientimpl.apacheimpl;
+
 import com.automation.ui.base.common.api.util.MethodType;
 import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.constants.BASEConstants;
@@ -40,6 +41,7 @@ import javax.net.ssl.TrustManager;
 public abstract class ApiCall {
 
     protected static String url = null;
+
     private CloseableHttpClient httpClient=null;
 
     private MethodType httpVerb;
@@ -52,6 +54,28 @@ public abstract class ApiCall {
 
     protected ApiCall() {
     }
+
+    /**
+     * Return null if API call doesn't require to be logged in as specific user
+     *
+     * @return User to be logged in while executing API call
+     */
+    abstract protected User getUser();
+
+    /**
+     * Return null when no params should be added to API call
+     *
+     * @return params
+     */
+    abstract protected ArrayList<BasicNameValuePair> getParams();
+
+    /**
+     * This enables passing username as string instead from ENUM.
+     *
+     * @return Username to log in.
+     */
+    abstract protected String getUserName();
+
     private void setRequestType(HttpRequestOptions options) {
         this.url = options.url;
         this.httpVerb = options.httpVerb;
@@ -180,26 +204,7 @@ public abstract class ApiCall {
         return this.url;
     }
 
-    /**
-     * Return null if API call doesn't require to be logged in as specific user
-     *
-     * @return User to be logged in while executing API call
-     */
-    abstract protected User getUser();
 
-    /**
-     * Return null when no params should be added to API call
-     *
-     * @return params
-     */
-    abstract protected ArrayList<BasicNameValuePair> getParams();
-
-    /**
-     * This enables passing username as string instead from ENUM.
-     *
-     * @return Username to log in.
-     */
-    abstract protected String getUserName();
 
     public int getResponseStatusCode() {
         return this.response.getStatusLine().getStatusCode();
