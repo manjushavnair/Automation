@@ -24,6 +24,8 @@ public class HttpClientFactory {
         if (client != null) {
             return client;
         }
+
+
         SSLContext sslcontext = SSLContexts.custom().useSSL().build();
         sslcontext.init(null, new X509TrustManager[]{new HttpsTrustManager()}, new SecureRandom());
         SSLConnectionSocketFactory factory = new SSLConnectionSocketFactory(sslcontext,

@@ -11,6 +11,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
+import com.automation.ui.base.common.api.util.MethodType;
 
 
 import java.net.MalformedURLException;
@@ -19,7 +20,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import com.automation.ui.base.common.core.url.*;
-
+import com.automation.ui.base.common.api.util.MethodType;
 public class UserRegistration extends ApiCall {
 
 
@@ -38,29 +39,27 @@ public class UserRegistration extends ApiCall {
     public  void registerUserEmailConfirmed(SignUpUser suser) {
         CloseableHttpClient httpClient = HttpClientBuilder.create().disableAutomaticRetries().build();
 
-        URL url = null;
+        try {
+            URL url  = new URL(getURL() + "userregistration/users/emailconfirmed");
 
 
-        try {
-            url = new URL(getURL() + "user-registration/users/emailconfirmed");
-        } catch (MalformedURLException e) {
-            Log.logError("Wrong internal services URL", e);
-        }
-        try {
+            HttpRequestOptions hro= new HttpRequestOptions(getURL() + "userregistration/users/emailconfirmed",MethodType.POST);
+            hro.ignoreCert=true;
+
             HttpPost httpPost = new HttpPost(new URI(url.getProtocol(), url.getUserInfo(), url.getHost(),
                     url.getPort(), url.getPath(), url.getQuery(), url.getRef()));
 
             httpPost.setHeader(BASEConstants.X_CLIENT_IP, "8.8.8.8");
             httpPost.setHeader(BASEConstants.X_SITE_INTERNAL_REQUEST, "1");
-         call();
+             String response=call(hro);
+
         } catch ( Exception   e) {
             Log.logError("Error during registering user", e);
         }
     }
 
       protected String getUserName()
-
-    {
+     {
         return null;
 
     }
@@ -68,7 +67,7 @@ public class UserRegistration extends ApiCall {
     {
 
         String env = Configuration.getEnvType().getKey();
-         String baseURL = XMLReader.getValue("services_internal." + env + ".base_url");
+         String baseURL = XMLReader.getValue("servicesinternal." + env + "base_url");
         return baseURL;
 
     }
@@ -89,8 +88,7 @@ public class UserRegistration extends ApiCall {
             params.add(new BasicNameValuePair("username", user.getUserName()));
             params.add(new BasicNameValuePair("password", user.getPassword()));
 
-            params.add(new BasicNameValuePair("marketingAllowed", "on"));
-            params.add(new BasicNameValuePair("registrationId", "00000"));
+
        return params;
 
 	}
