@@ -1,5 +1,4 @@
 package com.automation.ui.base.common.api.clientimpl.apacheimpl;
-
 import com.automation.ui.base.common.api.util.MethodType;
 import com.automation.ui.base.common.auth.User;
 import com.automation.ui.base.common.constants.BASEConstants;
@@ -7,13 +6,10 @@ import com.automation.ui.base.common.core.Helios;
 import com.automation.ui.base.common.logging.Log;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.entity.*;
 import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.conn.ssl.NoopHostnameVerifier;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.client.methods.*;
-import org.apache.http.conn.ssl.NoopHostnameVerifier;
-import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.apache.http.conn.ssl.*;
 import org.apache.http.impl.client.CloseableHttpClient;
 import com.automation.ui.base.common.api.clientimpl.apacheimpl.secure.*;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -23,25 +19,15 @@ import org.apache.http.impl.client.*;
 import org.apache.http.*;
 import org.apache.commons.io.IOUtils;
 import java.io.*;
-import java.util.*;
-import java.io.*;
 import java.nio.charset.Charset;
 import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import org.apache.http.entity.StringEntity;
-
-
-
 import org.openqa.selenium.WebDriverException;
-
-
 import java.io.IOException;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -222,11 +208,7 @@ public abstract class ApiCall {
     public InputStream getResponseAsStream() throws IOException {
         return this.response.getEntity().getContent();
     }
-
-
-
-
-    public Map<String, String> getResponseHeaders() {
+     public Map<String, String> getResponseHeaders() {
         Header[] headers = this.response.getAllHeaders();
         Map<String, String> headersMap = new HashMap<String, String>();
         for (Header header : headers) {
@@ -264,12 +246,7 @@ public abstract class ApiCall {
         }
     }
 
-
-
-
-
-
-    public String getFirstHeader(String headerName) {
+     public String getFirstHeader(String headerName) {
         Header header = this.response.getFirstHeader(headerName);
         return header != null ? header.getValue() : null;
     }
