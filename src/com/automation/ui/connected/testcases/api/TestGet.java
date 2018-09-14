@@ -2,6 +2,7 @@ package com.automation.ui.connected.testcases.api;
 
 import com.automation.ui.base.common.api.clientimpl.apacheimpl.factory.HttpClientFactory;
 import com.automation.ui.base.common.api.clientimpl.apacheimpl.secure.HttpsTrustManager;
+import com.automation.ui.base.common.api.clientimpl.apacheimpl.*;
 import io.restassured.RestAssured;
 import io.restassured.config.RestAssuredConfig;
 import io.restassured.config.SSLConfig;
@@ -25,20 +26,34 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.config.EncoderConfig.encoderConfig;
 
 public class TestGet {
-    public static void main(String[] args) throws ClientProtocolException, Exception {
+
+    @Test(priority = 0,enabled = true, groups = "post")
+    public void testAPI() throws Throwable{
+
+        System.out.println("testAPI");
+        UserRegistration ur=new UserRegistration();
+        ur.registerUserEmailConfirmed();
+
+    }
+
+    @Test(priority = 0,enabled = false, groups = "post")
+    public void simpleTest() throws Throwable{
 
 
         HttpClient client = new HttpClientFactory().getHttpsClient();
         // client = new DefaultHttpClient();
-        HttpGet request = new HttpGet("httpbaseimpl://lifecharger.org/3-tips-for-a-better-life/");
+        HttpGet request = new HttpGet("http://lifecharger.org/3-tips-for-a-better-life/");
         HttpResponse response = client.execute(request);
         BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
         String line = "";
         while ((line = rd.readLine()) != null) {
             System.out.println(line);
         }
+
     }
-    @Test(enabled = false, groups = "post")
+
+
+    @Test(priority = 1,enabled = false, groups = "post")
     public void basicPingTest() {
 
         RestAssured.port = 443;
@@ -88,7 +103,7 @@ public class TestGet {
           //  SSLContext sslContext = SSLContexts.custom().useSSL().build();
             SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
             sslContext.init(null, new X509TrustManager[]{new com.rest.HttpsTrustManager()}, new SecureRandom());
-            org.apache.httpbaseimpl.conn.ssl.SSLSocketFactory customSslFactory = new com.rest.Sslv3SocketFactory(
+            org.apache.http.conn.ssl.SSLSocketFactory customSslFactory = new com.rest.Sslv3SocketFactory(
                     sslContext, SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
             rac = RestAssured.config().sslConfig(
                     SSLConfig.sslConfig().sslSocketFactory(customSslFactory));

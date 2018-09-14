@@ -18,7 +18,7 @@ public class Test {
 
 
         WebDriver driver = new ChromeDriver();
-        driver.get("httpbaseimpl://localhost:9000/cloudData_steps.html");
+        driver.get("http://localhost:9000/cloudData_steps.html");
         //Creating the JavascriptExecutor interface object by Type casting
         JavascriptExecutor js = (JavascriptExecutor) driver;
 

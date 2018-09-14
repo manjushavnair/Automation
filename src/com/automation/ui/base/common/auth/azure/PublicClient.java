@@ -18,7 +18,7 @@ public class PublicClient {
     private final static String AUTHORITY = "https://login.microsoftonline.com/common/oauth2/authorize?" +
             "client_id=4f5374e9-1917-4fa9-af77-8ff401e3ec85" +
             "&response_type=code" +
-            "&redirect_uri=httpbaseimpl:\\localhost:9000" +
+            "&redirect_uri=http:\\localhost:9000" +
             "&response_mode=query";
     private final static String CLIENT_ID = "4f5374e9-1917-4fa9-af77-8ff401e3ec85";
 

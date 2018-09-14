@@ -9,7 +9,7 @@ public class OpenWeatherMap {
 
     @Test
     public void byCityName() {
-        RestAssured.baseURI = "httpbaseimpl://api.openweathermap.org/data/2.5";
+        RestAssured.baseURI = "http://api.openweathermap.org/data/2.5";
 
         given()
                 .contentType("application/json; charset=utf-8")

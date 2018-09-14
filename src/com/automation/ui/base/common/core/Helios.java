@@ -196,8 +196,8 @@ public class Helios {
         try {
             String encodedUsername = URLEncoder.encode(userName, "UTF-8");
 
-            //Downgrade to use httpbaseimpl proxy
-            HttpGet httpGet = new HttpGet(getUserIdUrl(encodedUsername).replace("https:", "httpbaseimpl:"));
+            //Downgrade to use http proxy
+            HttpGet httpGet = new HttpGet(getUserIdUrl(encodedUsername).replace("https:", "http:"));
             httpGet.setConfig(RequestConfig.custom().setProxy(getBorderProxy()).build());
 
             Log.info("USER_ID_REQUEST", httpGet.getURI().toString());

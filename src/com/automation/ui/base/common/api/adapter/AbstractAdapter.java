@@ -19,7 +19,7 @@ import java.util.Map;
 public class AbstractAdapter {
 
     private Object object;
-    private Map map;
+    private Map parammap;
     private Map header;
     private String endPoint;
     private String method;
@@ -30,7 +30,7 @@ public class AbstractAdapter {
         this.endPoint = builder.endPoint;
         this.method = builder.method;
         this.contentType = builder.contentType;
-        this.map = builder.map;
+        this.parammap = builder.parammap;
         this.header = builder.header;
     }
 
@@ -42,7 +42,7 @@ public class AbstractAdapter {
         return object;
     }
     public Map getParams() {
-        return map;
+        return parammap;
     }
     public Map getHeaders() {
         return header;
@@ -71,7 +71,7 @@ public class AbstractAdapter {
 
     public String getResponseStringFromConn(HttpURLConnection conn, String payLoad) throws IOException {
 
-        // Send the httpbaseimpl message payload to the server.
+        // Send the http message payload to the server.
         if (payLoad != null) {
             conn.setDoOutput(true);
             OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
@@ -240,7 +240,7 @@ public class AbstractAdapter {
         private String endPoint;
         private String method;
         private ContentType contentType;
-        private Map map;
+        private Map parammap;
         private Map header;
 
         @SuppressWarnings("unchecked")
@@ -250,8 +250,8 @@ public class AbstractAdapter {
         }
 
         @SuppressWarnings("unchecked")
-        public B setParams(Map map) {
-            this.map = map;
+        public B setParams(Map parammap) {
+            this.parammap = parammap;
             return (B) this;
         }
         @SuppressWarnings("unchecked")

@@ -15,7 +15,7 @@ public class Test {
 
 
         WebDriver driver = new InternetExplorerDriver();
-        driver.get("httpbaseimpl://demo.guru99.com/V4/");
+        driver.get("http://demo.guru99.com/V4/");
         //Creating the JavascriptExecutor interface object by Type casting
         JavascriptExecutor js = (JavascriptExecutor) driver;
 

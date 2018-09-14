@@ -52,7 +52,7 @@ class BaseRemoteOperation {
                 .setSSLHostnameVerifier(NoopHostnameVerifier.INSTANCE).build()) {
             result = makeRequest(client, request);
         } catch (IOException x) {
-            Log.log("Error while creating/closing httpbaseimpl client.",
+            Log.log("Error while creating/closing http client.",
                     ExceptionUtils.getStackTrace(x), false);
         }
 
@@ -69,7 +69,7 @@ class BaseRemoteOperation {
         } catch (RemoteException ex) {
             Log.log("Request: ", getRequestString(request) + "\n" + request.getEntity(),
                     false);
-            Log.log("Error while creating httpbaseimpl post entity.",
+            Log.log("Error while creating http post entity.",
                     ExceptionUtils.getStackTrace(ex), false);
         }
 

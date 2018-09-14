@@ -49,7 +49,7 @@ public interface URLsContent {
     public static final String COMMUNITY_SITE = "community";
 
     // External URL
-    public static final String EXTERNAL_URL = "httpbaseimpl://www.site.com";
+    public static final String EXTERNAL_URL = "http://www.site.com";
 
     public static final String USER_SIGNOUT = EXTERNAL_URL + "/logout";
 

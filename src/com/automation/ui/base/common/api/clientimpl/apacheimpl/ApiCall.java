@@ -37,7 +37,9 @@ import org.apache.http.client.config.RequestConfig;
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
-
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
+import org.apache.http.client.methods.HttpRequestBase;
 public abstract class ApiCall {
 
     protected static String url = null;
@@ -123,7 +125,7 @@ public abstract class ApiCall {
                     .setCookieSpec(CookieSpecs.STANDARD)
                     .build();
 
-            CloseableHttpClient client;
+            CloseableHttpClient client=null;
 
             if (ignoreCert) {
                 SSLContext sslContext = SSLContext.getInstance("TLS");
@@ -154,32 +156,36 @@ public abstract class ApiCall {
     }
 
     public String call(HttpRequestOptions options) {
-         try {
+
+        HttpEntityEnclosingRequestBase request=null;
+        try {
+
+
+             //set verbs and create client object
             setRequestType(options);
-             /*
-             url = new URL(getURL() + "user-registration/users/emailconfirmed");
-             httpPost = new HttpPost(new URI(url.getProtocol(), url.getUserInfo(), url.getHost(),
-                    url.getPort(), url.getPath(), url.getQuery(), url.getRef()));
-             */
-            httpRequest.setHeader(BASEConstants.X_CLIENT_IP, "8.8.8.8");
-            httpRequest.setHeader(BASEConstants.X_SITE_INTERNAL_REQUEST, "1");
+
+            this.httpRequest.setHeader(BASEConstants.X_CLIENT_IP, "8.8.8.8");
+            this.httpRequest.setHeader(BASEConstants.X_SITE_INTERNAL_REQUEST, "1");
             // set header
             if (getUserName() != null) {
-                httpRequest.addHeader(BASEConstants.X_Site_AccessToken, Helios.getAccessToken(getUserName()));
+                this.httpRequest.addHeader(BASEConstants.X_Site_AccessToken, Helios.getAccessToken(getUserName()));
             } else if (getUser() != null) {
-                httpRequest.addHeader(BASEConstants.X_Site_AccessToken, Helios.getAccessToken(getUser().getUserName()));
+                this.httpRequest.addHeader(BASEConstants.X_Site_AccessToken, Helios.getAccessToken(getUser().getUserName()));
             }
             // set query params
             if (getParams() != null) {
-                //  HttpPost httpPost = new HttpPost(getURL());
-                //   httpRequest.setEntity(new UrlEncodedFormEntity(getParams(), StandardCharsets.UTF_8));
+
+
+                 //  HttpPost httpPost = new HttpPost(getURL());
+                 //  httpRequest.setEntity(new UrlEncodedFormEntity(getParams(), StandardCharsets.UTF_8));
+
              }
              // TODO: Take a timeout value and throw an exception in case the HTTP server doesn't respond in due time
-            CloseableHttpResponse response = this.httpClient.execute(httpRequest);
+            CloseableHttpResponse response = this.httpClient.execute(this.httpRequest);
 
             HttpEntity entity = response.getEntity();
-            Log.info("CONTENT: ", "Content posted to: " + httpRequest.toString());
-            Log.info("CONTENT: ",
+            System.out.println( "Content posted to: " + this.httpRequest.toString());
+            System.out.println(
                     "Response: " + EntityUtils.toString(response.getEntity(), "UTF-8"));
             return EntityUtils.toString(entity);
         }

@@ -38,16 +38,26 @@ public class PostAdapter extends AbstractAdapter implements RestAdapter {
     @Override
     public JsonPath execute() {
         System.out.println("!!!!!!!!!!!POST!!!!!!!!!!! ");
+        System.out.println("!!!!!!!!!!!"+getEndPoint()+"!!!!!!!!!!! ");
+        System.out.println("!!!!!!!!!!!"+ getObject().toString()+"!!!!!!!!!!! ");
+
+
         HashMap hmap=new HashMap( );
         hmap.put("id","openwkey");
         hmap.put("APPID", "3757978f62c331da8278ccc1804c7012");
+
+        hmap.put("external_id","SF_TEST001");
+        hmap.put("name", "San Francisco Test Station");
+        hmap.put("latitude", 37.76);
+        hmap.put("longitude", -122.43);
+        hmap.put("altitude", 150);
 
 
 
         Response response = given()
                 .baseUri(getEndPoint())
                 .contentType(getContentType().getContentType())
-                .body(getObject().toString())
+                 .body(getObject().toString())
                 .formParams(hmap)
                 .expect()
                 .contentType(ContentType.JSON)

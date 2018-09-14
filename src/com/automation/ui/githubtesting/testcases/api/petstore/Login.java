@@ -10,7 +10,7 @@ public class Login {
 
     @Test(groups = {"login"}, dependsOnGroups = {"user"})
     public void login() {
-        RestAssured.baseURI = "httpbaseimpl://petstore.swagger.io/v2";
+        RestAssured.baseURI = "http://petstore.swagger.io/v2";
 
         given()
                 .contentType("application/json")

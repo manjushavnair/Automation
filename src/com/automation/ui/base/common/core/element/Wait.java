@@ -474,7 +474,7 @@ public class Wait {
 
 
     /**
-     * Wait for successful (httpbaseimpl response code less than 400) response from specific service
+     * Wait for successful (http response code less than 400) response from specific service
      *
      * @param url Url which was used for making request
      */

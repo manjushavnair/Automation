@@ -12,6 +12,12 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 import com.automation.ui.base.common.api.util.MethodType;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.message.BasicNameValuePair;
+import org.openqa.selenium.WebDriverException;
+
+
 
 
 import java.net.MalformedURLException;
@@ -24,34 +30,50 @@ import com.automation.ui.base.common.api.util.MethodType;
 public class UserRegistration extends ApiCall {
 
 
-    private String baseURL = UrlBuilder.createUrlBuilderForSite("community")
-            .getUrl()
-                .replace(BASEConstants.HTTPS_PREFIX, BASEConstants.HTTP_PREFIX)
-            + "/api.php";
+   // private String baseURL = UrlBuilder.createUrlBuilderForSite("community")
+     //       .getUrl()
+       //         .replace(BASEConstants.HTTPS_PREFIX, BASEConstants.HTTP_PREFIX)
+         //   + "/api.php";
     private ArrayList<BasicNameValuePair> params = new ArrayList<>();
     private User user = User.ANONYMOUS;
     private String username = user.getUserName();
 
 
-    private UserRegistration() {
+    public UserRegistration() {
+        super();
     }
 
-    public  void registerUserEmailConfirmed(SignUpUser suser) {
-        CloseableHttpClient httpClient = HttpClientBuilder.create().disableAutomaticRetries().build();
+    public  void registerUserEmailConfirmed( ) {
 
         try {
-            URL url  = new URL(getURL() + "userregistration/users/emailconfirmed");
 
 
-            HttpRequestOptions hro= new HttpRequestOptions(getURL() + "userregistration/users/emailconfirmed",MethodType.POST);
+
+
+            HttpRequestOptions hro= new HttpRequestOptions(getURL()  ,MethodType.POST);
             hro.ignoreCert=true;
 
-            HttpPost httpPost = new HttpPost(new URI(url.getProtocol(), url.getUserInfo(), url.getHost(),
+
+            url = new URIBuilder(getURL())
+                    .setParameter("text", "text")
+                    .setParameter("summary", "SUMMARY_QM")
+                    .build()
+                    .toASCIIString();
+
+               /*
+             url = new URL(getURL() + "user-registration/users/emailconfirmed");
+             httpPost = new HttpPost(new URI(url.getProtocol(), url.getUserInfo(), url.getHost(),
+                    url.getPort(), url.getPath(), url.getQuery(), url.getRef()));
+             */
+
+         /*   HttpPost httpPost = new HttpPost(new URI(url.getProtocol(), url.getUserInfo(), url.getHost(),
                     url.getPort(), url.getPath(), url.getQuery(), url.getRef()));
 
             httpPost.setHeader(BASEConstants.X_CLIENT_IP, "8.8.8.8");
             httpPost.setHeader(BASEConstants.X_SITE_INTERNAL_REQUEST, "1");
+            */
              String response=call(hro);
+             System.out.println("response"+response);
 
         } catch ( Exception   e) {
             Log.logError("Error during registering user", e);
@@ -68,7 +90,7 @@ public class UserRegistration extends ApiCall {
 
         String env = Configuration.getEnvType().getKey();
          String baseURL = XMLReader.getValue("servicesinternal." + env + "base_url");
-        return baseURL;
+        return "http://lifecharger.org/3-tips-for-a-better-life/";
 
     }
 
@@ -79,7 +101,7 @@ public class UserRegistration extends ApiCall {
      */
      protected User getUser()
     {
- return null;
+            return null;
     }
 
     protected ArrayList<BasicNameValuePair> getParams(){

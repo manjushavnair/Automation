@@ -45,7 +45,7 @@ deviceName: ANDROID # capability for Appium server. For Android it can be any va
 
 
 #config jira url
-jiraURL: httpbaseimpl://atlassian.jira.abc.com
+jiraURL: http://atlassian.jira.abc.com
 #Seconds
 DEFAULT_TIMEOUT_SECONDS: 10
 

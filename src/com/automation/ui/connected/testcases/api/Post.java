@@ -29,22 +29,35 @@ public class Post {
     public void postRequest() {
 
         JsonObject request = Json.createObjectBuilder()
-                .add("external_id","SF_TEST001")
+           /*    .add("external_id","SF_TEST001")
                 .add("name", "San Francisco Test Station")
                 .add("latitude", 37.76)
                 .add("longitude", -122.43)
                 .add("altitude", 150)
+                .add("id", "openwkey")
+                .add("APPID", "3757978f62c331da8278ccc1804c7012")
+                */
+
                 .build();
 
-        HashMap hmap=new HashMap( );
+     /*    HashMap hmap=new HashMap( );
         hmap.put("id","openwkey");
         hmap.put("APPID", "3757978f62c331da8278ccc1804c7012");
+        hmap.put("external_id","SF_TEST001");
+        hmap.put("name", "San Francisco Test Station");
+        hmap.put("latitude", 37.76);
+        hmap.put("longitude", -122.43);
+        hmap.put("altitude", 150);
+        */
+
+
 
 
 
 
         System.out.println("%%%%%%%%POST%%%%%%%%%%%");
         System.out.println("request:"+request.toString());
+        System.out.println("%%%%%%%%POST%%%%%%%%%%%");
 
         RestAdapter response = PostAdapter.builder()
 
@@ -54,7 +67,7 @@ public class Post {
                 .setMethodName(factory.data(Repository.METHOD))
                 .build();
 
-        System.out.println("response:"+response.toString());
+        System.out.println("response: here"+response.toString());
 
         JsonPath jsonPath = response.execute();
         jsonPath.prettyPrint();
