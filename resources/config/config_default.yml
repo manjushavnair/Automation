@@ -46,7 +46,7 @@ deviceName: ANDROID # capability for Appium server. For Android it can be any va
 #config jira url
 jiraURL: http://jira.x.com
 #Seconds
-DEFAULT_TIMEOUT_SECONDS: 10
+DEFAULT_TIMEOUT_SECONDS: 8
 
 #DOM.MAX_SCRIPT_RUN_TIME: 10
 ##
