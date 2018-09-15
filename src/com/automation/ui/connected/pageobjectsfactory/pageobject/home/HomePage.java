@@ -90,13 +90,17 @@ public class HomePage extends SiteBasePageObject {
 
 
             if (ElementStateHelper.isElementVisible(addButton)) {
-                logger.warn("Entering  addConnection: if " );
+                logger.warn("Entering  addConnection: if " +addButton.getText());
 
-                waitAndClick(addButton);
+                 if(addButton.getText().equalsIgnoreCase("Add Connection"))
+
+                 {
+                     waitAndClick(addButton);
+                 }
 
 
             } else {
-                logger.warn("Entering  addConnection: else " );
+                logger.warn("Entering  addConnection: else " +addButton.getText());
 
 
                 wait.forElementVisible(addButtonTop,15);
@@ -108,12 +112,15 @@ public class HomePage extends SiteBasePageObject {
 
                if (ElementStateHelper.isElementVisible(addButtonTop)) {
 
-                    logger.debug("Entering  addConnection: 3 " );
+                    logger.warn("Entering  addConnection: 3 " );
 
                     logger.debug("Entering  addConnection: else->if");
+                   if(addButton.getText().equalsIgnoreCase("Add Connection"))
 
+                   {
 
                     waitAndClick(addButtonTop);
+                    ]
 
                 }
 
