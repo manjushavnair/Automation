@@ -17,4 +17,5 @@ git pull
 
 mvn -T 4   -DdependencyLocationsEnabled=false -Dmailpass=manjusha  antrun:run@ant-execute clean compile test surefire-report:report
 
+
 @rem mvn -Dmailpass=hari123$  antrun:run@ant-execute clean compile test surefire-report:report postman:send-mail
