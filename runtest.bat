@@ -14,11 +14,11 @@ taskkill /IM java /F
 echo "pulling code from git"
 
 git pull
-#T 2 for use 2 cores of CPU
-#dependencyLocationsEnabled all external denendencies are ignored
-#Dmailpass password of smtp to sent mail
-#ant execute target will create directories while build
-#report will create the test results
+@rem T 2 for use 2 cores of CPU
+@rem dependencyLocationsEnabled all external denendencies are ignored
+@rem mailpass password of smtp to sent mail
+@rem ant execute target will create directories while build
+@rem report will create the test results
 
 mvn -T 2   -DdependencyLocationsEnabled=false -Dmailpass=manjusha  antrun:run@ant-execute clean compile test surefire-report:report
 
