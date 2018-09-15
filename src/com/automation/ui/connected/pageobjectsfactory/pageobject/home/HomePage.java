@@ -4,10 +4,9 @@ import com.automation.ui.base.common.core.configuration.Configuration;
 import com.automation.ui.base.common.core.configuration.EnvType;
 import com.automation.ui.base.common.core.element.ElementStateHelper;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetailsPage;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.manage.AddServerDetailsPage;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Reporter;
 

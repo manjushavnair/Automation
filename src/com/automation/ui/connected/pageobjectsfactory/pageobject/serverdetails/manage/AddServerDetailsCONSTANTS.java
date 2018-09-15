@@ -1,4 +1,4 @@
-package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails;
+package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.manage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

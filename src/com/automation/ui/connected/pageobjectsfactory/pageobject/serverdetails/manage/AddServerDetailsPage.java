@@ -1,4 +1,4 @@
-package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails;
+package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.manage;
 
 import com.automation.ui.base.common.core.assertion.Assertion;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
@@ -215,6 +215,7 @@ public class AddServerDetailsPage extends SiteBasePageObject {
         Reporter.log("Entering  provideServerDetailsAddCustName:");
 
         try {
+
             scrollTo(customerNameField);
             customerNameField.click();
             fillInputAfterClear(customerNameField, custName);

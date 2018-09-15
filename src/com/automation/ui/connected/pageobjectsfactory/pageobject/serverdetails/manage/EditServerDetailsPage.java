@@ -1,4 +1,4 @@
-package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails;
+package com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.manage;
 
 import com.automation.ui.connected.pageobjectsfactory.pageobject.base.SiteBasePageObject;
 import org.apache.log4j.Logger;

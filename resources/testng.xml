@@ -90,7 +90,7 @@
 
 
 
-            <class name="com.automation.ui.connected.testcases.serverdetails.AddServerDetailsPageTest">
+            <class name="com.automation.ui.connected.testcases.serverdetails.manage.AddServerDetailsPageTest">
                 <methods>
                     <include name="provideAllServerDetails"/> <!-- priority 0 -->
                     <include name="clearCustomerNameTest"/> <!-- priority 2 -->

@@ -1,4 +1,4 @@
-package com.automation.ui.connected.testcases.serverdetails;
+package com.automation.ui.connected.testcases.serverdetails.manage;
 
 /**
  * @author Manjusha Saju
@@ -8,7 +8,7 @@ import com.automation.ui.base.common.core.assertion.Assertion;
 import com.automation.ui.base.common.prpreaders.AssertDataReader;
 import com.automation.ui.connected.common.dataprovider.SiteDataProvider;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetailsPage;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.manage.AddServerDetailsPage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.filter.FilterDetailsPage;
 import com.automation.ui.connected.testcases.base.ConnectedBaseTest;
 import com.automation.ui.connected.testcases.base.ServerType;

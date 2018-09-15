@@ -15,7 +15,7 @@ import com.automation.ui.connected.common.templates.NewTestTemplate;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.globalnav.GlobalNavigationPage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.home.HomePage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.login.LoginPage;
-import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.AddServerDetailsPage;
+import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.manage.AddServerDetailsPage;
 import com.automation.ui.connected.pageobjectsfactory.pageobject.serverdetails.filter.FilterDetailsPage;
 import org.apache.log4j.Logger;
 
