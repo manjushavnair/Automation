@@ -90,13 +90,13 @@ public class HomePage extends SiteBasePageObject {
 
 
             if (ElementStateHelper.isElementVisible(addButton)) {
-                logger.debug("Entering  addConnection: if " );
+                logger.warn("Entering  addConnection: if " );
 
                 waitAndClick(addButton);
 
 
             } else {
-                logger.debug("Entering  addConnection: else " );
+                logger.warn("Entering  addConnection: else " );
 
 
                 wait.forElementVisible(addButtonTop,15);
