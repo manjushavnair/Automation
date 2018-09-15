@@ -100,14 +100,14 @@ public class HomePage extends SiteBasePageObject {
 
 
             } else {
-                logger.warn("Entering  addConnection: else " +addButton.getText());
-
 
                 wait.forElementVisible(addButtonTop,15);
 
-                logger.debug("Entering  addConnection: 2 " );
+                logger.warn("Entering  addConnection: 2 " );
+                logger.warn("Entering  addConnection: else " +addButton.getText());
 
-               // waitAndClick(addButtonTop);
+
+                // waitAndClick(addButtonTop);
 
 
                if (ElementStateHelper.isElementVisible(addButtonTop)) {
