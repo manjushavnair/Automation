@@ -117,10 +117,10 @@ public class HomePage extends SiteBasePageObject {
                     logger.debug("Entering  addConnection: else->if");
                    if(addButton.getText().equalsIgnoreCase("Add Connection"))
 
-                   {
+
 
                     waitAndClick(addButtonTop);
-                    ]
+
 
                 }
 
