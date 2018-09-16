@@ -4,10 +4,12 @@ import lombok.Getter;
 
 //NEEDTOCHECK CHANGE URL DOMAIN
 public enum EnvType {
-
-    PROD("com", "prod", ""), STAGING("co.in", "staging", ""), DEV("co.in",
-            "dev", "9000"), TEST("",
-            "test", "9000"), SANDBOX("sand.com", "sandbox", "9000");
+  //main domain,envtype,port
+    PROD("com", "prod", ""),
+    STAGING("co.in", "staging", ""),
+    DEV("co.in", "dev", "9000"),
+    TEST("",  "test", "9000"),
+    SANDBOX("honeywell.com", "sandbox", "9000");
 
     @Getter
     private final String siteDomain;
