@@ -145,10 +145,7 @@ public abstract class BasePageObject {
 
     public void waitForPageLoad() {
          wait.forElementPresent(By.className("logo"));
-
-
-
-    }
+     }
 
     public BasePageObject waitForPageReload() {
         waitSafely(

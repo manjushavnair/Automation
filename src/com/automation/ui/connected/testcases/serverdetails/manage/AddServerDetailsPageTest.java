@@ -18,12 +18,9 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 import java.util.*;
 
-
 public class AddServerDetailsPageTest extends ConnectedBaseTest {
 
     private static Logger logger = Logger.getLogger(AddServerDetailsPageTest.class);
-
-
     public AddServerDetailsPageTest() {
         super();
         logger.debug(" AddServerDetailsPageTest");
@@ -31,7 +28,6 @@ public class AddServerDetailsPageTest extends ConnectedBaseTest {
         serverdetail_page = new AddServerDetailsPage();
         home_page = new HomePage();
     }
-
     /** */
     @Test(enabled = true, priority = 0, groups = {"validcase"}, dataProviderClass = SiteDataProvider.class
             ,dataProvider = "getServerDetailsforOPCUA", description = "FilterDetailsPage")
@@ -114,7 +110,6 @@ public class AddServerDetailsPageTest extends ConnectedBaseTest {
      * @throws Throwable
      */
 
-
     @Test(enabled = true, priority =5, groups = {"validcase"}, description = "FilterDetailsPage")
     public void clearSiteNameTest() throws Throwable {
 
@@ -125,7 +120,6 @@ public class AddServerDetailsPageTest extends ConnectedBaseTest {
         AssertDataReader.assertreader.getValue("SITENAMEVALIDATIONMESSAGE"));
      }
 
-
     /**
      * Test : Add Connection-&gt; locate customername field-&gt; clear the field-&gt; Add right name-&gt;Click next
      * */
@@ -134,5 +128,4 @@ public class AddServerDetailsPageTest extends ConnectedBaseTest {
         home_page.addConnection( );
         serverdetail_page.provideServerConnectionType(ServerType.SDX_COLLECTOR);
     }
-
 }
