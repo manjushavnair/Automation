@@ -46,9 +46,7 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class BasePageObject {
 
-    private static final int TIMEOUT_PAGE_REGISTRATION = 3000;
-    //content/images/HoneywellLogo.png
-    private static final String COMSCORE_PIXEL_URL = "script[src*='scripts/jquery/jquery-1.10.2.js']";
+
 
     private static Logger logger = Logger.getLogger(BasePageObject.class);
     public final Wait wait;
@@ -146,12 +144,10 @@ public abstract class BasePageObject {
     // wait for comscore to load
 
     public void waitForPageLoad() {
-        logger.info("waitForPageLoad" + COMSCORE_PIXEL_URL);
-        wait.forElementPresent(By.className("logo"));
+         wait.forElementPresent(By.className("logo"));
 
 
-        // wait.forElementPresent(
-        //By.cssSelector(COMSCORE_PIXEL_URL));
+
     }
 
     public BasePageObject waitForPageReload() {
@@ -840,18 +836,8 @@ public abstract class BasePageObject {
         return driver.switchTo().defaultContent();
     }
 
-    private void waitForLinkOpenedInNewTab(WebElement link) {
-        int initialTabsNumber = driver.getWindowHandles().size();
-        link.click();
-        new WebDriverWait(driver, TIMEOUT_PAGE_REGISTRATION)
-                .until((Function<WebDriver, Boolean>) input -> getTabsCount() > initialTabsNumber);
-    }
 
-    protected void openLinkInNewTab(WebElement link) {
-        String currentTab = driver.getWindowHandle();
-        waitForLinkOpenedInNewTab(link);
-        switchToNewTab(currentTab);
-    }
+
 
     private List<String> getTabUrls() {
         String currentTab = driver.getWindowHandle();

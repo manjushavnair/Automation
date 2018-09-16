@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class SiteBasePageObject extends BasePageObject {
 
 
-    private static final int TIMEOUT_PAGE_REGISTRATION = 3000;
+
     private static Logger logger = Logger.getLogger(SiteBasePageObject.class);
     protected By parentBy = By.xpath("./..");
 
