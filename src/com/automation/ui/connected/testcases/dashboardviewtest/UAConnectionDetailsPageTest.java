@@ -89,14 +89,14 @@ public class UAConnectionDetailsPageTest extends ConnectedBaseTest {
     @Test(enabled = true, priority = 3, groups = {"validcase"}, description = "UAConnectionDetailsPage")
     public void dcConnectionRemoveTest() throws Throwable {
 
-
+Thread.sleep(5000);
         logger.debug("Entering dcConnectionDropdownTest");
         connectiondetail_page.dcDropdown();
-        //Thread.sleep(5000);
+        Thread.sleep(5000);
         logger.debug("Exiting dcConnectionDropdownTest");
         logger.debug("Entering dcConnectionRemoveTest");
         connectiondetail_page.dcRemove();
-        //Thread.sleep(5000);
+        Thread.sleep(5000);
         logger.debug("Exiting dcConnectionRemoveTest");
     }
     /***
