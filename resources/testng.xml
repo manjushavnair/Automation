@@ -118,7 +118,7 @@
 
             <class name="com.automation.ui.connected.testcases.serverdetails.filter.FilterDetailsPageTest">
                 <methods>
-                    <include name="filterChangeFilters"/> <!-- priority 1 -->
+                    <exclude name="filterChangeFilters"/> <!-- priority 1 -->
                     <include name="filterListFilter"/> <!-- priority 2 -->
                     <include name="filterAllTag"/><!-- priority 3 -->
                     <include name="filterAseetTreeTag"/> <!-- priority 0 -->
