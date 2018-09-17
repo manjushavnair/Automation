@@ -104,8 +104,8 @@
 
             <class name="com.automation.ui.connected.testcases.dashboardviewtest.UAConnectionDetailsPageTest">
                 <methods >
-                    <exclude name="dcConnectionDropdownTest"/>  <!-- priority 0 -->
-                    <exclude name="dcConnectionPauseTest"/>  <!-- priority 1 -->
+                    <include name="dcConnectionDropdownTest"/>  <!-- priority 0 -->
+                    <include name="dcConnectionPauseTest"/>  <!-- priority 1 -->
                     <exclude name="dcConnectionEditTest"/>  <!-- priority 2-->
                     <exclude name="dcConnectionRemoveTest"/>  <!-- priority 3 -->
                     <exclude name="dcConnectionDetailsTest"/>    <!-- priority 4 -->
