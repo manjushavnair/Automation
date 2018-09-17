@@ -14,6 +14,7 @@ taskkill /IM java /F
 echo "pulling code from git"
 
 git pull
+
 @rem T 2 for use 2 cores of CPU
 @rem dependencyLocationsEnabled all external denendencies are ignored
 @rem mailpass password of smtp to sent mail
